@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source IpsecPolicyAgent_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source IpsecPolicyAgent_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// IpsecPolicyAgent_Flags 
+// IpsecPolicyAgent_Flags
 type IpsecPolicyAgent_Flags int
-const(
+
+const (
 	// TRC_FN_ENTER enum
 	IpsecPolicyAgent_Flags_TRC_FN_ENTER IpsecPolicyAgent_Flags = 1
 	// TRC_FN_LEAVE enum
@@ -22,4 +24,3 @@ const(
 	// TRC_ERROR enum
 	IpsecPolicyAgent_Flags_TRC_ERROR IpsecPolicyAgent_Flags = 5
 )
-

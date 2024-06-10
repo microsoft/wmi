@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageAllocationSettingData_Access
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageAllocationSettingData_Access
+//
+// ////////////////////////////////////////////
 package v2
 
-// StorageAllocationSettingData_Access 
+// StorageAllocationSettingData_Access
 type StorageAllocationSettingData_Access int
-const(
+
+const (
 	// Unknown enum
 	StorageAllocationSettingData_Access_Unknown StorageAllocationSettingData_Access = 0
 	// Readable enum
@@ -22,4 +24,3 @@ const(
 	// DMTF_Reserved enum
 	StorageAllocationSettingData_Access_DMTF_Reserved StorageAllocationSettingData_Access = 4
 )
-

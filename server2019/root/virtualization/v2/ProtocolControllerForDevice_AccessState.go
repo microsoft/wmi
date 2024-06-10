@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ProtocolControllerForDevice_AccessState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ProtocolControllerForDevice_AccessState
+//
+// ////////////////////////////////////////////
 package v2
 
-// ProtocolControllerForDevice_AccessState 
+// ProtocolControllerForDevice_AccessState
 type ProtocolControllerForDevice_AccessState int
-const(
+
+const (
 	// Unknown enum
 	ProtocolControllerForDevice_AccessState_Unknown ProtocolControllerForDevice_AccessState = 0
 	// Active enum
@@ -22,4 +24,3 @@ const(
 	// Mapping_Inconsistency enum
 	ProtocolControllerForDevice_AccessState_Mapping_Inconsistency ProtocolControllerForDevice_AccessState = 5
 )
-

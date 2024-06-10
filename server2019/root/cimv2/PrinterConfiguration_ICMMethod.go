@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PrinterConfiguration_ICMMethod
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PrinterConfiguration_ICMMethod
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// PrinterConfiguration_ICMMethod 
+// PrinterConfiguration_ICMMethod
 type PrinterConfiguration_ICMMethod int
-const(
+
+const (
 	// Disabled enum
 	PrinterConfiguration_ICMMethod_Disabled PrinterConfiguration_ICMMethod = 1
 	// Windows enum
@@ -20,4 +22,3 @@ const(
 	// Device enum
 	PrinterConfiguration_ICMMethod_Device PrinterConfiguration_ICMMethod = 4
 )
-

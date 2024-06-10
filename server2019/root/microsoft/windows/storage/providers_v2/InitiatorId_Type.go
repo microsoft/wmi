@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source InitiatorId_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source InitiatorId_Type
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// InitiatorId_Type 
+// InitiatorId_Type
 type InitiatorId_Type int
-const(
+
+const (
 	// Other enum
 	InitiatorId_Type_Other InitiatorId_Type = 1
 	// PortWWN enum
@@ -26,4 +28,3 @@ const(
 	// SASAddress enum
 	InitiatorId_Type_SASAddress InitiatorId_Type = 7
 )
-

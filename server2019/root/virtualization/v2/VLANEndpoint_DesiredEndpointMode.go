@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VLANEndpoint_DesiredEndpointMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VLANEndpoint_DesiredEndpointMode
+//
+// ////////////////////////////////////////////
 package v2
 
-// VLANEndpoint_DesiredEndpointMode 
+// VLANEndpoint_DesiredEndpointMode
 type VLANEndpoint_DesiredEndpointMode int
-const(
+
+const (
 	// DMTF_Reserved enum
 	VLANEndpoint_DesiredEndpointMode_DMTF_Reserved VLANEndpoint_DesiredEndpointMode = 0
 	// Other enum
@@ -30,4 +32,3 @@ const(
 	// Vendor_Reserved enum
 	VLANEndpoint_DesiredEndpointMode_Vendor_Reserved VLANEndpoint_DesiredEndpointMode = 8
 )
-

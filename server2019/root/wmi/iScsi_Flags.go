@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source iScsi_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source iScsi_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// iScsi_Flags 
+// iScsi_Flags
 type iScsi_Flags int
-const(
+
+const (
 	// iScsiFlagGeneral enum
 	iScsi_Flags_iScsiFlagGeneral iScsi_Flags = 1
 	// iScsiFlagAdapter enum
@@ -76,4 +78,3 @@ const(
 	// iScsiDebug31 enum
 	iScsi_Flags_iScsiDebug31 iScsi_Flags = 32
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Disk_BusType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Disk_BusType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Disk_BusType 
+// Disk_BusType
 type Disk_BusType int
-const(
+
+const (
 	// Unknown enum
 	Disk_BusType_Unknown Disk_BusType = 0
 	// SCSI enum
@@ -48,4 +50,3 @@ const(
 	// NVMe enum
 	Disk_BusType_NVMe Disk_BusType = 17
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Disk_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Disk_OperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Disk_OperationalStatus 
+// Disk_OperationalStatus
 type Disk_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	Disk_OperationalStatus_Unknown Disk_OperationalStatus = 0
 	// Other enum
@@ -60,4 +62,3 @@ const(
 	// Failed enum
 	Disk_OperationalStatus_Failed Disk_OperationalStatus = 23
 )
-

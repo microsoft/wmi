@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageSubSystem_NameFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageSubSystem_NameFormat
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_NameFormat 
+// StorageSubSystem_NameFormat
 type StorageSubSystem_NameFormat int
-const(
+
+const (
 	// Other enum
 	StorageSubSystem_NameFormat_Other StorageSubSystem_NameFormat = 1
 	// IP enum
@@ -44,4 +46,3 @@ const(
 	// NAA enum
 	StorageSubSystem_NameFormat_NAA StorageSubSystem_NameFormat = 16
 )
-

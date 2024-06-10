@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BusError_MemOrIo
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BusError_MemOrIo
+//
+// ////////////////////////////////////////////
 package wmi
 
-// BusError_MemOrIo 
+// BusError_MemOrIo
 type BusError_MemOrIo int
-const(
+
+const (
 	// Memory_Access enum
 	BusError_MemOrIo_Memory_Access BusError_MemOrIo = 0
 	// Reserved enum
@@ -20,4 +22,3 @@ const(
 	// Other_transaction enum
 	BusError_MemOrIo_Other_transaction BusError_MemOrIo = 3
 )
-

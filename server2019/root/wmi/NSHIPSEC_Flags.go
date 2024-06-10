@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source NSHIPSEC_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source NSHIPSEC_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// NSHIPSEC_Flags 
+// NSHIPSEC_Flags
 type NSHIPSEC_Flags int
-const(
+
+const (
 	// TRC_FN_ENTER enum
 	NSHIPSEC_Flags_TRC_FN_ENTER NSHIPSEC_Flags = 1
 	// TRC_FN_LEAVE enum
@@ -22,4 +24,3 @@ const(
 	// TRC_ERROR enum
 	NSHIPSEC_Flags_TRC_ERROR NSHIPSEC_Flags = 5
 )
-

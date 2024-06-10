@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EncryptableVolume_BindingState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EncryptableVolume_BindingState
+//
+// ////////////////////////////////////////////
 package microsoftvolumeencryption
 
-// EncryptableVolume_BindingState 
+// EncryptableVolume_BindingState
 type EncryptableVolume_BindingState int
-const(
+
+const (
 	// NotPossible enum
 	EncryptableVolume_BindingState_NotPossible EncryptableVolume_BindingState = 0
 	// DisabledByPolicy enum
@@ -20,4 +22,3 @@ const(
 	// Bound enum
 	EncryptableVolume_BindingState_Bound EncryptableVolume_BindingState = 3
 )
-

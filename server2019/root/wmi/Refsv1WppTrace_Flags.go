@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Refsv1WppTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Refsv1WppTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Refsv1WppTrace_Flags 
+// Refsv1WppTrace_Flags
 type Refsv1WppTrace_Flags int
-const(
+
+const (
 	// FATAL enum
 	Refsv1WppTrace_Flags_FATAL Refsv1WppTrace_Flags = 1
 	// ERROR enum
@@ -60,4 +62,3 @@ const(
 	// TREEUPDATE enum
 	Refsv1WppTrace_Flags_TREEUPDATE Refsv1WppTrace_Flags = 24
 )
-

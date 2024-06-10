@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Disk_OfflineReason
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Disk_OfflineReason
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Disk_OfflineReason 
+// Disk_OfflineReason
 type Disk_OfflineReason int
-const(
+
+const (
 	// Policy enum
 	Disk_OfflineReason_Policy Disk_OfflineReason = 1
 	// Redundant_Path enum
@@ -26,4 +28,3 @@ const(
 	// Data_Integrity_Scan_Required enum
 	Disk_OfflineReason_Data_Integrity_Scan_Required Disk_OfflineReason = 7
 )
-

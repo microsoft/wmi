@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source IPAssignmentSettingData_AddressOrigin
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source IPAssignmentSettingData_AddressOrigin
+//
+// ////////////////////////////////////////////
 package standardcimv2
 
-// IPAssignmentSettingData_AddressOrigin 
+// IPAssignmentSettingData_AddressOrigin
 type IPAssignmentSettingData_AddressOrigin int
-const(
+
+const (
 	// _10 enum
 	IPAssignmentSettingData_AddressOrigin__10 IPAssignmentSettingData_AddressOrigin = 0
 	// _11 enum
@@ -28,4 +30,3 @@ const(
 	// _30 enum
 	IPAssignmentSettingData_AddressOrigin__30 IPAssignmentSettingData_AddressOrigin = 7
 )
-

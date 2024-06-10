@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageEnclosure_VoltageSensorOperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageEnclosure_VoltageSensorOperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageEnclosure_VoltageSensorOperationalStatus 
+// StorageEnclosure_VoltageSensorOperationalStatus
 type StorageEnclosure_VoltageSensorOperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	StorageEnclosure_VoltageSensorOperationalStatus_Unknown StorageEnclosure_VoltageSensorOperationalStatus = 0
 	// OK enum
@@ -30,4 +32,3 @@ const(
 	// Not_Reported enum
 	StorageEnclosure_VoltageSensorOperationalStatus_Not_Reported StorageEnclosure_VoltageSensorOperationalStatus = 11
 )
-

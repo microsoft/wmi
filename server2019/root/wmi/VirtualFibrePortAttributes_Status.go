@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualFibrePortAttributes_Status
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualFibrePortAttributes_Status
+//
+// ////////////////////////////////////////////
 package wmi
 
-// VirtualFibrePortAttributes_Status 
+// VirtualFibrePortAttributes_Status
 type VirtualFibrePortAttributes_Status int
-const(
+
+const (
 	// NPIV_SUCCESS enum
 	VirtualFibrePortAttributes_Status_NPIV_SUCCESS VirtualFibrePortAttributes_Status = 1
 	// NPIV_UNKNOWN_ERROR enum
@@ -32,4 +34,3 @@ const(
 	// NPIV_WWPN_NOT_FOUND enum
 	VirtualFibrePortAttributes_Status_NPIV_WWPN_NOT_FOUND VirtualFibrePortAttributes_Status = 10
 )
-

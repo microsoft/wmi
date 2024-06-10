@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CKCLTraceProvider_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CKCLTraceProvider_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// CKCLTraceProvider_Flags 
+// CKCLTraceProvider_Flags
 type CKCLTraceProvider_Flags int
-const(
+
+const (
 	// process enum
 	CKCLTraceProvider_Flags_process CKCLTraceProvider_Flags = 1
 	// thread enum
@@ -58,4 +60,3 @@ const(
 	// fileio enum
 	CKCLTraceProvider_Flags_fileio CKCLTraceProvider_Flags = 23
 )
-

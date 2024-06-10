@@ -1,47 +1,53 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.Microsoft.Windows.TaskScheduler
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.Microsoft.Windows.TaskScheduler
+//
+// ////////////////////////////////////////////
 package taskscheduler
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // PS_ClusteredScheduledTask struct
-type PS_ClusteredScheduledTask struct { 
+type PS_ClusteredScheduledTask struct {
 	*cim.WmiInstance
 }
 
-	func NewPS_ClusteredScheduledTaskEx1(instance *cim.WmiInstance) (newInstance *PS_ClusteredScheduledTask, err error) {tmp, err := instance, nil
-		
-	if err != nil { return }
-	newInstance = &PS_ClusteredScheduledTask {
-	WmiInstance: tmp,
+func NewPS_ClusteredScheduledTaskEx1(instance *cim.WmiInstance) (newInstance *PS_ClusteredScheduledTask, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_ClusteredScheduledTask{
+		WmiInstance: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewPS_ClusteredScheduledTaskEx6(hostName string,
+func NewPS_ClusteredScheduledTaskEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *PS_ClusteredScheduledTask, err error) {tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &PS_ClusteredScheduledTask {
-	WmiInstance: tmp,
+	query *query.WmiQuery) (newInstance *PS_ClusteredScheduledTask, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_ClusteredScheduledTask{
+		WmiInstance: tmp,
 	}
 	return
-	}
-	
+}
 
 // 99
 
@@ -54,18 +60,20 @@ type PS_ClusteredScheduledTask struct {
 // <param name="cmdletOutput" type="MSFT_ClusteredScheduledTask ">101</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) RegisterByObject( /* IN */ InputObject MSFT_ScheduledTask,
- /* IN */ Cluster string,
- /* IN */ TaskName string,
- /* IN */ TaskType int32,
- /* IN */ Resource string,
- /* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethod("RegisterByObject" , InputObject, Cluster, TaskName, TaskType, Resource)
-	if err != nil { return }
+	/* IN */ Cluster string,
+	/* IN */ TaskName string,
+	/* IN */ TaskType int32,
+	/* IN */ Resource string,
+	/* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("RegisterByObject", InputObject, Cluster, TaskName, TaskType, Resource)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // 99
 
@@ -81,21 +89,23 @@ func (instance *PS_ClusteredScheduledTask) RegisterByObject( /* IN */ InputObjec
 // <param name="cmdletOutput" type="MSFT_ClusteredScheduledTask ">101</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) RegisterByParams( /* IN */ TaskName string,
- /* IN */ Settings MSFT_TaskSettings,
- /* IN */ Description string,
- /* IN */ Trigger []MSFT_TaskTrigger,
- /* IN */ Cluster string,
- /* IN */ Action []MSFT_TaskAction,
- /* IN */ TaskType int32,
- /* IN */ Resource string,
- /* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethod("RegisterByParams" , TaskName, Settings, Description, Trigger, Cluster, Action, TaskType, Resource)
-	if err != nil { return }
+	/* IN */ Settings MSFT_TaskSettings,
+	/* IN */ Description string,
+	/* IN */ Trigger []MSFT_TaskTrigger,
+	/* IN */ Cluster string,
+	/* IN */ Action []MSFT_TaskAction,
+	/* IN */ TaskType int32,
+	/* IN */ Resource string,
+	/* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("RegisterByParams", TaskName, Settings, Description, Trigger, Cluster, Action, TaskType, Resource)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // 99
 
@@ -108,18 +118,20 @@ func (instance *PS_ClusteredScheduledTask) RegisterByParams( /* IN */ TaskName s
 // <param name="cmdletOutput" type="MSFT_ClusteredScheduledTask ">101</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) RegisterByXml( /* IN */ Xml string,
- /* IN */ TaskName string,
- /* IN */ Cluster string,
- /* IN */ TaskType int32,
- /* IN */ Resource string,
- /* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethod("RegisterByXml" , Xml, TaskName, Cluster, TaskType, Resource)
-	if err != nil { return }
+	/* IN */ TaskName string,
+	/* IN */ Cluster string,
+	/* IN */ TaskType int32,
+	/* IN */ Resource string,
+	/* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("RegisterByXml", Xml, TaskName, Cluster, TaskType, Resource)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // 102
 
@@ -128,26 +140,30 @@ func (instance *PS_ClusteredScheduledTask) RegisterByXml( /* IN */ Xml string,
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) UnregisterByName( /* IN */ Cluster string,
- /* IN */ TaskName string) (result uint32, err error) {retVal, err := instance.InvokeMethodWithReturn("UnregisterByName" , Cluster, TaskName);
-	if err != nil { return }
+	/* IN */ TaskName string) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("UnregisterByName", Cluster, TaskName)
+	if err != nil {
+		return
+	}
 	result = uint32(retVal)
 	return
-	
-}
 
+}
 
 // 102
 
 // <param name="InputObject" type="MSFT_ClusteredScheduledTask "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *PS_ClusteredScheduledTask) UnregisterByObject( /* IN */ InputObject MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethodWithReturn("UnregisterByObject" , InputObject);
-	if err != nil { return }
+func (instance *PS_ClusteredScheduledTask) UnregisterByObject( /* IN */ InputObject MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("UnregisterByObject", InputObject)
+	if err != nil {
+		return
+	}
 	result = uint32(retVal)
 	return
-	
-}
 
+}
 
 // 103
 
@@ -158,16 +174,18 @@ func (instance *PS_ClusteredScheduledTask) UnregisterByObject( /* IN */ InputObj
 // <param name="cmdletOutput" type="MSFT_ClusteredScheduledTask []">106</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) Get( /* IN */ TaskName string,
- /* IN */ Cluster string,
- /* IN */ TaskType int32,
- /* OUT */ cmdletOutput []MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethod("Get" , TaskName, Cluster, TaskType)
-	if err != nil { return }
+	/* IN */ Cluster string,
+	/* IN */ TaskType int32,
+	/* OUT */ cmdletOutput []MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Get", TaskName, Cluster, TaskType)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // 107
 
@@ -178,16 +196,18 @@ func (instance *PS_ClusteredScheduledTask) Get( /* IN */ TaskName string,
 // <param name="cmdletOutput" type="MSFT_ClusteredScheduledTask "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) SetByObject( /* IN */ TaskName string,
- /* IN */ Cluster string,
- /* IN */ InputObject MSFT_ScheduledTask,
- /* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetByObject" , TaskName, Cluster, InputObject)
-	if err != nil { return }
+	/* IN */ Cluster string,
+	/* IN */ InputObject MSFT_ScheduledTask,
+	/* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetByObject", TaskName, Cluster, InputObject)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // 107
 
@@ -201,19 +221,21 @@ func (instance *PS_ClusteredScheduledTask) SetByObject( /* IN */ TaskName string
 // <param name="cmdletOutput" type="MSFT_ClusteredScheduledTask "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) SetByParams( /* IN */ Action []MSFT_TaskAction,
- /* IN */ Settings MSFT_TaskSettings,
- /* IN */ Cluster string,
- /* IN */ TaskName string,
- /* IN */ Trigger []MSFT_TaskTrigger,
- /* IN */ Description string,
- /* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetByParams" , Action, Settings, Cluster, TaskName, Trigger, Description)
-	if err != nil { return }
+	/* IN */ Settings MSFT_TaskSettings,
+	/* IN */ Cluster string,
+	/* IN */ TaskName string,
+	/* IN */ Trigger []MSFT_TaskTrigger,
+	/* IN */ Description string,
+	/* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetByParams", Action, Settings, Cluster, TaskName, Trigger, Description)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // 107
 
@@ -224,14 +246,15 @@ func (instance *PS_ClusteredScheduledTask) SetByParams( /* IN */ Action []MSFT_T
 // <param name="cmdletOutput" type="MSFT_ClusteredScheduledTask "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_ClusteredScheduledTask) SetByXml( /* IN */ Xml string,
- /* IN */ Cluster string,
- /* IN */ TaskName string,
- /* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetByXml" , Xml, Cluster, TaskName)
-	if err != nil { return }
+	/* IN */ Cluster string,
+	/* IN */ TaskName string,
+	/* OUT */ cmdletOutput MSFT_ClusteredScheduledTask) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetByXml", Xml, Cluster, TaskName)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
-
-

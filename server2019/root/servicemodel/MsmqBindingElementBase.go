@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.ServiceModel
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.ServiceModel
+//
+// ////////////////////////////////////////////
 package servicemodel
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsmqBindingElementBase struct
-type MsmqBindingElementBase struct { 
+type MsmqBindingElementBase struct {
 	*TransportBindingElement
 
 	// A URI that contains the location of the per-application dead letter queue, where messages that have expired or that have failed transfer or delivery are placed.
@@ -58,379 +60,382 @@ type MsmqBindingElementBase struct {
 	ValidityDuration string
 }
 
-	func NewMsmqBindingElementBaseEx1(instance *cim.WmiInstance) (newInstance *MsmqBindingElementBase, err error) {tmp, err := NewTransportBindingElementEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &MsmqBindingElementBase {
-	TransportBindingElement: tmp,
+func NewMsmqBindingElementBaseEx1(instance *cim.WmiInstance) (newInstance *MsmqBindingElementBase, err error) {
+	tmp, err := NewTransportBindingElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsmqBindingElementBase{
+		TransportBindingElement: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewMsmqBindingElementBaseEx6(hostName string,
+func NewMsmqBindingElementBaseEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *MsmqBindingElementBase, err error) {tmp, err := NewTransportBindingElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &MsmqBindingElementBase {
-	TransportBindingElement: tmp,
+	query *query.WmiQuery) (newInstance *MsmqBindingElementBase, err error) {
+	tmp, err := NewTransportBindingElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsmqBindingElementBase{
+		TransportBindingElement: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetCustomDeadLetterQueue sets the value of CustomDeadLetterQueue for the instance
-func (instance *MsmqBindingElementBase) SetPropertyCustomDeadLetterQueue(value string) (err error) { 
-    return instance.SetProperty("CustomDeadLetterQueue", (value))
+func (instance *MsmqBindingElementBase) SetPropertyCustomDeadLetterQueue(value string) (err error) {
+	return instance.SetProperty("CustomDeadLetterQueue", (value))
 }
 
 // GetCustomDeadLetterQueue gets the value of CustomDeadLetterQueue for the instance
-func (instance *MsmqBindingElementBase) GetPropertyCustomDeadLetterQueue()(value string, err error) { 
-    retValue, err := instance.GetProperty("CustomDeadLetterQueue")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyCustomDeadLetterQueue() (value string, err error) {
+	retValue, err := instance.GetProperty("CustomDeadLetterQueue")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetDeadLetterQueue sets the value of DeadLetterQueue for the instance
-func (instance *MsmqBindingElementBase) SetPropertyDeadLetterQueue(value string) (err error) { 
-    return instance.SetProperty("DeadLetterQueue", (value))
+func (instance *MsmqBindingElementBase) SetPropertyDeadLetterQueue(value string) (err error) {
+	return instance.SetProperty("DeadLetterQueue", (value))
 }
 
 // GetDeadLetterQueue gets the value of DeadLetterQueue for the instance
-func (instance *MsmqBindingElementBase) GetPropertyDeadLetterQueue()(value string, err error) { 
-    retValue, err := instance.GetProperty("DeadLetterQueue")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyDeadLetterQueue() (value string, err error) {
+	retValue, err := instance.GetProperty("DeadLetterQueue")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetDurable sets the value of Durable for the instance
-func (instance *MsmqBindingElementBase) SetPropertyDurable(value bool) (err error) { 
-    return instance.SetProperty("Durable", (value))
+func (instance *MsmqBindingElementBase) SetPropertyDurable(value bool) (err error) {
+	return instance.SetProperty("Durable", (value))
 }
 
 // GetDurable gets the value of Durable for the instance
-func (instance *MsmqBindingElementBase) GetPropertyDurable()(value bool, err error) { 
-    retValue, err := instance.GetProperty("Durable")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyDurable() (value bool, err error) {
+	retValue, err := instance.GetProperty("Durable")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetExactlyOnce sets the value of ExactlyOnce for the instance
-func (instance *MsmqBindingElementBase) SetPropertyExactlyOnce(value bool) (err error) { 
-    return instance.SetProperty("ExactlyOnce", (value))
+func (instance *MsmqBindingElementBase) SetPropertyExactlyOnce(value bool) (err error) {
+	return instance.SetProperty("ExactlyOnce", (value))
 }
 
 // GetExactlyOnce gets the value of ExactlyOnce for the instance
-func (instance *MsmqBindingElementBase) GetPropertyExactlyOnce()(value bool, err error) { 
-    retValue, err := instance.GetProperty("ExactlyOnce")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyExactlyOnce() (value bool, err error) {
+	retValue, err := instance.GetProperty("ExactlyOnce")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetMaxRetryCycles sets the value of MaxRetryCycles for the instance
-func (instance *MsmqBindingElementBase) SetPropertyMaxRetryCycles(value int32) (err error) { 
-    return instance.SetProperty("MaxRetryCycles", (value))
+func (instance *MsmqBindingElementBase) SetPropertyMaxRetryCycles(value int32) (err error) {
+	return instance.SetProperty("MaxRetryCycles", (value))
 }
 
 // GetMaxRetryCycles gets the value of MaxRetryCycles for the instance
-func (instance *MsmqBindingElementBase) GetPropertyMaxRetryCycles()(value int32, err error) { 
-    retValue, err := instance.GetProperty("MaxRetryCycles")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyMaxRetryCycles() (value int32, err error) {
+	retValue, err := instance.GetProperty("MaxRetryCycles")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = int32(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = int32(valuetmp)
+
+	return
 }
 
 // SetReceiveContextEnabled sets the value of ReceiveContextEnabled for the instance
-func (instance *MsmqBindingElementBase) SetPropertyReceiveContextEnabled(value bool) (err error) { 
-    return instance.SetProperty("ReceiveContextEnabled", (value))
+func (instance *MsmqBindingElementBase) SetPropertyReceiveContextEnabled(value bool) (err error) {
+	return instance.SetProperty("ReceiveContextEnabled", (value))
 }
 
 // GetReceiveContextEnabled gets the value of ReceiveContextEnabled for the instance
-func (instance *MsmqBindingElementBase) GetPropertyReceiveContextEnabled()(value bool, err error) { 
-    retValue, err := instance.GetProperty("ReceiveContextEnabled")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyReceiveContextEnabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("ReceiveContextEnabled")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetReceiveErrorHandling sets the value of ReceiveErrorHandling for the instance
-func (instance *MsmqBindingElementBase) SetPropertyReceiveErrorHandling(value string) (err error) { 
-    return instance.SetProperty("ReceiveErrorHandling", (value))
+func (instance *MsmqBindingElementBase) SetPropertyReceiveErrorHandling(value string) (err error) {
+	return instance.SetProperty("ReceiveErrorHandling", (value))
 }
 
 // GetReceiveErrorHandling gets the value of ReceiveErrorHandling for the instance
-func (instance *MsmqBindingElementBase) GetPropertyReceiveErrorHandling()(value string, err error) { 
-    retValue, err := instance.GetProperty("ReceiveErrorHandling")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyReceiveErrorHandling() (value string, err error) {
+	retValue, err := instance.GetProperty("ReceiveErrorHandling")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetReceiveRetryCount sets the value of ReceiveRetryCount for the instance
-func (instance *MsmqBindingElementBase) SetPropertyReceiveRetryCount(value int32) (err error) { 
-    return instance.SetProperty("ReceiveRetryCount", (value))
+func (instance *MsmqBindingElementBase) SetPropertyReceiveRetryCount(value int32) (err error) {
+	return instance.SetProperty("ReceiveRetryCount", (value))
 }
 
 // GetReceiveRetryCount gets the value of ReceiveRetryCount for the instance
-func (instance *MsmqBindingElementBase) GetPropertyReceiveRetryCount()(value int32, err error) { 
-    retValue, err := instance.GetProperty("ReceiveRetryCount")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyReceiveRetryCount() (value int32, err error) {
+	retValue, err := instance.GetProperty("ReceiveRetryCount")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = int32(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = int32(valuetmp)
+
+	return
 }
 
 // SetRetryCycleDelay sets the value of RetryCycleDelay for the instance
-func (instance *MsmqBindingElementBase) SetPropertyRetryCycleDelay(value string) (err error) { 
-    return instance.SetProperty("RetryCycleDelay", (value))
+func (instance *MsmqBindingElementBase) SetPropertyRetryCycleDelay(value string) (err error) {
+	return instance.SetProperty("RetryCycleDelay", (value))
 }
 
 // GetRetryCycleDelay gets the value of RetryCycleDelay for the instance
-func (instance *MsmqBindingElementBase) GetPropertyRetryCycleDelay()(value string, err error) { 
-    retValue, err := instance.GetProperty("RetryCycleDelay")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyRetryCycleDelay() (value string, err error) {
+	retValue, err := instance.GetProperty("RetryCycleDelay")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetTimeToLive sets the value of TimeToLive for the instance
-func (instance *MsmqBindingElementBase) SetPropertyTimeToLive(value string) (err error) { 
-    return instance.SetProperty("TimeToLive", (value))
+func (instance *MsmqBindingElementBase) SetPropertyTimeToLive(value string) (err error) {
+	return instance.SetProperty("TimeToLive", (value))
 }
 
 // GetTimeToLive gets the value of TimeToLive for the instance
-func (instance *MsmqBindingElementBase) GetPropertyTimeToLive()(value string, err error) { 
-    retValue, err := instance.GetProperty("TimeToLive")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyTimeToLive() (value string, err error) {
+	retValue, err := instance.GetProperty("TimeToLive")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetUseMsmqTracing sets the value of UseMsmqTracing for the instance
-func (instance *MsmqBindingElementBase) SetPropertyUseMsmqTracing(value bool) (err error) { 
-    return instance.SetProperty("UseMsmqTracing", (value))
+func (instance *MsmqBindingElementBase) SetPropertyUseMsmqTracing(value bool) (err error) {
+	return instance.SetProperty("UseMsmqTracing", (value))
 }
 
 // GetUseMsmqTracing gets the value of UseMsmqTracing for the instance
-func (instance *MsmqBindingElementBase) GetPropertyUseMsmqTracing()(value bool, err error) { 
-    retValue, err := instance.GetProperty("UseMsmqTracing")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyUseMsmqTracing() (value bool, err error) {
+	retValue, err := instance.GetProperty("UseMsmqTracing")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetUseSourceJournal sets the value of UseSourceJournal for the instance
-func (instance *MsmqBindingElementBase) SetPropertyUseSourceJournal(value bool) (err error) { 
-    return instance.SetProperty("UseSourceJournal", (value))
+func (instance *MsmqBindingElementBase) SetPropertyUseSourceJournal(value bool) (err error) {
+	return instance.SetProperty("UseSourceJournal", (value))
 }
 
 // GetUseSourceJournal gets the value of UseSourceJournal for the instance
-func (instance *MsmqBindingElementBase) GetPropertyUseSourceJournal()(value bool, err error) { 
-    retValue, err := instance.GetProperty("UseSourceJournal")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyUseSourceJournal() (value bool, err error) {
+	retValue, err := instance.GetProperty("UseSourceJournal")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetValidityDuration sets the value of ValidityDuration for the instance
-func (instance *MsmqBindingElementBase) SetPropertyValidityDuration(value string) (err error) { 
-    return instance.SetProperty("ValidityDuration", (value))
+func (instance *MsmqBindingElementBase) SetPropertyValidityDuration(value string) (err error) {
+	return instance.SetProperty("ValidityDuration", (value))
 }
 
 // GetValidityDuration gets the value of ValidityDuration for the instance
-func (instance *MsmqBindingElementBase) GetPropertyValidityDuration()(value string, err error) { 
-    retValue, err := instance.GetProperty("ValidityDuration")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MsmqBindingElementBase) GetPropertyValidityDuration() (value string, err error) {
+	retValue, err := instance.GetProperty("ValidityDuration")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
-

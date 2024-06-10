@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EthernetSwitchPortOffloadSettingData_IOVInterruptModeration
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EthernetSwitchPortOffloadSettingData_IOVInterruptModeration
+//
+// ////////////////////////////////////////////
 package v2
 
-// EthernetSwitchPortOffloadSettingData_IOVInterruptModeration 
+// EthernetSwitchPortOffloadSettingData_IOVInterruptModeration
 type EthernetSwitchPortOffloadSettingData_IOVInterruptModeration int
-const(
+
+const (
 	// Default enum
 	EthernetSwitchPortOffloadSettingData_IOVInterruptModeration_Default EthernetSwitchPortOffloadSettingData_IOVInterruptModeration = 0
 	// Adaptive enum
@@ -24,4 +26,3 @@ const(
 	// High enum
 	EthernetSwitchPortOffloadSettingData_IOVInterruptModeration_High EthernetSwitchPortOffloadSettingData_IOVInterruptModeration = 300
 )
-

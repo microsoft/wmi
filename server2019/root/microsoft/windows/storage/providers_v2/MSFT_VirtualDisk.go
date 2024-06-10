@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.Microsoft.Windows.Storage.Providers_v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.Microsoft.Windows.Storage.Providers_v2
+//
+// ////////////////////////////////////////////
 package providers_v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_VirtualDisk struct
-type MSFT_VirtualDisk struct { 
+type MSFT_VirtualDisk struct {
 	*MSFT_StorageObject
 
 	// Indicates whether the virtual disk is available for read and/or write access
@@ -27,7 +29,7 @@ type MSFT_VirtualDisk struct {
 	// Specifies the allocation unit size in bytes for this virtual disk.
 	AllocationUnitSize uint64
 
-	// 
+	//
 	ColumnIsolation uint16
 
 	// Denotes the reason why this virtual disk is detached. This field will only be set when the virtual disk's OperationalStatus includes 0xD002 - 'Detached'. Note that this field is specific to Storage Spaces.
@@ -43,15 +45,15 @@ type MSFT_VirtualDisk struct {
 	FriendlyName string
 
 	// Denotes the current health status of the virtual disk. Health of a virtual disk is derived from the health of the backing physical disks, and whether or not the virtual disk can maintain the required levels of resiliency.
-	/// 0 - 'Healthy': All physical disks are present and in a healthy state. 
-	///1 - 'Warning': The majority of physical disks are healthy, but one or more may be failing I/O requests. 
+	/// 0 - 'Healthy': All physical disks are present and in a healthy state.
+	///1 - 'Warning': The majority of physical disks are healthy, but one or more may be failing I/O requests.
 	///2 - 'Unhealthy': The majority of physical disks are unhealthy or in a failed state, and the virtual disk no longer has data integrity.
 	HealthStatus VirtualDisk_HealthStatus
 
 	// This field indicates the number of bytes that will form a strip in common striping-based resiliency settings. The strip is defined as the size of the portion of a stripe that lies on one physical disk. Thus, Interleave * NumberOfColumns will yield the size of one stripe of user data.
 	Interleave uint64
 
-	// 
+	//
 	IsDeduplicationEnabled bool
 
 	// Determines the current allocation behavior for this virtual disk. Enclosure aware virtual disks will intelligently pick the physical disks to use for their redundancy. If TRUE, the virtual disk will attempt to use physical disks from different enclosures to balance the fault tolerance between two (or more) physical enclosures.
@@ -66,7 +68,7 @@ type MSFT_VirtualDisk struct {
 	// Indicates whether or not there are tiers associated with this virtual disk.
 	IsTiered bool
 
-	// 
+	//
 	LogicalSectorSize uint64
 
 	// This parameter indicates the maximum IO bandwidth supported by the virtual disk.
@@ -75,7 +77,7 @@ type MSFT_VirtualDisk struct {
 	// This parameter indicates the maximum IOPS supported by the virtual disk.
 	MaxIops uint64
 
-	// 
+	//
 	MediaType uint16
 
 	// This field indicates the minimum number of logical data copies to enforce.
@@ -84,10 +86,10 @@ type MSFT_VirtualDisk struct {
 	// Name is a semi-unique (scoped to the owning storage subsystem), human-readable string used to identify the virtual disk.
 	Name string
 
-	// 
+	//
 	NameFormat VirtualDisk_NameFormat
 
-	// 
+	//
 	NumberOfAvailableCopies uint16
 
 	// This field indicates the number of underlying physical disks across which data for this virtual disk is striped.
@@ -96,12 +98,12 @@ type MSFT_VirtualDisk struct {
 	// This field indicates the number of complete data copies that are being maintained. For example, RAID 5 maintains 1 copy of data, whereas RAID 1 maintains at least 2 copies.
 	NumberOfDataCopies uint16
 
-	// 
+	//
 	NumberOfGroups uint16
 
-	// Indicates the current operating conditions of the virtual disk. Unlike HealthStatus, this field indicates the status of hardware, software, and infrastructure issues related to this virtual disk, and can contain multiple values. Various operational statuses are defined. 
-	///11 - 'In Service': describes a virtual disk being configured, maintained, or otherwise administered. 
-	///0xD002 - 'Detached': This value is reserved for Windows. This value indicates a virtual disk that is visible to the host system but does not have a disk device object. 
+	// Indicates the current operating conditions of the virtual disk. Unlike HealthStatus, this field indicates the status of hardware, software, and infrastructure issues related to this virtual disk, and can contain multiple values. Various operational statuses are defined.
+	///11 - 'In Service': describes a virtual disk being configured, maintained, or otherwise administered.
+	///0xD002 - 'Detached': This value is reserved for Windows. This value indicates a virtual disk that is visible to the host system but does not have a disk device object.
 	///0xD003 - 'Incomplete': describes a virtual disk which does not have enough redundancy remaining to successfully repair or regenerate its data.
 	OperationalStatus []VirtualDisk_OperationalStatus
 
@@ -117,18 +119,18 @@ type MSFT_VirtualDisk struct {
 	// This field indicates how many backing physical disks can fail without compromising data redundancy. For example: RAID 0 cannot tolerate any failures, RAID 5 can tolerate a single drive failure, and RAID 6 can tolerate 2 failures.
 	PhysicalDiskRedundancy uint16
 
-	// 
+	//
 	PhysicalSectorSize uint64
 
-	// Denotes the provisioning scheme of the virtual disk. 
-	///1 - 'Thin' indicates that the virtual disk's capacity is allocated on demand. 
-	///2 - 'Fixed' indicates that the virtual disk's capacity is fully allocated upon creation. 
+	// Denotes the provisioning scheme of the virtual disk.
+	///1 - 'Thin' indicates that the virtual disk's capacity is allocated on demand.
+	///2 - 'Fixed' indicates that the virtual disk's capacity is fully allocated upon creation.
 	ProvisioningType VirtualDisk_ProvisioningType
 
 	// Size of the read cache for the virtual disk
 	ReadCacheSize uint64
 
-	// 
+	//
 	RequestNoSinglePointOfFailure bool
 
 	// The name of the resiliency setting used to create this virtual disk.
@@ -156,1207 +158,1213 @@ type MSFT_VirtualDisk struct {
 	WriteCacheSize uint64
 }
 
-	func NewMSFT_VirtualDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_VirtualDisk, err error) {tmp, err := NewMSFT_StorageObjectEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &MSFT_VirtualDisk {
-	MSFT_StorageObject: tmp,
+func NewMSFT_VirtualDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_VirtualDisk, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_VirtualDisk{
+		MSFT_StorageObject: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewMSFT_VirtualDiskEx6(hostName string,
+func NewMSFT_VirtualDiskEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *MSFT_VirtualDisk, err error) {tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &MSFT_VirtualDisk {
-	MSFT_StorageObject: tmp,
+	query *query.WmiQuery) (newInstance *MSFT_VirtualDisk, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_VirtualDisk{
+		MSFT_StorageObject: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetAccess sets the value of Access for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyAccess(value VirtualDisk_Access) (err error) { 
-    return instance.SetProperty("Access", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyAccess(value VirtualDisk_Access) (err error) {
+	return instance.SetProperty("Access", (value))
 }
 
 // GetAccess gets the value of Access for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyAccess()(value VirtualDisk_Access, err error) { 
-    retValue, err := instance.GetProperty("Access")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyAccess() (value VirtualDisk_Access, err error) {
+	retValue, err := instance.GetProperty("Access")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_Access(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_Access(valuetmp)
+
+	return
 }
 
 // SetAllocatedSize sets the value of AllocatedSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyAllocatedSize(value uint64) (err error) { 
-    return instance.SetProperty("AllocatedSize", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyAllocatedSize(value uint64) (err error) {
+	return instance.SetProperty("AllocatedSize", (value))
 }
 
 // GetAllocatedSize gets the value of AllocatedSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyAllocatedSize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("AllocatedSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyAllocatedSize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("AllocatedSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetAllocationUnitSize sets the value of AllocationUnitSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyAllocationUnitSize(value uint64) (err error) { 
-    return instance.SetProperty("AllocationUnitSize", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyAllocationUnitSize(value uint64) (err error) {
+	return instance.SetProperty("AllocationUnitSize", (value))
 }
 
 // GetAllocationUnitSize gets the value of AllocationUnitSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyAllocationUnitSize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("AllocationUnitSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyAllocationUnitSize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("AllocationUnitSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetColumnIsolation sets the value of ColumnIsolation for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyColumnIsolation(value uint16) (err error) { 
-    return instance.SetProperty("ColumnIsolation", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyColumnIsolation(value uint16) (err error) {
+	return instance.SetProperty("ColumnIsolation", (value))
 }
 
 // GetColumnIsolation gets the value of ColumnIsolation for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyColumnIsolation()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("ColumnIsolation")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyColumnIsolation() (value uint16, err error) {
+	retValue, err := instance.GetProperty("ColumnIsolation")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetDetachedReason sets the value of DetachedReason for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyDetachedReason(value VirtualDisk_DetachedReason) (err error) { 
-    return instance.SetProperty("DetachedReason", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyDetachedReason(value VirtualDisk_DetachedReason) (err error) {
+	return instance.SetProperty("DetachedReason", (value))
 }
 
 // GetDetachedReason gets the value of DetachedReason for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyDetachedReason()(value VirtualDisk_DetachedReason, err error) { 
-    retValue, err := instance.GetProperty("DetachedReason")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyDetachedReason() (value VirtualDisk_DetachedReason, err error) {
+	retValue, err := instance.GetProperty("DetachedReason")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_DetachedReason(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_DetachedReason(valuetmp)
+
+	return
 }
 
 // SetFaultDomainAwareness sets the value of FaultDomainAwareness for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyFaultDomainAwareness(value VirtualDisk_FaultDomainAwareness) (err error) { 
-    return instance.SetProperty("FaultDomainAwareness", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyFaultDomainAwareness(value VirtualDisk_FaultDomainAwareness) (err error) {
+	return instance.SetProperty("FaultDomainAwareness", (value))
 }
 
 // GetFaultDomainAwareness gets the value of FaultDomainAwareness for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyFaultDomainAwareness()(value VirtualDisk_FaultDomainAwareness, err error) { 
-    retValue, err := instance.GetProperty("FaultDomainAwareness")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyFaultDomainAwareness() (value VirtualDisk_FaultDomainAwareness, err error) {
+	retValue, err := instance.GetProperty("FaultDomainAwareness")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_FaultDomainAwareness(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_FaultDomainAwareness(valuetmp)
+
+	return
 }
 
 // SetFootprintOnPool sets the value of FootprintOnPool for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyFootprintOnPool(value uint64) (err error) { 
-    return instance.SetProperty("FootprintOnPool", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyFootprintOnPool(value uint64) (err error) {
+	return instance.SetProperty("FootprintOnPool", (value))
 }
 
 // GetFootprintOnPool gets the value of FootprintOnPool for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyFootprintOnPool()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("FootprintOnPool")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyFootprintOnPool() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FootprintOnPool")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyFriendlyName(value string) (err error) { 
-    return instance.SetProperty("FriendlyName", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyFriendlyName(value string) (err error) {
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyFriendlyName()(value string, err error) { 
-    retValue, err := instance.GetProperty("FriendlyName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyFriendlyName() (value string, err error) {
+	retValue, err := instance.GetProperty("FriendlyName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyHealthStatus(value VirtualDisk_HealthStatus) (err error) { 
-    return instance.SetProperty("HealthStatus", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyHealthStatus(value VirtualDisk_HealthStatus) (err error) {
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyHealthStatus()(value VirtualDisk_HealthStatus, err error) { 
-    retValue, err := instance.GetProperty("HealthStatus")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyHealthStatus() (value VirtualDisk_HealthStatus, err error) {
+	retValue, err := instance.GetProperty("HealthStatus")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_HealthStatus(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_HealthStatus(valuetmp)
+
+	return
 }
 
 // SetInterleave sets the value of Interleave for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyInterleave(value uint64) (err error) { 
-    return instance.SetProperty("Interleave", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyInterleave(value uint64) (err error) {
+	return instance.SetProperty("Interleave", (value))
 }
 
 // GetInterleave gets the value of Interleave for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyInterleave()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("Interleave")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyInterleave() (value uint64, err error) {
+	retValue, err := instance.GetProperty("Interleave")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetIsDeduplicationEnabled sets the value of IsDeduplicationEnabled for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyIsDeduplicationEnabled(value bool) (err error) { 
-    return instance.SetProperty("IsDeduplicationEnabled", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyIsDeduplicationEnabled(value bool) (err error) {
+	return instance.SetProperty("IsDeduplicationEnabled", (value))
 }
 
 // GetIsDeduplicationEnabled gets the value of IsDeduplicationEnabled for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyIsDeduplicationEnabled()(value bool, err error) { 
-    retValue, err := instance.GetProperty("IsDeduplicationEnabled")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyIsDeduplicationEnabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("IsDeduplicationEnabled")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetIsEnclosureAware sets the value of IsEnclosureAware for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyIsEnclosureAware(value bool) (err error) { 
-    return instance.SetProperty("IsEnclosureAware", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyIsEnclosureAware(value bool) (err error) {
+	return instance.SetProperty("IsEnclosureAware", (value))
 }
 
 // GetIsEnclosureAware gets the value of IsEnclosureAware for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyIsEnclosureAware()(value bool, err error) { 
-    retValue, err := instance.GetProperty("IsEnclosureAware")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyIsEnclosureAware() (value bool, err error) {
+	retValue, err := instance.GetProperty("IsEnclosureAware")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetIsManualAttach sets the value of IsManualAttach for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyIsManualAttach(value bool) (err error) { 
-    return instance.SetProperty("IsManualAttach", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyIsManualAttach(value bool) (err error) {
+	return instance.SetProperty("IsManualAttach", (value))
 }
 
 // GetIsManualAttach gets the value of IsManualAttach for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyIsManualAttach()(value bool, err error) { 
-    retValue, err := instance.GetProperty("IsManualAttach")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyIsManualAttach() (value bool, err error) {
+	retValue, err := instance.GetProperty("IsManualAttach")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetIsSnapshot sets the value of IsSnapshot for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyIsSnapshot(value bool) (err error) { 
-    return instance.SetProperty("IsSnapshot", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyIsSnapshot(value bool) (err error) {
+	return instance.SetProperty("IsSnapshot", (value))
 }
 
 // GetIsSnapshot gets the value of IsSnapshot for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyIsSnapshot()(value bool, err error) { 
-    retValue, err := instance.GetProperty("IsSnapshot")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyIsSnapshot() (value bool, err error) {
+	retValue, err := instance.GetProperty("IsSnapshot")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetIsTiered sets the value of IsTiered for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyIsTiered(value bool) (err error) { 
-    return instance.SetProperty("IsTiered", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyIsTiered(value bool) (err error) {
+	return instance.SetProperty("IsTiered", (value))
 }
 
 // GetIsTiered gets the value of IsTiered for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyIsTiered()(value bool, err error) { 
-    retValue, err := instance.GetProperty("IsTiered")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyIsTiered() (value bool, err error) {
+	retValue, err := instance.GetProperty("IsTiered")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetLogicalSectorSize sets the value of LogicalSectorSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyLogicalSectorSize(value uint64) (err error) { 
-    return instance.SetProperty("LogicalSectorSize", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyLogicalSectorSize(value uint64) (err error) {
+	return instance.SetProperty("LogicalSectorSize", (value))
 }
 
 // GetLogicalSectorSize gets the value of LogicalSectorSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyLogicalSectorSize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("LogicalSectorSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyLogicalSectorSize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("LogicalSectorSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetMaxIoBandwidth sets the value of MaxIoBandwidth for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyMaxIoBandwidth(value uint64) (err error) { 
-    return instance.SetProperty("MaxIoBandwidth", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyMaxIoBandwidth(value uint64) (err error) {
+	return instance.SetProperty("MaxIoBandwidth", (value))
 }
 
 // GetMaxIoBandwidth gets the value of MaxIoBandwidth for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyMaxIoBandwidth()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("MaxIoBandwidth")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyMaxIoBandwidth() (value uint64, err error) {
+	retValue, err := instance.GetProperty("MaxIoBandwidth")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetMaxIops sets the value of MaxIops for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyMaxIops(value uint64) (err error) { 
-    return instance.SetProperty("MaxIops", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyMaxIops(value uint64) (err error) {
+	return instance.SetProperty("MaxIops", (value))
 }
 
 // GetMaxIops gets the value of MaxIops for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyMaxIops()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("MaxIops")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyMaxIops() (value uint64, err error) {
+	retValue, err := instance.GetProperty("MaxIops")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetMediaType sets the value of MediaType for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyMediaType(value uint16) (err error) { 
-    return instance.SetProperty("MediaType", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyMediaType(value uint16) (err error) {
+	return instance.SetProperty("MediaType", (value))
 }
 
 // GetMediaType gets the value of MediaType for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyMediaType()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("MediaType")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyMediaType() (value uint16, err error) {
+	retValue, err := instance.GetProperty("MediaType")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetMinimumLogicalDataCopies sets the value of MinimumLogicalDataCopies for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyMinimumLogicalDataCopies(value uint16) (err error) { 
-    return instance.SetProperty("MinimumLogicalDataCopies", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyMinimumLogicalDataCopies(value uint16) (err error) {
+	return instance.SetProperty("MinimumLogicalDataCopies", (value))
 }
 
 // GetMinimumLogicalDataCopies gets the value of MinimumLogicalDataCopies for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyMinimumLogicalDataCopies()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("MinimumLogicalDataCopies")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyMinimumLogicalDataCopies() (value uint16, err error) {
+	retValue, err := instance.GetProperty("MinimumLogicalDataCopies")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetName sets the value of Name for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyName(value string) (err error) { 
-    return instance.SetProperty("Name", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyName(value string) (err error) {
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyName()(value string, err error) { 
-    retValue, err := instance.GetProperty("Name")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyName() (value string, err error) {
+	retValue, err := instance.GetProperty("Name")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetNameFormat sets the value of NameFormat for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyNameFormat(value VirtualDisk_NameFormat) (err error) { 
-    return instance.SetProperty("NameFormat", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyNameFormat(value VirtualDisk_NameFormat) (err error) {
+	return instance.SetProperty("NameFormat", (value))
 }
 
 // GetNameFormat gets the value of NameFormat for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyNameFormat()(value VirtualDisk_NameFormat, err error) { 
-    retValue, err := instance.GetProperty("NameFormat")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyNameFormat() (value VirtualDisk_NameFormat, err error) {
+	retValue, err := instance.GetProperty("NameFormat")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_NameFormat(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_NameFormat(valuetmp)
+
+	return
 }
 
 // SetNumberOfAvailableCopies sets the value of NumberOfAvailableCopies for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyNumberOfAvailableCopies(value uint16) (err error) { 
-    return instance.SetProperty("NumberOfAvailableCopies", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyNumberOfAvailableCopies(value uint16) (err error) {
+	return instance.SetProperty("NumberOfAvailableCopies", (value))
 }
 
 // GetNumberOfAvailableCopies gets the value of NumberOfAvailableCopies for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyNumberOfAvailableCopies()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("NumberOfAvailableCopies")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyNumberOfAvailableCopies() (value uint16, err error) {
+	retValue, err := instance.GetProperty("NumberOfAvailableCopies")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetNumberOfColumns sets the value of NumberOfColumns for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyNumberOfColumns(value uint16) (err error) { 
-    return instance.SetProperty("NumberOfColumns", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyNumberOfColumns(value uint16) (err error) {
+	return instance.SetProperty("NumberOfColumns", (value))
 }
 
 // GetNumberOfColumns gets the value of NumberOfColumns for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyNumberOfColumns()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("NumberOfColumns")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyNumberOfColumns() (value uint16, err error) {
+	retValue, err := instance.GetProperty("NumberOfColumns")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetNumberOfDataCopies sets the value of NumberOfDataCopies for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyNumberOfDataCopies(value uint16) (err error) { 
-    return instance.SetProperty("NumberOfDataCopies", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyNumberOfDataCopies(value uint16) (err error) {
+	return instance.SetProperty("NumberOfDataCopies", (value))
 }
 
 // GetNumberOfDataCopies gets the value of NumberOfDataCopies for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyNumberOfDataCopies()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("NumberOfDataCopies")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyNumberOfDataCopies() (value uint16, err error) {
+	retValue, err := instance.GetProperty("NumberOfDataCopies")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetNumberOfGroups sets the value of NumberOfGroups for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyNumberOfGroups(value uint16) (err error) { 
-    return instance.SetProperty("NumberOfGroups", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyNumberOfGroups(value uint16) (err error) {
+	return instance.SetProperty("NumberOfGroups", (value))
 }
 
 // GetNumberOfGroups gets the value of NumberOfGroups for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyNumberOfGroups()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("NumberOfGroups")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyNumberOfGroups() (value uint16, err error) {
+	retValue, err := instance.GetProperty("NumberOfGroups")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyOperationalStatus(value []VirtualDisk_OperationalStatus) (err error) { 
-    return instance.SetProperty("OperationalStatus", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyOperationalStatus(value []VirtualDisk_OperationalStatus) (err error) {
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyOperationalStatus()(value []VirtualDisk_OperationalStatus, err error) { 
-    retValue, err := instance.GetProperty("OperationalStatus")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(int32); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, VirtualDisk_OperationalStatus(valuetmp))
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyOperationalStatus() (value []VirtualDisk_OperationalStatus, err error) {
+	retValue, err := instance.GetProperty("OperationalStatus")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VirtualDisk_OperationalStatus(valuetmp))
+	}
+
+	return
 }
 
 // SetOtherOperationalStatusDescription sets the value of OtherOperationalStatusDescription for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyOtherOperationalStatusDescription(value string) (err error) { 
-    return instance.SetProperty("OtherOperationalStatusDescription", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyOtherOperationalStatusDescription(value string) (err error) {
+	return instance.SetProperty("OtherOperationalStatusDescription", (value))
 }
 
 // GetOtherOperationalStatusDescription gets the value of OtherOperationalStatusDescription for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyOtherOperationalStatusDescription()(value string, err error) { 
-    retValue, err := instance.GetProperty("OtherOperationalStatusDescription")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyOtherOperationalStatusDescription() (value string, err error) {
+	retValue, err := instance.GetProperty("OtherOperationalStatusDescription")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetOtherUsageDescription sets the value of OtherUsageDescription for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyOtherUsageDescription(value string) (err error) { 
-    return instance.SetProperty("OtherUsageDescription", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyOtherUsageDescription(value string) (err error) {
+	return instance.SetProperty("OtherUsageDescription", (value))
 }
 
 // GetOtherUsageDescription gets the value of OtherUsageDescription for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyOtherUsageDescription()(value string, err error) { 
-    retValue, err := instance.GetProperty("OtherUsageDescription")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyOtherUsageDescription() (value string, err error) {
+	retValue, err := instance.GetProperty("OtherUsageDescription")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetParityLayout sets the value of ParityLayout for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyParityLayout(value VirtualDisk_ParityLayout) (err error) { 
-    return instance.SetProperty("ParityLayout", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyParityLayout(value VirtualDisk_ParityLayout) (err error) {
+	return instance.SetProperty("ParityLayout", (value))
 }
 
 // GetParityLayout gets the value of ParityLayout for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyParityLayout()(value VirtualDisk_ParityLayout, err error) { 
-    retValue, err := instance.GetProperty("ParityLayout")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyParityLayout() (value VirtualDisk_ParityLayout, err error) {
+	retValue, err := instance.GetProperty("ParityLayout")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_ParityLayout(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_ParityLayout(valuetmp)
+
+	return
 }
 
 // SetPhysicalDiskRedundancy sets the value of PhysicalDiskRedundancy for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyPhysicalDiskRedundancy(value uint16) (err error) { 
-    return instance.SetProperty("PhysicalDiskRedundancy", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyPhysicalDiskRedundancy(value uint16) (err error) {
+	return instance.SetProperty("PhysicalDiskRedundancy", (value))
 }
 
 // GetPhysicalDiskRedundancy gets the value of PhysicalDiskRedundancy for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyPhysicalDiskRedundancy()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("PhysicalDiskRedundancy")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyPhysicalDiskRedundancy() (value uint16, err error) {
+	retValue, err := instance.GetProperty("PhysicalDiskRedundancy")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetPhysicalSectorSize sets the value of PhysicalSectorSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyPhysicalSectorSize(value uint64) (err error) { 
-    return instance.SetProperty("PhysicalSectorSize", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyPhysicalSectorSize(value uint64) (err error) {
+	return instance.SetProperty("PhysicalSectorSize", (value))
 }
 
 // GetPhysicalSectorSize gets the value of PhysicalSectorSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyPhysicalSectorSize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("PhysicalSectorSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyPhysicalSectorSize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("PhysicalSectorSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetProvisioningType sets the value of ProvisioningType for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyProvisioningType(value VirtualDisk_ProvisioningType) (err error) { 
-    return instance.SetProperty("ProvisioningType", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyProvisioningType(value VirtualDisk_ProvisioningType) (err error) {
+	return instance.SetProperty("ProvisioningType", (value))
 }
 
 // GetProvisioningType gets the value of ProvisioningType for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyProvisioningType()(value VirtualDisk_ProvisioningType, err error) { 
-    retValue, err := instance.GetProperty("ProvisioningType")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyProvisioningType() (value VirtualDisk_ProvisioningType, err error) {
+	retValue, err := instance.GetProperty("ProvisioningType")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_ProvisioningType(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_ProvisioningType(valuetmp)
+
+	return
 }
 
 // SetReadCacheSize sets the value of ReadCacheSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyReadCacheSize(value uint64) (err error) { 
-    return instance.SetProperty("ReadCacheSize", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyReadCacheSize(value uint64) (err error) {
+	return instance.SetProperty("ReadCacheSize", (value))
 }
 
 // GetReadCacheSize gets the value of ReadCacheSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyReadCacheSize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("ReadCacheSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyReadCacheSize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ReadCacheSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetRequestNoSinglePointOfFailure sets the value of RequestNoSinglePointOfFailure for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyRequestNoSinglePointOfFailure(value bool) (err error) { 
-    return instance.SetProperty("RequestNoSinglePointOfFailure", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyRequestNoSinglePointOfFailure(value bool) (err error) {
+	return instance.SetProperty("RequestNoSinglePointOfFailure", (value))
 }
 
 // GetRequestNoSinglePointOfFailure gets the value of RequestNoSinglePointOfFailure for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyRequestNoSinglePointOfFailure()(value bool, err error) { 
-    retValue, err := instance.GetProperty("RequestNoSinglePointOfFailure")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyRequestNoSinglePointOfFailure() (value bool, err error) {
+	retValue, err := instance.GetProperty("RequestNoSinglePointOfFailure")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetResiliencySettingName sets the value of ResiliencySettingName for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyResiliencySettingName(value string) (err error) { 
-    return instance.SetProperty("ResiliencySettingName", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyResiliencySettingName(value string) (err error) {
+	return instance.SetProperty("ResiliencySettingName", (value))
 }
 
 // GetResiliencySettingName gets the value of ResiliencySettingName for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyResiliencySettingName()(value string, err error) { 
-    retValue, err := instance.GetProperty("ResiliencySettingName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyResiliencySettingName() (value string, err error) {
+	retValue, err := instance.GetProperty("ResiliencySettingName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetSize sets the value of Size for the instance
-func (instance *MSFT_VirtualDisk) SetPropertySize(value uint64) (err error) { 
-    return instance.SetProperty("Size", (value))
+func (instance *MSFT_VirtualDisk) SetPropertySize(value uint64) (err error) {
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
-func (instance *MSFT_VirtualDisk) GetPropertySize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("Size")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertySize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("Size")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetTrackValidData sets the value of TrackValidData for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyTrackValidData(value bool) (err error) { 
-    return instance.SetProperty("TrackValidData", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyTrackValidData(value bool) (err error) {
+	return instance.SetProperty("TrackValidData", (value))
 }
 
 // GetTrackValidData gets the value of TrackValidData for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyTrackValidData()(value bool, err error) { 
-    retValue, err := instance.GetProperty("TrackValidData")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyTrackValidData() (value bool, err error) {
+	retValue, err := instance.GetProperty("TrackValidData")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetUniqueIdFormat sets the value of UniqueIdFormat for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyUniqueIdFormat(value VirtualDisk_UniqueIdFormat) (err error) { 
-    return instance.SetProperty("UniqueIdFormat", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyUniqueIdFormat(value VirtualDisk_UniqueIdFormat) (err error) {
+	return instance.SetProperty("UniqueIdFormat", (value))
 }
 
 // GetUniqueIdFormat gets the value of UniqueIdFormat for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyUniqueIdFormat()(value VirtualDisk_UniqueIdFormat, err error) { 
-    retValue, err := instance.GetProperty("UniqueIdFormat")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyUniqueIdFormat() (value VirtualDisk_UniqueIdFormat, err error) {
+	retValue, err := instance.GetProperty("UniqueIdFormat")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_UniqueIdFormat(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_UniqueIdFormat(valuetmp)
+
+	return
 }
 
 // SetUniqueIdFormatDescription sets the value of UniqueIdFormatDescription for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyUniqueIdFormatDescription(value string) (err error) { 
-    return instance.SetProperty("UniqueIdFormatDescription", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyUniqueIdFormatDescription(value string) (err error) {
+	return instance.SetProperty("UniqueIdFormatDescription", (value))
 }
 
 // GetUniqueIdFormatDescription gets the value of UniqueIdFormatDescription for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyUniqueIdFormatDescription()(value string, err error) { 
-    retValue, err := instance.GetProperty("UniqueIdFormatDescription")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyUniqueIdFormatDescription() (value string, err error) {
+	retValue, err := instance.GetProperty("UniqueIdFormatDescription")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetUsage sets the value of Usage for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyUsage(value VirtualDisk_Usage) (err error) { 
-    return instance.SetProperty("Usage", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyUsage(value VirtualDisk_Usage) (err error) {
+	return instance.SetProperty("Usage", (value))
 }
 
 // GetUsage gets the value of Usage for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyUsage()(value VirtualDisk_Usage, err error) { 
-    retValue, err := instance.GetProperty("Usage")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyUsage() (value VirtualDisk_Usage, err error) {
+	retValue, err := instance.GetProperty("Usage")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualDisk_Usage(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualDisk_Usage(valuetmp)
+
+	return
 }
 
 // SetWriteCacheReserveSize sets the value of WriteCacheReserveSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyWriteCacheReserveSize(value uint64) (err error) { 
-    return instance.SetProperty("WriteCacheReserveSize", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyWriteCacheReserveSize(value uint64) (err error) {
+	return instance.SetProperty("WriteCacheReserveSize", (value))
 }
 
 // GetWriteCacheReserveSize gets the value of WriteCacheReserveSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyWriteCacheReserveSize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteCacheReserveSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyWriteCacheReserveSize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteCacheReserveSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteCacheSize sets the value of WriteCacheSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyWriteCacheSize(value uint64) (err error) { 
-    return instance.SetProperty("WriteCacheSize", (value))
+func (instance *MSFT_VirtualDisk) SetPropertyWriteCacheSize(value uint64) (err error) {
+	return instance.SetProperty("WriteCacheSize", (value))
 }
 
 // GetWriteCacheSize gets the value of WriteCacheSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyWriteCacheSize()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteCacheSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_VirtualDisk) GetPropertyWriteCacheSize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteCacheSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
-// 
+//
 
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="PhysicalExtents" type="MSFT_PhysicalExtent []"></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) GetPhysicalExtent( /* OUT */ PhysicalExtents []MSFT_PhysicalExtent,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("GetPhysicalExtent" )
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("GetPhysicalExtent")
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method deletes the virtual disk. After this method is called, the space used by the virtual disk will be reclaimed and the user will be unable to reverse the delete operation.
 
@@ -1364,14 +1372,16 @@ func (instance *MSFT_VirtualDisk) GetPhysicalExtent( /* OUT */ PhysicalExtents [
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) DeleteObject( /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("DeleteObject" )
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("DeleteObject")
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method shows a virtual disk to an initiator. This operation is also known as 'exposing' or 'unmasking' a virtual disk.
 
@@ -1383,17 +1393,19 @@ func (instance *MSFT_VirtualDisk) DeleteObject( /* OUT */ CreatedStorageJob MSFT
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) Show( /* IN */ TargetPortAddresses []string,
- /* IN */ InitiatorAddress string,
- /* IN */ HostType VirtualDisk_HostType,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("Show" , TargetPortAddresses, InitiatorAddress, HostType)
-	if err != nil { return }
+	/* IN */ InitiatorAddress string,
+	/* IN */ HostType VirtualDisk_HostType,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Show", TargetPortAddresses, InitiatorAddress, HostType)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method hides a virtual disk from an initiator. This operation is also known as 'unexposing' or 'masking' a virtual disk.
 
@@ -1404,16 +1416,18 @@ func (instance *MSFT_VirtualDisk) Show( /* IN */ TargetPortAddresses []string,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) Hide( /* IN */ TargetPortAddresses []string,
- /* IN */ InitiatorAddress string,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("Hide" , TargetPortAddresses, InitiatorAddress)
-	if err != nil { return }
+	/* IN */ InitiatorAddress string,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Hide", TargetPortAddresses, InitiatorAddress)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method creates a point in time snapshot of the virtual disk.
 
@@ -1425,17 +1439,19 @@ func (instance *MSFT_VirtualDisk) Hide( /* IN */ TargetPortAddresses []string,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) CreateSnapshot( /* IN */ FriendlyName string,
- /* IN */ TargetStoragePoolName string,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ CreatedVirtualDisk MSFT_VirtualDisk,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("CreateSnapshot" , FriendlyName, TargetStoragePoolName)
-	if err != nil { return }
+	/* IN */ TargetStoragePoolName string,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ CreatedVirtualDisk MSFT_VirtualDisk,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("CreateSnapshot", FriendlyName, TargetStoragePoolName)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method creates a clone of the virtual disk, resulting in another virtual disk with identical data to the source.
 
@@ -1447,17 +1463,19 @@ func (instance *MSFT_VirtualDisk) CreateSnapshot( /* IN */ FriendlyName string,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) CreateClone( /* IN */ FriendlyName string,
- /* IN */ TargetStoragePoolName string,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ CreatedVirtualDisk MSFT_VirtualDisk,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("CreateClone" , FriendlyName, TargetStoragePoolName)
-	if err != nil { return }
+	/* IN */ TargetStoragePoolName string,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ CreatedVirtualDisk MSFT_VirtualDisk,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("CreateClone", FriendlyName, TargetStoragePoolName)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method allows a virtual disk to be resized. The size specified must be in the range of valid values given by the GetSupportedSize method on the storage pool object.
 
@@ -1468,15 +1486,17 @@ func (instance *MSFT_VirtualDisk) CreateClone( /* IN */ FriendlyName string,
 // <param name="ReturnValue" type="uint32 "></param>
 // <param name="Size" type="uint64 ">As input, this parameter contains the requested size for the virtual disk to become. As output, this parameter contains the size that was actually achieved after the resize operation.</param>
 func (instance *MSFT_VirtualDisk) Resize( /* IN/OUT */ Size uint64,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("Resize" )
-	if err != nil { return }
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Resize")
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method initiates a repair of the virtual disk - restoring data and redundancy to different (or new) physical disks within the storage pool.
 
@@ -1484,14 +1504,16 @@ func (instance *MSFT_VirtualDisk) Resize( /* IN/OUT */ Size uint64,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) Repair( /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("Repair" )
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Repair")
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method returns the security descriptor that controls access to this specific object instance.
 
@@ -1499,14 +1521,16 @@ func (instance *MSFT_VirtualDisk) Repair( /* OUT */ CreatedStorageJob MSFT_Stora
 // <param name="ReturnValue" type="uint32 "></param>
 // <param name="SecurityDescriptor" type="string ">A Security Descriptor Definition Language (SDDL) formed string describing the access control list of the object.</param>
 func (instance *MSFT_VirtualDisk) GetSecurityDescriptor( /* OUT */ SecurityDescriptor string,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("GetSecurityDescriptor" )
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("GetSecurityDescriptor")
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method allows a user with sufficient privileges to set the security descriptor that control access to this specific object instance. If the call is not made in the context of a user specified in the security descriptor's access control list, this method will fail with 40001 - 'Access Denied'. If an empty security descriptor is passed to this function, the behavior is left to the specific implementation so long as there is some user context (typically domain administrators) that can access and administer the object.
 
@@ -1515,14 +1539,16 @@ func (instance *MSFT_VirtualDisk) GetSecurityDescriptor( /* OUT */ SecurityDescr
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) SetSecurityDescriptor( /* IN */ SecurityDescriptor string,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetSecurityDescriptor" , SecurityDescriptor)
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetSecurityDescriptor", SecurityDescriptor)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method allows the virtual disk to be renamed.
 
@@ -1531,14 +1557,16 @@ func (instance *MSFT_VirtualDisk) SetSecurityDescriptor( /* IN */ SecurityDescri
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) SetFriendlyName( /* IN */ FriendlyName string,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetFriendlyName" , FriendlyName)
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetFriendlyName", FriendlyName)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method allows the virtual disk's intended usage to be updated. Not all virtual disks may allow this and will return 1 - 'Not Supported' if this operation cannot be performed.
 
@@ -1548,15 +1576,17 @@ func (instance *MSFT_VirtualDisk) SetFriendlyName( /* IN */ FriendlyName string,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) SetUsage( /* IN */ Usage VirtualDisk_Usage,
- /* IN */ OtherUsageDescription string,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetUsage" , Usage, OtherUsageDescription)
-	if err != nil { return }
+	/* IN */ OtherUsageDescription string,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetUsage", Usage, OtherUsageDescription)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method allows the user to update or set various attributes on the virtual disk. Note that not all parameters must be specified, and only those given will be updated.
 
@@ -1567,18 +1597,20 @@ func (instance *MSFT_VirtualDisk) SetUsage( /* IN */ Usage VirtualDisk_Usage,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) SetAttributes( /* IN */ IsManualAttach bool,
- /* IN */ StorageNodeName string,
- /* IN */ Access VirtualDisk_Access,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetAttributes" , IsManualAttach, StorageNodeName, Access)
-	if err != nil { return }
+	/* IN */ StorageNodeName string,
+	/* IN */ Access VirtualDisk_Access,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetAttributes", IsManualAttach, StorageNodeName, Access)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="AllocationUnitSize" type="uint64 "></param>
 // <param name="ColumnIsolation" type="uint16 "></param>
@@ -1597,26 +1629,28 @@ func (instance *MSFT_VirtualDisk) SetAttributes( /* IN */ IsManualAttach bool,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) SetProperties( /* IN */ ProvisioningType uint16,
- /* IN */ AllocationUnitSize uint64,
- /* IN */ MediaType uint16,
- /* IN */ FaultDomainAwareness uint16,
- /* IN */ ColumnIsolation uint16,
- /* IN */ ResiliencySettingName string,
- /* IN */ PhysicalDiskRedundancy uint16,
- /* IN */ NumberOfDataCopies uint16,
- /* IN */ NumberOfGroups uint16,
- /* IN */ NumberOfColumns uint16,
- /* IN */ Interleave uint64,
- /* IN */ MaxIops uint64,
- /* IN */ MaxIoBandwidth uint64,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetProperties" , ProvisioningType, AllocationUnitSize, MediaType, FaultDomainAwareness, ColumnIsolation, ResiliencySettingName, PhysicalDiskRedundancy, NumberOfDataCopies, NumberOfGroups, NumberOfColumns, Interleave, MaxIops, MaxIoBandwidth)
-	if err != nil { return }
+	/* IN */ AllocationUnitSize uint64,
+	/* IN */ MediaType uint16,
+	/* IN */ FaultDomainAwareness uint16,
+	/* IN */ ColumnIsolation uint16,
+	/* IN */ ResiliencySettingName string,
+	/* IN */ PhysicalDiskRedundancy uint16,
+	/* IN */ NumberOfDataCopies uint16,
+	/* IN */ NumberOfGroups uint16,
+	/* IN */ NumberOfColumns uint16,
+	/* IN */ Interleave uint64,
+	/* IN */ MaxIops uint64,
+	/* IN */ MaxIoBandwidth uint64,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetProperties", ProvisioningType, AllocationUnitSize, MediaType, FaultDomainAwareness, ColumnIsolation, ResiliencySettingName, PhysicalDiskRedundancy, NumberOfDataCopies, NumberOfGroups, NumberOfColumns, Interleave, MaxIops, MaxIoBandwidth)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // Attaches a Storage Spaces based virtual disk to the system. This operation is similar to Show and Hide, however there is no need for target and initiator configuration since everything is done locally. Depending on the system's NewDiskPolicy (formerly SAN policy), a Storage Space may need to be Attached before it can be used.
 
@@ -1625,14 +1659,16 @@ func (instance *MSFT_VirtualDisk) SetProperties( /* IN */ ProvisioningType uint1
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) Attach( /* IN */ StorageNodeName string,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("Attach" , StorageNodeName)
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Attach", StorageNodeName)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // Detaches a Storage Spaces based virtual disk from the system. This operation is similar to Hide, however there is no need for target and initiator configuration since everything is done locally. Detaching a Storage Space will result in it's corresponding disk object to be suprise removed from the system. Note that detaching can happen in response to certain failure and warning conditions (such as failing redundancy, or thin provisioning capacity limits being reached).
 
@@ -1641,14 +1677,16 @@ func (instance *MSFT_VirtualDisk) Attach( /* IN */ StorageNodeName string,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) Detach( /* IN */ StorageNodeName string,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("Detach" , StorageNodeName)
-	if err != nil { return }
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Detach", StorageNodeName)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method will add one or more physical disks for manual allocation.
 
@@ -1659,18 +1697,20 @@ func (instance *MSFT_VirtualDisk) Detach( /* IN */ StorageNodeName string,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) AddPhysicalDisk( /* IN */ PhysicalDisks []MSFT_PhysicalDisk,
- /* IN */ Usage VirtualDisk_Usage,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("AddPhysicalDisk" , PhysicalDisks, Usage)
-	if err != nil { return }
+	/* IN */ Usage VirtualDisk_Usage,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("AddPhysicalDisk", PhysicalDisks, Usage)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="PhysicalDisks" type="MSFT_PhysicalDisk []"></param>
 // <param name="Usage" type="uint16 "></param>
@@ -1679,16 +1719,18 @@ func (instance *MSFT_VirtualDisk) AddPhysicalDisk( /* IN */ PhysicalDisks []MSFT
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) AddPhysicalDisk2( /* IN */ PhysicalDisks []MSFT_PhysicalDisk,
- /* IN */ Usage uint16,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("AddPhysicalDisk2" , PhysicalDisks, Usage)
-	if err != nil { return }
+	/* IN */ Usage uint16,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("AddPhysicalDisk2", PhysicalDisks, Usage)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // This method will remove one or more physical disks from manual allocation.
 
@@ -1698,17 +1740,19 @@ func (instance *MSFT_VirtualDisk) AddPhysicalDisk2( /* IN */ PhysicalDisks []MSF
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) RemovePhysicalDisk( /* IN */ PhysicalDisks []MSFT_PhysicalDisk,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("RemovePhysicalDisk" , PhysicalDisks)
-	if err != nil { return }
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("RemovePhysicalDisk", PhysicalDisks)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="PhysicalDisks" type="MSFT_PhysicalDisk []"></param>
 
@@ -1716,17 +1760,19 @@ func (instance *MSFT_VirtualDisk) RemovePhysicalDisk( /* IN */ PhysicalDisks []M
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) RemovePhysicalDisk2( /* IN */ PhysicalDisks []MSFT_PhysicalDisk,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("RemovePhysicalDisk2" , PhysicalDisks)
-	if err != nil { return }
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("RemovePhysicalDisk2", PhysicalDisks)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="StorageFaultDomains" type="MSFT_StorageFaultDomain []"></param>
 
@@ -1734,17 +1780,19 @@ func (instance *MSFT_VirtualDisk) RemovePhysicalDisk2( /* IN */ PhysicalDisks []
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) AddStorageFaultDomain( /* IN */ StorageFaultDomains []MSFT_StorageFaultDomain,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("AddStorageFaultDomain" , StorageFaultDomains)
-	if err != nil { return }
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("AddStorageFaultDomain", StorageFaultDomains)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="StorageFaultDomains" type="MSFT_StorageFaultDomain []"></param>
 
@@ -1752,17 +1800,19 @@ func (instance *MSFT_VirtualDisk) AddStorageFaultDomain( /* IN */ StorageFaultDo
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) RemoveStorageFaultDomain( /* IN */ StorageFaultDomains []MSFT_StorageFaultDomain,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("RemoveStorageFaultDomain" , StorageFaultDomains)
-	if err != nil { return }
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("RemoveStorageFaultDomain", StorageFaultDomains)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="FriendlyName" type="string "></param>
 // <param name="RecoveryPointObjective" type="uint16 "></param>
@@ -1777,24 +1827,26 @@ func (instance *MSFT_VirtualDisk) RemoveStorageFaultDomain( /* IN */ StorageFaul
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) CreateReplica( /* IN */ FriendlyName string,
- /* IN */ TargetStorageSubsystem MSFT_ReplicaPeer,
- /* IN */ TargetVirtualDiskObjectId string,
- /* IN */ TargetStoragePoolObjectId string,
- /* IN */ RecoveryPointObjective uint16,
- /* IN */ ReplicationSettings MSFT_ReplicationSettings,
- /* IN */ SyncType uint16,
- /* OUT */ CreatedReplicaPeer MSFT_ReplicaPeer,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("CreateReplica" , FriendlyName, TargetStorageSubsystem, TargetVirtualDiskObjectId, TargetStoragePoolObjectId, RecoveryPointObjective, ReplicationSettings, SyncType)
-	if err != nil { return }
+	/* IN */ TargetStorageSubsystem MSFT_ReplicaPeer,
+	/* IN */ TargetVirtualDiskObjectId string,
+	/* IN */ TargetStoragePoolObjectId string,
+	/* IN */ RecoveryPointObjective uint16,
+	/* IN */ ReplicationSettings MSFT_ReplicationSettings,
+	/* IN */ SyncType uint16,
+	/* OUT */ CreatedReplicaPeer MSFT_ReplicaPeer,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("CreateReplica", FriendlyName, TargetStorageSubsystem, TargetVirtualDiskObjectId, TargetStoragePoolObjectId, RecoveryPointObjective, ReplicationSettings, SyncType)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="Operation" type="uint16 "></param>
 // <param name="VirtualDiskReplicaPeer" type="MSFT_ReplicaPeer "></param>
@@ -1803,14 +1855,15 @@ func (instance *MSFT_VirtualDisk) CreateReplica( /* IN */ FriendlyName string,
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) SetReplicationRelationship( /* IN */ Operation uint16,
- /* IN */ VirtualDiskReplicaPeer MSFT_ReplicaPeer,
- /* OUT */ CreatedStorageJob MSFT_StorageJob,
- /* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {retVal, err := instance.InvokeMethod("SetReplicationRelationship" , Operation, VirtualDiskReplicaPeer)
-	if err != nil { return }
+	/* IN */ VirtualDiskReplicaPeer MSFT_ReplicaPeer,
+	/* OUT */ CreatedStorageJob MSFT_StorageJob,
+	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("SetReplicationRelationship", Operation, VirtualDiskReplicaPeer)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
-
-

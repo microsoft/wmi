@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source LLTDSVC_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source LLTDSVC_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// LLTDSVC_Flags 
+// LLTDSVC_Flags
 type LLTDSVC_Flags int
-const(
+
+const (
 	// TRACE_CLASS_CALL enum
 	LLTDSVC_Flags_TRACE_CLASS_CALL LLTDSVC_Flags = 1
 	// TRACE_CLASS_INIT enum
@@ -30,4 +32,3 @@ const(
 	// TRACE_CLASS_MAPPING enum
 	LLTDSVC_Flags_TRACE_CLASS_MAPPING LLTDSVC_Flags = 9
 )
-

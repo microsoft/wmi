@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source NCSICtlGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source NCSICtlGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// NCSICtlGuid_Flags 
+// NCSICtlGuid_Flags
 type NCSICtlGuid_Flags int
-const(
+
+const (
 	// TM_NLAPROVIDER enum
 	NCSICtlGuid_Flags_TM_NLAPROVIDER NCSICtlGuid_Flags = 1
 	// TM_INTERFACEHOP enum
@@ -24,4 +26,3 @@ const(
 	// TM_LOCK enum
 	NCSICtlGuid_Flags_TM_LOCK NCSICtlGuid_Flags = 6
 )
-

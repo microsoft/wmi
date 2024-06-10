@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TLBError_ErrorSeverity
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TLBError_ErrorSeverity
+//
+// ////////////////////////////////////////////
 package wmi
 
-// TLBError_ErrorSeverity 
+// TLBError_ErrorSeverity
 type TLBError_ErrorSeverity int
-const(
+
+const (
 	// Recoverable enum
 	TLBError_ErrorSeverity_Recoverable TLBError_ErrorSeverity = 0
 	// Fatal enum
@@ -18,4 +20,3 @@ const(
 	// Correctable enum
 	TLBError_ErrorSeverity_Correctable TLBError_ErrorSeverity = 2
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source RegistryKeyBlocked_Mode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source RegistryKeyBlocked_Mode
+//
+// ////////////////////////////////////////////
 package computer
 
-// RegistryKeyBlocked_Mode 
+// RegistryKeyBlocked_Mode
 type RegistryKeyBlocked_Mode int
-const(
+
+const (
 	// Inherit enum
 	RegistryKeyBlocked_Mode_Inherit RegistryKeyBlocked_Mode = 0
 	// Ignore enum
@@ -18,4 +20,3 @@ const(
 	// Overwrite enum
 	RegistryKeyBlocked_Mode_Overwrite RegistryKeyBlocked_Mode = 2
 )
-

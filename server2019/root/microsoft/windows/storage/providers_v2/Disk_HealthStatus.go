@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Disk_HealthStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Disk_HealthStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Disk_HealthStatus 
+// Disk_HealthStatus
 type Disk_HealthStatus int
-const(
+
+const (
 	// Healthy enum
 	Disk_HealthStatus_Healthy Disk_HealthStatus = 0
 	// Warning enum
@@ -18,4 +20,3 @@ const(
 	// Unhealthy enum
 	Disk_HealthStatus_Unhealthy Disk_HealthStatus = 2
 )
-

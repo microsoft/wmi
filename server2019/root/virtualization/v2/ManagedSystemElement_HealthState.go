@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ManagedSystemElement_HealthState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ManagedSystemElement_HealthState
+//
+// ////////////////////////////////////////////
 package v2
 
-// ManagedSystemElement_HealthState 
+// ManagedSystemElement_HealthState
 type ManagedSystemElement_HealthState int
-const(
+
+const (
 	// Unknown enum
 	ManagedSystemElement_HealthState_Unknown ManagedSystemElement_HealthState = 0
 	// OK enum
@@ -28,4 +30,3 @@ const(
 	// DMTF_Reserved enum
 	ManagedSystemElement_HealthState_DMTF_Reserved ManagedSystemElement_HealthState = 31
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EthernetSwitchFeatureCapabilities_Applicability
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EthernetSwitchFeatureCapabilities_Applicability
+//
+// ////////////////////////////////////////////
 package v2
 
-// EthernetSwitchFeatureCapabilities_Applicability 
+// EthernetSwitchFeatureCapabilities_Applicability
 type EthernetSwitchFeatureCapabilities_Applicability int
-const(
+
+const (
 	// Unknown enum
 	EthernetSwitchFeatureCapabilities_Applicability_Unknown EthernetSwitchFeatureCapabilities_Applicability = 0
 	// Port enum
@@ -18,4 +20,3 @@ const(
 	// Switch enum
 	EthernetSwitchFeatureCapabilities_Applicability_Switch EthernetSwitchFeatureCapabilities_Applicability = 2
 )
-

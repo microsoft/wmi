@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MemoryHierarchyError_RequestType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MemoryHierarchyError_RequestType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// MemoryHierarchyError_RequestType 
+// MemoryHierarchyError_RequestType
 type MemoryHierarchyError_RequestType int
-const(
+
+const (
 	// Generic_Error enum
 	MemoryHierarchyError_RequestType_Generic_Error MemoryHierarchyError_RequestType = 0
 	// Generic_Read enum
@@ -30,4 +32,3 @@ const(
 	// Snoop enum
 	MemoryHierarchyError_RequestType_Snoop MemoryHierarchyError_RequestType = 8
 )
-

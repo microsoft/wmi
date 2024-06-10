@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ManagedSystemElement_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ManagedSystemElement_OperationalStatus
+//
+// ////////////////////////////////////////////
 package v2
 
-// ManagedSystemElement_OperationalStatus 
+// ManagedSystemElement_OperationalStatus
 type ManagedSystemElement_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	ManagedSystemElement_OperationalStatus_Unknown ManagedSystemElement_OperationalStatus = 0
 	// Other enum
@@ -54,4 +56,3 @@ const(
 	// Vendor_Reserved enum
 	ManagedSystemElement_OperationalStatus_Vendor_Reserved ManagedSystemElement_OperationalStatus = 20
 )
-

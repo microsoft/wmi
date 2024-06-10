@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageNodeToStorageEnclosure_IOControllerOperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageNodeToStorageEnclosure_IOControllerOperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToStorageEnclosure_IOControllerOperationalStatus 
+// StorageNodeToStorageEnclosure_IOControllerOperationalStatus
 type StorageNodeToStorageEnclosure_IOControllerOperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	StorageNodeToStorageEnclosure_IOControllerOperationalStatus_Unknown StorageNodeToStorageEnclosure_IOControllerOperationalStatus = 0
 	// OK enum
@@ -30,4 +32,3 @@ const(
 	// Not_Reported enum
 	StorageNodeToStorageEnclosure_IOControllerOperationalStatus_Not_Reported StorageNodeToStorageEnclosure_IOControllerOperationalStatus = 11
 )
-

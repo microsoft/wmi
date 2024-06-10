@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Mountmgr_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Mountmgr_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Mountmgr_Level 
+// Mountmgr_Level
 type Mountmgr_Level int
-const(
+
+const (
 	// Fatal enum
 	Mountmgr_Level_Fatal Mountmgr_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	Mountmgr_Level_Verbose Mountmgr_Level = 5
 )
-

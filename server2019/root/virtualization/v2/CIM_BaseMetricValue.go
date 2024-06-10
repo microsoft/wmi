@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.virtualization.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.virtualization.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_BaseMetricValue struct
-type CIM_BaseMetricValue struct { 
+type CIM_BaseMetricValue struct {
 	*CIM_ManagedElement
 
 	// If present, specifies one BreakdownDimension from the BreakdownDimensions array defined in the associated CIM_ BaseMetricDefinition. This is the dimension along which this set of metric values is broken down. For a description of the concept, see the class CIM_BaseMetricDefinition.
@@ -43,244 +45,247 @@ type CIM_BaseMetricValue struct {
 	Volatile bool
 }
 
-	func NewCIM_BaseMetricValueEx1(instance *cim.WmiInstance) (newInstance *CIM_BaseMetricValue, err error) {tmp, err := NewCIM_ManagedElementEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_BaseMetricValue {
-	CIM_ManagedElement: tmp,
+func NewCIM_BaseMetricValueEx1(instance *cim.WmiInstance) (newInstance *CIM_BaseMetricValue, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BaseMetricValue{
+		CIM_ManagedElement: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_BaseMetricValueEx6(hostName string,
+func NewCIM_BaseMetricValueEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_BaseMetricValue, err error) {tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_BaseMetricValue {
-	CIM_ManagedElement: tmp,
+	query *query.WmiQuery) (newInstance *CIM_BaseMetricValue, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BaseMetricValue{
+		CIM_ManagedElement: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetBreakdownDimension sets the value of BreakdownDimension for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyBreakdownDimension(value string) (err error) { 
-    return instance.SetProperty("BreakdownDimension", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyBreakdownDimension(value string) (err error) {
+	return instance.SetProperty("BreakdownDimension", (value))
 }
 
 // GetBreakdownDimension gets the value of BreakdownDimension for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyBreakdownDimension()(value string, err error) { 
-    retValue, err := instance.GetProperty("BreakdownDimension")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyBreakdownDimension() (value string, err error) {
+	retValue, err := instance.GetProperty("BreakdownDimension")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetBreakdownValue sets the value of BreakdownValue for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyBreakdownValue(value string) (err error) { 
-    return instance.SetProperty("BreakdownValue", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyBreakdownValue(value string) (err error) {
+	return instance.SetProperty("BreakdownValue", (value))
 }
 
 // GetBreakdownValue gets the value of BreakdownValue for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyBreakdownValue()(value string, err error) { 
-    retValue, err := instance.GetProperty("BreakdownValue")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyBreakdownValue() (value string, err error) {
+	retValue, err := instance.GetProperty("BreakdownValue")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetDuration sets the value of Duration for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyDuration(value string) (err error) { 
-    return instance.SetProperty("Duration", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyDuration(value string) (err error) {
+	return instance.SetProperty("Duration", (value))
 }
 
 // GetDuration gets the value of Duration for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyDuration()(value string, err error) { 
-    retValue, err := instance.GetProperty("Duration")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyDuration() (value string, err error) {
+	retValue, err := instance.GetProperty("Duration")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetMeasuredElementName sets the value of MeasuredElementName for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyMeasuredElementName(value string) (err error) { 
-    return instance.SetProperty("MeasuredElementName", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyMeasuredElementName(value string) (err error) {
+	return instance.SetProperty("MeasuredElementName", (value))
 }
 
 // GetMeasuredElementName gets the value of MeasuredElementName for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyMeasuredElementName()(value string, err error) { 
-    retValue, err := instance.GetProperty("MeasuredElementName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyMeasuredElementName() (value string, err error) {
+	retValue, err := instance.GetProperty("MeasuredElementName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetMetricDefinitionId sets the value of MetricDefinitionId for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyMetricDefinitionId(value string) (err error) { 
-    return instance.SetProperty("MetricDefinitionId", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyMetricDefinitionId(value string) (err error) {
+	return instance.SetProperty("MetricDefinitionId", (value))
 }
 
 // GetMetricDefinitionId gets the value of MetricDefinitionId for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyMetricDefinitionId()(value string, err error) { 
-    retValue, err := instance.GetProperty("MetricDefinitionId")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyMetricDefinitionId() (value string, err error) {
+	retValue, err := instance.GetProperty("MetricDefinitionId")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetMetricValue sets the value of MetricValue for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyMetricValue(value string) (err error) { 
-    return instance.SetProperty("MetricValue", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyMetricValue(value string) (err error) {
+	return instance.SetProperty("MetricValue", (value))
 }
 
 // GetMetricValue gets the value of MetricValue for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyMetricValue()(value string, err error) { 
-    retValue, err := instance.GetProperty("MetricValue")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyMetricValue() (value string, err error) {
+	retValue, err := instance.GetProperty("MetricValue")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetTimeStamp sets the value of TimeStamp for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyTimeStamp(value string) (err error) { 
-    return instance.SetProperty("TimeStamp", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyTimeStamp(value string) (err error) {
+	return instance.SetProperty("TimeStamp", (value))
 }
 
 // GetTimeStamp gets the value of TimeStamp for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyTimeStamp()(value string, err error) { 
-    retValue, err := instance.GetProperty("TimeStamp")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyTimeStamp() (value string, err error) {
+	retValue, err := instance.GetProperty("TimeStamp")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // Setvolatile sets the value of volatile for the instance
-func (instance *CIM_BaseMetricValue) SetPropertyvolatile(value bool) (err error) { 
-    return instance.SetProperty("volatile", (value))
+func (instance *CIM_BaseMetricValue) SetPropertyvolatile(value bool) (err error) {
+	return instance.SetProperty("volatile", (value))
 }
 
 // Getvolatile gets the value of volatile for the instance
-func (instance *CIM_BaseMetricValue) GetPropertyvolatile()(value bool, err error) { 
-    retValue, err := instance.GetProperty("volatile")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BaseMetricValue) GetPropertyvolatile() (value bool, err error) {
+	retValue, err := instance.GetProperty("volatile")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
-

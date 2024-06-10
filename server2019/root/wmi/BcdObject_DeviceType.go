@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BcdObject_DeviceType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BcdObject_DeviceType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// BcdObject_DeviceType 
+// BcdObject_DeviceType
 type BcdObject_DeviceType int
-const(
+
+const (
 	// BootDevice enum
 	BcdObject_DeviceType_BootDevice BcdObject_DeviceType = 1
 	// PartitionDevice enum
@@ -22,4 +24,3 @@ const(
 	// UnknownDevice enum
 	BcdObject_DeviceType_UnknownDevice BcdObject_DeviceType = 5
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ProcessorSettingData_L3ProcessorDistributionPolicy
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ProcessorSettingData_L3ProcessorDistributionPolicy
+//
+// ////////////////////////////////////////////
 package v2
 
-// ProcessorSettingData_L3ProcessorDistributionPolicy 
+// ProcessorSettingData_L3ProcessorDistributionPolicy
 type ProcessorSettingData_L3ProcessorDistributionPolicy int
-const(
+
+const (
 	// SmallToLarge__Default_ enum
 	ProcessorSettingData_L3ProcessorDistributionPolicy_SmallToLarge__Default_ ProcessorSettingData_L3ProcessorDistributionPolicy = 0
 	// LargeToSmall enum
@@ -20,4 +22,3 @@ const(
 	// EvenLargeToSmall enum
 	ProcessorSettingData_L3ProcessorDistributionPolicy_EvenLargeToSmall ProcessorSettingData_L3ProcessorDistributionPolicy = 3
 )
-

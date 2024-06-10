@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DisplayController_AcceleratorCapabilities
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DisplayController_AcceleratorCapabilities
+//
+// ////////////////////////////////////////////
 package v2
 
-// DisplayController_AcceleratorCapabilities 
+// DisplayController_AcceleratorCapabilities
 type DisplayController_AcceleratorCapabilities int
-const(
+
+const (
 	// Unknown enum
 	DisplayController_AcceleratorCapabilities_Unknown DisplayController_AcceleratorCapabilities = 0
 	// Other enum
@@ -30,4 +32,3 @@ const(
 	// Large_Memory_Address_Support enum
 	DisplayController_AcceleratorCapabilities_Large_Memory_Address_Support DisplayController_AcceleratorCapabilities = 8
 )
-

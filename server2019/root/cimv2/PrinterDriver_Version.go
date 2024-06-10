@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PrinterDriver_Version
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PrinterDriver_Version
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// PrinterDriver_Version 
+// PrinterDriver_Version
 type PrinterDriver_Version int
-const(
+
+const (
 	// Win9x enum
 	PrinterDriver_Version_Win9x PrinterDriver_Version = 0
 	// Win351 enum
@@ -20,4 +22,3 @@ const(
 	// Win2k enum
 	PrinterDriver_Version_Win2k PrinterDriver_Version = 3
 )
-

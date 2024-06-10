@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SchannelDebugTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SchannelDebugTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// SchannelDebugTrace_Flags 
+// SchannelDebugTrace_Flags
 type SchannelDebugTrace_Flags int
-const(
+
+const (
 	// Error enum
 	SchannelDebugTrace_Flags_Error SchannelDebugTrace_Flags = 1
 	// Warning enum
@@ -32,4 +34,3 @@ const(
 	// Buffers enum
 	SchannelDebugTrace_Flags_Buffers SchannelDebugTrace_Flags = 10
 )
-

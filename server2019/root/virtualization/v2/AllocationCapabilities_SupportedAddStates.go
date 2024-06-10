@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source AllocationCapabilities_SupportedAddStates
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source AllocationCapabilities_SupportedAddStates
+//
+// ////////////////////////////////////////////
 package v2
 
-// AllocationCapabilities_SupportedAddStates 
+// AllocationCapabilities_SupportedAddStates
 type AllocationCapabilities_SupportedAddStates int
-const(
+
+const (
 	// Unknown enum
 	AllocationCapabilities_SupportedAddStates_Unknown AllocationCapabilities_SupportedAddStates = 0
 	// Enabled enum
@@ -40,4 +42,3 @@ const(
 	// Vendor_Reserved enum
 	AllocationCapabilities_SupportedAddStates_Vendor_Reserved AllocationCapabilities_SupportedAddStates = 14
 )
-

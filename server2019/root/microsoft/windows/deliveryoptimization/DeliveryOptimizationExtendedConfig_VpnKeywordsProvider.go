@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DeliveryOptimizationExtendedConfig_VpnKeywordsProvider
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DeliveryOptimizationExtendedConfig_VpnKeywordsProvider
+//
+// ////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_VpnKeywordsProvider 
+// DeliveryOptimizationExtendedConfig_VpnKeywordsProvider
 type DeliveryOptimizationExtendedConfig_VpnKeywordsProvider int
-const(
+
+const (
 	// _17 enum
 	DeliveryOptimizationExtendedConfig_VpnKeywordsProvider__17 DeliveryOptimizationExtendedConfig_VpnKeywordsProvider = 5
 	// _18 enum
@@ -22,4 +24,3 @@ const(
 	// _21 enum
 	DeliveryOptimizationExtendedConfig_VpnKeywordsProvider__21 DeliveryOptimizationExtendedConfig_VpnKeywordsProvider = 99
 )
-

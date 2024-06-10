@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VideoHead_CurrentScanMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VideoHead_CurrentScanMode
+//
+// ////////////////////////////////////////////
 package v2
 
-// VideoHead_CurrentScanMode 
+// VideoHead_CurrentScanMode
 type VideoHead_CurrentScanMode int
-const(
+
+const (
 	// Unknown enum
 	VideoHead_CurrentScanMode_Unknown VideoHead_CurrentScanMode = 0
 	// Other enum
@@ -22,4 +24,3 @@ const(
 	// Interlaced_Operation enum
 	VideoHead_CurrentScanMode_Interlaced_Operation VideoHead_CurrentScanMode = 4
 )
-

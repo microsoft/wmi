@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source UMBus_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source UMBus_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// UMBus_Flags 
+// UMBus_Flags
 type UMBus_Flags int
-const(
+
+const (
 	// TraceEntryExit enum
 	UMBus_Flags_TraceEntryExit UMBus_Flags = 1
 	// TraceIoctl enum
@@ -30,4 +32,3 @@ const(
 	// TracePnP enum
 	UMBus_Flags_TracePnP UMBus_Flags = 9
 )
-

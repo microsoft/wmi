@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source AllocationCapabilities_RequestTypesSupported
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source AllocationCapabilities_RequestTypesSupported
+//
+// ////////////////////////////////////////////
 package v2
 
-// AllocationCapabilities_RequestTypesSupported 
+// AllocationCapabilities_RequestTypesSupported
 type AllocationCapabilities_RequestTypesSupported int
-const(
+
+const (
 	// Unknown enum
 	AllocationCapabilities_RequestTypesSupported_Unknown AllocationCapabilities_RequestTypesSupported = 0
 	// Specific enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Reserved enum
 	AllocationCapabilities_RequestTypesSupported_Vendor_Reserved AllocationCapabilities_RequestTypesSupported = 6
 )
-

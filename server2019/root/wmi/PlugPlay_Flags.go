@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PlugPlay_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PlugPlay_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// PlugPlay_Flags 
+// PlugPlay_Flags
 type PlugPlay_Flags int
-const(
+
+const (
 	// PNP_ERROR_LEVEL enum
 	PlugPlay_Flags_PNP_ERROR_LEVEL PlugPlay_Flags = 1
 	// PNP_WARNING_LEVEL enum
@@ -52,4 +54,3 @@ const(
 	// PNP_INSTALL_VERBOSE_LEVEL enum
 	PlugPlay_Flags_PNP_INSTALL_VERBOSE_LEVEL PlugPlay_Flags = 20
 )
-

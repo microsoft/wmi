@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source AtaportGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source AtaportGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// AtaportGuid_Level 
+// AtaportGuid_Level
 type AtaportGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	AtaportGuid_Level_Fatal AtaportGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	AtaportGuid_Level_Verbose AtaportGuid_Level = 5
 )
-

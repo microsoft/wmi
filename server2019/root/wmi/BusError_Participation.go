@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BusError_Participation
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BusError_Participation
+//
+// ////////////////////////////////////////////
 package wmi
 
-// BusError_Participation 
+// BusError_Participation
 type BusError_Participation int
-const(
+
+const (
 	// Local_Processor_Originated_Request enum
 	BusError_Participation_Local_Processor_Originated_Request BusError_Participation = 0
 	// Local_Processor_Responded_To_Request enum
@@ -20,4 +22,3 @@ const(
 	// Generic enum
 	BusError_Participation_Generic BusError_Participation = 3
 )
-

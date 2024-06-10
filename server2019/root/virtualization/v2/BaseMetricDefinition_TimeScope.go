@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BaseMetricDefinition_TimeScope
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BaseMetricDefinition_TimeScope
+//
+// ////////////////////////////////////////////
 package v2
 
-// BaseMetricDefinition_TimeScope 
+// BaseMetricDefinition_TimeScope
 type BaseMetricDefinition_TimeScope int
-const(
+
+const (
 	// Unknown enum
 	BaseMetricDefinition_TimeScope_Unknown BaseMetricDefinition_TimeScope = 0
 	// Point enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Reserved enum
 	BaseMetricDefinition_TimeScope_Vendor_Reserved BaseMetricDefinition_TimeScope = 6
 )
-

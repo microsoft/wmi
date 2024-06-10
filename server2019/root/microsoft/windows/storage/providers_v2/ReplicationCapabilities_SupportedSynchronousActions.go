@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ReplicationCapabilities_SupportedSynchronousActions
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ReplicationCapabilities_SupportedSynchronousActions
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// ReplicationCapabilities_SupportedSynchronousActions 
+// ReplicationCapabilities_SupportedSynchronousActions
 type ReplicationCapabilities_SupportedSynchronousActions int
-const(
+
+const (
 	// CreateElementReplica enum
 	ReplicationCapabilities_SupportedSynchronousActions_CreateElementReplica ReplicationCapabilities_SupportedSynchronousActions = 2
 	// CreateGroupReplica enum
@@ -76,4 +78,3 @@ const(
 	// Vendor_Specific enum
 	ReplicationCapabilities_SupportedSynchronousActions_Vendor_Specific ReplicationCapabilities_SupportedSynchronousActions = 33
 )
-

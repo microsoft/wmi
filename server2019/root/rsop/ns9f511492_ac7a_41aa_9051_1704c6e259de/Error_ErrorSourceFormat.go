@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Error_ErrorSourceFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Error_ErrorSourceFormat
+//
+// ////////////////////////////////////////////
 package ns9f511492_ac7a_41aa_9051_1704c6e259de
 
-// Error_ErrorSourceFormat 
+// Error_ErrorSourceFormat
 type Error_ErrorSourceFormat int
-const(
+
+const (
 	// Unknown enum
 	Error_ErrorSourceFormat_Unknown Error_ErrorSourceFormat = 0
 	// Other enum
@@ -20,4 +22,3 @@ const(
 	// DMTF_Reserved enum
 	Error_ErrorSourceFormat_DMTF_Reserved Error_ErrorSourceFormat = 3
 )
-

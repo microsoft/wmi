@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FileBlocked_Mode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FileBlocked_Mode
+//
+// ////////////////////////////////////////////
 package computer
 
-// FileBlocked_Mode 
+// FileBlocked_Mode
 type FileBlocked_Mode int
-const(
+
+const (
 	// Inherit enum
 	FileBlocked_Mode_Inherit FileBlocked_Mode = 0
 	// Ignore enum
@@ -18,4 +20,3 @@ const(
 	// Overwrite enum
 	FileBlocked_Mode_Overwrite FileBlocked_Mode = 2
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SmbGlobalMapping_Status
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SmbGlobalMapping_Status
+//
+// ////////////////////////////////////////////
 package smb
 
-// SmbGlobalMapping_Status 
+// SmbGlobalMapping_Status
 type SmbGlobalMapping_Status int
-const(
+
+const (
 	// _36 enum
 	SmbGlobalMapping_Status__36 SmbGlobalMapping_Status = 0
 	// _37 enum
@@ -26,4 +28,3 @@ const(
 	// _42 enum
 	SmbGlobalMapping_Status__42 SmbGlobalMapping_Status = 6
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DeliveryOptimizationConfig_MaxUploadRateProvider
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DeliveryOptimizationConfig_MaxUploadRateProvider
+//
+// ////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationConfig_MaxUploadRateProvider 
+// DeliveryOptimizationConfig_MaxUploadRateProvider
 type DeliveryOptimizationConfig_MaxUploadRateProvider int
-const(
+
+const (
 	// _17 enum
 	DeliveryOptimizationConfig_MaxUploadRateProvider__17 DeliveryOptimizationConfig_MaxUploadRateProvider = 5
 	// _18 enum
@@ -22,4 +24,3 @@ const(
 	// _21 enum
 	DeliveryOptimizationConfig_MaxUploadRateProvider__21 DeliveryOptimizationConfig_MaxUploadRateProvider = 99
 )
-

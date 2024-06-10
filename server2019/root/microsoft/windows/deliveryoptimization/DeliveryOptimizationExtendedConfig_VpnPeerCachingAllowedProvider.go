@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider
+//
+// ////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider 
+// DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider
 type DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider int
-const(
+
+const (
 	// _17 enum
 	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__17 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 5
 	// _18 enum
@@ -22,4 +24,3 @@ const(
 	// _21 enum
 	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__21 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 99
 )
-

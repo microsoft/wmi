@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ATAPISmartData_OfflineCollectionStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ATAPISmartData_OfflineCollectionStatus
+//
+// ////////////////////////////////////////////
 package wmi
 
-// ATAPISmartData_OfflineCollectionStatus 
+// ATAPISmartData_OfflineCollectionStatus
 type ATAPISmartData_OfflineCollectionStatus int
-const(
+
+const (
 	// _0 enum
 	ATAPISmartData_OfflineCollectionStatus__0 ATAPISmartData_OfflineCollectionStatus = 0
 	// _2 enum
@@ -32,4 +34,3 @@ const(
 	// _134 enum
 	ATAPISmartData_OfflineCollectionStatus__134 ATAPISmartData_OfflineCollectionStatus = 9
 )
-

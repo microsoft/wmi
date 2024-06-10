@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MemoryHierarchyError_MemoryHierarchyLevel
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MemoryHierarchyError_MemoryHierarchyLevel
+//
+// ////////////////////////////////////////////
 package wmi
 
-// MemoryHierarchyError_MemoryHierarchyLevel 
+// MemoryHierarchyError_MemoryHierarchyLevel
 type MemoryHierarchyError_MemoryHierarchyLevel int
-const(
+
+const (
 	// Level_0 enum
 	MemoryHierarchyError_MemoryHierarchyLevel_Level_0 MemoryHierarchyError_MemoryHierarchyLevel = 0
 	// Level_1 enum
@@ -20,4 +22,3 @@ const(
 	// Generic enum
 	MemoryHierarchyError_MemoryHierarchyLevel_Generic MemoryHierarchyError_MemoryHierarchyLevel = 3
 )
-

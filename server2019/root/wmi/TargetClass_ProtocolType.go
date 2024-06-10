@@ -1,17 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TargetClass_ProtocolType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TargetClass_ProtocolType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// TargetClass_ProtocolType 
+// TargetClass_ProtocolType
 type TargetClass_ProtocolType int
-const(
+
+const (
 	// ISCSI_TCP_PROTOCOL_TYPE enum
 	TargetClass_ProtocolType_ISCSI_TCP_PROTOCOL_TYPE TargetClass_ProtocolType = 0
 )
-

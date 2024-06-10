@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageNodeToPhysicalDisk_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageNodeToPhysicalDisk_OperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToPhysicalDisk_OperationalStatus 
+// StorageNodeToPhysicalDisk_OperationalStatus
 type StorageNodeToPhysicalDisk_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	StorageNodeToPhysicalDisk_OperationalStatus_Unknown StorageNodeToPhysicalDisk_OperationalStatus = 0
 	// Other enum
@@ -72,4 +74,3 @@ const(
 	// Microsoft_Reserved1 enum
 	StorageNodeToPhysicalDisk_OperationalStatus_Microsoft_Reserved1 StorageNodeToPhysicalDisk_OperationalStatus = 29
 )
-

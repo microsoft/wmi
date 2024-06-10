@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source AtaportGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source AtaportGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// AtaportGuid_Flags 
+// AtaportGuid_Flags
 type AtaportGuid_Flags int
-const(
+
+const (
 	// TRACE_FLAG_GENERAL enum
 	AtaportGuid_Flags_TRACE_FLAG_GENERAL AtaportGuid_Flags = 1
 	// TRACE_FLAG_PNP enum
@@ -42,4 +44,3 @@ const(
 	// TRACE_FLAG_ENUM enum
 	AtaportGuid_Flags_TRACE_FLAG_ENUM AtaportGuid_Flags = 15
 )
-

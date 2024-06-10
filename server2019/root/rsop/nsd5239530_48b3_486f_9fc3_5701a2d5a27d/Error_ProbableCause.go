@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Error_ProbableCause
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Error_ProbableCause
+//
+// ////////////////////////////////////////////
 package nsd5239530_48b3_486f_9fc3_5701a2d5a27d
 
-// Error_ProbableCause 
+// Error_ProbableCause
 type Error_ProbableCause int
-const(
+
+const (
 	// Unknown enum
 	Error_ProbableCause_Unknown Error_ProbableCause = 0
 	// Other enum
@@ -276,4 +278,3 @@ const(
 	// DMTF_Reserved enum
 	Error_ProbableCause_DMTF_Reserved Error_ProbableCause = 131
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemManagementCapabilities_AsynchronousMethodsSupported
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemManagementCapabilities_AsynchronousMethodsSupported
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemManagementCapabilities_AsynchronousMethodsSupported 
+// VirtualSystemManagementCapabilities_AsynchronousMethodsSupported
 type VirtualSystemManagementCapabilities_AsynchronousMethodsSupported int
-const(
+
+const (
 	// DefineSystemSupported enum
 	VirtualSystemManagementCapabilities_AsynchronousMethodsSupported_DefineSystemSupported VirtualSystemManagementCapabilities_AsynchronousMethodsSupported = 2
 	// DestroySystemSupported enum
@@ -34,4 +36,3 @@ const(
 	// Vendor_Reserved enum
 	VirtualSystemManagementCapabilities_AsynchronousMethodsSupported_Vendor_Reserved VirtualSystemManagementCapabilities_AsynchronousMethodsSupported = 12
 )
-

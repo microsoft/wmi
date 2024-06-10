@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CtlGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CtlGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// CtlGuid_Level 
+// CtlGuid_Level
 type CtlGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	CtlGuid_Level_Fatal CtlGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	CtlGuid_Level_Verbose CtlGuid_Level = 5
 )
-

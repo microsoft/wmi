@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TPM_TPMState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TPM_TPMState
+//
+// ////////////////////////////////////////////
 package v2
 
-// TPM_TPMState 
+// TPM_TPMState
 type TPM_TPMState int
-const(
+
+const (
 	// Unknown enum
 	TPM_TPMState_Unknown TPM_TPMState = 0
 	// S1_Enabled_Active_Owned enum
@@ -36,4 +38,3 @@ const(
 	// Vendor_Reserved enum
 	TPM_TPMState_Vendor_Reserved TPM_TPMState = 12
 )
-

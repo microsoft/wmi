@@ -1,46 +1,52 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.virtualization.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.virtualization.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_ResourcePoolConfigurationService struct
-type Msvm_ResourcePoolConfigurationService struct { 
+type Msvm_ResourcePoolConfigurationService struct {
 	*CIM_Service
 }
 
-	func NewMsvm_ResourcePoolConfigurationServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_ResourcePoolConfigurationService, err error) {tmp, err := NewCIM_ServiceEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &Msvm_ResourcePoolConfigurationService {
-	CIM_Service: tmp,
+func NewMsvm_ResourcePoolConfigurationServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_ResourcePoolConfigurationService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ResourcePoolConfigurationService{
+		CIM_Service: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewMsvm_ResourcePoolConfigurationServiceEx6(hostName string,
+func NewMsvm_ResourcePoolConfigurationServiceEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *Msvm_ResourcePoolConfigurationService, err error) {tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &Msvm_ResourcePoolConfigurationService {
-	CIM_Service: tmp,
+	query *query.WmiQuery) (newInstance *Msvm_ResourcePoolConfigurationService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ResourcePoolConfigurationService{
+		CIM_Service: tmp,
 	}
 	return
-	}
-	
+}
 
 // Starts a job to create a child ResourcePool. The ResourcePool will be scoped to the same System as this Service. If 0 is returned, then the task completed successfully and the use of ConcreteJob was not required. If the task will take some time to complete, a ConcreteJob will be created and its reference returned in the output parameter Job. The resulting pool will be a child pool.
 
@@ -52,20 +58,22 @@ type Msvm_ResourcePoolConfigurationService struct {
 // <param name="Pool" type="CIM_ResourcePool ">A reference to the resulting pool.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_ResourcePoolConfigurationService) CreatePool( /* IN */ PoolSettings string,
- /* IN */ ParentPools []CIM_ResourcePool,
- /* IN */ AllocationSettings []string,
- /* OUT */ Pool CIM_ResourcePool,
- /* OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("CreatePool", Action, PercentComplete, Timeout , PoolSettings, ParentPools, AllocationSettings)
-	if err != nil { return }
+	/* IN */ ParentPools []CIM_ResourcePool,
+	/* IN */ AllocationSettings []string,
+	/* OUT */ Pool CIM_ResourcePool,
+	/* OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("CreatePool", Action, PercentComplete, Timeout, PoolSettings, ParentPools, AllocationSettings)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // Start a job to change parent pool resource settings for resources assigned to a child pool. If 0 is returned, the function completed successfully and no ConcreteJob instance was required. If 4096/0x1000 is returned, a ConcreteJob will be started to change the parent pool. The Job's reference will be returned in the output parameter Job.
 
@@ -76,19 +84,21 @@ func (instance *Msvm_ResourcePoolConfigurationService) CreatePool( /* IN */ Pool
 // <param name="Job" type="CIM_ConcreteJob ">Reference to the job (may be null if job completed).</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_ResourcePoolConfigurationService) ModifyPoolResources( /* IN */ ChildPool CIM_ResourcePool,
- /* IN */ ParentPools []CIM_ResourcePool,
- /* IN */ AllocationSettings []string,
- /* OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ModifyPoolResources", Action, PercentComplete, Timeout , ChildPool, ParentPools, AllocationSettings)
-	if err != nil { return }
+	/* IN */ ParentPools []CIM_ResourcePool,
+	/* IN */ AllocationSettings []string,
+	/* OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("ModifyPoolResources", Action, PercentComplete, Timeout, ChildPool, ParentPools, AllocationSettings)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // Start a job to change the non-allocation related settings of a child. If 0 is returned, the function completed successfully and no ConcreteJob instance was required. If 4096/0x1000 is returned, a ConcreteJob will be started to change the settings. The Job's reference will be returned in the output parameter Job.
 
@@ -98,18 +108,20 @@ func (instance *Msvm_ResourcePoolConfigurationService) ModifyPoolResources( /* I
 // <param name="Job" type="CIM_ConcreteJob ">Reference to the job (may be null if job completed).</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_ResourcePoolConfigurationService) ModifyPoolSettings( /* IN */ ChildPool CIM_ResourcePool,
- /* IN */ PoolSettings string,
- /* OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ModifyPoolSettings", Action, PercentComplete, Timeout , ChildPool, PoolSettings)
-	if err != nil { return }
+	/* IN */ PoolSettings string,
+	/* OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("ModifyPoolSettings", Action, PercentComplete, Timeout, ChildPool, PoolSettings)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
-}
 
+}
 
 // Start a job to delete a ResourcePool. No allocations may be outstanding or the delete will fail with "In Use." If the resource pool is a root resource pool, any host resources are returned back to the underlying system. If 0 is returned, the function completed successfully, and no ConcreteJob was required. If 4096/0x1000 is returned, a ConcreteJob will be started to delete the ResourcePool. A reference to the Job is returned in the Job parameter.
 
@@ -118,35 +130,36 @@ func (instance *Msvm_ResourcePoolConfigurationService) ModifyPoolSettings( /* IN
 // <param name="Job" type="CIM_ConcreteJob ">Reference to the job (may be null if job completed).</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_ResourcePoolConfigurationService) DeletePool( /* IN */ Pool CIM_ResourcePool,
- /* OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("DeletePool", Action, PercentComplete, Timeout , Pool)
-	if err != nil { return }
+	/* OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("DeletePool", Action, PercentComplete, Timeout, Pool)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-func  (instance* Msvm_ResourcePoolConfigurationService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
-		 return instance.GetRelated("Msvm_ComputerSystem"); 
-	}
-	
-func  (instance* Msvm_ResourcePoolConfigurationService) GetRelatedResourcePool() (value []*cim.WmiInstance, err error) {
-		 return instance.GetAllRelated("Msvm_ResourcePool"); 
-	}
-	
-func  (instance* Msvm_ResourcePoolConfigurationService) GetRelatedSynth3dVideoPool() (value *cim.WmiInstance, err error) {
-		 return instance.GetRelated("Msvm_Synth3dVideoPool"); 
-	}
-	
-func  (instance* Msvm_ResourcePoolConfigurationService) GetRelatedProcessorPool() (value *cim.WmiInstance, err error) {
-		 return instance.GetRelated("Msvm_ProcessorPool"); 
-	}
-	
-func  (instance* Msvm_ResourcePoolConfigurationService) GetRelatedResourcePoolConfigurationCapabilities() (value *cim.WmiInstance, err error) {
-		 return instance.GetRelated("Msvm_ResourcePoolConfigurationCapabilities"); 
-	}
-	
+func (instance *Msvm_ResourcePoolConfigurationService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
 
+func (instance *Msvm_ResourcePoolConfigurationService) GetRelatedResourcePool() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ResourcePool")
+}
+
+func (instance *Msvm_ResourcePoolConfigurationService) GetRelatedSynth3dVideoPool() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_Synth3dVideoPool")
+}
+
+func (instance *Msvm_ResourcePoolConfigurationService) GetRelatedProcessorPool() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ProcessorPool")
+}
+
+func (instance *Msvm_ResourcePoolConfigurationService) GetRelatedResourcePoolConfigurationCapabilities() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePoolConfigurationCapabilities")
+}

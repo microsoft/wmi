@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Partition_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Partition_OperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Partition_OperationalStatus 
+// Partition_OperationalStatus
 type Partition_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	Partition_OperationalStatus_Unknown Partition_OperationalStatus = 0
 	// Online enum
@@ -22,4 +24,3 @@ const(
 	// Offline enum
 	Partition_OperationalStatus_Offline Partition_OperationalStatus = 4
 )
-

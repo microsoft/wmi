@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageAllocationSettingData_HostExtentNameFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageAllocationSettingData_HostExtentNameFormat
+//
+// ////////////////////////////////////////////
 package v2
 
-// StorageAllocationSettingData_HostExtentNameFormat 
+// StorageAllocationSettingData_HostExtentNameFormat
 type StorageAllocationSettingData_HostExtentNameFormat int
-const(
+
+const (
 	// Unknown enum
 	StorageAllocationSettingData_HostExtentNameFormat_Unknown StorageAllocationSettingData_HostExtentNameFormat = 0
 	// Other enum
@@ -28,4 +30,3 @@ const(
 	// DMTF_Reserved enum
 	StorageAllocationSettingData_HostExtentNameFormat_DMTF_Reserved StorageAllocationSettingData_HostExtentNameFormat = 13
 )
-

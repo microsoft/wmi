@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DNSClientCache_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DNSClientCache_Type
+//
+// ////////////////////////////////////////////
 package standardcimv2
 
-// DNSClientCache_Type 
+// DNSClientCache_Type
 type DNSClientCache_Type int
-const(
+
+const (
 	// _666 enum
 	DNSClientCache_Type__666 DNSClientCache_Type = 1
 	// _667 enum
@@ -28,4 +30,3 @@ const(
 	// _673 enum
 	DNSClientCache_Type__673 DNSClientCache_Type = 33
 )
-

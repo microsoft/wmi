@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageProvider_SupportedRemoteSubsystemCacheModes
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageProvider_SupportedRemoteSubsystemCacheModes
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageProvider_SupportedRemoteSubsystemCacheModes 
+// StorageProvider_SupportedRemoteSubsystemCacheModes
 type StorageProvider_SupportedRemoteSubsystemCacheModes int
-const(
+
+const (
 	// Unknown enum
 	StorageProvider_SupportedRemoteSubsystemCacheModes_Unknown StorageProvider_SupportedRemoteSubsystemCacheModes = 0
 	// Disabled enum
@@ -18,4 +20,3 @@ const(
 	// Manual_Discovery enum
 	StorageProvider_SupportedRemoteSubsystemCacheModes_Manual_Discovery StorageProvider_SupportedRemoteSubsystemCacheModes = 3
 )
-

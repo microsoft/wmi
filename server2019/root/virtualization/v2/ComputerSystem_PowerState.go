@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ComputerSystem_PowerState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ComputerSystem_PowerState
+//
+// ////////////////////////////////////////////
 package v2
 
-// ComputerSystem_PowerState 
+// ComputerSystem_PowerState
 type ComputerSystem_PowerState int
-const(
+
+const (
 	// Full_Power enum
 	ComputerSystem_PowerState_Full_Power ComputerSystem_PowerState = 1
 	// Power_Save___Low_Power_Mode enum
@@ -28,4 +30,3 @@ const(
 	// Soft_Off enum
 	ComputerSystem_PowerState_Soft_Off ComputerSystem_PowerState = 8
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Win32Provider_InitializationReentrancy
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Win32Provider_InitializationReentrancy
+//
+// ////////////////////////////////////////////
 package ns4d70b888_0c83_4ec8_a075_63c360913417
 
-// Win32Provider_InitializationReentrancy 
+// Win32Provider_InitializationReentrancy
 type Win32Provider_InitializationReentrancy int
-const(
+
+const (
 	// CLSID enum
 	Win32Provider_InitializationReentrancy_CLSID Win32Provider_InitializationReentrancy = 0
 	// Namespace enum
@@ -18,4 +20,3 @@ const(
 	// COM_Object enum
 	Win32Provider_InitializationReentrancy_COM_Object Win32Provider_InitializationReentrancy = 2
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MigrationJob_JobType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MigrationJob_JobType
+//
+// ////////////////////////////////////////////
 package v2
 
-// MigrationJob_JobType 
+// MigrationJob_JobType
 type MigrationJob_JobType int
-const(
+
+const (
 	// Unknown enum
 	MigrationJob_JobType_Unknown MigrationJob_JobType = 0
 	// Creating_Remote_Virtual_Machine enum
@@ -30,4 +32,3 @@ const(
 	// Moving_Storage enum
 	MigrationJob_JobType_Moving_Storage MigrationJob_JobType = 307
 )
-

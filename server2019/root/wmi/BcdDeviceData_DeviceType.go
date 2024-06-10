@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BcdDeviceData_DeviceType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BcdDeviceData_DeviceType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// BcdDeviceData_DeviceType 
+// BcdDeviceData_DeviceType
 type BcdDeviceData_DeviceType int
-const(
+
+const (
 	// BootDevice enum
 	BcdDeviceData_DeviceType_BootDevice BcdDeviceData_DeviceType = 1
 	// PartitionDevice enum
@@ -28,4 +30,3 @@ const(
 	// LocateExDevice enum
 	BcdDeviceData_DeviceType_LocateExDevice BcdDeviceData_DeviceType = 8
 )
-

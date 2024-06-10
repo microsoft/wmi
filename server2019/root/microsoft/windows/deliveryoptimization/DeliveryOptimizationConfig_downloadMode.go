@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DeliveryOptimizationConfig_DownloadMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DeliveryOptimizationConfig_DownloadMode
+//
+// ////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationConfig_DownloadMode 
+// DeliveryOptimizationConfig_DownloadMode
 type DeliveryOptimizationConfig_DownloadMode int
-const(
+
+const (
 	// _1 enum
 	DeliveryOptimizationConfig_DownloadMode__1 DeliveryOptimizationConfig_DownloadMode = 0
 	// _2 enum
@@ -24,4 +26,3 @@ const(
 	// _6 enum
 	DeliveryOptimizationConfig_DownloadMode__6 DeliveryOptimizationConfig_DownloadMode = 100
 )
-

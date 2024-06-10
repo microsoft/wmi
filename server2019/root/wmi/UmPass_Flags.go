@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source UmPass_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source UmPass_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// UmPass_Flags 
+// UmPass_Flags
 type UmPass_Flags int
-const(
+
+const (
 	// TraceEntryExit enum
 	UmPass_Flags_TraceEntryExit UmPass_Flags = 1
 	// TraceIoctl enum
@@ -30,4 +32,3 @@ const(
 	// TracePnP enum
 	UmPass_Flags_TracePnP UmPass_Flags = 9
 )
-

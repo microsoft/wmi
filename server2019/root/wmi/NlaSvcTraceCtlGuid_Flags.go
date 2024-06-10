@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source NlaSvcTraceCtlGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source NlaSvcTraceCtlGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// NlaSvcTraceCtlGuid_Flags 
+// NlaSvcTraceCtlGuid_Flags
 type NlaSvcTraceCtlGuid_Flags int
-const(
+
+const (
 	// TM_LIST enum
 	NlaSvcTraceCtlGuid_Flags_TM_LIST NlaSvcTraceCtlGuid_Flags = 1
 	// TM_LOCK enum
@@ -68,4 +70,3 @@ const(
 	// TM_BWC enum
 	NlaSvcTraceCtlGuid_Flags_TM_BWC NlaSvcTraceCtlGuid_Flags = 28
 )
-

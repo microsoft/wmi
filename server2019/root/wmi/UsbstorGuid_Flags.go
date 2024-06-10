@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source UsbstorGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source UsbstorGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// UsbstorGuid_Flags 
+// UsbstorGuid_Flags
 type UsbstorGuid_Flags int
-const(
+
+const (
 	// TRACE_FLAG_GENERAL enum
 	UsbstorGuid_Flags_TRACE_FLAG_GENERAL UsbstorGuid_Flags = 1
 	// TRACE_FLAG_PNP enum
@@ -42,4 +44,3 @@ const(
 	// TRACE_FLAG_ENUM enum
 	UsbstorGuid_Flags_TRACE_FLAG_ENUM UsbstorGuid_Flags = 15
 )
-

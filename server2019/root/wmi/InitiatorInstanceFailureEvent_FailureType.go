@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source InitiatorInstanceFailureEvent_FailureType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source InitiatorInstanceFailureEvent_FailureType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// InitiatorInstanceFailureEvent_FailureType 
+// InitiatorInstanceFailureEvent_FailureType
 type InitiatorInstanceFailureEvent_FailureType int
-const(
+
+const (
 	// SessionDigestError enum
 	InitiatorInstanceFailureEvent_FailureType_SessionDigestError InitiatorInstanceFailureEvent_FailureType = 0
 	// SessionCxnTimeoutError enum
@@ -18,4 +20,3 @@ const(
 	// SessionFormatError enum
 	InitiatorInstanceFailureEvent_FailureType_SessionFormatError InitiatorInstanceFailureEvent_FailureType = 2
 )
-

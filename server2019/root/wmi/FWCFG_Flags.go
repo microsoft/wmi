@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FWCFG_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FWCFG_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// FWCFG_Flags 
+// FWCFG_Flags
 type FWCFG_Flags int
-const(
+
+const (
 	// TL_ERROR enum
 	FWCFG_Flags_TL_ERROR FWCFG_Flags = 1
 	// TL_WARN enum
@@ -20,4 +22,3 @@ const(
 	// TL_FUNC enum
 	FWCFG_Flags_TL_FUNC FWCFG_Flags = 4
 )
-

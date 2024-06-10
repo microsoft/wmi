@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DisplayController_VideoArchitecture
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DisplayController_VideoArchitecture
+//
+// ////////////////////////////////////////////
 package v2
 
-// DisplayController_VideoArchitecture 
+// DisplayController_VideoArchitecture
 type DisplayController_VideoArchitecture int
-const(
+
+const (
 	// Unknown enum
 	DisplayController_VideoArchitecture_Unknown DisplayController_VideoArchitecture = 0
 	// Other enum
@@ -42,4 +44,3 @@ const(
 	// Vendor_Reserved enum
 	DisplayController_VideoArchitecture_Vendor_Reserved DisplayController_VideoArchitecture = 162
 )
-

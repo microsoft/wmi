@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Printer_PrinterState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Printer_PrinterState
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// Printer_PrinterState 
+// Printer_PrinterState
 type Printer_PrinterState int
-const(
+
+const (
 	// Paused enum
 	Printer_PrinterState_Paused Printer_PrinterState = 0
 	// Error enum
@@ -62,4 +64,3 @@ const(
 	// Power_Save enum
 	Printer_PrinterState_Power_Save Printer_PrinterState = 24
 )
-

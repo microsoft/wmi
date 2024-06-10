@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ManagedSystemElement_DetailedStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ManagedSystemElement_DetailedStatus
+//
+// ////////////////////////////////////////////
 package v2
 
-// ManagedSystemElement_DetailedStatus 
+// ManagedSystemElement_DetailedStatus
 type ManagedSystemElement_DetailedStatus int
-const(
+
+const (
 	// Not_Available enum
 	ManagedSystemElement_DetailedStatus_Not_Available ManagedSystemElement_DetailedStatus = 0
 	// No_Additional_Information enum
@@ -28,4 +30,3 @@ const(
 	// Vendor_Reserved enum
 	ManagedSystemElement_DetailedStatus_Vendor_Reserved ManagedSystemElement_DetailedStatus = 7
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ValidationDiskInfo_BusType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ValidationDiskInfo_BusType
+//
+// ////////////////////////////////////////////
 package validation
 
-// ValidationDiskInfo_BusType 
+// ValidationDiskInfo_BusType
 type ValidationDiskInfo_BusType int
-const(
+
+const (
 	// _5 enum
 	ValidationDiskInfo_BusType__5 ValidationDiskInfo_BusType = 0
 	// _9 enum
@@ -52,4 +54,3 @@ const(
 	// _27 enum
 	ValidationDiskInfo_BusType__27 ValidationDiskInfo_BusType = 19
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source AlertIndication_Trending
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source AlertIndication_Trending
+//
+// ////////////////////////////////////////////
 package v2
 
-// AlertIndication_Trending 
+// AlertIndication_Trending
 type AlertIndication_Trending int
-const(
+
+const (
 	// Unknown enum
 	AlertIndication_Trending_Unknown AlertIndication_Trending = 0
 	// Not_Applicable enum
@@ -22,4 +24,3 @@ const(
 	// No_Change enum
 	AlertIndication_Trending_No_Change AlertIndication_Trending = 4
 )
-

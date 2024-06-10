@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BcdDeviceLocateData_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BcdDeviceLocateData_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// BcdDeviceLocateData_Type 
+// BcdDeviceLocateData_Type
 type BcdDeviceLocateData_Type int
-const(
+
+const (
 	// Element enum
 	BcdDeviceLocateData_Type_Element BcdDeviceLocateData_Type = 0
 	// String enum
@@ -18,4 +20,3 @@ const(
 	// ElementChild enum
 	BcdDeviceLocateData_Type_ElementChild BcdDeviceLocateData_Type = 2
 )
-

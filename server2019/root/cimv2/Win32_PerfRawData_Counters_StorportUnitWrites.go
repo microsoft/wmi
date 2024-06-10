@@ -1,1756 +1,1761 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.CIMV2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.CIMV2
+//
+// ////////////////////////////////////////////
 package cimv2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_StorportUnitWrites struct
-type Win32_PerfRawData_Counters_StorportUnitWrites struct { 
+type Win32_PerfRawData_Counters_StorportUnitWrites struct {
 	*Win32_PerfRawData
 
-	// 
+	//
 	SuccessfulWritesPersecBucket014K uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket028K uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket0316K uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket0432K uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket0564K uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket06128K uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket07256K uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket081M uint64
 
-	// 
+	//
 	SuccessfulWritesPersecBucket091M uint64
 
-	// 
+	//
 	WriteBytesAverage uint64
 
-	// 
+	//
 	WriteBytesAverage_Base uint32
 
-	// 
+	//
 	WriteBytesPersec uint64
 
-	// 
+	//
 	WriteLatency uint64
 
-	// 
+	//
 	WriteLatency_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket01128us uint64
 
-	// 
+	//
 	WriteLatencyBucket01128us_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket02256us uint64
 
-	// 
+	//
 	WriteLatencyBucket02256us_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket03512us uint64
 
-	// 
+	//
 	WriteLatencyBucket03512us_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket041ms uint64
 
-	// 
+	//
 	WriteLatencyBucket041ms_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket054ms uint64
 
-	// 
+	//
 	WriteLatencyBucket054ms_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket0616ms uint64
 
-	// 
+	//
 	WriteLatencyBucket0616ms_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket0764ms uint64
 
-	// 
+	//
 	WriteLatencyBucket0764ms_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket08128ms uint64
 
-	// 
+	//
 	WriteLatencyBucket08128ms_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket09256ms uint64
 
-	// 
+	//
 	WriteLatencyBucket09256ms_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket10512ms uint64
 
-	// 
+	//
 	WriteLatencyBucket10512ms_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket111s uint64
 
-	// 
+	//
 	WriteLatencyBucket111s_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket122s uint64
 
-	// 
+	//
 	WriteLatencyBucket122s_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket1310s uint64
 
-	// 
+	//
 	WriteLatencyBucket1310s_Base uint32
 
-	// 
+	//
 	WriteLatencyBucket1410s uint64
 
-	// 
+	//
 	WriteLatencyBucket1410s_Base uint32
 
-	// 
+	//
 	WritesPersec uint64
 
-	// 
+	//
 	WritesPersecBucket01128us uint64
 
-	// 
+	//
 	WritesPersecBucket02256us uint64
 
-	// 
+	//
 	WritesPersecBucket03512us uint64
 
-	// 
+	//
 	WritesPersecBucket041ms uint64
 
-	// 
+	//
 	WritesPersecBucket054ms uint64
 
-	// 
+	//
 	WritesPersecBucket0616ms uint64
 
-	// 
+	//
 	WritesPersecBucket0764ms uint64
 
-	// 
+	//
 	WritesPersecBucket08128ms uint64
 
-	// 
+	//
 	WritesPersecBucket09256ms uint64
 
-	// 
+	//
 	WritesPersecBucket10512ms uint64
 
-	// 
+	//
 	WritesPersecBucket111s uint64
 
-	// 
+	//
 	WritesPersecBucket122s uint64
 
-	// 
+	//
 	WritesPersecBucket1310s uint64
 
-	// 
+	//
 	WritesPersecBucket1410s uint64
 }
 
-	func NewWin32_PerfRawData_Counters_StorportUnitWritesEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_Counters_StorportUnitWrites, err error) {tmp, err := NewWin32_PerfRawDataEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &Win32_PerfRawData_Counters_StorportUnitWrites {
-	Win32_PerfRawData: tmp,
+func NewWin32_PerfRawData_Counters_StorportUnitWritesEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_Counters_StorportUnitWrites, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_Counters_StorportUnitWrites{
+		Win32_PerfRawData: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewWin32_PerfRawData_Counters_StorportUnitWritesEx6(hostName string,
+func NewWin32_PerfRawData_Counters_StorportUnitWritesEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *Win32_PerfRawData_Counters_StorportUnitWrites, err error) {tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &Win32_PerfRawData_Counters_StorportUnitWrites {
-	Win32_PerfRawData: tmp,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_Counters_StorportUnitWrites, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_Counters_StorportUnitWrites{
+		Win32_PerfRawData: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetSuccessfulWritesPersecBucket014K sets the value of SuccessfulWritesPersecBucket014K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket014K(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket014K", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket014K(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket014K", (value))
 }
 
 // GetSuccessfulWritesPersecBucket014K gets the value of SuccessfulWritesPersecBucket014K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket014K()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket014K")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket014K() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket014K")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket028K sets the value of SuccessfulWritesPersecBucket028K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket028K(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket028K", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket028K(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket028K", (value))
 }
 
 // GetSuccessfulWritesPersecBucket028K gets the value of SuccessfulWritesPersecBucket028K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket028K()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket028K")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket028K() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket028K")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket0316K sets the value of SuccessfulWritesPersecBucket0316K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket0316K(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket0316K", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket0316K(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket0316K", (value))
 }
 
 // GetSuccessfulWritesPersecBucket0316K gets the value of SuccessfulWritesPersecBucket0316K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket0316K()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket0316K")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket0316K() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket0316K")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket0432K sets the value of SuccessfulWritesPersecBucket0432K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket0432K(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket0432K", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket0432K(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket0432K", (value))
 }
 
 // GetSuccessfulWritesPersecBucket0432K gets the value of SuccessfulWritesPersecBucket0432K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket0432K()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket0432K")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket0432K() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket0432K")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket0564K sets the value of SuccessfulWritesPersecBucket0564K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket0564K(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket0564K", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket0564K(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket0564K", (value))
 }
 
 // GetSuccessfulWritesPersecBucket0564K gets the value of SuccessfulWritesPersecBucket0564K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket0564K()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket0564K")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket0564K() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket0564K")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket06128K sets the value of SuccessfulWritesPersecBucket06128K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket06128K(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket06128K", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket06128K(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket06128K", (value))
 }
 
 // GetSuccessfulWritesPersecBucket06128K gets the value of SuccessfulWritesPersecBucket06128K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket06128K()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket06128K")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket06128K() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket06128K")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket07256K sets the value of SuccessfulWritesPersecBucket07256K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket07256K(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket07256K", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket07256K(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket07256K", (value))
 }
 
 // GetSuccessfulWritesPersecBucket07256K gets the value of SuccessfulWritesPersecBucket07256K for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket07256K()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket07256K")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket07256K() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket07256K")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket081M sets the value of SuccessfulWritesPersecBucket081M for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket081M(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket081M", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket081M(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket081M", (value))
 }
 
 // GetSuccessfulWritesPersecBucket081M gets the value of SuccessfulWritesPersecBucket081M for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket081M()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket081M")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket081M() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket081M")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSuccessfulWritesPersecBucket091M sets the value of SuccessfulWritesPersecBucket091M for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket091M(value uint64) (err error) { 
-    return instance.SetProperty("SuccessfulWritesPersecBucket091M", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertySuccessfulWritesPersecBucket091M(value uint64) (err error) {
+	return instance.SetProperty("SuccessfulWritesPersecBucket091M", (value))
 }
 
 // GetSuccessfulWritesPersecBucket091M gets the value of SuccessfulWritesPersecBucket091M for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket091M()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket091M")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertySuccessfulWritesPersecBucket091M() (value uint64, err error) {
+	retValue, err := instance.GetProperty("SuccessfulWritesPersecBucket091M")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteBytesAverage sets the value of WriteBytesAverage for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteBytesAverage(value uint64) (err error) { 
-    return instance.SetProperty("WriteBytesAverage", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteBytesAverage(value uint64) (err error) {
+	return instance.SetProperty("WriteBytesAverage", (value))
 }
 
 // GetWriteBytesAverage gets the value of WriteBytesAverage for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteBytesAverage()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteBytesAverage")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteBytesAverage() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteBytesAverage")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteBytesAverage_Base sets the value of WriteBytesAverage_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteBytesAverage_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteBytesAverage_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteBytesAverage_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteBytesAverage_Base", (value))
 }
 
 // GetWriteBytesAverage_Base gets the value of WriteBytesAverage_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteBytesAverage_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteBytesAverage_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteBytesAverage_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteBytesAverage_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteBytesPersec sets the value of WriteBytesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteBytesPersec(value uint64) (err error) { 
-    return instance.SetProperty("WriteBytesPersec", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteBytesPersec(value uint64) (err error) {
+	return instance.SetProperty("WriteBytesPersec", (value))
 }
 
 // GetWriteBytesPersec gets the value of WriteBytesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteBytesPersec()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteBytesPersec")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteBytesPersec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteBytesPersec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatency sets the value of WriteLatency for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatency(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatency", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatency(value uint64) (err error) {
+	return instance.SetProperty("WriteLatency", (value))
 }
 
 // GetWriteLatency gets the value of WriteLatency for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatency()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatency")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatency() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatency")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatency_Base sets the value of WriteLatency_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatency_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatency_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatency_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatency_Base", (value))
 }
 
 // GetWriteLatency_Base gets the value of WriteLatency_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatency_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatency_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatency_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatency_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket01128us sets the value of WriteLatencyBucket01128us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket01128us(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket01128us", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket01128us(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket01128us", (value))
 }
 
 // GetWriteLatencyBucket01128us gets the value of WriteLatencyBucket01128us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket01128us()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket01128us")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket01128us() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket01128us")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket01128us_Base sets the value of WriteLatencyBucket01128us_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket01128us_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket01128us_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket01128us_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket01128us_Base", (value))
 }
 
 // GetWriteLatencyBucket01128us_Base gets the value of WriteLatencyBucket01128us_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket01128us_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket01128us_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket01128us_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket01128us_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket02256us sets the value of WriteLatencyBucket02256us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket02256us(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket02256us", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket02256us(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket02256us", (value))
 }
 
 // GetWriteLatencyBucket02256us gets the value of WriteLatencyBucket02256us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket02256us()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket02256us")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket02256us() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket02256us")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket02256us_Base sets the value of WriteLatencyBucket02256us_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket02256us_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket02256us_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket02256us_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket02256us_Base", (value))
 }
 
 // GetWriteLatencyBucket02256us_Base gets the value of WriteLatencyBucket02256us_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket02256us_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket02256us_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket02256us_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket02256us_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket03512us sets the value of WriteLatencyBucket03512us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket03512us(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket03512us", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket03512us(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket03512us", (value))
 }
 
 // GetWriteLatencyBucket03512us gets the value of WriteLatencyBucket03512us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket03512us()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket03512us")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket03512us() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket03512us")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket03512us_Base sets the value of WriteLatencyBucket03512us_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket03512us_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket03512us_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket03512us_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket03512us_Base", (value))
 }
 
 // GetWriteLatencyBucket03512us_Base gets the value of WriteLatencyBucket03512us_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket03512us_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket03512us_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket03512us_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket03512us_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket041ms sets the value of WriteLatencyBucket041ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket041ms(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket041ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket041ms(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket041ms", (value))
 }
 
 // GetWriteLatencyBucket041ms gets the value of WriteLatencyBucket041ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket041ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket041ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket041ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket041ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket041ms_Base sets the value of WriteLatencyBucket041ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket041ms_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket041ms_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket041ms_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket041ms_Base", (value))
 }
 
 // GetWriteLatencyBucket041ms_Base gets the value of WriteLatencyBucket041ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket041ms_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket041ms_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket041ms_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket041ms_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket054ms sets the value of WriteLatencyBucket054ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket054ms(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket054ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket054ms(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket054ms", (value))
 }
 
 // GetWriteLatencyBucket054ms gets the value of WriteLatencyBucket054ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket054ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket054ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket054ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket054ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket054ms_Base sets the value of WriteLatencyBucket054ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket054ms_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket054ms_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket054ms_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket054ms_Base", (value))
 }
 
 // GetWriteLatencyBucket054ms_Base gets the value of WriteLatencyBucket054ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket054ms_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket054ms_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket054ms_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket054ms_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket0616ms sets the value of WriteLatencyBucket0616ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0616ms(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket0616ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0616ms(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket0616ms", (value))
 }
 
 // GetWriteLatencyBucket0616ms gets the value of WriteLatencyBucket0616ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0616ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket0616ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0616ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket0616ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket0616ms_Base sets the value of WriteLatencyBucket0616ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0616ms_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket0616ms_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0616ms_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket0616ms_Base", (value))
 }
 
 // GetWriteLatencyBucket0616ms_Base gets the value of WriteLatencyBucket0616ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0616ms_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket0616ms_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0616ms_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket0616ms_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket0764ms sets the value of WriteLatencyBucket0764ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0764ms(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket0764ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0764ms(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket0764ms", (value))
 }
 
 // GetWriteLatencyBucket0764ms gets the value of WriteLatencyBucket0764ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0764ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket0764ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0764ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket0764ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket0764ms_Base sets the value of WriteLatencyBucket0764ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0764ms_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket0764ms_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket0764ms_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket0764ms_Base", (value))
 }
 
 // GetWriteLatencyBucket0764ms_Base gets the value of WriteLatencyBucket0764ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0764ms_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket0764ms_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket0764ms_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket0764ms_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket08128ms sets the value of WriteLatencyBucket08128ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket08128ms(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket08128ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket08128ms(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket08128ms", (value))
 }
 
 // GetWriteLatencyBucket08128ms gets the value of WriteLatencyBucket08128ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket08128ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket08128ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket08128ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket08128ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket08128ms_Base sets the value of WriteLatencyBucket08128ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket08128ms_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket08128ms_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket08128ms_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket08128ms_Base", (value))
 }
 
 // GetWriteLatencyBucket08128ms_Base gets the value of WriteLatencyBucket08128ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket08128ms_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket08128ms_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket08128ms_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket08128ms_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket09256ms sets the value of WriteLatencyBucket09256ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket09256ms(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket09256ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket09256ms(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket09256ms", (value))
 }
 
 // GetWriteLatencyBucket09256ms gets the value of WriteLatencyBucket09256ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket09256ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket09256ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket09256ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket09256ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket09256ms_Base sets the value of WriteLatencyBucket09256ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket09256ms_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket09256ms_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket09256ms_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket09256ms_Base", (value))
 }
 
 // GetWriteLatencyBucket09256ms_Base gets the value of WriteLatencyBucket09256ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket09256ms_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket09256ms_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket09256ms_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket09256ms_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket10512ms sets the value of WriteLatencyBucket10512ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket10512ms(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket10512ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket10512ms(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket10512ms", (value))
 }
 
 // GetWriteLatencyBucket10512ms gets the value of WriteLatencyBucket10512ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket10512ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket10512ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket10512ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket10512ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket10512ms_Base sets the value of WriteLatencyBucket10512ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket10512ms_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket10512ms_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket10512ms_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket10512ms_Base", (value))
 }
 
 // GetWriteLatencyBucket10512ms_Base gets the value of WriteLatencyBucket10512ms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket10512ms_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket10512ms_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket10512ms_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket10512ms_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket111s sets the value of WriteLatencyBucket111s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket111s(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket111s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket111s(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket111s", (value))
 }
 
 // GetWriteLatencyBucket111s gets the value of WriteLatencyBucket111s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket111s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket111s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket111s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket111s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket111s_Base sets the value of WriteLatencyBucket111s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket111s_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket111s_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket111s_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket111s_Base", (value))
 }
 
 // GetWriteLatencyBucket111s_Base gets the value of WriteLatencyBucket111s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket111s_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket111s_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket111s_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket111s_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket122s sets the value of WriteLatencyBucket122s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket122s(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket122s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket122s(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket122s", (value))
 }
 
 // GetWriteLatencyBucket122s gets the value of WriteLatencyBucket122s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket122s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket122s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket122s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket122s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket122s_Base sets the value of WriteLatencyBucket122s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket122s_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket122s_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket122s_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket122s_Base", (value))
 }
 
 // GetWriteLatencyBucket122s_Base gets the value of WriteLatencyBucket122s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket122s_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket122s_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket122s_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket122s_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket1310s sets the value of WriteLatencyBucket1310s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1310s(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket1310s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1310s(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket1310s", (value))
 }
 
 // GetWriteLatencyBucket1310s gets the value of WriteLatencyBucket1310s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1310s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket1310s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1310s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket1310s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket1310s_Base sets the value of WriteLatencyBucket1310s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1310s_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket1310s_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1310s_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket1310s_Base", (value))
 }
 
 // GetWriteLatencyBucket1310s_Base gets the value of WriteLatencyBucket1310s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1310s_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket1310s_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1310s_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket1310s_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket1410s sets the value of WriteLatencyBucket1410s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1410s(value uint64) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket1410s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1410s(value uint64) (err error) {
+	return instance.SetProperty("WriteLatencyBucket1410s", (value))
 }
 
 // GetWriteLatencyBucket1410s gets the value of WriteLatencyBucket1410s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1410s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket1410s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1410s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket1410s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWriteLatencyBucket1410s_Base sets the value of WriteLatencyBucket1410s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1410s_Base(value uint32) (err error) { 
-    return instance.SetProperty("WriteLatencyBucket1410s_Base", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWriteLatencyBucket1410s_Base(value uint32) (err error) {
+	return instance.SetProperty("WriteLatencyBucket1410s_Base", (value))
 }
 
 // GetWriteLatencyBucket1410s_Base gets the value of WriteLatencyBucket1410s_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1410s_Base()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("WriteLatencyBucket1410s_Base")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWriteLatencyBucket1410s_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("WriteLatencyBucket1410s_Base")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetWritesPersec sets the value of WritesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersec(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersec", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersec(value uint64) (err error) {
+	return instance.SetProperty("WritesPersec", (value))
 }
 
 // GetWritesPersec gets the value of WritesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersec()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersec")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket01128us sets the value of WritesPersecBucket01128us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket01128us(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket01128us", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket01128us(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket01128us", (value))
 }
 
 // GetWritesPersecBucket01128us gets the value of WritesPersecBucket01128us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket01128us()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket01128us")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket01128us() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket01128us")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket02256us sets the value of WritesPersecBucket02256us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket02256us(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket02256us", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket02256us(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket02256us", (value))
 }
 
 // GetWritesPersecBucket02256us gets the value of WritesPersecBucket02256us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket02256us()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket02256us")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket02256us() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket02256us")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket03512us sets the value of WritesPersecBucket03512us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket03512us(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket03512us", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket03512us(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket03512us", (value))
 }
 
 // GetWritesPersecBucket03512us gets the value of WritesPersecBucket03512us for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket03512us()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket03512us")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket03512us() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket03512us")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket041ms sets the value of WritesPersecBucket041ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket041ms(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket041ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket041ms(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket041ms", (value))
 }
 
 // GetWritesPersecBucket041ms gets the value of WritesPersecBucket041ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket041ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket041ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket041ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket041ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket054ms sets the value of WritesPersecBucket054ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket054ms(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket054ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket054ms(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket054ms", (value))
 }
 
 // GetWritesPersecBucket054ms gets the value of WritesPersecBucket054ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket054ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket054ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket054ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket054ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket0616ms sets the value of WritesPersecBucket0616ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket0616ms(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket0616ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket0616ms(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket0616ms", (value))
 }
 
 // GetWritesPersecBucket0616ms gets the value of WritesPersecBucket0616ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket0616ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket0616ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket0616ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket0616ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket0764ms sets the value of WritesPersecBucket0764ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket0764ms(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket0764ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket0764ms(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket0764ms", (value))
 }
 
 // GetWritesPersecBucket0764ms gets the value of WritesPersecBucket0764ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket0764ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket0764ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket0764ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket0764ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket08128ms sets the value of WritesPersecBucket08128ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket08128ms(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket08128ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket08128ms(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket08128ms", (value))
 }
 
 // GetWritesPersecBucket08128ms gets the value of WritesPersecBucket08128ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket08128ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket08128ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket08128ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket08128ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket09256ms sets the value of WritesPersecBucket09256ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket09256ms(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket09256ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket09256ms(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket09256ms", (value))
 }
 
 // GetWritesPersecBucket09256ms gets the value of WritesPersecBucket09256ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket09256ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket09256ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket09256ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket09256ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket10512ms sets the value of WritesPersecBucket10512ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket10512ms(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket10512ms", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket10512ms(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket10512ms", (value))
 }
 
 // GetWritesPersecBucket10512ms gets the value of WritesPersecBucket10512ms for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket10512ms()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket10512ms")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket10512ms() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket10512ms")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket111s sets the value of WritesPersecBucket111s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket111s(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket111s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket111s(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket111s", (value))
 }
 
 // GetWritesPersecBucket111s gets the value of WritesPersecBucket111s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket111s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket111s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket111s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket111s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket122s sets the value of WritesPersecBucket122s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket122s(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket122s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket122s(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket122s", (value))
 }
 
 // GetWritesPersecBucket122s gets the value of WritesPersecBucket122s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket122s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket122s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket122s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket122s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket1310s sets the value of WritesPersecBucket1310s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket1310s(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket1310s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket1310s(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket1310s", (value))
 }
 
 // GetWritesPersecBucket1310s gets the value of WritesPersecBucket1310s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket1310s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket1310s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket1310s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket1310s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetWritesPersecBucket1410s sets the value of WritesPersecBucket1410s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket1410s(value uint64) (err error) { 
-    return instance.SetProperty("WritesPersecBucket1410s", (value))
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) SetPropertyWritesPersecBucket1410s(value uint64) (err error) {
+	return instance.SetProperty("WritesPersecBucket1410s", (value))
 }
 
 // GetWritesPersecBucket1410s gets the value of WritesPersecBucket1410s for the instance
-func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket1410s()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("WritesPersecBucket1410s")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *Win32_PerfRawData_Counters_StorportUnitWrites) GetPropertyWritesPersecBucket1410s() (value uint64, err error) {
+	retValue, err := instance.GetProperty("WritesPersecBucket1410s")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
-

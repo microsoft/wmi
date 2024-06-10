@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Processor_UpgradeMethod
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Processor_UpgradeMethod
+//
+// ////////////////////////////////////////////
 package v2
 
-// Processor_UpgradeMethod 
+// Processor_UpgradeMethod
 type Processor_UpgradeMethod int
-const(
+
+const (
 	// Other enum
 	Processor_UpgradeMethod_Other Processor_UpgradeMethod = 1
 	// Unknown enum
@@ -76,4 +78,3 @@ const(
 	// Socket_BGA1288 enum
 	Processor_UpgradeMethod_Socket_BGA1288 Processor_UpgradeMethod = 32
 )
-

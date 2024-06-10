@@ -1,19 +1,20 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemSettingData_NetworkBootPreferredProtocol
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemSettingData_NetworkBootPreferredProtocol
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_NetworkBootPreferredProtocol 
+// VirtualSystemSettingData_NetworkBootPreferredProtocol
 type VirtualSystemSettingData_NetworkBootPreferredProtocol int
-const(
+
+const (
 	// IPv4 enum
 	VirtualSystemSettingData_NetworkBootPreferredProtocol_IPv4 VirtualSystemSettingData_NetworkBootPreferredProtocol = 4096
 	// IPv6 enum
 	VirtualSystemSettingData_NetworkBootPreferredProtocol_IPv6 VirtualSystemSettingData_NetworkBootPreferredProtocol = 4097
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StoragePool_RetireMissingPhysicalDisks
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StoragePool_RetireMissingPhysicalDisks
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_RetireMissingPhysicalDisks 
+// StoragePool_RetireMissingPhysicalDisks
 type StoragePool_RetireMissingPhysicalDisks int
-const(
+
+const (
 	// Auto enum
 	StoragePool_RetireMissingPhysicalDisks_Auto StoragePool_RetireMissingPhysicalDisks = 1
 	// Always enum
@@ -18,4 +20,3 @@ const(
 	// Never enum
 	StoragePool_RetireMissingPhysicalDisks_Never StoragePool_RetireMissingPhysicalDisks = 3
 )
-

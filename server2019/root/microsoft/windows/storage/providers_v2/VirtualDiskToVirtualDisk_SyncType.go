@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualDiskToVirtualDisk_SyncType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualDiskToVirtualDisk_SyncType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_SyncType 
+// VirtualDiskToVirtualDisk_SyncType
 type VirtualDiskToVirtualDisk_SyncType int
-const(
+
+const (
 	// Microsoft_Reserved enum
 	VirtualDiskToVirtualDisk_SyncType_Microsoft_Reserved VirtualDiskToVirtualDisk_SyncType = 1
 	// Mirror enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_SyncType_Vendor_Specific VirtualDiskToVirtualDisk_SyncType = 10
 )
-

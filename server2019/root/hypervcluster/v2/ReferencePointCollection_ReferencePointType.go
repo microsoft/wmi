@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ReferencePointCollection_ReferencePointType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ReferencePointCollection_ReferencePointType
+//
+// ////////////////////////////////////////////
 package v2
 
-// ReferencePointCollection_ReferencePointType 
+// ReferencePointCollection_ReferencePointType
 type ReferencePointCollection_ReferencePointType int
-const(
+
+const (
 	// Unknown enum
 	ReferencePointCollection_ReferencePointType_Unknown ReferencePointCollection_ReferencePointType = 0
 	// Log_based enum
@@ -22,4 +24,3 @@ const(
 	// Vendor_Specific enum
 	ReferencePointCollection_ReferencePointType_Vendor_Specific ReferencePointCollection_ReferencePointType = 4
 )
-

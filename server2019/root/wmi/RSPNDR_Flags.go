@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source RSPNDR_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source RSPNDR_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// RSPNDR_Flags 
+// RSPNDR_Flags
 type RSPNDR_Flags int
-const(
+
+const (
 	// TRACE_CLASS_CALL enum
 	RSPNDR_Flags_TRACE_CLASS_CALL RSPNDR_Flags = 1
 	// TRACE_CLASS_DISPATCH enum
@@ -38,4 +40,3 @@ const(
 	// TRACE_CLASS_NLC enum
 	RSPNDR_Flags_TRACE_CLASS_NLC RSPNDR_Flags = 13
 )
-

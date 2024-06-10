@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TSPkgDebugTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TSPkgDebugTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// TSPkgDebugTrace_Flags 
+// TSPkgDebugTrace_Flags
 type TSPkgDebugTrace_Flags int
-const(
+
+const (
 	// Error enum
 	TSPkgDebugTrace_Flags_Error TSPkgDebugTrace_Flags = 1
 	// Warning enum
@@ -28,4 +30,3 @@ const(
 	// Session enum
 	TSPkgDebugTrace_Flags_Session TSPkgDebugTrace_Flags = 8
 )
-

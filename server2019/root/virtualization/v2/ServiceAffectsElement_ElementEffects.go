@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ServiceAffectsElement_ElementEffects
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ServiceAffectsElement_ElementEffects
+//
+// ////////////////////////////////////////////
 package v2
 
-// ServiceAffectsElement_ElementEffects 
+// ServiceAffectsElement_ElementEffects
 type ServiceAffectsElement_ElementEffects int
-const(
+
+const (
 	// Unknown enum
 	ServiceAffectsElement_ElementEffects_Unknown ServiceAffectsElement_ElementEffects = 0
 	// Other enum
@@ -38,4 +40,3 @@ const(
 	// Vendor_Reserved enum
 	ServiceAffectsElement_ElementEffects_Vendor_Reserved ServiceAffectsElement_ElementEffects = 12
 )
-

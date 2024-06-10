@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PCIComponentError_ErrorSeverity
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PCIComponentError_ErrorSeverity
+//
+// ////////////////////////////////////////////
 package wmi
 
-// PCIComponentError_ErrorSeverity 
+// PCIComponentError_ErrorSeverity
 type PCIComponentError_ErrorSeverity int
-const(
+
+const (
 	// Recoverable enum
 	PCIComponentError_ErrorSeverity_Recoverable PCIComponentError_ErrorSeverity = 0
 	// Fatal enum
@@ -18,4 +20,3 @@ const(
 	// Correctable enum
 	PCIComponentError_ErrorSeverity_Correctable PCIComponentError_ErrorSeverity = 2
 )
-

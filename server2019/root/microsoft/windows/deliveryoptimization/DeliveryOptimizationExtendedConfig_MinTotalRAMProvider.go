@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DeliveryOptimizationExtendedConfig_MinTotalRAMProvider
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DeliveryOptimizationExtendedConfig_MinTotalRAMProvider
+//
+// ////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_MinTotalRAMProvider 
+// DeliveryOptimizationExtendedConfig_MinTotalRAMProvider
 type DeliveryOptimizationExtendedConfig_MinTotalRAMProvider int
-const(
+
+const (
 	// _17 enum
 	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__17 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 5
 	// _18 enum
@@ -22,4 +24,3 @@ const(
 	// _21 enum
 	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__21 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 99
 )
-

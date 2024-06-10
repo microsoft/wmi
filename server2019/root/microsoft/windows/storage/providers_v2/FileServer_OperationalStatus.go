@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FileServer_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FileServer_OperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// FileServer_OperationalStatus 
+// FileServer_OperationalStatus
 type FileServer_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	FileServer_OperationalStatus_Unknown FileServer_OperationalStatus = 0
 	// Other enum
@@ -60,4 +62,3 @@ const(
 	// Microsoft_Reserved1 enum
 	FileServer_OperationalStatus_Microsoft_Reserved1 FileServer_OperationalStatus = 23
 )
-

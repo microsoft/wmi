@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DesktopMonitor_DisplayType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DesktopMonitor_DisplayType
+//
+// ////////////////////////////////////////////
 package v2
 
-// DesktopMonitor_DisplayType 
+// DesktopMonitor_DisplayType
 type DesktopMonitor_DisplayType int
-const(
+
+const (
 	// Unknown enum
 	DesktopMonitor_DisplayType_Unknown DesktopMonitor_DisplayType = 0
 	// Other enum
@@ -24,4 +26,3 @@ const(
 	// Fixed_Frequency_Monochrome enum
 	DesktopMonitor_DisplayType_Fixed_Frequency_Monochrome DesktopMonitor_DisplayType = 5
 )
-

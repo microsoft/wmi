@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ConnectionStaticInfo_State
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ConnectionStaticInfo_State
+//
+// ////////////////////////////////////////////
 package wmi
 
-// ConnectionStaticInfo_State 
+// ConnectionStaticInfo_State
 type ConnectionStaticInfo_State int
-const(
+
+const (
 	// login enum
 	ConnectionStaticInfo_State_login ConnectionStaticInfo_State = 0
 	// full enum
@@ -18,4 +20,3 @@ const(
 	// logout enum
 	ConnectionStaticInfo_State_logout ConnectionStaticInfo_State = 2
 )
-

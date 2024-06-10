@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FirewallAPI_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FirewallAPI_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// FirewallAPI_Level 
+// FirewallAPI_Level
 type FirewallAPI_Level int
-const(
+
+const (
 	// Fatal enum
 	FirewallAPI_Level_Fatal FirewallAPI_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	FirewallAPI_Level_Verbose FirewallAPI_Level = 5
 )
-

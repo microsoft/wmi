@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DedupProperties_ReFSDedupMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DedupProperties_ReFSDedupMode
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// DedupProperties_ReFSDedupMode 
+// DedupProperties_ReFSDedupMode
 type DedupProperties_ReFSDedupMode int
-const(
+
+const (
 	// Disabled enum
 	DedupProperties_ReFSDedupMode_Disabled DedupProperties_ReFSDedupMode = 0
 	// Dedup enum
@@ -22,4 +24,3 @@ const(
 	// NotAvailable enum
 	DedupProperties_ReFSDedupMode_NotAvailable DedupProperties_ReFSDedupMode = 4
 )
-

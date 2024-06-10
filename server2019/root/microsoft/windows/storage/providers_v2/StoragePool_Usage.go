@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StoragePool_Usage
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StoragePool_Usage
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_Usage 
+// StoragePool_Usage
 type StoragePool_Usage int
-const(
+
+const (
 	// Other enum
 	StoragePool_Usage_Other StoragePool_Usage = 1
 	// Unrestricted enum
@@ -46,4 +48,3 @@ const(
 	// Reserved_for_Sparing enum
 	StoragePool_Usage_Reserved_for_Sparing StoragePool_Usage = 17
 )
-

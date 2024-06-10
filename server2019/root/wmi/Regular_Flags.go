@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Regular_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Regular_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Regular_Flags 
+// Regular_Flags
 type Regular_Flags int
-const(
+
+const (
 	// ERROR enum
 	Regular_Flags_ERROR Regular_Flags = 1
 	// WARNING enum
@@ -54,4 +56,3 @@ const(
 	// CONTROL enum
 	Regular_Flags_CONTROL Regular_Flags = 21
 )
-

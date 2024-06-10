@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source WinLogon_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source WinLogon_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// WinLogon_Flags 
+// WinLogon_Flags
 type WinLogon_Flags int
-const(
+
+const (
 	// Core enum
 	WinLogon_Flags_Core WinLogon_Flags = 0
 	// Setup enum
@@ -52,4 +54,3 @@ const(
 	// SLActivate enum
 	WinLogon_Flags_SLActivate WinLogon_Flags = 19
 )
-

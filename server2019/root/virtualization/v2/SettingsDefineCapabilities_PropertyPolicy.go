@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SettingsDefineCapabilities_PropertyPolicy
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SettingsDefineCapabilities_PropertyPolicy
+//
+// ////////////////////////////////////////////
 package v2
 
-// SettingsDefineCapabilities_PropertyPolicy 
+// SettingsDefineCapabilities_PropertyPolicy
 type SettingsDefineCapabilities_PropertyPolicy int
-const(
+
+const (
 	// Independent enum
 	SettingsDefineCapabilities_PropertyPolicy_Independent SettingsDefineCapabilities_PropertyPolicy = 0
 	// Correlated enum
@@ -18,4 +20,3 @@ const(
 	// DMTF_Reserved enum
 	SettingsDefineCapabilities_PropertyPolicy_DMTF_Reserved SettingsDefineCapabilities_PropertyPolicy = 2
 )
-

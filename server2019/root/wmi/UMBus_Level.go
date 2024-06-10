@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source UMBus_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source UMBus_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// UMBus_Level 
+// UMBus_Level
 type UMBus_Level int
-const(
+
+const (
 	// Fatal enum
 	UMBus_Level_Fatal UMBus_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	UMBus_Level_Verbose UMBus_Level = 5
 )
-

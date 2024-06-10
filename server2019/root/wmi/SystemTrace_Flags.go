@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SystemTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SystemTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// SystemTrace_Flags 
+// SystemTrace_Flags
 type SystemTrace_Flags int
-const(
+
+const (
 	// process enum
 	SystemTrace_Flags_process SystemTrace_Flags = 1
 	// thread enum
@@ -58,4 +60,3 @@ const(
 	// fileio enum
 	SystemTrace_Flags_fileio SystemTrace_Flags = 23
 )
-

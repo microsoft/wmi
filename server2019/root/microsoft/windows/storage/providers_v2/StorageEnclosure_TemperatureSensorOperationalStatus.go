@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageEnclosure_TemperatureSensorOperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageEnclosure_TemperatureSensorOperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageEnclosure_TemperatureSensorOperationalStatus 
+// StorageEnclosure_TemperatureSensorOperationalStatus
 type StorageEnclosure_TemperatureSensorOperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	StorageEnclosure_TemperatureSensorOperationalStatus_Unknown StorageEnclosure_TemperatureSensorOperationalStatus = 0
 	// OK enum
@@ -30,4 +32,3 @@ const(
 	// Not_Reported enum
 	StorageEnclosure_TemperatureSensorOperationalStatus_Not_Reported StorageEnclosure_TemperatureSensorOperationalStatus = 11
 )
-

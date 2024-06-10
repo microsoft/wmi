@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Processor_CPUStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Processor_CPUStatus
+//
+// ////////////////////////////////////////////
 package v2
 
-// Processor_CPUStatus 
+// Processor_CPUStatus
 type Processor_CPUStatus int
-const(
+
+const (
 	// Unknown enum
 	Processor_CPUStatus_Unknown Processor_CPUStatus = 0
 	// CPU_Enabled enum
@@ -24,4 +26,3 @@ const(
 	// Other enum
 	Processor_CPUStatus_Other Processor_CPUStatus = 7
 )
-

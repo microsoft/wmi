@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.HyperVCluster.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.HyperVCluster.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VirtualSystemSettingData struct
-type CIM_VirtualSystemSettingData struct { 
+type CIM_VirtualSystemSettingData struct {
 	*CIM_SettingData
 
 	// Action to take for the virtual system when the software executed by the virtual system fails. Failures in this case means a failure that is detectable by the host platform, such as a non-interuptable wait state condition.
@@ -63,7 +65,7 @@ type CIM_VirtualSystemSettingData struct {
 	// Filepath of a directory where swapfiles of the virtual system are stored. A relative path appends to the value of the ConfigurationDataRoot property.Format shall be URI based on RFC 2079.
 	SwapFileDataRoot string
 
-	// VirtualSystemIdentifier shall reflect a unique name for the system as it is used within the virtualization platform. Note that the VirtualSystemIdentifier is not the hostname assigned to the operating system instance running within the virtual system, nor is it an IP address or MAC address assigned to any of its network ports. 
+	// VirtualSystemIdentifier shall reflect a unique name for the system as it is used within the virtualization platform. Note that the VirtualSystemIdentifier is not the hostname assigned to the operating system instance running within the virtual system, nor is it an IP address or MAC address assigned to any of its network ports.
 	///On create requests VirtualSystemIdentifier may contain implementation specific rules (like simple patterns or regular expresssion) that may be interpreted by the implementation when assigning a VirtualSystemIdentifier.
 	VirtualSystemIdentifier string
 
@@ -82,488 +84,491 @@ type CIM_VirtualSystemSettingData struct {
 	VirtualSystemType string
 }
 
-	func NewCIM_VirtualSystemSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemSettingData, err error) {tmp, err := NewCIM_SettingDataEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_VirtualSystemSettingData {
-	CIM_SettingData: tmp,
+func NewCIM_VirtualSystemSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemSettingData{
+		CIM_SettingData: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_VirtualSystemSettingDataEx6(hostName string,
+func NewCIM_VirtualSystemSettingDataEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_VirtualSystemSettingData, err error) {tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_VirtualSystemSettingData {
-	CIM_SettingData: tmp,
+	query *query.WmiQuery) (newInstance *CIM_VirtualSystemSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemSettingData{
+		CIM_SettingData: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetAutomaticRecoveryAction sets the value of AutomaticRecoveryAction for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticRecoveryAction(value VirtualSystemSettingData_AutomaticRecoveryAction) (err error) { 
-    return instance.SetProperty("AutomaticRecoveryAction", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticRecoveryAction(value VirtualSystemSettingData_AutomaticRecoveryAction) (err error) {
+	return instance.SetProperty("AutomaticRecoveryAction", (value))
 }
 
 // GetAutomaticRecoveryAction gets the value of AutomaticRecoveryAction for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticRecoveryAction()(value VirtualSystemSettingData_AutomaticRecoveryAction, err error) { 
-    retValue, err := instance.GetProperty("AutomaticRecoveryAction")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticRecoveryAction() (value VirtualSystemSettingData_AutomaticRecoveryAction, err error) {
+	retValue, err := instance.GetProperty("AutomaticRecoveryAction")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualSystemSettingData_AutomaticRecoveryAction(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualSystemSettingData_AutomaticRecoveryAction(valuetmp)
+
+	return
 }
 
 // SetAutomaticShutdownAction sets the value of AutomaticShutdownAction for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticShutdownAction(value VirtualSystemSettingData_AutomaticShutdownAction) (err error) { 
-    return instance.SetProperty("AutomaticShutdownAction", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticShutdownAction(value VirtualSystemSettingData_AutomaticShutdownAction) (err error) {
+	return instance.SetProperty("AutomaticShutdownAction", (value))
 }
 
 // GetAutomaticShutdownAction gets the value of AutomaticShutdownAction for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticShutdownAction()(value VirtualSystemSettingData_AutomaticShutdownAction, err error) { 
-    retValue, err := instance.GetProperty("AutomaticShutdownAction")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticShutdownAction() (value VirtualSystemSettingData_AutomaticShutdownAction, err error) {
+	retValue, err := instance.GetProperty("AutomaticShutdownAction")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualSystemSettingData_AutomaticShutdownAction(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualSystemSettingData_AutomaticShutdownAction(valuetmp)
+
+	return
 }
 
 // SetAutomaticStartupAction sets the value of AutomaticStartupAction for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticStartupAction(value VirtualSystemSettingData_AutomaticStartupAction) (err error) { 
-    return instance.SetProperty("AutomaticStartupAction", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticStartupAction(value VirtualSystemSettingData_AutomaticStartupAction) (err error) {
+	return instance.SetProperty("AutomaticStartupAction", (value))
 }
 
 // GetAutomaticStartupAction gets the value of AutomaticStartupAction for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticStartupAction()(value VirtualSystemSettingData_AutomaticStartupAction, err error) { 
-    retValue, err := instance.GetProperty("AutomaticStartupAction")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticStartupAction() (value VirtualSystemSettingData_AutomaticStartupAction, err error) {
+	retValue, err := instance.GetProperty("AutomaticStartupAction")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = VirtualSystemSettingData_AutomaticStartupAction(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = VirtualSystemSettingData_AutomaticStartupAction(valuetmp)
+
+	return
 }
 
 // SetAutomaticStartupActionDelay sets the value of AutomaticStartupActionDelay for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticStartupActionDelay(value string) (err error) { 
-    return instance.SetProperty("AutomaticStartupActionDelay", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticStartupActionDelay(value string) (err error) {
+	return instance.SetProperty("AutomaticStartupActionDelay", (value))
 }
 
 // GetAutomaticStartupActionDelay gets the value of AutomaticStartupActionDelay for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticStartupActionDelay()(value string, err error) { 
-    retValue, err := instance.GetProperty("AutomaticStartupActionDelay")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticStartupActionDelay() (value string, err error) {
+	retValue, err := instance.GetProperty("AutomaticStartupActionDelay")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetAutomaticStartupActionSequenceNumber sets the value of AutomaticStartupActionSequenceNumber for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticStartupActionSequenceNumber(value uint16) (err error) { 
-    return instance.SetProperty("AutomaticStartupActionSequenceNumber", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticStartupActionSequenceNumber(value uint16) (err error) {
+	return instance.SetProperty("AutomaticStartupActionSequenceNumber", (value))
 }
 
 // GetAutomaticStartupActionSequenceNumber gets the value of AutomaticStartupActionSequenceNumber for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticStartupActionSequenceNumber()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("AutomaticStartupActionSequenceNumber")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticStartupActionSequenceNumber() (value uint16, err error) {
+	retValue, err := instance.GetProperty("AutomaticStartupActionSequenceNumber")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetConfigurationDataRoot sets the value of ConfigurationDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyConfigurationDataRoot(value string) (err error) { 
-    return instance.SetProperty("ConfigurationDataRoot", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyConfigurationDataRoot(value string) (err error) {
+	return instance.SetProperty("ConfigurationDataRoot", (value))
 }
 
 // GetConfigurationDataRoot gets the value of ConfigurationDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyConfigurationDataRoot()(value string, err error) { 
-    retValue, err := instance.GetProperty("ConfigurationDataRoot")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyConfigurationDataRoot() (value string, err error) {
+	retValue, err := instance.GetProperty("ConfigurationDataRoot")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetConfigurationFile sets the value of ConfigurationFile for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyConfigurationFile(value string) (err error) { 
-    return instance.SetProperty("ConfigurationFile", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyConfigurationFile(value string) (err error) {
+	return instance.SetProperty("ConfigurationFile", (value))
 }
 
 // GetConfigurationFile gets the value of ConfigurationFile for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyConfigurationFile()(value string, err error) { 
-    retValue, err := instance.GetProperty("ConfigurationFile")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyConfigurationFile() (value string, err error) {
+	retValue, err := instance.GetProperty("ConfigurationFile")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetConfigurationID sets the value of ConfigurationID for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyConfigurationID(value string) (err error) { 
-    return instance.SetProperty("ConfigurationID", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyConfigurationID(value string) (err error) {
+	return instance.SetProperty("ConfigurationID", (value))
 }
 
 // GetConfigurationID gets the value of ConfigurationID for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyConfigurationID()(value string, err error) { 
-    retValue, err := instance.GetProperty("ConfigurationID")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyConfigurationID() (value string, err error) {
+	retValue, err := instance.GetProperty("ConfigurationID")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetCreationTime sets the value of CreationTime for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyCreationTime(value string) (err error) { 
-    return instance.SetProperty("CreationTime", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyCreationTime(value string) (err error) {
+	return instance.SetProperty("CreationTime", (value))
 }
 
 // GetCreationTime gets the value of CreationTime for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyCreationTime()(value string, err error) { 
-    retValue, err := instance.GetProperty("CreationTime")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyCreationTime() (value string, err error) {
+	retValue, err := instance.GetProperty("CreationTime")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetLogDataRoot sets the value of LogDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyLogDataRoot(value string) (err error) { 
-    return instance.SetProperty("LogDataRoot", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyLogDataRoot(value string) (err error) {
+	return instance.SetProperty("LogDataRoot", (value))
 }
 
 // GetLogDataRoot gets the value of LogDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyLogDataRoot()(value string, err error) { 
-    retValue, err := instance.GetProperty("LogDataRoot")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyLogDataRoot() (value string, err error) {
+	retValue, err := instance.GetProperty("LogDataRoot")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetNotes sets the value of Notes for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyNotes(value []string) (err error) { 
-    return instance.SetProperty("Notes", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyNotes(value []string) (err error) {
+	return instance.SetProperty("Notes", (value))
 }
 
 // GetNotes gets the value of Notes for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyNotes()(value []string, err error) { 
-    retValue, err := instance.GetProperty("Notes")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(string); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, string(valuetmp))
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyNotes() (value []string, err error) {
+	retValue, err := instance.GetProperty("Notes")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
+	return
 }
 
 // SetRecoveryFile sets the value of RecoveryFile for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyRecoveryFile(value string) (err error) { 
-    return instance.SetProperty("RecoveryFile", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyRecoveryFile(value string) (err error) {
+	return instance.SetProperty("RecoveryFile", (value))
 }
 
 // GetRecoveryFile gets the value of RecoveryFile for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyRecoveryFile()(value string, err error) { 
-    retValue, err := instance.GetProperty("RecoveryFile")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyRecoveryFile() (value string, err error) {
+	retValue, err := instance.GetProperty("RecoveryFile")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetSnapshotDataRoot sets the value of SnapshotDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertySnapshotDataRoot(value string) (err error) { 
-    return instance.SetProperty("SnapshotDataRoot", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertySnapshotDataRoot(value string) (err error) {
+	return instance.SetProperty("SnapshotDataRoot", (value))
 }
 
 // GetSnapshotDataRoot gets the value of SnapshotDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertySnapshotDataRoot()(value string, err error) { 
-    retValue, err := instance.GetProperty("SnapshotDataRoot")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertySnapshotDataRoot() (value string, err error) {
+	retValue, err := instance.GetProperty("SnapshotDataRoot")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetSuspendDataRoot sets the value of SuspendDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertySuspendDataRoot(value string) (err error) { 
-    return instance.SetProperty("SuspendDataRoot", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertySuspendDataRoot(value string) (err error) {
+	return instance.SetProperty("SuspendDataRoot", (value))
 }
 
 // GetSuspendDataRoot gets the value of SuspendDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertySuspendDataRoot()(value string, err error) { 
-    retValue, err := instance.GetProperty("SuspendDataRoot")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertySuspendDataRoot() (value string, err error) {
+	retValue, err := instance.GetProperty("SuspendDataRoot")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetSwapFileDataRoot sets the value of SwapFileDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertySwapFileDataRoot(value string) (err error) { 
-    return instance.SetProperty("SwapFileDataRoot", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertySwapFileDataRoot(value string) (err error) {
+	return instance.SetProperty("SwapFileDataRoot", (value))
 }
 
 // GetSwapFileDataRoot gets the value of SwapFileDataRoot for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertySwapFileDataRoot()(value string, err error) { 
-    retValue, err := instance.GetProperty("SwapFileDataRoot")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertySwapFileDataRoot() (value string, err error) {
+	retValue, err := instance.GetProperty("SwapFileDataRoot")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetVirtualSystemIdentifier sets the value of VirtualSystemIdentifier for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyVirtualSystemIdentifier(value string) (err error) { 
-    return instance.SetProperty("VirtualSystemIdentifier", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyVirtualSystemIdentifier(value string) (err error) {
+	return instance.SetProperty("VirtualSystemIdentifier", (value))
 }
 
 // GetVirtualSystemIdentifier gets the value of VirtualSystemIdentifier for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyVirtualSystemIdentifier()(value string, err error) { 
-    retValue, err := instance.GetProperty("VirtualSystemIdentifier")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyVirtualSystemIdentifier() (value string, err error) {
+	retValue, err := instance.GetProperty("VirtualSystemIdentifier")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetVirtualSystemType sets the value of VirtualSystemType for the instance
-func (instance *CIM_VirtualSystemSettingData) SetPropertyVirtualSystemType(value string) (err error) { 
-    return instance.SetProperty("VirtualSystemType", (value))
+func (instance *CIM_VirtualSystemSettingData) SetPropertyVirtualSystemType(value string) (err error) {
+	return instance.SetProperty("VirtualSystemType", (value))
 }
 
 // GetVirtualSystemType gets the value of VirtualSystemType for the instance
-func (instance *CIM_VirtualSystemSettingData) GetPropertyVirtualSystemType()(value string, err error) { 
-    retValue, err := instance.GetProperty("VirtualSystemType")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_VirtualSystemSettingData) GetPropertyVirtualSystemType() (value string, err error) {
+	retValue, err := instance.GetProperty("VirtualSystemType")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
-

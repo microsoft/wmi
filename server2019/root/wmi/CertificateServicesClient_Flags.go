@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CertificateServicesClient_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CertificateServicesClient_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// CertificateServicesClient_Flags 
+// CertificateServicesClient_Flags
 type CertificateServicesClient_Flags int
-const(
+
+const (
 	// TRC_FATAL enum
 	CertificateServicesClient_Flags_TRC_FATAL CertificateServicesClient_Flags = 1
 	// TRC_ERROR enum
@@ -22,4 +24,3 @@ const(
 	// TRC_DETAIL enum
 	CertificateServicesClient_Flags_TRC_DETAIL CertificateServicesClient_Flags = 5
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source IPAssignmentSettingData_ProtocolIFType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source IPAssignmentSettingData_ProtocolIFType
+//
+// ////////////////////////////////////////////
 package standardcimv2
 
-// IPAssignmentSettingData_ProtocolIFType 
+// IPAssignmentSettingData_ProtocolIFType
 type IPAssignmentSettingData_ProtocolIFType int
-const(
+
+const (
 	// _10 enum
 	IPAssignmentSettingData_ProtocolIFType__10 IPAssignmentSettingData_ProtocolIFType = 0
 	// _29 enum
@@ -22,4 +24,3 @@ const(
 	// _30 enum
 	IPAssignmentSettingData_ProtocolIFType__30 IPAssignmentSettingData_ProtocolIFType = 4098
 )
-

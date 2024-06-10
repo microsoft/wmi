@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MetricServiceCapabilities_SupportedMethods
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MetricServiceCapabilities_SupportedMethods
+//
+// ////////////////////////////////////////////
 package v2
 
-// MetricServiceCapabilities_SupportedMethods 
+// MetricServiceCapabilities_SupportedMethods
 type MetricServiceCapabilities_SupportedMethods int
-const(
+
+const (
 	// ControlMetrics enum
 	MetricServiceCapabilities_SupportedMethods_ControlMetrics MetricServiceCapabilities_SupportedMethods = 2
 	// ControlMetricsByClass enum
@@ -28,4 +30,3 @@ const(
 	// Vendor_Specific enum
 	MetricServiceCapabilities_SupportedMethods_Vendor_Specific MetricServiceCapabilities_SupportedMethods = 9
 )
-

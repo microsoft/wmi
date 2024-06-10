@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source WinInit_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source WinInit_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// WinInit_Flags 
+// WinInit_Flags
 type WinInit_Flags int
-const(
+
+const (
 	// Core enum
 	WinInit_Flags_Core WinInit_Flags = 0
 	// Boot enum
@@ -26,4 +28,3 @@ const(
 	// Sas enum
 	WinInit_Flags_Sas WinInit_Flags = 6
 )
-

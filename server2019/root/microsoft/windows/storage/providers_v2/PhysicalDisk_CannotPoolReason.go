@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PhysicalDisk_CannotPoolReason
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PhysicalDisk_CannotPoolReason
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// PhysicalDisk_CannotPoolReason 
+// PhysicalDisk_CannotPoolReason
 type PhysicalDisk_CannotPoolReason int
-const(
+
+const (
 	// Unknown enum
 	PhysicalDisk_CannotPoolReason_Unknown PhysicalDisk_CannotPoolReason = 0
 	// Other enum
@@ -50,4 +52,3 @@ const(
 	// Vendor_Reserved enum
 	PhysicalDisk_CannotPoolReason_Vendor_Reserved PhysicalDisk_CannotPoolReason = 18
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Mountmgr_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Mountmgr_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Mountmgr_Flags 
+// Mountmgr_Flags
 type Mountmgr_Flags int
-const(
+
+const (
 	// TracingGeneral enum
 	Mountmgr_Flags_TracingGeneral Mountmgr_Flags = 1
 	// TracingIoctl enum
@@ -20,4 +22,3 @@ const(
 	// TracingCache enum
 	Mountmgr_Flags_TracingCache Mountmgr_Flags = 4
 )
-

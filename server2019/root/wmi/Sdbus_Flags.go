@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Sdbus_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Sdbus_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Sdbus_Flags 
+// Sdbus_Flags
 type Sdbus_Flags int
-const(
+
+const (
 	// SDBUS_DEBUG_FAIL enum
 	Sdbus_Flags_SDBUS_DEBUG_FAIL Sdbus_Flags = 1
 	// SDBUS_DEBUG_WARNING enum
@@ -56,4 +58,3 @@ const(
 	// SDBUS_DEBUG_DUMP_REGS enum
 	Sdbus_Flags_SDBUS_DEBUG_DUMP_REGS Sdbus_Flags = 22
 )
-

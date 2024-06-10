@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MaskingSet_DeviceAccesses
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MaskingSet_DeviceAccesses
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// MaskingSet_DeviceAccesses 
+// MaskingSet_DeviceAccesses
 type MaskingSet_DeviceAccesses int
-const(
+
+const (
 	// Read_Write enum
 	MaskingSet_DeviceAccesses_Read_Write MaskingSet_DeviceAccesses = 2
 	// Read_Only enum
@@ -18,4 +20,3 @@ const(
 	// No_Access enum
 	MaskingSet_DeviceAccesses_No_Access MaskingSet_DeviceAccesses = 4
 )
-

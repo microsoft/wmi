@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EthernetPort_EnabledCapabilities
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EthernetPort_EnabledCapabilities
+//
+// ////////////////////////////////////////////
 package v2
 
-// EthernetPort_EnabledCapabilities 
+// EthernetPort_EnabledCapabilities
 type EthernetPort_EnabledCapabilities int
-const(
+
+const (
 	// Unknown enum
 	EthernetPort_EnabledCapabilities_Unknown EthernetPort_EnabledCapabilities = 0
 	// Other enum
@@ -24,4 +26,3 @@ const(
 	// LoadBalancing enum
 	EthernetPort_EnabledCapabilities_LoadBalancing EthernetPort_EnabledCapabilities = 5
 )
-

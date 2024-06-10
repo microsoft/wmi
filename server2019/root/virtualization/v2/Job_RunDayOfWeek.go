@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Job_RunDayOfWeek
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Job_RunDayOfWeek
+//
+// ////////////////////////////////////////////
 package v2
 
-// Job_RunDayOfWeek 
+// Job_RunDayOfWeek
 type Job_RunDayOfWeek int
-const(
+
+const (
 	// _Saturday enum
 	Job_RunDayOfWeek__Saturday Job_RunDayOfWeek = -7
 	// _Friday enum
@@ -42,4 +44,3 @@ const(
 	// Saturday enum
 	Job_RunDayOfWeek_Saturday Job_RunDayOfWeek = 7
 )
-

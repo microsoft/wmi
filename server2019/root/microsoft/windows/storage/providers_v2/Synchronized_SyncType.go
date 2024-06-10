@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Synchronized_SyncType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Synchronized_SyncType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Synchronized_SyncType 
+// Synchronized_SyncType
 type Synchronized_SyncType int
-const(
+
+const (
 	// Microsoft_Reserved enum
 	Synchronized_SyncType_Microsoft_Reserved Synchronized_SyncType = 1
 	// Mirror enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Specific enum
 	Synchronized_SyncType_Vendor_Specific Synchronized_SyncType = 10
 )
-

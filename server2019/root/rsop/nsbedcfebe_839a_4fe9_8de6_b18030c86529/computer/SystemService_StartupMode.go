@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SystemService_StartupMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SystemService_StartupMode
+//
+// ////////////////////////////////////////////
 package computer
 
-// SystemService_StartupMode 
+// SystemService_StartupMode
 type SystemService_StartupMode int
-const(
+
+const (
 	// Automatic enum
 	SystemService_StartupMode_Automatic SystemService_StartupMode = 2
 	// Manual enum
@@ -18,4 +20,3 @@ const(
 	// Disabled enum
 	SystemService_StartupMode_Disabled SystemService_StartupMode = 4
 )
-

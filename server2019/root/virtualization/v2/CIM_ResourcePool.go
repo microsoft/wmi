@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.virtualization.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.virtualization.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ResourcePool struct
-type CIM_ResourcePool struct { 
+type CIM_ResourcePool struct {
 	*CIM_LogicalElement
 
 	// This property specifies the units of allocation used by the Reservation and Limit properties. For example, when ResourceType=Processor, AllocationUnits may be set to hertz*10^6 or percent. When ResourceType=Memory, AllocationUnits may be set to bytes*10^3. The value of this property shall be a legal value of the Programmatic Units qualifier as defined in Appendix C.1 of DSP0004 V2.4 or later.
@@ -54,325 +56,328 @@ type CIM_ResourcePool struct {
 	ResourceType ResourcePool_ResourceType
 }
 
-	func NewCIM_ResourcePoolEx1(instance *cim.WmiInstance) (newInstance *CIM_ResourcePool, err error) {tmp, err := NewCIM_LogicalElementEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_ResourcePool {
-	CIM_LogicalElement: tmp,
+func NewCIM_ResourcePoolEx1(instance *cim.WmiInstance) (newInstance *CIM_ResourcePool, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourcePool{
+		CIM_LogicalElement: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_ResourcePoolEx6(hostName string,
+func NewCIM_ResourcePoolEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_ResourcePool, err error) {tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_ResourcePool {
-	CIM_LogicalElement: tmp,
+	query *query.WmiQuery) (newInstance *CIM_ResourcePool, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourcePool{
+		CIM_LogicalElement: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetAllocationUnits sets the value of AllocationUnits for the instance
-func (instance *CIM_ResourcePool) SetPropertyAllocationUnits(value string) (err error) { 
-    return instance.SetProperty("AllocationUnits", (value))
+func (instance *CIM_ResourcePool) SetPropertyAllocationUnits(value string) (err error) {
+	return instance.SetProperty("AllocationUnits", (value))
 }
 
 // GetAllocationUnits gets the value of AllocationUnits for the instance
-func (instance *CIM_ResourcePool) GetPropertyAllocationUnits()(value string, err error) { 
-    retValue, err := instance.GetProperty("AllocationUnits")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyAllocationUnits() (value string, err error) {
+	retValue, err := instance.GetProperty("AllocationUnits")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetCapacity sets the value of Capacity for the instance
-func (instance *CIM_ResourcePool) SetPropertyCapacity(value uint64) (err error) { 
-    return instance.SetProperty("Capacity", (value))
+func (instance *CIM_ResourcePool) SetPropertyCapacity(value uint64) (err error) {
+	return instance.SetProperty("Capacity", (value))
 }
 
 // GetCapacity gets the value of Capacity for the instance
-func (instance *CIM_ResourcePool) GetPropertyCapacity()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("Capacity")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyCapacity() (value uint64, err error) {
+	retValue, err := instance.GetProperty("Capacity")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetConsumedResourceUnits sets the value of ConsumedResourceUnits for the instance
-func (instance *CIM_ResourcePool) SetPropertyConsumedResourceUnits(value string) (err error) { 
-    return instance.SetProperty("ConsumedResourceUnits", (value))
+func (instance *CIM_ResourcePool) SetPropertyConsumedResourceUnits(value string) (err error) {
+	return instance.SetProperty("ConsumedResourceUnits", (value))
 }
 
 // GetConsumedResourceUnits gets the value of ConsumedResourceUnits for the instance
-func (instance *CIM_ResourcePool) GetPropertyConsumedResourceUnits()(value string, err error) { 
-    retValue, err := instance.GetProperty("ConsumedResourceUnits")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyConsumedResourceUnits() (value string, err error) {
+	retValue, err := instance.GetProperty("ConsumedResourceUnits")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetCurrentlyConsumedResource sets the value of CurrentlyConsumedResource for the instance
-func (instance *CIM_ResourcePool) SetPropertyCurrentlyConsumedResource(value uint64) (err error) { 
-    return instance.SetProperty("CurrentlyConsumedResource", (value))
+func (instance *CIM_ResourcePool) SetPropertyCurrentlyConsumedResource(value uint64) (err error) {
+	return instance.SetProperty("CurrentlyConsumedResource", (value))
 }
 
 // GetCurrentlyConsumedResource gets the value of CurrentlyConsumedResource for the instance
-func (instance *CIM_ResourcePool) GetPropertyCurrentlyConsumedResource()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("CurrentlyConsumedResource")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyCurrentlyConsumedResource() (value uint64, err error) {
+	retValue, err := instance.GetProperty("CurrentlyConsumedResource")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetMaxConsumableResource sets the value of MaxConsumableResource for the instance
-func (instance *CIM_ResourcePool) SetPropertyMaxConsumableResource(value uint64) (err error) { 
-    return instance.SetProperty("MaxConsumableResource", (value))
+func (instance *CIM_ResourcePool) SetPropertyMaxConsumableResource(value uint64) (err error) {
+	return instance.SetProperty("MaxConsumableResource", (value))
 }
 
 // GetMaxConsumableResource gets the value of MaxConsumableResource for the instance
-func (instance *CIM_ResourcePool) GetPropertyMaxConsumableResource()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("MaxConsumableResource")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyMaxConsumableResource() (value uint64, err error) {
+	retValue, err := instance.GetProperty("MaxConsumableResource")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetOtherResourceType sets the value of OtherResourceType for the instance
-func (instance *CIM_ResourcePool) SetPropertyOtherResourceType(value string) (err error) { 
-    return instance.SetProperty("OtherResourceType", (value))
+func (instance *CIM_ResourcePool) SetPropertyOtherResourceType(value string) (err error) {
+	return instance.SetProperty("OtherResourceType", (value))
 }
 
 // GetOtherResourceType gets the value of OtherResourceType for the instance
-func (instance *CIM_ResourcePool) GetPropertyOtherResourceType()(value string, err error) { 
-    retValue, err := instance.GetProperty("OtherResourceType")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyOtherResourceType() (value string, err error) {
+	retValue, err := instance.GetProperty("OtherResourceType")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetPoolID sets the value of PoolID for the instance
-func (instance *CIM_ResourcePool) SetPropertyPoolID(value string) (err error) { 
-    return instance.SetProperty("PoolID", (value))
+func (instance *CIM_ResourcePool) SetPropertyPoolID(value string) (err error) {
+	return instance.SetProperty("PoolID", (value))
 }
 
 // GetPoolID gets the value of PoolID for the instance
-func (instance *CIM_ResourcePool) GetPropertyPoolID()(value string, err error) { 
-    retValue, err := instance.GetProperty("PoolID")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyPoolID() (value string, err error) {
+	retValue, err := instance.GetProperty("PoolID")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetPrimordial sets the value of Primordial for the instance
-func (instance *CIM_ResourcePool) SetPropertyPrimordial(value bool) (err error) { 
-    return instance.SetProperty("Primordial", (value))
+func (instance *CIM_ResourcePool) SetPropertyPrimordial(value bool) (err error) {
+	return instance.SetProperty("Primordial", (value))
 }
 
 // GetPrimordial gets the value of Primordial for the instance
-func (instance *CIM_ResourcePool) GetPropertyPrimordial()(value bool, err error) { 
-    retValue, err := instance.GetProperty("Primordial")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyPrimordial() (value bool, err error) {
+	retValue, err := instance.GetProperty("Primordial")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetReserved sets the value of Reserved for the instance
-func (instance *CIM_ResourcePool) SetPropertyReserved(value uint64) (err error) { 
-    return instance.SetProperty("Reserved", (value))
+func (instance *CIM_ResourcePool) SetPropertyReserved(value uint64) (err error) {
+	return instance.SetProperty("Reserved", (value))
 }
 
 // GetReserved gets the value of Reserved for the instance
-func (instance *CIM_ResourcePool) GetPropertyReserved()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("Reserved")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyReserved() (value uint64, err error) {
+	retValue, err := instance.GetProperty("Reserved")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetResourceSubType sets the value of ResourceSubType for the instance
-func (instance *CIM_ResourcePool) SetPropertyResourceSubType(value string) (err error) { 
-    return instance.SetProperty("ResourceSubType", (value))
+func (instance *CIM_ResourcePool) SetPropertyResourceSubType(value string) (err error) {
+	return instance.SetProperty("ResourceSubType", (value))
 }
 
 // GetResourceSubType gets the value of ResourceSubType for the instance
-func (instance *CIM_ResourcePool) GetPropertyResourceSubType()(value string, err error) { 
-    retValue, err := instance.GetProperty("ResourceSubType")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyResourceSubType() (value string, err error) {
+	retValue, err := instance.GetProperty("ResourceSubType")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetResourceType sets the value of ResourceType for the instance
-func (instance *CIM_ResourcePool) SetPropertyResourceType(value ResourcePool_ResourceType) (err error) { 
-    return instance.SetProperty("ResourceType", (value))
+func (instance *CIM_ResourcePool) SetPropertyResourceType(value ResourcePool_ResourceType) (err error) {
+	return instance.SetProperty("ResourceType", (value))
 }
 
 // GetResourceType gets the value of ResourceType for the instance
-func (instance *CIM_ResourcePool) GetPropertyResourceType()(value ResourcePool_ResourceType, err error) { 
-    retValue, err := instance.GetProperty("ResourceType")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_ResourcePool) GetPropertyResourceType() (value ResourcePool_ResourceType, err error) {
+	retValue, err := instance.GetProperty("ResourceType")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = ResourcePool_ResourceType(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = ResourcePool_ResourceType(valuetmp)
+
+	return
 }
-

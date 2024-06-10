@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Volume_DriveType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Volume_DriveType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Volume_DriveType 
+// Volume_DriveType
 type Volume_DriveType int
-const(
+
+const (
 	// Unknown enum
 	Volume_DriveType_Unknown Volume_DriveType = 0
 	// Invalid_Root_Path enum
@@ -26,4 +28,3 @@ const(
 	// RAM_Disk enum
 	Volume_DriveType_RAM_Disk Volume_DriveType = 6
 )
-

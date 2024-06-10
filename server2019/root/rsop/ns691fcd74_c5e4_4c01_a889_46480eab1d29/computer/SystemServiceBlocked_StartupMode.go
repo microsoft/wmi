@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SystemServiceBlocked_StartupMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SystemServiceBlocked_StartupMode
+//
+// ////////////////////////////////////////////
 package computer
 
-// SystemServiceBlocked_StartupMode 
+// SystemServiceBlocked_StartupMode
 type SystemServiceBlocked_StartupMode int
-const(
+
+const (
 	// Automatic enum
 	SystemServiceBlocked_StartupMode_Automatic SystemServiceBlocked_StartupMode = 2
 	// Manual enum
@@ -18,4 +20,3 @@ const(
 	// Disabled enum
 	SystemServiceBlocked_StartupMode_Disabled SystemServiceBlocked_StartupMode = 4
 )
-

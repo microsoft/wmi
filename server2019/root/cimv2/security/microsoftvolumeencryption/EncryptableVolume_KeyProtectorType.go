@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EncryptableVolume_KeyProtectorType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EncryptableVolume_KeyProtectorType
+//
+// ////////////////////////////////////////////
 package microsoftvolumeencryption
 
-// EncryptableVolume_KeyProtectorType 
+// EncryptableVolume_KeyProtectorType
 type EncryptableVolume_KeyProtectorType int
-const(
+
+const (
 	// All enum
 	EncryptableVolume_KeyProtectorType_All EncryptableVolume_KeyProtectorType = 0
 	// TPM enum
@@ -34,4 +36,3 @@ const(
 	// Identity enum
 	EncryptableVolume_KeyProtectorType_Identity EncryptableVolume_KeyProtectorType = 10
 )
-

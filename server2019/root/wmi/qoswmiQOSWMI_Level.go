@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source qoswmiQOSWMI_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source qoswmiQOSWMI_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// qoswmiQOSWMI_Level 
+// qoswmiQOSWMI_Level
 type qoswmiQOSWMI_Level int
-const(
+
+const (
 	// Fatal enum
 	qoswmiQOSWMI_Level_Fatal qoswmiQOSWMI_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	qoswmiQOSWMI_Level_Verbose qoswmiQOSWMI_Level = 5
 )
-

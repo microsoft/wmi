@@ -1,22 +1,24 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.WMI
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.WMI
+//
+// ////////////////////////////////////////////
 package wmi
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/base/instance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // ISCSI_SessionStaticInfo struct
-type ISCSI_SessionStaticInfo struct { 
+type ISCSI_SessionStaticInfo struct {
 	*cim.WmiInstance
 
 	// The number of connections that currently belong to this session
@@ -71,489 +73,492 @@ type ISCSI_SessionStaticInfo struct {
 	UniqueSessionId uint64
 }
 
-	func NewISCSI_SessionStaticInfoEx1(instance *cim.WmiInstance) (newInstance *ISCSI_SessionStaticInfo, err error) {tmp, err := instance, nil
-		
-	if err != nil { return }
-	newInstance = &ISCSI_SessionStaticInfo {
-	WmiInstance: tmp,
+func NewISCSI_SessionStaticInfoEx1(instance *cim.WmiInstance) (newInstance *ISCSI_SessionStaticInfo, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &ISCSI_SessionStaticInfo{
+		WmiInstance: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewISCSI_SessionStaticInfoEx6(hostName string,
+func NewISCSI_SessionStaticInfoEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *ISCSI_SessionStaticInfo, err error) {tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &ISCSI_SessionStaticInfo {
-	WmiInstance: tmp,
+	query *query.WmiQuery) (newInstance *ISCSI_SessionStaticInfo, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ISCSI_SessionStaticInfo{
+		WmiInstance: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetConnectionCount sets the value of ConnectionCount for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyConnectionCount(value uint16) (err error) { 
-    return instance.SetProperty("ConnectionCount", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyConnectionCount(value uint16) (err error) {
+	return instance.SetProperty("ConnectionCount", (value))
 }
 
 // GetConnectionCount gets the value of ConnectionCount for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyConnectionCount()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("ConnectionCount")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyConnectionCount() (value uint16, err error) {
+	retValue, err := instance.GetProperty("ConnectionCount")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetConnectionsList sets the value of ConnectionsList for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyConnectionsList(value []ISCSI_ConnectionStaticInfo) (err error) { 
-    return instance.SetProperty("ConnectionsList", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyConnectionsList(value []ISCSI_ConnectionStaticInfo) (err error) {
+	return instance.SetProperty("ConnectionsList", (value))
 }
 
 // GetConnectionsList gets the value of ConnectionsList for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyConnectionsList()(value []ISCSI_ConnectionStaticInfo, err error) { 
-    retValue, err := instance.GetProperty("ConnectionsList")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(ISCSI_ConnectionStaticInfo); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " ISCSI_ConnectionStaticInfo is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, ISCSI_ConnectionStaticInfo(valuetmp))
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyConnectionsList() (value []ISCSI_ConnectionStaticInfo, err error) {
+	retValue, err := instance.GetProperty("ConnectionsList")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(ISCSI_ConnectionStaticInfo)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " ISCSI_ConnectionStaticInfo is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, ISCSI_ConnectionStaticInfo(valuetmp))
+	}
+
+	return
 }
 
 // SetDataPduInOrder sets the value of DataPduInOrder for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyDataPduInOrder(value bool) (err error) { 
-    return instance.SetProperty("DataPduInOrder", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyDataPduInOrder(value bool) (err error) {
+	return instance.SetProperty("DataPduInOrder", (value))
 }
 
 // GetDataPduInOrder gets the value of DataPduInOrder for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyDataPduInOrder()(value bool, err error) { 
-    retValue, err := instance.GetProperty("DataPduInOrder")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyDataPduInOrder() (value bool, err error) {
+	retValue, err := instance.GetProperty("DataPduInOrder")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetDataSequenceInOrder sets the value of DataSequenceInOrder for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyDataSequenceInOrder(value bool) (err error) { 
-    return instance.SetProperty("DataSequenceInOrder", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyDataSequenceInOrder(value bool) (err error) {
+	return instance.SetProperty("DataSequenceInOrder", (value))
 }
 
 // GetDataSequenceInOrder gets the value of DataSequenceInOrder for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyDataSequenceInOrder()(value bool, err error) { 
-    retValue, err := instance.GetProperty("DataSequenceInOrder")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyDataSequenceInOrder() (value bool, err error) {
+	retValue, err := instance.GetProperty("DataSequenceInOrder")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetErrorRecoveryLevel sets the value of ErrorRecoveryLevel for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyErrorRecoveryLevel(value uint8) (err error) { 
-    return instance.SetProperty("ErrorRecoveryLevel", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyErrorRecoveryLevel(value uint8) (err error) {
+	return instance.SetProperty("ErrorRecoveryLevel", (value))
 }
 
 // GetErrorRecoveryLevel gets the value of ErrorRecoveryLevel for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyErrorRecoveryLevel()(value uint8, err error) { 
-    retValue, err := instance.GetProperty("ErrorRecoveryLevel")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint8); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyErrorRecoveryLevel() (value uint8, err error) {
+	retValue, err := instance.GetProperty("ErrorRecoveryLevel")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint8(valuetmp)
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint8(valuetmp)
+
+	return
 }
 
 // SetFirstBurstLength sets the value of FirstBurstLength for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyFirstBurstLength(value uint32) (err error) { 
-    return instance.SetProperty("FirstBurstLength", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyFirstBurstLength(value uint32) (err error) {
+	return instance.SetProperty("FirstBurstLength", (value))
 }
 
 // GetFirstBurstLength gets the value of FirstBurstLength for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyFirstBurstLength()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("FirstBurstLength")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyFirstBurstLength() (value uint32, err error) {
+	retValue, err := instance.GetProperty("FirstBurstLength")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetImmediateData sets the value of ImmediateData for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyImmediateData(value bool) (err error) { 
-    return instance.SetProperty("ImmediateData", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyImmediateData(value bool) (err error) {
+	return instance.SetProperty("ImmediateData", (value))
 }
 
 // GetImmediateData gets the value of ImmediateData for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyImmediateData()(value bool, err error) { 
-    retValue, err := instance.GetProperty("ImmediateData")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyImmediateData() (value bool, err error) {
+	retValue, err := instance.GetProperty("ImmediateData")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetInitialR2t sets the value of InitialR2t for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyInitialR2t(value bool) (err error) { 
-    return instance.SetProperty("InitialR2t", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyInitialR2t(value bool) (err error) {
+	return instance.SetProperty("InitialR2t", (value))
 }
 
 // GetInitialR2t gets the value of InitialR2t for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyInitialR2t()(value bool, err error) { 
-    retValue, err := instance.GetProperty("InitialR2t")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyInitialR2t() (value bool, err error) {
+	retValue, err := instance.GetProperty("InitialR2t")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetInitiatoriSCSIName sets the value of InitiatoriSCSIName for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyInitiatoriSCSIName(value string) (err error) { 
-    return instance.SetProperty("InitiatoriSCSIName", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyInitiatoriSCSIName(value string) (err error) {
+	return instance.SetProperty("InitiatoriSCSIName", (value))
 }
 
 // GetInitiatoriSCSIName gets the value of InitiatoriSCSIName for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyInitiatoriSCSIName()(value string, err error) { 
-    retValue, err := instance.GetProperty("InitiatoriSCSIName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyInitiatoriSCSIName() (value string, err error) {
+	retValue, err := instance.GetProperty("InitiatoriSCSIName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetISID sets the value of ISID for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyISID(value []uint8) (err error) { 
-    return instance.SetProperty("ISID", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyISID(value []uint8) (err error) {
+	return instance.SetProperty("ISID", (value))
 }
 
 // GetISID gets the value of ISID for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyISID()(value []uint8, err error) { 
-    retValue, err := instance.GetProperty("ISID")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(uint8); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, uint8(valuetmp))
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyISID() (value []uint8, err error) {
+	retValue, err := instance.GetProperty("ISID")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
+	return
 }
 
 // SetMaxBurstLength sets the value of MaxBurstLength for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyMaxBurstLength(value uint32) (err error) { 
-    return instance.SetProperty("MaxBurstLength", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyMaxBurstLength(value uint32) (err error) {
+	return instance.SetProperty("MaxBurstLength", (value))
 }
 
 // GetMaxBurstLength gets the value of MaxBurstLength for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyMaxBurstLength()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("MaxBurstLength")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyMaxBurstLength() (value uint32, err error) {
+	retValue, err := instance.GetProperty("MaxBurstLength")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetMaxConnections sets the value of MaxConnections for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyMaxConnections(value uint32) (err error) { 
-    return instance.SetProperty("MaxConnections", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyMaxConnections(value uint32) (err error) {
+	return instance.SetProperty("MaxConnections", (value))
 }
 
 // GetMaxConnections gets the value of MaxConnections for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyMaxConnections()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("MaxConnections")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyMaxConnections() (value uint32, err error) {
+	retValue, err := instance.GetProperty("MaxConnections")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetMaxOutstandingR2t sets the value of MaxOutstandingR2t for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyMaxOutstandingR2t(value uint32) (err error) { 
-    return instance.SetProperty("MaxOutstandingR2t", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyMaxOutstandingR2t(value uint32) (err error) {
+	return instance.SetProperty("MaxOutstandingR2t", (value))
 }
 
 // GetMaxOutstandingR2t gets the value of MaxOutstandingR2t for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyMaxOutstandingR2t()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("MaxOutstandingR2t")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyMaxOutstandingR2t() (value uint32, err error) {
+	retValue, err := instance.GetProperty("MaxOutstandingR2t")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetTargetiSCSIName sets the value of TargetiSCSIName for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyTargetiSCSIName(value string) (err error) { 
-    return instance.SetProperty("TargetiSCSIName", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyTargetiSCSIName(value string) (err error) {
+	return instance.SetProperty("TargetiSCSIName", (value))
 }
 
 // GetTargetiSCSIName gets the value of TargetiSCSIName for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyTargetiSCSIName()(value string, err error) { 
-    retValue, err := instance.GetProperty("TargetiSCSIName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyTargetiSCSIName() (value string, err error) {
+	retValue, err := instance.GetProperty("TargetiSCSIName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetTSID sets the value of TSID for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyTSID(value uint16) (err error) { 
-    return instance.SetProperty("TSID", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyTSID(value uint16) (err error) {
+	return instance.SetProperty("TSID", (value))
 }
 
 // GetTSID gets the value of TSID for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyTSID()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("TSID")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyTSID() (value uint16, err error) {
+	retValue, err := instance.GetProperty("TSID")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetType sets the value of Type for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyType(value SessionStaticInfo_Type) (err error) { 
-    return instance.SetProperty("Type", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyType(value SessionStaticInfo_Type) (err error) {
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyType()(value SessionStaticInfo_Type, err error) { 
-    retValue, err := instance.GetProperty("Type")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyType() (value SessionStaticInfo_Type, err error) {
+	retValue, err := instance.GetProperty("Type")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = SessionStaticInfo_Type(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = SessionStaticInfo_Type(valuetmp)
+
+	return
 }
 
 // SetUniqueSessionId sets the value of UniqueSessionId for the instance
-func (instance *ISCSI_SessionStaticInfo) SetPropertyUniqueSessionId(value uint64) (err error) { 
-    return instance.SetProperty("UniqueSessionId", (value))
+func (instance *ISCSI_SessionStaticInfo) SetPropertyUniqueSessionId(value uint64) (err error) {
+	return instance.SetProperty("UniqueSessionId", (value))
 }
 
 // GetUniqueSessionId gets the value of UniqueSessionId for the instance
-func (instance *ISCSI_SessionStaticInfo) GetPropertyUniqueSessionId()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("UniqueSessionId")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *ISCSI_SessionStaticInfo) GetPropertyUniqueSessionId() (value uint64, err error) {
+	retValue, err := instance.GetProperty("UniqueSessionId")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
-

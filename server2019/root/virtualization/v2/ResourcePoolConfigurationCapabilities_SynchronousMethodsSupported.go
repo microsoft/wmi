@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported
+//
+// ////////////////////////////////////////////
 package v2
 
-// ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported 
+// ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported
 type ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported int
-const(
+
+const (
 	// CreateResourcePool_is_supported enum
 	ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported_CreateResourcePool_is_supported ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported = 2
 	// CreateChild_ResourcePool_is_supported enum
@@ -28,4 +30,3 @@ const(
 	// Vendor_Reserved enum
 	ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported_Vendor_Reserved ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported = 9
 )
-

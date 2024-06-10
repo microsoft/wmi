@@ -1,19 +1,20 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FileServer_FileSharingProtocols
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FileServer_FileSharingProtocols
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// FileServer_FileSharingProtocols 
+// FileServer_FileSharingProtocols
 type FileServer_FileSharingProtocols int
-const(
+
+const (
 	// NFS enum
 	FileServer_FileSharingProtocols_NFS FileServer_FileSharingProtocols = 2
 	// SMB enum
 	FileServer_FileSharingProtocols_SMB FileServer_FileSharingProtocols = 3
 )
-

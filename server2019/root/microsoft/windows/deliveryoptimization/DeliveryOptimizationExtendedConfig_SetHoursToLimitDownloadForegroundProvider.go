@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider
+//
+// ////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider 
+// DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider
 type DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider int
-const(
+
+const (
 	// _17 enum
 	DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider__17 DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider = 5
 	// _18 enum
@@ -22,4 +24,3 @@ const(
 	// _21 enum
 	DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider__21 DeliveryOptimizationExtendedConfig_SetHoursToLimitDownloadForegroundProvider = 99
 )
-

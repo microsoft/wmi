@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source msdcbDCB_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source msdcbDCB_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// msdcbDCB_Flags 
+// msdcbDCB_Flags
 type msdcbDCB_Flags int
-const(
+
+const (
 	// DCB_TRACE_CALL enum
 	msdcbDCB_Flags_DCB_TRACE_CALL msdcbDCB_Flags = 0
 	// DCB_TRACE_INIT enum
@@ -28,4 +30,3 @@ const(
 	// DCB_TRACE_DCBX enum
 	msdcbDCB_Flags_DCB_TRACE_DCBX msdcbDCB_Flags = 7
 )
-

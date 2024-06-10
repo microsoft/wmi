@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageNodeToDisk_OfflineReason
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageNodeToDisk_OfflineReason
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToDisk_OfflineReason 
+// StorageNodeToDisk_OfflineReason
 type StorageNodeToDisk_OfflineReason int
-const(
+
+const (
 	// Policy enum
 	StorageNodeToDisk_OfflineReason_Policy StorageNodeToDisk_OfflineReason = 1
 	// Redundant_Path enum
@@ -26,4 +28,3 @@ const(
 	// Data_Integrity_Scan_Required enum
 	StorageNodeToDisk_OfflineReason_Data_Integrity_Scan_Required StorageNodeToDisk_OfflineReason = 7
 )
-

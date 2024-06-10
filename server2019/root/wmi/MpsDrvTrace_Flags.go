@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MpsDrvTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MpsDrvTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// MpsDrvTrace_Flags 
+// MpsDrvTrace_Flags
 type MpsDrvTrace_Flags int
-const(
+
+const (
 	// TL_ERROR enum
 	MpsDrvTrace_Flags_TL_ERROR MpsDrvTrace_Flags = 1
 	// TL_WARN enum
@@ -20,4 +22,3 @@ const(
 	// TL_FUNC enum
 	MpsDrvTrace_Flags_TL_FUNC MpsDrvTrace_Flags = 4
 )
-

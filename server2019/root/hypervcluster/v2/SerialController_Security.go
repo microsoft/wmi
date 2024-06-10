@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SerialController_Security
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SerialController_Security
+//
+// ////////////////////////////////////////////
 package v2
 
-// SerialController_Security 
+// SerialController_Security
 type SerialController_Security int
-const(
+
+const (
 	// Other enum
 	SerialController_Security_Other SerialController_Security = 1
 	// Unknown enum
@@ -24,4 +26,3 @@ const(
 	// Boot_Bypass enum
 	SerialController_Security_Boot_Bypass SerialController_Security = 6
 )
-

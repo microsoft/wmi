@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EncryptableVolume_EncryptionMethod
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EncryptableVolume_EncryptionMethod
+//
+// ////////////////////////////////////////////
 package microsoftvolumeencryption
 
-// EncryptableVolume_EncryptionMethod 
+// EncryptableVolume_EncryptionMethod
 type EncryptableVolume_EncryptionMethod int
-const(
+
+const (
 	// Unspecified enum
 	EncryptableVolume_EncryptionMethod_Unspecified EncryptableVolume_EncryptionMethod = 0
 	// AES_128 enum
@@ -22,4 +24,3 @@ const(
 	// XTS_AES_256 enum
 	EncryptableVolume_EncryptionMethod_XTS_AES_256 EncryptableVolume_EncryptionMethod = 7
 )
-

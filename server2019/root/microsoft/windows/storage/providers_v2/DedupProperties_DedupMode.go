@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DedupProperties_DedupMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DedupProperties_DedupMode
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// DedupProperties_DedupMode 
+// DedupProperties_DedupMode
 type DedupProperties_DedupMode int
-const(
+
+const (
 	// Disabled enum
 	DedupProperties_DedupMode_Disabled DedupProperties_DedupMode = 0
 	// GeneralPurpose enum
@@ -22,4 +24,3 @@ const(
 	// NotAvailable enum
 	DedupProperties_DedupMode_NotAvailable DedupProperties_DedupMode = 4
 )
-

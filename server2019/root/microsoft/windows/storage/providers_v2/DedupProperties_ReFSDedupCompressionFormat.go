@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DedupProperties_ReFSDedupCompressionFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DedupProperties_ReFSDedupCompressionFormat
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// DedupProperties_ReFSDedupCompressionFormat 
+// DedupProperties_ReFSDedupCompressionFormat
 type DedupProperties_ReFSDedupCompressionFormat int
-const(
+
+const (
 	// Unknown enum
 	DedupProperties_ReFSDedupCompressionFormat_Unknown DedupProperties_ReFSDedupCompressionFormat = 0
 	// Uncompressed enum
@@ -20,4 +22,3 @@ const(
 	// ZSTD enum
 	DedupProperties_ReFSDedupCompressionFormat_ZSTD DedupProperties_ReFSDedupCompressionFormat = 3
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TSDeploymentSettings_ColorBitDepth
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TSDeploymentSettings_ColorBitDepth
+//
+// ////////////////////////////////////////////
 package terminalservices
 
-// TSDeploymentSettings_ColorBitDepth 
+// TSDeploymentSettings_ColorBitDepth
 type TSDeploymentSettings_ColorBitDepth int
-const(
+
+const (
 	// _4 enum
 	TSDeploymentSettings_ColorBitDepth__4 TSDeploymentSettings_ColorBitDepth = 0
 	// _8 enum
@@ -24,4 +26,3 @@ const(
 	// _32 enum
 	TSDeploymentSettings_ColorBitDepth__32 TSDeploymentSettings_ColorBitDepth = 5
 )
-

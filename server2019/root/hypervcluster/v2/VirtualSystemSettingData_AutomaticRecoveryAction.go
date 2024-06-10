@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemSettingData_AutomaticRecoveryAction
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemSettingData_AutomaticRecoveryAction
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_AutomaticRecoveryAction 
+// VirtualSystemSettingData_AutomaticRecoveryAction
 type VirtualSystemSettingData_AutomaticRecoveryAction int
-const(
+
+const (
 	// None enum
 	VirtualSystemSettingData_AutomaticRecoveryAction_None VirtualSystemSettingData_AutomaticRecoveryAction = 2
 	// Restart enum
@@ -20,4 +22,3 @@ const(
 	// DMTF_Reserved enum
 	VirtualSystemSettingData_AutomaticRecoveryAction_DMTF_Reserved VirtualSystemSettingData_AutomaticRecoveryAction = 5
 )
-

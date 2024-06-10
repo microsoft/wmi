@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source KmdfTraceGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source KmdfTraceGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// KmdfTraceGuid_Flags 
+// KmdfTraceGuid_Flags
 type KmdfTraceGuid_Flags int
-const(
+
+const (
 	// TRACINGFULL enum
 	KmdfTraceGuid_Flags_TRACINGFULL KmdfTraceGuid_Flags = 1
 	// TRACINGERROR enum
@@ -54,4 +56,3 @@ const(
 	// TRACINGPNPPOWERSTATES enum
 	KmdfTraceGuid_Flags_TRACINGPNPPOWERSTATES KmdfTraceGuid_Flags = 21
 )
-

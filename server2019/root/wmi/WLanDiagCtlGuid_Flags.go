@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source WLanDiagCtlGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source WLanDiagCtlGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// WLanDiagCtlGuid_Flags 
+// WLanDiagCtlGuid_Flags
 type WLanDiagCtlGuid_Flags int
-const(
+
+const (
 	// WLANHC_AUTOCONFIG enum
 	WLanDiagCtlGuid_Flags_WLANHC_AUTOCONFIG WLanDiagCtlGuid_Flags = 1
 	// WLANHC_RNWFMSM enum
@@ -22,4 +24,3 @@ const(
 	// WLANHC_TEST enum
 	WLanDiagCtlGuid_Flags_WLANHC_TEST WLanDiagCtlGuid_Flags = 5
 )
-

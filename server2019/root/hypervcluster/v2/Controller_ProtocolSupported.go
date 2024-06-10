@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Controller_ProtocolSupported
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Controller_ProtocolSupported
+//
+// ////////////////////////////////////////////
 package v2
 
-// Controller_ProtocolSupported 
+// Controller_ProtocolSupported
 type Controller_ProtocolSupported int
-const(
+
+const (
 	// Other enum
 	Controller_ProtocolSupported_Other Controller_ProtocolSupported = 1
 	// Unknown enum
@@ -108,4 +110,3 @@ const(
 	// Serial_ATA enum
 	Controller_ProtocolSupported_Serial_ATA Controller_ProtocolSupported = 48
 )
-

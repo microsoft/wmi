@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Wudfx02000KmdfTraceGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Wudfx02000KmdfTraceGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Wudfx02000KmdfTraceGuid_Level 
+// Wudfx02000KmdfTraceGuid_Level
 type Wudfx02000KmdfTraceGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	Wudfx02000KmdfTraceGuid_Level_Fatal Wudfx02000KmdfTraceGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	Wudfx02000KmdfTraceGuid_Level_Verbose Wudfx02000KmdfTraceGuid_Level = 5
 )
-

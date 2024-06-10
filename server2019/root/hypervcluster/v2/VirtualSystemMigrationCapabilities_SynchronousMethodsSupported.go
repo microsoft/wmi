@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemMigrationCapabilities_SynchronousMethodsSupported
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemMigrationCapabilities_SynchronousMethodsSupported
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemMigrationCapabilities_SynchronousMethodsSupported 
+// VirtualSystemMigrationCapabilities_SynchronousMethodsSupported
 type VirtualSystemMigrationCapabilities_SynchronousMethodsSupported int
-const(
+
+const (
 	// MigrateVirtualSystemToHostSupported enum
 	VirtualSystemMigrationCapabilities_SynchronousMethodsSupported_MigrateVirtualSystemToHostSupported VirtualSystemMigrationCapabilities_SynchronousMethodsSupported = 2
 	// MigrateVirtualSystemToSystemSupported enum
@@ -22,4 +24,3 @@ const(
 	// DMTF_Reserved enum
 	VirtualSystemMigrationCapabilities_SynchronousMethodsSupported_DMTF_Reserved VirtualSystemMigrationCapabilities_SynchronousMethodsSupported = 6
 )
-

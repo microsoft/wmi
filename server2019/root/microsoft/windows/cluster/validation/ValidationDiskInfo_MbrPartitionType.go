@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ValidationDiskInfo_MbrPartitionType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ValidationDiskInfo_MbrPartitionType
+//
+// ////////////////////////////////////////////
 package validation
 
-// ValidationDiskInfo_MbrPartitionType 
+// ValidationDiskInfo_MbrPartitionType
 type ValidationDiskInfo_MbrPartitionType int
-const(
+
+const (
 	// _28 enum
 	ValidationDiskInfo_MbrPartitionType__28 ValidationDiskInfo_MbrPartitionType = 0
 	// _41 enum
@@ -46,4 +48,3 @@ const(
 	// _5 enum
 	ValidationDiskInfo_MbrPartitionType__5 ValidationDiskInfo_MbrPartitionType = 16
 )
-

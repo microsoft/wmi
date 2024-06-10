@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BindsToLANEndpoint_FrameType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BindsToLANEndpoint_FrameType
+//
+// ////////////////////////////////////////////
 package v2
 
-// BindsToLANEndpoint_FrameType 
+// BindsToLANEndpoint_FrameType
 type BindsToLANEndpoint_FrameType int
-const(
+
+const (
 	// Unknown enum
 	BindsToLANEndpoint_FrameType_Unknown BindsToLANEndpoint_FrameType = 0
 	// Ethernet enum
@@ -22,4 +24,3 @@ const(
 	// Raw802_3 enum
 	BindsToLANEndpoint_FrameType_Raw802_3 BindsToLANEndpoint_FrameType = 4
 )
-

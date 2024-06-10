@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ConcreteJob_RequestedState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ConcreteJob_RequestedState
+//
+// ////////////////////////////////////////////
 package v2
 
-// ConcreteJob_RequestedState 
+// ConcreteJob_RequestedState
 type ConcreteJob_RequestedState int
-const(
+
+const (
 	// Start enum
 	ConcreteJob_RequestedState_Start ConcreteJob_RequestedState = 2
 	// Suspend enum
@@ -26,4 +28,3 @@ const(
 	// Vendor_Reserved enum
 	ConcreteJob_RequestedState_Vendor_Reserved ConcreteJob_RequestedState = 8
 )
-

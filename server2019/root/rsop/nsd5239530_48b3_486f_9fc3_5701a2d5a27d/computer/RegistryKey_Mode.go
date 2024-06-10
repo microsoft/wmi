@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source RegistryKey_Mode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source RegistryKey_Mode
+//
+// ////////////////////////////////////////////
 package computer
 
-// RegistryKey_Mode 
+// RegistryKey_Mode
 type RegistryKey_Mode int
-const(
+
+const (
 	// Inherit enum
 	RegistryKey_Mode_Inherit RegistryKey_Mode = 0
 	// Ignore enum
@@ -18,4 +20,3 @@ const(
 	// Overwrite enum
 	RegistryKey_Mode_Overwrite RegistryKey_Mode = 2
 )
-

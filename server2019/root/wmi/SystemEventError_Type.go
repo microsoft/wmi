@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SystemEventError_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SystemEventError_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// SystemEventError_Type 
+// SystemEventError_Type
 type SystemEventError_Type int
-const(
+
+const (
 	// MCA_WARNING_CACHE enum
 	SystemEventError_Type_MCA_WARNING_CACHE SystemEventError_Type = 1
 	// MCA_ERROR_CACHE enum
@@ -136,4 +138,3 @@ const(
 	// MCA_FRC_ERROR enum
 	SystemEventError_Type_MCA_FRC_ERROR SystemEventError_Type = 62
 )
-

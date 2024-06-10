@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MetricService_Range
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MetricService_Range
+//
+// ////////////////////////////////////////////
 package v2
 
-// MetricService_Range 
+// MetricService_Range
 type MetricService_Range int
-const(
+
+const (
 	// Minimum enum
 	MetricService_Range_Minimum MetricService_Range = 2
 	// Maximum enum
@@ -20,4 +22,3 @@ const(
 	// Vendor_Specific enum
 	MetricService_Range_Vendor_Specific MetricService_Range = 5
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ActiveConnection_TrafficType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ActiveConnection_TrafficType
+//
+// ////////////////////////////////////////////
 package v2
 
-// ActiveConnection_TrafficType 
+// ActiveConnection_TrafficType
 type ActiveConnection_TrafficType int
-const(
+
+const (
 	// Unknown enum
 	ActiveConnection_TrafficType_Unknown ActiveConnection_TrafficType = 0
 	// Other enum
@@ -24,4 +26,3 @@ const(
 	// Anycast enum
 	ActiveConnection_TrafficType_Anycast ActiveConnection_TrafficType = 5
 )
-

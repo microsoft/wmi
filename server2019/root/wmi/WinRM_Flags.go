@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source WinRM_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source WinRM_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// WinRM_Flags 
+// WinRM_Flags
 type WinRM_Flags int
-const(
+
+const (
 	// SOAPTraceClient enum
 	WinRM_Flags_SOAPTraceClient WinRM_Flags = 1
 	// SOAPTraceListener enum
@@ -74,4 +76,3 @@ const(
 	// MemoryDebug enum
 	WinRM_Flags_MemoryDebug WinRM_Flags = 31
 )
-

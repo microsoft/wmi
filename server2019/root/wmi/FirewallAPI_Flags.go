@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FirewallAPI_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FirewallAPI_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// FirewallAPI_Flags 
+// FirewallAPI_Flags
 type FirewallAPI_Flags int
-const(
+
+const (
 	// TL_ERROR enum
 	FirewallAPI_Flags_TL_ERROR FirewallAPI_Flags = 1
 	// TL_WARN enum
@@ -20,4 +22,3 @@ const(
 	// TL_FUNC enum
 	FirewallAPI_Flags_TL_FUNC FirewallAPI_Flags = 4
 )
-

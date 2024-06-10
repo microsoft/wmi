@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BITSServiceTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BITSServiceTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// BITSServiceTrace_Flags 
+// BITSServiceTrace_Flags
 type BITSServiceTrace_Flags int
-const(
+
+const (
 	// LogFlagInfo enum
 	BITSServiceTrace_Flags_LogFlagInfo BITSServiceTrace_Flags = 1
 	// LogFlagWarning enum
@@ -38,4 +40,3 @@ const(
 	// LogFlagPeer enum
 	BITSServiceTrace_Flags_LogFlagPeer BITSServiceTrace_Flags = 13
 )
-

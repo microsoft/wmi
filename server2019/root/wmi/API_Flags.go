@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source API_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source API_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// API_Flags 
+// API_Flags
 type API_Flags int
-const(
+
+const (
 	// Error enum
 	API_Flags_Error API_Flags = 1
 	// Warning enum
@@ -28,4 +30,3 @@ const(
 	// Misc enum
 	API_Flags_Misc API_Flags = 8
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Volume_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Volume_OperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Volume_OperationalStatus 
+// Volume_OperationalStatus
 type Volume_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	Volume_OperationalStatus_Unknown Volume_OperationalStatus = 0
 	// Other enum
@@ -56,4 +58,3 @@ const(
 	// Full_Repair_Needed enum
 	Volume_OperationalStatus_Full_Repair_Needed Volume_OperationalStatus = 21
 )
-

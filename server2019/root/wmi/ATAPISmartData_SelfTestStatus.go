@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ATAPISmartData_SelfTestStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ATAPISmartData_SelfTestStatus
+//
+// ////////////////////////////////////////////
 package wmi
 
-// ATAPISmartData_SelfTestStatus 
+// ATAPISmartData_SelfTestStatus
 type ATAPISmartData_SelfTestStatus int
-const(
+
+const (
 	// _0 enum
 	ATAPISmartData_SelfTestStatus__0 ATAPISmartData_SelfTestStatus = 0
 	// _1 enum
@@ -30,4 +32,3 @@ const(
 	// _15 enum
 	ATAPISmartData_SelfTestStatus__15 ATAPISmartData_SelfTestStatus = 8
 )
-

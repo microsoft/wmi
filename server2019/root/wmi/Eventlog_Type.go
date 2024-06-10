@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Eventlog_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Eventlog_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Eventlog_Type 
+// Eventlog_Type
 type Eventlog_Type int
-const(
+
+const (
 	// ISCSI_ERR_TDI_CONNECT_FAILED enum
 	Eventlog_Type_ISCSI_ERR_TDI_CONNECT_FAILED Eventlog_Type = 1
 	// ISCSI_ERR_INSUFFICIENT_SESSION_RESOURCES enum
@@ -96,4 +98,3 @@ const(
 	// ISCSI_ERR_INVALID_STATUS_SEQ_NUM enum
 	Eventlog_Type_ISCSI_ERR_INVALID_STATUS_SEQ_NUM Eventlog_Type = 42
 )
-

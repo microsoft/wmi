@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ReplicationCapabilities_SupportedObjectTypes
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ReplicationCapabilities_SupportedObjectTypes
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// ReplicationCapabilities_SupportedObjectTypes 
+// ReplicationCapabilities_SupportedObjectTypes
 type ReplicationCapabilities_SupportedObjectTypes int
-const(
+
+const (
 	// VirtualDisk enum
 	ReplicationCapabilities_SupportedObjectTypes_VirtualDisk ReplicationCapabilities_SupportedObjectTypes = 2
 	// Volume enum
@@ -24,4 +26,3 @@ const(
 	// StorageSubSystem enum
 	ReplicationCapabilities_SupportedObjectTypes_StorageSubSystem ReplicationCapabilities_SupportedObjectTypes = 7
 )
-

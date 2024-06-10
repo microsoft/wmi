@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TLBError_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TLBError_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// TLBError_Type 
+// TLBError_Type
 type TLBError_Type int
-const(
+
+const (
 	// MCA_WARNING_CACHE enum
 	TLBError_Type_MCA_WARNING_CACHE TLBError_Type = 1
 	// MCA_ERROR_CACHE enum
@@ -136,4 +138,3 @@ const(
 	// MCA_FRC_ERROR enum
 	TLBError_Type_MCA_FRC_ERROR TLBError_Type = 62
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ReplicationCapabilities_SupportedLogVolumeFeatures
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ReplicationCapabilities_SupportedLogVolumeFeatures
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// ReplicationCapabilities_SupportedLogVolumeFeatures 
+// ReplicationCapabilities_SupportedLogVolumeFeatures
 type ReplicationCapabilities_SupportedLogVolumeFeatures int
-const(
+
+const (
 	// Supports_GUID_Partition_Table enum
 	ReplicationCapabilities_SupportedLogVolumeFeatures_Supports_GUID_Partition_Table ReplicationCapabilities_SupportedLogVolumeFeatures = 2
 	// Supports_MBR_Partition enum
@@ -26,4 +28,3 @@ const(
 	// Vendor_Specific enum
 	ReplicationCapabilities_SupportedLogVolumeFeatures_Vendor_Specific ReplicationCapabilities_SupportedLogVolumeFeatures = 8
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ReplicationCapabilities_SupportedReplicationTypes
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ReplicationCapabilities_SupportedReplicationTypes
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// ReplicationCapabilities_SupportedReplicationTypes 
+// ReplicationCapabilities_SupportedReplicationTypes
 type ReplicationCapabilities_SupportedReplicationTypes int
-const(
+
+const (
 	// Synchronous_Mirror_Local enum
 	ReplicationCapabilities_SupportedReplicationTypes_Synchronous_Mirror_Local ReplicationCapabilities_SupportedReplicationTypes = 2
 	// Asynchronous_Mirror_Local enum
@@ -64,4 +66,3 @@ const(
 	// Vendor_Specific enum
 	ReplicationCapabilities_SupportedReplicationTypes_Vendor_Specific ReplicationCapabilities_SupportedReplicationTypes = 27
 )
-

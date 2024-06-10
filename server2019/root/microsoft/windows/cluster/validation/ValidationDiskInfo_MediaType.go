@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ValidationDiskInfo_MediaType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ValidationDiskInfo_MediaType
+//
+// ////////////////////////////////////////////
 package validation
 
-// ValidationDiskInfo_MediaType 
+// ValidationDiskInfo_MediaType
 type ValidationDiskInfo_MediaType int
-const(
+
+const (
 	// _5 enum
 	ValidationDiskInfo_MediaType__5 ValidationDiskInfo_MediaType = 0
 	// _92 enum
@@ -20,4 +22,3 @@ const(
 	// _26 enum
 	ValidationDiskInfo_MediaType__26 ValidationDiskInfo_MediaType = 3
 )
-

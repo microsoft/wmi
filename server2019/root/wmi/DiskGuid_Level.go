@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DiskGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DiskGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// DiskGuid_Level 
+// DiskGuid_Level
 type DiskGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	DiskGuid_Level_Fatal DiskGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	DiskGuid_Level_Verbose DiskGuid_Level = 5
 )
-

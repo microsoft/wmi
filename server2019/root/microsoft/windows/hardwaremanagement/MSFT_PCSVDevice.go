@@ -1,290 +1,296 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.Microsoft.Windows.HardwareManagement
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.Microsoft.Windows.HardwareManagement
+//
+// ////////////////////////////////////////////
 package hardwaremanagement
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_PCSVDevice struct
-type MSFT_PCSVDevice struct { 
+type MSFT_PCSVDevice struct {
 	*CIM_PhysicalComputerSystemView
 
-	// 
+	//
 	IPv4Address string
 
-	// 
+	//
 	IPv4AddressOrigin uint16
 
-	// 
+	//
 	IPv4DefaultGateway string
 
-	// 
+	//
 	IPv4SubnetMask string
 
-	// 
+	//
 	LogFreeSpace uint16
 
-	// 
+	//
 	MacAddress string
 
-	// 
+	//
 	SMBIOSGuid string
 
-	// 
+	//
 	TargetAddress string
 }
 
-	func NewMSFT_PCSVDeviceEx1(instance *cim.WmiInstance) (newInstance *MSFT_PCSVDevice, err error) {tmp, err := NewCIM_PhysicalComputerSystemViewEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &MSFT_PCSVDevice {
-	CIM_PhysicalComputerSystemView: tmp,
+func NewMSFT_PCSVDeviceEx1(instance *cim.WmiInstance) (newInstance *MSFT_PCSVDevice, err error) {
+	tmp, err := NewCIM_PhysicalComputerSystemViewEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PCSVDevice{
+		CIM_PhysicalComputerSystemView: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewMSFT_PCSVDeviceEx6(hostName string,
+func NewMSFT_PCSVDeviceEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *MSFT_PCSVDevice, err error) {tmp, err := NewCIM_PhysicalComputerSystemViewEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &MSFT_PCSVDevice {
-	CIM_PhysicalComputerSystemView: tmp,
+	query *query.WmiQuery) (newInstance *MSFT_PCSVDevice, err error) {
+	tmp, err := NewCIM_PhysicalComputerSystemViewEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PCSVDevice{
+		CIM_PhysicalComputerSystemView: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetIPv4Address sets the value of IPv4Address for the instance
-func (instance *MSFT_PCSVDevice) SetPropertyIPv4Address(value string) (err error) { 
-    return instance.SetProperty("IPv4Address", (value))
+func (instance *MSFT_PCSVDevice) SetPropertyIPv4Address(value string) (err error) {
+	return instance.SetProperty("IPv4Address", (value))
 }
 
 // GetIPv4Address gets the value of IPv4Address for the instance
-func (instance *MSFT_PCSVDevice) GetPropertyIPv4Address()(value string, err error) { 
-    retValue, err := instance.GetProperty("IPv4Address")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertyIPv4Address() (value string, err error) {
+	retValue, err := instance.GetProperty("IPv4Address")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetIPv4AddressOrigin sets the value of IPv4AddressOrigin for the instance
-func (instance *MSFT_PCSVDevice) SetPropertyIPv4AddressOrigin(value uint16) (err error) { 
-    return instance.SetProperty("IPv4AddressOrigin", (value))
+func (instance *MSFT_PCSVDevice) SetPropertyIPv4AddressOrigin(value uint16) (err error) {
+	return instance.SetProperty("IPv4AddressOrigin", (value))
 }
 
 // GetIPv4AddressOrigin gets the value of IPv4AddressOrigin for the instance
-func (instance *MSFT_PCSVDevice) GetPropertyIPv4AddressOrigin()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("IPv4AddressOrigin")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertyIPv4AddressOrigin() (value uint16, err error) {
+	retValue, err := instance.GetProperty("IPv4AddressOrigin")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetIPv4DefaultGateway sets the value of IPv4DefaultGateway for the instance
-func (instance *MSFT_PCSVDevice) SetPropertyIPv4DefaultGateway(value string) (err error) { 
-    return instance.SetProperty("IPv4DefaultGateway", (value))
+func (instance *MSFT_PCSVDevice) SetPropertyIPv4DefaultGateway(value string) (err error) {
+	return instance.SetProperty("IPv4DefaultGateway", (value))
 }
 
 // GetIPv4DefaultGateway gets the value of IPv4DefaultGateway for the instance
-func (instance *MSFT_PCSVDevice) GetPropertyIPv4DefaultGateway()(value string, err error) { 
-    retValue, err := instance.GetProperty("IPv4DefaultGateway")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertyIPv4DefaultGateway() (value string, err error) {
+	retValue, err := instance.GetProperty("IPv4DefaultGateway")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetIPv4SubnetMask sets the value of IPv4SubnetMask for the instance
-func (instance *MSFT_PCSVDevice) SetPropertyIPv4SubnetMask(value string) (err error) { 
-    return instance.SetProperty("IPv4SubnetMask", (value))
+func (instance *MSFT_PCSVDevice) SetPropertyIPv4SubnetMask(value string) (err error) {
+	return instance.SetProperty("IPv4SubnetMask", (value))
 }
 
 // GetIPv4SubnetMask gets the value of IPv4SubnetMask for the instance
-func (instance *MSFT_PCSVDevice) GetPropertyIPv4SubnetMask()(value string, err error) { 
-    retValue, err := instance.GetProperty("IPv4SubnetMask")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertyIPv4SubnetMask() (value string, err error) {
+	retValue, err := instance.GetProperty("IPv4SubnetMask")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetLogFreeSpace sets the value of LogFreeSpace for the instance
-func (instance *MSFT_PCSVDevice) SetPropertyLogFreeSpace(value uint16) (err error) { 
-    return instance.SetProperty("LogFreeSpace", (value))
+func (instance *MSFT_PCSVDevice) SetPropertyLogFreeSpace(value uint16) (err error) {
+	return instance.SetProperty("LogFreeSpace", (value))
 }
 
 // GetLogFreeSpace gets the value of LogFreeSpace for the instance
-func (instance *MSFT_PCSVDevice) GetPropertyLogFreeSpace()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("LogFreeSpace")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertyLogFreeSpace() (value uint16, err error) {
+	retValue, err := instance.GetProperty("LogFreeSpace")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetMacAddress sets the value of MacAddress for the instance
-func (instance *MSFT_PCSVDevice) SetPropertyMacAddress(value string) (err error) { 
-    return instance.SetProperty("MacAddress", (value))
+func (instance *MSFT_PCSVDevice) SetPropertyMacAddress(value string) (err error) {
+	return instance.SetProperty("MacAddress", (value))
 }
 
 // GetMacAddress gets the value of MacAddress for the instance
-func (instance *MSFT_PCSVDevice) GetPropertyMacAddress()(value string, err error) { 
-    retValue, err := instance.GetProperty("MacAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertyMacAddress() (value string, err error) {
+	retValue, err := instance.GetProperty("MacAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetSMBIOSGuid sets the value of SMBIOSGuid for the instance
-func (instance *MSFT_PCSVDevice) SetPropertySMBIOSGuid(value string) (err error) { 
-    return instance.SetProperty("SMBIOSGuid", (value))
+func (instance *MSFT_PCSVDevice) SetPropertySMBIOSGuid(value string) (err error) {
+	return instance.SetProperty("SMBIOSGuid", (value))
 }
 
 // GetSMBIOSGuid gets the value of SMBIOSGuid for the instance
-func (instance *MSFT_PCSVDevice) GetPropertySMBIOSGuid()(value string, err error) { 
-    retValue, err := instance.GetProperty("SMBIOSGuid")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertySMBIOSGuid() (value string, err error) {
+	retValue, err := instance.GetProperty("SMBIOSGuid")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetTargetAddress sets the value of TargetAddress for the instance
-func (instance *MSFT_PCSVDevice) SetPropertyTargetAddress(value string) (err error) { 
-    return instance.SetProperty("TargetAddress", (value))
+func (instance *MSFT_PCSVDevice) SetPropertyTargetAddress(value string) (err error) {
+	return instance.SetProperty("TargetAddress", (value))
 }
 
 // GetTargetAddress gets the value of TargetAddress for the instance
-func (instance *MSFT_PCSVDevice) GetPropertyTargetAddress()(value string, err error) { 
-    retValue, err := instance.GetProperty("TargetAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_PCSVDevice) GetPropertyTargetAddress() (value string, err error) {
+	retValue, err := instance.GetProperty("TargetAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
-// 
+//
 
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="OneTimeBootSource" type="string "></param>
@@ -293,20 +299,22 @@ func (instance *MSFT_PCSVDevice) GetPropertyTargetAddress()(value string, err er
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_PCSVDevice) ChangeBootConfiguration( /* IN */ OneTimeBootSource string,
- /* IN */ PersistentBootSource []string,
- /* IN/OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ChangeBootConfiguration", Action, PercentComplete, Timeout , OneTimeBootSource, PersistentBootSource)
-	if err != nil { return }
+	/* IN */ PersistentBootSource []string,
+	/* IN/OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("ChangeBootConfiguration", Action, PercentComplete, Timeout, OneTimeBootSource, PersistentBootSource)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="IPv4Address" type="string "></param>
 // <param name="IPv4AddressOrigin" type="uint16 "></param>
@@ -317,22 +325,24 @@ func (instance *MSFT_PCSVDevice) ChangeBootConfiguration( /* IN */ OneTimeBootSo
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_PCSVDevice) ChangeNetworkConfiguration( /* IN */ IPv4AddressOrigin uint16,
- /* IN */ IPv4Address string,
- /* IN */ IPv4SubnetMask string,
- /* IN */ IPv4DefaultGateway string,
- /* IN/OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ChangeNetworkConfiguration", Action, PercentComplete, Timeout , IPv4AddressOrigin, IPv4Address, IPv4SubnetMask, IPv4DefaultGateway)
-	if err != nil { return }
+	/* IN */ IPv4Address string,
+	/* IN */ IPv4SubnetMask string,
+	/* IN */ IPv4DefaultGateway string,
+	/* IN/OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("ChangeNetworkConfiguration", Action, PercentComplete, Timeout, IPv4AddressOrigin, IPv4Address, IPv4SubnetMask, IPv4DefaultGateway)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="CurrentCredential" type="string "></param>
 // <param name="Job" type="CIM_ConcreteJob "></param>
@@ -341,20 +351,22 @@ func (instance *MSFT_PCSVDevice) ChangeNetworkConfiguration( /* IN */ IPv4Addres
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_PCSVDevice) ChangeUserPassword( /* IN */ CurrentCredential string,
- /* IN */ NewPassword string,
- /* IN/OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ChangeUserPassword", Action, PercentComplete, Timeout , CurrentCredential, NewPassword)
-	if err != nil { return }
+	/* IN */ NewPassword string,
+	/* IN/OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("ChangeUserPassword", Action, PercentComplete, Timeout, CurrentCredential, NewPassword)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
 
-
-// 
+//
 
 // <param name="Job" type="CIM_ConcreteJob "></param>
 
@@ -362,15 +374,16 @@ func (instance *MSFT_PCSVDevice) ChangeUserPassword( /* IN */ CurrentCredential 
 // <param name="LogRecords" type="MSFT_PCSVLogRecord []"></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_PCSVDevice) ReadLog( /* OUT */ LogRecords []MSFT_PCSVLogRecord,
- /* IN/OUT */ Job CIM_ConcreteJob,
-/*Custom IN*/  Action cim.UserAction,
-/*Custon IN*/  PercentComplete uint32,
-/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ReadLog", Action, PercentComplete, Timeout )
-	if err != nil { return }
+	/* IN/OUT */ Job CIM_ConcreteJob,
+	/*Custom IN*/ Action cim.UserAction,
+	/*Custon IN*/ PercentComplete uint32,
+	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodAsync("ReadLog", Action, PercentComplete, Timeout)
+	if err != nil {
+		return
+	}
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-	
+
 }
-
-

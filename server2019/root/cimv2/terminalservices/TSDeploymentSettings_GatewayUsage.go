@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TSDeploymentSettings_GatewayUsage
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TSDeploymentSettings_GatewayUsage
+//
+// ////////////////////////////////////////////
 package terminalservices
 
-// TSDeploymentSettings_GatewayUsage 
+// TSDeploymentSettings_GatewayUsage
 type TSDeploymentSettings_GatewayUsage int
-const(
+
+const (
 	// NoGateway enum
 	TSDeploymentSettings_GatewayUsage_NoGateway TSDeploymentSettings_GatewayUsage = 0
 	// UseGatewayBypassLocal enum
@@ -20,4 +22,3 @@ const(
 	// DetectGateway enum
 	TSDeploymentSettings_GatewayUsage_DetectGateway TSDeploymentSettings_GatewayUsage = 3
 )
-

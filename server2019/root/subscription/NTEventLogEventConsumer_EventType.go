@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source NTEventLogEventConsumer_EventType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source NTEventLogEventConsumer_EventType
+//
+// ////////////////////////////////////////////
 package subscription
 
-// NTEventLogEventConsumer_EventType 
+// NTEventLogEventConsumer_EventType
 type NTEventLogEventConsumer_EventType int
-const(
+
+const (
 	// Success enum
 	NTEventLogEventConsumer_EventType_Success NTEventLogEventConsumer_EventType = 0
 	// Error enum
@@ -24,4 +26,3 @@ const(
 	// Audit_Failure enum
 	NTEventLogEventConsumer_EventType_Audit_Failure NTEventLogEventConsumer_EventType = 16
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageExtent_Access
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageExtent_Access
+//
+// ////////////////////////////////////////////
 package v2
 
-// StorageExtent_Access 
+// StorageExtent_Access
 type StorageExtent_Access int
-const(
+
+const (
 	// Unknown enum
 	StorageExtent_Access_Unknown StorageExtent_Access = 0
 	// Readable enum
@@ -22,4 +24,3 @@ const(
 	// Write_Once enum
 	StorageExtent_Access_Write_Once StorageExtent_Access = 4
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EnabledLogicalElement_RequestedState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EnabledLogicalElement_RequestedState
+//
+// ////////////////////////////////////////////
 package v2
 
-// EnabledLogicalElement_RequestedState 
+// EnabledLogicalElement_RequestedState
 type EnabledLogicalElement_RequestedState int
-const(
+
+const (
 	// Enabled enum
 	EnabledLogicalElement_RequestedState_Enabled EnabledLogicalElement_RequestedState = 2
 	// Disabled enum
@@ -34,4 +36,3 @@ const(
 	// Vendor_Reserved enum
 	EnabledLogicalElement_RequestedState_Vendor_Reserved EnabledLogicalElement_RequestedState = 13
 )
-

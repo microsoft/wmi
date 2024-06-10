@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Policies_LoadBalancePolicy
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Policies_LoadBalancePolicy
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Policies_LoadBalancePolicy 
+// Policies_LoadBalancePolicy
 type Policies_LoadBalancePolicy int
-const(
+
+const (
 	// Fail_Over_Only enum
 	Policies_LoadBalancePolicy_Fail_Over_Only Policies_LoadBalancePolicy = 1
 	// Round_Robin enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Specific enum
 	Policies_LoadBalancePolicy_Vendor_Specific Policies_LoadBalancePolicy = 6
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DynamicForwardingEntry_DynamicStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DynamicForwardingEntry_DynamicStatus
+//
+// ////////////////////////////////////////////
 package v2
 
-// DynamicForwardingEntry_DynamicStatus 
+// DynamicForwardingEntry_DynamicStatus
 type DynamicForwardingEntry_DynamicStatus int
-const(
+
+const (
 	// Other enum
 	DynamicForwardingEntry_DynamicStatus_Other DynamicForwardingEntry_DynamicStatus = 1
 	// Invalid enum
@@ -22,4 +24,3 @@ const(
 	// Mgmt enum
 	DynamicForwardingEntry_DynamicStatus_Mgmt DynamicForwardingEntry_DynamicStatus = 5
 )
-

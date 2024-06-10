@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Volume_FileSystemType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Volume_FileSystemType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Volume_FileSystemType 
+// Volume_FileSystemType
 type Volume_FileSystemType int
-const(
+
+const (
 	// Unknown enum
 	Volume_FileSystemType_Unknown Volume_FileSystemType = 0
 	// Threshold enum
@@ -48,4 +50,3 @@ const(
 	// CSVFS_ReFS enum
 	Volume_FileSystemType_CSVFS_ReFS Volume_FileSystemType = 17
 )
-

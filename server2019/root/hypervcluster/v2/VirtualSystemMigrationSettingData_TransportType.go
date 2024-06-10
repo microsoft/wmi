@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemMigrationSettingData_TransportType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemMigrationSettingData_TransportType
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemMigrationSettingData_TransportType 
+// VirtualSystemMigrationSettingData_TransportType
 type VirtualSystemMigrationSettingData_TransportType int
-const(
+
+const (
 	// Unknown enum
 	VirtualSystemMigrationSettingData_TransportType_Unknown VirtualSystemMigrationSettingData_TransportType = 0
 	// Other enum
@@ -30,4 +32,3 @@ const(
 	// Vendor_Reserved enum
 	VirtualSystemMigrationSettingData_TransportType_Vendor_Reserved VirtualSystemMigrationSettingData_TransportType = 8
 )
-

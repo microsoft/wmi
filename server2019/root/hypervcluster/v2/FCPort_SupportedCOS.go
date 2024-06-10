@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FCPort_SupportedCOS
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FCPort_SupportedCOS
+//
+// ////////////////////////////////////////////
 package v2
 
-// FCPort_SupportedCOS 
+// FCPort_SupportedCOS
 type FCPort_SupportedCOS int
-const(
+
+const (
 	// Unknown enum
 	FCPort_SupportedCOS_Unknown FCPort_SupportedCOS = 0
 	// _1 enum
@@ -28,4 +30,3 @@ const(
 	// F enum
 	FCPort_SupportedCOS_F FCPort_SupportedCOS = 7
 )
-

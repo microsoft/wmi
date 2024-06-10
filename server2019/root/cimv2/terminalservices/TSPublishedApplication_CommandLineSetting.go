@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TSPublishedApplication_CommandLineSetting
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TSPublishedApplication_CommandLineSetting
+//
+// ////////////////////////////////////////////
 package terminalservices
 
-// TSPublishedApplication_CommandLineSetting 
+// TSPublishedApplication_CommandLineSetting
 type TSPublishedApplication_CommandLineSetting int
-const(
+
+const (
 	// DoNotAllow enum
 	TSPublishedApplication_CommandLineSetting_DoNotAllow TSPublishedApplication_CommandLineSetting = 0
 	// Allow enum
@@ -18,4 +20,3 @@ const(
 	// Require enum
 	TSPublishedApplication_CommandLineSetting_Require TSPublishedApplication_CommandLineSetting = 2
 )
-

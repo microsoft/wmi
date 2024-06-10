@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageSubSystem_SupportedHostType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageSubSystem_SupportedHostType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_SupportedHostType 
+// StorageSubSystem_SupportedHostType
 type StorageSubSystem_SupportedHostType int
-const(
+
+const (
 	// Unknown enum
 	StorageSubSystem_SupportedHostType_Unknown StorageSubSystem_SupportedHostType = 0
 	// Other enum
@@ -60,4 +62,3 @@ const(
 	// Vendor_Specific enum
 	StorageSubSystem_SupportedHostType_Vendor_Specific StorageSubSystem_SupportedHostType = 23
 )
-

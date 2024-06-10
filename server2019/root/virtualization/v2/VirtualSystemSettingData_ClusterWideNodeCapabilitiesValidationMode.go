@@ -1,19 +1,20 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode 
+// VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode
 type VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode int
-const(
+
+const (
 	// Default enum
 	VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode_Default VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode = 0
 	// Override enum
 	VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode_Override VirtualSystemSettingData_ClusterWideNodeCapabilitiesValidationMode = 1
 )
-

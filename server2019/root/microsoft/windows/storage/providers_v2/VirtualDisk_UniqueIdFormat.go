@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualDisk_UniqueIdFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualDisk_UniqueIdFormat
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_UniqueIdFormat 
+// VirtualDisk_UniqueIdFormat
 type VirtualDisk_UniqueIdFormat int
-const(
+
+const (
 	// Vendor_Specific enum
 	VirtualDisk_UniqueIdFormat_Vendor_Specific VirtualDisk_UniqueIdFormat = 0
 	// Vendor_Id enum
@@ -22,4 +24,3 @@ const(
 	// SCSI_Name_String enum
 	VirtualDisk_UniqueIdFormat_SCSI_Name_String VirtualDisk_UniqueIdFormat = 8
 )
-

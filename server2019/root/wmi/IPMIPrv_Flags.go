@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source IPMIPrv_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source IPMIPrv_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// IPMIPrv_Flags 
+// IPMIPrv_Flags
 type IPMIPrv_Flags int
-const(
+
+const (
 	// Function enum
 	IPMIPrv_Flags_Function IPMIPrv_Flags = 1
 	// FunctionParameter enum
@@ -18,4 +20,3 @@ const(
 	// FunctionDetail enum
 	IPMIPrv_Flags_FunctionDetail IPMIPrv_Flags = 3
 )
-

@@ -1,19 +1,20 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PrinterConfiguration_Color
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PrinterConfiguration_Color
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// PrinterConfiguration_Color 
+// PrinterConfiguration_Color
 type PrinterConfiguration_Color int
-const(
+
+const (
 	// Monochrome enum
 	PrinterConfiguration_Color_Monochrome PrinterConfiguration_Color = 1
 	// Color enum
 	PrinterConfiguration_Color_Color PrinterConfiguration_Color = 2
 )
-

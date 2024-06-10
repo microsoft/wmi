@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualDisk_NameFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualDisk_NameFormat
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_NameFormat 
+// VirtualDisk_NameFormat
 type VirtualDisk_NameFormat int
-const(
+
+const (
 	// Unknown enum
 	VirtualDisk_NameFormat_Unknown VirtualDisk_NameFormat = 0
 	// Other enum
@@ -36,4 +38,3 @@ const(
 	// T10VID enum
 	VirtualDisk_NameFormat_T10VID VirtualDisk_NameFormat = 11
 )
-

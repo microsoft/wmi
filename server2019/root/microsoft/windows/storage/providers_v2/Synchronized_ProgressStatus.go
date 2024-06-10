@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Synchronized_ProgressStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Synchronized_ProgressStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Synchronized_ProgressStatus 
+// Synchronized_ProgressStatus
 type Synchronized_ProgressStatus int
-const(
+
+const (
 	// Unknown enum
 	Synchronized_ProgressStatus_Unknown Synchronized_ProgressStatus = 0
 	// Completed enum
@@ -58,4 +60,3 @@ const(
 	// Vendor_Specific enum
 	Synchronized_ProgressStatus_Vendor_Specific Synchronized_ProgressStatus = 23
 )
-

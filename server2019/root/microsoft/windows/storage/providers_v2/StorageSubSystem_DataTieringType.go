@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageSubSystem_DataTieringType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageSubSystem_DataTieringType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_DataTieringType 
+// StorageSubSystem_DataTieringType
 type StorageSubSystem_DataTieringType int
-const(
+
+const (
 	// Unknown enum
 	StorageSubSystem_DataTieringType_Unknown StorageSubSystem_DataTieringType = 0
 	// Not_Supported enum
@@ -20,4 +22,3 @@ const(
 	// Auto enum
 	StorageSubSystem_DataTieringType_Auto StorageSubSystem_DataTieringType = 3
 )
-

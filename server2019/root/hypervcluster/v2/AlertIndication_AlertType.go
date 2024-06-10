@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source AlertIndication_AlertType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source AlertIndication_AlertType
+//
+// ////////////////////////////////////////////
 package v2
 
-// AlertIndication_AlertType 
+// AlertIndication_AlertType
 type AlertIndication_AlertType int
-const(
+
+const (
 	// Other enum
 	AlertIndication_AlertType_Other AlertIndication_AlertType = 1
 	// Communications_Alert enum
@@ -28,4 +30,3 @@ const(
 	// Security_Alert enum
 	AlertIndication_AlertType_Security_Alert AlertIndication_AlertType = 8
 )
-

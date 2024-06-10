@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EncryptableVolume_ConversionStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EncryptableVolume_ConversionStatus
+//
+// ////////////////////////////////////////////
 package microsoftvolumeencryption
 
-// EncryptableVolume_ConversionStatus 
+// EncryptableVolume_ConversionStatus
 type EncryptableVolume_ConversionStatus int
-const(
+
+const (
 	// FullyDecrypted enum
 	EncryptableVolume_ConversionStatus_FullyDecrypted EncryptableVolume_ConversionStatus = 0
 	// FullyEncrypted enum
@@ -24,4 +26,3 @@ const(
 	// DecryptionPaused enum
 	EncryptableVolume_ConversionStatus_DecryptionPaused EncryptableVolume_ConversionStatus = 5
 )
-

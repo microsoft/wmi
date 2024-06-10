@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SMBIOSError_ErrorSeverity
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SMBIOSError_ErrorSeverity
+//
+// ////////////////////////////////////////////
 package wmi
 
-// SMBIOSError_ErrorSeverity 
+// SMBIOSError_ErrorSeverity
 type SMBIOSError_ErrorSeverity int
-const(
+
+const (
 	// Recoverable enum
 	SMBIOSError_ErrorSeverity_Recoverable SMBIOSError_ErrorSeverity = 0
 	// Fatal enum
@@ -18,4 +20,3 @@ const(
 	// Correctable enum
 	SMBIOSError_ErrorSeverity_Correctable SMBIOSError_ErrorSeverity = 2
 )
-

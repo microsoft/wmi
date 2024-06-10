@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageSubSystem_SupportedDeduplicationObjectTypes
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageSubSystem_SupportedDeduplicationObjectTypes
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_SupportedDeduplicationObjectTypes 
+// StorageSubSystem_SupportedDeduplicationObjectTypes
 type StorageSubSystem_SupportedDeduplicationObjectTypes int
-const(
+
+const (
 	// Volume enum
 	StorageSubSystem_SupportedDeduplicationObjectTypes_Volume StorageSubSystem_SupportedDeduplicationObjectTypes = 2
 	// VirtualDisk enum
@@ -20,4 +22,3 @@ const(
 	// StoragePool enum
 	StorageSubSystem_SupportedDeduplicationObjectTypes_StoragePool StorageSubSystem_SupportedDeduplicationObjectTypes = 16
 )
-

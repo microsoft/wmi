@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SmbWitnessClient_State
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SmbWitnessClient_State
+//
+// ////////////////////////////////////////////
 package smbwitness
 
-// SmbWitnessClient_State 
+// SmbWitnessClient_State
 type SmbWitnessClient_State int
-const(
+
+const (
 	// _1 enum
 	SmbWitnessClient_State__1 SmbWitnessClient_State = 0
 	// _2 enum
@@ -24,4 +26,3 @@ const(
 	// _6 enum
 	SmbWitnessClient_State__6 SmbWitnessClient_State = 5
 )
-

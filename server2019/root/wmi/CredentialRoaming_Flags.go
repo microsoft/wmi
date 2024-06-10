@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CredentialRoaming_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CredentialRoaming_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// CredentialRoaming_Flags 
+// CredentialRoaming_Flags
 type CredentialRoaming_Flags int
-const(
+
+const (
 	// TRC_FATAL enum
 	CredentialRoaming_Flags_TRC_FATAL CredentialRoaming_Flags = 1
 	// TRC_ERROR enum
@@ -22,4 +24,3 @@ const(
 	// TRC_DETAIL enum
 	CredentialRoaming_Flags_TRC_DETAIL CredentialRoaming_Flags = 5
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CollectionSnapshotService_SnapshotType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CollectionSnapshotService_SnapshotType
+//
+// ////////////////////////////////////////////
 package v2
 
-// CollectionSnapshotService_SnapshotType 
+// CollectionSnapshotService_SnapshotType
 type CollectionSnapshotService_SnapshotType int
-const(
+
+const (
 	// Unknown enum
 	CollectionSnapshotService_SnapshotType_Unknown CollectionSnapshotService_SnapshotType = 0
 	// Standard_Snapshot enum
@@ -22,4 +24,3 @@ const(
 	// Vendor_Specific enum
 	CollectionSnapshotService_SnapshotType_Vendor_Specific CollectionSnapshotService_SnapshotType = 4
 )
-

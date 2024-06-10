@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ClasspnpGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ClasspnpGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// ClasspnpGuid_Flags 
+// ClasspnpGuid_Flags
 type ClasspnpGuid_Flags int
-const(
+
+const (
 	// TRACE_FLAG_GENERAL enum
 	ClasspnpGuid_Flags_TRACE_FLAG_GENERAL ClasspnpGuid_Flags = 1
 	// TRACE_FLAG_PNP enum
@@ -42,4 +44,3 @@ const(
 	// TRACE_FLAG_ENUM enum
 	ClasspnpGuid_Flags_TRACE_FLAG_ENUM ClasspnpGuid_Flags = 15
 )
-

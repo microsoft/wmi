@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ReplicationGroup_HealthStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ReplicationGroup_HealthStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// ReplicationGroup_HealthStatus 
+// ReplicationGroup_HealthStatus
 type ReplicationGroup_HealthStatus int
-const(
+
+const (
 	// Healthy enum
 	ReplicationGroup_HealthStatus_Healthy ReplicationGroup_HealthStatus = 0
 	// Warning enum
@@ -20,4 +22,3 @@ const(
 	// Unknown enum
 	ReplicationGroup_HealthStatus_Unknown ReplicationGroup_HealthStatus = 5
 )
-

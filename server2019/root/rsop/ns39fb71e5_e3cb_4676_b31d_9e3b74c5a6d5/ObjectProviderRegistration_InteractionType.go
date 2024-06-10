@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ObjectProviderRegistration_InteractionType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ObjectProviderRegistration_InteractionType
+//
+// ////////////////////////////////////////////
 package ns39fb71e5_e3cb_4676_b31d_9e3b74c5a6d5
 
-// ObjectProviderRegistration_InteractionType 
+// ObjectProviderRegistration_InteractionType
 type ObjectProviderRegistration_InteractionType int
-const(
+
+const (
 	// Pull enum
 	ObjectProviderRegistration_InteractionType_Pull ObjectProviderRegistration_InteractionType = 0
 	// Push enum
@@ -18,4 +20,3 @@ const(
 	// PushVerify enum
 	ObjectProviderRegistration_InteractionType_PushVerify ObjectProviderRegistration_InteractionType = 2
 )
-

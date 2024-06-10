@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FibrePortNPIVMethodsEx_Status
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FibrePortNPIVMethodsEx_Status
+//
+// ////////////////////////////////////////////
 package wmi
 
-// FibrePortNPIVMethodsEx_Status 
+// FibrePortNPIVMethodsEx_Status
 type FibrePortNPIVMethodsEx_Status int
-const(
+
+const (
 	// NPIV_SUCCESS enum
 	FibrePortNPIVMethodsEx_Status_NPIV_SUCCESS FibrePortNPIVMethodsEx_Status = 1
 	// NPIV_UNKNOWN_ERROR enum
@@ -32,4 +34,3 @@ const(
 	// NPIV_UNSUPPORTED_PROTOCOL_VERSION enum
 	FibrePortNPIVMethodsEx_Status_NPIV_UNSUPPORTED_PROTOCOL_VERSION FibrePortNPIVMethodsEx_Status = 10
 )
-

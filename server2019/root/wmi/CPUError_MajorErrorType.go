@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CPUError_MajorErrorType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CPUError_MajorErrorType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// CPUError_MajorErrorType 
+// CPUError_MajorErrorType
 type CPUError_MajorErrorType int
-const(
+
+const (
 	// Cache enum
 	CPUError_MajorErrorType_Cache CPUError_MajorErrorType = 0
 	// TLB enum
@@ -22,4 +24,3 @@ const(
 	// Microarchitecture enum
 	CPUError_MajorErrorType_Microarchitecture CPUError_MajorErrorType = 4
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Job_RecoveryAction
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Job_RecoveryAction
+//
+// ////////////////////////////////////////////
 package v2
 
-// Job_RecoveryAction 
+// Job_RecoveryAction
 type Job_RecoveryAction int
-const(
+
+const (
 	// Unknown enum
 	Job_RecoveryAction_Unknown Job_RecoveryAction = 0
 	// Other enum
@@ -24,4 +26,3 @@ const(
 	// Run_Recovery_Job enum
 	Job_RecoveryAction_Run_Recovery_Job Job_RecoveryAction = 5
 )
-

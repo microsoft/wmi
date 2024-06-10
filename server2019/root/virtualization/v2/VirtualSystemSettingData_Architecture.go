@@ -1,19 +1,20 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemSettingData_Architecture
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemSettingData_Architecture
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_Architecture 
+// VirtualSystemSettingData_Architecture
 type VirtualSystemSettingData_Architecture int
-const(
+
+const (
 	// x64 enum
 	VirtualSystemSettingData_Architecture_x64 VirtualSystemSettingData_Architecture = 0
 	// arm64 enum
 	VirtualSystemSettingData_Architecture_arm64 VirtualSystemSettingData_Architecture = 1
 )
-

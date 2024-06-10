@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source RedundancySet_LoadBalanceAlgorithm
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source RedundancySet_LoadBalanceAlgorithm
+//
+// ////////////////////////////////////////////
 package v2
 
-// RedundancySet_LoadBalanceAlgorithm 
+// RedundancySet_LoadBalanceAlgorithm
 type RedundancySet_LoadBalanceAlgorithm int
-const(
+
+const (
 	// Unknown enum
 	RedundancySet_LoadBalanceAlgorithm_Unknown RedundancySet_LoadBalanceAlgorithm = 0
 	// Other enum
@@ -28,4 +30,3 @@ const(
 	// Product_Specific enum
 	RedundancySet_LoadBalanceAlgorithm_Product_Specific RedundancySet_LoadBalanceAlgorithm = 7
 )
-

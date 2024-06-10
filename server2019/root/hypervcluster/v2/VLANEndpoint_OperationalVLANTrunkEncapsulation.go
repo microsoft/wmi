@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VLANEndpoint_OperationalVLANTrunkEncapsulation
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VLANEndpoint_OperationalVLANTrunkEncapsulation
+//
+// ////////////////////////////////////////////
 package v2
 
-// VLANEndpoint_OperationalVLANTrunkEncapsulation 
+// VLANEndpoint_OperationalVLANTrunkEncapsulation
 type VLANEndpoint_OperationalVLANTrunkEncapsulation int
-const(
+
+const (
 	// Unknown enum
 	VLANEndpoint_OperationalVLANTrunkEncapsulation_Unknown VLANEndpoint_OperationalVLANTrunkEncapsulation = 0
 	// Other enum
@@ -28,4 +30,3 @@ const(
 	// Vendor_Reserved enum
 	VLANEndpoint_OperationalVLANTrunkEncapsulation_Vendor_Reserved VLANEndpoint_OperationalVLANTrunkEncapsulation = 7
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source LogicalDevice_PowerManagementCapabilities
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source LogicalDevice_PowerManagementCapabilities
+//
+// ////////////////////////////////////////////
 package v2
 
-// LogicalDevice_PowerManagementCapabilities 
+// LogicalDevice_PowerManagementCapabilities
 type LogicalDevice_PowerManagementCapabilities int
-const(
+
+const (
 	// Unknown enum
 	LogicalDevice_PowerManagementCapabilities_Unknown LogicalDevice_PowerManagementCapabilities = 0
 	// Not_Supported enum
@@ -28,4 +30,3 @@ const(
 	// Timed_Power_On_Supported enum
 	LogicalDevice_PowerManagementCapabilities_Timed_Power_On_Supported LogicalDevice_PowerManagementCapabilities = 7
 )
-

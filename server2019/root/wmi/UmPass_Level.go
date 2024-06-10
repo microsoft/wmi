@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source UmPass_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source UmPass_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// UmPass_Level 
+// UmPass_Level
 type UmPass_Level int
-const(
+
+const (
 	// Fatal enum
 	UmPass_Level_Fatal UmPass_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	UmPass_Level_Verbose UmPass_Level = 5
 )
-

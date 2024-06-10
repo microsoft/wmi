@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source KerberosDebugTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source KerberosDebugTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// KerberosDebugTrace_Flags 
+// KerberosDebugTrace_Flags
 type KerberosDebugTrace_Flags int
-const(
+
+const (
 	// Error enum
 	KerberosDebugTrace_Flags_Error KerberosDebugTrace_Flags = 1
 	// Warning enum
@@ -56,4 +58,3 @@ const(
 	// U2U enum
 	KerberosDebugTrace_Flags_U2U KerberosDebugTrace_Flags = 22
 )
-

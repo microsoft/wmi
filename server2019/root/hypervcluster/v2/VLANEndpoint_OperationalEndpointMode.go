@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VLANEndpoint_OperationalEndpointMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VLANEndpoint_OperationalEndpointMode
+//
+// ////////////////////////////////////////////
 package v2
 
-// VLANEndpoint_OperationalEndpointMode 
+// VLANEndpoint_OperationalEndpointMode
 type VLANEndpoint_OperationalEndpointMode int
-const(
+
+const (
 	// DMTF_Reserved enum
 	VLANEndpoint_OperationalEndpointMode_DMTF_Reserved VLANEndpoint_OperationalEndpointMode = 0
 	// Other enum
@@ -30,4 +32,3 @@ const(
 	// Vendor_Reserved enum
 	VLANEndpoint_OperationalEndpointMode_Vendor_Reserved VLANEndpoint_OperationalEndpointMode = 8
 )
-

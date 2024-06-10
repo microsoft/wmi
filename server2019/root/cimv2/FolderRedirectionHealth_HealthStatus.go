@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FolderRedirectionHealth_HealthStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FolderRedirectionHealth_HealthStatus
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// FolderRedirectionHealth_HealthStatus 
+// FolderRedirectionHealth_HealthStatus
 type FolderRedirectionHealth_HealthStatus int
-const(
+
+const (
 	// Healthy enum
 	FolderRedirectionHealth_HealthStatus_Healthy FolderRedirectionHealth_HealthStatus = 0
 	// Caution enum
@@ -18,4 +20,3 @@ const(
 	// Unhealthy enum
 	FolderRedirectionHealth_HealthStatus_Unhealthy FolderRedirectionHealth_HealthStatus = 2
 )
-

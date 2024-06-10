@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ControlledBy_AccessState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ControlledBy_AccessState
+//
+// ////////////////////////////////////////////
 package v2
 
-// ControlledBy_AccessState 
+// ControlledBy_AccessState
 type ControlledBy_AccessState int
-const(
+
+const (
 	// Unknown enum
 	ControlledBy_AccessState_Unknown ControlledBy_AccessState = 0
 	// Active enum
@@ -18,4 +20,3 @@ const(
 	// Inactive enum
 	ControlledBy_AccessState_Inactive ControlledBy_AccessState = 2
 )
-

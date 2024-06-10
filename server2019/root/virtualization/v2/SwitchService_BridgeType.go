@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SwitchService_BridgeType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SwitchService_BridgeType
+//
+// ////////////////////////////////////////////
 package v2
 
-// SwitchService_BridgeType 
+// SwitchService_BridgeType
 type SwitchService_BridgeType int
-const(
+
+const (
 	// Unknown enum
 	SwitchService_BridgeType_Unknown SwitchService_BridgeType = 1
 	// Transparent_only enum
@@ -20,4 +22,3 @@ const(
 	// SRT enum
 	SwitchService_BridgeType_SRT SwitchService_BridgeType = 4
 )
-

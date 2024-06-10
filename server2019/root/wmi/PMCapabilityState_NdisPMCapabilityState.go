@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PMCapabilityState_NdisPMCapabilityState
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PMCapabilityState_NdisPMCapabilityState
+//
+// ////////////////////////////////////////////
 package wmi
 
-// PMCapabilityState_NdisPMCapabilityState 
+// PMCapabilityState_NdisPMCapabilityState
 type PMCapabilityState_NdisPMCapabilityState int
-const(
+
+const (
 	// NdisPMAdminConfigUnsupported enum
 	PMCapabilityState_NdisPMCapabilityState_NdisPMAdminConfigUnsupported PMCapabilityState_NdisPMCapabilityState = 0
 	// NdisPMAdminConfigInactive enum
@@ -18,4 +20,3 @@ const(
 	// NdisPMAdminConfigActive enum
 	PMCapabilityState_NdisPMCapabilityState_NdisPMAdminConfigActive PMCapabilityState_NdisPMCapabilityState = 2
 )
-

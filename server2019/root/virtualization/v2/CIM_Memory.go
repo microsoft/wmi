@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.virtualization.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.virtualization.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Memory struct
-type CIM_Memory struct { 
+type CIM_Memory struct {
 	*CIM_StorageExtent
 
 	// An array of octets holding additional error information. An example is ECC Syndrome or the return of the check bits if a CRC-based ErrorMethodology is used. In the latter case, if a single bit error is recognized and the CRC algorithm is known, it is possible to determine the exact bit that failed. This type of data (ECC Syndrome, Check Bit or Parity Bit data, or other vendor supplied information) is included in this field. If the ErrorInfo property is equal to 3, "OK", then AdditionalErrorData has no meaning.
@@ -64,435 +66,438 @@ type CIM_Memory struct {
 	Volatile bool
 }
 
-	func NewCIM_MemoryEx1(instance *cim.WmiInstance) (newInstance *CIM_Memory, err error) {tmp, err := NewCIM_StorageExtentEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_Memory {
-	CIM_StorageExtent: tmp,
+func NewCIM_MemoryEx1(instance *cim.WmiInstance) (newInstance *CIM_Memory, err error) {
+	tmp, err := NewCIM_StorageExtentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Memory{
+		CIM_StorageExtent: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_MemoryEx6(hostName string,
+func NewCIM_MemoryEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_Memory, err error) {tmp, err := NewCIM_StorageExtentEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_Memory {
-	CIM_StorageExtent: tmp,
+	query *query.WmiQuery) (newInstance *CIM_Memory, err error) {
+	tmp, err := NewCIM_StorageExtentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Memory{
+		CIM_StorageExtent: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetAdditionalErrorData sets the value of AdditionalErrorData for the instance
-func (instance *CIM_Memory) SetPropertyAdditionalErrorData(value []uint8) (err error) { 
-    return instance.SetProperty("AdditionalErrorData", (value))
+func (instance *CIM_Memory) SetPropertyAdditionalErrorData(value []uint8) (err error) {
+	return instance.SetProperty("AdditionalErrorData", (value))
 }
 
 // GetAdditionalErrorData gets the value of AdditionalErrorData for the instance
-func (instance *CIM_Memory) GetPropertyAdditionalErrorData()(value []uint8, err error) { 
-    retValue, err := instance.GetProperty("AdditionalErrorData")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(uint8); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, uint8(valuetmp))
-    }
+func (instance *CIM_Memory) GetPropertyAdditionalErrorData() (value []uint8, err error) {
+	retValue, err := instance.GetProperty("AdditionalErrorData")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
+	return
 }
 
 // SetCorrectableError sets the value of CorrectableError for the instance
-func (instance *CIM_Memory) SetPropertyCorrectableError(value bool) (err error) { 
-    return instance.SetProperty("CorrectableError", (value))
+func (instance *CIM_Memory) SetPropertyCorrectableError(value bool) (err error) {
+	return instance.SetProperty("CorrectableError", (value))
 }
 
 // GetCorrectableError gets the value of CorrectableError for the instance
-func (instance *CIM_Memory) GetPropertyCorrectableError()(value bool, err error) { 
-    retValue, err := instance.GetProperty("CorrectableError")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyCorrectableError() (value bool, err error) {
+	retValue, err := instance.GetProperty("CorrectableError")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetEndingAddress sets the value of EndingAddress for the instance
-func (instance *CIM_Memory) SetPropertyEndingAddress(value uint64) (err error) { 
-    return instance.SetProperty("EndingAddress", (value))
+func (instance *CIM_Memory) SetPropertyEndingAddress(value uint64) (err error) {
+	return instance.SetProperty("EndingAddress", (value))
 }
 
 // GetEndingAddress gets the value of EndingAddress for the instance
-func (instance *CIM_Memory) GetPropertyEndingAddress()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("EndingAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyEndingAddress() (value uint64, err error) {
+	retValue, err := instance.GetProperty("EndingAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetErrorAccess sets the value of ErrorAccess for the instance
-func (instance *CIM_Memory) SetPropertyErrorAccess(value Memory_ErrorAccess) (err error) { 
-    return instance.SetProperty("ErrorAccess", (value))
+func (instance *CIM_Memory) SetPropertyErrorAccess(value Memory_ErrorAccess) (err error) {
+	return instance.SetProperty("ErrorAccess", (value))
 }
 
 // GetErrorAccess gets the value of ErrorAccess for the instance
-func (instance *CIM_Memory) GetPropertyErrorAccess()(value Memory_ErrorAccess, err error) { 
-    retValue, err := instance.GetProperty("ErrorAccess")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyErrorAccess() (value Memory_ErrorAccess, err error) {
+	retValue, err := instance.GetProperty("ErrorAccess")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = Memory_ErrorAccess(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = Memory_ErrorAccess(valuetmp)
+
+	return
 }
 
 // SetErrorAddress sets the value of ErrorAddress for the instance
-func (instance *CIM_Memory) SetPropertyErrorAddress(value uint64) (err error) { 
-    return instance.SetProperty("ErrorAddress", (value))
+func (instance *CIM_Memory) SetPropertyErrorAddress(value uint64) (err error) {
+	return instance.SetProperty("ErrorAddress", (value))
 }
 
 // GetErrorAddress gets the value of ErrorAddress for the instance
-func (instance *CIM_Memory) GetPropertyErrorAddress()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("ErrorAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyErrorAddress() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ErrorAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetErrorData sets the value of ErrorData for the instance
-func (instance *CIM_Memory) SetPropertyErrorData(value []uint8) (err error) { 
-    return instance.SetProperty("ErrorData", (value))
+func (instance *CIM_Memory) SetPropertyErrorData(value []uint8) (err error) {
+	return instance.SetProperty("ErrorData", (value))
 }
 
 // GetErrorData gets the value of ErrorData for the instance
-func (instance *CIM_Memory) GetPropertyErrorData()(value []uint8, err error) { 
-    retValue, err := instance.GetProperty("ErrorData")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(uint8); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, uint8(valuetmp))
-    }
+func (instance *CIM_Memory) GetPropertyErrorData() (value []uint8, err error) {
+	retValue, err := instance.GetProperty("ErrorData")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
+	return
 }
 
 // SetErrorDataOrder sets the value of ErrorDataOrder for the instance
-func (instance *CIM_Memory) SetPropertyErrorDataOrder(value Memory_ErrorDataOrder) (err error) { 
-    return instance.SetProperty("ErrorDataOrder", (value))
+func (instance *CIM_Memory) SetPropertyErrorDataOrder(value Memory_ErrorDataOrder) (err error) {
+	return instance.SetProperty("ErrorDataOrder", (value))
 }
 
 // GetErrorDataOrder gets the value of ErrorDataOrder for the instance
-func (instance *CIM_Memory) GetPropertyErrorDataOrder()(value Memory_ErrorDataOrder, err error) { 
-    retValue, err := instance.GetProperty("ErrorDataOrder")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyErrorDataOrder() (value Memory_ErrorDataOrder, err error) {
+	retValue, err := instance.GetProperty("ErrorDataOrder")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = Memory_ErrorDataOrder(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = Memory_ErrorDataOrder(valuetmp)
+
+	return
 }
 
 // SetErrorInfo sets the value of ErrorInfo for the instance
-func (instance *CIM_Memory) SetPropertyErrorInfo(value Memory_ErrorInfo) (err error) { 
-    return instance.SetProperty("ErrorInfo", (value))
+func (instance *CIM_Memory) SetPropertyErrorInfo(value Memory_ErrorInfo) (err error) {
+	return instance.SetProperty("ErrorInfo", (value))
 }
 
 // GetErrorInfo gets the value of ErrorInfo for the instance
-func (instance *CIM_Memory) GetPropertyErrorInfo()(value Memory_ErrorInfo, err error) { 
-    retValue, err := instance.GetProperty("ErrorInfo")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyErrorInfo() (value Memory_ErrorInfo, err error) {
+	retValue, err := instance.GetProperty("ErrorInfo")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = Memory_ErrorInfo(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = Memory_ErrorInfo(valuetmp)
+
+	return
 }
 
 // SetErrorResolution sets the value of ErrorResolution for the instance
-func (instance *CIM_Memory) SetPropertyErrorResolution(value uint64) (err error) { 
-    return instance.SetProperty("ErrorResolution", (value))
+func (instance *CIM_Memory) SetPropertyErrorResolution(value uint64) (err error) {
+	return instance.SetProperty("ErrorResolution", (value))
 }
 
 // GetErrorResolution gets the value of ErrorResolution for the instance
-func (instance *CIM_Memory) GetPropertyErrorResolution()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("ErrorResolution")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyErrorResolution() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ErrorResolution")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetErrorTime sets the value of ErrorTime for the instance
-func (instance *CIM_Memory) SetPropertyErrorTime(value string) (err error) { 
-    return instance.SetProperty("ErrorTime", (value))
+func (instance *CIM_Memory) SetPropertyErrorTime(value string) (err error) {
+	return instance.SetProperty("ErrorTime", (value))
 }
 
 // GetErrorTime gets the value of ErrorTime for the instance
-func (instance *CIM_Memory) GetPropertyErrorTime()(value string, err error) { 
-    retValue, err := instance.GetProperty("ErrorTime")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyErrorTime() (value string, err error) {
+	retValue, err := instance.GetProperty("ErrorTime")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetErrorTransferSize sets the value of ErrorTransferSize for the instance
-func (instance *CIM_Memory) SetPropertyErrorTransferSize(value uint32) (err error) { 
-    return instance.SetProperty("ErrorTransferSize", (value))
+func (instance *CIM_Memory) SetPropertyErrorTransferSize(value uint32) (err error) {
+	return instance.SetProperty("ErrorTransferSize", (value))
 }
 
 // GetErrorTransferSize gets the value of ErrorTransferSize for the instance
-func (instance *CIM_Memory) GetPropertyErrorTransferSize()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("ErrorTransferSize")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyErrorTransferSize() (value uint32, err error) {
+	retValue, err := instance.GetProperty("ErrorTransferSize")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetOtherErrorDescription sets the value of OtherErrorDescription for the instance
-func (instance *CIM_Memory) SetPropertyOtherErrorDescription(value string) (err error) { 
-    return instance.SetProperty("OtherErrorDescription", (value))
+func (instance *CIM_Memory) SetPropertyOtherErrorDescription(value string) (err error) {
+	return instance.SetProperty("OtherErrorDescription", (value))
 }
 
 // GetOtherErrorDescription gets the value of OtherErrorDescription for the instance
-func (instance *CIM_Memory) GetPropertyOtherErrorDescription()(value string, err error) { 
-    retValue, err := instance.GetProperty("OtherErrorDescription")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyOtherErrorDescription() (value string, err error) {
+	retValue, err := instance.GetProperty("OtherErrorDescription")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetStartingAddress sets the value of StartingAddress for the instance
-func (instance *CIM_Memory) SetPropertyStartingAddress(value uint64) (err error) { 
-    return instance.SetProperty("StartingAddress", (value))
+func (instance *CIM_Memory) SetPropertyStartingAddress(value uint64) (err error) {
+	return instance.SetProperty("StartingAddress", (value))
 }
 
 // GetStartingAddress gets the value of StartingAddress for the instance
-func (instance *CIM_Memory) GetPropertyStartingAddress()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("StartingAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyStartingAddress() (value uint64, err error) {
+	retValue, err := instance.GetProperty("StartingAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetSystemLevelAddress sets the value of SystemLevelAddress for the instance
-func (instance *CIM_Memory) SetPropertySystemLevelAddress(value bool) (err error) { 
-    return instance.SetProperty("SystemLevelAddress", (value))
+func (instance *CIM_Memory) SetPropertySystemLevelAddress(value bool) (err error) {
+	return instance.SetProperty("SystemLevelAddress", (value))
 }
 
 // GetSystemLevelAddress gets the value of SystemLevelAddress for the instance
-func (instance *CIM_Memory) GetPropertySystemLevelAddress()(value bool, err error) { 
-    retValue, err := instance.GetProperty("SystemLevelAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertySystemLevelAddress() (value bool, err error) {
+	retValue, err := instance.GetProperty("SystemLevelAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // Setvolatile sets the value of volatile for the instance
-func (instance *CIM_Memory) SetPropertyvolatile(value bool) (err error) { 
-    return instance.SetProperty("volatile", (value))
+func (instance *CIM_Memory) SetPropertyvolatile(value bool) (err error) {
+	return instance.SetProperty("volatile", (value))
 }
 
 // Getvolatile gets the value of volatile for the instance
-func (instance *CIM_Memory) GetPropertyvolatile()(value bool, err error) { 
-    retValue, err := instance.GetProperty("volatile")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Memory) GetPropertyvolatile() (value bool, err error) {
+	retValue, err := instance.GetProperty("volatile")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source KmdfTraceGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source KmdfTraceGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// KmdfTraceGuid_Level 
+// KmdfTraceGuid_Level
 type KmdfTraceGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	KmdfTraceGuid_Level_Fatal KmdfTraceGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	KmdfTraceGuid_Level_Verbose KmdfTraceGuid_Level = 5
 )
-

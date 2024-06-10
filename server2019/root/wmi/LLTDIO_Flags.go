@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source LLTDIO_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source LLTDIO_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// LLTDIO_Flags 
+// LLTDIO_Flags
 type LLTDIO_Flags int
-const(
+
+const (
 	// TRACE_CLASS_CALL enum
 	LLTDIO_Flags_TRACE_CLASS_CALL LLTDIO_Flags = 1
 	// TRACE_CLASS_DISPATCH enum
@@ -24,4 +26,3 @@ const(
 	// TRACE_CLASS_REQUEST enum
 	LLTDIO_Flags_TRACE_CLASS_REQUEST LLTDIO_Flags = 6
 )
-

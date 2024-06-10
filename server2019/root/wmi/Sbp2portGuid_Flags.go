@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Sbp2portGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Sbp2portGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Sbp2portGuid_Flags 
+// Sbp2portGuid_Flags
 type Sbp2portGuid_Flags int
-const(
+
+const (
 	// TRACE_FLAG_GENERAL enum
 	Sbp2portGuid_Flags_TRACE_FLAG_GENERAL Sbp2portGuid_Flags = 1
 	// TRACE_FLAG_PNP enum
@@ -42,4 +44,3 @@ const(
 	// TRACE_FLAG_ENUM enum
 	Sbp2portGuid_Flags_TRACE_FLAG_ENUM Sbp2portGuid_Flags = 15
 )
-

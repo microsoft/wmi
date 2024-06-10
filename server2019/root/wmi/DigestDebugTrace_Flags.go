@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DigestDebugTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DigestDebugTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// DigestDebugTrace_Flags 
+// DigestDebugTrace_Flags
 type DigestDebugTrace_Flags int
-const(
+
+const (
 	// Error enum
 	DigestDebugTrace_Flags_Error DigestDebugTrace_Flags = 1
 	// Warning enum
@@ -32,4 +34,3 @@ const(
 	// TraceStuff enum
 	DigestDebugTrace_Flags_TraceStuff DigestDebugTrace_Flags = 10
 )
-

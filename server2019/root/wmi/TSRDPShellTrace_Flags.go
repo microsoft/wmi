@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TSRDPShellTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TSRDPShellTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// TSRDPShellTrace_Flags 
+// TSRDPShellTrace_Flags
 type TSRDPShellTrace_Flags int
-const(
+
+const (
 	// TS_TRACE_LEVEL_NRM enum
 	TSRDPShellTrace_Flags_TS_TRACE_LEVEL_NRM TSRDPShellTrace_Flags = 1
 	// TS_TRACE_LEVEL_ERROR enum
@@ -18,4 +20,3 @@ const(
 	// TS_TRACE_LEVEL_ASSERT enum
 	TSRDPShellTrace_Flags_TS_TRACE_LEVEL_ASSERT TSRDPShellTrace_Flags = 3
 )
-

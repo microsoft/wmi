@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source TaskPrincipal2_ProcessTokenSidType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source TaskPrincipal2_ProcessTokenSidType
+//
+// ////////////////////////////////////////////
 package taskscheduler
 
-// TaskPrincipal2_ProcessTokenSidType 
+// TaskPrincipal2_ProcessTokenSidType
 type TaskPrincipal2_ProcessTokenSidType int
-const(
+
+const (
 	// _109 enum
 	TaskPrincipal2_ProcessTokenSidType__109 TaskPrincipal2_ProcessTokenSidType = 0
 	// _110 enum
@@ -18,4 +20,3 @@ const(
 	// _111 enum
 	TaskPrincipal2_ProcessTokenSidType__111 TaskPrincipal2_ProcessTokenSidType = 2
 )
-

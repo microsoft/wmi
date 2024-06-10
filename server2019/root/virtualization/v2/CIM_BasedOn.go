@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.virtualization.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.virtualization.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_BasedOn struct
-type CIM_BasedOn struct { 
+type CIM_BasedOn struct {
 	*CIM_Dependency
 
 	// EndingAddress indicates where in lower level storage, the higher level Extent ends. This property is useful when mapping non-contiguous Extents into a higher level grouping.
@@ -28,109 +30,112 @@ type CIM_BasedOn struct {
 	StartingAddress uint64
 }
 
-	func NewCIM_BasedOnEx1(instance *cim.WmiInstance) (newInstance *CIM_BasedOn, err error) {tmp, err := NewCIM_DependencyEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_BasedOn {
-	CIM_Dependency: tmp,
+func NewCIM_BasedOnEx1(instance *cim.WmiInstance) (newInstance *CIM_BasedOn, err error) {
+	tmp, err := NewCIM_DependencyEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BasedOn{
+		CIM_Dependency: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_BasedOnEx6(hostName string,
+func NewCIM_BasedOnEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_BasedOn, err error) {tmp, err := NewCIM_DependencyEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_BasedOn {
-	CIM_Dependency: tmp,
+	query *query.WmiQuery) (newInstance *CIM_BasedOn, err error) {
+	tmp, err := NewCIM_DependencyEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BasedOn{
+		CIM_Dependency: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetEndingAddress sets the value of EndingAddress for the instance
-func (instance *CIM_BasedOn) SetPropertyEndingAddress(value uint64) (err error) { 
-    return instance.SetProperty("EndingAddress", (value))
+func (instance *CIM_BasedOn) SetPropertyEndingAddress(value uint64) (err error) {
+	return instance.SetProperty("EndingAddress", (value))
 }
 
 // GetEndingAddress gets the value of EndingAddress for the instance
-func (instance *CIM_BasedOn) GetPropertyEndingAddress()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("EndingAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BasedOn) GetPropertyEndingAddress() (value uint64, err error) {
+	retValue, err := instance.GetProperty("EndingAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
 
 // SetOrderIndex sets the value of OrderIndex for the instance
-func (instance *CIM_BasedOn) SetPropertyOrderIndex(value uint16) (err error) { 
-    return instance.SetProperty("OrderIndex", (value))
+func (instance *CIM_BasedOn) SetPropertyOrderIndex(value uint16) (err error) {
+	return instance.SetProperty("OrderIndex", (value))
 }
 
 // GetOrderIndex gets the value of OrderIndex for the instance
-func (instance *CIM_BasedOn) GetPropertyOrderIndex()(value uint16, err error) { 
-    retValue, err := instance.GetProperty("OrderIndex")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint16); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BasedOn) GetPropertyOrderIndex() (value uint16, err error) {
+	retValue, err := instance.GetProperty("OrderIndex")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint16(valuetmp)
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint16(valuetmp)
+
+	return
 }
 
 // SetStartingAddress sets the value of StartingAddress for the instance
-func (instance *CIM_BasedOn) SetPropertyStartingAddress(value uint64) (err error) { 
-    return instance.SetProperty("StartingAddress", (value))
+func (instance *CIM_BasedOn) SetPropertyStartingAddress(value uint64) (err error) {
+	return instance.SetProperty("StartingAddress", (value))
 }
 
 // GetStartingAddress gets the value of StartingAddress for the instance
-func (instance *CIM_BasedOn) GetPropertyStartingAddress()(value uint64, err error) { 
-    retValue, err := instance.GetProperty("StartingAddress")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_BasedOn) GetPropertyStartingAddress() (value uint64, err error) {
+	retValue, err := instance.GetProperty("StartingAddress")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint64(valuetmp)
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint64(valuetmp)
+
+	return
 }
-

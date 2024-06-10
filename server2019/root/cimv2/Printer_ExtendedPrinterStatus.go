@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Printer_ExtendedPrinterStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Printer_ExtendedPrinterStatus
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// Printer_ExtendedPrinterStatus 
+// Printer_ExtendedPrinterStatus
 type Printer_ExtendedPrinterStatus int
-const(
+
+const (
 	// Other enum
 	Printer_ExtendedPrinterStatus_Other Printer_ExtendedPrinterStatus = 1
 	// Unknown enum
@@ -48,4 +50,3 @@ const(
 	// Manual_Feed enum
 	Printer_ExtendedPrinterStatus_Manual_Feed Printer_ExtendedPrinterStatus = 18
 )
-

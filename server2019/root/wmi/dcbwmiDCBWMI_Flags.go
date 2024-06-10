@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source dcbwmiDCBWMI_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source dcbwmiDCBWMI_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// dcbwmiDCBWMI_Flags 
+// dcbwmiDCBWMI_Flags
 type dcbwmiDCBWMI_Flags int
-const(
+
+const (
 	// DCBWMI_TRACE_CALL enum
 	dcbwmiDCBWMI_Flags_DCBWMI_TRACE_CALL dcbwmiDCBWMI_Flags = 0
 	// DCBWMI_TRACE_FLOW_CONTROL enum
@@ -22,4 +24,3 @@ const(
 	// DCBWMI_TRACE_DCBX_SETTING enum
 	dcbwmiDCBWMI_Flags_DCBWMI_TRACE_DCBX_SETTING dcbwmiDCBWMI_Flags = 4
 )
-

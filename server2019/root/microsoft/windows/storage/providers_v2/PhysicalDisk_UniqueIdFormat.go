@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PhysicalDisk_UniqueIdFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PhysicalDisk_UniqueIdFormat
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// PhysicalDisk_UniqueIdFormat 
+// PhysicalDisk_UniqueIdFormat
 type PhysicalDisk_UniqueIdFormat int
-const(
+
+const (
 	// Vendor_Specific enum
 	PhysicalDisk_UniqueIdFormat_Vendor_Specific PhysicalDisk_UniqueIdFormat = 0
 	// Vendor_Id enum
@@ -22,4 +24,3 @@ const(
 	// SCSI_Name_String enum
 	PhysicalDisk_UniqueIdFormat_SCSI_Name_String PhysicalDisk_UniqueIdFormat = 8
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StoragePool_HealthStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StoragePool_HealthStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_HealthStatus 
+// StoragePool_HealthStatus
 type StoragePool_HealthStatus int
-const(
+
+const (
 	// Healthy enum
 	StoragePool_HealthStatus_Healthy StoragePool_HealthStatus = 0
 	// Warning enum
@@ -20,4 +22,3 @@ const(
 	// Unknown enum
 	StoragePool_HealthStatus_Unknown StoragePool_HealthStatus = 5
 )
-

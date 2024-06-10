@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Error_CIMStatusCode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Error_CIMStatusCode
+//
+// ////////////////////////////////////////////
 package peh
 
-// Error_CIMStatusCode 
+// Error_CIMStatusCode
 type Error_CIMStatusCode int
-const(
+
+const (
 	// CIM_ERR_FAILED enum
 	Error_CIMStatusCode_CIM_ERR_FAILED Error_CIMStatusCode = 1
 	// CIM_ERR_ACCESS_DENIED enum
@@ -72,4 +74,3 @@ const(
 	// DMTF_Reserved enum
 	Error_CIMStatusCode_DMTF_Reserved Error_CIMStatusCode = 30
 )
-

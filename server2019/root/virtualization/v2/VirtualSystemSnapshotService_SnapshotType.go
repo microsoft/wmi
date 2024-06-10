@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemSnapshotService_SnapshotType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemSnapshotService_SnapshotType
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemSnapshotService_SnapshotType 
+// VirtualSystemSnapshotService_SnapshotType
 type VirtualSystemSnapshotService_SnapshotType int
-const(
+
+const (
 	// Full_Snapshot enum
 	VirtualSystemSnapshotService_SnapshotType_Full_Snapshot VirtualSystemSnapshotService_SnapshotType = 2
 	// Disk_Snapshot enum
@@ -20,4 +22,3 @@ const(
 	// Vendor_Specific enum
 	VirtualSystemSnapshotService_SnapshotType_Vendor_Specific VirtualSystemSnapshotService_SnapshotType = 5
 )
-

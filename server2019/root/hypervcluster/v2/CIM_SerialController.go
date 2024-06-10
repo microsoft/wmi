@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.HyperVCluster.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.HyperVCluster.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SerialController struct
-type CIM_SerialController struct { 
+type CIM_SerialController struct {
 	*CIM_Controller
 
 	// The Capabilities property defines chip level compatibility for the SerialController. Therefore, this property describes the buffering and other capabilities of the SerialController that might be inherent in the chip hardware. The property is an enumerated integer.
@@ -31,138 +33,141 @@ type CIM_SerialController struct {
 	Security SerialController_Security
 }
 
-	func NewCIM_SerialControllerEx1(instance *cim.WmiInstance) (newInstance *CIM_SerialController, err error) {tmp, err := NewCIM_ControllerEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_SerialController {
-	CIM_Controller: tmp,
+func NewCIM_SerialControllerEx1(instance *cim.WmiInstance) (newInstance *CIM_SerialController, err error) {
+	tmp, err := NewCIM_ControllerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SerialController{
+		CIM_Controller: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_SerialControllerEx6(hostName string,
+func NewCIM_SerialControllerEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_SerialController, err error) {tmp, err := NewCIM_ControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_SerialController {
-	CIM_Controller: tmp,
+	query *query.WmiQuery) (newInstance *CIM_SerialController, err error) {
+	tmp, err := NewCIM_ControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SerialController{
+		CIM_Controller: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetCapabilities sets the value of Capabilities for the instance
-func (instance *CIM_SerialController) SetPropertyCapabilities(value []SerialController_Capabilities) (err error) { 
-    return instance.SetProperty("Capabilities", (value))
+func (instance *CIM_SerialController) SetPropertyCapabilities(value []SerialController_Capabilities) (err error) {
+	return instance.SetProperty("Capabilities", (value))
 }
 
 // GetCapabilities gets the value of Capabilities for the instance
-func (instance *CIM_SerialController) GetPropertyCapabilities()(value []SerialController_Capabilities, err error) { 
-    retValue, err := instance.GetProperty("Capabilities")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(int32); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, SerialController_Capabilities(valuetmp))
-    }
+func (instance *CIM_SerialController) GetPropertyCapabilities() (value []SerialController_Capabilities, err error) {
+	retValue, err := instance.GetProperty("Capabilities")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, SerialController_Capabilities(valuetmp))
+	}
+
+	return
 }
 
 // SetCapabilityDescriptions sets the value of CapabilityDescriptions for the instance
-func (instance *CIM_SerialController) SetPropertyCapabilityDescriptions(value []string) (err error) { 
-    return instance.SetProperty("CapabilityDescriptions", (value))
+func (instance *CIM_SerialController) SetPropertyCapabilityDescriptions(value []string) (err error) {
+	return instance.SetProperty("CapabilityDescriptions", (value))
 }
 
 // GetCapabilityDescriptions gets the value of CapabilityDescriptions for the instance
-func (instance *CIM_SerialController) GetPropertyCapabilityDescriptions()(value []string, err error) { 
-    retValue, err := instance.GetProperty("CapabilityDescriptions")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(string); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, string(valuetmp))
-    }
+func (instance *CIM_SerialController) GetPropertyCapabilityDescriptions() (value []string, err error) {
+	retValue, err := instance.GetProperty("CapabilityDescriptions")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
+	return
 }
 
 // SetMaxBaudRate sets the value of MaxBaudRate for the instance
-func (instance *CIM_SerialController) SetPropertyMaxBaudRate(value uint32) (err error) { 
-    return instance.SetProperty("MaxBaudRate", (value))
+func (instance *CIM_SerialController) SetPropertyMaxBaudRate(value uint32) (err error) {
+	return instance.SetProperty("MaxBaudRate", (value))
 }
 
 // GetMaxBaudRate gets the value of MaxBaudRate for the instance
-func (instance *CIM_SerialController) GetPropertyMaxBaudRate()(value uint32, err error) { 
-    retValue, err := instance.GetProperty("MaxBaudRate")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(uint32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_SerialController) GetPropertyMaxBaudRate() (value uint32, err error) {
+	retValue, err := instance.GetProperty("MaxBaudRate")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = uint32(valuetmp)
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = uint32(valuetmp)
+
+	return
 }
 
 // SetSecurity sets the value of Security for the instance
-func (instance *CIM_SerialController) SetPropertySecurity(value SerialController_Security) (err error) { 
-    return instance.SetProperty("Security", (value))
+func (instance *CIM_SerialController) SetPropertySecurity(value SerialController_Security) (err error) {
+	return instance.SetProperty("Security", (value))
 }
 
 // GetSecurity gets the value of Security for the instance
-func (instance *CIM_SerialController) GetPropertySecurity()(value SerialController_Security, err error) { 
-    retValue, err := instance.GetProperty("Security")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_SerialController) GetPropertySecurity() (value SerialController_Security, err error) {
+	retValue, err := instance.GetProperty("Security")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = SerialController_Security(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = SerialController_Security(valuetmp)
+
+	return
 }
-

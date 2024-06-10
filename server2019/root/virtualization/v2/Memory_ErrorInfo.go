@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Memory_ErrorInfo
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Memory_ErrorInfo
+//
+// ////////////////////////////////////////////
 package v2
 
-// Memory_ErrorInfo 
+// Memory_ErrorInfo
 type Memory_ErrorInfo int
-const(
+
+const (
 	// Other enum
 	Memory_ErrorInfo_Other Memory_ErrorInfo = 1
 	// Unknown enum
@@ -40,4 +42,3 @@ const(
 	// Undefined2 enum
 	Memory_ErrorInfo_Undefined2 Memory_ErrorInfo = 14
 )
-

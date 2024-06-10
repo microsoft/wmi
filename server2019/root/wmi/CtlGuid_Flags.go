@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CtlGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CtlGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// CtlGuid_Flags 
+// CtlGuid_Flags
 type CtlGuid_Flags int
-const(
+
+const (
 	// ST_DRV_NDIS enum
 	CtlGuid_Flags_ST_DRV_NDIS CtlGuid_Flags = 1
 	// ST_DRV_TPI enum
@@ -32,4 +34,3 @@ const(
 	// ST_RECV enum
 	CtlGuid_Flags_ST_RECV CtlGuid_Flags = 10
 )
-

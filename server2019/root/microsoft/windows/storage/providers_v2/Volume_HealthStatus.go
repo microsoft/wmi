@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Volume_HealthStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Volume_HealthStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Volume_HealthStatus 
+// Volume_HealthStatus
 type Volume_HealthStatus int
-const(
+
+const (
 	// Healthy enum
 	Volume_HealthStatus_Healthy Volume_HealthStatus = 0
 	// Warning enum
@@ -18,4 +20,3 @@ const(
 	// Unhealthy enum
 	Volume_HealthStatus_Unhealthy Volume_HealthStatus = 2
 )
-

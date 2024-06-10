@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualDiskToVirtualDisk_CopyPriority
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualDiskToVirtualDisk_CopyPriority
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_CopyPriority 
+// VirtualDiskToVirtualDisk_CopyPriority
 type VirtualDiskToVirtualDisk_CopyPriority int
-const(
+
+const (
 	// Not_Managed enum
 	VirtualDiskToVirtualDisk_CopyPriority_Not_Managed VirtualDiskToVirtualDisk_CopyPriority = 0
 	// Low enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_CopyPriority_Vendor_Specific VirtualDiskToVirtualDisk_CopyPriority = 5
 )
-

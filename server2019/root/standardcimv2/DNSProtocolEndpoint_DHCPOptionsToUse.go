@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DNSProtocolEndpoint_DHCPOptionsToUse
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DNSProtocolEndpoint_DHCPOptionsToUse
+//
+// ////////////////////////////////////////////
 package standardcimv2
 
-// DNSProtocolEndpoint_DHCPOptionsToUse 
+// DNSProtocolEndpoint_DHCPOptionsToUse
 type DNSProtocolEndpoint_DHCPOptionsToUse int
-const(
+
+const (
 	// _651 enum
 	DNSProtocolEndpoint_DHCPOptionsToUse__651 DNSProtocolEndpoint_DHCPOptionsToUse = 8
 	// _652 enum
@@ -22,4 +24,3 @@ const(
 	// _30 enum
 	DNSProtocolEndpoint_DHCPOptionsToUse__30 DNSProtocolEndpoint_DHCPOptionsToUse = 19
 )
-

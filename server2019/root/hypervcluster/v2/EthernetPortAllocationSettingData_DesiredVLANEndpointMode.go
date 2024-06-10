@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EthernetPortAllocationSettingData_DesiredVLANEndpointMode
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EthernetPortAllocationSettingData_DesiredVLANEndpointMode
+//
+// ////////////////////////////////////////////
 package v2
 
-// EthernetPortAllocationSettingData_DesiredVLANEndpointMode 
+// EthernetPortAllocationSettingData_DesiredVLANEndpointMode
 type EthernetPortAllocationSettingData_DesiredVLANEndpointMode int
-const(
+
+const (
 	// DMTF_Reserved enum
 	EthernetPortAllocationSettingData_DesiredVLANEndpointMode_DMTF_Reserved EthernetPortAllocationSettingData_DesiredVLANEndpointMode = 0
 	// Other enum
@@ -30,4 +32,3 @@ const(
 	// Vendor_Reserved enum
 	EthernetPortAllocationSettingData_DesiredVLANEndpointMode_Vendor_Reserved EthernetPortAllocationSettingData_DesiredVLANEndpointMode = 8
 )
-

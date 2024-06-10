@@ -1,136 +1,141 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.WMI
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.WMI
+//
+// ////////////////////////////////////////////
 package wmi
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSNdis_StatusLinkSpeedChange struct
-type MSNdis_StatusLinkSpeedChange struct { 
+type MSNdis_StatusLinkSpeedChange struct {
 	*WMIEvent
 
-	// 
+	//
 	Active bool
 
-	// 
+	//
 	InstanceName string
 
-	// 
+	//
 	NdisStatusLinkSpeedChange MSNdis_NetworkLinkSpeed
 }
 
-	func NewMSNdis_StatusLinkSpeedChangeEx1(instance *cim.WmiInstance) (newInstance *MSNdis_StatusLinkSpeedChange, err error) {tmp, err := NewWMIEventEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &MSNdis_StatusLinkSpeedChange {
-	WMIEvent: tmp,
+func NewMSNdis_StatusLinkSpeedChangeEx1(instance *cim.WmiInstance) (newInstance *MSNdis_StatusLinkSpeedChange, err error) {
+	tmp, err := NewWMIEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSNdis_StatusLinkSpeedChange{
+		WMIEvent: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewMSNdis_StatusLinkSpeedChangeEx6(hostName string,
+func NewMSNdis_StatusLinkSpeedChangeEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *MSNdis_StatusLinkSpeedChange, err error) {tmp, err := NewWMIEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &MSNdis_StatusLinkSpeedChange {
-	WMIEvent: tmp,
+	query *query.WmiQuery) (newInstance *MSNdis_StatusLinkSpeedChange, err error) {
+	tmp, err := NewWMIEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSNdis_StatusLinkSpeedChange{
+		WMIEvent: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetActive sets the value of Active for the instance
-func (instance *MSNdis_StatusLinkSpeedChange) SetPropertyActive(value bool) (err error) { 
-    return instance.SetProperty("Active", (value))
+func (instance *MSNdis_StatusLinkSpeedChange) SetPropertyActive(value bool) (err error) {
+	return instance.SetProperty("Active", (value))
 }
 
 // GetActive gets the value of Active for the instance
-func (instance *MSNdis_StatusLinkSpeedChange) GetPropertyActive()(value bool, err error) { 
-    retValue, err := instance.GetProperty("Active")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSNdis_StatusLinkSpeedChange) GetPropertyActive() (value bool, err error) {
+	retValue, err := instance.GetProperty("Active")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetInstanceName sets the value of InstanceName for the instance
-func (instance *MSNdis_StatusLinkSpeedChange) SetPropertyInstanceName(value string) (err error) { 
-    return instance.SetProperty("InstanceName", (value))
+func (instance *MSNdis_StatusLinkSpeedChange) SetPropertyInstanceName(value string) (err error) {
+	return instance.SetProperty("InstanceName", (value))
 }
 
 // GetInstanceName gets the value of InstanceName for the instance
-func (instance *MSNdis_StatusLinkSpeedChange) GetPropertyInstanceName()(value string, err error) { 
-    retValue, err := instance.GetProperty("InstanceName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSNdis_StatusLinkSpeedChange) GetPropertyInstanceName() (value string, err error) {
+	retValue, err := instance.GetProperty("InstanceName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetNdisStatusLinkSpeedChange sets the value of NdisStatusLinkSpeedChange for the instance
-func (instance *MSNdis_StatusLinkSpeedChange) SetPropertyNdisStatusLinkSpeedChange(value MSNdis_NetworkLinkSpeed) (err error) { 
-    return instance.SetProperty("NdisStatusLinkSpeedChange", (value))
+func (instance *MSNdis_StatusLinkSpeedChange) SetPropertyNdisStatusLinkSpeedChange(value MSNdis_NetworkLinkSpeed) (err error) {
+	return instance.SetProperty("NdisStatusLinkSpeedChange", (value))
 }
 
 // GetNdisStatusLinkSpeedChange gets the value of NdisStatusLinkSpeedChange for the instance
-func (instance *MSNdis_StatusLinkSpeedChange) GetPropertyNdisStatusLinkSpeedChange()(value MSNdis_NetworkLinkSpeed, err error) { 
-    retValue, err := instance.GetProperty("NdisStatusLinkSpeedChange")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(MSNdis_NetworkLinkSpeed); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " MSNdis_NetworkLinkSpeed is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSNdis_StatusLinkSpeedChange) GetPropertyNdisStatusLinkSpeedChange() (value MSNdis_NetworkLinkSpeed, err error) {
+	retValue, err := instance.GetProperty("NdisStatusLinkSpeedChange")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = MSNdis_NetworkLinkSpeed(valuetmp)
+	valuetmp, ok := retValue.(MSNdis_NetworkLinkSpeed)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSNdis_NetworkLinkSpeed is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = MSNdis_NetworkLinkSpeed(valuetmp)
+
+	return
 }
-

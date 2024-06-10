@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SCSIProtocolController_NameFormat
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SCSIProtocolController_NameFormat
+//
+// ////////////////////////////////////////////
 package v2
 
-// SCSIProtocolController_NameFormat 
+// SCSIProtocolController_NameFormat
 type SCSIProtocolController_NameFormat int
-const(
+
+const (
 	// Unknown enum
 	SCSIProtocolController_NameFormat_Unknown SCSIProtocolController_NameFormat = 0
 	// Other enum
@@ -20,4 +22,3 @@ const(
 	// iSCSI_Name enum
 	SCSIProtocolController_NameFormat_iSCSI_Name SCSIProtocolController_NameFormat = 3
 )
-

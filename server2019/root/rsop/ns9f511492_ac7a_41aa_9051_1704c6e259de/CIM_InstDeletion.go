@@ -1,44 +1,49 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.RSOP.NS9F511492_AC7A_41AA_9051_1704C6E259DE
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.RSOP.NS9F511492_AC7A_41AA_9051_1704C6E259DE
+//
+// ////////////////////////////////////////////
 package ns9f511492_ac7a_41aa_9051_1704c6e259de
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_InstDeletion struct
-type CIM_InstDeletion struct { 
+type CIM_InstDeletion struct {
 	*CIM_InstIndication
 }
 
-	func NewCIM_InstDeletionEx1(instance *cim.WmiInstance) (newInstance *CIM_InstDeletion, err error) {tmp, err := NewCIM_InstIndicationEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_InstDeletion {
-	CIM_InstIndication: tmp,
+func NewCIM_InstDeletionEx1(instance *cim.WmiInstance) (newInstance *CIM_InstDeletion, err error) {
+	tmp, err := NewCIM_InstIndicationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstDeletion{
+		CIM_InstIndication: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_InstDeletionEx6(hostName string,
+func NewCIM_InstDeletionEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_InstDeletion, err error) {tmp, err := NewCIM_InstIndicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_InstDeletion {
-	CIM_InstIndication: tmp,
+	query *query.WmiQuery) (newInstance *CIM_InstDeletion, err error) {
+	tmp, err := NewCIM_InstIndicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstDeletion{
+		CIM_InstIndication: tmp,
 	}
 	return
-	}
-	
-
+}

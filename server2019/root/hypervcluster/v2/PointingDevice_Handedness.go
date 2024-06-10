@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PointingDevice_Handedness
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PointingDevice_Handedness
+//
+// ////////////////////////////////////////////
 package v2
 
-// PointingDevice_Handedness 
+// PointingDevice_Handedness
 type PointingDevice_Handedness int
-const(
+
+const (
 	// Unknown enum
 	PointingDevice_Handedness_Unknown PointingDevice_Handedness = 0
 	// Not_Applicable enum
@@ -20,4 +22,3 @@ const(
 	// Left_Handed_Operation enum
 	PointingDevice_Handedness_Left_Handed_Operation PointingDevice_Handedness = 3
 )
-

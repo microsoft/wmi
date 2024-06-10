@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source NetAdapterCimNDISWMI_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source NetAdapterCimNDISWMI_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// NetAdapterCimNDISWMI_Flags 
+// NetAdapterCimNDISWMI_Flags
 type NetAdapterCimNDISWMI_Flags int
-const(
+
+const (
 	// NDISWMI_TRACE_ADVPROP enum
 	NetAdapterCimNDISWMI_Flags_NDISWMI_TRACE_ADVPROP NetAdapterCimNDISWMI_Flags = 0
 	// NDISWMI_TRACE_BINDING enum
@@ -50,4 +52,3 @@ const(
 	// NDISWMI_TRACE_DATAPATHCONFIGURATION enum
 	NetAdapterCimNDISWMI_Flags_NDISWMI_TRACE_DATAPATHCONFIGURATION NetAdapterCimNDISWMI_Flags = 18
 )
-

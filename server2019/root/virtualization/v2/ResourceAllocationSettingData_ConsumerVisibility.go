@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ResourceAllocationSettingData_ConsumerVisibility
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ResourceAllocationSettingData_ConsumerVisibility
+//
+// ////////////////////////////////////////////
 package v2
 
-// ResourceAllocationSettingData_ConsumerVisibility 
+// ResourceAllocationSettingData_ConsumerVisibility
 type ResourceAllocationSettingData_ConsumerVisibility int
-const(
+
+const (
 	// Unknown enum
 	ResourceAllocationSettingData_ConsumerVisibility_Unknown ResourceAllocationSettingData_ConsumerVisibility = 0
 	// Passed_Through enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Reserved enum
 	ResourceAllocationSettingData_ConsumerVisibility_Vendor_Reserved ResourceAllocationSettingData_ConsumerVisibility = 6
 )
-

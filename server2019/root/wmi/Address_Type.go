@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Address_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Address_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Address_Type 
+// Address_Type
 type Address_Type int
-const(
+
+const (
 	// Text_Address enum
 	Address_Type_Text_Address Address_Type = 0
 	// IpV4_Address enum
@@ -20,4 +22,3 @@ const(
 	// Empty_Address enum
 	Address_Type_Empty_Address Address_Type = 3
 )
-

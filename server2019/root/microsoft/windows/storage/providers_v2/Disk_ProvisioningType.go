@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Disk_ProvisioningType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Disk_ProvisioningType
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Disk_ProvisioningType 
+// Disk_ProvisioningType
 type Disk_ProvisioningType int
-const(
+
+const (
 	// Unknown enum
 	Disk_ProvisioningType_Unknown Disk_ProvisioningType = 0
 	// Thin enum
@@ -18,4 +20,3 @@ const(
 	// Fixed enum
 	Disk_ProvisioningType_Fixed Disk_ProvisioningType = 2
 )
-

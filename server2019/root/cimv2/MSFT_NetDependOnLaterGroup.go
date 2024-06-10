@@ -1,76 +1,81 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.CIMV2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.CIMV2
+//
+// ////////////////////////////////////////////
 package cimv2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetDependOnLaterGroup struct
-type MSFT_NetDependOnLaterGroup struct { 
+type MSFT_NetDependOnLaterGroup struct {
 	*MSFT_SCMEventLogEvent
 
-	// 
+	//
 	Service string
 }
 
-	func NewMSFT_NetDependOnLaterGroupEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetDependOnLaterGroup, err error) {tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &MSFT_NetDependOnLaterGroup {
-	MSFT_SCMEventLogEvent: tmp,
+func NewMSFT_NetDependOnLaterGroupEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetDependOnLaterGroup, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetDependOnLaterGroup{
+		MSFT_SCMEventLogEvent: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewMSFT_NetDependOnLaterGroupEx6(hostName string,
+func NewMSFT_NetDependOnLaterGroupEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *MSFT_NetDependOnLaterGroup, err error) {tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &MSFT_NetDependOnLaterGroup {
-	MSFT_SCMEventLogEvent: tmp,
+	query *query.WmiQuery) (newInstance *MSFT_NetDependOnLaterGroup, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetDependOnLaterGroup{
+		MSFT_SCMEventLogEvent: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetService sets the value of Service for the instance
-func (instance *MSFT_NetDependOnLaterGroup) SetPropertyService(value string) (err error) { 
-    return instance.SetProperty("Service", (value))
+func (instance *MSFT_NetDependOnLaterGroup) SetPropertyService(value string) (err error) {
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
-func (instance *MSFT_NetDependOnLaterGroup) GetPropertyService()(value string, err error) { 
-    retValue, err := instance.GetProperty("Service")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *MSFT_NetDependOnLaterGroup) GetPropertyService() (value string, err error) {
+	retValue, err := instance.GetProperty("Service")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
-

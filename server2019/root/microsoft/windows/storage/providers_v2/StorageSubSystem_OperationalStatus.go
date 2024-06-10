@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageSubSystem_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageSubSystem_OperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_OperationalStatus 
+// StorageSubSystem_OperationalStatus
 type StorageSubSystem_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	StorageSubSystem_OperationalStatus_Unknown StorageSubSystem_OperationalStatus = 0
 	// Other enum
@@ -54,4 +56,3 @@ const(
 	// Microsoft_Reserved enum
 	StorageSubSystem_OperationalStatus_Microsoft_Reserved StorageSubSystem_OperationalStatus = 20
 )
-

@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.ServiceModel
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.ServiceModel
+//
+// ////////////////////////////////////////////
 package servicemodel
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // WorkflowServiceBehavior struct
-type WorkflowServiceBehavior struct { 
+type WorkflowServiceBehavior struct {
 	*Behavior
 
 	// Specifies how to use address to filter a message, whether to use Exact match, Prefix match or match Any.
@@ -55,352 +57,355 @@ type WorkflowServiceBehavior struct {
 	WorkflowType string
 }
 
-	func NewWorkflowServiceBehaviorEx1(instance *cim.WmiInstance) (newInstance *WorkflowServiceBehavior, err error) {tmp, err := NewBehaviorEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &WorkflowServiceBehavior {
-	Behavior: tmp,
+func NewWorkflowServiceBehaviorEx1(instance *cim.WmiInstance) (newInstance *WorkflowServiceBehavior, err error) {
+	tmp, err := NewBehaviorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &WorkflowServiceBehavior{
+		Behavior: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewWorkflowServiceBehaviorEx6(hostName string,
+func NewWorkflowServiceBehaviorEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *WorkflowServiceBehavior, err error) {tmp, err := NewBehaviorEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &WorkflowServiceBehavior {
-	Behavior: tmp,
+	query *query.WmiQuery) (newInstance *WorkflowServiceBehavior, err error) {
+	tmp, err := NewBehaviorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &WorkflowServiceBehavior{
+		Behavior: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetAddressFilterMode sets the value of AddressFilterMode for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyAddressFilterMode(value string) (err error) { 
-    return instance.SetProperty("AddressFilterMode", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyAddressFilterMode(value string) (err error) {
+	return instance.SetProperty("AddressFilterMode", (value))
 }
 
 // GetAddressFilterMode gets the value of AddressFilterMode for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyAddressFilterMode()(value string, err error) { 
-    retValue, err := instance.GetProperty("AddressFilterMode")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyAddressFilterMode() (value string, err error) {
+	retValue, err := instance.GetProperty("AddressFilterMode")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetConfigurationName sets the value of ConfigurationName for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyConfigurationName(value string) (err error) { 
-    return instance.SetProperty("ConfigurationName", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyConfigurationName(value string) (err error) {
+	return instance.SetProperty("ConfigurationName", (value))
 }
 
 // GetConfigurationName gets the value of ConfigurationName for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyConfigurationName()(value string, err error) { 
-    retValue, err := instance.GetProperty("ConfigurationName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyConfigurationName() (value string, err error) {
+	retValue, err := instance.GetProperty("ConfigurationName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetIgnoreExtensionDataObject sets the value of IgnoreExtensionDataObject for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyIgnoreExtensionDataObject(value bool) (err error) { 
-    return instance.SetProperty("IgnoreExtensionDataObject", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyIgnoreExtensionDataObject(value bool) (err error) {
+	return instance.SetProperty("IgnoreExtensionDataObject", (value))
 }
 
 // GetIgnoreExtensionDataObject gets the value of IgnoreExtensionDataObject for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyIgnoreExtensionDataObject()(value bool, err error) { 
-    retValue, err := instance.GetProperty("IgnoreExtensionDataObject")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyIgnoreExtensionDataObject() (value bool, err error) {
+	retValue, err := instance.GetProperty("IgnoreExtensionDataObject")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetIncludeExceptionDetailInFaults sets the value of IncludeExceptionDetailInFaults for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyIncludeExceptionDetailInFaults(value bool) (err error) { 
-    return instance.SetProperty("IncludeExceptionDetailInFaults", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyIncludeExceptionDetailInFaults(value bool) (err error) {
+	return instance.SetProperty("IncludeExceptionDetailInFaults", (value))
 }
 
 // GetIncludeExceptionDetailInFaults gets the value of IncludeExceptionDetailInFaults for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyIncludeExceptionDetailInFaults()(value bool, err error) { 
-    retValue, err := instance.GetProperty("IncludeExceptionDetailInFaults")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyIncludeExceptionDetailInFaults() (value bool, err error) {
+	retValue, err := instance.GetProperty("IncludeExceptionDetailInFaults")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetMaxItemsInObjectGraph sets the value of MaxItemsInObjectGraph for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyMaxItemsInObjectGraph(value int32) (err error) { 
-    return instance.SetProperty("MaxItemsInObjectGraph", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyMaxItemsInObjectGraph(value int32) (err error) {
+	return instance.SetProperty("MaxItemsInObjectGraph", (value))
 }
 
 // GetMaxItemsInObjectGraph gets the value of MaxItemsInObjectGraph for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyMaxItemsInObjectGraph()(value int32, err error) { 
-    retValue, err := instance.GetProperty("MaxItemsInObjectGraph")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyMaxItemsInObjectGraph() (value int32, err error) {
+	retValue, err := instance.GetProperty("MaxItemsInObjectGraph")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = int32(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = int32(valuetmp)
+
+	return
 }
 
 // SetName sets the value of Name for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyName(value string) (err error) { 
-    return instance.SetProperty("Name", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyName(value string) (err error) {
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyName()(value string, err error) { 
-    retValue, err := instance.GetProperty("Name")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyName() (value string, err error) {
+	retValue, err := instance.GetProperty("Name")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetNamespace sets the value of Namespace for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyNamespace(value string) (err error) { 
-    return instance.SetProperty("Namespace", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyNamespace(value string) (err error) {
+	return instance.SetProperty("Namespace", (value))
 }
 
 // GetNamespace gets the value of Namespace for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyNamespace()(value string, err error) { 
-    retValue, err := instance.GetProperty("Namespace")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyNamespace() (value string, err error) {
+	retValue, err := instance.GetProperty("Namespace")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetUseSynchronizationContext sets the value of UseSynchronizationContext for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyUseSynchronizationContext(value bool) (err error) { 
-    return instance.SetProperty("UseSynchronizationContext", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyUseSynchronizationContext(value bool) (err error) {
+	return instance.SetProperty("UseSynchronizationContext", (value))
 }
 
 // GetUseSynchronizationContext gets the value of UseSynchronizationContext for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyUseSynchronizationContext()(value bool, err error) { 
-    retValue, err := instance.GetProperty("UseSynchronizationContext")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyUseSynchronizationContext() (value bool, err error) {
+	retValue, err := instance.GetProperty("UseSynchronizationContext")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetValidateMustUnderstand sets the value of ValidateMustUnderstand for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyValidateMustUnderstand(value bool) (err error) { 
-    return instance.SetProperty("ValidateMustUnderstand", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyValidateMustUnderstand(value bool) (err error) {
+	return instance.SetProperty("ValidateMustUnderstand", (value))
 }
 
 // GetValidateMustUnderstand gets the value of ValidateMustUnderstand for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyValidateMustUnderstand()(value bool, err error) { 
-    retValue, err := instance.GetProperty("ValidateMustUnderstand")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyValidateMustUnderstand() (value bool, err error) {
+	retValue, err := instance.GetProperty("ValidateMustUnderstand")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetWorkflowDefinitionPath sets the value of WorkflowDefinitionPath for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyWorkflowDefinitionPath(value string) (err error) { 
-    return instance.SetProperty("WorkflowDefinitionPath", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyWorkflowDefinitionPath(value string) (err error) {
+	return instance.SetProperty("WorkflowDefinitionPath", (value))
 }
 
 // GetWorkflowDefinitionPath gets the value of WorkflowDefinitionPath for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyWorkflowDefinitionPath()(value string, err error) { 
-    retValue, err := instance.GetProperty("WorkflowDefinitionPath")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyWorkflowDefinitionPath() (value string, err error) {
+	retValue, err := instance.GetProperty("WorkflowDefinitionPath")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetWorkflowRulesPath sets the value of WorkflowRulesPath for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyWorkflowRulesPath(value string) (err error) { 
-    return instance.SetProperty("WorkflowRulesPath", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyWorkflowRulesPath(value string) (err error) {
+	return instance.SetProperty("WorkflowRulesPath", (value))
 }
 
 // GetWorkflowRulesPath gets the value of WorkflowRulesPath for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyWorkflowRulesPath()(value string, err error) { 
-    retValue, err := instance.GetProperty("WorkflowRulesPath")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyWorkflowRulesPath() (value string, err error) {
+	retValue, err := instance.GetProperty("WorkflowRulesPath")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetWorkflowType sets the value of WorkflowType for the instance
-func (instance *WorkflowServiceBehavior) SetPropertyWorkflowType(value string) (err error) { 
-    return instance.SetProperty("WorkflowType", (value))
+func (instance *WorkflowServiceBehavior) SetPropertyWorkflowType(value string) (err error) {
+	return instance.SetProperty("WorkflowType", (value))
 }
 
 // GetWorkflowType gets the value of WorkflowType for the instance
-func (instance *WorkflowServiceBehavior) GetPropertyWorkflowType()(value string, err error) { 
-    retValue, err := instance.GetProperty("WorkflowType")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *WorkflowServiceBehavior) GetPropertyWorkflowType() (value string, err error) {
+	retValue, err := instance.GetProperty("WorkflowType")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
-

@@ -1,21 +1,23 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.HyperVCluster.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.HyperVCluster.v2
+//
+// ////////////////////////////////////////////
 package v2
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_AggregationMetricValue struct
-type CIM_AggregationMetricValue struct { 
+type CIM_AggregationMetricValue struct {
 	*CIM_BaseMetricValue
 
 	// Property that represents the time duration over which the aggregation was computed. The start of a monitoring interval over which the aggregation function is applied is determined by subtracting the AggregationDuration from the AggregationTimestamp.
@@ -25,82 +27,85 @@ type CIM_AggregationMetricValue struct {
 	AggregationTimeStamp string
 }
 
-	func NewCIM_AggregationMetricValueEx1(instance *cim.WmiInstance) (newInstance *CIM_AggregationMetricValue, err error) {tmp, err := NewCIM_BaseMetricValueEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &CIM_AggregationMetricValue {
-	CIM_BaseMetricValue: tmp,
+func NewCIM_AggregationMetricValueEx1(instance *cim.WmiInstance) (newInstance *CIM_AggregationMetricValue, err error) {
+	tmp, err := NewCIM_BaseMetricValueEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AggregationMetricValue{
+		CIM_BaseMetricValue: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_AggregationMetricValueEx6(hostName string,
+func NewCIM_AggregationMetricValueEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_AggregationMetricValue, err error) {tmp, err := NewCIM_BaseMetricValueEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_AggregationMetricValue {
-	CIM_BaseMetricValue: tmp,
+	query *query.WmiQuery) (newInstance *CIM_AggregationMetricValue, err error) {
+	tmp, err := NewCIM_BaseMetricValueEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AggregationMetricValue{
+		CIM_BaseMetricValue: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetAggregationDuration sets the value of AggregationDuration for the instance
-func (instance *CIM_AggregationMetricValue) SetPropertyAggregationDuration(value string) (err error) { 
-    return instance.SetProperty("AggregationDuration", (value))
+func (instance *CIM_AggregationMetricValue) SetPropertyAggregationDuration(value string) (err error) {
+	return instance.SetProperty("AggregationDuration", (value))
 }
 
 // GetAggregationDuration gets the value of AggregationDuration for the instance
-func (instance *CIM_AggregationMetricValue) GetPropertyAggregationDuration()(value string, err error) { 
-    retValue, err := instance.GetProperty("AggregationDuration")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_AggregationMetricValue) GetPropertyAggregationDuration() (value string, err error) {
+	retValue, err := instance.GetProperty("AggregationDuration")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetAggregationTimeStamp sets the value of AggregationTimeStamp for the instance
-func (instance *CIM_AggregationMetricValue) SetPropertyAggregationTimeStamp(value string) (err error) { 
-    return instance.SetProperty("AggregationTimeStamp", (value))
+func (instance *CIM_AggregationMetricValue) SetPropertyAggregationTimeStamp(value string) (err error) {
+	return instance.SetProperty("AggregationTimeStamp", (value))
 }
 
 // GetAggregationTimeStamp gets the value of AggregationTimeStamp for the instance
-func (instance *CIM_AggregationMetricValue) GetPropertyAggregationTimeStamp()(value string, err error) { 
-    retValue, err := instance.GetProperty("AggregationTimeStamp")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_AggregationMetricValue) GetPropertyAggregationTimeStamp() (value string, err error) {
+	retValue, err := instance.GetProperty("AggregationTimeStamp")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
-

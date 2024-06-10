@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source CollectionReplicationService_InitialReplicationType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source CollectionReplicationService_InitialReplicationType
+//
+// ////////////////////////////////////////////
 package v2
 
-// CollectionReplicationService_InitialReplicationType 
+// CollectionReplicationService_InitialReplicationType
 type CollectionReplicationService_InitialReplicationType int
-const(
+
+const (
 	// Network_Transfer enum
 	CollectionReplicationService_InitialReplicationType_Network_Transfer CollectionReplicationService_InitialReplicationType = 1
 	// Export enum
@@ -18,4 +20,3 @@ const(
 	// Seeded_Network_Transfer enum
 	CollectionReplicationService_InitialReplicationType_Seeded_Network_Transfer CollectionReplicationService_InitialReplicationType = 3
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageSubSystem_FaultDomainAwarenessDefault
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageSubSystem_FaultDomainAwarenessDefault
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_FaultDomainAwarenessDefault 
+// StorageSubSystem_FaultDomainAwarenessDefault
 type StorageSubSystem_FaultDomainAwarenessDefault int
-const(
+
+const (
 	// PhysicalDisk enum
 	StorageSubSystem_FaultDomainAwarenessDefault_PhysicalDisk StorageSubSystem_FaultDomainAwarenessDefault = 1
 	// StorageEnclosure enum
@@ -22,4 +24,3 @@ const(
 	// StorageRack enum
 	StorageSubSystem_FaultDomainAwarenessDefault_StorageRack StorageSubSystem_FaultDomainAwarenessDefault = 5
 )
-

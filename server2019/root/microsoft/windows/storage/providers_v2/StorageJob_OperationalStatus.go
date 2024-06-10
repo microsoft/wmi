@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageJob_OperationalStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageJob_OperationalStatus
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageJob_OperationalStatus 
+// StorageJob_OperationalStatus
 type StorageJob_OperationalStatus int
-const(
+
+const (
 	// Unknown enum
 	StorageJob_OperationalStatus_Unknown StorageJob_OperationalStatus = 0
 	// Other enum
@@ -54,4 +56,3 @@ const(
 	// Microsoft_Reserved enum
 	StorageJob_OperationalStatus_Microsoft_Reserved StorageJob_OperationalStatus = 20
 )
-

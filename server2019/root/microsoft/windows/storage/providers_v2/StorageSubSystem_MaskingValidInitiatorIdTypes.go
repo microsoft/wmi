@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageSubSystem_MaskingValidInitiatorIdTypes
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageSubSystem_MaskingValidInitiatorIdTypes
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_MaskingValidInitiatorIdTypes 
+// StorageSubSystem_MaskingValidInitiatorIdTypes
 type StorageSubSystem_MaskingValidInitiatorIdTypes int
-const(
+
+const (
 	// Other enum
 	StorageSubSystem_MaskingValidInitiatorIdTypes_Other StorageSubSystem_MaskingValidInitiatorIdTypes = 1
 	// Port_WWN enum
@@ -26,4 +28,3 @@ const(
 	// SAS_Address enum
 	StorageSubSystem_MaskingValidInitiatorIdTypes_SAS_Address StorageSubSystem_MaskingValidInitiatorIdTypes = 7
 )
-

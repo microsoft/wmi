@@ -1,136 +1,141 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.RSOP.NS03FBD996_3A77_4A6B_95FC_2C7D2F3DC18F.Computer
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.RSOP.NS03FBD996_3A77_4A6B_95FC_2C7D2F3DC18F.Computer
+//
+// ////////////////////////////////////////////
 package computer
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_AuditPolicy struct
-type RSOP_AuditPolicy struct { 
+type RSOP_AuditPolicy struct {
 	*RSOP_SecuritySettings
 
-	// 
+	//
 	Category string
 
-	// 
+	//
 	Failure bool
 
-	// 
+	//
 	Success bool
 }
 
-	func NewRSOP_AuditPolicyEx1(instance *cim.WmiInstance) (newInstance *RSOP_AuditPolicy, err error) {tmp, err := NewRSOP_SecuritySettingsEx1(instance)
-		
-	if err != nil { return }
-	newInstance = &RSOP_AuditPolicy {
-	RSOP_SecuritySettings: tmp,
+func NewRSOP_AuditPolicyEx1(instance *cim.WmiInstance) (newInstance *RSOP_AuditPolicy, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_AuditPolicy{
+		RSOP_SecuritySettings: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewRSOP_AuditPolicyEx6(hostName string,
+func NewRSOP_AuditPolicyEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *RSOP_AuditPolicy, err error) {tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &RSOP_AuditPolicy {
-	RSOP_SecuritySettings: tmp,
+	query *query.WmiQuery) (newInstance *RSOP_AuditPolicy, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_AuditPolicy{
+		RSOP_SecuritySettings: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetCategory sets the value of Category for the instance
-func (instance *RSOP_AuditPolicy) SetPropertyCategory(value string) (err error) { 
-    return instance.SetProperty("Category", (value))
+func (instance *RSOP_AuditPolicy) SetPropertyCategory(value string) (err error) {
+	return instance.SetProperty("Category", (value))
 }
 
 // GetCategory gets the value of Category for the instance
-func (instance *RSOP_AuditPolicy) GetPropertyCategory()(value string, err error) { 
-    retValue, err := instance.GetProperty("Category")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *RSOP_AuditPolicy) GetPropertyCategory() (value string, err error) {
+	retValue, err := instance.GetProperty("Category")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetFailure sets the value of Failure for the instance
-func (instance *RSOP_AuditPolicy) SetPropertyFailure(value bool) (err error) { 
-    return instance.SetProperty("Failure", (value))
+func (instance *RSOP_AuditPolicy) SetPropertyFailure(value bool) (err error) {
+	return instance.SetProperty("Failure", (value))
 }
 
 // GetFailure gets the value of Failure for the instance
-func (instance *RSOP_AuditPolicy) GetPropertyFailure()(value bool, err error) { 
-    retValue, err := instance.GetProperty("Failure")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *RSOP_AuditPolicy) GetPropertyFailure() (value bool, err error) {
+	retValue, err := instance.GetProperty("Failure")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
 
 // SetSuccess sets the value of Success for the instance
-func (instance *RSOP_AuditPolicy) SetPropertySuccess(value bool) (err error) { 
-    return instance.SetProperty("Success", (value))
+func (instance *RSOP_AuditPolicy) SetPropertySuccess(value bool) (err error) {
+	return instance.SetProperty("Success", (value))
 }
 
 // GetSuccess gets the value of Success for the instance
-func (instance *RSOP_AuditPolicy) GetPropertySuccess()(value bool, err error) { 
-    retValue, err := instance.GetProperty("Success")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(bool); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *RSOP_AuditPolicy) GetPropertySuccess() (value bool, err error) {
+	retValue, err := instance.GetProperty("Success")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = bool(valuetmp)
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = bool(valuetmp)
+
+	return
 }
-

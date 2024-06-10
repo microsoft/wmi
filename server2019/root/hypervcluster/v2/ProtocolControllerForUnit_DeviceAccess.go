@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ProtocolControllerForUnit_DeviceAccess
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ProtocolControllerForUnit_DeviceAccess
+//
+// ////////////////////////////////////////////
 package v2
 
-// ProtocolControllerForUnit_DeviceAccess 
+// ProtocolControllerForUnit_DeviceAccess
 type ProtocolControllerForUnit_DeviceAccess int
-const(
+
+const (
 	// Unknown enum
 	ProtocolControllerForUnit_DeviceAccess_Unknown ProtocolControllerForUnit_DeviceAccess = 0
 	// Read_Write enum
@@ -24,4 +26,3 @@ const(
 	// Vendor_Reserved enum
 	ProtocolControllerForUnit_DeviceAccess_Vendor_Reserved ProtocolControllerForUnit_DeviceAccess = 6
 )
-

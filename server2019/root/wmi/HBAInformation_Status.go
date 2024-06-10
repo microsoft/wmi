@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source HBAInformation_Status
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source HBAInformation_Status
+//
+// ////////////////////////////////////////////
 package wmi
 
-// HBAInformation_Status 
+// HBAInformation_Status
 type HBAInformation_Status int
-const(
+
+const (
 	// Working enum
 	HBAInformation_Status_Working HBAInformation_Status = 0
 	// Degraded enum
@@ -20,4 +22,3 @@ const(
 	// Failed enum
 	HBAInformation_Status_Failed HBAInformation_Status = 3
 )
-

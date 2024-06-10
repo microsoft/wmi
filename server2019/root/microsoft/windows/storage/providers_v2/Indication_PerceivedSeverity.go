@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Indication_PerceivedSeverity
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Indication_PerceivedSeverity
+//
+// ////////////////////////////////////////////
 package providers_v2
 
-// Indication_PerceivedSeverity 
+// Indication_PerceivedSeverity
 type Indication_PerceivedSeverity int
-const(
+
+const (
 	// Unknown enum
 	Indication_PerceivedSeverity_Unknown Indication_PerceivedSeverity = 0
 	// Other enum
@@ -30,4 +32,3 @@ const(
 	// DMTF_Reserved enum
 	Indication_PerceivedSeverity_DMTF_Reserved Indication_PerceivedSeverity = 8
 )
-

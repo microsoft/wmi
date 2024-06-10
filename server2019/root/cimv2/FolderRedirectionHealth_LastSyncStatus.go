@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source FolderRedirectionHealth_LastSyncStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source FolderRedirectionHealth_LastSyncStatus
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// FolderRedirectionHealth_LastSyncStatus 
+// FolderRedirectionHealth_LastSyncStatus
 type FolderRedirectionHealth_LastSyncStatus int
-const(
+
+const (
 	// Success enum
 	FolderRedirectionHealth_LastSyncStatus_Success FolderRedirectionHealth_LastSyncStatus = 0
 	// Conflict enum
@@ -20,4 +22,3 @@ const(
 	// Error enum
 	FolderRedirectionHealth_LastSyncStatus_Error FolderRedirectionHealth_LastSyncStatus = 3
 )
-

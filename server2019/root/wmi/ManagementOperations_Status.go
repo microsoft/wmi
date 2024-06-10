@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ManagementOperations_Status
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ManagementOperations_Status
+//
+// ////////////////////////////////////////////
 package wmi
 
-// ManagementOperations_Status 
+// ManagementOperations_Status
 type ManagementOperations_Status int
-const(
+
+const (
 	// Success enum
 	ManagementOperations_Status_Success ManagementOperations_Status = 0
 	// Non_Specific_Error enum
@@ -214,4 +216,3 @@ const(
 	// The_leading_connection_in_the_session_cannot_be_removed_ enum
 	ManagementOperations_Status_The_leading_connection_in_the_session_cannot_be_removed_ ManagementOperations_Status = 100
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source EncryptableVolume_WipingStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source EncryptableVolume_WipingStatus
+//
+// ////////////////////////////////////////////
 package microsoftvolumeencryption
 
-// EncryptableVolume_WipingStatus 
+// EncryptableVolume_WipingStatus
 type EncryptableVolume_WipingStatus int
-const(
+
+const (
 	// FreeSpaceNotWiped enum
 	EncryptableVolume_WipingStatus_FreeSpaceNotWiped EncryptableVolume_WipingStatus = 0
 	// FreeSpaceWiped enum
@@ -20,4 +22,3 @@ const(
 	// FreeSpaceWipingPaused enum
 	EncryptableVolume_WipingStatus_FreeSpaceWipingPaused EncryptableVolume_WipingStatus = 3
 )
-

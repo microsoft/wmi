@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source NETIO_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source NETIO_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// NETIO_Flags 
+// NETIO_Flags
 type NETIO_Flags int
-const(
+
+const (
 	// NETIO_TRACE_SEND enum
 	NETIO_Flags_NETIO_TRACE_SEND NETIO_Flags = 1
 	// NETIO_TRACE_RECEIVE enum
@@ -60,4 +62,3 @@ const(
 	// NETIO_TRACE_IPSNPI enum
 	NETIO_Flags_NETIO_TRACE_IPSNPI NETIO_Flags = 24
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SmbShareAccessControlEntry_AccessRight
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SmbShareAccessControlEntry_AccessRight
+//
+// ////////////////////////////////////////////
 package smb
 
-// SmbShareAccessControlEntry_AccessRight 
+// SmbShareAccessControlEntry_AccessRight
 type SmbShareAccessControlEntry_AccessRight int
-const(
+
+const (
 	// _3 enum
 	SmbShareAccessControlEntry_AccessRight__3 SmbShareAccessControlEntry_AccessRight = 0
 	// _4 enum
@@ -20,4 +22,3 @@ const(
 	// _6 enum
 	SmbShareAccessControlEntry_AccessRight__6 SmbShareAccessControlEntry_AccessRight = 3
 )
-

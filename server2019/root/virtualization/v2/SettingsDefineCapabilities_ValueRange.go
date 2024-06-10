@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SettingsDefineCapabilities_ValueRange
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SettingsDefineCapabilities_ValueRange
+//
+// ////////////////////////////////////////////
 package v2
 
-// SettingsDefineCapabilities_ValueRange 
+// SettingsDefineCapabilities_ValueRange
 type SettingsDefineCapabilities_ValueRange int
-const(
+
+const (
 	// Point enum
 	SettingsDefineCapabilities_ValueRange_Point SettingsDefineCapabilities_ValueRange = 0
 	// Minimums enum
@@ -22,4 +24,3 @@ const(
 	// DMTF_Reserved enum
 	SettingsDefineCapabilities_ValueRange_DMTF_Reserved SettingsDefineCapabilities_ValueRange = 4
 )
-

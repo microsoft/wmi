@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source InvalidError_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source InvalidError_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// InvalidError_Type 
+// InvalidError_Type
 type InvalidError_Type int
-const(
+
+const (
 	// MCA_WARNING_CACHE enum
 	InvalidError_Type_MCA_WARNING_CACHE InvalidError_Type = 1
 	// MCA_ERROR_CACHE enum
@@ -136,4 +138,3 @@ const(
 	// MCA_FRC_ERROR enum
 	InvalidError_Type_MCA_FRC_ERROR InvalidError_Type = 62
 )
-

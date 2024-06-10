@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source UsbstorGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source UsbstorGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// UsbstorGuid_Level 
+// UsbstorGuid_Level
 type UsbstorGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	UsbstorGuid_Level_Fatal UsbstorGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	UsbstorGuid_Level_Verbose UsbstorGuid_Level = 5
 )
-

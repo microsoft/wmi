@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source InitiatorNodeFailureEvent_FailureType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source InitiatorNodeFailureEvent_FailureType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// InitiatorNodeFailureEvent_FailureType 
+// InitiatorNodeFailureEvent_FailureType
 type InitiatorNodeFailureEvent_FailureType int
-const(
+
+const (
 	// LoginOtherFail enum
 	InitiatorNodeFailureEvent_FailureType_LoginOtherFail InitiatorNodeFailureEvent_FailureType = 0
 	// LoginAuthFail enum
@@ -22,4 +24,3 @@ const(
 	// LogoutOthers enum
 	InitiatorNodeFailureEvent_FailureType_LogoutOthers InitiatorNodeFailureEvent_FailureType = 4
 )
-

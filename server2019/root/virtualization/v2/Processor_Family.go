@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Processor_Family
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Processor_Family
+//
+// ////////////////////////////////////////////
 package v2
 
-// Processor_Family 
+// Processor_Family
 type Processor_Family int
-const(
+
+const (
 	// Other enum
 	Processor_Family_Other Processor_Family = 1
 	// Unknown enum
@@ -388,4 +390,3 @@ const(
 	// Reserved__Un_initialized_Flash_Content___Hi_ enum
 	Processor_Family_Reserved__Un_initialized_Flash_Content___Hi_ Processor_Family = 65535
 )
-

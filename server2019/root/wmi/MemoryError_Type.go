@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source MemoryError_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source MemoryError_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// MemoryError_Type 
+// MemoryError_Type
 type MemoryError_Type int
-const(
+
+const (
 	// MCA_WARNING_CACHE enum
 	MemoryError_Type_MCA_WARNING_CACHE MemoryError_Type = 1
 	// MCA_ERROR_CACHE enum
@@ -136,4 +138,3 @@ const(
 	// MCA_FRC_ERROR enum
 	MemoryError_Type_MCA_FRC_ERROR MemoryError_Type = 62
 )
-

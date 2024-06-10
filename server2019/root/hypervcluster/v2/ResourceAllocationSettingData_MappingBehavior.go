@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ResourceAllocationSettingData_MappingBehavior
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ResourceAllocationSettingData_MappingBehavior
+//
+// ////////////////////////////////////////////
 package v2
 
-// ResourceAllocationSettingData_MappingBehavior 
+// ResourceAllocationSettingData_MappingBehavior
 type ResourceAllocationSettingData_MappingBehavior int
-const(
+
+const (
 	// Unknown enum
 	ResourceAllocationSettingData_MappingBehavior_Unknown ResourceAllocationSettingData_MappingBehavior = 0
 	// Not_Supported enum
@@ -26,4 +28,3 @@ const(
 	// Vendor_Reserved enum
 	ResourceAllocationSettingData_MappingBehavior_Vendor_Reserved ResourceAllocationSettingData_MappingBehavior = 7
 )
-

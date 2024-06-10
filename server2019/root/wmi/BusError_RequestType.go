@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source BusError_RequestType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source BusError_RequestType
+//
+// ////////////////////////////////////////////
 package wmi
 
-// BusError_RequestType 
+// BusError_RequestType
 type BusError_RequestType int
-const(
+
+const (
 	// Generic_Error enum
 	BusError_RequestType_Generic_Error BusError_RequestType = 0
 	// Generic_Read enum
@@ -30,4 +32,3 @@ const(
 	// Snoop enum
 	BusError_RequestType_Snoop BusError_RequestType = 8
 )
-

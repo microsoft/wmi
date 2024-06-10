@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source StorageExtent_ExtentStatus
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source StorageExtent_ExtentStatus
+//
+// ////////////////////////////////////////////
 package v2
 
-// StorageExtent_ExtentStatus 
+// StorageExtent_ExtentStatus
 type StorageExtent_ExtentStatus int
-const(
+
+const (
 	// Other enum
 	StorageExtent_ExtentStatus_Other StorageExtent_ExtentStatus = 0
 	// Unknown enum
@@ -52,4 +54,3 @@ const(
 	// Vendor_Reserved enum
 	StorageExtent_ExtentStatus_Vendor_Reserved StorageExtent_ExtentStatus = 19
 )
-

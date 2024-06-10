@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DebugTrace_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DebugTrace_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// DebugTrace_Flags 
+// DebugTrace_Flags
 type DebugTrace_Flags int
-const(
+
+const (
 	// Error enum
 	DebugTrace_Flags_Error DebugTrace_Flags = 1
 	// Warning enum
@@ -46,4 +48,3 @@ const(
 	// Target enum
 	DebugTrace_Flags_Target DebugTrace_Flags = 17
 )
-

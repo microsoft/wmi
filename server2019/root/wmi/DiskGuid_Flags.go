@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DiskGuid_Flags
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DiskGuid_Flags
+//
+// ////////////////////////////////////////////
 package wmi
 
-// DiskGuid_Flags 
+// DiskGuid_Flags
 type DiskGuid_Flags int
-const(
+
+const (
 	// TRACE_FLAG_GENERAL enum
 	DiskGuid_Flags_TRACE_FLAG_GENERAL DiskGuid_Flags = 1
 	// TRACE_FLAG_PNP enum
@@ -42,4 +44,3 @@ const(
 	// TRACE_FLAG_ENUM enum
 	DiskGuid_Flags_TRACE_FLAG_ENUM DiskGuid_Flags = 15
 )
-

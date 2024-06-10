@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PlatformSpecificError_Type
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PlatformSpecificError_Type
+//
+// ////////////////////////////////////////////
 package wmi
 
-// PlatformSpecificError_Type 
+// PlatformSpecificError_Type
 type PlatformSpecificError_Type int
-const(
+
+const (
 	// MCA_WARNING_CACHE enum
 	PlatformSpecificError_Type_MCA_WARNING_CACHE PlatformSpecificError_Type = 1
 	// MCA_ERROR_CACHE enum
@@ -136,4 +138,3 @@ const(
 	// MCA_FRC_ERROR enum
 	PlatformSpecificError_Type_MCA_FRC_ERROR PlatformSpecificError_Type = 62
 )
-

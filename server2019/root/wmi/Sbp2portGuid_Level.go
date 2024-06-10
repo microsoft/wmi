@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Sbp2portGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Sbp2portGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Sbp2portGuid_Level 
+// Sbp2portGuid_Level
 type Sbp2portGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	Sbp2portGuid_Level_Fatal Sbp2portGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	Sbp2portGuid_Level_Verbose Sbp2portGuid_Level = 5
 )
-

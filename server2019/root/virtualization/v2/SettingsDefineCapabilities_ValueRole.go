@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source SettingsDefineCapabilities_ValueRole
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source SettingsDefineCapabilities_ValueRole
+//
+// ////////////////////////////////////////////
 package v2
 
-// SettingsDefineCapabilities_ValueRole 
+// SettingsDefineCapabilities_ValueRole
 type SettingsDefineCapabilities_ValueRole int
-const(
+
+const (
 	// Default enum
 	SettingsDefineCapabilities_ValueRole_Default SettingsDefineCapabilities_ValueRole = 0
 	// Optimal enum
@@ -22,4 +24,3 @@ const(
 	// DMTF_Reserved enum
 	SettingsDefineCapabilities_ValueRole_DMTF_Reserved SettingsDefineCapabilities_ValueRole = 4
 )
-

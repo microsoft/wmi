@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source ClasspnpGuid_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source ClasspnpGuid_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// ClasspnpGuid_Level 
+// ClasspnpGuid_Level
 type ClasspnpGuid_Level int
-const(
+
+const (
 	// Fatal enum
 	ClasspnpGuid_Level_Fatal ClasspnpGuid_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	ClasspnpGuid_Level_Verbose ClasspnpGuid_Level = 5
 )
-

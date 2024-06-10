@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source DeliveryOptimizationConfig_DownForeLimitPctProvider
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source DeliveryOptimizationConfig_DownForeLimitPctProvider
+//
+// ////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationConfig_DownForeLimitPctProvider 
+// DeliveryOptimizationConfig_DownForeLimitPctProvider
 type DeliveryOptimizationConfig_DownForeLimitPctProvider int
-const(
+
+const (
 	// _17 enum
 	DeliveryOptimizationConfig_DownForeLimitPctProvider__17 DeliveryOptimizationConfig_DownForeLimitPctProvider = 5
 	// _18 enum
@@ -22,4 +24,3 @@ const(
 	// _21 enum
 	DeliveryOptimizationConfig_DownForeLimitPctProvider__21 DeliveryOptimizationConfig_DownForeLimitPctProvider = 99
 )
-

@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source VirtualSystemSettingData_AutomaticShutdownAction
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source VirtualSystemSettingData_AutomaticShutdownAction
+//
+// ////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_AutomaticShutdownAction 
+// VirtualSystemSettingData_AutomaticShutdownAction
 type VirtualSystemSettingData_AutomaticShutdownAction int
-const(
+
+const (
 	// Turn_Off enum
 	VirtualSystemSettingData_AutomaticShutdownAction_Turn_Off VirtualSystemSettingData_AutomaticShutdownAction = 2
 	// Save_state enum
@@ -20,4 +22,3 @@ const(
 	// DMTF_Reserved enum
 	VirtualSystemSettingData_AutomaticShutdownAction_DMTF_Reserved VirtualSystemSettingData_AutomaticShutdownAction = 5
 )
-

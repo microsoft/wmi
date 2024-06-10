@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source Mpssvc_Level
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source Mpssvc_Level
+//
+// ////////////////////////////////////////////
 package wmi
 
-// Mpssvc_Level 
+// Mpssvc_Level
 type Mpssvc_Level int
-const(
+
+const (
 	// Fatal enum
 	Mpssvc_Level_Fatal Mpssvc_Level = 1
 	// Error enum
@@ -22,4 +24,3 @@ const(
 	// Verbose enum
 	Mpssvc_Level_Verbose Mpssvc_Level = 5
 )
-

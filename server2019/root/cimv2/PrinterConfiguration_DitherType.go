@@ -1,16 +1,18 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source PrinterConfiguration_DitherType
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source PrinterConfiguration_DitherType
+//
+// ////////////////////////////////////////////
 package cimv2
 
-// PrinterConfiguration_DitherType 
+// PrinterConfiguration_DitherType
 type PrinterConfiguration_DitherType int
-const(
+
+const (
 	// No_Dithering enum
 	PrinterConfiguration_DitherType_No_Dithering PrinterConfiguration_DitherType = 1
 	// Coarse_Brush enum
@@ -22,4 +24,3 @@ const(
 	// Greyscale enum
 	PrinterConfiguration_DitherType_Greyscale PrinterConfiguration_DitherType = 5
 )
-

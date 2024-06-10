@@ -1,22 +1,24 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-// 
 // Author:
-//      Auto Generated on 6/6/2024 using wmigen
-//      Source root.RSOP.NSD5239530_48B3_486F_9FC3_5701A2D5A27D
-//////////////////////////////////////////////
+//
+//	Auto Generated on 6/6/2024 using wmigen
+//	Source root.RSOP.NSD5239530_48B3_486F_9FC3_5701A2D5A27D
+//
+// ////////////////////////////////////////////
 package nsd5239530_48b3_486f_9fc3_5701a2d5a27d
+
 import (
- "github.com/microsoft/wmi/pkg/base/query"
-cim "github.com/microsoft/wmi/pkg/wmiinstance"
- "github.com/microsoft/wmi/pkg/base/instance"
- "github.com/microsoft/wmi/pkg/errors"
- "reflect"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Indication struct
-type CIM_Indication struct { 
+type CIM_Indication struct {
 	*cim.WmiInstance
 
 	// A list of IndicationIdentifiers whose notifications are correlated with (related to) this one.
@@ -25,11 +27,11 @@ type CIM_Indication struct {
 	// An identifier for the indication filter that selects this indication and causes it to be sent. This property is to be filled out by the indication sending service. The value shall be correlatable with the Name property of the instance of CIM_IndicationFilter describing the criteria of the indication. The value of the IndicationFilterName should be formatted using the following algorithm: < OrgID > : < LocalID >, where < OrgID > and < LocalID > are separated by a colon (:) and < OrgID > shall include a copyrighted, trademarked, or otherwise unique name that is owned by the business entity that is creating or defining the value or that is a registered ID assigned to the business entity by a recognized global authority. In addition, to ensure uniqueness, < OrgID > shall not contain a colon (:).When using this algorithm, the first colon to appear in the value shall appear between < OrgID > and < LocalID >. < LocalID > is chosen by the business entity and shall be used uniquely.
 	IndicationFilterName string
 
-	// An identifier for the Indication. This property is similar to a key value in that it can be used for identification, when correlating Indications (see the CorrelatedIndications array). Its value SHOULD be unique as long as correlations are reported, but MAY be reused or left NULL if no future Indications will reference it in their CorrelatedIndications array.To ensure uniqueness, the value of IndicationIdentifier should be constructed using the following "preferred" algorithm: 
-	///<OrgID>:<LocalID> 
-	///Where <OrgID> and <LocalID> are separated by a colon (:), and where <OrgID> must include a copyrighted, trademarked, or otherwise unique name that is owned by the business entity that is creating or defining the IndicationIdentifier or that is a recognized ID that is assigned to the business entity by a recognized global authority. (This requirement is similar to the <Schema Name>_<Class Name> structure of Schema class names.) In addition, to ensure uniqueness <OrgID> must not contain a colon (:). When using this algorithm, the first colon to appear in IndicationIdentifier must appear between <OrgID> and <LocalID>. 
-	///<LocalID> is chosen by the business entity and should not be re-used to identify different underlying (real-world) elements. 
-	///If the above "preferred" algorithm is not used, the defining entity should assure that the resulting IndicationIdentifier is not re-used across any IndicationIdentifiers that are produced by this or other providers for the NameSpace of this instance. 
+	// An identifier for the Indication. This property is similar to a key value in that it can be used for identification, when correlating Indications (see the CorrelatedIndications array). Its value SHOULD be unique as long as correlations are reported, but MAY be reused or left NULL if no future Indications will reference it in their CorrelatedIndications array.To ensure uniqueness, the value of IndicationIdentifier should be constructed using the following "preferred" algorithm:
+	///<OrgID>:<LocalID>
+	///Where <OrgID> and <LocalID> are separated by a colon (:), and where <OrgID> must include a copyrighted, trademarked, or otherwise unique name that is owned by the business entity that is creating or defining the IndicationIdentifier or that is a recognized ID that is assigned to the business entity by a recognized global authority. (This requirement is similar to the <Schema Name>_<Class Name> structure of Schema class names.) In addition, to ensure uniqueness <OrgID> must not contain a colon (:). When using this algorithm, the first colon to appear in IndicationIdentifier must appear between <OrgID> and <LocalID>.
+	///<LocalID> is chosen by the business entity and should not be re-used to identify different underlying (real-world) elements.
+	///If the above "preferred" algorithm is not used, the defining entity should assure that the resulting IndicationIdentifier is not re-used across any IndicationIdentifiers that are produced by this or other providers for the NameSpace of this instance.
 	///For DMTF-defined instances, the "preferred" algorithm should be used with the <OrgID> set to CIM.
 	IndicationIdentifier string
 
@@ -39,13 +41,13 @@ type CIM_Indication struct {
 	// Holds the value of the user defined severity value when 'PerceivedSeverity' is 1 ("Other").
 	OtherSeverity string
 
-	// An enumerated value that describes the severity of the Indication from the notifier's point of view: 
-	///1 - Other, by CIM convention, is used to indicate that the Severity's value can be found in the OtherSeverity property. 
-	///3 - Degraded/Warning should be used when its appropriate to let the user decide if action is needed. 
-	///4 - Minor should be used to indicate action is needed, but the situation is not serious at this time. 
-	///5 - Major should be used to indicate action is needed NOW. 
-	///6 - Critical should be used to indicate action is needed NOW and the scope is broad (perhaps an imminent outage to a critical resource will result). 
-	///7 - Fatal/NonRecoverable should be used to indicate an error occurred, but it's too late to take remedial action. 
+	// An enumerated value that describes the severity of the Indication from the notifier's point of view:
+	///1 - Other, by CIM convention, is used to indicate that the Severity's value can be found in the OtherSeverity property.
+	///3 - Degraded/Warning should be used when its appropriate to let the user decide if action is needed.
+	///4 - Minor should be used to indicate action is needed, but the situation is not serious at this time.
+	///5 - Major should be used to indicate action is needed NOW.
+	///6 - Critical should be used to indicate action is needed NOW and the scope is broad (perhaps an imminent outage to a critical resource will result).
+	///7 - Fatal/NonRecoverable should be used to indicate an error occurred, but it's too late to take remedial action.
 	///2 and 0 - Information and Unknown (respectively) follow common usage. Literally, the Indication is purely informational or its severity is simply unknown.
 	PerceivedSeverity Indication_PerceivedSeverity
 
@@ -67,245 +69,248 @@ type CIM_Indication struct {
 	SequenceNumber int64
 }
 
-	func NewCIM_IndicationEx1(instance *cim.WmiInstance) (newInstance *CIM_Indication, err error) {tmp, err := instance, nil
-		
-	if err != nil { return }
-	newInstance = &CIM_Indication {
-	WmiInstance: tmp,
+func NewCIM_IndicationEx1(instance *cim.WmiInstance) (newInstance *CIM_Indication, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Indication{
+		WmiInstance: tmp,
 	}
 	return
-	}
-	
+}
 
-	func NewCIM_IndicationEx6(hostName string,
+func NewCIM_IndicationEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery ) (newInstance *CIM_Indication, err error) {tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
-		
-	if err != nil { return }
-	newInstance = &CIM_Indication {
-	WmiInstance: tmp,
+	query *query.WmiQuery) (newInstance *CIM_Indication, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Indication{
+		WmiInstance: tmp,
 	}
 	return
-	}
-	
+}
 
 // SetCorrelatedIndications sets the value of CorrelatedIndications for the instance
-func (instance *CIM_Indication) SetPropertyCorrelatedIndications(value []string) (err error) { 
-    return instance.SetProperty("CorrelatedIndications", (value))
+func (instance *CIM_Indication) SetPropertyCorrelatedIndications(value []string) (err error) {
+	return instance.SetProperty("CorrelatedIndications", (value))
 }
 
 // GetCorrelatedIndications gets the value of CorrelatedIndications for the instance
-func (instance *CIM_Indication) GetPropertyCorrelatedIndications()(value []string, err error) { 
-    retValue, err := instance.GetProperty("CorrelatedIndications")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    for _, interfaceValue := range retValue.([]interface{}) {
-        valuetmp, ok := interfaceValue.(string); 
-        if !ok {
-            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-            return  
-        }
-        value = append(value, string(valuetmp))
-    }
+func (instance *CIM_Indication) GetPropertyCorrelatedIndications() (value []string, err error) {
+	retValue, err := instance.GetProperty("CorrelatedIndications")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    return
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
+	return
 }
 
 // SetIndicationFilterName sets the value of IndicationFilterName for the instance
-func (instance *CIM_Indication) SetPropertyIndicationFilterName(value string) (err error) { 
-    return instance.SetProperty("IndicationFilterName", (value))
+func (instance *CIM_Indication) SetPropertyIndicationFilterName(value string) (err error) {
+	return instance.SetProperty("IndicationFilterName", (value))
 }
 
 // GetIndicationFilterName gets the value of IndicationFilterName for the instance
-func (instance *CIM_Indication) GetPropertyIndicationFilterName()(value string, err error) { 
-    retValue, err := instance.GetProperty("IndicationFilterName")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Indication) GetPropertyIndicationFilterName() (value string, err error) {
+	retValue, err := instance.GetProperty("IndicationFilterName")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetIndicationIdentifier sets the value of IndicationIdentifier for the instance
-func (instance *CIM_Indication) SetPropertyIndicationIdentifier(value string) (err error) { 
-    return instance.SetProperty("IndicationIdentifier", (value))
+func (instance *CIM_Indication) SetPropertyIndicationIdentifier(value string) (err error) {
+	return instance.SetProperty("IndicationIdentifier", (value))
 }
 
 // GetIndicationIdentifier gets the value of IndicationIdentifier for the instance
-func (instance *CIM_Indication) GetPropertyIndicationIdentifier()(value string, err error) { 
-    retValue, err := instance.GetProperty("IndicationIdentifier")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Indication) GetPropertyIndicationIdentifier() (value string, err error) {
+	retValue, err := instance.GetProperty("IndicationIdentifier")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetIndicationTime sets the value of IndicationTime for the instance
-func (instance *CIM_Indication) SetPropertyIndicationTime(value string) (err error) { 
-    return instance.SetProperty("IndicationTime", (value))
+func (instance *CIM_Indication) SetPropertyIndicationTime(value string) (err error) {
+	return instance.SetProperty("IndicationTime", (value))
 }
 
 // GetIndicationTime gets the value of IndicationTime for the instance
-func (instance *CIM_Indication) GetPropertyIndicationTime()(value string, err error) { 
-    retValue, err := instance.GetProperty("IndicationTime")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Indication) GetPropertyIndicationTime() (value string, err error) {
+	retValue, err := instance.GetProperty("IndicationTime")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetOtherSeverity sets the value of OtherSeverity for the instance
-func (instance *CIM_Indication) SetPropertyOtherSeverity(value string) (err error) { 
-    return instance.SetProperty("OtherSeverity", (value))
+func (instance *CIM_Indication) SetPropertyOtherSeverity(value string) (err error) {
+	return instance.SetProperty("OtherSeverity", (value))
 }
 
 // GetOtherSeverity gets the value of OtherSeverity for the instance
-func (instance *CIM_Indication) GetPropertyOtherSeverity()(value string, err error) { 
-    retValue, err := instance.GetProperty("OtherSeverity")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Indication) GetPropertyOtherSeverity() (value string, err error) {
+	retValue, err := instance.GetProperty("OtherSeverity")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetPerceivedSeverity sets the value of PerceivedSeverity for the instance
-func (instance *CIM_Indication) SetPropertyPerceivedSeverity(value Indication_PerceivedSeverity) (err error) { 
-    return instance.SetProperty("PerceivedSeverity", (value))
+func (instance *CIM_Indication) SetPropertyPerceivedSeverity(value Indication_PerceivedSeverity) (err error) {
+	return instance.SetProperty("PerceivedSeverity", (value))
 }
 
 // GetPerceivedSeverity gets the value of PerceivedSeverity for the instance
-func (instance *CIM_Indication) GetPropertyPerceivedSeverity()(value Indication_PerceivedSeverity, err error) { 
-    retValue, err := instance.GetProperty("PerceivedSeverity")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int32); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Indication) GetPropertyPerceivedSeverity() (value Indication_PerceivedSeverity, err error) {
+	retValue, err := instance.GetProperty("PerceivedSeverity")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = Indication_PerceivedSeverity(valuetmp)
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = Indication_PerceivedSeverity(valuetmp)
+
+	return
 }
 
 // SetSequenceContext sets the value of SequenceContext for the instance
-func (instance *CIM_Indication) SetPropertySequenceContext(value string) (err error) { 
-    return instance.SetProperty("SequenceContext", (value))
+func (instance *CIM_Indication) SetPropertySequenceContext(value string) (err error) {
+	return instance.SetProperty("SequenceContext", (value))
 }
 
 // GetSequenceContext gets the value of SequenceContext for the instance
-func (instance *CIM_Indication) GetPropertySequenceContext()(value string, err error) { 
-    retValue, err := instance.GetProperty("SequenceContext")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(string); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Indication) GetPropertySequenceContext() (value string, err error) {
+	retValue, err := instance.GetProperty("SequenceContext")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = string(valuetmp)
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = string(valuetmp)
+
+	return
 }
 
 // SetSequenceNumber sets the value of SequenceNumber for the instance
-func (instance *CIM_Indication) SetPropertySequenceNumber(value int64) (err error) { 
-    return instance.SetProperty("SequenceNumber", (value))
+func (instance *CIM_Indication) SetPropertySequenceNumber(value int64) (err error) {
+	return instance.SetProperty("SequenceNumber", (value))
 }
 
 // GetSequenceNumber gets the value of SequenceNumber for the instance
-func (instance *CIM_Indication) GetPropertySequenceNumber()(value int64, err error) { 
-    retValue, err := instance.GetProperty("SequenceNumber")
-    if err != nil {
-        return
-    }
-    if retValue == nil {
-        // Doesn't have any value. Return empty
-        return
-    }
-    
-    valuetmp, ok := retValue.(int64); 
-    if !ok {
-        err = errors.Wrapf(errors.InvalidType, " int64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-        return  
-    }
+func (instance *CIM_Indication) GetPropertySequenceNumber() (value int64, err error) {
+	retValue, err := instance.GetProperty("SequenceNumber")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
 
-    value = int64(valuetmp)
+	valuetmp, ok := retValue.(int64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
-    return
+	value = int64(valuetmp)
+
+	return
 }
-
