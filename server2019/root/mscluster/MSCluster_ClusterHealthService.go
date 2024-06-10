@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -114,32 +113,6 @@ func (instance *MSCluster_ClusterHealthService) GetFault( /* IN */ ReportingKey 
 	/* IN */ ReportingType string,
 	/* OUT */ Faults []MSCluster_HealthFault) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("GetFault", ReportingKey, ReportingType)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
-// <param name="Flags" type="uint32 "></param>
-// <param name="Name" type="string "></param>
-// <param name="Parameters" type="string []"></param>
-// <param name="Timeout" type="uint32 "></param>
-
-// <param name="CommandId" type="string "></param>
-// <param name="ReturnValue" type="uint32 "></param>
-// <param name="Status" type="int32 "></param>
-func (instance *MSCluster_ClusterHealthService) InvokeCommand( /* IN */ Name string,
-	/* IN */ Flags uint32,
-	/* IN */ Parameters []string,
-	/* IN */ Timeout uint32,
-	/* OUT */ CommandId string,
-	/* OUT */ Status int32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("InvokeCommand", Name, Flags, Parameters, Timeout)
 	if err != nil {
 		return
 	}

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source DeliveryOptimizationFile_DownloadMode
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source DeliveryOptimizationFile_DownloadMode
+//////////////////////////////////////////////
 package deliveryoptimization
 
 // DeliveryOptimizationFile_DownloadMode

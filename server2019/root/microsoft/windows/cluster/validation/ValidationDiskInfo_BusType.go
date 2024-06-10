@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source ValidationDiskInfo_BusType
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source ValidationDiskInfo_BusType
+//////////////////////////////////////////////
 package validation
 
 // ValidationDiskInfo_BusType
@@ -35,22 +34,4 @@ const (
 	ValidationDiskInfo_BusType__17 ValidationDiskInfo_BusType = 9
 	// _18 enum
 	ValidationDiskInfo_BusType__18 ValidationDiskInfo_BusType = 10
-	// _19 enum
-	ValidationDiskInfo_BusType__19 ValidationDiskInfo_BusType = 11
-	// _20 enum
-	ValidationDiskInfo_BusType__20 ValidationDiskInfo_BusType = 12
-	// _21 enum
-	ValidationDiskInfo_BusType__21 ValidationDiskInfo_BusType = 13
-	// _22 enum
-	ValidationDiskInfo_BusType__22 ValidationDiskInfo_BusType = 14
-	// _23 enum
-	ValidationDiskInfo_BusType__23 ValidationDiskInfo_BusType = 15
-	// _24 enum
-	ValidationDiskInfo_BusType__24 ValidationDiskInfo_BusType = 16
-	// _25 enum
-	ValidationDiskInfo_BusType__25 ValidationDiskInfo_BusType = 17
-	// _26 enum
-	ValidationDiskInfo_BusType__26 ValidationDiskInfo_BusType = 18
-	// _27 enum
-	ValidationDiskInfo_BusType__27 ValidationDiskInfo_BusType = 19
 )

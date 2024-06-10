@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -38,9 +37,6 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 
 	//
 	AllowEnhancedProtectedMode string
-
-	//
-	AllowEnhancedSuggestionsInAddressBar string
 
 	//
 	AllowEnterpriseModeFromToolsMenu string
@@ -82,9 +78,6 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 	AllowOneWordEntry string
 
 	//
-	AllowSaveTargetAsInIEMode string
-
-	//
 	AllowSiteToZoneAssignmentList string
 
 	//
@@ -109,19 +102,16 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 	CheckSignaturesOnDownloadedPrograms string
 
 	//
-	ConfigureEdgeRedirectChannel string
+	ConsistentMimeHandlingInternetExplorerProcesses string
 
 	//
-	ConsistentMimeHandlingInternetExplorerProcesses string
+	DisableAdobeFlash string
 
 	//
 	DisableBypassOfSmartScreenWarnings string
 
 	//
 	DisableBypassOfSmartScreenWarningsAboutUncommonFiles string
-
-	//
-	DisableCompatView string
 
 	//
 	DisableConfiguringHistory string
@@ -142,25 +132,16 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 	DisableEncryptionSupport string
 
 	//
-	DisableFeedsBackgroundSync string
-
-	//
 	DisableFirstRunWizard string
 
 	//
 	DisableFlipAheadFeature string
 
 	//
-	DisableGeolocation string
-
-	//
 	DisableIgnoringCertificateErrors string
 
 	//
 	DisableInPrivateBrowsing string
-
-	//
-	DisableInternetExplorerApp string
 
 	//
 	DisableProcessesInEnhancedProtectedMode string
@@ -181,9 +162,6 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 	DisableUpdateCheck string
 
 	//
-	DisableWebAddressAutoComplete string
-
-	//
 	DoNotAllowActiveXControlsInProtectedMode string
 
 	//
@@ -197,9 +175,6 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 
 	//
 	DoNotBlockOutdatedActiveXControlsOnSpecificDomains string
-
-	//
-	EnableExtendedIEModeHotkeys string
 
 	//
 	IncludeAllLocalSites string
@@ -353,12 +328,6 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 
 	//
 	IntranetZoneNavigateWindowsAndFrames string
-
-	//
-	JScriptReplacement string
-
-	//
-	KeepIntranetSitesInInternetExplorer string
 
 	//
 	LocalMachineZoneAllowAccessToDataSources string
@@ -586,9 +555,6 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 	MKProtocolSecurityRestrictionInternetExplorerProcesses string
 
 	//
-	NewTabDefaultPage string
-
-	//
 	NotificationBarInternetExplorerProcesses string
 
 	//
@@ -746,9 +712,6 @@ type MDM_Policy_Config01_InternetExplorer02 struct {
 
 	//
 	SecurityZonesUseOnlyMachineSettings string
-
-	//
-	SendSitesNotInEnterpriseSiteListToEdge string
 
 	//
 	SpecifyUseOfActiveXInstallerService string
@@ -965,33 +928,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyAllowEnhanced
 // GetAllowEnhancedProtectedMode gets the value of AllowEnhancedProtectedMode for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyAllowEnhancedProtectedMode() (value string, err error) {
 	retValue, err := instance.GetProperty("AllowEnhancedProtectedMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetAllowEnhancedSuggestionsInAddressBar sets the value of AllowEnhancedSuggestionsInAddressBar for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyAllowEnhancedSuggestionsInAddressBar(value string) (err error) {
-	return instance.SetProperty("AllowEnhancedSuggestionsInAddressBar", (value))
-}
-
-// GetAllowEnhancedSuggestionsInAddressBar gets the value of AllowEnhancedSuggestionsInAddressBar for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyAllowEnhancedSuggestionsInAddressBar() (value string, err error) {
-	retValue, err := instance.GetProperty("AllowEnhancedSuggestionsInAddressBar")
 	if err != nil {
 		return
 	}
@@ -1362,33 +1298,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyAllowOneWordE
 	return
 }
 
-// SetAllowSaveTargetAsInIEMode sets the value of AllowSaveTargetAsInIEMode for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyAllowSaveTargetAsInIEMode(value string) (err error) {
-	return instance.SetProperty("AllowSaveTargetAsInIEMode", (value))
-}
-
-// GetAllowSaveTargetAsInIEMode gets the value of AllowSaveTargetAsInIEMode for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyAllowSaveTargetAsInIEMode() (value string, err error) {
-	retValue, err := instance.GetProperty("AllowSaveTargetAsInIEMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetAllowSiteToZoneAssignmentList sets the value of AllowSiteToZoneAssignmentList for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyAllowSiteToZoneAssignmentList(value string) (err error) {
 	return instance.SetProperty("AllowSiteToZoneAssignmentList", (value))
@@ -1605,14 +1514,14 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyCheckSignatur
 	return
 }
 
-// SetConfigureEdgeRedirectChannel sets the value of ConfigureEdgeRedirectChannel for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyConfigureEdgeRedirectChannel(value string) (err error) {
-	return instance.SetProperty("ConfigureEdgeRedirectChannel", (value))
+// SetConsistentMimeHandlingInternetExplorerProcesses sets the value of ConsistentMimeHandlingInternetExplorerProcesses for the instance
+func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyConsistentMimeHandlingInternetExplorerProcesses(value string) (err error) {
+	return instance.SetProperty("ConsistentMimeHandlingInternetExplorerProcesses", (value))
 }
 
-// GetConfigureEdgeRedirectChannel gets the value of ConfigureEdgeRedirectChannel for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyConfigureEdgeRedirectChannel() (value string, err error) {
-	retValue, err := instance.GetProperty("ConfigureEdgeRedirectChannel")
+// GetConsistentMimeHandlingInternetExplorerProcesses gets the value of ConsistentMimeHandlingInternetExplorerProcesses for the instance
+func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyConsistentMimeHandlingInternetExplorerProcesses() (value string, err error) {
+	retValue, err := instance.GetProperty("ConsistentMimeHandlingInternetExplorerProcesses")
 	if err != nil {
 		return
 	}
@@ -1632,14 +1541,14 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyConfigureEdge
 	return
 }
 
-// SetConsistentMimeHandlingInternetExplorerProcesses sets the value of ConsistentMimeHandlingInternetExplorerProcesses for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyConsistentMimeHandlingInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("ConsistentMimeHandlingInternetExplorerProcesses", (value))
+// SetDisableAdobeFlash sets the value of DisableAdobeFlash for the instance
+func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableAdobeFlash(value string) (err error) {
+	return instance.SetProperty("DisableAdobeFlash", (value))
 }
 
-// GetConsistentMimeHandlingInternetExplorerProcesses gets the value of ConsistentMimeHandlingInternetExplorerProcesses for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyConsistentMimeHandlingInternetExplorerProcesses() (value string, err error) {
-	retValue, err := instance.GetProperty("ConsistentMimeHandlingInternetExplorerProcesses")
+// GetDisableAdobeFlash gets the value of DisableAdobeFlash for the instance
+func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableAdobeFlash() (value string, err error) {
+	retValue, err := instance.GetProperty("DisableAdobeFlash")
 	if err != nil {
 		return
 	}
@@ -1694,33 +1603,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableBypass
 // GetDisableBypassOfSmartScreenWarningsAboutUncommonFiles gets the value of DisableBypassOfSmartScreenWarningsAboutUncommonFiles for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableBypassOfSmartScreenWarningsAboutUncommonFiles() (value string, err error) {
 	retValue, err := instance.GetProperty("DisableBypassOfSmartScreenWarningsAboutUncommonFiles")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDisableCompatView sets the value of DisableCompatView for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableCompatView(value string) (err error) {
-	return instance.SetProperty("DisableCompatView", (value))
-}
-
-// GetDisableCompatView gets the value of DisableCompatView for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableCompatView() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableCompatView")
 	if err != nil {
 		return
 	}
@@ -1902,33 +1784,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableEncryp
 	return
 }
 
-// SetDisableFeedsBackgroundSync sets the value of DisableFeedsBackgroundSync for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableFeedsBackgroundSync(value string) (err error) {
-	return instance.SetProperty("DisableFeedsBackgroundSync", (value))
-}
-
-// GetDisableFeedsBackgroundSync gets the value of DisableFeedsBackgroundSync for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableFeedsBackgroundSync() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableFeedsBackgroundSync")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetDisableFirstRunWizard sets the value of DisableFirstRunWizard for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableFirstRunWizard(value string) (err error) {
 	return instance.SetProperty("DisableFirstRunWizard", (value))
@@ -1983,33 +1838,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableFlipAh
 	return
 }
 
-// SetDisableGeolocation sets the value of DisableGeolocation for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableGeolocation(value string) (err error) {
-	return instance.SetProperty("DisableGeolocation", (value))
-}
-
-// GetDisableGeolocation gets the value of DisableGeolocation for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableGeolocation() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableGeolocation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetDisableIgnoringCertificateErrors sets the value of DisableIgnoringCertificateErrors for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableIgnoringCertificateErrors(value string) (err error) {
 	return instance.SetProperty("DisableIgnoringCertificateErrors", (value))
@@ -2045,33 +1873,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableInPriv
 // GetDisableInPrivateBrowsing gets the value of DisableInPrivateBrowsing for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableInPrivateBrowsing() (value string, err error) {
 	retValue, err := instance.GetProperty("DisableInPrivateBrowsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDisableInternetExplorerApp sets the value of DisableInternetExplorerApp for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableInternetExplorerApp(value string) (err error) {
-	return instance.SetProperty("DisableInternetExplorerApp", (value))
-}
-
-// GetDisableInternetExplorerApp gets the value of DisableInternetExplorerApp for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableInternetExplorerApp() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableInternetExplorerApp")
 	if err != nil {
 		return
 	}
@@ -2253,33 +2054,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableUpdate
 	return
 }
 
-// SetDisableWebAddressAutoComplete sets the value of DisableWebAddressAutoComplete for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDisableWebAddressAutoComplete(value string) (err error) {
-	return instance.SetProperty("DisableWebAddressAutoComplete", (value))
-}
-
-// GetDisableWebAddressAutoComplete gets the value of DisableWebAddressAutoComplete for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDisableWebAddressAutoComplete() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableWebAddressAutoComplete")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetDoNotAllowActiveXControlsInProtectedMode sets the value of DoNotAllowActiveXControlsInProtectedMode for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDoNotAllowActiveXControlsInProtectedMode(value string) (err error) {
 	return instance.SetProperty("DoNotAllowActiveXControlsInProtectedMode", (value))
@@ -2396,33 +2170,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyDoNotBlockOut
 // GetDoNotBlockOutdatedActiveXControlsOnSpecificDomains gets the value of DoNotBlockOutdatedActiveXControlsOnSpecificDomains for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyDoNotBlockOutdatedActiveXControlsOnSpecificDomains() (value string, err error) {
 	retValue, err := instance.GetProperty("DoNotBlockOutdatedActiveXControlsOnSpecificDomains")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetEnableExtendedIEModeHotkeys sets the value of EnableExtendedIEModeHotkeys for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyEnableExtendedIEModeHotkeys(value string) (err error) {
-	return instance.SetProperty("EnableExtendedIEModeHotkeys", (value))
-}
-
-// GetEnableExtendedIEModeHotkeys gets the value of EnableExtendedIEModeHotkeys for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyEnableExtendedIEModeHotkeys() (value string, err error) {
-	retValue, err := instance.GetProperty("EnableExtendedIEModeHotkeys")
 	if err != nil {
 		return
 	}
@@ -3800,60 +3547,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyIntranetZoneN
 // GetIntranetZoneNavigateWindowsAndFrames gets the value of IntranetZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyIntranetZoneNavigateWindowsAndFrames() (value string, err error) {
 	retValue, err := instance.GetProperty("IntranetZoneNavigateWindowsAndFrames")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetJScriptReplacement sets the value of JScriptReplacement for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyJScriptReplacement(value string) (err error) {
-	return instance.SetProperty("JScriptReplacement", (value))
-}
-
-// GetJScriptReplacement gets the value of JScriptReplacement for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyJScriptReplacement() (value string, err error) {
-	retValue, err := instance.GetProperty("JScriptReplacement")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetKeepIntranetSitesInInternetExplorer sets the value of KeepIntranetSitesInInternetExplorer for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyKeepIntranetSitesInInternetExplorer(value string) (err error) {
-	return instance.SetProperty("KeepIntranetSitesInInternetExplorer", (value))
-}
-
-// GetKeepIntranetSitesInInternetExplorer gets the value of KeepIntranetSitesInInternetExplorer for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyKeepIntranetSitesInInternetExplorer() (value string, err error) {
-	retValue, err := instance.GetProperty("KeepIntranetSitesInInternetExplorer")
 	if err != nil {
 		return
 	}
@@ -5898,33 +5591,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyMKProtocolSec
 	return
 }
 
-// SetNewTabDefaultPage sets the value of NewTabDefaultPage for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyNewTabDefaultPage(value string) (err error) {
-	return instance.SetProperty("NewTabDefaultPage", (value))
-}
-
-// GetNewTabDefaultPage gets the value of NewTabDefaultPage for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertyNewTabDefaultPage() (value string, err error) {
-	retValue, err := instance.GetProperty("NewTabDefaultPage")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetNotificationBarInternetExplorerProcesses sets the value of NotificationBarInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertyNotificationBarInternetExplorerProcesses(value string) (err error) {
 	return instance.SetProperty("NotificationBarInternetExplorerProcesses", (value))
@@ -7337,33 +7003,6 @@ func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertySecurityZones
 // GetSecurityZonesUseOnlyMachineSettings gets the value of SecurityZonesUseOnlyMachineSettings for the instance
 func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertySecurityZonesUseOnlyMachineSettings() (value string, err error) {
 	retValue, err := instance.GetProperty("SecurityZonesUseOnlyMachineSettings")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetSendSitesNotInEnterpriseSiteListToEdge sets the value of SendSitesNotInEnterpriseSiteListToEdge for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) SetPropertySendSitesNotInEnterpriseSiteListToEdge(value string) (err error) {
-	return instance.SetProperty("SendSitesNotInEnterpriseSiteListToEdge", (value))
-}
-
-// GetSendSitesNotInEnterpriseSiteListToEdge gets the value of SendSitesNotInEnterpriseSiteListToEdge for the instance
-func (instance *MDM_Policy_Config01_InternetExplorer02) GetPropertySendSitesNotInEnterpriseSiteListToEdge() (value string, err error) {
-	retValue, err := instance.GetProperty("SendSitesNotInEnterpriseSiteListToEdge")
 	if err != nil {
 		return
 	}

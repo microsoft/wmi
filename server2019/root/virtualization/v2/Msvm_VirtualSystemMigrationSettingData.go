@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -19,9 +18,6 @@ import (
 // Msvm_VirtualSystemMigrationSettingData struct
 type Msvm_VirtualSystemMigrationSettingData struct {
 	*CIM_VirtualSystemMigrationSettingData
-
-	//
-	AdvancedOptions string
 
 	//
 	AllowOverwriteExistingFile bool
@@ -43,9 +39,6 @@ type Msvm_VirtualSystemMigrationSettingData struct {
 
 	//
 	EnableCompression bool
-
-	//
-	EnableVhdCompression bool
 
 	//
 	RemoveSourceUnmanagedVhds bool
@@ -83,33 +76,6 @@ func NewMsvm_VirtualSystemMigrationSettingDataEx6(hostName string,
 	newInstance = &Msvm_VirtualSystemMigrationSettingData{
 		CIM_VirtualSystemMigrationSettingData: tmp,
 	}
-	return
-}
-
-// SetAdvancedOptions sets the value of AdvancedOptions for the instance
-func (instance *Msvm_VirtualSystemMigrationSettingData) SetPropertyAdvancedOptions(value string) (err error) {
-	return instance.SetProperty("AdvancedOptions", (value))
-}
-
-// GetAdvancedOptions gets the value of AdvancedOptions for the instance
-func (instance *Msvm_VirtualSystemMigrationSettingData) GetPropertyAdvancedOptions() (value string, err error) {
-	retValue, err := instance.GetProperty("AdvancedOptions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
 	return
 }
 
@@ -284,33 +250,6 @@ func (instance *Msvm_VirtualSystemMigrationSettingData) SetPropertyEnableCompres
 // GetEnableCompression gets the value of EnableCompression for the instance
 func (instance *Msvm_VirtualSystemMigrationSettingData) GetPropertyEnableCompression() (value bool, err error) {
 	retValue, err := instance.GetProperty("EnableCompression")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableVhdCompression sets the value of EnableVhdCompression for the instance
-func (instance *Msvm_VirtualSystemMigrationSettingData) SetPropertyEnableVhdCompression(value bool) (err error) {
-	return instance.SetProperty("EnableVhdCompression", (value))
-}
-
-// GetEnableVhdCompression gets the value of EnableVhdCompression for the instance
-func (instance *Msvm_VirtualSystemMigrationSettingData) GetPropertyEnableVhdCompression() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableVhdCompression")
 	if err != nil {
 		return
 	}

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -209,48 +208,6 @@ func (instance *MSCluster_ClusterService) GetPlacementScore( /* IN */ VmMemory u
 
 //
 
-// <param name="FaultDomains" type="uint32 "></param>
-// <param name="LocalDiskSize" type="uint32 "></param>
-// <param name="ReservedNodes" type="float64 "></param>
-// <param name="ReserveSpareNode" type="bool "></param>
-// <param name="UpdateDomains" type="uint32 "></param>
-// <param name="Version" type="uint32 "></param>
-// <param name="VmCpuReservation" type="uint32 "></param>
-// <param name="VmFlags" type="uint32 "></param>
-// <param name="VmMemory" type="uint32 "></param>
-// <param name="VmVirtualCoreCount" type="uint32 "></param>
-// <param name="VmVirtualFunctionCount" type="uint32 "></param>
-
-// <param name="MaxNumOfVMsInCluster" type="uint32 "></param>
-// <param name="MaxNumOfVMsInNode" type="uint32 "></param>
-// <param name="PlacementScoreFlags" type="uint32 "></param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) GetPlacementScoreEx( /* IN */ VmMemory uint32,
-	/* IN */ VmVirtualCoreCount uint32,
-	/* IN */ VmCpuReservation uint32,
-	/* IN */ VmVirtualFunctionCount uint32,
-	/* IN */ VmFlags uint32,
-	/* IN */ ReservedNodes float64,
-	/* OUT */ MaxNumOfVMsInCluster uint32,
-	/* OUT */ MaxNumOfVMsInNode uint32,
-	/* OUT */ PlacementScoreFlags uint32,
-	/* OPTIONAL IN */ Version uint32,
-	/* OPTIONAL IN */ LocalDiskSize uint32,
-	/* OPTIONAL IN */ UpdateDomains uint32,
-	/* OPTIONAL IN */ FaultDomains uint32,
-	/* OPTIONAL IN */ ReserveSpareNode bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("GetPlacementScoreEx", VmMemory, VmVirtualCoreCount, VmCpuReservation, VmVirtualFunctionCount, VmFlags, ReservedNodes, Version, LocalDiskSize, UpdateDomains, FaultDomains, ReserveSpareNode)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
 // <param name="AvailabilitySetName" type="string "></param>
 // <param name="LocalDiskSize" type="uint32 "></param>
 // <param name="ReservationId" type="string "></param>
@@ -325,48 +282,6 @@ func (instance *MSCluster_ClusterService) CreateVmReservationEx( /* IN */ VmMemo
 
 //
 
-// <param name="AvailabilitySetName" type="string "></param>
-// <param name="FaultDomain" type="uint32 "></param>
-// <param name="LocalDiskSize" type="uint32 "></param>
-// <param name="ReservationId" type="string "></param>
-// <param name="Reserved" type="uint64 "></param>
-// <param name="TimeSpan" type="uint32 "></param>
-// <param name="UpdateDomain" type="uint32 "></param>
-// <param name="Version" type="uint32 "></param>
-// <param name="VmCpuReservation" type="uint32 "></param>
-// <param name="VmFlags" type="uint32 "></param>
-// <param name="VmMemory" type="uint32 "></param>
-// <param name="VmVirtualCoreCount" type="uint32 "></param>
-// <param name="VmVirtualFunctionCount" type="uint32 "></param>
-
-// <param name="NodeId" type="uint32 "></param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) CreateVmReservationEx2( /* IN */ VmMemory uint32,
-	/* IN */ VmVirtualCoreCount uint32,
-	/* IN */ VmCpuReservation uint32,
-	/* IN */ VmVirtualFunctionCount uint32,
-	/* IN */ VmFlags uint32,
-	/* IN */ TimeSpan uint32,
-	/* IN */ ReservationId string,
-	/* OUT */ NodeId uint32,
-	/* OPTIONAL IN */ Version uint32,
-	/* OPTIONAL IN */ LocalDiskSize uint32,
-	/* OPTIONAL IN */ AvailabilitySetName string,
-	/* OPTIONAL IN */ FaultDomain uint32,
-	/* OPTIONAL IN */ UpdateDomain uint32,
-	/* OPTIONAL IN */ Reserved uint64) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CreateVmReservationEx2", VmMemory, VmVirtualCoreCount, VmCpuReservation, VmVirtualFunctionCount, VmFlags, TimeSpan, ReservationId, Version, LocalDiskSize, AvailabilitySetName, FaultDomain, UpdateDomain, Reserved)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
 // <param name="Flags" type="uint32 "></param>
 // <param name="ReservationId" type="string "></param>
 
@@ -415,18 +330,14 @@ func (instance *MSCluster_ClusterService) ChangeVMSettings( /* IN */ VmResourceN
 // <param name="AccountKey" type="string "></param>
 // <param name="AccountName" type="string "></param>
 // <param name="CloudWitnessName" type="string "></param>
-// <param name="ContainerName" type="string "></param>
 // <param name="EndpointInfo" type="string "></param>
-// <param name="SASToken" type="string "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSCluster_ClusterService) CreateCloudWitness( /* IN */ AccountName string,
 	/* IN */ AccountKey string,
-	/* IN */ SASToken string,
-	/* IN */ ContainerName string,
 	/* IN */ EndpointInfo string,
 	/* IN */ CloudWitnessName string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("CreateCloudWitness", AccountName, AccountKey, SASToken, ContainerName, EndpointInfo, CloudWitnessName)
+	retVal, err := instance.InvokeMethodWithReturn("CreateCloudWitness", AccountName, AccountKey, EndpointInfo, CloudWitnessName)
 	if err != nil {
 		return
 	}
@@ -438,14 +349,10 @@ func (instance *MSCluster_ClusterService) CreateCloudWitness( /* IN */ AccountNa
 //
 
 // <param name="AccountKey" type="string "></param>
-// <param name="ContainerName" type="string "></param>
-// <param name="SASToken" type="string "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) UpdateCloudWitnessKey( /* IN */ AccountKey string,
-	/* IN */ SASToken string,
-	/* IN */ ContainerName string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("UpdateCloudWitnessKey", AccountKey, SASToken, ContainerName)
+func (instance *MSCluster_ClusterService) UpdateCloudWitnessKey( /* IN */ AccountKey string) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("UpdateCloudWitnessKey", AccountKey)
 	if err != nil {
 		return
 	}
@@ -463,19 +370,6 @@ func (instance *MSCluster_ClusterService) UpdateCloudWitnessKey( /* IN */ Accoun
 func (instance *MSCluster_ClusterService) NodeReplacement( /* IN */ CurrentNodeName string,
 	/* IN */ ReplacementNodeName string) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("NodeReplacement", CurrentNodeName, ReplacementNodeName)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) ForceFlushDatabase() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("ForceFlushDatabase")
 	if err != nil {
 		return
 	}
@@ -566,75 +460,6 @@ func (instance *MSCluster_ClusterService) SetupClusterSetWorker( /* IN */ Name s
 // <param name="SupportedVersions" type="MSCluster_NodeSupportedVersion []"></param>
 func (instance *MSCluster_ClusterService) GetNodeSupportedVersions( /* OUT */ SupportedVersions []MSCluster_NodeSupportedVersion) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("GetNodeSupportedVersions")
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
-// <param name="ExclusionType" type="uint32 "></param>
-// <param name="ExclusionValue" type="string []"></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) SetClusterExcludedAdapter( /* IN */ ExclusionType uint32,
-	/* IN */ ExclusionValue []string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetClusterExcludedAdapter", ExclusionType, ExclusionValue)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ExclusionType" type="uint32 "></param>
-// <param name="ExclusionValue" type="string []"></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) AddClusterExcludedAdapter( /* IN */ ExclusionType uint32,
-	/* IN */ ExclusionValue []string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("AddClusterExcludedAdapter", ExclusionType, ExclusionValue)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ExclusionType" type="uint32 "></param>
-// <param name="ExclusionValue" type="string []"></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) RemoveClusterExcludedAdapter( /* IN */ ExclusionType uint32,
-	/* IN */ ExclusionValue []string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("RemoveClusterExcludedAdapter", ExclusionType, ExclusionValue)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ExclusionType" type="uint32 "></param>
-
-// <param name="ExcludedAdapters" type="string []"></param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) GetClusterExcludedAdapter( /* IN */ ExclusionType uint32,
-	/* OUT */ ExcludedAdapters []string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("GetClusterExcludedAdapter", ExclusionType)
 	if err != nil {
 		return
 	}

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.RemoteAccess
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.RemoteAccess
+//////////////////////////////////////////////
 package remoteaccess
 
 import (
@@ -20,16 +19,16 @@ import (
 type MSFT_WmiError struct {
 	*CIM_Error
 
-	//
+	// Error Category.
 	error_Category uint16
 
-	//
+	// Error code.
 	error_Code uint32
 
-	//
+	// Error Type.
 	error_Type string
 
-	//
+	// Windows error message.
 	error_WindowsErrorMessage string
 }
 

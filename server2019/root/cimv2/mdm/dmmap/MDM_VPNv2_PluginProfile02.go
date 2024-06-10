@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -23,6 +22,9 @@ type MDM_VPNv2_PluginProfile02 struct {
 
 	//
 	CustomConfiguration string
+
+	//
+	CustomStoreUrl string
 
 	//
 	InstanceID string
@@ -74,6 +76,33 @@ func (instance *MDM_VPNv2_PluginProfile02) SetPropertyCustomConfiguration(value 
 // GetCustomConfiguration gets the value of CustomConfiguration for the instance
 func (instance *MDM_VPNv2_PluginProfile02) GetPropertyCustomConfiguration() (value string, err error) {
 	retValue, err := instance.GetProperty("CustomConfiguration")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
+	return
+}
+
+// SetCustomStoreUrl sets the value of CustomStoreUrl for the instance
+func (instance *MDM_VPNv2_PluginProfile02) SetPropertyCustomStoreUrl(value string) (err error) {
+	return instance.SetProperty("CustomStoreUrl", (value))
+}
+
+// GetCustomStoreUrl gets the value of CustomStoreUrl for the instance
+func (instance *MDM_VPNv2_PluginProfile02) GetPropertyCustomStoreUrl() (value string, err error) {
+	retValue, err := instance.GetProperty("CustomStoreUrl")
 	if err != nil {
 		return
 	}

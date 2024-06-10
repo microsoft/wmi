@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Cluster.Scaleout
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Cluster.Scaleout
+//////////////////////////////////////////////
 package scaleout
 
 import (
@@ -592,12 +591,10 @@ func (instance *MSFT_ClusterSetVM) DestroyVm( /* IN */ Flags uint32) (result uin
 //
 
 // <param name="Flags" type="uint32 "></param>
-// <param name="Force" type="bool "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_ClusterSetVM) UnclusterVm( /* IN */ Force bool,
-	/* IN */ Flags uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("UnclusterVm", Force, Flags)
+func (instance *MSFT_ClusterSetVM) UnclusterVm( /* IN */ Flags uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("UnclusterVm", Flags)
 	if err != nil {
 		return
 	}

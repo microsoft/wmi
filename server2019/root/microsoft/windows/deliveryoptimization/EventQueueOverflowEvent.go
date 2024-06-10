@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __EventQueueOverflowEvent struct
@@ -55,7 +52,7 @@ func New__EventQueueOverflowEventEx6(hostName string,
 
 // SetCurrentQueueSize sets the value of CurrentQueueSize for the instance
 func (instance *__EventQueueOverflowEvent) SetPropertyCurrentQueueSize(value uint32) (err error) {
-	return instance.SetProperty("CurrentQueueSize", (value))
+	return instance.SetProperty("CurrentQueueSize", value)
 }
 
 // GetCurrentQueueSize gets the value of CurrentQueueSize for the instance
@@ -64,18 +61,9 @@ func (instance *__EventQueueOverflowEvent) GetPropertyCurrentQueueSize() (value 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -52,25 +51,10 @@ type MDM_Firewall_DomainProfile02 struct {
 	EnableFirewall bool
 
 	//
-	EnableLogDroppedPackets bool
-
-	//
-	EnableLogIgnoredRules bool
-
-	//
-	EnableLogSuccessConnections bool
-
-	//
 	GlobalPortsAllowUserPrefMerge bool
 
 	//
 	InstanceID string
-
-	//
-	LogFilePath string
-
-	//
-	LogMaxFileSize int32
 
 	//
 	ParentID string
@@ -378,87 +362,6 @@ func (instance *MDM_Firewall_DomainProfile02) GetPropertyEnableFirewall() (value
 	return
 }
 
-// SetEnableLogDroppedPackets sets the value of EnableLogDroppedPackets for the instance
-func (instance *MDM_Firewall_DomainProfile02) SetPropertyEnableLogDroppedPackets(value bool) (err error) {
-	return instance.SetProperty("EnableLogDroppedPackets", (value))
-}
-
-// GetEnableLogDroppedPackets gets the value of EnableLogDroppedPackets for the instance
-func (instance *MDM_Firewall_DomainProfile02) GetPropertyEnableLogDroppedPackets() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableLogDroppedPackets")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableLogIgnoredRules sets the value of EnableLogIgnoredRules for the instance
-func (instance *MDM_Firewall_DomainProfile02) SetPropertyEnableLogIgnoredRules(value bool) (err error) {
-	return instance.SetProperty("EnableLogIgnoredRules", (value))
-}
-
-// GetEnableLogIgnoredRules gets the value of EnableLogIgnoredRules for the instance
-func (instance *MDM_Firewall_DomainProfile02) GetPropertyEnableLogIgnoredRules() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableLogIgnoredRules")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableLogSuccessConnections sets the value of EnableLogSuccessConnections for the instance
-func (instance *MDM_Firewall_DomainProfile02) SetPropertyEnableLogSuccessConnections(value bool) (err error) {
-	return instance.SetProperty("EnableLogSuccessConnections", (value))
-}
-
-// GetEnableLogSuccessConnections gets the value of EnableLogSuccessConnections for the instance
-func (instance *MDM_Firewall_DomainProfile02) GetPropertyEnableLogSuccessConnections() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableLogSuccessConnections")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetGlobalPortsAllowUserPrefMerge sets the value of GlobalPortsAllowUserPrefMerge for the instance
 func (instance *MDM_Firewall_DomainProfile02) SetPropertyGlobalPortsAllowUserPrefMerge(value bool) (err error) {
 	return instance.SetProperty("GlobalPortsAllowUserPrefMerge", (value))
@@ -509,60 +412,6 @@ func (instance *MDM_Firewall_DomainProfile02) GetPropertyInstanceID() (value str
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetLogFilePath sets the value of LogFilePath for the instance
-func (instance *MDM_Firewall_DomainProfile02) SetPropertyLogFilePath(value string) (err error) {
-	return instance.SetProperty("LogFilePath", (value))
-}
-
-// GetLogFilePath gets the value of LogFilePath for the instance
-func (instance *MDM_Firewall_DomainProfile02) GetPropertyLogFilePath() (value string, err error) {
-	retValue, err := instance.GetProperty("LogFilePath")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLogMaxFileSize sets the value of LogMaxFileSize for the instance
-func (instance *MDM_Firewall_DomainProfile02) SetPropertyLogMaxFileSize(value int32) (err error) {
-	return instance.SetProperty("LogMaxFileSize", (value))
-}
-
-// GetLogMaxFileSize gets the value of LogMaxFileSize for the instance
-func (instance *MDM_Firewall_DomainProfile02) GetPropertyLogMaxFileSize() (value int32, err error) {
-	retValue, err := instance.GetProperty("LogMaxFileSize")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

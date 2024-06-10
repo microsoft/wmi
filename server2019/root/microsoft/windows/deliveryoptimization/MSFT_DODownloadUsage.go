@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MSFT_DODownloadUsage struct
@@ -37,6 +34,12 @@ type MSFT_DODownloadUsage struct {
 
 	//
 	MonthlyFrRateBps uint64
+
+	//
+	MonthlyGroupBytes uint64
+
+	//
+	MonthlyLinkLocalBytes uint64
 
 	//
 	NormalDownloads uint32
@@ -82,7 +85,7 @@ func NewMSFT_DODownloadUsageEx6(hostName string,
 
 // SetBackgroundRatePct sets the value of BackgroundRatePct for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyBackgroundRatePct(value uint8) (err error) {
-	return instance.SetProperty("BackgroundRatePct", (value))
+	return instance.SetProperty("BackgroundRatePct", value)
 }
 
 // GetBackgroundRatePct gets the value of BackgroundRatePct for the instance
@@ -91,25 +94,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyBackgroundRatePct() (value uint
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
+	value, ok := retValue.(uint8)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint8(valuetmp)
-
 	return
 }
 
 // SetForegroundRatePct sets the value of ForegroundRatePct for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyForegroundRatePct(value uint8) (err error) {
-	return instance.SetProperty("ForegroundRatePct", (value))
+	return instance.SetProperty("ForegroundRatePct", value)
 }
 
 // GetForegroundRatePct gets the value of ForegroundRatePct for the instance
@@ -118,25 +112,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyForegroundRatePct() (value uint
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
+	value, ok := retValue.(uint8)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint8(valuetmp)
-
 	return
 }
 
 // SetMonthlyBkRateBps sets the value of MonthlyBkRateBps for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyMonthlyBkRateBps(value uint64) (err error) {
-	return instance.SetProperty("MonthlyBkRateBps", (value))
+	return instance.SetProperty("MonthlyBkRateBps", value)
 }
 
 // GetMonthlyBkRateBps gets the value of MonthlyBkRateBps for the instance
@@ -145,25 +130,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyMonthlyBkRateBps() (value uint6
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetMonthlyCacheHostBytes sets the value of MonthlyCacheHostBytes for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyMonthlyCacheHostBytes(value uint64) (err error) {
-	return instance.SetProperty("MonthlyCacheHostBytes", (value))
+	return instance.SetProperty("MonthlyCacheHostBytes", value)
 }
 
 // GetMonthlyCacheHostBytes gets the value of MonthlyCacheHostBytes for the instance
@@ -172,25 +148,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyMonthlyCacheHostBytes() (value 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetMonthlyCdnBytes sets the value of MonthlyCdnBytes for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyMonthlyCdnBytes(value uint64) (err error) {
-	return instance.SetProperty("MonthlyCdnBytes", (value))
+	return instance.SetProperty("MonthlyCdnBytes", value)
 }
 
 // GetMonthlyCdnBytes gets the value of MonthlyCdnBytes for the instance
@@ -199,25 +166,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyMonthlyCdnBytes() (value uint64
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetMonthlyFrRateBps sets the value of MonthlyFrRateBps for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyMonthlyFrRateBps(value uint64) (err error) {
-	return instance.SetProperty("MonthlyFrRateBps", (value))
+	return instance.SetProperty("MonthlyFrRateBps", value)
 }
 
 // GetMonthlyFrRateBps gets the value of MonthlyFrRateBps for the instance
@@ -226,25 +184,52 @@ func (instance *MSFT_DODownloadUsage) GetPropertyMonthlyFrRateBps() (value uint6
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMonthlyGroupBytes sets the value of MonthlyGroupBytes for the instance
+func (instance *MSFT_DODownloadUsage) SetPropertyMonthlyGroupBytes(value uint64) (err error) {
+	return instance.SetProperty("MonthlyGroupBytes", value)
+}
+
+// GetMonthlyGroupBytes gets the value of MonthlyGroupBytes for the instance
+func (instance *MSFT_DODownloadUsage) GetPropertyMonthlyGroupBytes() (value uint64, err error) {
+	retValue, err := instance.GetProperty("MonthlyGroupBytes")
+	if err != nil {
 		return
 	}
+	value, ok := retValue.(uint64)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
 
-	value = uint64(valuetmp)
+// SetMonthlyLinkLocalBytes sets the value of MonthlyLinkLocalBytes for the instance
+func (instance *MSFT_DODownloadUsage) SetPropertyMonthlyLinkLocalBytes(value uint64) (err error) {
+	return instance.SetProperty("MonthlyLinkLocalBytes", value)
+}
 
+// GetMonthlyLinkLocalBytes gets the value of MonthlyLinkLocalBytes for the instance
+func (instance *MSFT_DODownloadUsage) GetPropertyMonthlyLinkLocalBytes() (value uint64, err error) {
+	retValue, err := instance.GetProperty("MonthlyLinkLocalBytes")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint64)
+	if !ok {
+		// TODO: Set an error
+	}
 	return
 }
 
 // SetNormalDownloads sets the value of NormalDownloads for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyNormalDownloads(value uint32) (err error) {
-	return instance.SetProperty("NormalDownloads", (value))
+	return instance.SetProperty("NormalDownloads", value)
 }
 
 // GetNormalDownloads gets the value of NormalDownloads for the instance
@@ -253,25 +238,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyNormalDownloads() (value uint32
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetNormalDownloadsPending sets the value of NormalDownloadsPending for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyNormalDownloadsPending(value uint32) (err error) {
-	return instance.SetProperty("NormalDownloadsPending", (value))
+	return instance.SetProperty("NormalDownloadsPending", value)
 }
 
 // GetNormalDownloadsPending gets the value of NormalDownloadsPending for the instance
@@ -280,25 +256,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyNormalDownloadsPending() (value
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetPriorityDownloads sets the value of PriorityDownloads for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyPriorityDownloads(value uint32) (err error) {
-	return instance.SetProperty("PriorityDownloads", (value))
+	return instance.SetProperty("PriorityDownloads", value)
 }
 
 // GetPriorityDownloads gets the value of PriorityDownloads for the instance
@@ -307,25 +274,16 @@ func (instance *MSFT_DODownloadUsage) GetPropertyPriorityDownloads() (value uint
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetPriorityDownloadsPending sets the value of PriorityDownloadsPending for the instance
 func (instance *MSFT_DODownloadUsage) SetPropertyPriorityDownloadsPending(value uint32) (err error) {
-	return instance.SetProperty("PriorityDownloadsPending", (value))
+	return instance.SetProperty("PriorityDownloadsPending", value)
 }
 
 // GetPriorityDownloadsPending gets the value of PriorityDownloadsPending for the instance
@@ -334,18 +292,9 @@ func (instance *MSFT_DODownloadUsage) GetPropertyPriorityDownloadsPending() (val
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }

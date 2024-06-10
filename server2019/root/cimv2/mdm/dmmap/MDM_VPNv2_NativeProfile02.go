@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -22,9 +21,6 @@ type MDM_VPNv2_NativeProfile02 struct {
 	*cim.WmiInstance
 
 	//
-	DisableClassBasedDefaultRoute bool
-
-	//
 	InstanceID string
 
 	//
@@ -35,9 +31,6 @@ type MDM_VPNv2_NativeProfile02 struct {
 
 	//
 	ParentID string
-
-	//
-	PlumbIKEv2TSAsRoutes bool
 
 	//
 	RoutingPolicyType string
@@ -72,33 +65,6 @@ func NewMDM_VPNv2_NativeProfile02Ex6(hostName string,
 	newInstance = &MDM_VPNv2_NativeProfile02{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetDisableClassBasedDefaultRoute sets the value of DisableClassBasedDefaultRoute for the instance
-func (instance *MDM_VPNv2_NativeProfile02) SetPropertyDisableClassBasedDefaultRoute(value bool) (err error) {
-	return instance.SetProperty("DisableClassBasedDefaultRoute", (value))
-}
-
-// GetDisableClassBasedDefaultRoute gets the value of DisableClassBasedDefaultRoute for the instance
-func (instance *MDM_VPNv2_NativeProfile02) GetPropertyDisableClassBasedDefaultRoute() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableClassBasedDefaultRoute")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
@@ -206,33 +172,6 @@ func (instance *MDM_VPNv2_NativeProfile02) GetPropertyParentID() (value string, 
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetPlumbIKEv2TSAsRoutes sets the value of PlumbIKEv2TSAsRoutes for the instance
-func (instance *MDM_VPNv2_NativeProfile02) SetPropertyPlumbIKEv2TSAsRoutes(value bool) (err error) {
-	return instance.SetProperty("PlumbIKEv2TSAsRoutes", (value))
-}
-
-// GetPlumbIKEv2TSAsRoutes gets the value of PlumbIKEv2TSAsRoutes for the instance
-func (instance *MDM_VPNv2_NativeProfile02) GetPropertyPlumbIKEv2TSAsRoutes() (value bool, err error) {
-	retValue, err := instance.GetProperty("PlumbIKEv2TSAsRoutes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }

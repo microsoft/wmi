@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -21,15 +20,6 @@ type Msvm_ProcessorSettingData struct {
 	*CIM_ResourceAllocationSettingData
 
 	//
-	AllowACountMCount bool
-
-	//
-	ApicMode uint8
-
-	//
-	CpuBrandString string
-
-	//
 	CpuGroupId string
 
 	//
@@ -37,18 +27,6 @@ type Msvm_ProcessorSettingData struct {
 
 	//
 	EnableHostResourceProtection bool
-
-	//
-	EnableLegacyApicMode bool
-
-	//
-	EnablePageShattering uint8
-
-	//
-	EnablePerfmonArchPmu bool
-
-	//
-	EnablePerfmonIpt bool
 
 	//
 	EnablePerfmonLbr bool
@@ -60,16 +38,7 @@ type Msvm_ProcessorSettingData struct {
 	EnablePerfmonPmu bool
 
 	//
-	EnableSocketTopology bool
-
-	//
-	EnlightenmentSet string
-
-	//
 	ExposeVirtualizationExtensions bool
-
-	//
-	ExtendedVirtualizationExtensions ProcessorSettingData_ExtendedVirtualizationExtensions
 
 	//
 	HideHypervisorPresent bool
@@ -78,43 +47,16 @@ type Msvm_ProcessorSettingData struct {
 	HwThreadsPerCore uint64
 
 	//
-	L3CacheWays uint32
-
-	//
-	L3ProcessorDistributionPolicy ProcessorSettingData_L3ProcessorDistributionPolicy
-
-	//
 	LimitCPUID bool
 
 	//
 	LimitProcessorFeatures bool
 
 	//
-	LimitProcessorFeaturesMode ProcessorSettingData_LimitProcessorFeaturesMode
-
-	//
-	MaxClusterCountPerSocket uint32
-
-	//
-	MaxHwIsolatedGuests uint32
-
-	//
 	MaxNumaNodesPerSocket uint64
 
 	//
-	MaxProcessorCountPerL3 uint32
-
-	//
 	MaxProcessorsPerNumaNode uint64
-
-	//
-	PerfCpuFreqCapMhz uint32
-
-	//
-	PhysicalAddressWidth uint32
-
-	//
-	ProcessorFeatureSet string
 }
 
 func NewMsvm_ProcessorSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_ProcessorSettingData, err error) {
@@ -143,87 +85,6 @@ func NewMsvm_ProcessorSettingDataEx6(hostName string,
 	newInstance = &Msvm_ProcessorSettingData{
 		CIM_ResourceAllocationSettingData: tmp,
 	}
-	return
-}
-
-// SetAllowACountMCount sets the value of AllowACountMCount for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyAllowACountMCount(value bool) (err error) {
-	return instance.SetProperty("AllowACountMCount", (value))
-}
-
-// GetAllowACountMCount gets the value of AllowACountMCount for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyAllowACountMCount() (value bool, err error) {
-	retValue, err := instance.GetProperty("AllowACountMCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetApicMode sets the value of ApicMode for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyApicMode(value uint8) (err error) {
-	return instance.SetProperty("ApicMode", (value))
-}
-
-// GetApicMode gets the value of ApicMode for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyApicMode() (value uint8, err error) {
-	retValue, err := instance.GetProperty("ApicMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetCpuBrandString sets the value of CpuBrandString for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyCpuBrandString(value string) (err error) {
-	return instance.SetProperty("CpuBrandString", (value))
-}
-
-// GetCpuBrandString gets the value of CpuBrandString for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyCpuBrandString() (value string, err error) {
-	retValue, err := instance.GetProperty("CpuBrandString")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
 	return
 }
 
@@ -289,114 +150,6 @@ func (instance *Msvm_ProcessorSettingData) SetPropertyEnableHostResourceProtecti
 // GetEnableHostResourceProtection gets the value of EnableHostResourceProtection for the instance
 func (instance *Msvm_ProcessorSettingData) GetPropertyEnableHostResourceProtection() (value bool, err error) {
 	retValue, err := instance.GetProperty("EnableHostResourceProtection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableLegacyApicMode sets the value of EnableLegacyApicMode for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnableLegacyApicMode(value bool) (err error) {
-	return instance.SetProperty("EnableLegacyApicMode", (value))
-}
-
-// GetEnableLegacyApicMode gets the value of EnableLegacyApicMode for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnableLegacyApicMode() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableLegacyApicMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnablePageShattering sets the value of EnablePageShattering for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnablePageShattering(value uint8) (err error) {
-	return instance.SetProperty("EnablePageShattering", (value))
-}
-
-// GetEnablePageShattering gets the value of EnablePageShattering for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePageShattering() (value uint8, err error) {
-	retValue, err := instance.GetProperty("EnablePageShattering")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetEnablePerfmonArchPmu sets the value of EnablePerfmonArchPmu for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnablePerfmonArchPmu(value bool) (err error) {
-	return instance.SetProperty("EnablePerfmonArchPmu", (value))
-}
-
-// GetEnablePerfmonArchPmu gets the value of EnablePerfmonArchPmu for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePerfmonArchPmu() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnablePerfmonArchPmu")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnablePerfmonIpt sets the value of EnablePerfmonIpt for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnablePerfmonIpt(value bool) (err error) {
-	return instance.SetProperty("EnablePerfmonIpt", (value))
-}
-
-// GetEnablePerfmonIpt gets the value of EnablePerfmonIpt for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePerfmonIpt() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnablePerfmonIpt")
 	if err != nil {
 		return
 	}
@@ -497,60 +250,6 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePerfmonPmu() (value 
 	return
 }
 
-// SetEnableSocketTopology sets the value of EnableSocketTopology for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnableSocketTopology(value bool) (err error) {
-	return instance.SetProperty("EnableSocketTopology", (value))
-}
-
-// GetEnableSocketTopology gets the value of EnableSocketTopology for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnableSocketTopology() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableSocketTopology")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnlightenmentSet sets the value of EnlightenmentSet for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnlightenmentSet(value string) (err error) {
-	return instance.SetProperty("EnlightenmentSet", (value))
-}
-
-// GetEnlightenmentSet gets the value of EnlightenmentSet for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnlightenmentSet() (value string, err error) {
-	retValue, err := instance.GetProperty("EnlightenmentSet")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetExposeVirtualizationExtensions sets the value of ExposeVirtualizationExtensions for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyExposeVirtualizationExtensions(value bool) (err error) {
 	return instance.SetProperty("ExposeVirtualizationExtensions", (value))
@@ -574,33 +273,6 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyExposeVirtualizationExtens
 	}
 
 	value = bool(valuetmp)
-
-	return
-}
-
-// SetExtendedVirtualizationExtensions sets the value of ExtendedVirtualizationExtensions for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyExtendedVirtualizationExtensions(value ProcessorSettingData_ExtendedVirtualizationExtensions) (err error) {
-	return instance.SetProperty("ExtendedVirtualizationExtensions", (value))
-}
-
-// GetExtendedVirtualizationExtensions gets the value of ExtendedVirtualizationExtensions for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyExtendedVirtualizationExtensions() (value ProcessorSettingData_ExtendedVirtualizationExtensions, err error) {
-	retValue, err := instance.GetProperty("ExtendedVirtualizationExtensions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = ProcessorSettingData_ExtendedVirtualizationExtensions(valuetmp)
 
 	return
 }
@@ -659,60 +331,6 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyHwThreadsPerCore() (value 
 	return
 }
 
-// SetL3CacheWays sets the value of L3CacheWays for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyL3CacheWays(value uint32) (err error) {
-	return instance.SetProperty("L3CacheWays", (value))
-}
-
-// GetL3CacheWays gets the value of L3CacheWays for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyL3CacheWays() (value uint32, err error) {
-	retValue, err := instance.GetProperty("L3CacheWays")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetL3ProcessorDistributionPolicy sets the value of L3ProcessorDistributionPolicy for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyL3ProcessorDistributionPolicy(value ProcessorSettingData_L3ProcessorDistributionPolicy) (err error) {
-	return instance.SetProperty("L3ProcessorDistributionPolicy", (value))
-}
-
-// GetL3ProcessorDistributionPolicy gets the value of L3ProcessorDistributionPolicy for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyL3ProcessorDistributionPolicy() (value ProcessorSettingData_L3ProcessorDistributionPolicy, err error) {
-	retValue, err := instance.GetProperty("L3ProcessorDistributionPolicy")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = ProcessorSettingData_L3ProcessorDistributionPolicy(valuetmp)
-
-	return
-}
-
 // SetLimitCPUID sets the value of LimitCPUID for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyLimitCPUID(value bool) (err error) {
 	return instance.SetProperty("LimitCPUID", (value))
@@ -767,87 +385,6 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyLimitProcessorFeatures() (
 	return
 }
 
-// SetLimitProcessorFeaturesMode sets the value of LimitProcessorFeaturesMode for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyLimitProcessorFeaturesMode(value ProcessorSettingData_LimitProcessorFeaturesMode) (err error) {
-	return instance.SetProperty("LimitProcessorFeaturesMode", (value))
-}
-
-// GetLimitProcessorFeaturesMode gets the value of LimitProcessorFeaturesMode for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyLimitProcessorFeaturesMode() (value ProcessorSettingData_LimitProcessorFeaturesMode, err error) {
-	retValue, err := instance.GetProperty("LimitProcessorFeaturesMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = ProcessorSettingData_LimitProcessorFeaturesMode(valuetmp)
-
-	return
-}
-
-// SetMaxClusterCountPerSocket sets the value of MaxClusterCountPerSocket for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyMaxClusterCountPerSocket(value uint32) (err error) {
-	return instance.SetProperty("MaxClusterCountPerSocket", (value))
-}
-
-// GetMaxClusterCountPerSocket gets the value of MaxClusterCountPerSocket for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyMaxClusterCountPerSocket() (value uint32, err error) {
-	retValue, err := instance.GetProperty("MaxClusterCountPerSocket")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetMaxHwIsolatedGuests sets the value of MaxHwIsolatedGuests for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyMaxHwIsolatedGuests(value uint32) (err error) {
-	return instance.SetProperty("MaxHwIsolatedGuests", (value))
-}
-
-// GetMaxHwIsolatedGuests gets the value of MaxHwIsolatedGuests for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyMaxHwIsolatedGuests() (value uint32, err error) {
-	retValue, err := instance.GetProperty("MaxHwIsolatedGuests")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetMaxNumaNodesPerSocket sets the value of MaxNumaNodesPerSocket for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyMaxNumaNodesPerSocket(value uint64) (err error) {
 	return instance.SetProperty("MaxNumaNodesPerSocket", (value))
@@ -875,33 +412,6 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyMaxNumaNodesPerSocket() (v
 	return
 }
 
-// SetMaxProcessorCountPerL3 sets the value of MaxProcessorCountPerL3 for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyMaxProcessorCountPerL3(value uint32) (err error) {
-	return instance.SetProperty("MaxProcessorCountPerL3", (value))
-}
-
-// GetMaxProcessorCountPerL3 gets the value of MaxProcessorCountPerL3 for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyMaxProcessorCountPerL3() (value uint32, err error) {
-	retValue, err := instance.GetProperty("MaxProcessorCountPerL3")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetMaxProcessorsPerNumaNode sets the value of MaxProcessorsPerNumaNode for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyMaxProcessorsPerNumaNode(value uint64) (err error) {
 	return instance.SetProperty("MaxProcessorsPerNumaNode", (value))
@@ -925,87 +435,6 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyMaxProcessorsPerNumaNode()
 	}
 
 	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPerfCpuFreqCapMhz sets the value of PerfCpuFreqCapMhz for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyPerfCpuFreqCapMhz(value uint32) (err error) {
-	return instance.SetProperty("PerfCpuFreqCapMhz", (value))
-}
-
-// GetPerfCpuFreqCapMhz gets the value of PerfCpuFreqCapMhz for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyPerfCpuFreqCapMhz() (value uint32, err error) {
-	retValue, err := instance.GetProperty("PerfCpuFreqCapMhz")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetPhysicalAddressWidth sets the value of PhysicalAddressWidth for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyPhysicalAddressWidth(value uint32) (err error) {
-	return instance.SetProperty("PhysicalAddressWidth", (value))
-}
-
-// GetPhysicalAddressWidth gets the value of PhysicalAddressWidth for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyPhysicalAddressWidth() (value uint32, err error) {
-	retValue, err := instance.GetProperty("PhysicalAddressWidth")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetProcessorFeatureSet sets the value of ProcessorFeatureSet for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyProcessorFeatureSet(value string) (err error) {
-	return instance.SetProperty("ProcessorFeatureSet", (value))
-}
-
-// GetProcessorFeatureSet gets the value of ProcessorFeatureSet for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyProcessorFeatureSet() (value string, err error) {
-	retValue, err := instance.GetProperty("ProcessorFeatureSet")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }

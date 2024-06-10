@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -67,6 +66,14 @@ func (instance *Msvm_ProcessorPool) GetRelatedComputerSystem() (value *cim.WmiIn
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
+func (instance *Msvm_ProcessorPool) GetRelatedProcessorSettingData() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ProcessorSettingData")
+}
+
+func (instance *Msvm_ProcessorPool) GetRelatedProcessor() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_Processor")
+}
+
 func (instance *Msvm_ProcessorPool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePoolSettingData")
 }
@@ -79,6 +86,6 @@ func (instance *Msvm_ProcessorPool) GetRelatedAllocationCapabilities() (value *c
 	return instance.GetRelated("Msvm_AllocationCapabilities")
 }
 
-func (instance *Msvm_ProcessorPool) GetRelatedProcessor() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_Processor")
+func (instance *Msvm_ProcessorPool) GetRelatedAggregationMetricDefinition() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_AggregationMetricDefinition")
 }

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.SDDC.Management
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.SDDC.Management
+//////////////////////////////////////////////
 package management
 
 import (
@@ -44,9 +43,6 @@ type SDDC_Alert struct {
 
 	//
 	Title string
-
-	//
-	Type string
 }
 
 func NewSDDC_AlertEx1(instance *cim.WmiInstance) (newInstance *SDDC_Alert, err error) {
@@ -275,33 +271,6 @@ func (instance *SDDC_Alert) SetPropertyTitle(value string) (err error) {
 // GetTitle gets the value of Title for the instance
 func (instance *SDDC_Alert) GetPropertyTitle() (value string, err error) {
 	retValue, err := instance.GetProperty("Title")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetType sets the value of Type for the instance
-func (instance *SDDC_Alert) SetPropertyType(value string) (err error) {
-	return instance.SetProperty("Type", (value))
-}
-
-// GetType gets the value of Type for the instance
-func (instance *SDDC_Alert) GetPropertyType() (value string, err error) {
-	retValue, err := instance.GetProperty("Type")
 	if err != nil {
 		return
 	}

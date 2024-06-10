@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -19,12 +18,6 @@ import (
 // Win32_PerfRawData_Counters_WFPClassify struct
 type Win32_PerfRawData_Counters_WFPClassify struct {
 	*Win32_PerfRawData
-
-	//
-	FWPMLAYERALEACCEPTREDIRECTV4 uint64
-
-	//
-	FWPMLAYERALEACCEPTREDIRECTV6 uint64
 
 	//
 	FWPMLAYERALEAUTHCONNECTV4 uint64
@@ -91,6 +84,30 @@ type Win32_PerfRawData_Counters_WFPClassify struct {
 
 	//
 	FWPMLAYERALEFLOWESTABLISHEDV6DISCARD uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4 uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6 uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPLOCALPORTV4 uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPLOCALPORTV6 uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4 uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6 uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4 uint64
+
+	//
+	FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6 uint64
 
 	//
 	FWPMLAYERALERESOURCEASSIGNMENTV4 uint64
@@ -171,7 +188,7 @@ type Win32_PerfRawData_Counters_WFPClassify struct {
 	FWPMLAYERINBOUNDMACFRAMENATIVEFAST uint64
 
 	//
-	FWPMLAYERINBOUNDRESERVED2 uint64
+	FWPMLAYERINBOUNDSSLTHROTTLING uint64
 
 	//
 	FWPMLAYERINBOUNDTRANSPORTFAST uint64
@@ -264,12 +281,6 @@ type Win32_PerfRawData_Counters_WFPClassify struct {
 	FWPMLAYEROUTBOUNDMACFRAMENATIVEFAST uint64
 
 	//
-	FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4 uint64
-
-	//
-	FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6 uint64
-
-	//
 	FWPMLAYEROUTBOUNDTRANSPORTFAST uint64
 
 	//
@@ -347,60 +358,6 @@ func NewWin32_PerfRawData_Counters_WFPClassifyEx6(hostName string,
 	newInstance = &Win32_PerfRawData_Counters_WFPClassify{
 		Win32_PerfRawData: tmp,
 	}
-	return
-}
-
-// SetFWPMLAYERALEACCEPTREDIRECTV4 sets the value of FWPMLAYERALEACCEPTREDIRECTV4 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEACCEPTREDIRECTV4(value uint64) (err error) {
-	return instance.SetProperty("FWPMLAYERALEACCEPTREDIRECTV4", (value))
-}
-
-// GetFWPMLAYERALEACCEPTREDIRECTV4 gets the value of FWPMLAYERALEACCEPTREDIRECTV4 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEACCEPTREDIRECTV4() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FWPMLAYERALEACCEPTREDIRECTV4")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetFWPMLAYERALEACCEPTREDIRECTV6 sets the value of FWPMLAYERALEACCEPTREDIRECTV6 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEACCEPTREDIRECTV6(value uint64) (err error) {
-	return instance.SetProperty("FWPMLAYERALEACCEPTREDIRECTV6", (value))
-}
-
-// GetFWPMLAYERALEACCEPTREDIRECTV6 gets the value of FWPMLAYERALEACCEPTREDIRECTV6 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEACCEPTREDIRECTV6() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FWPMLAYERALEACCEPTREDIRECTV6")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
@@ -979,6 +936,222 @@ func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEF
 // GetFWPMLAYERALEFLOWESTABLISHEDV6DISCARD gets the value of FWPMLAYERALEFLOWESTABLISHEDV6DISCARD for the instance
 func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEFLOWESTABLISHEDV6DISCARD() (value uint64, err error) {
 	retValue, err := instance.GetProperty("FWPMLAYERALEFLOWESTABLISHEDV6DISCARD")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4 sets the value of FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4 gets the value of FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV4")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6 sets the value of FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6 gets the value of FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALADDRESSV6")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPLOCALPORTV4 sets the value of FWPMLAYERALEPRECLASSIFYIPLOCALPORTV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALPORTV4(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALPORTV4", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPLOCALPORTV4 gets the value of FWPMLAYERALEPRECLASSIFYIPLOCALPORTV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALPORTV4() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALPORTV4")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPLOCALPORTV6 sets the value of FWPMLAYERALEPRECLASSIFYIPLOCALPORTV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALPORTV6(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALPORTV6", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPLOCALPORTV6 gets the value of FWPMLAYERALEPRECLASSIFYIPLOCALPORTV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPLOCALPORTV6() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPLOCALPORTV6")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4 sets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4 gets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV4")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6 sets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6 gets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEADDRESSV6")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4 sets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4 gets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV4")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6 sets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6", (value))
+}
+
+// GetFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6 gets the value of FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6 for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERALEPRECLASSIFYIPREMOTEPORTV6")
 	if err != nil {
 		return
 	}
@@ -1700,14 +1873,14 @@ func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERINBO
 	return
 }
 
-// SetFWPMLAYERINBOUNDRESERVED2 sets the value of FWPMLAYERINBOUNDRESERVED2 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERINBOUNDRESERVED2(value uint64) (err error) {
-	return instance.SetProperty("FWPMLAYERINBOUNDRESERVED2", (value))
+// SetFWPMLAYERINBOUNDSSLTHROTTLING sets the value of FWPMLAYERINBOUNDSSLTHROTTLING for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYERINBOUNDSSLTHROTTLING(value uint64) (err error) {
+	return instance.SetProperty("FWPMLAYERINBOUNDSSLTHROTTLING", (value))
 }
 
-// GetFWPMLAYERINBOUNDRESERVED2 gets the value of FWPMLAYERINBOUNDRESERVED2 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERINBOUNDRESERVED2() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FWPMLAYERINBOUNDRESERVED2")
+// GetFWPMLAYERINBOUNDSSLTHROTTLING gets the value of FWPMLAYERINBOUNDSSLTHROTTLING for the instance
+func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYERINBOUNDSSLTHROTTLING() (value uint64, err error) {
+	retValue, err := instance.GetProperty("FWPMLAYERINBOUNDSSLTHROTTLING")
 	if err != nil {
 		return
 	}
@@ -2518,60 +2691,6 @@ func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYEROUTB
 // GetFWPMLAYEROUTBOUNDMACFRAMENATIVEFAST gets the value of FWPMLAYEROUTBOUNDMACFRAMENATIVEFAST for the instance
 func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYEROUTBOUNDMACFRAMENATIVEFAST() (value uint64, err error) {
 	retValue, err := instance.GetProperty("FWPMLAYEROUTBOUNDMACFRAMENATIVEFAST")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4 sets the value of FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4(value uint64) (err error) {
-	return instance.SetProperty("FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4", (value))
-}
-
-// GetFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4 gets the value of FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV4")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6 sets the value of FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) SetPropertyFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6(value uint64) (err error) {
-	return instance.SetProperty("FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6", (value))
-}
-
-// GetFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6 gets the value of FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6 for the instance
-func (instance *Win32_PerfRawData_Counters_WFPClassify) GetPropertyFWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FWPMLAYEROUTBOUNDNETWORKCONNECTIONPOLICYV6")
 	if err != nil {
 		return
 	}

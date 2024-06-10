@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -22,9 +21,6 @@ type SoftwareLicensingService struct {
 	*cim.WmiInstance
 
 	//
-	AzureMetadataResponse uint32
-
-	//
 	ClientMachineID string
 
 	//
@@ -35,9 +31,6 @@ type SoftwareLicensingService struct {
 
 	//
 	DiscoveredKeyManagementServiceMachinePort uint32
-
-	//
-	EmitWindowsMeter uint32
 
 	//
 	IsKeyManagementServiceMachine uint32
@@ -118,18 +111,6 @@ type SoftwareLicensingService struct {
 	RequiredClientCount uint32
 
 	//
-	SubscriptionEdition string
-
-	//
-	SubscriptionExpiry string
-
-	//
-	SubscriptionStatus uint32
-
-	//
-	SubscriptionType uint32
-
-	//
 	TokenActivationAdditionalInfo string
 
 	//
@@ -180,33 +161,6 @@ func NewSoftwareLicensingServiceEx6(hostName string,
 	newInstance = &SoftwareLicensingService{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetAzureMetadataResponse sets the value of AzureMetadataResponse for the instance
-func (instance *SoftwareLicensingService) SetPropertyAzureMetadataResponse(value uint32) (err error) {
-	return instance.SetProperty("AzureMetadataResponse", (value))
-}
-
-// GetAzureMetadataResponse gets the value of AzureMetadataResponse for the instance
-func (instance *SoftwareLicensingService) GetPropertyAzureMetadataResponse() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AzureMetadataResponse")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
@@ -299,33 +253,6 @@ func (instance *SoftwareLicensingService) SetPropertyDiscoveredKeyManagementServ
 // GetDiscoveredKeyManagementServiceMachinePort gets the value of DiscoveredKeyManagementServiceMachinePort for the instance
 func (instance *SoftwareLicensingService) GetPropertyDiscoveredKeyManagementServiceMachinePort() (value uint32, err error) {
 	retValue, err := instance.GetProperty("DiscoveredKeyManagementServiceMachinePort")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetEmitWindowsMeter sets the value of EmitWindowsMeter for the instance
-func (instance *SoftwareLicensingService) SetPropertyEmitWindowsMeter(value uint32) (err error) {
-	return instance.SetProperty("EmitWindowsMeter", (value))
-}
-
-// GetEmitWindowsMeter gets the value of EmitWindowsMeter for the instance
-func (instance *SoftwareLicensingService) GetPropertyEmitWindowsMeter() (value uint32, err error) {
-	retValue, err := instance.GetProperty("EmitWindowsMeter")
 	if err != nil {
 		return
 	}
@@ -1028,114 +955,6 @@ func (instance *SoftwareLicensingService) SetPropertyRequiredClientCount(value u
 // GetRequiredClientCount gets the value of RequiredClientCount for the instance
 func (instance *SoftwareLicensingService) GetPropertyRequiredClientCount() (value uint32, err error) {
 	retValue, err := instance.GetProperty("RequiredClientCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetSubscriptionEdition sets the value of SubscriptionEdition for the instance
-func (instance *SoftwareLicensingService) SetPropertySubscriptionEdition(value string) (err error) {
-	return instance.SetProperty("SubscriptionEdition", (value))
-}
-
-// GetSubscriptionEdition gets the value of SubscriptionEdition for the instance
-func (instance *SoftwareLicensingService) GetPropertySubscriptionEdition() (value string, err error) {
-	retValue, err := instance.GetProperty("SubscriptionEdition")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetSubscriptionExpiry sets the value of SubscriptionExpiry for the instance
-func (instance *SoftwareLicensingService) SetPropertySubscriptionExpiry(value string) (err error) {
-	return instance.SetProperty("SubscriptionExpiry", (value))
-}
-
-// GetSubscriptionExpiry gets the value of SubscriptionExpiry for the instance
-func (instance *SoftwareLicensingService) GetPropertySubscriptionExpiry() (value string, err error) {
-	retValue, err := instance.GetProperty("SubscriptionExpiry")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetSubscriptionStatus sets the value of SubscriptionStatus for the instance
-func (instance *SoftwareLicensingService) SetPropertySubscriptionStatus(value uint32) (err error) {
-	return instance.SetProperty("SubscriptionStatus", (value))
-}
-
-// GetSubscriptionStatus gets the value of SubscriptionStatus for the instance
-func (instance *SoftwareLicensingService) GetPropertySubscriptionStatus() (value uint32, err error) {
-	retValue, err := instance.GetProperty("SubscriptionStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetSubscriptionType sets the value of SubscriptionType for the instance
-func (instance *SoftwareLicensingService) SetPropertySubscriptionType(value uint32) (err error) {
-	return instance.SetProperty("SubscriptionType", (value))
-}
-
-// GetSubscriptionType gets the value of SubscriptionType for the instance
-func (instance *SoftwareLicensingService) GetPropertySubscriptionType() (value uint32, err error) {
-	retValue, err := instance.GetProperty("SubscriptionType")
 	if err != nil {
 		return
 	}

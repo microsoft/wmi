@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -446,16 +445,14 @@ func (instance *MSCluster_NetworkInterface) GetPropertyState() (value uint32, er
 
 // <param name="ControlCode" type="int32 "></param>
 // <param name="InputBuffer" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 
 // <param name="OutputBuffer" type="uint8 []"></param>
 // <param name="OutputBufferSize" type="int32 "></param>
 func (instance *MSCluster_NetworkInterface) ExecuteNetworkInterfaceControl( /* IN */ ControlCode int32,
 	/* IN */ InputBuffer []uint8,
 	/* OUT */ OutputBuffer []uint8,
-	/* OUT */ OutputBufferSize int32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethod("ExecuteNetworkInterfaceControl", ControlCode, InputBuffer, Reason)
+	/* OUT */ OutputBufferSize int32) (err error) {
+	_, err = instance.InvokeMethod("ExecuteNetworkInterfaceControl", ControlCode, InputBuffer)
 	if err != nil {
 		return
 	}

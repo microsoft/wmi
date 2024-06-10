@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -46,4 +45,20 @@ func NewMsvm_SyntheticDisplayControllerEx6(hostName string,
 		CIM_DisplayController: tmp,
 	}
 	return
+}
+
+func (instance *Msvm_SyntheticDisplayController) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_SyntheticDisplayController) GetRelatedVideoHead() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VideoHead")
+}
+
+func (instance *Msvm_SyntheticDisplayController) GetRelatedSyntheticDisplayControllerSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SyntheticDisplayControllerSettingData")
+}
+
+func (instance *Msvm_SyntheticDisplayController) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePool")
 }

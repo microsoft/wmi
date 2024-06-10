@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -48,9 +47,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 	APICTPRAccessesPersec uint64
 
 	//
-	BusLockAcquisitionsPersec uint64
-
-	//
 	ControlRegisterAccessesCost uint64
 
 	//
@@ -67,12 +63,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 
 	//
 	ControlRegisterAccessesPersec uint64
-
-	//
-	CPPCRequestContextSwitchesPersec uint64
-
-	//
-	CPUGroupHypercallsPersec uint64
 
 	//
 	CPUIDInstructionsCost uint64
@@ -117,12 +107,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 	DebugRegisterAccessesPersec uint64
 
 	//
-	DepositHypercallsPersec uint64
-
-	//
-	DeviceDomainHypercallsPersec uint64
-
-	//
 	EmulatedInstructionsCost uint64
 
 	//
@@ -139,9 +123,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 
 	//
 	EmulatedInstructionsPersec uint64
-
-	//
-	EventLogHypercallsPersec uint64
 
 	//
 	ExtendedHypercallInterceptMessagesPersec uint64
@@ -166,15 +147,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 
 	//
 	FlushPhysicalAddressSpaceHypercallsPersec uint64
-
-	//
-	GIFInstructionEmulationCost uint64
-
-	//
-	GIFInstructionEmulationCost_Base uint64
-
-	//
-	GIFInstructionEmulationInterceptsPersec uint64
 
 	//
 	GlobalGVARangeFlushesPersec uint64
@@ -298,9 +270,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 
 	//
 	IOInterceptMessagesPersec uint64
-
-	//
-	IOMMUHypercallsPersec uint64
 
 	//
 	LargePageTLBFillsPersec uint64
@@ -516,12 +485,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 	PendingInterruptsPersec uint64
 
 	//
-	PercentGuestRelativeUtilization uint64
-
-	//
-	PercentGuestRelativeUtilization_Base uint64
-
-	//
 	PercentGuestRunTime uint64
 
 	//
@@ -540,40 +503,10 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 	PercentRemoteRunTime_Base uint64
 
 	//
-	PercentTotalCoreRunTime uint64
-
-	//
-	PercentTotalCoreRunTime_Base uint64
-
-	//
 	PercentTotalRunTime uint64
 
 	//
 	PercentTotalRunTime_Base uint64
-
-	//
-	PercentVTL1RunTime uint64
-
-	//
-	PercentVTL1RunTime_Base uint64
-
-	//
-	PercentVTL2RunTime uint64
-
-	//
-	PercentVTL2RunTime_Base uint64
-
-	//
-	PerformanceMonitoringInterruptsPersec uint64
-
-	//
-	PerformanceMonitoringIPTMSRAccessesPersec uint64
-
-	//
-	PerformanceMonitoringLBRMSRAccessesPersec uint64
-
-	//
-	PerformanceMonitoringvPMUMSRAccessesPersec uint64
 
 	//
 	PostedInterruptNotificationsPersec uint64
@@ -582,25 +515,10 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 	PostedInterruptScansPersec uint64
 
 	//
-	RDPMCInstructionsCost uint64
-
-	//
-	RDPMCInstructionsCost_Base uint64
-
-	//
-	RDPMCInstructionsPersec uint64
-
-	//
 	ReflectedGuestPageFaultsPersec uint64
 
 	//
-	SchedulingPriority uint64
-
-	//
 	SmallPageTLBFillsPersec uint64
-
-	//
-	SVMHypercallsPersec uint64
 
 	//
 	SyntheticInterruptHypercallsPersec uint64
@@ -651,15 +569,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 	VMCLEARInstructionEmulationCost_Base uint64
 
 	//
-	VMLOADEmulationInterceptsPersec uint64
-
-	//
-	VMLOADInstructionEmulationCost uint64
-
-	//
-	VMLOADInstructionEmulationCost_Base uint64
-
-	//
 	VMPTRLDEmulationInterceptsPersec uint64
 
 	//
@@ -687,15 +596,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 	VMREADInstructionEmulationCost_Base uint64
 
 	//
-	VMSAVEEmulationInterceptsPersec uint64
-
-	//
-	VMSAVEInstructionEmulationCost uint64
-
-	//
-	VMSAVEInstructionEmulationCost_Base uint64
-
-	//
 	VMWRITEEmulationInterceptsPersec uint64
 
 	//
@@ -721,27 +621,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor struct {
 
 	//
 	VMXONInstructionEmulationCost_Base uint64
-
-	//
-	VSMHypercallsPersec uint64
-
-	//
-	VTL1AverageRunTime uint64
-
-	//
-	VTL1AverageRunTime_Base uint64
-
-	//
-	VTL1DispatchesPersec uint64
-
-	//
-	VTL2AverageRunTime uint64
-
-	//
-	VTL2AverageRunTime_Base uint64
-
-	//
-	VTL2DispatchesPersec uint64
 }
 
 func NewWin32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessorEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor, err error) {
@@ -1016,33 +895,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetBusLockAcquisitionsPersec sets the value of BusLockAcquisitionsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyBusLockAcquisitionsPersec(value uint64) (err error) {
-	return instance.SetProperty("BusLockAcquisitionsPersec", (value))
-}
-
-// GetBusLockAcquisitionsPersec gets the value of BusLockAcquisitionsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyBusLockAcquisitionsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("BusLockAcquisitionsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetControlRegisterAccessesCost sets the value of ControlRegisterAccessesCost for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyControlRegisterAccessesCost(value uint64) (err error) {
 	return instance.SetProperty("ControlRegisterAccessesCost", (value))
@@ -1186,60 +1038,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetP
 // GetControlRegisterAccessesPersec gets the value of ControlRegisterAccessesPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyControlRegisterAccessesPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("ControlRegisterAccessesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCPPCRequestContextSwitchesPersec sets the value of CPPCRequestContextSwitchesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyCPPCRequestContextSwitchesPersec(value uint64) (err error) {
-	return instance.SetProperty("CPPCRequestContextSwitchesPersec", (value))
-}
-
-// GetCPPCRequestContextSwitchesPersec gets the value of CPPCRequestContextSwitchesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyCPPCRequestContextSwitchesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CPPCRequestContextSwitchesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCPUGroupHypercallsPersec sets the value of CPUGroupHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyCPUGroupHypercallsPersec(value uint64) (err error) {
-	return instance.SetProperty("CPUGroupHypercallsPersec", (value))
-}
-
-// GetCPUGroupHypercallsPersec gets the value of CPUGroupHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyCPUGroupHypercallsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CPUGroupHypercallsPersec")
 	if err != nil {
 		return
 	}
@@ -1637,60 +1435,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetDepositHypercallsPersec sets the value of DepositHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyDepositHypercallsPersec(value uint64) (err error) {
-	return instance.SetProperty("DepositHypercallsPersec", (value))
-}
-
-// GetDepositHypercallsPersec gets the value of DepositHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyDepositHypercallsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("DepositHypercallsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetDeviceDomainHypercallsPersec sets the value of DeviceDomainHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyDeviceDomainHypercallsPersec(value uint64) (err error) {
-	return instance.SetProperty("DeviceDomainHypercallsPersec", (value))
-}
-
-// GetDeviceDomainHypercallsPersec gets the value of DeviceDomainHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyDeviceDomainHypercallsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("DeviceDomainHypercallsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetEmulatedInstructionsCost sets the value of EmulatedInstructionsCost for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyEmulatedInstructionsCost(value uint64) (err error) {
 	return instance.SetProperty("EmulatedInstructionsCost", (value))
@@ -1834,33 +1578,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetP
 // GetEmulatedInstructionsPersec gets the value of EmulatedInstructionsPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyEmulatedInstructionsPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("EmulatedInstructionsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetEventLogHypercallsPersec sets the value of EventLogHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyEventLogHypercallsPersec(value uint64) (err error) {
-	return instance.SetProperty("EventLogHypercallsPersec", (value))
-}
-
-// GetEventLogHypercallsPersec gets the value of EventLogHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyEventLogHypercallsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("EventLogHypercallsPersec")
 	if err != nil {
 		return
 	}
@@ -2077,87 +1794,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetP
 // GetFlushPhysicalAddressSpaceHypercallsPersec gets the value of FlushPhysicalAddressSpaceHypercallsPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyFlushPhysicalAddressSpaceHypercallsPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("FlushPhysicalAddressSpaceHypercallsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetGIFInstructionEmulationCost sets the value of GIFInstructionEmulationCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyGIFInstructionEmulationCost(value uint64) (err error) {
-	return instance.SetProperty("GIFInstructionEmulationCost", (value))
-}
-
-// GetGIFInstructionEmulationCost gets the value of GIFInstructionEmulationCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyGIFInstructionEmulationCost() (value uint64, err error) {
-	retValue, err := instance.GetProperty("GIFInstructionEmulationCost")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetGIFInstructionEmulationCost_Base sets the value of GIFInstructionEmulationCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyGIFInstructionEmulationCost_Base(value uint64) (err error) {
-	return instance.SetProperty("GIFInstructionEmulationCost_Base", (value))
-}
-
-// GetGIFInstructionEmulationCost_Base gets the value of GIFInstructionEmulationCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyGIFInstructionEmulationCost_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("GIFInstructionEmulationCost_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetGIFInstructionEmulationInterceptsPersec sets the value of GIFInstructionEmulationInterceptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyGIFInstructionEmulationInterceptsPersec(value uint64) (err error) {
-	return instance.SetProperty("GIFInstructionEmulationInterceptsPersec", (value))
-}
-
-// GetGIFInstructionEmulationInterceptsPersec gets the value of GIFInstructionEmulationInterceptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyGIFInstructionEmulationInterceptsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("GIFInstructionEmulationInterceptsPersec")
 	if err != nil {
 		return
 	}
@@ -3265,33 +2901,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetP
 // GetIOInterceptMessagesPersec gets the value of IOInterceptMessagesPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyIOInterceptMessagesPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("IOInterceptMessagesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetIOMMUHypercallsPersec sets the value of IOMMUHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyIOMMUHypercallsPersec(value uint64) (err error) {
-	return instance.SetProperty("IOMMUHypercallsPersec", (value))
-}
-
-// GetIOMMUHypercallsPersec gets the value of IOMMUHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyIOMMUHypercallsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("IOMMUHypercallsPersec")
 	if err != nil {
 		return
 	}
@@ -5228,60 +4837,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetPercentGuestRelativeUtilization sets the value of PercentGuestRelativeUtilization for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentGuestRelativeUtilization(value uint64) (err error) {
-	return instance.SetProperty("PercentGuestRelativeUtilization", (value))
-}
-
-// GetPercentGuestRelativeUtilization gets the value of PercentGuestRelativeUtilization for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentGuestRelativeUtilization() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentGuestRelativeUtilization")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPercentGuestRelativeUtilization_Base sets the value of PercentGuestRelativeUtilization_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentGuestRelativeUtilization_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentGuestRelativeUtilization_Base", (value))
-}
-
-// GetPercentGuestRelativeUtilization_Base gets the value of PercentGuestRelativeUtilization_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentGuestRelativeUtilization_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentGuestRelativeUtilization_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetPercentGuestRunTime sets the value of PercentGuestRunTime for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentGuestRunTime(value uint64) (err error) {
 	return instance.SetProperty("PercentGuestRunTime", (value))
@@ -5444,60 +4999,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetPercentTotalCoreRunTime sets the value of PercentTotalCoreRunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentTotalCoreRunTime(value uint64) (err error) {
-	return instance.SetProperty("PercentTotalCoreRunTime", (value))
-}
-
-// GetPercentTotalCoreRunTime gets the value of PercentTotalCoreRunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentTotalCoreRunTime() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentTotalCoreRunTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPercentTotalCoreRunTime_Base sets the value of PercentTotalCoreRunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentTotalCoreRunTime_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentTotalCoreRunTime_Base", (value))
-}
-
-// GetPercentTotalCoreRunTime_Base gets the value of PercentTotalCoreRunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentTotalCoreRunTime_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentTotalCoreRunTime_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetPercentTotalRunTime sets the value of PercentTotalRunTime for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentTotalRunTime(value uint64) (err error) {
 	return instance.SetProperty("PercentTotalRunTime", (value))
@@ -5533,222 +5034,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetP
 // GetPercentTotalRunTime_Base gets the value of PercentTotalRunTime_Base for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentTotalRunTime_Base() (value uint64, err error) {
 	retValue, err := instance.GetProperty("PercentTotalRunTime_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPercentVTL1RunTime sets the value of PercentVTL1RunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentVTL1RunTime(value uint64) (err error) {
-	return instance.SetProperty("PercentVTL1RunTime", (value))
-}
-
-// GetPercentVTL1RunTime gets the value of PercentVTL1RunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentVTL1RunTime() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentVTL1RunTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPercentVTL1RunTime_Base sets the value of PercentVTL1RunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentVTL1RunTime_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentVTL1RunTime_Base", (value))
-}
-
-// GetPercentVTL1RunTime_Base gets the value of PercentVTL1RunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentVTL1RunTime_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentVTL1RunTime_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPercentVTL2RunTime sets the value of PercentVTL2RunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentVTL2RunTime(value uint64) (err error) {
-	return instance.SetProperty("PercentVTL2RunTime", (value))
-}
-
-// GetPercentVTL2RunTime gets the value of PercentVTL2RunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentVTL2RunTime() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentVTL2RunTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPercentVTL2RunTime_Base sets the value of PercentVTL2RunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPercentVTL2RunTime_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentVTL2RunTime_Base", (value))
-}
-
-// GetPercentVTL2RunTime_Base gets the value of PercentVTL2RunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPercentVTL2RunTime_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentVTL2RunTime_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPerformanceMonitoringInterruptsPersec sets the value of PerformanceMonitoringInterruptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPerformanceMonitoringInterruptsPersec(value uint64) (err error) {
-	return instance.SetProperty("PerformanceMonitoringInterruptsPersec", (value))
-}
-
-// GetPerformanceMonitoringInterruptsPersec gets the value of PerformanceMonitoringInterruptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPerformanceMonitoringInterruptsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PerformanceMonitoringInterruptsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPerformanceMonitoringIPTMSRAccessesPersec sets the value of PerformanceMonitoringIPTMSRAccessesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPerformanceMonitoringIPTMSRAccessesPersec(value uint64) (err error) {
-	return instance.SetProperty("PerformanceMonitoringIPTMSRAccessesPersec", (value))
-}
-
-// GetPerformanceMonitoringIPTMSRAccessesPersec gets the value of PerformanceMonitoringIPTMSRAccessesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPerformanceMonitoringIPTMSRAccessesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PerformanceMonitoringIPTMSRAccessesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPerformanceMonitoringLBRMSRAccessesPersec sets the value of PerformanceMonitoringLBRMSRAccessesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPerformanceMonitoringLBRMSRAccessesPersec(value uint64) (err error) {
-	return instance.SetProperty("PerformanceMonitoringLBRMSRAccessesPersec", (value))
-}
-
-// GetPerformanceMonitoringLBRMSRAccessesPersec gets the value of PerformanceMonitoringLBRMSRAccessesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPerformanceMonitoringLBRMSRAccessesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PerformanceMonitoringLBRMSRAccessesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPerformanceMonitoringvPMUMSRAccessesPersec sets the value of PerformanceMonitoringvPMUMSRAccessesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyPerformanceMonitoringvPMUMSRAccessesPersec(value uint64) (err error) {
-	return instance.SetProperty("PerformanceMonitoringvPMUMSRAccessesPersec", (value))
-}
-
-// GetPerformanceMonitoringvPMUMSRAccessesPersec gets the value of PerformanceMonitoringvPMUMSRAccessesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyPerformanceMonitoringvPMUMSRAccessesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PerformanceMonitoringvPMUMSRAccessesPersec")
 	if err != nil {
 		return
 	}
@@ -5822,87 +5107,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetRDPMCInstructionsCost sets the value of RDPMCInstructionsCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyRDPMCInstructionsCost(value uint64) (err error) {
-	return instance.SetProperty("RDPMCInstructionsCost", (value))
-}
-
-// GetRDPMCInstructionsCost gets the value of RDPMCInstructionsCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyRDPMCInstructionsCost() (value uint64, err error) {
-	retValue, err := instance.GetProperty("RDPMCInstructionsCost")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetRDPMCInstructionsCost_Base sets the value of RDPMCInstructionsCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyRDPMCInstructionsCost_Base(value uint64) (err error) {
-	return instance.SetProperty("RDPMCInstructionsCost_Base", (value))
-}
-
-// GetRDPMCInstructionsCost_Base gets the value of RDPMCInstructionsCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyRDPMCInstructionsCost_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("RDPMCInstructionsCost_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetRDPMCInstructionsPersec sets the value of RDPMCInstructionsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyRDPMCInstructionsPersec(value uint64) (err error) {
-	return instance.SetProperty("RDPMCInstructionsPersec", (value))
-}
-
-// GetRDPMCInstructionsPersec gets the value of RDPMCInstructionsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyRDPMCInstructionsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("RDPMCInstructionsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetReflectedGuestPageFaultsPersec sets the value of ReflectedGuestPageFaultsPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyReflectedGuestPageFaultsPersec(value uint64) (err error) {
 	return instance.SetProperty("ReflectedGuestPageFaultsPersec", (value))
@@ -5930,33 +5134,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetSchedulingPriority sets the value of SchedulingPriority for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertySchedulingPriority(value uint64) (err error) {
-	return instance.SetProperty("SchedulingPriority", (value))
-}
-
-// GetSchedulingPriority gets the value of SchedulingPriority for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertySchedulingPriority() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SchedulingPriority")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetSmallPageTLBFillsPersec sets the value of SmallPageTLBFillsPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertySmallPageTLBFillsPersec(value uint64) (err error) {
 	return instance.SetProperty("SmallPageTLBFillsPersec", (value))
@@ -5965,33 +5142,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetP
 // GetSmallPageTLBFillsPersec gets the value of SmallPageTLBFillsPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertySmallPageTLBFillsPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("SmallPageTLBFillsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetSVMHypercallsPersec sets the value of SVMHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertySVMHypercallsPersec(value uint64) (err error) {
-	return instance.SetProperty("SVMHypercallsPersec", (value))
-}
-
-// GetSVMHypercallsPersec gets the value of SVMHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertySVMHypercallsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SVMHypercallsPersec")
 	if err != nil {
 		return
 	}
@@ -6443,87 +5593,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetVMLOADEmulationInterceptsPersec sets the value of VMLOADEmulationInterceptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMLOADEmulationInterceptsPersec(value uint64) (err error) {
-	return instance.SetProperty("VMLOADEmulationInterceptsPersec", (value))
-}
-
-// GetVMLOADEmulationInterceptsPersec gets the value of VMLOADEmulationInterceptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVMLOADEmulationInterceptsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VMLOADEmulationInterceptsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVMLOADInstructionEmulationCost sets the value of VMLOADInstructionEmulationCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMLOADInstructionEmulationCost(value uint64) (err error) {
-	return instance.SetProperty("VMLOADInstructionEmulationCost", (value))
-}
-
-// GetVMLOADInstructionEmulationCost gets the value of VMLOADInstructionEmulationCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVMLOADInstructionEmulationCost() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VMLOADInstructionEmulationCost")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVMLOADInstructionEmulationCost_Base sets the value of VMLOADInstructionEmulationCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMLOADInstructionEmulationCost_Base(value uint64) (err error) {
-	return instance.SetProperty("VMLOADInstructionEmulationCost_Base", (value))
-}
-
-// GetVMLOADInstructionEmulationCost_Base gets the value of VMLOADInstructionEmulationCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVMLOADInstructionEmulationCost_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VMLOADInstructionEmulationCost_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetVMPTRLDEmulationInterceptsPersec sets the value of VMPTRLDEmulationInterceptsPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMPTRLDEmulationInterceptsPersec(value uint64) (err error) {
 	return instance.SetProperty("VMPTRLDEmulationInterceptsPersec", (value))
@@ -6767,87 +5836,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetP
 	return
 }
 
-// SetVMSAVEEmulationInterceptsPersec sets the value of VMSAVEEmulationInterceptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMSAVEEmulationInterceptsPersec(value uint64) (err error) {
-	return instance.SetProperty("VMSAVEEmulationInterceptsPersec", (value))
-}
-
-// GetVMSAVEEmulationInterceptsPersec gets the value of VMSAVEEmulationInterceptsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVMSAVEEmulationInterceptsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VMSAVEEmulationInterceptsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVMSAVEInstructionEmulationCost sets the value of VMSAVEInstructionEmulationCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMSAVEInstructionEmulationCost(value uint64) (err error) {
-	return instance.SetProperty("VMSAVEInstructionEmulationCost", (value))
-}
-
-// GetVMSAVEInstructionEmulationCost gets the value of VMSAVEInstructionEmulationCost for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVMSAVEInstructionEmulationCost() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VMSAVEInstructionEmulationCost")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVMSAVEInstructionEmulationCost_Base sets the value of VMSAVEInstructionEmulationCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMSAVEInstructionEmulationCost_Base(value uint64) (err error) {
-	return instance.SetProperty("VMSAVEInstructionEmulationCost_Base", (value))
-}
-
-// GetVMSAVEInstructionEmulationCost_Base gets the value of VMSAVEInstructionEmulationCost_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVMSAVEInstructionEmulationCost_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VMSAVEInstructionEmulationCost_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetVMWRITEEmulationInterceptsPersec sets the value of VMWRITEEmulationInterceptsPersec for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVMWRITEEmulationInterceptsPersec(value uint64) (err error) {
 	return instance.SetProperty("VMWRITEEmulationInterceptsPersec", (value))
@@ -7072,195 +6060,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetP
 // GetVMXONInstructionEmulationCost_Base gets the value of VMXONInstructionEmulationCost_Base for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVMXONInstructionEmulationCost_Base() (value uint64, err error) {
 	retValue, err := instance.GetProperty("VMXONInstructionEmulationCost_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVSMHypercallsPersec sets the value of VSMHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVSMHypercallsPersec(value uint64) (err error) {
-	return instance.SetProperty("VSMHypercallsPersec", (value))
-}
-
-// GetVSMHypercallsPersec gets the value of VSMHypercallsPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVSMHypercallsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VSMHypercallsPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVTL1AverageRunTime sets the value of VTL1AverageRunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVTL1AverageRunTime(value uint64) (err error) {
-	return instance.SetProperty("VTL1AverageRunTime", (value))
-}
-
-// GetVTL1AverageRunTime gets the value of VTL1AverageRunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVTL1AverageRunTime() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VTL1AverageRunTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVTL1AverageRunTime_Base sets the value of VTL1AverageRunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVTL1AverageRunTime_Base(value uint64) (err error) {
-	return instance.SetProperty("VTL1AverageRunTime_Base", (value))
-}
-
-// GetVTL1AverageRunTime_Base gets the value of VTL1AverageRunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVTL1AverageRunTime_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VTL1AverageRunTime_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVTL1DispatchesPersec sets the value of VTL1DispatchesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVTL1DispatchesPersec(value uint64) (err error) {
-	return instance.SetProperty("VTL1DispatchesPersec", (value))
-}
-
-// GetVTL1DispatchesPersec gets the value of VTL1DispatchesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVTL1DispatchesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VTL1DispatchesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVTL2AverageRunTime sets the value of VTL2AverageRunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVTL2AverageRunTime(value uint64) (err error) {
-	return instance.SetProperty("VTL2AverageRunTime", (value))
-}
-
-// GetVTL2AverageRunTime gets the value of VTL2AverageRunTime for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVTL2AverageRunTime() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VTL2AverageRunTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVTL2AverageRunTime_Base sets the value of VTL2AverageRunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVTL2AverageRunTime_Base(value uint64) (err error) {
-	return instance.SetProperty("VTL2AverageRunTime_Base", (value))
-}
-
-// GetVTL2AverageRunTime_Base gets the value of VTL2AverageRunTime_Base for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVTL2AverageRunTime_Base() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VTL2AverageRunTime_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVTL2DispatchesPersec sets the value of VTL2DispatchesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) SetPropertyVTL2DispatchesPersec(value uint64) (err error) {
-	return instance.SetProperty("VTL2DispatchesPersec", (value))
-}
-
-// GetVTL2DispatchesPersec gets the value of VTL2DispatchesPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorVirtualProcessor) GetPropertyVTL2DispatchesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VTL2DispatchesPersec")
 	if err != nil {
 		return
 	}

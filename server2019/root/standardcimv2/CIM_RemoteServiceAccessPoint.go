@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -20,19 +19,19 @@ import (
 type CIM_RemoteServiceAccessPoint struct {
 	*CIM_ServiceAccessPoint
 
-	//
-	AccessContext uint16
+	// 733
+	AccessContext RemoteServiceAccessPoint_AccessContext
 
-	//
+	// 707
 	AccessInfo string
 
-	//
-	InfoFormat uint16
+	// 708
+	InfoFormat RemoteServiceAccessPoint_InfoFormat
 
-	//
+	// 743
 	OtherAccessContext string
 
-	//
+	// 732
 	OtherInfoFormatDescription string
 }
 
@@ -66,12 +65,12 @@ func NewCIM_RemoteServiceAccessPointEx6(hostName string,
 }
 
 // SetAccessContext sets the value of AccessContext for the instance
-func (instance *CIM_RemoteServiceAccessPoint) SetPropertyAccessContext(value uint16) (err error) {
+func (instance *CIM_RemoteServiceAccessPoint) SetPropertyAccessContext(value RemoteServiceAccessPoint_AccessContext) (err error) {
 	return instance.SetProperty("AccessContext", (value))
 }
 
 // GetAccessContext gets the value of AccessContext for the instance
-func (instance *CIM_RemoteServiceAccessPoint) GetPropertyAccessContext() (value uint16, err error) {
+func (instance *CIM_RemoteServiceAccessPoint) GetPropertyAccessContext() (value RemoteServiceAccessPoint_AccessContext, err error) {
 	retValue, err := instance.GetProperty("AccessContext")
 	if err != nil {
 		return
@@ -81,13 +80,13 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyAccessContext() (value 
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = RemoteServiceAccessPoint_AccessContext(valuetmp)
 
 	return
 }
@@ -120,12 +119,12 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyAccessInfo() (value str
 }
 
 // SetInfoFormat sets the value of InfoFormat for the instance
-func (instance *CIM_RemoteServiceAccessPoint) SetPropertyInfoFormat(value uint16) (err error) {
+func (instance *CIM_RemoteServiceAccessPoint) SetPropertyInfoFormat(value RemoteServiceAccessPoint_InfoFormat) (err error) {
 	return instance.SetProperty("InfoFormat", (value))
 }
 
 // GetInfoFormat gets the value of InfoFormat for the instance
-func (instance *CIM_RemoteServiceAccessPoint) GetPropertyInfoFormat() (value uint16, err error) {
+func (instance *CIM_RemoteServiceAccessPoint) GetPropertyInfoFormat() (value RemoteServiceAccessPoint_InfoFormat, err error) {
 	retValue, err := instance.GetProperty("InfoFormat")
 	if err != nil {
 		return
@@ -135,13 +134,13 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyInfoFormat() (value uin
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = RemoteServiceAccessPoint_InfoFormat(valuetmp)
 
 	return
 }

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.HyperVCluster.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.HyperVCluster.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -43,12 +42,6 @@ type Msvm_VirtualSystemManagementServiceSettingData struct {
 
 	//
 	HypervisorRootSchedulerEnabled bool
-
-	//
-	HypervisorSnpStatus uint16
-
-	//
-	HypervisorTdxStatus uint16
 
 	//
 	MaximumMacAddress string
@@ -317,60 +310,6 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyHyper
 	return
 }
 
-// SetHypervisorSnpStatus sets the value of HypervisorSnpStatus for the instance
-func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyHypervisorSnpStatus(value uint16) (err error) {
-	return instance.SetProperty("HypervisorSnpStatus", (value))
-}
-
-// GetHypervisorSnpStatus gets the value of HypervisorSnpStatus for the instance
-func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyHypervisorSnpStatus() (value uint16, err error) {
-	retValue, err := instance.GetProperty("HypervisorSnpStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetHypervisorTdxStatus sets the value of HypervisorTdxStatus for the instance
-func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyHypervisorTdxStatus(value uint16) (err error) {
-	return instance.SetProperty("HypervisorTdxStatus", (value))
-}
-
-// GetHypervisorTdxStatus gets the value of HypervisorTdxStatus for the instance
-func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyHypervisorTdxStatus() (value uint16, err error) {
-	retValue, err := instance.GetProperty("HypervisorTdxStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
 // SetMaximumMacAddress sets the value of MaximumMacAddress for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyMaximumMacAddress(value string) (err error) {
 	return instance.SetProperty("MaximumMacAddress", (value))
@@ -558,7 +497,4 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyPrima
 	value = string(valuetmp)
 
 	return
-}
-func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetRelatedVirtualSystemManagementService() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualSystemManagementService")
 }

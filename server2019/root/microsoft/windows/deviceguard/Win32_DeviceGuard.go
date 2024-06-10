@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeviceGuard
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.DeviceGuard
+//////////////////////////////////////////////
 package deviceguard
 
 import (
@@ -34,16 +33,10 @@ type Win32_DeviceGuard struct {
 	RequiredSecurityProperties []uint32
 
 	//
-	SecurityFeaturesEnabled []uint32
-
-	//
 	SecurityServicesConfigured []uint32
 
 	//
 	SecurityServicesRunning []uint32
-
-	//
-	SmmIsolationLevel uint8
 
 	//
 	UsermodeCodeIntegrityPolicyEnforcementStatus uint32
@@ -53,12 +46,6 @@ type Win32_DeviceGuard struct {
 
 	//
 	VirtualizationBasedSecurityStatus uint32
-
-	//
-	VirtualMachineIsolation bool
-
-	//
-	VirtualMachineIsolationProperties []uint32
 }
 
 func NewWin32_DeviceGuardEx1(instance *cim.WmiInstance) (newInstance *Win32_DeviceGuard, err error) {
@@ -200,34 +187,6 @@ func (instance *Win32_DeviceGuard) GetPropertyRequiredSecurityProperties() (valu
 	return
 }
 
-// SetSecurityFeaturesEnabled sets the value of SecurityFeaturesEnabled for the instance
-func (instance *Win32_DeviceGuard) SetPropertySecurityFeaturesEnabled(value []uint32) (err error) {
-	return instance.SetProperty("SecurityFeaturesEnabled", (value))
-}
-
-// GetSecurityFeaturesEnabled gets the value of SecurityFeaturesEnabled for the instance
-func (instance *Win32_DeviceGuard) GetPropertySecurityFeaturesEnabled() (value []uint32, err error) {
-	retValue, err := instance.GetProperty("SecurityFeaturesEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint32(valuetmp))
-	}
-
-	return
-}
-
 // SetSecurityServicesConfigured sets the value of SecurityServicesConfigured for the instance
 func (instance *Win32_DeviceGuard) SetPropertySecurityServicesConfigured(value []uint32) (err error) {
 	return instance.SetProperty("SecurityServicesConfigured", (value))
@@ -280,33 +239,6 @@ func (instance *Win32_DeviceGuard) GetPropertySecurityServicesRunning() (value [
 		}
 		value = append(value, uint32(valuetmp))
 	}
-
-	return
-}
-
-// SetSmmIsolationLevel sets the value of SmmIsolationLevel for the instance
-func (instance *Win32_DeviceGuard) SetPropertySmmIsolationLevel(value uint8) (err error) {
-	return instance.SetProperty("SmmIsolationLevel", (value))
-}
-
-// GetSmmIsolationLevel gets the value of SmmIsolationLevel for the instance
-func (instance *Win32_DeviceGuard) GetPropertySmmIsolationLevel() (value uint8, err error) {
-	retValue, err := instance.GetProperty("SmmIsolationLevel")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
 
 	return
 }
@@ -388,61 +320,6 @@ func (instance *Win32_DeviceGuard) GetPropertyVirtualizationBasedSecurityStatus(
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetVirtualMachineIsolation sets the value of VirtualMachineIsolation for the instance
-func (instance *Win32_DeviceGuard) SetPropertyVirtualMachineIsolation(value bool) (err error) {
-	return instance.SetProperty("VirtualMachineIsolation", (value))
-}
-
-// GetVirtualMachineIsolation gets the value of VirtualMachineIsolation for the instance
-func (instance *Win32_DeviceGuard) GetPropertyVirtualMachineIsolation() (value bool, err error) {
-	retValue, err := instance.GetProperty("VirtualMachineIsolation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetVirtualMachineIsolationProperties sets the value of VirtualMachineIsolationProperties for the instance
-func (instance *Win32_DeviceGuard) SetPropertyVirtualMachineIsolationProperties(value []uint32) (err error) {
-	return instance.SetProperty("VirtualMachineIsolationProperties", (value))
-}
-
-// GetVirtualMachineIsolationProperties gets the value of VirtualMachineIsolationProperties for the instance
-func (instance *Win32_DeviceGuard) GetPropertyVirtualMachineIsolationProperties() (value []uint32, err error) {
-	retValue, err := instance.GetProperty("VirtualMachineIsolationProperties")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint32(valuetmp))
-	}
 
 	return
 }

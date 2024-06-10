@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -22,12 +21,6 @@ type Win32_PerfRawData_Counters_StorageSpacesWriteCache struct {
 
 	//
 	CacheAdvances uint32
-
-	//
-	CacheCheckpointLatencyms uint32
-
-	//
-	CacheCheckpointLatencyms_Base uint32
 
 	//
 	CacheCheckpoints uint32
@@ -64,12 +57,6 @@ type Win32_PerfRawData_Counters_StorageSpacesWriteCache struct {
 
 	//
 	CacheUsedPercent_Base uint64
-
-	//
-	DestageReadFailureCount uint32
-
-	//
-	DestageWriteFailureCount uint32
 
 	//
 	EvictCacheBytesPersec uint64
@@ -109,12 +96,6 @@ type Win32_PerfRawData_Counters_StorageSpacesWriteCache struct {
 
 	//
 	ReadCachePercent_Base uint64
-
-	//
-	VdtCheckpointLatencyms uint32
-
-	//
-	VdtCheckpointLatencyms_Base uint32
 
 	//
 	WriteBypassBytesPersec uint64
@@ -199,60 +180,6 @@ func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) SetPropertyC
 // GetCacheAdvances gets the value of CacheAdvances for the instance
 func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyCacheAdvances() (value uint32, err error) {
 	retValue, err := instance.GetProperty("CacheAdvances")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetCacheCheckpointLatencyms sets the value of CacheCheckpointLatencyms for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) SetPropertyCacheCheckpointLatencyms(value uint32) (err error) {
-	return instance.SetProperty("CacheCheckpointLatencyms", (value))
-}
-
-// GetCacheCheckpointLatencyms gets the value of CacheCheckpointLatencyms for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyCacheCheckpointLatencyms() (value uint32, err error) {
-	retValue, err := instance.GetProperty("CacheCheckpointLatencyms")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetCacheCheckpointLatencyms_Base sets the value of CacheCheckpointLatencyms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) SetPropertyCacheCheckpointLatencyms_Base(value uint32) (err error) {
-	return instance.SetProperty("CacheCheckpointLatencyms_Base", (value))
-}
-
-// GetCacheCheckpointLatencyms_Base gets the value of CacheCheckpointLatencyms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyCacheCheckpointLatencyms_Base() (value uint32, err error) {
-	retValue, err := instance.GetProperty("CacheCheckpointLatencyms_Base")
 	if err != nil {
 		return
 	}
@@ -592,60 +519,6 @@ func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyC
 	}
 
 	value = uint64(valuetmp)
-
-	return
-}
-
-// SetDestageReadFailureCount sets the value of DestageReadFailureCount for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) SetPropertyDestageReadFailureCount(value uint32) (err error) {
-	return instance.SetProperty("DestageReadFailureCount", (value))
-}
-
-// GetDestageReadFailureCount gets the value of DestageReadFailureCount for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyDestageReadFailureCount() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DestageReadFailureCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetDestageWriteFailureCount sets the value of DestageWriteFailureCount for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) SetPropertyDestageWriteFailureCount(value uint32) (err error) {
-	return instance.SetProperty("DestageWriteFailureCount", (value))
-}
-
-// GetDestageWriteFailureCount gets the value of DestageWriteFailureCount for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyDestageWriteFailureCount() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DestageWriteFailureCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
 
 	return
 }
@@ -997,60 +870,6 @@ func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyR
 	}
 
 	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVdtCheckpointLatencyms sets the value of VdtCheckpointLatencyms for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) SetPropertyVdtCheckpointLatencyms(value uint32) (err error) {
-	return instance.SetProperty("VdtCheckpointLatencyms", (value))
-}
-
-// GetVdtCheckpointLatencyms gets the value of VdtCheckpointLatencyms for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyVdtCheckpointLatencyms() (value uint32, err error) {
-	retValue, err := instance.GetProperty("VdtCheckpointLatencyms")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetVdtCheckpointLatencyms_Base sets the value of VdtCheckpointLatencyms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) SetPropertyVdtCheckpointLatencyms_Base(value uint32) (err error) {
-	return instance.SetProperty("VdtCheckpointLatencyms_Base", (value))
-}
-
-// GetVdtCheckpointLatencyms_Base gets the value of VdtCheckpointLatencyms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesWriteCache) GetPropertyVdtCheckpointLatencyms_Base() (value uint32, err error) {
-	retValue, err := instance.GetProperty("VdtCheckpointLatencyms_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
 
 	return
 }

@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __ObjectProviderRegistration struct
@@ -76,7 +73,7 @@ func New__ObjectProviderRegistrationEx6(hostName string,
 
 // SetInteractionType sets the value of InteractionType for the instance
 func (instance *__ObjectProviderRegistration) SetPropertyInteractionType(value ObjectProviderRegistration_InteractionType) (err error) {
-	return instance.SetProperty("InteractionType", (value))
+	return instance.SetProperty("InteractionType", value)
 }
 
 // GetInteractionType gets the value of InteractionType for the instance
@@ -85,25 +82,16 @@ func (instance *__ObjectProviderRegistration) GetPropertyInteractionType() (valu
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
+	value, ok := retValue.(ObjectProviderRegistration_InteractionType)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = ObjectProviderRegistration_InteractionType(valuetmp)
-
 	return
 }
 
 // SetQuerySupportLevels sets the value of QuerySupportLevels for the instance
 func (instance *__ObjectProviderRegistration) SetPropertyQuerySupportLevels(value []string) (err error) {
-	return instance.SetProperty("QuerySupportLevels", (value))
+	return instance.SetProperty("QuerySupportLevels", value)
 }
 
 // GetQuerySupportLevels gets the value of QuerySupportLevels for the instance
@@ -112,26 +100,16 @@ func (instance *__ObjectProviderRegistration) GetPropertyQuerySupportLevels() (v
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]string)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
 	return
 }
 
 // SetSupportsBatching sets the value of SupportsBatching for the instance
 func (instance *__ObjectProviderRegistration) SetPropertySupportsBatching(value bool) (err error) {
-	return instance.SetProperty("SupportsBatching", (value))
+	return instance.SetProperty("SupportsBatching", value)
 }
 
 // GetSupportsBatching gets the value of SupportsBatching for the instance
@@ -140,25 +118,16 @@ func (instance *__ObjectProviderRegistration) GetPropertySupportsBatching() (val
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetSupportsDelete sets the value of SupportsDelete for the instance
 func (instance *__ObjectProviderRegistration) SetPropertySupportsDelete(value bool) (err error) {
-	return instance.SetProperty("SupportsDelete", (value))
+	return instance.SetProperty("SupportsDelete", value)
 }
 
 // GetSupportsDelete gets the value of SupportsDelete for the instance
@@ -167,25 +136,16 @@ func (instance *__ObjectProviderRegistration) GetPropertySupportsDelete() (value
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetSupportsEnumeration sets the value of SupportsEnumeration for the instance
 func (instance *__ObjectProviderRegistration) SetPropertySupportsEnumeration(value bool) (err error) {
-	return instance.SetProperty("SupportsEnumeration", (value))
+	return instance.SetProperty("SupportsEnumeration", value)
 }
 
 // GetSupportsEnumeration gets the value of SupportsEnumeration for the instance
@@ -194,25 +154,16 @@ func (instance *__ObjectProviderRegistration) GetPropertySupportsEnumeration() (
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetSupportsGet sets the value of SupportsGet for the instance
 func (instance *__ObjectProviderRegistration) SetPropertySupportsGet(value bool) (err error) {
-	return instance.SetProperty("SupportsGet", (value))
+	return instance.SetProperty("SupportsGet", value)
 }
 
 // GetSupportsGet gets the value of SupportsGet for the instance
@@ -221,25 +172,16 @@ func (instance *__ObjectProviderRegistration) GetPropertySupportsGet() (value bo
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetSupportsPut sets the value of SupportsPut for the instance
 func (instance *__ObjectProviderRegistration) SetPropertySupportsPut(value bool) (err error) {
-	return instance.SetProperty("SupportsPut", (value))
+	return instance.SetProperty("SupportsPut", value)
 }
 
 // GetSupportsPut gets the value of SupportsPut for the instance
@@ -248,25 +190,16 @@ func (instance *__ObjectProviderRegistration) GetPropertySupportsPut() (value bo
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetSupportsTransactions sets the value of SupportsTransactions for the instance
 func (instance *__ObjectProviderRegistration) SetPropertySupportsTransactions(value bool) (err error) {
-	return instance.SetProperty("SupportsTransactions", (value))
+	return instance.SetProperty("SupportsTransactions", value)
 }
 
 // GetSupportsTransactions gets the value of SupportsTransactions for the instance
@@ -275,18 +208,9 @@ func (instance *__ObjectProviderRegistration) GetPropertySupportsTransactions() 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }

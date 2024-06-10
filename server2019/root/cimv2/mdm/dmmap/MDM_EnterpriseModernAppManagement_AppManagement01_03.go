@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -41,9 +40,6 @@ type MDM_EnterpriseModernAppManagement_AppManagement01_03 struct {
 
 	//
 	IsProvisioned int32
-
-	//
-	IsStub int32
 
 	//
 	Name string
@@ -269,33 +265,6 @@ func (instance *MDM_EnterpriseModernAppManagement_AppManagement01_03) SetPropert
 // GetIsProvisioned gets the value of IsProvisioned for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppManagement01_03) GetPropertyIsProvisioned() (value int32, err error) {
 	retValue, err := instance.GetProperty("IsProvisioned")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetIsStub sets the value of IsStub for the instance
-func (instance *MDM_EnterpriseModernAppManagement_AppManagement01_03) SetPropertyIsStub(value int32) (err error) {
-	return instance.SetProperty("IsStub", (value))
-}
-
-// GetIsStub gets the value of IsStub for the instance
-func (instance *MDM_EnterpriseModernAppManagement_AppManagement01_03) GetPropertyIsStub() (value int32, err error) {
-	retValue, err := instance.GetProperty("IsStub")
 	if err != nil {
 		return
 	}

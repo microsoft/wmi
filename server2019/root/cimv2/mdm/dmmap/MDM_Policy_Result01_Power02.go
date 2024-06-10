@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -22,9 +21,6 @@ type MDM_Policy_Result01_Power02 struct {
 	*cim.WmiInstance
 
 	//
-	AllowHibernate int32
-
-	//
 	AllowStandbyStatesWhenSleepingOnBattery string
 
 	//
@@ -35,12 +31,6 @@ type MDM_Policy_Result01_Power02 struct {
 
 	//
 	DisplayOffTimeoutPluggedIn string
-
-	//
-	EnergySaverBatteryThresholdOnBattery int32
-
-	//
-	EnergySaverBatteryThresholdPluggedIn int32
 
 	//
 	HibernateTimeoutOnBattery string
@@ -61,40 +51,10 @@ type MDM_Policy_Result01_Power02 struct {
 	RequirePasswordWhenComputerWakesPluggedIn string
 
 	//
-	SelectLidCloseActionOnBattery int32
-
-	//
-	SelectLidCloseActionPluggedIn int32
-
-	//
-	SelectPowerButtonActionOnBattery int32
-
-	//
-	SelectPowerButtonActionPluggedIn int32
-
-	//
-	SelectSleepButtonActionOnBattery int32
-
-	//
-	SelectSleepButtonActionPluggedIn int32
-
-	//
 	StandbyTimeoutOnBattery string
 
 	//
 	StandbyTimeoutPluggedIn string
-
-	//
-	TurnOffHybridSleepOnBattery int32
-
-	//
-	TurnOffHybridSleepPluggedIn int32
-
-	//
-	UnattendedSleepTimeoutOnBattery int32
-
-	//
-	UnattendedSleepTimeoutPluggedIn int32
 }
 
 func NewMDM_Policy_Result01_Power02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Result01_Power02, err error) {
@@ -123,33 +83,6 @@ func NewMDM_Policy_Result01_Power02Ex6(hostName string,
 	newInstance = &MDM_Policy_Result01_Power02{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetAllowHibernate sets the value of AllowHibernate for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertyAllowHibernate(value int32) (err error) {
-	return instance.SetProperty("AllowHibernate", (value))
-}
-
-// GetAllowHibernate gets the value of AllowHibernate for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertyAllowHibernate() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowHibernate")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
 	return
 }
 
@@ -257,60 +190,6 @@ func (instance *MDM_Policy_Result01_Power02) GetPropertyDisplayOffTimeoutPlugged
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetEnergySaverBatteryThresholdOnBattery sets the value of EnergySaverBatteryThresholdOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertyEnergySaverBatteryThresholdOnBattery(value int32) (err error) {
-	return instance.SetProperty("EnergySaverBatteryThresholdOnBattery", (value))
-}
-
-// GetEnergySaverBatteryThresholdOnBattery gets the value of EnergySaverBatteryThresholdOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertyEnergySaverBatteryThresholdOnBattery() (value int32, err error) {
-	retValue, err := instance.GetProperty("EnergySaverBatteryThresholdOnBattery")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetEnergySaverBatteryThresholdPluggedIn sets the value of EnergySaverBatteryThresholdPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertyEnergySaverBatteryThresholdPluggedIn(value int32) (err error) {
-	return instance.SetProperty("EnergySaverBatteryThresholdPluggedIn", (value))
-}
-
-// GetEnergySaverBatteryThresholdPluggedIn gets the value of EnergySaverBatteryThresholdPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertyEnergySaverBatteryThresholdPluggedIn() (value int32, err error) {
-	retValue, err := instance.GetProperty("EnergySaverBatteryThresholdPluggedIn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }
@@ -477,168 +356,6 @@ func (instance *MDM_Policy_Result01_Power02) GetPropertyRequirePasswordWhenCompu
 	return
 }
 
-// SetSelectLidCloseActionOnBattery sets the value of SelectLidCloseActionOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertySelectLidCloseActionOnBattery(value int32) (err error) {
-	return instance.SetProperty("SelectLidCloseActionOnBattery", (value))
-}
-
-// GetSelectLidCloseActionOnBattery gets the value of SelectLidCloseActionOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertySelectLidCloseActionOnBattery() (value int32, err error) {
-	retValue, err := instance.GetProperty("SelectLidCloseActionOnBattery")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSelectLidCloseActionPluggedIn sets the value of SelectLidCloseActionPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertySelectLidCloseActionPluggedIn(value int32) (err error) {
-	return instance.SetProperty("SelectLidCloseActionPluggedIn", (value))
-}
-
-// GetSelectLidCloseActionPluggedIn gets the value of SelectLidCloseActionPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertySelectLidCloseActionPluggedIn() (value int32, err error) {
-	retValue, err := instance.GetProperty("SelectLidCloseActionPluggedIn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSelectPowerButtonActionOnBattery sets the value of SelectPowerButtonActionOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertySelectPowerButtonActionOnBattery(value int32) (err error) {
-	return instance.SetProperty("SelectPowerButtonActionOnBattery", (value))
-}
-
-// GetSelectPowerButtonActionOnBattery gets the value of SelectPowerButtonActionOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertySelectPowerButtonActionOnBattery() (value int32, err error) {
-	retValue, err := instance.GetProperty("SelectPowerButtonActionOnBattery")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSelectPowerButtonActionPluggedIn sets the value of SelectPowerButtonActionPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertySelectPowerButtonActionPluggedIn(value int32) (err error) {
-	return instance.SetProperty("SelectPowerButtonActionPluggedIn", (value))
-}
-
-// GetSelectPowerButtonActionPluggedIn gets the value of SelectPowerButtonActionPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertySelectPowerButtonActionPluggedIn() (value int32, err error) {
-	retValue, err := instance.GetProperty("SelectPowerButtonActionPluggedIn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSelectSleepButtonActionOnBattery sets the value of SelectSleepButtonActionOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertySelectSleepButtonActionOnBattery(value int32) (err error) {
-	return instance.SetProperty("SelectSleepButtonActionOnBattery", (value))
-}
-
-// GetSelectSleepButtonActionOnBattery gets the value of SelectSleepButtonActionOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertySelectSleepButtonActionOnBattery() (value int32, err error) {
-	retValue, err := instance.GetProperty("SelectSleepButtonActionOnBattery")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSelectSleepButtonActionPluggedIn sets the value of SelectSleepButtonActionPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertySelectSleepButtonActionPluggedIn(value int32) (err error) {
-	return instance.SetProperty("SelectSleepButtonActionPluggedIn", (value))
-}
-
-// GetSelectSleepButtonActionPluggedIn gets the value of SelectSleepButtonActionPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertySelectSleepButtonActionPluggedIn() (value int32, err error) {
-	retValue, err := instance.GetProperty("SelectSleepButtonActionPluggedIn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetStandbyTimeoutOnBattery sets the value of StandbyTimeoutOnBattery for the instance
 func (instance *MDM_Policy_Result01_Power02) SetPropertyStandbyTimeoutOnBattery(value string) (err error) {
 	return instance.SetProperty("StandbyTimeoutOnBattery", (value))
@@ -689,114 +406,6 @@ func (instance *MDM_Policy_Result01_Power02) GetPropertyStandbyTimeoutPluggedIn(
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetTurnOffHybridSleepOnBattery sets the value of TurnOffHybridSleepOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertyTurnOffHybridSleepOnBattery(value int32) (err error) {
-	return instance.SetProperty("TurnOffHybridSleepOnBattery", (value))
-}
-
-// GetTurnOffHybridSleepOnBattery gets the value of TurnOffHybridSleepOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertyTurnOffHybridSleepOnBattery() (value int32, err error) {
-	retValue, err := instance.GetProperty("TurnOffHybridSleepOnBattery")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetTurnOffHybridSleepPluggedIn sets the value of TurnOffHybridSleepPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertyTurnOffHybridSleepPluggedIn(value int32) (err error) {
-	return instance.SetProperty("TurnOffHybridSleepPluggedIn", (value))
-}
-
-// GetTurnOffHybridSleepPluggedIn gets the value of TurnOffHybridSleepPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertyTurnOffHybridSleepPluggedIn() (value int32, err error) {
-	retValue, err := instance.GetProperty("TurnOffHybridSleepPluggedIn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetUnattendedSleepTimeoutOnBattery sets the value of UnattendedSleepTimeoutOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertyUnattendedSleepTimeoutOnBattery(value int32) (err error) {
-	return instance.SetProperty("UnattendedSleepTimeoutOnBattery", (value))
-}
-
-// GetUnattendedSleepTimeoutOnBattery gets the value of UnattendedSleepTimeoutOnBattery for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertyUnattendedSleepTimeoutOnBattery() (value int32, err error) {
-	retValue, err := instance.GetProperty("UnattendedSleepTimeoutOnBattery")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetUnattendedSleepTimeoutPluggedIn sets the value of UnattendedSleepTimeoutPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) SetPropertyUnattendedSleepTimeoutPluggedIn(value int32) (err error) {
-	return instance.SetProperty("UnattendedSleepTimeoutPluggedIn", (value))
-}
-
-// GetUnattendedSleepTimeoutPluggedIn gets the value of UnattendedSleepTimeoutPluggedIn for the instance
-func (instance *MDM_Policy_Result01_Power02) GetPropertyUnattendedSleepTimeoutPluggedIn() (value int32, err error) {
-	retValue, err := instance.GetProperty("UnattendedSleepTimeoutPluggedIn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

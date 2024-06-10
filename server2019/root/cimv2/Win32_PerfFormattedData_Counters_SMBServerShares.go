@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -19,9 +18,6 @@ import (
 // Win32_PerfFormattedData_Counters_SMBServerShares struct
 type Win32_PerfFormattedData_Counters_SMBServerShares struct {
 	*Win32_PerfFormattedData
-
-	//
-	AttemptedCompressedResponsesPersec uint64
 
 	//
 	AvgBytesPerRead uint64
@@ -52,12 +48,6 @@ type Win32_PerfFormattedData_Counters_SMBServerShares struct {
 
 	//
 	AvgWriteQueueLength uint64
-
-	//
-	BytesCompressedPersec uint64
-
-	//
-	CompressedRequestsPersec uint64
 
 	//
 	CurrentBypassOpenFileCount uint64
@@ -118,9 +108,6 @@ type Win32_PerfFormattedData_Counters_SMBServerShares struct {
 
 	//
 	SentBytesPersec uint64
-
-	//
-	SuccessfulCompressedResponsesPersec uint64
 
 	//
 	TotalDurableHandleReopenCount uint64
@@ -194,33 +181,6 @@ func NewWin32_PerfFormattedData_Counters_SMBServerSharesEx6(hostName string,
 	newInstance = &Win32_PerfFormattedData_Counters_SMBServerShares{
 		Win32_PerfFormattedData: tmp,
 	}
-	return
-}
-
-// SetAttemptedCompressedResponsesPersec sets the value of AttemptedCompressedResponsesPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) SetPropertyAttemptedCompressedResponsesPersec(value uint64) (err error) {
-	return instance.SetProperty("AttemptedCompressedResponsesPersec", (value))
-}
-
-// GetAttemptedCompressedResponsesPersec gets the value of AttemptedCompressedResponsesPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) GetPropertyAttemptedCompressedResponsesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("AttemptedCompressedResponsesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
@@ -475,60 +435,6 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) SetPropertyAvg
 // GetAvgWriteQueueLength gets the value of AvgWriteQueueLength for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) GetPropertyAvgWriteQueueLength() (value uint64, err error) {
 	retValue, err := instance.GetProperty("AvgWriteQueueLength")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetBytesCompressedPersec sets the value of BytesCompressedPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) SetPropertyBytesCompressedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesCompressedPersec", (value))
-}
-
-// GetBytesCompressedPersec gets the value of BytesCompressedPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) GetPropertyBytesCompressedPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("BytesCompressedPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCompressedRequestsPersec sets the value of CompressedRequestsPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) SetPropertyCompressedRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("CompressedRequestsPersec", (value))
-}
-
-// GetCompressedRequestsPersec gets the value of CompressedRequestsPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) GetPropertyCompressedRequestsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CompressedRequestsPersec")
 	if err != nil {
 		return
 	}
@@ -1069,33 +975,6 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) SetPropertySen
 // GetSentBytesPersec gets the value of SentBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) GetPropertySentBytesPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("SentBytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetSuccessfulCompressedResponsesPersec sets the value of SuccessfulCompressedResponsesPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) SetPropertySuccessfulCompressedResponsesPersec(value uint64) (err error) {
-	return instance.SetProperty("SuccessfulCompressedResponsesPersec", (value))
-}
-
-// GetSuccessfulCompressedResponsesPersec gets the value of SuccessfulCompressedResponsesPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBServerShares) GetPropertySuccessfulCompressedResponsesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SuccessfulCompressedResponsesPersec")
 	if err != nil {
 		return
 	}

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -33,7 +32,7 @@ type Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor struct {
 	ContextSwitchesPersec uint64
 
 	//
-	CPPCRequestContextSwitchesPersec uint64
+	Frequency uint64
 
 	//
 	HardwareInterruptsPersec uint64
@@ -48,9 +47,6 @@ type Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor struct {
 	HypervisorL1DataCacheFlushesPersec uint64
 
 	//
-	HypervisorMicroarchitecturalBufferFlushesPersec uint64
-
-	//
 	InterProcessorInterruptsPersec uint64
 
 	//
@@ -58,6 +54,9 @@ type Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor struct {
 
 	//
 	MonitorTransitionCost uint64
+
+	//
+	ParkingStatus uint64
 
 	//
 	PercentC1Time uint64
@@ -78,22 +77,19 @@ type Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor struct {
 	PercentIdleTime uint64
 
 	//
-	PercentTotalRunTime uint64
+	PercentofMaxFrequency uint64
 
 	//
-	PerformanceMonitoringInterruptsPersec uint64
+	PercentTotalRunTime uint64
 
 	//
 	PostedInterruptNotificationsPersec uint64
 
 	//
-	ReserveGroupId uint64
+	ProcessorStateFlags uint64
 
 	//
 	RootVpIndex uint64
-
-	//
-	RunningPriority uint64
 
 	//
 	SchedulerInterruptsPersec uint64
@@ -242,14 +238,14 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor
 	return
 }
 
-// SetCPPCRequestContextSwitchesPersec sets the value of CPPCRequestContextSwitchesPersec for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyCPPCRequestContextSwitchesPersec(value uint64) (err error) {
-	return instance.SetProperty("CPPCRequestContextSwitchesPersec", (value))
+// SetFrequency sets the value of Frequency for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyFrequency(value uint64) (err error) {
+	return instance.SetProperty("Frequency", (value))
 }
 
-// GetCPPCRequestContextSwitchesPersec gets the value of CPPCRequestContextSwitchesPersec for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyCPPCRequestContextSwitchesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CPPCRequestContextSwitchesPersec")
+// GetFrequency gets the value of Frequency for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyFrequency() (value uint64, err error) {
+	retValue, err := instance.GetProperty("Frequency")
 	if err != nil {
 		return
 	}
@@ -377,33 +373,6 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor
 	return
 }
 
-// SetHypervisorMicroarchitecturalBufferFlushesPersec sets the value of HypervisorMicroarchitecturalBufferFlushesPersec for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyHypervisorMicroarchitecturalBufferFlushesPersec(value uint64) (err error) {
-	return instance.SetProperty("HypervisorMicroarchitecturalBufferFlushesPersec", (value))
-}
-
-// GetHypervisorMicroarchitecturalBufferFlushesPersec gets the value of HypervisorMicroarchitecturalBufferFlushesPersec for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyHypervisorMicroarchitecturalBufferFlushesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("HypervisorMicroarchitecturalBufferFlushesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetInterProcessorInterruptsPersec sets the value of InterProcessorInterruptsPersec for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyInterProcessorInterruptsPersec(value uint64) (err error) {
 	return instance.SetProperty("InterProcessorInterruptsPersec", (value))
@@ -466,6 +435,33 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor
 // GetMonitorTransitionCost gets the value of MonitorTransitionCost for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyMonitorTransitionCost() (value uint64, err error) {
 	retValue, err := instance.GetProperty("MonitorTransitionCost")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetParkingStatus sets the value of ParkingStatus for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyParkingStatus(value uint64) (err error) {
+	return instance.SetProperty("ParkingStatus", (value))
+}
+
+// GetParkingStatus gets the value of ParkingStatus for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyParkingStatus() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ParkingStatus")
 	if err != nil {
 		return
 	}
@@ -647,14 +643,14 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor
 	return
 }
 
-// SetPercentTotalRunTime sets the value of PercentTotalRunTime for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyPercentTotalRunTime(value uint64) (err error) {
-	return instance.SetProperty("PercentTotalRunTime", (value))
+// SetPercentofMaxFrequency sets the value of PercentofMaxFrequency for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyPercentofMaxFrequency(value uint64) (err error) {
+	return instance.SetProperty("PercentofMaxFrequency", (value))
 }
 
-// GetPercentTotalRunTime gets the value of PercentTotalRunTime for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyPercentTotalRunTime() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PercentTotalRunTime")
+// GetPercentofMaxFrequency gets the value of PercentofMaxFrequency for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyPercentofMaxFrequency() (value uint64, err error) {
+	retValue, err := instance.GetProperty("PercentofMaxFrequency")
 	if err != nil {
 		return
 	}
@@ -674,14 +670,14 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor
 	return
 }
 
-// SetPerformanceMonitoringInterruptsPersec sets the value of PerformanceMonitoringInterruptsPersec for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyPerformanceMonitoringInterruptsPersec(value uint64) (err error) {
-	return instance.SetProperty("PerformanceMonitoringInterruptsPersec", (value))
+// SetPercentTotalRunTime sets the value of PercentTotalRunTime for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyPercentTotalRunTime(value uint64) (err error) {
+	return instance.SetProperty("PercentTotalRunTime", (value))
 }
 
-// GetPerformanceMonitoringInterruptsPersec gets the value of PerformanceMonitoringInterruptsPersec for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyPerformanceMonitoringInterruptsPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PerformanceMonitoringInterruptsPersec")
+// GetPercentTotalRunTime gets the value of PercentTotalRunTime for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyPercentTotalRunTime() (value uint64, err error) {
+	retValue, err := instance.GetProperty("PercentTotalRunTime")
 	if err != nil {
 		return
 	}
@@ -728,14 +724,14 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor
 	return
 }
 
-// SetReserveGroupId sets the value of ReserveGroupId for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyReserveGroupId(value uint64) (err error) {
-	return instance.SetProperty("ReserveGroupId", (value))
+// SetProcessorStateFlags sets the value of ProcessorStateFlags for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyProcessorStateFlags(value uint64) (err error) {
+	return instance.SetProperty("ProcessorStateFlags", (value))
 }
 
-// GetReserveGroupId gets the value of ReserveGroupId for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyReserveGroupId() (value uint64, err error) {
-	retValue, err := instance.GetProperty("ReserveGroupId")
+// GetProcessorStateFlags gets the value of ProcessorStateFlags for the instance
+func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyProcessorStateFlags() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ProcessorStateFlags")
 	if err != nil {
 		return
 	}
@@ -763,33 +759,6 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor
 // GetRootVpIndex gets the value of RootVpIndex for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyRootVpIndex() (value uint64, err error) {
 	retValue, err := instance.GetProperty("RootVpIndex")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetRunningPriority sets the value of RunningPriority for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) SetPropertyRunningPriority(value uint64) (err error) {
-	return instance.SetProperty("RunningPriority", (value))
-}
-
-// GetRunningPriority gets the value of RunningPriority for the instance
-func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisorLogicalProcessor) GetPropertyRunningPriority() (value uint64, err error) {
-	retValue, err := instance.GetProperty("RunningPriority")
 	if err != nil {
 		return
 	}

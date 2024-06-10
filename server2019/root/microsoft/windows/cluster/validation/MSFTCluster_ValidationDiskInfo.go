@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Cluster.Validation
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Cluster.Validation
+//////////////////////////////////////////////
 package validation
 
 import (
@@ -72,7 +71,7 @@ type MSFTCluster_ValidationDiskInfo struct {
 	// 2
 	MbrPartitionType []ValidationDiskInfo_MbrPartitionType
 
-	// 91
+	// 83
 	MediaType ValidationDiskInfo_MediaType
 
 	// 2

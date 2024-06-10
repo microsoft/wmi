@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MSFT_NetAdapterUsoSettingData struct
@@ -61,7 +58,7 @@ func NewMSFT_NetAdapterUsoSettingDataEx6(hostName string,
 
 // SetIPv4Enabled sets the value of IPv4Enabled for the instance
 func (instance *MSFT_NetAdapterUsoSettingData) SetPropertyIPv4Enabled(value bool) (err error) {
-	return instance.SetProperty("IPv4Enabled", (value))
+	return instance.SetProperty("IPv4Enabled", value)
 }
 
 // GetIPv4Enabled gets the value of IPv4Enabled for the instance
@@ -70,25 +67,16 @@ func (instance *MSFT_NetAdapterUsoSettingData) GetPropertyIPv4Enabled() (value b
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetIPv6Enabled sets the value of IPv6Enabled for the instance
 func (instance *MSFT_NetAdapterUsoSettingData) SetPropertyIPv6Enabled(value bool) (err error) {
-	return instance.SetProperty("IPv6Enabled", (value))
+	return instance.SetProperty("IPv6Enabled", value)
 }
 
 // GetIPv6Enabled gets the value of IPv6Enabled for the instance
@@ -97,25 +85,16 @@ func (instance *MSFT_NetAdapterUsoSettingData) GetPropertyIPv6Enabled() (value b
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetUdpSegmentationOffloadHardwareCapabilities sets the value of UdpSegmentationOffloadHardwareCapabilities for the instance
 func (instance *MSFT_NetAdapterUsoSettingData) SetPropertyUdpSegmentationOffloadHardwareCapabilities(value MSFT_NetAdapterUdpSegmentationOffloadCapabilities) (err error) {
-	return instance.SetProperty("UdpSegmentationOffloadHardwareCapabilities", (value))
+	return instance.SetProperty("UdpSegmentationOffloadHardwareCapabilities", value)
 }
 
 // GetUdpSegmentationOffloadHardwareCapabilities gets the value of UdpSegmentationOffloadHardwareCapabilities for the instance
@@ -124,19 +103,10 @@ func (instance *MSFT_NetAdapterUsoSettingData) GetPropertyUdpSegmentationOffload
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(MSFT_NetAdapterUdpSegmentationOffloadCapabilities)
+	value, ok := retValue.(MSFT_NetAdapterUdpSegmentationOffloadCapabilities)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterUdpSegmentationOffloadCapabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = MSFT_NetAdapterUdpSegmentationOffloadCapabilities(valuetmp)
-
 	return
 }
 

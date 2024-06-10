@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -20,12 +19,6 @@ import (
 // MDM_Policy_User_Config01_Printers02 struct
 type MDM_Policy_User_Config01_Printers02 struct {
 	*cim.WmiInstance
-
-	//
-	ApprovedUsbPrintDevicesUser string
-
-	//
-	EnableDeviceControlUser string
 
 	//
 	InstanceID string
@@ -63,60 +56,6 @@ func NewMDM_Policy_User_Config01_Printers02Ex6(hostName string,
 	newInstance = &MDM_Policy_User_Config01_Printers02{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetApprovedUsbPrintDevicesUser sets the value of ApprovedUsbPrintDevicesUser for the instance
-func (instance *MDM_Policy_User_Config01_Printers02) SetPropertyApprovedUsbPrintDevicesUser(value string) (err error) {
-	return instance.SetProperty("ApprovedUsbPrintDevicesUser", (value))
-}
-
-// GetApprovedUsbPrintDevicesUser gets the value of ApprovedUsbPrintDevicesUser for the instance
-func (instance *MDM_Policy_User_Config01_Printers02) GetPropertyApprovedUsbPrintDevicesUser() (value string, err error) {
-	retValue, err := instance.GetProperty("ApprovedUsbPrintDevicesUser")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetEnableDeviceControlUser sets the value of EnableDeviceControlUser for the instance
-func (instance *MDM_Policy_User_Config01_Printers02) SetPropertyEnableDeviceControlUser(value string) (err error) {
-	return instance.SetProperty("EnableDeviceControlUser", (value))
-}
-
-// GetEnableDeviceControlUser gets the value of EnableDeviceControlUser for the instance
-func (instance *MDM_Policy_User_Config01_Printers02) GetPropertyEnableDeviceControlUser() (value string, err error) {
-	retValue, err := instance.GetProperty("EnableDeviceControlUser")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
 	return
 }
 

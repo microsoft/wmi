@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -19,9 +18,6 @@ import (
 // Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics struct
 type Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics struct {
 	*Win32_PerfFormattedData
-
-	//
-	Bytesoflostretransmitsretransmitted uint32
 
 	//
 	Deniedconnectorsendrequestsinlowpowermode uint32
@@ -75,15 +71,6 @@ type Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics struct {
 	IPv6outboundNBLsPersecnotprocessedviafastpath uint32
 
 	//
-	NumberofSACKblocksdropped uint32
-
-	//
-	NumberofTCPRXfastpathbatchesinspected uint64
-
-	//
-	NumberofTCPRXfastpathbatchesnotinspected uint64
-
-	//
 	RSCsegmentforwardingfailuresduringsoftwaresegmentation uint32
 
 	//
@@ -111,43 +98,7 @@ type Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics struct {
 	TCPinboundsegmentsPersecnotprocessedviafastpath uint32
 
 	//
-	TCPlossrecoveryepisodes uint32
-
-	//
-	TCPRSCbytesreceived uint32
-
-	//
-	TCPRSCevents uint32
-
-	//
-	TCPsuccessfullossrecoveryepisodes uint32
-
-	//
 	TCPtimeouts uint32
-
-	//
-	UDPdatagramscreatedviasoftwaresegmentation uint32
-
-	//
-	UDPURObytesreceived uint32
-
-	//
-	UDPUROevents uint32
-
-	//
-	UROsegmentationfailuresforrawsockets uint32
-
-	//
-	UROsegmentationsforrawsockets uint32
-
-	//
-	UROsegmentforwardingfailuresduringsoftwaresegmentation uint32
-
-	//
-	UROsegmentsforwardedviasoftwaresegmentation uint32
-
-	//
-	UROsegmentsforwardedviasoftwaresegmentationandchecksum uint32
 }
 
 func NewWin32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnosticsEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics, err error) {
@@ -176,33 +127,6 @@ func NewWin32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnosticsEx6(hos
 	newInstance = &Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics{
 		Win32_PerfFormattedData: tmp,
 	}
-	return
-}
-
-// SetBytesoflostretransmitsretransmitted sets the value of Bytesoflostretransmitsretransmitted for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyBytesoflostretransmitsretransmitted(value uint32) (err error) {
-	return instance.SetProperty("Bytesoflostretransmitsretransmitted", (value))
-}
-
-// GetBytesoflostretransmitsretransmitted gets the value of Bytesoflostretransmitsretransmitted for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyBytesoflostretransmitsretransmitted() (value uint32, err error) {
-	retValue, err := instance.GetProperty("Bytesoflostretransmitsretransmitted")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
@@ -665,87 +589,6 @@ func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostic
 	return
 }
 
-// SetNumberofSACKblocksdropped sets the value of NumberofSACKblocksdropped for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyNumberofSACKblocksdropped(value uint32) (err error) {
-	return instance.SetProperty("NumberofSACKblocksdropped", (value))
-}
-
-// GetNumberofSACKblocksdropped gets the value of NumberofSACKblocksdropped for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyNumberofSACKblocksdropped() (value uint32, err error) {
-	retValue, err := instance.GetProperty("NumberofSACKblocksdropped")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetNumberofTCPRXfastpathbatchesinspected sets the value of NumberofTCPRXfastpathbatchesinspected for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyNumberofTCPRXfastpathbatchesinspected(value uint64) (err error) {
-	return instance.SetProperty("NumberofTCPRXfastpathbatchesinspected", (value))
-}
-
-// GetNumberofTCPRXfastpathbatchesinspected gets the value of NumberofTCPRXfastpathbatchesinspected for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyNumberofTCPRXfastpathbatchesinspected() (value uint64, err error) {
-	retValue, err := instance.GetProperty("NumberofTCPRXfastpathbatchesinspected")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetNumberofTCPRXfastpathbatchesnotinspected sets the value of NumberofTCPRXfastpathbatchesnotinspected for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyNumberofTCPRXfastpathbatchesnotinspected(value uint64) (err error) {
-	return instance.SetProperty("NumberofTCPRXfastpathbatchesnotinspected", (value))
-}
-
-// GetNumberofTCPRXfastpathbatchesnotinspected gets the value of NumberofTCPRXfastpathbatchesnotinspected for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyNumberofTCPRXfastpathbatchesnotinspected() (value uint64, err error) {
-	retValue, err := instance.GetProperty("NumberofTCPRXfastpathbatchesnotinspected")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetRSCsegmentforwardingfailuresduringsoftwaresegmentation sets the value of RSCsegmentforwardingfailuresduringsoftwaresegmentation for the instance
 func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyRSCsegmentforwardingfailuresduringsoftwaresegmentation(value uint32) (err error) {
 	return instance.SetProperty("RSCsegmentforwardingfailuresduringsoftwaresegmentation", (value))
@@ -989,114 +832,6 @@ func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostic
 	return
 }
 
-// SetTCPlossrecoveryepisodes sets the value of TCPlossrecoveryepisodes for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPlossrecoveryepisodes(value uint32) (err error) {
-	return instance.SetProperty("TCPlossrecoveryepisodes", (value))
-}
-
-// GetTCPlossrecoveryepisodes gets the value of TCPlossrecoveryepisodes for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyTCPlossrecoveryepisodes() (value uint32, err error) {
-	retValue, err := instance.GetProperty("TCPlossrecoveryepisodes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetTCPRSCbytesreceived sets the value of TCPRSCbytesreceived for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPRSCbytesreceived(value uint32) (err error) {
-	return instance.SetProperty("TCPRSCbytesreceived", (value))
-}
-
-// GetTCPRSCbytesreceived gets the value of TCPRSCbytesreceived for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyTCPRSCbytesreceived() (value uint32, err error) {
-	retValue, err := instance.GetProperty("TCPRSCbytesreceived")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetTCPRSCevents sets the value of TCPRSCevents for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPRSCevents(value uint32) (err error) {
-	return instance.SetProperty("TCPRSCevents", (value))
-}
-
-// GetTCPRSCevents gets the value of TCPRSCevents for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyTCPRSCevents() (value uint32, err error) {
-	retValue, err := instance.GetProperty("TCPRSCevents")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetTCPsuccessfullossrecoveryepisodes sets the value of TCPsuccessfullossrecoveryepisodes for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPsuccessfullossrecoveryepisodes(value uint32) (err error) {
-	return instance.SetProperty("TCPsuccessfullossrecoveryepisodes", (value))
-}
-
-// GetTCPsuccessfullossrecoveryepisodes gets the value of TCPsuccessfullossrecoveryepisodes for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyTCPsuccessfullossrecoveryepisodes() (value uint32, err error) {
-	retValue, err := instance.GetProperty("TCPsuccessfullossrecoveryepisodes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetTCPtimeouts sets the value of TCPtimeouts for the instance
 func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPtimeouts(value uint32) (err error) {
 	return instance.SetProperty("TCPtimeouts", (value))
@@ -1105,222 +840,6 @@ func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostic
 // GetTCPtimeouts gets the value of TCPtimeouts for the instance
 func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyTCPtimeouts() (value uint32, err error) {
 	retValue, err := instance.GetProperty("TCPtimeouts")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUDPdatagramscreatedviasoftwaresegmentation sets the value of UDPdatagramscreatedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUDPdatagramscreatedviasoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("UDPdatagramscreatedviasoftwaresegmentation", (value))
-}
-
-// GetUDPdatagramscreatedviasoftwaresegmentation gets the value of UDPdatagramscreatedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUDPdatagramscreatedviasoftwaresegmentation() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UDPdatagramscreatedviasoftwaresegmentation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUDPURObytesreceived sets the value of UDPURObytesreceived for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUDPURObytesreceived(value uint32) (err error) {
-	return instance.SetProperty("UDPURObytesreceived", (value))
-}
-
-// GetUDPURObytesreceived gets the value of UDPURObytesreceived for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUDPURObytesreceived() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UDPURObytesreceived")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUDPUROevents sets the value of UDPUROevents for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUDPUROevents(value uint32) (err error) {
-	return instance.SetProperty("UDPUROevents", (value))
-}
-
-// GetUDPUROevents gets the value of UDPUROevents for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUDPUROevents() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UDPUROevents")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUROsegmentationfailuresforrawsockets sets the value of UROsegmentationfailuresforrawsockets for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentationfailuresforrawsockets(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentationfailuresforrawsockets", (value))
-}
-
-// GetUROsegmentationfailuresforrawsockets gets the value of UROsegmentationfailuresforrawsockets for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentationfailuresforrawsockets() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentationfailuresforrawsockets")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUROsegmentationsforrawsockets sets the value of UROsegmentationsforrawsockets for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentationsforrawsockets(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentationsforrawsockets", (value))
-}
-
-// GetUROsegmentationsforrawsockets gets the value of UROsegmentationsforrawsockets for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentationsforrawsockets() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentationsforrawsockets")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUROsegmentforwardingfailuresduringsoftwaresegmentation sets the value of UROsegmentforwardingfailuresduringsoftwaresegmentation for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentforwardingfailuresduringsoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentforwardingfailuresduringsoftwaresegmentation", (value))
-}
-
-// GetUROsegmentforwardingfailuresduringsoftwaresegmentation gets the value of UROsegmentforwardingfailuresduringsoftwaresegmentation for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentforwardingfailuresduringsoftwaresegmentation() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentforwardingfailuresduringsoftwaresegmentation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUROsegmentsforwardedviasoftwaresegmentation sets the value of UROsegmentsforwardedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentsforwardedviasoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentsforwardedviasoftwaresegmentation", (value))
-}
-
-// GetUROsegmentsforwardedviasoftwaresegmentation gets the value of UROsegmentsforwardedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentsforwardedviasoftwaresegmentation() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentsforwardedviasoftwaresegmentation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUROsegmentsforwardedviasoftwaresegmentationandchecksum sets the value of UROsegmentsforwardedviasoftwaresegmentationandchecksum for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentsforwardedviasoftwaresegmentationandchecksum(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentsforwardedviasoftwaresegmentationandchecksum", (value))
-}
-
-// GetUROsegmentsforwardedviasoftwaresegmentationandchecksum gets the value of UROsegmentsforwardedviasoftwaresegmentationandchecksum for the instance
-func (instance *Win32_PerfFormattedData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentsforwardedviasoftwaresegmentationandchecksum() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentsforwardedviasoftwaresegmentationandchecksum")
 	if err != nil {
 		return
 	}

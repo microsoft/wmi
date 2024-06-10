@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -19,6 +18,18 @@ import (
 // Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile struct
 type Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile struct {
 	*Win32_PerfRawData
+
+	//
+	CacheWriteBoosts uint64
+
+	//
+	CacheWriteBoostsPersec uint64
+
+	//
+	CacheWriteBoostsVeto uint64
+
+	//
+	CacheWriteBoostsVetoPersec uint64
 
 	//
 	Reads0K4K uint64
@@ -227,6 +238,114 @@ func NewWin32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfil
 	newInstance = &Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile{
 		Win32_PerfRawData: tmp,
 	}
+	return
+}
+
+// SetCacheWriteBoosts sets the value of CacheWriteBoosts for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) SetPropertyCacheWriteBoosts(value uint64) (err error) {
+	return instance.SetProperty("CacheWriteBoosts", (value))
+}
+
+// GetCacheWriteBoosts gets the value of CacheWriteBoosts for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) GetPropertyCacheWriteBoosts() (value uint64, err error) {
+	retValue, err := instance.GetProperty("CacheWriteBoosts")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetCacheWriteBoostsPersec sets the value of CacheWriteBoostsPersec for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) SetPropertyCacheWriteBoostsPersec(value uint64) (err error) {
+	return instance.SetProperty("CacheWriteBoostsPersec", (value))
+}
+
+// GetCacheWriteBoostsPersec gets the value of CacheWriteBoostsPersec for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) GetPropertyCacheWriteBoostsPersec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("CacheWriteBoostsPersec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetCacheWriteBoostsVeto sets the value of CacheWriteBoostsVeto for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) SetPropertyCacheWriteBoostsVeto(value uint64) (err error) {
+	return instance.SetProperty("CacheWriteBoostsVeto", (value))
+}
+
+// GetCacheWriteBoostsVeto gets the value of CacheWriteBoostsVeto for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) GetPropertyCacheWriteBoostsVeto() (value uint64, err error) {
+	retValue, err := instance.GetProperty("CacheWriteBoostsVeto")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetCacheWriteBoostsVetoPersec sets the value of CacheWriteBoostsVetoPersec for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) SetPropertyCacheWriteBoostsVetoPersec(value uint64) (err error) {
+	return instance.SetProperty("CacheWriteBoostsVetoPersec", (value))
+}
+
+// GetCacheWriteBoostsVetoPersec gets the value of CacheWriteBoostsVetoPersec for the instance
+func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile) GetPropertyCacheWriteBoostsVetoPersec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("CacheWriteBoostsVetoPersec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

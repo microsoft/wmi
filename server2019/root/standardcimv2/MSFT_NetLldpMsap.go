@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -31,9 +30,6 @@ type MSFT_NetLldpMsap struct {
 
 	//
 	PhysicalAddress []string
-
-	//
-	Tlvs []MSFT_NetLldpTlv
 }
 
 func NewMSFT_NetLldpMsapEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetLldpMsap, err error) {
@@ -169,34 +165,6 @@ func (instance *MSFT_NetLldpMsap) GetPropertyPhysicalAddress() (value []string, 
 			return
 		}
 		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
-// SetTlvs sets the value of Tlvs for the instance
-func (instance *MSFT_NetLldpMsap) SetPropertyTlvs(value []MSFT_NetLldpTlv) (err error) {
-	return instance.SetProperty("Tlvs", (value))
-}
-
-// GetTlvs gets the value of Tlvs for the instance
-func (instance *MSFT_NetLldpMsap) GetPropertyTlvs() (value []MSFT_NetLldpTlv, err error) {
-	retValue, err := instance.GetProperty("Tlvs")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(MSFT_NetLldpTlv)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " MSFT_NetLldpTlv is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, MSFT_NetLldpTlv(valuetmp))
 	}
 
 	return

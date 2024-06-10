@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -20,26 +19,26 @@ import (
 type CIM_EnabledLogicalElement struct {
 	*CIM_LogicalElement
 
-	//
-	AvailableRequestedStates []uint16
+	// 364
+	AvailableRequestedStates []EnabledLogicalElement_AvailableRequestedStates
 
-	//
-	EnabledDefault uint16
+	// 361
+	EnabledDefault EnabledLogicalElement_EnabledDefault
 
-	//
-	EnabledState uint16
+	// 346
+	EnabledState EnabledLogicalElement_EnabledState
 
-	//
+	// 353
 	OtherEnabledState string
 
-	//
-	RequestedState uint16
+	// 354
+	RequestedState EnabledLogicalElement_RequestedState
 
-	//
+	// 363
 	TimeOfLastStateChange string
 
-	//
-	TransitioningToState uint16
+	// 366
+	TransitioningToState EnabledLogicalElement_TransitioningToState
 }
 
 func NewCIM_EnabledLogicalElementEx1(instance *cim.WmiInstance) (newInstance *CIM_EnabledLogicalElement, err error) {
@@ -72,12 +71,12 @@ func NewCIM_EnabledLogicalElementEx6(hostName string,
 }
 
 // SetAvailableRequestedStates sets the value of AvailableRequestedStates for the instance
-func (instance *CIM_EnabledLogicalElement) SetPropertyAvailableRequestedStates(value []uint16) (err error) {
+func (instance *CIM_EnabledLogicalElement) SetPropertyAvailableRequestedStates(value []EnabledLogicalElement_AvailableRequestedStates) (err error) {
 	return instance.SetProperty("AvailableRequestedStates", (value))
 }
 
 // GetAvailableRequestedStates gets the value of AvailableRequestedStates for the instance
-func (instance *CIM_EnabledLogicalElement) GetPropertyAvailableRequestedStates() (value []uint16, err error) {
+func (instance *CIM_EnabledLogicalElement) GetPropertyAvailableRequestedStates() (value []EnabledLogicalElement_AvailableRequestedStates, err error) {
 	retValue, err := instance.GetProperty("AvailableRequestedStates")
 	if err != nil {
 		return
@@ -88,24 +87,24 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyAvailableRequestedStates()
 	}
 
 	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint16)
+		valuetmp, ok := interfaceValue.(int32)
 		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
 			return
 		}
-		value = append(value, uint16(valuetmp))
+		value = append(value, EnabledLogicalElement_AvailableRequestedStates(valuetmp))
 	}
 
 	return
 }
 
 // SetEnabledDefault sets the value of EnabledDefault for the instance
-func (instance *CIM_EnabledLogicalElement) SetPropertyEnabledDefault(value uint16) (err error) {
+func (instance *CIM_EnabledLogicalElement) SetPropertyEnabledDefault(value EnabledLogicalElement_EnabledDefault) (err error) {
 	return instance.SetProperty("EnabledDefault", (value))
 }
 
 // GetEnabledDefault gets the value of EnabledDefault for the instance
-func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledDefault() (value uint16, err error) {
+func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledDefault() (value EnabledLogicalElement_EnabledDefault, err error) {
 	retValue, err := instance.GetProperty("EnabledDefault")
 	if err != nil {
 		return
@@ -115,24 +114,24 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledDefault() (value ui
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = EnabledLogicalElement_EnabledDefault(valuetmp)
 
 	return
 }
 
 // SetEnabledState sets the value of EnabledState for the instance
-func (instance *CIM_EnabledLogicalElement) SetPropertyEnabledState(value uint16) (err error) {
+func (instance *CIM_EnabledLogicalElement) SetPropertyEnabledState(value EnabledLogicalElement_EnabledState) (err error) {
 	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
-func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledState() (value uint16, err error) {
+func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledState() (value EnabledLogicalElement_EnabledState, err error) {
 	retValue, err := instance.GetProperty("EnabledState")
 	if err != nil {
 		return
@@ -142,13 +141,13 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledState() (value uint
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = EnabledLogicalElement_EnabledState(valuetmp)
 
 	return
 }
@@ -181,12 +180,12 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyOtherEnabledState() (value
 }
 
 // SetRequestedState sets the value of RequestedState for the instance
-func (instance *CIM_EnabledLogicalElement) SetPropertyRequestedState(value uint16) (err error) {
+func (instance *CIM_EnabledLogicalElement) SetPropertyRequestedState(value EnabledLogicalElement_RequestedState) (err error) {
 	return instance.SetProperty("RequestedState", (value))
 }
 
 // GetRequestedState gets the value of RequestedState for the instance
-func (instance *CIM_EnabledLogicalElement) GetPropertyRequestedState() (value uint16, err error) {
+func (instance *CIM_EnabledLogicalElement) GetPropertyRequestedState() (value EnabledLogicalElement_RequestedState, err error) {
 	retValue, err := instance.GetProperty("RequestedState")
 	if err != nil {
 		return
@@ -196,13 +195,13 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyRequestedState() (value ui
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = EnabledLogicalElement_RequestedState(valuetmp)
 
 	return
 }
@@ -235,12 +234,12 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyTimeOfLastStateChange() (v
 }
 
 // SetTransitioningToState sets the value of TransitioningToState for the instance
-func (instance *CIM_EnabledLogicalElement) SetPropertyTransitioningToState(value uint16) (err error) {
+func (instance *CIM_EnabledLogicalElement) SetPropertyTransitioningToState(value EnabledLogicalElement_TransitioningToState) (err error) {
 	return instance.SetProperty("TransitioningToState", (value))
 }
 
 // GetTransitioningToState gets the value of TransitioningToState for the instance
-func (instance *CIM_EnabledLogicalElement) GetPropertyTransitioningToState() (value uint16, err error) {
+func (instance *CIM_EnabledLogicalElement) GetPropertyTransitioningToState() (value EnabledLogicalElement_TransitioningToState, err error) {
 	retValue, err := instance.GetProperty("TransitioningToState")
 	if err != nil {
 		return
@@ -250,25 +249,25 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyTransitioningToState() (va
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = EnabledLogicalElement_TransitioningToState(valuetmp)
 
 	return
 }
 
-//
+// 367
 
-// <param name="RequestedState" type="uint16 "></param>
-// <param name="TimeoutPeriod" type="string "></param>
+// <param name="RequestedState" type="EnabledLogicalElement_RequestedState ">371</param>
+// <param name="TimeoutPeriod" type="string ">373</param>
 
-// <param name="Job" type="CIM_ConcreteJob "></param>
+// <param name="Job" type="CIM_ConcreteJob ">372</param>
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *CIM_EnabledLogicalElement) RequestStateChange( /* IN */ RequestedState uint16,
+func (instance *CIM_EnabledLogicalElement) RequestStateChange( /* IN */ RequestedState EnabledLogicalElement_RequestedState,
 	/* OUT */ Job CIM_ConcreteJob,
 	/* OPTIONAL IN */ TimeoutPeriod string,
 	/*Custom IN*/ Action cim.UserAction,

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.SMB
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.SMB
+//////////////////////////////////////////////
 package smb
 
 import (
@@ -22,12 +21,6 @@ type MSFT_SmbMapping struct {
 	*cim.WmiInstance
 
 	//
-	CompressNetworkTraffic int32
-
-	//
-	GlobalMapping bool
-
-	//
 	LocalPath string
 
 	//
@@ -40,13 +33,7 @@ type MSFT_SmbMapping struct {
 	RequirePrivacy bool
 
 	//
-	SkipCertificateCheck bool
-
-	//
 	Status SmbMapping_Status
-
-	//
-	TransportType SmbMapping_TransportType
 
 	//
 	UseWriteThrough bool
@@ -78,60 +65,6 @@ func NewMSFT_SmbMappingEx6(hostName string,
 	newInstance = &MSFT_SmbMapping{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetCompressNetworkTraffic sets the value of CompressNetworkTraffic for the instance
-func (instance *MSFT_SmbMapping) SetPropertyCompressNetworkTraffic(value int32) (err error) {
-	return instance.SetProperty("CompressNetworkTraffic", (value))
-}
-
-// GetCompressNetworkTraffic gets the value of CompressNetworkTraffic for the instance
-func (instance *MSFT_SmbMapping) GetPropertyCompressNetworkTraffic() (value int32, err error) {
-	retValue, err := instance.GetProperty("CompressNetworkTraffic")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetGlobalMapping sets the value of GlobalMapping for the instance
-func (instance *MSFT_SmbMapping) SetPropertyGlobalMapping(value bool) (err error) {
-	return instance.SetProperty("GlobalMapping", (value))
-}
-
-// GetGlobalMapping gets the value of GlobalMapping for the instance
-func (instance *MSFT_SmbMapping) GetPropertyGlobalMapping() (value bool, err error) {
-	retValue, err := instance.GetProperty("GlobalMapping")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
@@ -243,33 +176,6 @@ func (instance *MSFT_SmbMapping) GetPropertyRequirePrivacy() (value bool, err er
 	return
 }
 
-// SetSkipCertificateCheck sets the value of SkipCertificateCheck for the instance
-func (instance *MSFT_SmbMapping) SetPropertySkipCertificateCheck(value bool) (err error) {
-	return instance.SetProperty("SkipCertificateCheck", (value))
-}
-
-// GetSkipCertificateCheck gets the value of SkipCertificateCheck for the instance
-func (instance *MSFT_SmbMapping) GetPropertySkipCertificateCheck() (value bool, err error) {
-	retValue, err := instance.GetProperty("SkipCertificateCheck")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_SmbMapping) SetPropertyStatus(value SmbMapping_Status) (err error) {
 	return instance.SetProperty("Status", (value))
@@ -293,33 +199,6 @@ func (instance *MSFT_SmbMapping) GetPropertyStatus() (value SmbMapping_Status, e
 	}
 
 	value = SmbMapping_Status(valuetmp)
-
-	return
-}
-
-// SetTransportType sets the value of TransportType for the instance
-func (instance *MSFT_SmbMapping) SetPropertyTransportType(value SmbMapping_TransportType) (err error) {
-	return instance.SetProperty("TransportType", (value))
-}
-
-// GetTransportType gets the value of TransportType for the instance
-func (instance *MSFT_SmbMapping) GetPropertyTransportType() (value SmbMapping_TransportType, err error) {
-	retValue, err := instance.GetProperty("TransportType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = SmbMapping_TransportType(valuetmp)
 
 	return
 }
@@ -354,14 +233,12 @@ func (instance *MSFT_SmbMapping) GetPropertyUseWriteThrough() (value bool, err e
 //
 
 // <param name="Force" type="bool "></param>
-// <param name="GlobalMapping" type="bool "></param>
 // <param name="UpdateProfile" type="bool "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_SmbMapping) Remove( /* IN */ UpdateProfile bool,
-	/* IN */ Force bool,
-	/* IN */ GlobalMapping bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("Remove", UpdateProfile, Force, GlobalMapping)
+	/* IN */ Force bool) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("Remove", UpdateProfile, Force)
 	if err != nil {
 		return
 	}
@@ -372,8 +249,6 @@ func (instance *MSFT_SmbMapping) Remove( /* IN */ UpdateProfile bool,
 
 //
 
-// <param name="CompressNetworkTraffic" type="bool "></param>
-// <param name="GlobalMapping" type="bool "></param>
 // <param name="HomeFolder" type="bool "></param>
 // <param name="LocalPath" type="string "></param>
 // <param name="Password" type="string "></param>
@@ -382,8 +257,6 @@ func (instance *MSFT_SmbMapping) Remove( /* IN */ UpdateProfile bool,
 // <param name="RequireIntegrity" type="bool "></param>
 // <param name="RequirePrivacy" type="bool "></param>
 // <param name="SaveCredentials" type="bool "></param>
-// <param name="SkipCertificateCheck" type="bool "></param>
-// <param name="TransportType" type="uint32 "></param>
 // <param name="UserName" type="string "></param>
 // <param name="UseWriteThrough" type="bool "></param>
 
@@ -399,12 +272,8 @@ func (instance *MSFT_SmbMapping) Create( /* IN */ LocalPath string,
 	/* OUT */ CreatedMapping MSFT_SmbMapping,
 	/* OPTIONAL IN */ RequireIntegrity bool,
 	/* OPTIONAL IN */ RequirePrivacy bool,
-	/* OPTIONAL IN */ UseWriteThrough bool,
-	/* OPTIONAL IN */ TransportType uint32,
-	/* OPTIONAL IN */ SkipCertificateCheck bool,
-	/* OPTIONAL IN */ CompressNetworkTraffic bool,
-	/* OPTIONAL IN */ GlobalMapping bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Create", LocalPath, RemotePath, UserName, Password, Persistent, SaveCredentials, HomeFolder, RequireIntegrity, RequirePrivacy, UseWriteThrough, TransportType, SkipCertificateCheck, CompressNetworkTraffic, GlobalMapping)
+	/* OPTIONAL IN */ UseWriteThrough bool) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Create", LocalPath, RemotePath, UserName, Password, Persistent, SaveCredentials, HomeFolder, RequireIntegrity, RequirePrivacy, UseWriteThrough)
 	if err != nil {
 		return
 	}

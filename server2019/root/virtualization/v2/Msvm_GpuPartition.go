@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -19,18 +18,6 @@ import (
 // Msvm_GpuPartition struct
 type Msvm_GpuPartition struct {
 	*CIM_LogicalDevice
-
-	//
-	CurrentCompute uint64
-
-	//
-	CurrentDecode uint64
-
-	//
-	CurrentEncode uint64
-
-	//
-	CurrentVRAM uint64
 
 	//
 	DeviceInstancePath string
@@ -68,114 +55,6 @@ func NewMsvm_GpuPartitionEx6(hostName string,
 	newInstance = &Msvm_GpuPartition{
 		CIM_LogicalDevice: tmp,
 	}
-	return
-}
-
-// SetCurrentCompute sets the value of CurrentCompute for the instance
-func (instance *Msvm_GpuPartition) SetPropertyCurrentCompute(value uint64) (err error) {
-	return instance.SetProperty("CurrentCompute", (value))
-}
-
-// GetCurrentCompute gets the value of CurrentCompute for the instance
-func (instance *Msvm_GpuPartition) GetPropertyCurrentCompute() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CurrentCompute")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCurrentDecode sets the value of CurrentDecode for the instance
-func (instance *Msvm_GpuPartition) SetPropertyCurrentDecode(value uint64) (err error) {
-	return instance.SetProperty("CurrentDecode", (value))
-}
-
-// GetCurrentDecode gets the value of CurrentDecode for the instance
-func (instance *Msvm_GpuPartition) GetPropertyCurrentDecode() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CurrentDecode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCurrentEncode sets the value of CurrentEncode for the instance
-func (instance *Msvm_GpuPartition) SetPropertyCurrentEncode(value uint64) (err error) {
-	return instance.SetProperty("CurrentEncode", (value))
-}
-
-// GetCurrentEncode gets the value of CurrentEncode for the instance
-func (instance *Msvm_GpuPartition) GetPropertyCurrentEncode() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CurrentEncode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCurrentVRAM sets the value of CurrentVRAM for the instance
-func (instance *Msvm_GpuPartition) SetPropertyCurrentVRAM(value uint64) (err error) {
-	return instance.SetProperty("CurrentVRAM", (value))
-}
-
-// GetCurrentVRAM gets the value of CurrentVRAM for the instance
-func (instance *Msvm_GpuPartition) GetPropertyCurrentVRAM() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CurrentVRAM")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 

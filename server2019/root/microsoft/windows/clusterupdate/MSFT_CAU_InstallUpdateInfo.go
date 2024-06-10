@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.ClusterUpdate
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.ClusterUpdate
+//////////////////////////////////////////////
 package clusterupdate
 
 import (
@@ -19,9 +18,6 @@ import (
 // MSFT_CAU_InstallUpdateInfo struct
 type MSFT_CAU_InstallUpdateInfo struct {
 	*MSFT_CAU_DownloadUpdateInfo
-
-	//
-	CommitRequired bool
 
 	//
 	LongRebootHint bool
@@ -56,33 +52,6 @@ func NewMSFT_CAU_InstallUpdateInfoEx6(hostName string,
 	newInstance = &MSFT_CAU_InstallUpdateInfo{
 		MSFT_CAU_DownloadUpdateInfo: tmp,
 	}
-	return
-}
-
-// SetCommitRequired sets the value of CommitRequired for the instance
-func (instance *MSFT_CAU_InstallUpdateInfo) SetPropertyCommitRequired(value bool) (err error) {
-	return instance.SetProperty("CommitRequired", (value))
-}
-
-// GetCommitRequired gets the value of CommitRequired for the instance
-func (instance *MSFT_CAU_InstallUpdateInfo) GetPropertyCommitRequired() (value bool, err error) {
-	retValue, err := instance.GetProperty("CommitRequired")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
 	return
 }
 

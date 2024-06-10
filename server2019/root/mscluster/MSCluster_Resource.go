@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -1129,10 +1128,8 @@ func (instance *MSCluster_Resource) CreateResource( /* IN */ Group string,
 //
 
 // <param name="Options" type="uint32 "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Resource) DeleteResource( /* IN */ Options uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("DeleteResource", Options, Reason)
+func (instance *MSCluster_Resource) DeleteResource( /* IN */ Options uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("DeleteResource", Options)
 	if err != nil {
 		return
 	}
@@ -1143,10 +1140,8 @@ func (instance *MSCluster_Resource) DeleteResource( /* IN */ Options uint32,
 //
 
 // <param name="Group" type="string "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Resource) MoveToNewGroup( /* IN */ Group string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("MoveToNewGroup", Group, Reason)
+func (instance *MSCluster_Resource) MoveToNewGroup( /* IN */ Group string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("MoveToNewGroup", Group)
 	if err != nil {
 		return
 	}
@@ -1207,11 +1202,9 @@ func (instance *MSCluster_Resource) GetDependencies( /* OUT */ Expression string
 
 //
 
-// <param name="Reason" type="string "></param>
 // <param name="TimeOut" type="uint32 "></param>
-func (instance *MSCluster_Resource) BringOnline( /* IN */ TimeOut uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("BringOnline", TimeOut, Reason)
+func (instance *MSCluster_Resource) BringOnline( /* IN */ TimeOut uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("BringOnline", TimeOut)
 	if err != nil {
 		return
 	}
@@ -1223,13 +1216,11 @@ func (instance *MSCluster_Resource) BringOnline( /* IN */ TimeOut uint32,
 
 // <param name="Flags" type="uint32 "></param>
 // <param name="Parameters" type="MSCluster_Property "></param>
-// <param name="Reason" type="string "></param>
 // <param name="TimeOut" type="uint32 "></param>
 func (instance *MSCluster_Resource) TakeOffline( /* IN */ TimeOut uint32,
 	/* IN */ Parameters MSCluster_Property,
-	/* IN */ Flags uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("TakeOffline", TimeOut, Parameters, Flags, Reason)
+	/* IN */ Flags uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("TakeOffline", TimeOut, Parameters, Flags)
 	if err != nil {
 		return
 	}
@@ -1241,13 +1232,11 @@ func (instance *MSCluster_Resource) TakeOffline( /* IN */ TimeOut uint32,
 
 // <param name="Flags" type="uint32 "></param>
 // <param name="Parameters" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 // <param name="TimeOut" type="uint32 "></param>
 func (instance *MSCluster_Resource) TakeOfflineParams( /* IN */ TimeOut uint32,
 	/* IN */ Parameters []uint8,
-	/* IN */ Flags uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("TakeOfflineParams", TimeOut, Parameters, Flags, Reason)
+	/* IN */ Flags uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("TakeOfflineParams", TimeOut, Parameters, Flags)
 	if err != nil {
 		return
 	}
@@ -1258,10 +1247,8 @@ func (instance *MSCluster_Resource) TakeOfflineParams( /* IN */ TimeOut uint32,
 //
 
 // <param name="newName" type="string "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Resource) Rename( /* IN */ newName string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("Rename", newName, Reason)
+func (instance *MSCluster_Resource) Rename( /* IN */ newName string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("Rename", newName)
 	if err != nil {
 		return
 	}
@@ -1270,10 +1257,8 @@ func (instance *MSCluster_Resource) Rename( /* IN */ newName string,
 }
 
 //
-
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Resource) FailResource( /* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("FailResource", Reason)
+func (instance *MSCluster_Resource) FailResource() (err error) {
+	_, err = instance.InvokeMethodWithReturn("FailResource")
 	if err != nil {
 		return
 	}
@@ -1329,6 +1314,7 @@ func (instance *MSCluster_Resource) RemoveCryptoCheckpoint( /* IN */ CheckpointN
 
 }
 
+//
 func (instance *MSCluster_Resource) RenewAddress() (err error) {
 	_, err = instance.InvokeMethodWithReturn("RenewAddress")
 	if err != nil {
@@ -1338,6 +1324,7 @@ func (instance *MSCluster_Resource) RenewAddress() (err error) {
 
 }
 
+//
 func (instance *MSCluster_Resource) ReleaseAddress() (err error) {
 	_, err = instance.InvokeMethodWithReturn("ReleaseAddress")
 	if err != nil {
@@ -1383,6 +1370,7 @@ func (instance *MSCluster_Resource) RemovePossibleOwner( /* IN */ NodeName strin
 
 }
 
+//
 func (instance *MSCluster_Resource) UpdateVirtualMachine() (err error) {
 	_, err = instance.InvokeMethodWithReturn("UpdateVirtualMachine")
 	if err != nil {
@@ -1430,16 +1418,14 @@ func (instance *MSCluster_Resource) AttachStorageDevice( /* IN */ StorageDevice 
 
 // <param name="ControlCode" type="int32 "></param>
 // <param name="InputBuffer" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 
 // <param name="OutputBuffer" type="uint8 []"></param>
 // <param name="OutputBufferSize" type="int32 "></param>
 func (instance *MSCluster_Resource) ExecuteResourceControl( /* IN */ ControlCode int32,
 	/* IN */ InputBuffer []uint8,
 	/* OUT */ OutputBuffer []uint8,
-	/* OUT */ OutputBufferSize int32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethod("ExecuteResourceControl", ControlCode, InputBuffer, Reason)
+	/* OUT */ OutputBufferSize int32) (err error) {
+	_, err = instance.InvokeMethod("ExecuteResourceControl", ControlCode, InputBuffer)
 	if err != nil {
 		return
 	}

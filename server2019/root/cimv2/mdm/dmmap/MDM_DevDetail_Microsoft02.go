@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -53,9 +52,6 @@ type MDM_DevDetail_Microsoft02 struct {
 
 	//
 	Resolution string
-
-	//
-	SystemSKU string
 }
 
 func NewMDM_DevDetail_Microsoft02Ex1(instance *cim.WmiInstance) (newInstance *MDM_DevDetail_Microsoft02, err error) {
@@ -365,33 +361,6 @@ func (instance *MDM_DevDetail_Microsoft02) SetPropertyResolution(value string) (
 // GetResolution gets the value of Resolution for the instance
 func (instance *MDM_DevDetail_Microsoft02) GetPropertyResolution() (value string, err error) {
 	retValue, err := instance.GetProperty("Resolution")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetSystemSKU sets the value of SystemSKU for the instance
-func (instance *MDM_DevDetail_Microsoft02) SetPropertySystemSKU(value string) (err error) {
-	return instance.SetProperty("SystemSKU", (value))
-}
-
-// GetSystemSKU gets the value of SystemSKU for the instance
-func (instance *MDM_DevDetail_Microsoft02) GetPropertySystemSKU() (value string, err error) {
-	retValue, err := instance.GetProperty("SystemSKU")
 	if err != nil {
 		return
 	}

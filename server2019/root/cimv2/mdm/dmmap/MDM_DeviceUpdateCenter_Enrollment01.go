@@ -1,20 +1,17 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MDM_DeviceUpdateCenter_Enrollment01 struct
@@ -71,7 +68,7 @@ func NewMDM_DeviceUpdateCenter_Enrollment01Ex6(hostName string,
 
 // SetCustomPackageId sets the value of CustomPackageId for the instance
 func (instance *MDM_DeviceUpdateCenter_Enrollment01) SetPropertyCustomPackageId(value string) (err error) {
-	return instance.SetProperty("CustomPackageId", (value))
+	return instance.SetProperty("CustomPackageId", value)
 }
 
 // GetCustomPackageId gets the value of CustomPackageId for the instance
@@ -80,25 +77,16 @@ func (instance *MDM_DeviceUpdateCenter_Enrollment01) GetPropertyCustomPackageId(
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetDeviceModelId sets the value of DeviceModelId for the instance
 func (instance *MDM_DeviceUpdateCenter_Enrollment01) SetPropertyDeviceModelId(value string) (err error) {
-	return instance.SetProperty("DeviceModelId", (value))
+	return instance.SetProperty("DeviceModelId", value)
 }
 
 // GetDeviceModelId gets the value of DeviceModelId for the instance
@@ -107,25 +95,16 @@ func (instance *MDM_DeviceUpdateCenter_Enrollment01) GetPropertyDeviceModelId() 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_DeviceUpdateCenter_Enrollment01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", (value))
+	return instance.SetProperty("InstanceID", value)
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -134,25 +113,16 @@ func (instance *MDM_DeviceUpdateCenter_Enrollment01) GetPropertyInstanceID() (va
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetOemPartnerRing sets the value of OemPartnerRing for the instance
 func (instance *MDM_DeviceUpdateCenter_Enrollment01) SetPropertyOemPartnerRing(value string) (err error) {
-	return instance.SetProperty("OemPartnerRing", (value))
+	return instance.SetProperty("OemPartnerRing", value)
 }
 
 // GetOemPartnerRing gets the value of OemPartnerRing for the instance
@@ -161,25 +131,16 @@ func (instance *MDM_DeviceUpdateCenter_Enrollment01) GetPropertyOemPartnerRing()
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_DeviceUpdateCenter_Enrollment01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", (value))
+	return instance.SetProperty("ParentID", value)
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -188,25 +149,16 @@ func (instance *MDM_DeviceUpdateCenter_Enrollment01) GetPropertyParentID() (valu
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetPublisherId sets the value of PublisherId for the instance
 func (instance *MDM_DeviceUpdateCenter_Enrollment01) SetPropertyPublisherId(value string) (err error) {
-	return instance.SetProperty("PublisherId", (value))
+	return instance.SetProperty("PublisherId", value)
 }
 
 // GetPublisherId gets the value of PublisherId for the instance
@@ -215,18 +167,9 @@ func (instance *MDM_DeviceUpdateCenter_Enrollment01) GetPropertyPublisherId() (v
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }

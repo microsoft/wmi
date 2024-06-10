@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage
+//////////////////////////////////////////////
 package storage
 
 import (
@@ -157,7 +156,6 @@ func (instance *PS_StorageCmdlets) SetPartition( /* IN */ InputObject []MSFT_Par
 // <param name="Description" type="string "></param>
 // <param name="FriendlyName" type="string "></param>
 // <param name="InputObject" type="MSFT_PhysicalDisk []"></param>
-// <param name="IsHidden" type="bool "></param>
 // <param name="MediaType" type="uint16 "></param>
 // <param name="NewFriendlyName" type="string "></param>
 // <param name="StorageEnclosureId" type="string "></param>
@@ -174,9 +172,8 @@ func (instance *PS_StorageCmdlets) SetPhysicalDisk( /* IN */ InputObject []MSFT_
 	/* IN */ Usage uint16,
 	/* IN */ MediaType uint16,
 	/* IN */ StorageEnclosureId string,
-	/* IN */ StorageScaleUnitId string,
-	/* IN */ IsHidden bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetPhysicalDisk", InputObject, UniqueId, FriendlyName, NewFriendlyName, Description, Usage, MediaType, StorageEnclosureId, StorageScaleUnitId, IsHidden)
+	/* IN */ StorageScaleUnitId string) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetPhysicalDisk", InputObject, UniqueId, FriendlyName, NewFriendlyName, Description, Usage, MediaType, StorageEnclosureId, StorageScaleUnitId)
 	if err != nil {
 		return
 	}
@@ -248,8 +245,6 @@ func (instance *PS_StorageCmdlets) SetStoragePool( /* IN */ InputObject []MSFT_S
 // <param name="InputObject" type="MSFT_VirtualDisk []"></param>
 // <param name="Interleave" type="uint64 "></param>
 // <param name="IsManualAttach" type="bool "></param>
-// <param name="MaxIoBandwidth" type="uint64 "></param>
-// <param name="MaxIops" type="uint64 "></param>
 // <param name="MediaType" type="uint16 "></param>
 // <param name="Name" type="string "></param>
 // <param name="NewFriendlyName" type="string "></param>
@@ -285,10 +280,8 @@ func (instance *PS_StorageCmdlets) SetVirtualDisk( /* IN */ InputObject []MSFT_V
 	/* IN */ NumberOfDataCopies uint16,
 	/* IN */ NumberOfGroups uint16,
 	/* IN */ NumberOfColumns uint16,
-	/* IN */ Interleave uint64,
-	/* IN */ MaxIops uint64,
-	/* IN */ MaxIoBandwidth uint64) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetVirtualDisk", InputObject, UniqueId, Name, FriendlyName, NewFriendlyName, Usage, OtherUsageDescription, IsManualAttach, StorageNodeName, Access, ProvisioningType, AllocationUnitSize, MediaType, FaultDomainAwareness, ColumnIsolation, ResiliencySettingName, PhysicalDiskRedundancy, NumberOfDataCopies, NumberOfGroups, NumberOfColumns, Interleave, MaxIops, MaxIoBandwidth)
+	/* IN */ Interleave uint64) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetVirtualDisk", InputObject, UniqueId, Name, FriendlyName, NewFriendlyName, Usage, OtherUsageDescription, IsManualAttach, StorageNodeName, Access, ProvisioningType, AllocationUnitSize, MediaType, FaultDomainAwareness, ColumnIsolation, ResiliencySettingName, PhysicalDiskRedundancy, NumberOfDataCopies, NumberOfGroups, NumberOfColumns, Interleave)
 	if err != nil {
 		return
 	}
@@ -353,8 +346,6 @@ func (instance *PS_StorageCmdlets) SetStorageTier( /* IN */ InputObject []MSFT_S
 // <param name="InputObject" type="MSFT_StorageSubSystem []"></param>
 // <param name="Name" type="string "></param>
 // <param name="UniqueId" type="string "></param>
-// <param name="VirtualDiskRepairEnabled" type="bool "></param>
-// <param name="VirtualDiskRepairQueueDepth" type="uint32 "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *PS_StorageCmdlets) SetStorageSubSystem( /* IN */ InputObject []MSFT_StorageSubSystem,
@@ -363,10 +354,8 @@ func (instance *PS_StorageCmdlets) SetStorageSubSystem( /* IN */ InputObject []M
 	/* IN */ FriendlyName string,
 	/* IN */ Description string,
 	/* IN */ AutomaticClusteringEnabled bool,
-	/* IN */ VirtualDiskRepairEnabled bool,
-	/* IN */ VirtualDiskRepairQueueDepth uint32,
 	/* IN */ FaultDomainAwarenessDefault uint16) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetStorageSubSystem", InputObject, UniqueId, Name, FriendlyName, Description, AutomaticClusteringEnabled, VirtualDiskRepairEnabled, VirtualDiskRepairQueueDepth, FaultDomainAwarenessDefault)
+	retVal, err := instance.InvokeMethodWithReturn("SetStorageSubSystem", InputObject, UniqueId, Name, FriendlyName, Description, AutomaticClusteringEnabled, FaultDomainAwarenessDefault)
 	if err != nil {
 		return
 	}

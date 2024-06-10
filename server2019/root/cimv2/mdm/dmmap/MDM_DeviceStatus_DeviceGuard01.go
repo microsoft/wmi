@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -22,9 +21,6 @@ type MDM_DeviceStatus_DeviceGuard01 struct {
 	*cim.WmiInstance
 
 	//
-	HypervisorEnforcedCodeIntegrityStatus int32
-
-	//
 	InstanceID string
 
 	//
@@ -32,9 +28,6 @@ type MDM_DeviceStatus_DeviceGuard01 struct {
 
 	//
 	ParentID string
-
-	//
-	SystemGuardStatus int32
 
 	//
 	VirtualizationBasedSecurityHwReq int32
@@ -69,33 +62,6 @@ func NewMDM_DeviceStatus_DeviceGuard01Ex6(hostName string,
 	newInstance = &MDM_DeviceStatus_DeviceGuard01{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetHypervisorEnforcedCodeIntegrityStatus sets the value of HypervisorEnforcedCodeIntegrityStatus for the instance
-func (instance *MDM_DeviceStatus_DeviceGuard01) SetPropertyHypervisorEnforcedCodeIntegrityStatus(value int32) (err error) {
-	return instance.SetProperty("HypervisorEnforcedCodeIntegrityStatus", (value))
-}
-
-// GetHypervisorEnforcedCodeIntegrityStatus gets the value of HypervisorEnforcedCodeIntegrityStatus for the instance
-func (instance *MDM_DeviceStatus_DeviceGuard01) GetPropertyHypervisorEnforcedCodeIntegrityStatus() (value int32, err error) {
-	retValue, err := instance.GetProperty("HypervisorEnforcedCodeIntegrityStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
 	return
 }
 
@@ -176,33 +142,6 @@ func (instance *MDM_DeviceStatus_DeviceGuard01) GetPropertyParentID() (value str
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetSystemGuardStatus sets the value of SystemGuardStatus for the instance
-func (instance *MDM_DeviceStatus_DeviceGuard01) SetPropertySystemGuardStatus(value int32) (err error) {
-	return instance.SetProperty("SystemGuardStatus", (value))
-}
-
-// GetSystemGuardStatus gets the value of SystemGuardStatus for the instance
-func (instance *MDM_DeviceStatus_DeviceGuard01) GetPropertySystemGuardStatus() (value int32, err error) {
-	retValue, err := instance.GetProperty("SystemGuardStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

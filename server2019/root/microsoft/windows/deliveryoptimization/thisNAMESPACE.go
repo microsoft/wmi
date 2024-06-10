@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __thisNAMESPACE struct
@@ -55,7 +52,7 @@ func New__thisNAMESPACEEx6(hostName string,
 
 // SetSECURITY_DESCRIPTOR sets the value of SECURITY_DESCRIPTOR for the instance
 func (instance *__thisNAMESPACE) SetPropertySECURITY_DESCRIPTOR(value []uint8) (err error) {
-	return instance.SetProperty("SECURITY_DESCRIPTOR", (value))
+	return instance.SetProperty("SECURITY_DESCRIPTOR", value)
 }
 
 // GetSECURITY_DESCRIPTOR gets the value of SECURITY_DESCRIPTOR for the instance
@@ -64,19 +61,9 @@ func (instance *__thisNAMESPACE) GetPropertySECURITY_DESCRIPTOR() (value []uint8
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]uint8)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint8)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint8(valuetmp))
-	}
-
 	return
 }

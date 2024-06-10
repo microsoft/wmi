@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MSFT_DOCurrentStatus struct
@@ -94,7 +91,7 @@ func NewMSFT_DOCurrentStatusEx6(hostName string,
 
 // SetCacheServerConnections sets the value of CacheServerConnections for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyCacheServerConnections(value uint32) (err error) {
-	return instance.SetProperty("CacheServerConnections", (value))
+	return instance.SetProperty("CacheServerConnections", value)
 }
 
 // GetCacheServerConnections gets the value of CacheServerConnections for the instance
@@ -103,25 +100,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyCacheServerConnections() (value
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetCacheSizeBytes sets the value of CacheSizeBytes for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyCacheSizeBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheSizeBytes", (value))
+	return instance.SetProperty("CacheSizeBytes", value)
 }
 
 // GetCacheSizeBytes gets the value of CacheSizeBytes for the instance
@@ -130,25 +118,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyCacheSizeBytes() (value uint64,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetCdnConnections sets the value of CdnConnections for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyCdnConnections(value uint32) (err error) {
-	return instance.SetProperty("CdnConnections", (value))
+	return instance.SetProperty("CdnConnections", value)
 }
 
 // GetCdnConnections gets the value of CdnConnections for the instance
@@ -157,25 +136,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyCdnConnections() (value uint32,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetCpuUsagePct sets the value of CpuUsagePct for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyCpuUsagePct(value float32) (err error) {
-	return instance.SetProperty("CpuUsagePct", (value))
+	return instance.SetProperty("CpuUsagePct", value)
 }
 
 // GetCpuUsagePct gets the value of CpuUsagePct for the instance
@@ -184,25 +154,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyCpuUsagePct() (value float32, e
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(float32)
+	value, ok := retValue.(float32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = float32(valuetmp)
-
 	return
 }
 
 // SetDeviceProfile sets the value of DeviceProfile for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyDeviceProfile(value uint32) (err error) {
-	return instance.SetProperty("DeviceProfile", (value))
+	return instance.SetProperty("DeviceProfile", value)
 }
 
 // GetDeviceProfile gets the value of DeviceProfile for the instance
@@ -211,25 +172,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyDeviceProfile() (value uint32, 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDiskAvailableBytes sets the value of DiskAvailableBytes for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyDiskAvailableBytes(value uint64) (err error) {
-	return instance.SetProperty("DiskAvailableBytes", (value))
+	return instance.SetProperty("DiskAvailableBytes", value)
 }
 
 // GetDiskAvailableBytes gets the value of DiskAvailableBytes for the instance
@@ -238,25 +190,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyDiskAvailableBytes() (value uin
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDiskTotalBytes sets the value of DiskTotalBytes for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyDiskTotalBytes(value uint64) (err error) {
-	return instance.SetProperty("DiskTotalBytes", (value))
+	return instance.SetProperty("DiskTotalBytes", value)
 }
 
 // GetDiskTotalBytes gets the value of DiskTotalBytes for the instance
@@ -265,25 +208,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyDiskTotalBytes() (value uint64,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetGroupConnections sets the value of GroupConnections for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyGroupConnections(value uint32) (err error) {
-	return instance.SetProperty("GroupConnections", (value))
+	return instance.SetProperty("GroupConnections", value)
 }
 
 // GetGroupConnections gets the value of GroupConnections for the instance
@@ -292,25 +226,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyGroupConnections() (value uint3
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetInternetConnections sets the value of InternetConnections for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyInternetConnections(value uint32) (err error) {
-	return instance.SetProperty("InternetConnections", (value))
+	return instance.SetProperty("InternetConnections", value)
 }
 
 // GetInternetConnections gets the value of InternetConnections for the instance
@@ -319,25 +244,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyInternetConnections() (value ui
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetLanConnections sets the value of LanConnections for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyLanConnections(value uint32) (err error) {
-	return instance.SetProperty("LanConnections", (value))
+	return instance.SetProperty("LanConnections", value)
 }
 
 // GetLanConnections gets the value of LanConnections for the instance
@@ -346,25 +262,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyLanConnections() (value uint32,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetLinkLocalConnections sets the value of LinkLocalConnections for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyLinkLocalConnections(value uint32) (err error) {
-	return instance.SetProperty("LinkLocalConnections", (value))
+	return instance.SetProperty("LinkLocalConnections", value)
 }
 
 // GetLinkLocalConnections gets the value of LinkLocalConnections for the instance
@@ -373,25 +280,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyLinkLocalConnections() (value u
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetMemUsageKBytes sets the value of MemUsageKBytes for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyMemUsageKBytes(value uint64) (err error) {
-	return instance.SetProperty("MemUsageKBytes", (value))
+	return instance.SetProperty("MemUsageKBytes", value)
 }
 
 // GetMemUsageKBytes gets the value of MemUsageKBytes for the instance
@@ -400,25 +298,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyMemUsageKBytes() (value uint64,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetPeerInfoCount sets the value of PeerInfoCount for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertyPeerInfoCount(value uint32) (err error) {
-	return instance.SetProperty("PeerInfoCount", (value))
+	return instance.SetProperty("PeerInfoCount", value)
 }
 
 // GetPeerInfoCount gets the value of PeerInfoCount for the instance
@@ -427,25 +316,16 @@ func (instance *MSFT_DOCurrentStatus) GetPropertyPeerInfoCount() (value uint32, 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetSwarms sets the value of Swarms for the instance
 func (instance *MSFT_DOCurrentStatus) SetPropertySwarms(value uint32) (err error) {
-	return instance.SetProperty("Swarms", (value))
+	return instance.SetProperty("Swarms", value)
 }
 
 // GetSwarms gets the value of Swarms for the instance
@@ -454,18 +334,9 @@ func (instance *MSFT_DOCurrentStatus) GetPropertySwarms() (value uint32, err err
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }

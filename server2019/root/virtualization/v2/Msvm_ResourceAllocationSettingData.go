@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -19,9 +18,6 @@ import (
 // Msvm_ResourceAllocationSettingData struct
 type Msvm_ResourceAllocationSettingData struct {
 	*CIM_ResourceAllocationSettingData
-
-	//
-	TargetVtl uint8
 
 	//
 	VirtualSystemIdentifiers []string
@@ -53,33 +49,6 @@ func NewMsvm_ResourceAllocationSettingDataEx6(hostName string,
 	newInstance = &Msvm_ResourceAllocationSettingData{
 		CIM_ResourceAllocationSettingData: tmp,
 	}
-	return
-}
-
-// SetTargetVtl sets the value of TargetVtl for the instance
-func (instance *Msvm_ResourceAllocationSettingData) SetPropertyTargetVtl(value uint8) (err error) {
-	return instance.SetProperty("TargetVtl", (value))
-}
-
-// GetTargetVtl gets the value of TargetVtl for the instance
-func (instance *Msvm_ResourceAllocationSettingData) GetPropertyTargetVtl() (value uint8, err error) {
-	retValue, err := instance.GetProperty("TargetVtl")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
 	return
 }
 

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage
+//////////////////////////////////////////////
 package storage
 
 import (
@@ -34,16 +33,10 @@ type MSFT_FileStorageTier struct {
 	FileSize uint64
 
 	//
-	FileSizeOnCapacityTierClass uint64
-
-	//
 	FileSizeOnDesiredStorageTier uint64
 
 	//
 	FileSizeOnDesiredStorageTierClass uint64
-
-	//
-	FileSizeOnPerformanceTierClass uint64
 
 	//
 	PlacementStatus uint16
@@ -189,33 +182,6 @@ func (instance *MSFT_FileStorageTier) GetPropertyFileSize() (value uint64, err e
 	return
 }
 
-// SetFileSizeOnCapacityTierClass sets the value of FileSizeOnCapacityTierClass for the instance
-func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnCapacityTierClass(value uint64) (err error) {
-	return instance.SetProperty("FileSizeOnCapacityTierClass", (value))
-}
-
-// GetFileSizeOnCapacityTierClass gets the value of FileSizeOnCapacityTierClass for the instance
-func (instance *MSFT_FileStorageTier) GetPropertyFileSizeOnCapacityTierClass() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FileSizeOnCapacityTierClass")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetFileSizeOnDesiredStorageTier sets the value of FileSizeOnDesiredStorageTier for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnDesiredStorageTier(value uint64) (err error) {
 	return instance.SetProperty("FileSizeOnDesiredStorageTier", (value))
@@ -251,33 +217,6 @@ func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnDesiredStorageTierCla
 // GetFileSizeOnDesiredStorageTierClass gets the value of FileSizeOnDesiredStorageTierClass for the instance
 func (instance *MSFT_FileStorageTier) GetPropertyFileSizeOnDesiredStorageTierClass() (value uint64, err error) {
 	retValue, err := instance.GetProperty("FileSizeOnDesiredStorageTierClass")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetFileSizeOnPerformanceTierClass sets the value of FileSizeOnPerformanceTierClass for the instance
-func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnPerformanceTierClass(value uint64) (err error) {
-	return instance.SetProperty("FileSizeOnPerformanceTierClass", (value))
-}
-
-// GetFileSizeOnPerformanceTierClass gets the value of FileSizeOnPerformanceTierClass for the instance
-func (instance *MSFT_FileStorageTier) GetPropertyFileSizeOnPerformanceTierClass() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FileSizeOnPerformanceTierClass")
 	if err != nil {
 		return
 	}
@@ -353,10 +292,7 @@ func (instance *MSFT_FileStorageTier) GetPropertyState() (value uint16, err erro
 
 //
 
-// <param name="AllocatedStorageTierClass" type="uint16 "></param>
 // <param name="FilePath" type="string "></param>
-// <param name="PinnedState" type="uint16 "></param>
-// <param name="PinnedStorageTierClass" type="uint16 "></param>
 // <param name="Volume" type="MSFT_Volume "></param>
 // <param name="VolumeDriveLetter" type="byte "></param>
 // <param name="VolumePath" type="string "></param>
@@ -367,11 +303,8 @@ func (instance *MSFT_FileStorageTier) Get( /* IN */ FilePath string,
 	/* IN */ VolumeDriveLetter byte,
 	/* IN */ VolumePath string,
 	/* IN */ Volume MSFT_Volume,
-	/* IN */ PinnedState uint16,
-	/* IN */ PinnedStorageTierClass uint16,
-	/* IN */ AllocatedStorageTierClass uint16,
 	/* OUT */ FileStorageTier []MSFT_FileStorageTier) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Get", FilePath, VolumeDriveLetter, VolumePath, Volume, PinnedState, PinnedStorageTierClass, AllocatedStorageTierClass)
+	retVal, err := instance.InvokeMethod("Get", FilePath, VolumeDriveLetter, VolumePath, Volume)
 	if err != nil {
 		return
 	}

@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter struct
@@ -70,7 +67,7 @@ func NewWin32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapterEx6(hostNam
 
 // SetTotalReceives sets the value of TotalReceives for the instance
 func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) SetPropertyTotalReceives(value uint64) (err error) {
-	return instance.SetProperty("TotalReceives", (value))
+	return instance.SetProperty("TotalReceives", value)
 }
 
 // GetTotalReceives gets the value of TotalReceives for the instance
@@ -79,25 +76,16 @@ func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetTotalReceivesAccepted sets the value of TotalReceivesAccepted for the instance
 func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) SetPropertyTotalReceivesAccepted(value uint64) (err error) {
-	return instance.SetProperty("TotalReceivesAccepted", (value))
+	return instance.SetProperty("TotalReceivesAccepted", value)
 }
 
 // GetTotalReceivesAccepted gets the value of TotalReceivesAccepted for the instance
@@ -106,25 +94,16 @@ func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetTotalReceivesDropped sets the value of TotalReceivesDropped for the instance
 func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) SetPropertyTotalReceivesDropped(value uint64) (err error) {
-	return instance.SetProperty("TotalReceivesDropped", (value))
+	return instance.SetProperty("TotalReceivesDropped", value)
 }
 
 // GetTotalReceivesDropped gets the value of TotalReceivesDropped for the instance
@@ -133,25 +112,16 @@ func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetTotalSendRequests sets the value of TotalSendRequests for the instance
 func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) SetPropertyTotalSendRequests(value uint64) (err error) {
-	return instance.SetProperty("TotalSendRequests", (value))
+	return instance.SetProperty("TotalSendRequests", value)
 }
 
 // GetTotalSendRequests gets the value of TotalSendRequests for the instance
@@ -160,25 +130,16 @@ func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetTotalSendRequestsAccepted sets the value of TotalSendRequestsAccepted for the instance
 func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) SetPropertyTotalSendRequestsAccepted(value uint64) (err error) {
-	return instance.SetProperty("TotalSendRequestsAccepted", (value))
+	return instance.SetProperty("TotalSendRequestsAccepted", value)
 }
 
 // GetTotalSendRequestsAccepted gets the value of TotalSendRequestsAccepted for the instance
@@ -187,25 +148,16 @@ func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetTotalSendRequestsDropped sets the value of TotalSendRequestsDropped for the instance
 func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) SetPropertyTotalSendRequestsDropped(value uint64) (err error) {
-	return instance.SetProperty("TotalSendRequestsDropped", (value))
+	return instance.SetProperty("TotalSendRequestsDropped", value)
 }
 
 // GetTotalSendRequestsDropped gets the value of TotalSendRequestsDropped for the instance
@@ -214,18 +166,9 @@ func (instance *Win32_PerfRawData_NetFtPerfProvider_ClusterNetftTunnelAdapter) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }

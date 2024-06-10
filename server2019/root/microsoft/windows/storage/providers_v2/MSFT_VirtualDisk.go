@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage.Providers_v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage.Providers_v2
+//////////////////////////////////////////////
 package providers_v2
 
 import (
@@ -71,17 +70,8 @@ type MSFT_VirtualDisk struct {
 	//
 	LogicalSectorSize uint64
 
-	// This parameter indicates the maximum IO bandwidth supported by the virtual disk.
-	MaxIoBandwidth uint64
-
-	// This parameter indicates the maximum IOPS supported by the virtual disk.
-	MaxIops uint64
-
 	//
 	MediaType uint16
-
-	// This field indicates the minimum number of logical data copies to enforce.
-	MinimumLogicalDataCopies uint16
 
 	// Name is a semi-unique (scoped to the owning storage subsystem), human-readable string used to identify the virtual disk.
 	Name string
@@ -139,9 +129,6 @@ type MSFT_VirtualDisk struct {
 	// The logical size of the virtual disk measured in bytes
 	Size uint64
 
-	// Indicates whether valid data tracking is enforced for this virtual disk.
-	TrackValidData bool
-
 	// UniqueIdFormat indicates the type of identifier used in the UniqueId field. The identifier used in UniqueId must be the highest available identifier using the following order of preference: 8 (highest), 3, 2, 1, 0 (lowest). For example: if the virtual disk device exposes identifiers of type 0, 1, and 3, UniqueId must be the identifier of type 3, and UniqueIdFormat should be set to 3.
 	UniqueIdFormat VirtualDisk_UniqueIdFormat
 
@@ -150,9 +137,6 @@ type MSFT_VirtualDisk struct {
 
 	// This field indicates the intended usage for this virtual disk.
 	Usage VirtualDisk_Usage
-
-	// Size of the write cache reserve region.
-	WriteCacheReserveSize uint64
 
 	// Size of the write cache for the virtual disk
 	WriteCacheSize uint64
@@ -619,60 +603,6 @@ func (instance *MSFT_VirtualDisk) GetPropertyLogicalSectorSize() (value uint64, 
 	return
 }
 
-// SetMaxIoBandwidth sets the value of MaxIoBandwidth for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyMaxIoBandwidth(value uint64) (err error) {
-	return instance.SetProperty("MaxIoBandwidth", (value))
-}
-
-// GetMaxIoBandwidth gets the value of MaxIoBandwidth for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyMaxIoBandwidth() (value uint64, err error) {
-	retValue, err := instance.GetProperty("MaxIoBandwidth")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetMaxIops sets the value of MaxIops for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyMaxIops(value uint64) (err error) {
-	return instance.SetProperty("MaxIops", (value))
-}
-
-// GetMaxIops gets the value of MaxIops for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyMaxIops() (value uint64, err error) {
-	retValue, err := instance.GetProperty("MaxIops")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetMediaType sets the value of MediaType for the instance
 func (instance *MSFT_VirtualDisk) SetPropertyMediaType(value uint16) (err error) {
 	return instance.SetProperty("MediaType", (value))
@@ -681,33 +611,6 @@ func (instance *MSFT_VirtualDisk) SetPropertyMediaType(value uint16) (err error)
 // GetMediaType gets the value of MediaType for the instance
 func (instance *MSFT_VirtualDisk) GetPropertyMediaType() (value uint16, err error) {
 	retValue, err := instance.GetProperty("MediaType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetMinimumLogicalDataCopies sets the value of MinimumLogicalDataCopies for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyMinimumLogicalDataCopies(value uint16) (err error) {
-	return instance.SetProperty("MinimumLogicalDataCopies", (value))
-}
-
-// GetMinimumLogicalDataCopies gets the value of MinimumLogicalDataCopies for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyMinimumLogicalDataCopies() (value uint16, err error) {
-	retValue, err := instance.GetProperty("MinimumLogicalDataCopies")
 	if err != nil {
 		return
 	}
@@ -1187,33 +1090,6 @@ func (instance *MSFT_VirtualDisk) GetPropertySize() (value uint64, err error) {
 	return
 }
 
-// SetTrackValidData sets the value of TrackValidData for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyTrackValidData(value bool) (err error) {
-	return instance.SetProperty("TrackValidData", (value))
-}
-
-// GetTrackValidData gets the value of TrackValidData for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyTrackValidData() (value bool, err error) {
-	retValue, err := instance.GetProperty("TrackValidData")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetUniqueIdFormat sets the value of UniqueIdFormat for the instance
 func (instance *MSFT_VirtualDisk) SetPropertyUniqueIdFormat(value VirtualDisk_UniqueIdFormat) (err error) {
 	return instance.SetProperty("UniqueIdFormat", (value))
@@ -1291,33 +1167,6 @@ func (instance *MSFT_VirtualDisk) GetPropertyUsage() (value VirtualDisk_Usage, e
 	}
 
 	value = VirtualDisk_Usage(valuetmp)
-
-	return
-}
-
-// SetWriteCacheReserveSize sets the value of WriteCacheReserveSize for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyWriteCacheReserveSize(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheReserveSize", (value))
-}
-
-// GetWriteCacheReserveSize gets the value of WriteCacheReserveSize for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyWriteCacheReserveSize() (value uint64, err error) {
-	retValue, err := instance.GetProperty("WriteCacheReserveSize")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
 
 	return
 }
@@ -1616,8 +1465,6 @@ func (instance *MSFT_VirtualDisk) SetAttributes( /* IN */ IsManualAttach bool,
 // <param name="ColumnIsolation" type="uint16 "></param>
 // <param name="FaultDomainAwareness" type="uint16 "></param>
 // <param name="Interleave" type="uint64 "></param>
-// <param name="MaxIoBandwidth" type="uint64 "></param>
-// <param name="MaxIops" type="uint64 "></param>
 // <param name="MediaType" type="uint16 "></param>
 // <param name="NumberOfColumns" type="uint16 "></param>
 // <param name="NumberOfDataCopies" type="uint16 "></param>
@@ -1639,10 +1486,8 @@ func (instance *MSFT_VirtualDisk) SetProperties( /* IN */ ProvisioningType uint1
 	/* IN */ NumberOfGroups uint16,
 	/* IN */ NumberOfColumns uint16,
 	/* IN */ Interleave uint64,
-	/* IN */ MaxIops uint64,
-	/* IN */ MaxIoBandwidth uint64,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("SetProperties", ProvisioningType, AllocationUnitSize, MediaType, FaultDomainAwareness, ColumnIsolation, ResiliencySettingName, PhysicalDiskRedundancy, NumberOfDataCopies, NumberOfGroups, NumberOfColumns, Interleave, MaxIops, MaxIoBandwidth)
+	retVal, err := instance.InvokeMethod("SetProperties", ProvisioningType, AllocationUnitSize, MediaType, FaultDomainAwareness, ColumnIsolation, ResiliencySettingName, PhysicalDiskRedundancy, NumberOfDataCopies, NumberOfGroups, NumberOfColumns, Interleave)
 	if err != nil {
 		return
 	}

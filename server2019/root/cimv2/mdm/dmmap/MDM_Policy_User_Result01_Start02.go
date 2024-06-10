@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -47,9 +46,6 @@ type MDM_Policy_User_Result01_Start02 struct {
 
 	//
 	ParentID string
-
-	//
-	ShowOrHideMostUsedApps int32
 
 	//
 	StartLayout string
@@ -323,33 +319,6 @@ func (instance *MDM_Policy_User_Result01_Start02) GetPropertyParentID() (value s
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetShowOrHideMostUsedApps sets the value of ShowOrHideMostUsedApps for the instance
-func (instance *MDM_Policy_User_Result01_Start02) SetPropertyShowOrHideMostUsedApps(value int32) (err error) {
-	return instance.SetProperty("ShowOrHideMostUsedApps", (value))
-}
-
-// GetShowOrHideMostUsedApps gets the value of ShowOrHideMostUsedApps for the instance
-func (instance *MDM_Policy_User_Result01_Start02) GetPropertyShowOrHideMostUsedApps() (value int32, err error) {
-	retValue, err := instance.GetProperty("ShowOrHideMostUsedApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

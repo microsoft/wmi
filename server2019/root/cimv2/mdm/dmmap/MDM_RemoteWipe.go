@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -163,51 +162,6 @@ func (instance *MDM_RemoteWipe) doWipeProtectedMethod( /* IN */ param string) (r
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MDM_RemoteWipe) doWipePersistUserDataMethod( /* IN */ param string) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("doWipePersistUserDataMethod", param)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="param" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MDM_RemoteWipe) doWipeCloudMethod( /* IN */ param string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("doWipeCloudMethod", param)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="param" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MDM_RemoteWipe) doWipeCloudPersistUserDataMethod( /* IN */ param string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("doWipeCloudPersistUserDataMethod", param)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="param" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MDM_RemoteWipe) doWipeCloudPersistProvisionedDataMethod( /* IN */ param string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("doWipeCloudPersistProvisionedDataMethod", param)
 	if err != nil {
 		return
 	}

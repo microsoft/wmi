@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -19,9 +18,6 @@ import (
 // MSFT_NetConnectionProfile struct
 type MSFT_NetConnectionProfile struct {
 	*MSFT_NetSettingData
-
-	//
-	DomainAuthenticationKind uint32
 
 	//
 	InterfaceAlias string
@@ -68,33 +64,6 @@ func NewMSFT_NetConnectionProfileEx6(hostName string,
 	newInstance = &MSFT_NetConnectionProfile{
 		MSFT_NetSettingData: tmp,
 	}
-	return
-}
-
-// SetDomainAuthenticationKind sets the value of DomainAuthenticationKind for the instance
-func (instance *MSFT_NetConnectionProfile) SetPropertyDomainAuthenticationKind(value uint32) (err error) {
-	return instance.SetProperty("DomainAuthenticationKind", (value))
-}
-
-// GetDomainAuthenticationKind gets the value of DomainAuthenticationKind for the instance
-func (instance *MSFT_NetConnectionProfile) GetPropertyDomainAuthenticationKind() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DomainAuthenticationKind")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 

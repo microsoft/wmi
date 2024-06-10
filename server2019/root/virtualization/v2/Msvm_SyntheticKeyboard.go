@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -46,4 +45,16 @@ func NewMsvm_SyntheticKeyboardEx6(hostName string,
 		CIM_UserDevice: tmp,
 	}
 	return
+}
+
+func (instance *Msvm_SyntheticKeyboard) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_SyntheticKeyboard) GetRelatedResourceAllocationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourceAllocationSettingData")
+}
+
+func (instance *Msvm_SyntheticKeyboard) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePool")
 }

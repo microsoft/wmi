@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -83,8 +82,8 @@ func (instance *Msvm_ExternalEthernetPort) GetRelatedComputerSystem() (value *ci
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
-func (instance *Msvm_ExternalEthernetPort) GetRelatedExternalEthernetPort() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ExternalEthernetPort")
+func (instance *Msvm_ExternalEthernetPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_LANEndpoint")
 }
 
 func (instance *Msvm_ExternalEthernetPort) GetRelatedExternalEthernetPortCapabilities() (value *cim.WmiInstance, err error) {

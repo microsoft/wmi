@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source ProtocolControllerForUnit_DeviceAccess
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source ProtocolControllerForUnit_DeviceAccess
+//////////////////////////////////////////////
 package v2
 
 // ProtocolControllerForUnit_DeviceAccess

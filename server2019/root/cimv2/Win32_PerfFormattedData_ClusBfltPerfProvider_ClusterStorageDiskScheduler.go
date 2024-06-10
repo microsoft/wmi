@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler struct
@@ -208,7 +205,7 @@ func NewWin32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler
 
 // SetDspPerSysAvgQueueLength sets the value of DspPerSysAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerSysAvgQueueLength", (value))
+	return instance.SetProperty("DspPerSysAvgQueueLength", value)
 }
 
 // GetDspPerSysAvgQueueLength gets the value of DspPerSysAvgQueueLength for the instance
@@ -217,25 +214,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerSysHighAvgQueueLength sets the value of DspPerSysHighAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysHighAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerSysHighAvgQueueLength", (value))
+	return instance.SetProperty("DspPerSysHighAvgQueueLength", value)
 }
 
 // GetDspPerSysHighAvgQueueLength gets the value of DspPerSysHighAvgQueueLength for the instance
@@ -244,25 +232,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerSysHighAvgsecPerDataRequest sets the value of DspPerSysHighAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysHighAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("DspPerSysHighAvgsecPerDataRequest", (value))
+	return instance.SetProperty("DspPerSysHighAvgsecPerDataRequest", value)
 }
 
 // GetDspPerSysHighAvgsecPerDataRequest gets the value of DspPerSysHighAvgsecPerDataRequest for the instance
@@ -271,25 +250,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDspPerSysHighCurrentQueueLength sets the value of DspPerSysHighCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysHighCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerSysHighCurrentQueueLength", (value))
+	return instance.SetProperty("DspPerSysHighCurrentQueueLength", value)
 }
 
 // GetDspPerSysHighCurrentQueueLength gets the value of DspPerSysHighCurrentQueueLength for the instance
@@ -298,25 +268,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerSysIdlePerLowAvgQueueLength sets the value of DspPerSysIdlePerLowAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysIdlePerLowAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerSysIdlePerLowAvgQueueLength", (value))
+	return instance.SetProperty("DspPerSysIdlePerLowAvgQueueLength", value)
 }
 
 // GetDspPerSysIdlePerLowAvgQueueLength gets the value of DspPerSysIdlePerLowAvgQueueLength for the instance
@@ -325,25 +286,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerSysIdlePerLowAvgsecPerDataRequest sets the value of DspPerSysIdlePerLowAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysIdlePerLowAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("DspPerSysIdlePerLowAvgsecPerDataRequest", (value))
+	return instance.SetProperty("DspPerSysIdlePerLowAvgsecPerDataRequest", value)
 }
 
 // GetDspPerSysIdlePerLowAvgsecPerDataRequest gets the value of DspPerSysIdlePerLowAvgsecPerDataRequest for the instance
@@ -352,25 +304,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDspPerSysIdlePerLowCurrentQueueLength sets the value of DspPerSysIdlePerLowCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysIdlePerLowCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerSysIdlePerLowCurrentQueueLength", (value))
+	return instance.SetProperty("DspPerSysIdlePerLowCurrentQueueLength", value)
 }
 
 // GetDspPerSysIdlePerLowCurrentQueueLength gets the value of DspPerSysIdlePerLowCurrentQueueLength for the instance
@@ -379,25 +322,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerSysNormalAvgQueueLength sets the value of DspPerSysNormalAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysNormalAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerSysNormalAvgQueueLength", (value))
+	return instance.SetProperty("DspPerSysNormalAvgQueueLength", value)
 }
 
 // GetDspPerSysNormalAvgQueueLength gets the value of DspPerSysNormalAvgQueueLength for the instance
@@ -406,25 +340,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerSysNormalAvgsecPerDataRequest sets the value of DspPerSysNormalAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysNormalAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("DspPerSysNormalAvgsecPerDataRequest", (value))
+	return instance.SetProperty("DspPerSysNormalAvgsecPerDataRequest", value)
 }
 
 // GetDspPerSysNormalAvgsecPerDataRequest gets the value of DspPerSysNormalAvgsecPerDataRequest for the instance
@@ -433,25 +358,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDspPerSysNormalCurrentQueueLength sets the value of DspPerSysNormalCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerSysNormalCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerSysNormalCurrentQueueLength", (value))
+	return instance.SetProperty("DspPerSysNormalCurrentQueueLength", value)
 }
 
 // GetDspPerSysNormalCurrentQueueLength gets the value of DspPerSysNormalCurrentQueueLength for the instance
@@ -460,25 +376,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrAvgQueueLength sets the value of DspPerUsrAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerUsrAvgQueueLength", (value))
+	return instance.SetProperty("DspPerUsrAvgQueueLength", value)
 }
 
 // GetDspPerUsrAvgQueueLength gets the value of DspPerUsrAvgQueueLength for the instance
@@ -487,25 +394,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrHighAvgQueueLength sets the value of DspPerUsrHighAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrHighAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerUsrHighAvgQueueLength", (value))
+	return instance.SetProperty("DspPerUsrHighAvgQueueLength", value)
 }
 
 // GetDspPerUsrHighAvgQueueLength gets the value of DspPerUsrHighAvgQueueLength for the instance
@@ -514,25 +412,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrHighAvgsecPerDataRequest sets the value of DspPerUsrHighAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrHighAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("DspPerUsrHighAvgsecPerDataRequest", (value))
+	return instance.SetProperty("DspPerUsrHighAvgsecPerDataRequest", value)
 }
 
 // GetDspPerUsrHighAvgsecPerDataRequest gets the value of DspPerUsrHighAvgsecPerDataRequest for the instance
@@ -541,25 +430,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrHighCurrentQueueLength sets the value of DspPerUsrHighCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrHighCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerUsrHighCurrentQueueLength", (value))
+	return instance.SetProperty("DspPerUsrHighCurrentQueueLength", value)
 }
 
 // GetDspPerUsrHighCurrentQueueLength gets the value of DspPerUsrHighCurrentQueueLength for the instance
@@ -568,25 +448,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrIdlePerLowAvgQueueLength sets the value of DspPerUsrIdlePerLowAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrIdlePerLowAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerUsrIdlePerLowAvgQueueLength", (value))
+	return instance.SetProperty("DspPerUsrIdlePerLowAvgQueueLength", value)
 }
 
 // GetDspPerUsrIdlePerLowAvgQueueLength gets the value of DspPerUsrIdlePerLowAvgQueueLength for the instance
@@ -595,25 +466,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrIdlePerLowAvgsecPerDataRequest sets the value of DspPerUsrIdlePerLowAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrIdlePerLowAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("DspPerUsrIdlePerLowAvgsecPerDataRequest", (value))
+	return instance.SetProperty("DspPerUsrIdlePerLowAvgsecPerDataRequest", value)
 }
 
 // GetDspPerUsrIdlePerLowAvgsecPerDataRequest gets the value of DspPerUsrIdlePerLowAvgsecPerDataRequest for the instance
@@ -622,25 +484,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrIdlePerLowCurrentQueueLength sets the value of DspPerUsrIdlePerLowCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrIdlePerLowCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerUsrIdlePerLowCurrentQueueLength", (value))
+	return instance.SetProperty("DspPerUsrIdlePerLowCurrentQueueLength", value)
 }
 
 // GetDspPerUsrIdlePerLowCurrentQueueLength gets the value of DspPerUsrIdlePerLowCurrentQueueLength for the instance
@@ -649,25 +502,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrNormalAvgQueueLength sets the value of DspPerUsrNormalAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrNormalAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerUsrNormalAvgQueueLength", (value))
+	return instance.SetProperty("DspPerUsrNormalAvgQueueLength", value)
 }
 
 // GetDspPerUsrNormalAvgQueueLength gets the value of DspPerUsrNormalAvgQueueLength for the instance
@@ -676,25 +520,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrNormalAvgsecPerDataRequest sets the value of DspPerUsrNormalAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrNormalAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("DspPerUsrNormalAvgsecPerDataRequest", (value))
+	return instance.SetProperty("DspPerUsrNormalAvgsecPerDataRequest", value)
 }
 
 // GetDspPerUsrNormalAvgsecPerDataRequest gets the value of DspPerUsrNormalAvgsecPerDataRequest for the instance
@@ -703,25 +538,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDspPerUsrNormalCurrentQueueLength sets the value of DspPerUsrNormalCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyDspPerUsrNormalCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("DspPerUsrNormalCurrentQueueLength", (value))
+	return instance.SetProperty("DspPerUsrNormalCurrentQueueLength", value)
 }
 
 // GetDspPerUsrNormalCurrentQueueLength gets the value of DspPerUsrNormalCurrentQueueLength for the instance
@@ -730,25 +556,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysAvgQueueLength sets the value of QuePerSysAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysAvgQueueLength", (value))
+	return instance.SetProperty("QuePerSysAvgQueueLength", value)
 }
 
 // GetQuePerSysAvgQueueLength gets the value of QuePerSysAvgQueueLength for the instance
@@ -757,25 +574,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysHighAvgQueueLength sets the value of QuePerSysHighAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysHighAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysHighAvgQueueLength", (value))
+	return instance.SetProperty("QuePerSysHighAvgQueueLength", value)
 }
 
 // GetQuePerSysHighAvgQueueLength gets the value of QuePerSysHighAvgQueueLength for the instance
@@ -784,25 +592,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysHighAvgsecPerDataRequest sets the value of QuePerSysHighAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysHighAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("QuePerSysHighAvgsecPerDataRequest", (value))
+	return instance.SetProperty("QuePerSysHighAvgsecPerDataRequest", value)
 }
 
 // GetQuePerSysHighAvgsecPerDataRequest gets the value of QuePerSysHighAvgsecPerDataRequest for the instance
@@ -811,25 +610,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetQuePerSysHighBytesPersec sets the value of QuePerSysHighBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysHighBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysHighBytesPersec", (value))
+	return instance.SetProperty("QuePerSysHighBytesPersec", value)
 }
 
 // GetQuePerSysHighBytesPersec gets the value of QuePerSysHighBytesPersec for the instance
@@ -838,25 +628,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysHighCurrentQueueLength sets the value of QuePerSysHighCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysHighCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysHighCurrentQueueLength", (value))
+	return instance.SetProperty("QuePerSysHighCurrentQueueLength", value)
 }
 
 // GetQuePerSysHighCurrentQueueLength gets the value of QuePerSysHighCurrentQueueLength for the instance
@@ -865,25 +646,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysHighDataRequestsPersec sets the value of QuePerSysHighDataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysHighDataRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysHighDataRequestsPersec", (value))
+	return instance.SetProperty("QuePerSysHighDataRequestsPersec", value)
 }
 
 // GetQuePerSysHighDataRequestsPersec gets the value of QuePerSysHighDataRequestsPersec for the instance
@@ -892,25 +664,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysIdlePerLowAvgQueueLength sets the value of QuePerSysIdlePerLowAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysIdlePerLowAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysIdlePerLowAvgQueueLength", (value))
+	return instance.SetProperty("QuePerSysIdlePerLowAvgQueueLength", value)
 }
 
 // GetQuePerSysIdlePerLowAvgQueueLength gets the value of QuePerSysIdlePerLowAvgQueueLength for the instance
@@ -919,25 +682,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysIdlePerLowAvgsecPerDataRequest sets the value of QuePerSysIdlePerLowAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysIdlePerLowAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("QuePerSysIdlePerLowAvgsecPerDataRequest", (value))
+	return instance.SetProperty("QuePerSysIdlePerLowAvgsecPerDataRequest", value)
 }
 
 // GetQuePerSysIdlePerLowAvgsecPerDataRequest gets the value of QuePerSysIdlePerLowAvgsecPerDataRequest for the instance
@@ -946,25 +700,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetQuePerSysIdlePerLowBytesPersec sets the value of QuePerSysIdlePerLowBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysIdlePerLowBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysIdlePerLowBytesPersec", (value))
+	return instance.SetProperty("QuePerSysIdlePerLowBytesPersec", value)
 }
 
 // GetQuePerSysIdlePerLowBytesPersec gets the value of QuePerSysIdlePerLowBytesPersec for the instance
@@ -973,25 +718,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysIdlePerLowCurrentQueueLength sets the value of QuePerSysIdlePerLowCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysIdlePerLowCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysIdlePerLowCurrentQueueLength", (value))
+	return instance.SetProperty("QuePerSysIdlePerLowCurrentQueueLength", value)
 }
 
 // GetQuePerSysIdlePerLowCurrentQueueLength gets the value of QuePerSysIdlePerLowCurrentQueueLength for the instance
@@ -1000,25 +736,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysIdlePerLowDataRequestsPersec sets the value of QuePerSysIdlePerLowDataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysIdlePerLowDataRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysIdlePerLowDataRequestsPersec", (value))
+	return instance.SetProperty("QuePerSysIdlePerLowDataRequestsPersec", value)
 }
 
 // GetQuePerSysIdlePerLowDataRequestsPersec gets the value of QuePerSysIdlePerLowDataRequestsPersec for the instance
@@ -1027,25 +754,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysNormalAvgQueueLength sets the value of QuePerSysNormalAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysNormalAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysNormalAvgQueueLength", (value))
+	return instance.SetProperty("QuePerSysNormalAvgQueueLength", value)
 }
 
 // GetQuePerSysNormalAvgQueueLength gets the value of QuePerSysNormalAvgQueueLength for the instance
@@ -1054,25 +772,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysNormalAvgsecPerDataRequest sets the value of QuePerSysNormalAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysNormalAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("QuePerSysNormalAvgsecPerDataRequest", (value))
+	return instance.SetProperty("QuePerSysNormalAvgsecPerDataRequest", value)
 }
 
 // GetQuePerSysNormalAvgsecPerDataRequest gets the value of QuePerSysNormalAvgsecPerDataRequest for the instance
@@ -1081,25 +790,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetQuePerSysNormalBytesPersec sets the value of QuePerSysNormalBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysNormalBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysNormalBytesPersec", (value))
+	return instance.SetProperty("QuePerSysNormalBytesPersec", value)
 }
 
 // GetQuePerSysNormalBytesPersec gets the value of QuePerSysNormalBytesPersec for the instance
@@ -1108,25 +808,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysNormalCurrentQueueLength sets the value of QuePerSysNormalCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysNormalCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysNormalCurrentQueueLength", (value))
+	return instance.SetProperty("QuePerSysNormalCurrentQueueLength", value)
 }
 
 // GetQuePerSysNormalCurrentQueueLength gets the value of QuePerSysNormalCurrentQueueLength for the instance
@@ -1135,25 +826,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerSysNormalDataRequestsPersec sets the value of QuePerSysNormalDataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerSysNormalDataRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerSysNormalDataRequestsPersec", (value))
+	return instance.SetProperty("QuePerSysNormalDataRequestsPersec", value)
 }
 
 // GetQuePerSysNormalDataRequestsPersec gets the value of QuePerSysNormalDataRequestsPersec for the instance
@@ -1162,25 +844,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrAvgQueueLength sets the value of QuePerUsrAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrAvgQueueLength", (value))
+	return instance.SetProperty("QuePerUsrAvgQueueLength", value)
 }
 
 // GetQuePerUsrAvgQueueLength gets the value of QuePerUsrAvgQueueLength for the instance
@@ -1189,25 +862,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrHighAvgQueueLength sets the value of QuePerUsrHighAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrHighAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrHighAvgQueueLength", (value))
+	return instance.SetProperty("QuePerUsrHighAvgQueueLength", value)
 }
 
 // GetQuePerUsrHighAvgQueueLength gets the value of QuePerUsrHighAvgQueueLength for the instance
@@ -1216,25 +880,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrHighAvgsecPerDataRequest sets the value of QuePerUsrHighAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrHighAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("QuePerUsrHighAvgsecPerDataRequest", (value))
+	return instance.SetProperty("QuePerUsrHighAvgsecPerDataRequest", value)
 }
 
 // GetQuePerUsrHighAvgsecPerDataRequest gets the value of QuePerUsrHighAvgsecPerDataRequest for the instance
@@ -1243,25 +898,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrHighBytesPersec sets the value of QuePerUsrHighBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrHighBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrHighBytesPersec", (value))
+	return instance.SetProperty("QuePerUsrHighBytesPersec", value)
 }
 
 // GetQuePerUsrHighBytesPersec gets the value of QuePerUsrHighBytesPersec for the instance
@@ -1270,25 +916,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrHighCurrentQueueLength sets the value of QuePerUsrHighCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrHighCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrHighCurrentQueueLength", (value))
+	return instance.SetProperty("QuePerUsrHighCurrentQueueLength", value)
 }
 
 // GetQuePerUsrHighCurrentQueueLength gets the value of QuePerUsrHighCurrentQueueLength for the instance
@@ -1297,25 +934,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrHighDataRequestsPersec sets the value of QuePerUsrHighDataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrHighDataRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrHighDataRequestsPersec", (value))
+	return instance.SetProperty("QuePerUsrHighDataRequestsPersec", value)
 }
 
 // GetQuePerUsrHighDataRequestsPersec gets the value of QuePerUsrHighDataRequestsPersec for the instance
@@ -1324,25 +952,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrIdlePerLowAvgQueueLength sets the value of QuePerUsrIdlePerLowAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrIdlePerLowAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrIdlePerLowAvgQueueLength", (value))
+	return instance.SetProperty("QuePerUsrIdlePerLowAvgQueueLength", value)
 }
 
 // GetQuePerUsrIdlePerLowAvgQueueLength gets the value of QuePerUsrIdlePerLowAvgQueueLength for the instance
@@ -1351,25 +970,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrIdlePerLowAvgsecPerDataRequest sets the value of QuePerUsrIdlePerLowAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrIdlePerLowAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("QuePerUsrIdlePerLowAvgsecPerDataRequest", (value))
+	return instance.SetProperty("QuePerUsrIdlePerLowAvgsecPerDataRequest", value)
 }
 
 // GetQuePerUsrIdlePerLowAvgsecPerDataRequest gets the value of QuePerUsrIdlePerLowAvgsecPerDataRequest for the instance
@@ -1378,25 +988,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrIdlePerLowBytesPersec sets the value of QuePerUsrIdlePerLowBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrIdlePerLowBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrIdlePerLowBytesPersec", (value))
+	return instance.SetProperty("QuePerUsrIdlePerLowBytesPersec", value)
 }
 
 // GetQuePerUsrIdlePerLowBytesPersec gets the value of QuePerUsrIdlePerLowBytesPersec for the instance
@@ -1405,25 +1006,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrIdlePerLowCurrentQueueLength sets the value of QuePerUsrIdlePerLowCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrIdlePerLowCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrIdlePerLowCurrentQueueLength", (value))
+	return instance.SetProperty("QuePerUsrIdlePerLowCurrentQueueLength", value)
 }
 
 // GetQuePerUsrIdlePerLowCurrentQueueLength gets the value of QuePerUsrIdlePerLowCurrentQueueLength for the instance
@@ -1432,25 +1024,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrIdlePerLowDataRequestsPersec sets the value of QuePerUsrIdlePerLowDataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrIdlePerLowDataRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrIdlePerLowDataRequestsPersec", (value))
+	return instance.SetProperty("QuePerUsrIdlePerLowDataRequestsPersec", value)
 }
 
 // GetQuePerUsrIdlePerLowDataRequestsPersec gets the value of QuePerUsrIdlePerLowDataRequestsPersec for the instance
@@ -1459,25 +1042,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrNormalAvgQueueLength sets the value of QuePerUsrNormalAvgQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrNormalAvgQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrNormalAvgQueueLength", (value))
+	return instance.SetProperty("QuePerUsrNormalAvgQueueLength", value)
 }
 
 // GetQuePerUsrNormalAvgQueueLength gets the value of QuePerUsrNormalAvgQueueLength for the instance
@@ -1486,25 +1060,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrNormalAvgsecPerDataRequest sets the value of QuePerUsrNormalAvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrNormalAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("QuePerUsrNormalAvgsecPerDataRequest", (value))
+	return instance.SetProperty("QuePerUsrNormalAvgsecPerDataRequest", value)
 }
 
 // GetQuePerUsrNormalAvgsecPerDataRequest gets the value of QuePerUsrNormalAvgsecPerDataRequest for the instance
@@ -1513,25 +1078,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrNormalBytesPersec sets the value of QuePerUsrNormalBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrNormalBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrNormalBytesPersec", (value))
+	return instance.SetProperty("QuePerUsrNormalBytesPersec", value)
 }
 
 // GetQuePerUsrNormalBytesPersec gets the value of QuePerUsrNormalBytesPersec for the instance
@@ -1540,25 +1096,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrNormalCurrentQueueLength sets the value of QuePerUsrNormalCurrentQueueLength for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrNormalCurrentQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrNormalCurrentQueueLength", (value))
+	return instance.SetProperty("QuePerUsrNormalCurrentQueueLength", value)
 }
 
 // GetQuePerUsrNormalCurrentQueueLength gets the value of QuePerUsrNormalCurrentQueueLength for the instance
@@ -1567,25 +1114,16 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetQuePerUsrNormalDataRequestsPersec sets the value of QuePerUsrNormalDataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskScheduler) SetPropertyQuePerUsrNormalDataRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("QuePerUsrNormalDataRequestsPersec", (value))
+	return instance.SetProperty("QuePerUsrNormalDataRequestsPersec", value)
 }
 
 // GetQuePerUsrNormalDataRequestsPersec gets the value of QuePerUsrNormalDataRequestsPersec for the instance
@@ -1594,18 +1132,9 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageDiskS
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }

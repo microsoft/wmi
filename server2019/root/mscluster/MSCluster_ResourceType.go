@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -76,12 +75,6 @@ type MSCluster_ResourceType struct {
 
 	//
 	ResourceClass uint32
-
-	//
-	WprProfiles []string
-
-	//
-	WprStartAfter uint64
 }
 
 func NewMSCluster_ResourceTypeEx1(instance *cim.WmiInstance) (newInstance *MSCluster_ResourceType, err error) {
@@ -632,61 +625,6 @@ func (instance *MSCluster_ResourceType) GetPropertyResourceClass() (value uint32
 	return
 }
 
-// SetWprProfiles sets the value of WprProfiles for the instance
-func (instance *MSCluster_ResourceType) SetPropertyWprProfiles(value []string) (err error) {
-	return instance.SetProperty("WprProfiles", (value))
-}
-
-// GetWprProfiles gets the value of WprProfiles for the instance
-func (instance *MSCluster_ResourceType) GetPropertyWprProfiles() (value []string, err error) {
-	retValue, err := instance.GetProperty("WprProfiles")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
-// SetWprStartAfter sets the value of WprStartAfter for the instance
-func (instance *MSCluster_ResourceType) SetPropertyWprStartAfter(value uint64) (err error) {
-	return instance.SetProperty("WprStartAfter", (value))
-}
-
-// GetWprStartAfter gets the value of WprStartAfter for the instance
-func (instance *MSCluster_ResourceType) GetPropertyWprStartAfter() (value uint64, err error) {
-	retValue, err := instance.GetProperty("WprStartAfter")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 //
 
 // <param name="DisplayName" type="string "></param>
@@ -708,10 +646,8 @@ func (instance *MSCluster_ResourceType) CreateResourceType( /* IN */ Name string
 }
 
 //
-
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_ResourceType) DeleteResourceType( /* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("DeleteResourceType", Reason)
+func (instance *MSCluster_ResourceType) DeleteResourceType() (err error) {
+	_, err = instance.InvokeMethodWithReturn("DeleteResourceType")
 	if err != nil {
 		return
 	}
@@ -735,16 +671,14 @@ func (instance *MSCluster_ResourceType) GetPossibleOwners( /* OUT */ NodeNames [
 
 // <param name="ControlCode" type="int32 "></param>
 // <param name="InputBuffer" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 
 // <param name="OutputBuffer" type="uint8 []"></param>
 // <param name="OutputBufferSize" type="int32 "></param>
 func (instance *MSCluster_ResourceType) ExecuteResourceTypeControl( /* IN */ ControlCode int32,
 	/* IN */ InputBuffer []uint8,
 	/* OUT */ OutputBuffer []uint8,
-	/* OUT */ OutputBufferSize int32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethod("ExecuteResourceTypeControl", ControlCode, InputBuffer, Reason)
+	/* OUT */ OutputBufferSize int32) (err error) {
+	_, err = instance.InvokeMethod("ExecuteResourceTypeControl", ControlCode, InputBuffer)
 	if err != nil {
 		return
 	}

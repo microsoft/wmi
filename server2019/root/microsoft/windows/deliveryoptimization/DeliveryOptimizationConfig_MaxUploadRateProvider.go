@@ -1,26 +1,25 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source DeliveryOptimizationConfig_MaxUploadRateProvider
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source DeliveryOptimizationConfig_MaxUploadRateProvider
+//////////////////////////////////////////////
 package deliveryoptimization
 
 // DeliveryOptimizationConfig_MaxUploadRateProvider
 type DeliveryOptimizationConfig_MaxUploadRateProvider int
 
 const (
+	// _14 enum
+	DeliveryOptimizationConfig_MaxUploadRateProvider__14 DeliveryOptimizationConfig_MaxUploadRateProvider = 5
+	// _15 enum
+	DeliveryOptimizationConfig_MaxUploadRateProvider__15 DeliveryOptimizationConfig_MaxUploadRateProvider = 7
+	// _16 enum
+	DeliveryOptimizationConfig_MaxUploadRateProvider__16 DeliveryOptimizationConfig_MaxUploadRateProvider = 8
 	// _17 enum
-	DeliveryOptimizationConfig_MaxUploadRateProvider__17 DeliveryOptimizationConfig_MaxUploadRateProvider = 5
+	DeliveryOptimizationConfig_MaxUploadRateProvider__17 DeliveryOptimizationConfig_MaxUploadRateProvider = 9
 	// _18 enum
-	DeliveryOptimizationConfig_MaxUploadRateProvider__18 DeliveryOptimizationConfig_MaxUploadRateProvider = 7
-	// _19 enum
-	DeliveryOptimizationConfig_MaxUploadRateProvider__19 DeliveryOptimizationConfig_MaxUploadRateProvider = 8
-	// _20 enum
-	DeliveryOptimizationConfig_MaxUploadRateProvider__20 DeliveryOptimizationConfig_MaxUploadRateProvider = 9
-	// _21 enum
-	DeliveryOptimizationConfig_MaxUploadRateProvider__21 DeliveryOptimizationConfig_MaxUploadRateProvider = 99
+	DeliveryOptimizationConfig_MaxUploadRateProvider__18 DeliveryOptimizationConfig_MaxUploadRateProvider = 99
 )

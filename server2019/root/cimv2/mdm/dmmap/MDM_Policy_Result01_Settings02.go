@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -56,9 +55,6 @@ type MDM_Policy_Result01_Settings02 struct {
 
 	//
 	AllowYourAccount int32
-
-	//
-	EnableBatteryCapacity int32
 
 	//
 	InstanceID string
@@ -404,33 +400,6 @@ func (instance *MDM_Policy_Result01_Settings02) SetPropertyAllowYourAccount(valu
 // GetAllowYourAccount gets the value of AllowYourAccount for the instance
 func (instance *MDM_Policy_Result01_Settings02) GetPropertyAllowYourAccount() (value int32, err error) {
 	retValue, err := instance.GetProperty("AllowYourAccount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetEnableBatteryCapacity sets the value of EnableBatteryCapacity for the instance
-func (instance *MDM_Policy_Result01_Settings02) SetPropertyEnableBatteryCapacity(value int32) (err error) {
-	return instance.SetProperty("EnableBatteryCapacity", (value))
-}
-
-// GetEnableBatteryCapacity gets the value of EnableBatteryCapacity for the instance
-func (instance *MDM_Policy_Result01_Settings02) GetPropertyEnableBatteryCapacity() (value int32, err error) {
-	retValue, err := instance.GetProperty("EnableBatteryCapacity")
 	if err != nil {
 		return
 	}

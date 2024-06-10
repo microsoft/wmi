@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -34,12 +33,6 @@ type MDM_Firewall_FirewallRules02_01 struct {
 	Enabled bool
 
 	//
-	FriendlyName bool
-
-	//
-	IcmpTypesAndCodes string
-
-	//
 	InstanceID string
 
 	//
@@ -52,7 +45,7 @@ type MDM_Firewall_FirewallRules02_01 struct {
 	LocalPortRanges string
 
 	//
-	LocalUserAuthorizationList string
+	LocalUserAuthorizedList string
 
 	//
 	Name string
@@ -61,16 +54,10 @@ type MDM_Firewall_FirewallRules02_01 struct {
 	ParentID string
 
 	//
-	PolicyAppId string
-
-	//
 	Profiles int32
 
 	//
 	Protocol int32
-
-	//
-	RemoteAddressDynamicKeywords string
 
 	//
 	RemoteAddressRanges string
@@ -79,7 +66,7 @@ type MDM_Firewall_FirewallRules02_01 struct {
 	RemotePortRanges string
 
 	//
-	Status int32
+	Status string
 }
 
 func NewMDM_Firewall_FirewallRules02_01Ex1(instance *cim.WmiInstance) (newInstance *MDM_Firewall_FirewallRules02_01, err error) {
@@ -219,60 +206,6 @@ func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyEnabled() (value boo
 	return
 }
 
-// SetFriendlyName sets the value of FriendlyName for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyFriendlyName(value bool) (err error) {
-	return instance.SetProperty("FriendlyName", (value))
-}
-
-// GetFriendlyName gets the value of FriendlyName for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyFriendlyName() (value bool, err error) {
-	retValue, err := instance.GetProperty("FriendlyName")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetIcmpTypesAndCodes sets the value of IcmpTypesAndCodes for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyIcmpTypesAndCodes(value string) (err error) {
-	return instance.SetProperty("IcmpTypesAndCodes", (value))
-}
-
-// GetIcmpTypesAndCodes gets the value of IcmpTypesAndCodes for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyIcmpTypesAndCodes() (value string, err error) {
-	retValue, err := instance.GetProperty("IcmpTypesAndCodes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyInstanceID(value string) (err error) {
 	return instance.SetProperty("InstanceID", (value))
@@ -381,14 +314,14 @@ func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyLocalPortRanges() (v
 	return
 }
 
-// SetLocalUserAuthorizationList sets the value of LocalUserAuthorizationList for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyLocalUserAuthorizationList(value string) (err error) {
-	return instance.SetProperty("LocalUserAuthorizationList", (value))
+// SetLocalUserAuthorizedList sets the value of LocalUserAuthorizedList for the instance
+func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyLocalUserAuthorizedList(value string) (err error) {
+	return instance.SetProperty("LocalUserAuthorizedList", (value))
 }
 
-// GetLocalUserAuthorizationList gets the value of LocalUserAuthorizationList for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyLocalUserAuthorizationList() (value string, err error) {
-	retValue, err := instance.GetProperty("LocalUserAuthorizationList")
+// GetLocalUserAuthorizedList gets the value of LocalUserAuthorizedList for the instance
+func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyLocalUserAuthorizedList() (value string, err error) {
+	retValue, err := instance.GetProperty("LocalUserAuthorizedList")
 	if err != nil {
 		return
 	}
@@ -462,33 +395,6 @@ func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyParentID() (value st
 	return
 }
 
-// SetPolicyAppId sets the value of PolicyAppId for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyPolicyAppId(value string) (err error) {
-	return instance.SetProperty("PolicyAppId", (value))
-}
-
-// GetPolicyAppId gets the value of PolicyAppId for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyPolicyAppId() (value string, err error) {
-	retValue, err := instance.GetProperty("PolicyAppId")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetProfiles sets the value of Profiles for the instance
 func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyProfiles(value int32) (err error) {
 	return instance.SetProperty("Profiles", (value))
@@ -539,33 +445,6 @@ func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyProtocol() (value in
 	}
 
 	value = int32(valuetmp)
-
-	return
-}
-
-// SetRemoteAddressDynamicKeywords sets the value of RemoteAddressDynamicKeywords for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyRemoteAddressDynamicKeywords(value string) (err error) {
-	return instance.SetProperty("RemoteAddressDynamicKeywords", (value))
-}
-
-// GetRemoteAddressDynamicKeywords gets the value of RemoteAddressDynamicKeywords for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyRemoteAddressDynamicKeywords() (value string, err error) {
-	retValue, err := instance.GetProperty("RemoteAddressDynamicKeywords")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }
@@ -625,12 +504,12 @@ func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyRemotePortRanges() (
 }
 
 // SetStatus sets the value of Status for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyStatus(value int32) (err error) {
+func (instance *MDM_Firewall_FirewallRules02_01) SetPropertyStatus(value string) (err error) {
 	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
-func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyStatus() (value int32, err error) {
+func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyStatus() (value string, err error) {
 	retValue, err := instance.GetProperty("Status")
 	if err != nil {
 		return
@@ -640,13 +519,13 @@ func (instance *MDM_Firewall_FirewallRules02_01) GetPropertyStatus() (value int3
 		return
 	}
 
-	valuetmp, ok := retValue.(int32)
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = int32(valuetmp)
+	value = string(valuetmp)
 
 	return
 }

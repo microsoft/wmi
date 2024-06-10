@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // CIM_InstIndication struct
@@ -63,7 +60,7 @@ func NewCIM_InstIndicationEx6(hostName string,
 
 // SetSourceInstance sets the value of SourceInstance for the instance
 func (instance *CIM_InstIndication) SetPropertySourceInstance(value interface{}) (err error) {
-	return instance.SetProperty("SourceInstance", (value))
+	return instance.SetProperty("SourceInstance", value)
 }
 
 // GetSourceInstance gets the value of SourceInstance for the instance
@@ -72,25 +69,16 @@ func (instance *CIM_InstIndication) GetPropertySourceInstance() (value interface
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(interface{})
+	value, ok := retValue.(interface{})
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = interface{}(valuetmp)
-
 	return
 }
 
 // SetSourceInstanceHost sets the value of SourceInstanceHost for the instance
 func (instance *CIM_InstIndication) SetPropertySourceInstanceHost(value string) (err error) {
-	return instance.SetProperty("SourceInstanceHost", (value))
+	return instance.SetProperty("SourceInstanceHost", value)
 }
 
 // GetSourceInstanceHost gets the value of SourceInstanceHost for the instance
@@ -99,25 +87,16 @@ func (instance *CIM_InstIndication) GetPropertySourceInstanceHost() (value strin
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetSourceInstanceModelPath sets the value of SourceInstanceModelPath for the instance
 func (instance *CIM_InstIndication) SetPropertySourceInstanceModelPath(value string) (err error) {
-	return instance.SetProperty("SourceInstanceModelPath", (value))
+	return instance.SetProperty("SourceInstanceModelPath", value)
 }
 
 // GetSourceInstanceModelPath gets the value of SourceInstanceModelPath for the instance
@@ -126,18 +105,9 @@ func (instance *CIM_InstIndication) GetPropertySourceInstanceModelPath() (value 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -58,12 +57,6 @@ type MDM_Policy_Config01_Experience02 struct {
 	AllowWindowsTips int32
 
 	//
-	DisableCloudOptimizedContent int32
-
-	//
-	DisableConsumerAccountStateContent int32
-
-	//
 	DoNotShowFeedbackNotifications int32
 
 	//
@@ -77,9 +70,6 @@ type MDM_Policy_Config01_Experience02 struct {
 
 	//
 	PreventUsersFromTurningOnBrowserSyncing int32
-
-	//
-	ShowLockOnUserTile int32
 }
 
 func NewMDM_Policy_Config01_Experience02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Config01_Experience02, err error) {
@@ -435,60 +425,6 @@ func (instance *MDM_Policy_Config01_Experience02) GetPropertyAllowWindowsTips() 
 	return
 }
 
-// SetDisableCloudOptimizedContent sets the value of DisableCloudOptimizedContent for the instance
-func (instance *MDM_Policy_Config01_Experience02) SetPropertyDisableCloudOptimizedContent(value int32) (err error) {
-	return instance.SetProperty("DisableCloudOptimizedContent", (value))
-}
-
-// GetDisableCloudOptimizedContent gets the value of DisableCloudOptimizedContent for the instance
-func (instance *MDM_Policy_Config01_Experience02) GetPropertyDisableCloudOptimizedContent() (value int32, err error) {
-	retValue, err := instance.GetProperty("DisableCloudOptimizedContent")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetDisableConsumerAccountStateContent sets the value of DisableConsumerAccountStateContent for the instance
-func (instance *MDM_Policy_Config01_Experience02) SetPropertyDisableConsumerAccountStateContent(value int32) (err error) {
-	return instance.SetProperty("DisableConsumerAccountStateContent", (value))
-}
-
-// GetDisableConsumerAccountStateContent gets the value of DisableConsumerAccountStateContent for the instance
-func (instance *MDM_Policy_Config01_Experience02) GetPropertyDisableConsumerAccountStateContent() (value int32, err error) {
-	retValue, err := instance.GetProperty("DisableConsumerAccountStateContent")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetDoNotShowFeedbackNotifications sets the value of DoNotShowFeedbackNotifications for the instance
 func (instance *MDM_Policy_Config01_Experience02) SetPropertyDoNotShowFeedbackNotifications(value int32) (err error) {
 	return instance.SetProperty("DoNotShowFeedbackNotifications", (value))
@@ -605,33 +541,6 @@ func (instance *MDM_Policy_Config01_Experience02) SetPropertyPreventUsersFromTur
 // GetPreventUsersFromTurningOnBrowserSyncing gets the value of PreventUsersFromTurningOnBrowserSyncing for the instance
 func (instance *MDM_Policy_Config01_Experience02) GetPropertyPreventUsersFromTurningOnBrowserSyncing() (value int32, err error) {
 	retValue, err := instance.GetProperty("PreventUsersFromTurningOnBrowserSyncing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetShowLockOnUserTile sets the value of ShowLockOnUserTile for the instance
-func (instance *MDM_Policy_Config01_Experience02) SetPropertyShowLockOnUserTile(value int32) (err error) {
-	return instance.SetProperty("ShowLockOnUserTile", (value))
-}
-
-// GetShowLockOnUserTile gets the value of ShowLockOnUserTile for the instance
-func (instance *MDM_Policy_Config01_Experience02) GetPropertyShowLockOnUserTile() (value int32, err error) {
-	retValue, err := instance.GetProperty("ShowLockOnUserTile")
 	if err != nil {
 		return
 	}

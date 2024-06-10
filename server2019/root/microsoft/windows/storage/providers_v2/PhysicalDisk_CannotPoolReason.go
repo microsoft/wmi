@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source PhysicalDisk_CannotPoolReason
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source PhysicalDisk_CannotPoolReason
+//////////////////////////////////////////////
 package providers_v2
 
 // PhysicalDisk_CannotPoolReason
@@ -35,20 +34,16 @@ const (
 	PhysicalDisk_CannotPoolReason_Reserved_by_subsystem PhysicalDisk_CannotPoolReason = 9
 	// Starting enum
 	PhysicalDisk_CannotPoolReason_Starting PhysicalDisk_CannotPoolReason = 10
-	// Partial_SCM enum
-	PhysicalDisk_CannotPoolReason_Partial_SCM PhysicalDisk_CannotPoolReason = 11
-	// Discovery_Disabled enum
-	PhysicalDisk_CannotPoolReason_Discovery_Disabled PhysicalDisk_CannotPoolReason = 12
 	// Microsoft_Reserved enum
-	PhysicalDisk_CannotPoolReason_Microsoft_Reserved PhysicalDisk_CannotPoolReason = 13
+	PhysicalDisk_CannotPoolReason_Microsoft_Reserved PhysicalDisk_CannotPoolReason = 11
 	// Verification_in_progress enum
-	PhysicalDisk_CannotPoolReason_Verification_in_progress PhysicalDisk_CannotPoolReason = 14
+	PhysicalDisk_CannotPoolReason_Verification_in_progress PhysicalDisk_CannotPoolReason = 12
 	// Verification_failed enum
-	PhysicalDisk_CannotPoolReason_Verification_failed PhysicalDisk_CannotPoolReason = 15
+	PhysicalDisk_CannotPoolReason_Verification_failed PhysicalDisk_CannotPoolReason = 13
 	// Firmware_not_compliant enum
-	PhysicalDisk_CannotPoolReason_Firmware_not_compliant PhysicalDisk_CannotPoolReason = 16
+	PhysicalDisk_CannotPoolReason_Firmware_not_compliant PhysicalDisk_CannotPoolReason = 14
 	// Hardware_not_compliant enum
-	PhysicalDisk_CannotPoolReason_Hardware_not_compliant PhysicalDisk_CannotPoolReason = 17
+	PhysicalDisk_CannotPoolReason_Hardware_not_compliant PhysicalDisk_CannotPoolReason = 15
 	// Vendor_Reserved enum
-	PhysicalDisk_CannotPoolReason_Vendor_Reserved PhysicalDisk_CannotPoolReason = 18
+	PhysicalDisk_CannotPoolReason_Vendor_Reserved PhysicalDisk_CannotPoolReason = 16
 )

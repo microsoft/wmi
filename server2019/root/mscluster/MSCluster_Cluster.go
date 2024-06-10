@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -19,12 +18,6 @@ import (
 // MSCluster_Cluster struct
 type MSCluster_Cluster struct {
 	*CIM_Cluster
-
-	//
-	AcceleratedNetworkingEnabled uint32
-
-	//
-	AcceleratedNetworkingNodeReserve uint32
 
 	//
 	AddEvictDelay uint32
@@ -99,9 +92,6 @@ type MSCluster_Cluster struct {
 	CsvBalancer uint32
 
 	//
-	CsvTimeToWait uint32
-
-	//
 	DatabaseReadWriteMode uint32
 
 	//
@@ -118,12 +108,6 @@ type MSCluster_Cluster struct {
 
 	//
 	DisableGroupPreferredOwnerRandomization uint32
-
-	//
-	DpcWatchdogProfileCumulativeDpcThreshold uint32
-
-	//
-	DpcWatchdogProfileSingleDpcThreshold uint32
 
 	//
 	DrainOnShutdown uint32
@@ -145,9 +129,6 @@ type MSCluster_Cluster struct {
 
 	//
 	Fqdn string
-
-	//
-	GlobalWprSessionConfig []string
 
 	//
 	GracePeriodEnabled uint32
@@ -175,9 +156,6 @@ type MSCluster_Cluster struct {
 
 	//
 	MaintenanceFile string
-
-	//
-	MaximumParallelMigrations uint32
 
 	//
 	MessageBufferLength uint32
@@ -243,9 +221,6 @@ type MSCluster_Cluster struct {
 	QuorumTypeValue uint32
 
 	//
-	RdmaConnectionsPerInterfaceForStorage uint32
-
-	//
 	RecentEventsResetTime string
 
 	//
@@ -265,9 +240,6 @@ type MSCluster_Cluster struct {
 
 	//
 	ResourceTypeAdminExtensions []string
-
-	//
-	RolloutAudience uint32
 
 	//
 	RootMemoryReserved uint32
@@ -324,9 +296,6 @@ type MSCluster_Cluster struct {
 	SecurityLevelForStorage uint32
 
 	//
-	SetSMBBandwidthLimit uint32
-
-	//
 	SharedVolumeCompatibleFilters []string
 
 	//
@@ -345,13 +314,7 @@ type MSCluster_Cluster struct {
 	ShutdownTimeoutInMinutes uint32
 
 	//
-	SMBBandwidthLimitFactor uint32
-
-	//
 	UseClientAccessNetworksForSharedVolumes uint32
-
-	//
-	UseRdmaForStorage uint32
 
 	//
 	WitnessDatabaseWriteTimeout uint32
@@ -361,12 +324,6 @@ type MSCluster_Cluster struct {
 
 	//
 	WitnessRestartInterval uint32
-
-	//
-	WprSessionCoolOffTime uint32
-
-	//
-	WprSessionCount uint32
 }
 
 func NewMSCluster_ClusterEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Cluster, err error) {
@@ -395,60 +352,6 @@ func NewMSCluster_ClusterEx6(hostName string,
 	newInstance = &MSCluster_Cluster{
 		CIM_Cluster: tmp,
 	}
-	return
-}
-
-// SetAcceleratedNetworkingEnabled sets the value of AcceleratedNetworkingEnabled for the instance
-func (instance *MSCluster_Cluster) SetPropertyAcceleratedNetworkingEnabled(value uint32) (err error) {
-	return instance.SetProperty("AcceleratedNetworkingEnabled", (value))
-}
-
-// GetAcceleratedNetworkingEnabled gets the value of AcceleratedNetworkingEnabled for the instance
-func (instance *MSCluster_Cluster) GetPropertyAcceleratedNetworkingEnabled() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AcceleratedNetworkingEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetAcceleratedNetworkingNodeReserve sets the value of AcceleratedNetworkingNodeReserve for the instance
-func (instance *MSCluster_Cluster) SetPropertyAcceleratedNetworkingNodeReserve(value uint32) (err error) {
-	return instance.SetProperty("AcceleratedNetworkingNodeReserve", (value))
-}
-
-// GetAcceleratedNetworkingNodeReserve gets the value of AcceleratedNetworkingNodeReserve for the instance
-func (instance *MSCluster_Cluster) GetPropertyAcceleratedNetworkingNodeReserve() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AcceleratedNetworkingNodeReserve")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
@@ -1101,33 +1004,6 @@ func (instance *MSCluster_Cluster) GetPropertyCsvBalancer() (value uint32, err e
 	return
 }
 
-// SetCsvTimeToWait sets the value of CsvTimeToWait for the instance
-func (instance *MSCluster_Cluster) SetPropertyCsvTimeToWait(value uint32) (err error) {
-	return instance.SetProperty("CsvTimeToWait", (value))
-}
-
-// GetCsvTimeToWait gets the value of CsvTimeToWait for the instance
-func (instance *MSCluster_Cluster) GetPropertyCsvTimeToWait() (value uint32, err error) {
-	retValue, err := instance.GetProperty("CsvTimeToWait")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetDatabaseReadWriteMode sets the value of DatabaseReadWriteMode for the instance
 func (instance *MSCluster_Cluster) SetPropertyDatabaseReadWriteMode(value uint32) (err error) {
 	return instance.SetProperty("DatabaseReadWriteMode", (value))
@@ -1271,60 +1147,6 @@ func (instance *MSCluster_Cluster) SetPropertyDisableGroupPreferredOwnerRandomiz
 // GetDisableGroupPreferredOwnerRandomization gets the value of DisableGroupPreferredOwnerRandomization for the instance
 func (instance *MSCluster_Cluster) GetPropertyDisableGroupPreferredOwnerRandomization() (value uint32, err error) {
 	retValue, err := instance.GetProperty("DisableGroupPreferredOwnerRandomization")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetDpcWatchdogProfileCumulativeDpcThreshold sets the value of DpcWatchdogProfileCumulativeDpcThreshold for the instance
-func (instance *MSCluster_Cluster) SetPropertyDpcWatchdogProfileCumulativeDpcThreshold(value uint32) (err error) {
-	return instance.SetProperty("DpcWatchdogProfileCumulativeDpcThreshold", (value))
-}
-
-// GetDpcWatchdogProfileCumulativeDpcThreshold gets the value of DpcWatchdogProfileCumulativeDpcThreshold for the instance
-func (instance *MSCluster_Cluster) GetPropertyDpcWatchdogProfileCumulativeDpcThreshold() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DpcWatchdogProfileCumulativeDpcThreshold")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetDpcWatchdogProfileSingleDpcThreshold sets the value of DpcWatchdogProfileSingleDpcThreshold for the instance
-func (instance *MSCluster_Cluster) SetPropertyDpcWatchdogProfileSingleDpcThreshold(value uint32) (err error) {
-	return instance.SetProperty("DpcWatchdogProfileSingleDpcThreshold", (value))
-}
-
-// GetDpcWatchdogProfileSingleDpcThreshold gets the value of DpcWatchdogProfileSingleDpcThreshold for the instance
-func (instance *MSCluster_Cluster) GetPropertyDpcWatchdogProfileSingleDpcThreshold() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DpcWatchdogProfileSingleDpcThreshold")
 	if err != nil {
 		return
 	}
@@ -1530,34 +1352,6 @@ func (instance *MSCluster_Cluster) GetPropertyFqdn() (value string, err error) {
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetGlobalWprSessionConfig sets the value of GlobalWprSessionConfig for the instance
-func (instance *MSCluster_Cluster) SetPropertyGlobalWprSessionConfig(value []string) (err error) {
-	return instance.SetProperty("GlobalWprSessionConfig", (value))
-}
-
-// GetGlobalWprSessionConfig gets the value of GlobalWprSessionConfig for the instance
-func (instance *MSCluster_Cluster) GetPropertyGlobalWprSessionConfig() (value []string, err error) {
-	retValue, err := instance.GetProperty("GlobalWprSessionConfig")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
 
 	return
 }
@@ -1802,33 +1596,6 @@ func (instance *MSCluster_Cluster) GetPropertyMaintenanceFile() (value string, e
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetMaximumParallelMigrations sets the value of MaximumParallelMigrations for the instance
-func (instance *MSCluster_Cluster) SetPropertyMaximumParallelMigrations(value uint32) (err error) {
-	return instance.SetProperty("MaximumParallelMigrations", (value))
-}
-
-// GetMaximumParallelMigrations gets the value of MaximumParallelMigrations for the instance
-func (instance *MSCluster_Cluster) GetPropertyMaximumParallelMigrations() (value uint32, err error) {
-	retValue, err := instance.GetProperty("MaximumParallelMigrations")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
 
 	return
 }
@@ -2404,33 +2171,6 @@ func (instance *MSCluster_Cluster) GetPropertyQuorumTypeValue() (value uint32, e
 	return
 }
 
-// SetRdmaConnectionsPerInterfaceForStorage sets the value of RdmaConnectionsPerInterfaceForStorage for the instance
-func (instance *MSCluster_Cluster) SetPropertyRdmaConnectionsPerInterfaceForStorage(value uint32) (err error) {
-	return instance.SetProperty("RdmaConnectionsPerInterfaceForStorage", (value))
-}
-
-// GetRdmaConnectionsPerInterfaceForStorage gets the value of RdmaConnectionsPerInterfaceForStorage for the instance
-func (instance *MSCluster_Cluster) GetPropertyRdmaConnectionsPerInterfaceForStorage() (value uint32, err error) {
-	retValue, err := instance.GetProperty("RdmaConnectionsPerInterfaceForStorage")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetRecentEventsResetTime sets the value of RecentEventsResetTime for the instance
 func (instance *MSCluster_Cluster) SetPropertyRecentEventsResetTime(value string) (err error) {
 	return instance.SetProperty("RecentEventsResetTime", (value))
@@ -2618,33 +2358,6 @@ func (instance *MSCluster_Cluster) GetPropertyResourceTypeAdminExtensions() (val
 		}
 		value = append(value, string(valuetmp))
 	}
-
-	return
-}
-
-// SetRolloutAudience sets the value of RolloutAudience for the instance
-func (instance *MSCluster_Cluster) SetPropertyRolloutAudience(value uint32) (err error) {
-	return instance.SetProperty("RolloutAudience", (value))
-}
-
-// GetRolloutAudience gets the value of RolloutAudience for the instance
-func (instance *MSCluster_Cluster) GetPropertyRolloutAudience() (value uint32, err error) {
-	retValue, err := instance.GetProperty("RolloutAudience")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
 
 	return
 }
@@ -3138,33 +2851,6 @@ func (instance *MSCluster_Cluster) GetPropertySecurityLevelForStorage() (value u
 	return
 }
 
-// SetSetSMBBandwidthLimit sets the value of SetSMBBandwidthLimit for the instance
-func (instance *MSCluster_Cluster) SetPropertySetSMBBandwidthLimit(value uint32) (err error) {
-	return instance.SetProperty("SetSMBBandwidthLimit", (value))
-}
-
-// GetSetSMBBandwidthLimit gets the value of SetSMBBandwidthLimit for the instance
-func (instance *MSCluster_Cluster) GetPropertySetSMBBandwidthLimit() (value uint32, err error) {
-	retValue, err := instance.GetProperty("SetSMBBandwidthLimit")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetSharedVolumeCompatibleFilters sets the value of SharedVolumeCompatibleFilters for the instance
 func (instance *MSCluster_Cluster) SetPropertySharedVolumeCompatibleFilters(value []string) (err error) {
 	return instance.SetProperty("SharedVolumeCompatibleFilters", (value))
@@ -3330,33 +3016,6 @@ func (instance *MSCluster_Cluster) GetPropertyShutdownTimeoutInMinutes() (value 
 	return
 }
 
-// SetSMBBandwidthLimitFactor sets the value of SMBBandwidthLimitFactor for the instance
-func (instance *MSCluster_Cluster) SetPropertySMBBandwidthLimitFactor(value uint32) (err error) {
-	return instance.SetProperty("SMBBandwidthLimitFactor", (value))
-}
-
-// GetSMBBandwidthLimitFactor gets the value of SMBBandwidthLimitFactor for the instance
-func (instance *MSCluster_Cluster) GetPropertySMBBandwidthLimitFactor() (value uint32, err error) {
-	retValue, err := instance.GetProperty("SMBBandwidthLimitFactor")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetUseClientAccessNetworksForSharedVolumes sets the value of UseClientAccessNetworksForSharedVolumes for the instance
 func (instance *MSCluster_Cluster) SetPropertyUseClientAccessNetworksForSharedVolumes(value uint32) (err error) {
 	return instance.SetProperty("UseClientAccessNetworksForSharedVolumes", (value))
@@ -3365,33 +3024,6 @@ func (instance *MSCluster_Cluster) SetPropertyUseClientAccessNetworksForSharedVo
 // GetUseClientAccessNetworksForSharedVolumes gets the value of UseClientAccessNetworksForSharedVolumes for the instance
 func (instance *MSCluster_Cluster) GetPropertyUseClientAccessNetworksForSharedVolumes() (value uint32, err error) {
 	retValue, err := instance.GetProperty("UseClientAccessNetworksForSharedVolumes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetUseRdmaForStorage sets the value of UseRdmaForStorage for the instance
-func (instance *MSCluster_Cluster) SetPropertyUseRdmaForStorage(value uint32) (err error) {
-	return instance.SetProperty("UseRdmaForStorage", (value))
-}
-
-// GetUseRdmaForStorage gets the value of UseRdmaForStorage for the instance
-func (instance *MSCluster_Cluster) GetPropertyUseRdmaForStorage() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UseRdmaForStorage")
 	if err != nil {
 		return
 	}
@@ -3492,67 +3124,11 @@ func (instance *MSCluster_Cluster) GetPropertyWitnessRestartInterval() (value ui
 	return
 }
 
-// SetWprSessionCoolOffTime sets the value of WprSessionCoolOffTime for the instance
-func (instance *MSCluster_Cluster) SetPropertyWprSessionCoolOffTime(value uint32) (err error) {
-	return instance.SetProperty("WprSessionCoolOffTime", (value))
-}
-
-// GetWprSessionCoolOffTime gets the value of WprSessionCoolOffTime for the instance
-func (instance *MSCluster_Cluster) GetPropertyWprSessionCoolOffTime() (value uint32, err error) {
-	retValue, err := instance.GetProperty("WprSessionCoolOffTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetWprSessionCount sets the value of WprSessionCount for the instance
-func (instance *MSCluster_Cluster) SetPropertyWprSessionCount(value uint32) (err error) {
-	return instance.SetProperty("WprSessionCount", (value))
-}
-
-// GetWprSessionCount gets the value of WprSessionCount for the instance
-func (instance *MSCluster_Cluster) GetPropertyWprSessionCount() (value uint32, err error) {
-	retValue, err := instance.GetProperty("WprSessionCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 //
 
 // <param name="NewName" type="string "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Cluster) Rename( /* IN */ NewName string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("Rename", NewName, Reason)
+func (instance *MSCluster_Cluster) Rename( /* IN */ NewName string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("Rename", NewName)
 	if err != nil {
 		return
 	}
@@ -3563,12 +3139,10 @@ func (instance *MSCluster_Cluster) Rename( /* IN */ NewName string,
 //
 
 // <param name="QuorumPath" type="string "></param>
-// <param name="Reason" type="string "></param>
 // <param name="Resource" type="string "></param>
 func (instance *MSCluster_Cluster) SetMajorityQuorum( /* IN */ Resource string,
-	/* IN */ QuorumPath string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("SetMajorityQuorum", Resource, QuorumPath, Reason)
+	/* IN */ QuorumPath string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("SetMajorityQuorum", Resource, QuorumPath)
 	if err != nil {
 		return
 	}
@@ -3579,12 +3153,10 @@ func (instance *MSCluster_Cluster) SetMajorityQuorum( /* IN */ Resource string,
 //
 
 // <param name="QuorumPath" type="string "></param>
-// <param name="Reason" type="string "></param>
 // <param name="Resource" type="string "></param>
 func (instance *MSCluster_Cluster) SetDiskQuorum( /* IN */ Resource string,
-	/* IN */ QuorumPath string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("SetDiskQuorum", Resource, QuorumPath, Reason)
+	/* IN */ QuorumPath string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("SetDiskQuorum", Resource, QuorumPath)
 	if err != nil {
 		return
 	}
@@ -3593,10 +3165,8 @@ func (instance *MSCluster_Cluster) SetDiskQuorum( /* IN */ Resource string,
 }
 
 //
-
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Cluster) SetNodeMajorityQuorum( /* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("SetNodeMajorityQuorum", Reason)
+func (instance *MSCluster_Cluster) SetNodeMajorityQuorum() (err error) {
+	_, err = instance.InvokeMethodWithReturn("SetNodeMajorityQuorum")
 	if err != nil {
 		return
 	}
@@ -3638,28 +3208,6 @@ func (instance *MSCluster_Cluster) CreateCluster( /* IN */ ClusterName string,
 
 //
 
-// <param name="AdministrativeAccessPoint" type="uint32 "></param>
-// <param name="AdministrativeAccessPointResourceType" type="uint32 "></param>
-// <param name="ClusterName" type="string "></param>
-// <param name="IPAddresses" type="string []"></param>
-// <param name="NodeNames" type="string []"></param>
-// <param name="SubnetMasks" type="string []"></param>
-func (instance *MSCluster_Cluster) CreateClusterEx( /* IN */ ClusterName string,
-	/* IN */ NodeNames []string,
-	/* IN */ IPAddresses []string,
-	/* IN */ SubnetMasks []string,
-	/* IN */ AdministrativeAccessPoint uint32,
-	/* IN */ AdministrativeAccessPointResourceType uint32) (err error) {
-	_, err = instance.InvokeMethodWithReturn("CreateClusterEx", ClusterName, NodeNames, IPAddresses, SubnetMasks, AdministrativeAccessPoint, AdministrativeAccessPointResourceType)
-	if err != nil {
-		return
-	}
-	return
-
-}
-
-//
-
 // <param name="NodeName" type="string "></param>
 func (instance *MSCluster_Cluster) AddNode( /* IN */ NodeName string) (err error) {
 	_, err = instance.InvokeMethodWithReturn("AddNode", NodeName)
@@ -3673,10 +3221,8 @@ func (instance *MSCluster_Cluster) AddNode( /* IN */ NodeName string) (err error
 //
 
 // <param name="NodeName" type="string "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Cluster) EvictNode( /* IN */ NodeName string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("EvictNode", NodeName, Reason)
+func (instance *MSCluster_Cluster) EvictNode( /* IN */ NodeName string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("EvictNode", NodeName)
 	if err != nil {
 		return
 	}
@@ -3714,16 +3260,14 @@ func (instance *MSCluster_Cluster) ForceCleanup( /* IN */ NodeName string,
 
 // <param name="ControlCode" type="int32 "></param>
 // <param name="InputBuffer" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 
 // <param name="OutputBuffer" type="uint8 []"></param>
 // <param name="OutputBufferSize" type="int32 "></param>
 func (instance *MSCluster_Cluster) ExecuteClusterControl( /* IN */ ControlCode int32,
 	/* IN */ InputBuffer []uint8,
 	/* OUT */ OutputBuffer []uint8,
-	/* OUT */ OutputBufferSize int32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethod("ExecuteClusterControl", ControlCode, InputBuffer, Reason)
+	/* OUT */ OutputBufferSize int32) (err error) {
+	_, err = instance.InvokeMethod("ExecuteClusterControl", ControlCode, InputBuffer)
 	if err != nil {
 		return
 	}
@@ -3809,30 +3353,6 @@ func (instance *MSCluster_Cluster) AddClusterNameAccount( /* IN */ Name string,
 	/* IN */ Password string,
 	/* IN */ AdministrativeAccessPoint uint32) (err error) {
 	_, err = instance.InvokeMethodWithReturn("AddClusterNameAccount", Name, DomainName, UserName, Password, AdministrativeAccessPoint)
-	if err != nil {
-		return
-	}
-	return
-
-}
-
-//
-
-// <param name="AdministrativeAccessPoint" type="uint32 "></param>
-// <param name="AdministrativeAccessPointResourceType" type="uint32 "></param>
-// <param name="DomainName" type="string "></param>
-// <param name="Name" type="string "></param>
-// <param name="Password" type="string "></param>
-// <param name="upgradeVCOs" type="uint32 "></param>
-// <param name="UserName" type="string "></param>
-func (instance *MSCluster_Cluster) AddClusterNameAccountEx( /* IN */ Name string,
-	/* IN */ DomainName string,
-	/* IN */ UserName string,
-	/* IN */ Password string,
-	/* IN */ AdministrativeAccessPoint uint32,
-	/* IN */ AdministrativeAccessPointResourceType uint32,
-	/* IN */ upgradeVCOs uint32) (err error) {
-	_, err = instance.InvokeMethodWithReturn("AddClusterNameAccountEx", Name, DomainName, UserName, Password, AdministrativeAccessPoint, AdministrativeAccessPointResourceType, upgradeVCOs)
 	if err != nil {
 		return
 	}

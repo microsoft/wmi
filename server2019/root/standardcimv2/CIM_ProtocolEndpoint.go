@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -20,17 +19,17 @@ import (
 type CIM_ProtocolEndpoint struct {
 	*CIM_ServiceAccessPoint
 
-	//
+	// 381
 	NameFormat string
 
-	//
+	// 646
 	OtherTypeDescription string
 
-	//
-	ProtocolIFType uint16
+	// 409
+	ProtocolIFType ProtocolEndpoint_ProtocolIFType
 
-	//
-	ProtocolType uint16
+	// 382
+	ProtocolType ProtocolEndpoint_ProtocolType
 }
 
 func NewCIM_ProtocolEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_ProtocolEndpoint, err error) {
@@ -117,12 +116,12 @@ func (instance *CIM_ProtocolEndpoint) GetPropertyOtherTypeDescription() (value s
 }
 
 // SetProtocolIFType sets the value of ProtocolIFType for the instance
-func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolIFType(value uint16) (err error) {
+func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolIFType(value ProtocolEndpoint_ProtocolIFType) (err error) {
 	return instance.SetProperty("ProtocolIFType", (value))
 }
 
 // GetProtocolIFType gets the value of ProtocolIFType for the instance
-func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolIFType() (value uint16, err error) {
+func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolIFType() (value ProtocolEndpoint_ProtocolIFType, err error) {
 	retValue, err := instance.GetProperty("ProtocolIFType")
 	if err != nil {
 		return
@@ -132,24 +131,24 @@ func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolIFType() (value uint16,
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = ProtocolEndpoint_ProtocolIFType(valuetmp)
 
 	return
 }
 
 // SetProtocolType sets the value of ProtocolType for the instance
-func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolType(value uint16) (err error) {
+func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolType(value ProtocolEndpoint_ProtocolType) (err error) {
 	return instance.SetProperty("ProtocolType", (value))
 }
 
 // GetProtocolType gets the value of ProtocolType for the instance
-func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolType() (value uint16, err error) {
+func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolType() (value ProtocolEndpoint_ProtocolType, err error) {
 	retValue, err := instance.GetProperty("ProtocolType")
 	if err != nil {
 		return
@@ -159,13 +158,13 @@ func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolType() (value uint16, e
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = ProtocolEndpoint_ProtocolType(valuetmp)
 
 	return
 }

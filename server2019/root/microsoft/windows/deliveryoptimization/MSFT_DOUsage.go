@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MSFT_DOUsage struct
@@ -27,16 +24,10 @@ type MSFT_DOUsage struct {
 	LinkUsageBps uint32
 
 	//
-	MonthlyGroupBytes uint64
-
-	//
 	MonthlyInternetBytes uint64
 
 	//
 	MonthlyLanBytes uint64
-
-	//
-	MonthlyLinkLocalBytes uint64
 }
 
 func NewMSFT_DOUsageEx1(instance *cim.WmiInstance) (newInstance *MSFT_DOUsage, err error) {
@@ -70,7 +61,7 @@ func NewMSFT_DOUsageEx6(hostName string,
 
 // SetLinkBps sets the value of LinkBps for the instance
 func (instance *MSFT_DOUsage) SetPropertyLinkBps(value uint32) (err error) {
-	return instance.SetProperty("LinkBps", (value))
+	return instance.SetProperty("LinkBps", value)
 }
 
 // GetLinkBps gets the value of LinkBps for the instance
@@ -79,25 +70,16 @@ func (instance *MSFT_DOUsage) GetPropertyLinkBps() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetLinkUsageBps sets the value of LinkUsageBps for the instance
 func (instance *MSFT_DOUsage) SetPropertyLinkUsageBps(value uint32) (err error) {
-	return instance.SetProperty("LinkUsageBps", (value))
+	return instance.SetProperty("LinkUsageBps", value)
 }
 
 // GetLinkUsageBps gets the value of LinkUsageBps for the instance
@@ -106,52 +88,16 @@ func (instance *MSFT_DOUsage) GetPropertyLinkUsageBps() (value uint32, err error
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetMonthlyGroupBytes sets the value of MonthlyGroupBytes for the instance
-func (instance *MSFT_DOUsage) SetPropertyMonthlyGroupBytes(value uint64) (err error) {
-	return instance.SetProperty("MonthlyGroupBytes", (value))
-}
-
-// GetMonthlyGroupBytes gets the value of MonthlyGroupBytes for the instance
-func (instance *MSFT_DOUsage) GetPropertyMonthlyGroupBytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("MonthlyGroupBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetMonthlyInternetBytes sets the value of MonthlyInternetBytes for the instance
 func (instance *MSFT_DOUsage) SetPropertyMonthlyInternetBytes(value uint64) (err error) {
-	return instance.SetProperty("MonthlyInternetBytes", (value))
+	return instance.SetProperty("MonthlyInternetBytes", value)
 }
 
 // GetMonthlyInternetBytes gets the value of MonthlyInternetBytes for the instance
@@ -160,25 +106,16 @@ func (instance *MSFT_DOUsage) GetPropertyMonthlyInternetBytes() (value uint64, e
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetMonthlyLanBytes sets the value of MonthlyLanBytes for the instance
 func (instance *MSFT_DOUsage) SetPropertyMonthlyLanBytes(value uint64) (err error) {
-	return instance.SetProperty("MonthlyLanBytes", (value))
+	return instance.SetProperty("MonthlyLanBytes", value)
 }
 
 // GetMonthlyLanBytes gets the value of MonthlyLanBytes for the instance
@@ -187,45 +124,9 @@ func (instance *MSFT_DOUsage) GetPropertyMonthlyLanBytes() (value uint64, err er
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetMonthlyLinkLocalBytes sets the value of MonthlyLinkLocalBytes for the instance
-func (instance *MSFT_DOUsage) SetPropertyMonthlyLinkLocalBytes(value uint64) (err error) {
-	return instance.SetProperty("MonthlyLinkLocalBytes", (value))
-}
-
-// GetMonthlyLinkLocalBytes gets the value of MonthlyLinkLocalBytes for the instance
-func (instance *MSFT_DOUsage) GetPropertyMonthlyLinkLocalBytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("MonthlyLinkLocalBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }

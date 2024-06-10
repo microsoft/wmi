@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -23,9 +22,6 @@ type MDM_Policy_Result01_System02 struct {
 
 	//
 	AllowBuildPreview int32
-
-	//
-	AllowCommercialDataPipeline int32
 
 	//
 	AllowDesktopAnalyticsProcessing int32
@@ -82,34 +78,19 @@ type MDM_Policy_Result01_System02 struct {
 	DisableDiagnosticDataViewer int32
 
 	//
-	DisableDirectXDatabaseUpdate int32
-
-	//
 	DisableEnterpriseAuthProxy int32
 
 	//
 	DisableOneDriveFileSync int32
 
 	//
-	DisableOneSettingsDownloads int32
-
-	//
 	DisableSystemRestore string
-
-	//
-	EnableOneSettingsAuditing int32
 
 	//
 	FeedbackHubAlwaysSaveDiagnosticsLocally int32
 
 	//
 	InstanceID string
-
-	//
-	LimitDiagnosticLogCollection int32
-
-	//
-	LimitDumpCollection int32
 
 	//
 	LimitEnhancedDiagnosticDataWindowsAnalytics int32
@@ -119,9 +100,6 @@ type MDM_Policy_Result01_System02 struct {
 
 	//
 	TelemetryProxy string
-
-	//
-	TurnOffFileHistory int32
 }
 
 func NewMDM_Policy_Result01_System02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Result01_System02, err error) {
@@ -161,33 +139,6 @@ func (instance *MDM_Policy_Result01_System02) SetPropertyAllowBuildPreview(value
 // GetAllowBuildPreview gets the value of AllowBuildPreview for the instance
 func (instance *MDM_Policy_Result01_System02) GetPropertyAllowBuildPreview() (value int32, err error) {
 	retValue, err := instance.GetProperty("AllowBuildPreview")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetAllowCommercialDataPipeline sets the value of AllowCommercialDataPipeline for the instance
-func (instance *MDM_Policy_Result01_System02) SetPropertyAllowCommercialDataPipeline(value int32) (err error) {
-	return instance.SetProperty("AllowCommercialDataPipeline", (value))
-}
-
-// GetAllowCommercialDataPipeline gets the value of AllowCommercialDataPipeline for the instance
-func (instance *MDM_Policy_Result01_System02) GetPropertyAllowCommercialDataPipeline() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowCommercialDataPipeline")
 	if err != nil {
 		return
 	}
@@ -693,33 +644,6 @@ func (instance *MDM_Policy_Result01_System02) GetPropertyDisableDiagnosticDataVi
 	return
 }
 
-// SetDisableDirectXDatabaseUpdate sets the value of DisableDirectXDatabaseUpdate for the instance
-func (instance *MDM_Policy_Result01_System02) SetPropertyDisableDirectXDatabaseUpdate(value int32) (err error) {
-	return instance.SetProperty("DisableDirectXDatabaseUpdate", (value))
-}
-
-// GetDisableDirectXDatabaseUpdate gets the value of DisableDirectXDatabaseUpdate for the instance
-func (instance *MDM_Policy_Result01_System02) GetPropertyDisableDirectXDatabaseUpdate() (value int32, err error) {
-	retValue, err := instance.GetProperty("DisableDirectXDatabaseUpdate")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetDisableEnterpriseAuthProxy sets the value of DisableEnterpriseAuthProxy for the instance
 func (instance *MDM_Policy_Result01_System02) SetPropertyDisableEnterpriseAuthProxy(value int32) (err error) {
 	return instance.SetProperty("DisableEnterpriseAuthProxy", (value))
@@ -774,33 +698,6 @@ func (instance *MDM_Policy_Result01_System02) GetPropertyDisableOneDriveFileSync
 	return
 }
 
-// SetDisableOneSettingsDownloads sets the value of DisableOneSettingsDownloads for the instance
-func (instance *MDM_Policy_Result01_System02) SetPropertyDisableOneSettingsDownloads(value int32) (err error) {
-	return instance.SetProperty("DisableOneSettingsDownloads", (value))
-}
-
-// GetDisableOneSettingsDownloads gets the value of DisableOneSettingsDownloads for the instance
-func (instance *MDM_Policy_Result01_System02) GetPropertyDisableOneSettingsDownloads() (value int32, err error) {
-	retValue, err := instance.GetProperty("DisableOneSettingsDownloads")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetDisableSystemRestore sets the value of DisableSystemRestore for the instance
 func (instance *MDM_Policy_Result01_System02) SetPropertyDisableSystemRestore(value string) (err error) {
 	return instance.SetProperty("DisableSystemRestore", (value))
@@ -824,33 +721,6 @@ func (instance *MDM_Policy_Result01_System02) GetPropertyDisableSystemRestore() 
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetEnableOneSettingsAuditing sets the value of EnableOneSettingsAuditing for the instance
-func (instance *MDM_Policy_Result01_System02) SetPropertyEnableOneSettingsAuditing(value int32) (err error) {
-	return instance.SetProperty("EnableOneSettingsAuditing", (value))
-}
-
-// GetEnableOneSettingsAuditing gets the value of EnableOneSettingsAuditing for the instance
-func (instance *MDM_Policy_Result01_System02) GetPropertyEnableOneSettingsAuditing() (value int32, err error) {
-	retValue, err := instance.GetProperty("EnableOneSettingsAuditing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }
@@ -905,60 +775,6 @@ func (instance *MDM_Policy_Result01_System02) GetPropertyInstanceID() (value str
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetLimitDiagnosticLogCollection sets the value of LimitDiagnosticLogCollection for the instance
-func (instance *MDM_Policy_Result01_System02) SetPropertyLimitDiagnosticLogCollection(value int32) (err error) {
-	return instance.SetProperty("LimitDiagnosticLogCollection", (value))
-}
-
-// GetLimitDiagnosticLogCollection gets the value of LimitDiagnosticLogCollection for the instance
-func (instance *MDM_Policy_Result01_System02) GetPropertyLimitDiagnosticLogCollection() (value int32, err error) {
-	retValue, err := instance.GetProperty("LimitDiagnosticLogCollection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetLimitDumpCollection sets the value of LimitDumpCollection for the instance
-func (instance *MDM_Policy_Result01_System02) SetPropertyLimitDumpCollection(value int32) (err error) {
-	return instance.SetProperty("LimitDumpCollection", (value))
-}
-
-// GetLimitDumpCollection gets the value of LimitDumpCollection for the instance
-func (instance *MDM_Policy_Result01_System02) GetPropertyLimitDumpCollection() (value int32, err error) {
-	retValue, err := instance.GetProperty("LimitDumpCollection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }
@@ -1040,33 +856,6 @@ func (instance *MDM_Policy_Result01_System02) GetPropertyTelemetryProxy() (value
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetTurnOffFileHistory sets the value of TurnOffFileHistory for the instance
-func (instance *MDM_Policy_Result01_System02) SetPropertyTurnOffFileHistory(value int32) (err error) {
-	return instance.SetProperty("TurnOffFileHistory", (value))
-}
-
-// GetTurnOffFileHistory gets the value of TurnOffFileHistory for the instance
-func (instance *MDM_Policy_Result01_System02) GetPropertyTurnOffFileHistory() (value int32, err error) {
-	retValue, err := instance.GetProperty("TurnOffFileHistory")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

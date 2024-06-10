@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -36,12 +35,6 @@ type Msvm_BIOSElement struct {
 	BootOrder []uint16
 
 	//
-	BootPciExpress bool
-
-	//
-	BootPciExpressInstanceFilter string
-
-	//
 	ChassisAssetTag string
 
 	//
@@ -49,9 +42,6 @@ type Msvm_BIOSElement struct {
 
 	//
 	EnableHibernation bool
-
-	//
-	WatchdogEnabled bool
 }
 
 func NewMsvm_BIOSElementEx1(instance *cim.WmiInstance) (newInstance *Msvm_BIOSElement, err error) {
@@ -219,60 +209,6 @@ func (instance *Msvm_BIOSElement) GetPropertyBootOrder() (value []uint16, err er
 	return
 }
 
-// SetBootPciExpress sets the value of BootPciExpress for the instance
-func (instance *Msvm_BIOSElement) SetPropertyBootPciExpress(value bool) (err error) {
-	return instance.SetProperty("BootPciExpress", (value))
-}
-
-// GetBootPciExpress gets the value of BootPciExpress for the instance
-func (instance *Msvm_BIOSElement) GetPropertyBootPciExpress() (value bool, err error) {
-	retValue, err := instance.GetProperty("BootPciExpress")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetBootPciExpressInstanceFilter sets the value of BootPciExpressInstanceFilter for the instance
-func (instance *Msvm_BIOSElement) SetPropertyBootPciExpressInstanceFilter(value string) (err error) {
-	return instance.SetProperty("BootPciExpressInstanceFilter", (value))
-}
-
-// GetBootPciExpressInstanceFilter gets the value of BootPciExpressInstanceFilter for the instance
-func (instance *Msvm_BIOSElement) GetPropertyBootPciExpressInstanceFilter() (value string, err error) {
-	retValue, err := instance.GetProperty("BootPciExpressInstanceFilter")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetChassisAssetTag sets the value of ChassisAssetTag for the instance
 func (instance *Msvm_BIOSElement) SetPropertyChassisAssetTag(value string) (err error) {
 	return instance.SetProperty("ChassisAssetTag", (value))
@@ -353,30 +289,6 @@ func (instance *Msvm_BIOSElement) GetPropertyEnableHibernation() (value bool, er
 
 	return
 }
-
-// SetWatchdogEnabled sets the value of WatchdogEnabled for the instance
-func (instance *Msvm_BIOSElement) SetPropertyWatchdogEnabled(value bool) (err error) {
-	return instance.SetProperty("WatchdogEnabled", (value))
-}
-
-// GetWatchdogEnabled gets the value of WatchdogEnabled for the instance
-func (instance *Msvm_BIOSElement) GetPropertyWatchdogEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("WatchdogEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
+func (instance *Msvm_BIOSElement) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
 }

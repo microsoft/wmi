@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.ProtectionManagement
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.protectionManagement
+//////////////////////////////////////////////
 package protectionmanagement
 
 import (
@@ -22,19 +21,7 @@ type MSFT_MpPreference struct {
 	*cim.WmiInstance
 
 	//
-	AllowDatagramProcessingOnWinServer bool
-
-	//
-	AllowNetworkProtectionDownLevel bool
-
-	//
 	AllowNetworkProtectionOnWinServer bool
-
-	//
-	AllowSwitchToAsyncInspection bool
-
-	//
-	ApplyDisableNetworkScanningToIOAV bool
 
 	//
 	AttackSurfaceReductionOnlyExclusions []string
@@ -44,30 +31,6 @@ type MSFT_MpPreference struct {
 
 	//
 	AttackSurfaceReductionRules_Ids []string
-
-	//
-	AttackSurfaceReductionRules_RuleSpecificExclusions []string
-
-	//
-	AttackSurfaceReductionRules_RuleSpecificExclusions_Id []string
-
-	//
-	BruteForceProtectionAggressiveness uint8
-
-	//
-	BruteForceProtectionConfiguredState uint8
-
-	//
-	BruteForceProtectionExclusions []string
-
-	//
-	BruteForceProtectionLocalNetworkBlocking bool
-
-	//
-	BruteForceProtectionMaxBlockTime uint32
-
-	//
-	BruteForceProtectionSkipLearningPeriod bool
 
 	//
 	CheckForSignaturesBeforeRunningScan bool
@@ -88,9 +51,6 @@ type MSFT_MpPreference struct {
 	ControlledFolderAccessProtectedFolders []string
 
 	//
-	DefinitionUpdatesChannel uint8
-
-	//
 	DisableArchiveScanning bool
 
 	//
@@ -103,19 +63,10 @@ type MSFT_MpPreference struct {
 	DisableBlockAtFirstSeen bool
 
 	//
-	DisableCacheMaintenance bool
-
-	//
 	DisableCatchupFullScan bool
 
 	//
 	DisableCatchupQuickScan bool
-
-	//
-	DisableCoreServiceECSIntegration bool
-
-	//
-	DisableCoreServiceTelemetry bool
 
 	//
 	DisableCpuThrottleOnIdleScans bool
@@ -124,40 +75,16 @@ type MSFT_MpPreference struct {
 	DisableDatagramProcessing bool
 
 	//
-	DisableDnsOverTcpParsing bool
-
-	//
-	DisableDnsParsing bool
-
-	//
 	DisableEmailScanning bool
 
 	//
-	DisableFtpParsing bool
-
-	//
-	DisableGradualRelease bool
-
-	//
-	DisableHttpParsing bool
-
-	//
-	DisableInboundConnectionFiltering bool
+	DisableIntrusionPreventionSystem bool
 
 	//
 	DisableIOAVProtection bool
 
 	//
-	DisableNetworkProtectionPerfTelemetry bool
-
-	//
 	DisablePrivacyMode bool
-
-	//
-	DisableQuicParsing bool
-
-	//
-	DisableRdpParsing bool
 
 	//
 	DisableRealtimeMonitoring bool
@@ -178,49 +105,16 @@ type MSFT_MpPreference struct {
 	DisableScriptScanning bool
 
 	//
-	DisableSmtpParsing bool
-
-	//
-	DisableSshParsing bool
-
-	//
-	DisableTamperProtection bool
-
-	//
-	DisableTlsParsing bool
-
-	//
 	EnableControlledFolderAccess uint8
 
 	//
-	EnableConvertWarnToBlock bool
-
-	//
-	EnableDnsSinkhole bool
-
-	//
-	EnableEcsConfiguration bool
-
-	//
 	EnableFileHashComputation bool
-
-	//
-	EnableFullScanOnBatteryPower bool
 
 	//
 	EnableLowCpuPriority bool
 
 	//
 	EnableNetworkProtection uint8
-
-	//
-	EnableUdpReceiveOffload bool
-
-	//
-	EnableUdpSegmentationOffload bool
-
-	//
-	EngineUpdatesChannel uint8
 
 	//
 	ExclusionExtension []string
@@ -235,16 +129,7 @@ type MSFT_MpPreference struct {
 	ExclusionProcess []string
 
 	//
-	ForceUseProxyOnly bool
-
-	//
-	HideExclusionsFromLocalUsers bool
-
-	//
 	HighThreatDefaultAction uint8
-
-	//
-	IntelTDTEnabled bool
 
 	//
 	LowThreatDefaultAction uint8
@@ -259,34 +144,10 @@ type MSFT_MpPreference struct {
 	ModerateThreatDefaultAction uint8
 
 	//
-	NetworkProtectionReputationMode uint32
-
-	//
-	OobeEnableRtpAndSigUpdate bool
-
-	//
-	PerformanceModeStatus uint8
-
-	//
-	PlatformUpdatesChannel uint8
-
-	//
-	ProxyBypass []string
-
-	//
-	ProxyPacUrl string
-
-	//
-	ProxyServer string
-
-	//
 	PUAProtection uint8
 
 	//
 	QuarantinePurgeItemsAfterDelay uint32
-
-	//
-	QuickScanIncludeExclusions uint8
 
 	//
 	RandomizeScheduleTaskTimes bool
@@ -299,24 +160,6 @@ type MSFT_MpPreference struct {
 
 	//
 	RemediationScheduleTime string
-
-	//
-	RemoteEncryptionProtectionAggressiveness uint8
-
-	//
-	RemoteEncryptionProtectionConfiguredState uint8
-
-	//
-	RemoteEncryptionProtectionExclusions []string
-
-	//
-	RemoteEncryptionProtectionMaxBlockTime uint32
-
-	//
-	RemoveScanningThreadPoolCap bool
-
-	//
-	ReportDynamicSignatureDroppedEvent bool
 
 	//
 	ReportingAdditionalActionTimeOut uint32
@@ -343,28 +186,16 @@ type MSFT_MpPreference struct {
 	ScanScheduleDay uint8
 
 	//
-	ScanScheduleOffset uint32
-
-	//
 	ScanScheduleQuickScanTime string
 
 	//
 	ScanScheduleTime string
 
 	//
-	SchedulerRandomizationTime uint32
-
-	//
-	ServiceHealthReportInterval uint32
-
-	//
 	SevereThreatDefaultAction uint8
 
 	//
 	SharedSignaturesPath string
-
-	//
-	SharedSignaturesPathUpdateAtScheduledTimeOnly bool
 
 	//
 	SignatureAuGracePeriod uint32
@@ -409,12 +240,6 @@ type MSFT_MpPreference struct {
 	ThreatIDDefaultAction_Ids []int64
 
 	//
-	ThrottleForScheduledScanOnly bool
-
-	//
-	TrustLabelProtectionStatus uint32
-
-	//
 	UILockdown bool
 
 	//
@@ -450,60 +275,6 @@ func NewMSFT_MpPreferenceEx6(hostName string,
 	return
 }
 
-// SetAllowDatagramProcessingOnWinServer sets the value of AllowDatagramProcessingOnWinServer for the instance
-func (instance *MSFT_MpPreference) SetPropertyAllowDatagramProcessingOnWinServer(value bool) (err error) {
-	return instance.SetProperty("AllowDatagramProcessingOnWinServer", (value))
-}
-
-// GetAllowDatagramProcessingOnWinServer gets the value of AllowDatagramProcessingOnWinServer for the instance
-func (instance *MSFT_MpPreference) GetPropertyAllowDatagramProcessingOnWinServer() (value bool, err error) {
-	retValue, err := instance.GetProperty("AllowDatagramProcessingOnWinServer")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetAllowNetworkProtectionDownLevel sets the value of AllowNetworkProtectionDownLevel for the instance
-func (instance *MSFT_MpPreference) SetPropertyAllowNetworkProtectionDownLevel(value bool) (err error) {
-	return instance.SetProperty("AllowNetworkProtectionDownLevel", (value))
-}
-
-// GetAllowNetworkProtectionDownLevel gets the value of AllowNetworkProtectionDownLevel for the instance
-func (instance *MSFT_MpPreference) GetPropertyAllowNetworkProtectionDownLevel() (value bool, err error) {
-	retValue, err := instance.GetProperty("AllowNetworkProtectionDownLevel")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetAllowNetworkProtectionOnWinServer sets the value of AllowNetworkProtectionOnWinServer for the instance
 func (instance *MSFT_MpPreference) SetPropertyAllowNetworkProtectionOnWinServer(value bool) (err error) {
 	return instance.SetProperty("AllowNetworkProtectionOnWinServer", (value))
@@ -512,60 +283,6 @@ func (instance *MSFT_MpPreference) SetPropertyAllowNetworkProtectionOnWinServer(
 // GetAllowNetworkProtectionOnWinServer gets the value of AllowNetworkProtectionOnWinServer for the instance
 func (instance *MSFT_MpPreference) GetPropertyAllowNetworkProtectionOnWinServer() (value bool, err error) {
 	retValue, err := instance.GetProperty("AllowNetworkProtectionOnWinServer")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetAllowSwitchToAsyncInspection sets the value of AllowSwitchToAsyncInspection for the instance
-func (instance *MSFT_MpPreference) SetPropertyAllowSwitchToAsyncInspection(value bool) (err error) {
-	return instance.SetProperty("AllowSwitchToAsyncInspection", (value))
-}
-
-// GetAllowSwitchToAsyncInspection gets the value of AllowSwitchToAsyncInspection for the instance
-func (instance *MSFT_MpPreference) GetPropertyAllowSwitchToAsyncInspection() (value bool, err error) {
-	retValue, err := instance.GetProperty("AllowSwitchToAsyncInspection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetApplyDisableNetworkScanningToIOAV sets the value of ApplyDisableNetworkScanningToIOAV for the instance
-func (instance *MSFT_MpPreference) SetPropertyApplyDisableNetworkScanningToIOAV(value bool) (err error) {
-	return instance.SetProperty("ApplyDisableNetworkScanningToIOAV", (value))
-}
-
-// GetApplyDisableNetworkScanningToIOAV gets the value of ApplyDisableNetworkScanningToIOAV for the instance
-func (instance *MSFT_MpPreference) GetPropertyApplyDisableNetworkScanningToIOAV() (value bool, err error) {
-	retValue, err := instance.GetProperty("ApplyDisableNetworkScanningToIOAV")
 	if err != nil {
 		return
 	}
@@ -665,225 +382,6 @@ func (instance *MSFT_MpPreference) GetPropertyAttackSurfaceReductionRules_Ids() 
 		}
 		value = append(value, string(valuetmp))
 	}
-
-	return
-}
-
-// SetAttackSurfaceReductionRules_RuleSpecificExclusions sets the value of AttackSurfaceReductionRules_RuleSpecificExclusions for the instance
-func (instance *MSFT_MpPreference) SetPropertyAttackSurfaceReductionRules_RuleSpecificExclusions(value []string) (err error) {
-	return instance.SetProperty("AttackSurfaceReductionRules_RuleSpecificExclusions", (value))
-}
-
-// GetAttackSurfaceReductionRules_RuleSpecificExclusions gets the value of AttackSurfaceReductionRules_RuleSpecificExclusions for the instance
-func (instance *MSFT_MpPreference) GetPropertyAttackSurfaceReductionRules_RuleSpecificExclusions() (value []string, err error) {
-	retValue, err := instance.GetProperty("AttackSurfaceReductionRules_RuleSpecificExclusions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
-// SetAttackSurfaceReductionRules_RuleSpecificExclusions_Id sets the value of AttackSurfaceReductionRules_RuleSpecificExclusions_Id for the instance
-func (instance *MSFT_MpPreference) SetPropertyAttackSurfaceReductionRules_RuleSpecificExclusions_Id(value []string) (err error) {
-	return instance.SetProperty("AttackSurfaceReductionRules_RuleSpecificExclusions_Id", (value))
-}
-
-// GetAttackSurfaceReductionRules_RuleSpecificExclusions_Id gets the value of AttackSurfaceReductionRules_RuleSpecificExclusions_Id for the instance
-func (instance *MSFT_MpPreference) GetPropertyAttackSurfaceReductionRules_RuleSpecificExclusions_Id() (value []string, err error) {
-	retValue, err := instance.GetProperty("AttackSurfaceReductionRules_RuleSpecificExclusions_Id")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
-// SetBruteForceProtectionAggressiveness sets the value of BruteForceProtectionAggressiveness for the instance
-func (instance *MSFT_MpPreference) SetPropertyBruteForceProtectionAggressiveness(value uint8) (err error) {
-	return instance.SetProperty("BruteForceProtectionAggressiveness", (value))
-}
-
-// GetBruteForceProtectionAggressiveness gets the value of BruteForceProtectionAggressiveness for the instance
-func (instance *MSFT_MpPreference) GetPropertyBruteForceProtectionAggressiveness() (value uint8, err error) {
-	retValue, err := instance.GetProperty("BruteForceProtectionAggressiveness")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetBruteForceProtectionConfiguredState sets the value of BruteForceProtectionConfiguredState for the instance
-func (instance *MSFT_MpPreference) SetPropertyBruteForceProtectionConfiguredState(value uint8) (err error) {
-	return instance.SetProperty("BruteForceProtectionConfiguredState", (value))
-}
-
-// GetBruteForceProtectionConfiguredState gets the value of BruteForceProtectionConfiguredState for the instance
-func (instance *MSFT_MpPreference) GetPropertyBruteForceProtectionConfiguredState() (value uint8, err error) {
-	retValue, err := instance.GetProperty("BruteForceProtectionConfiguredState")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetBruteForceProtectionExclusions sets the value of BruteForceProtectionExclusions for the instance
-func (instance *MSFT_MpPreference) SetPropertyBruteForceProtectionExclusions(value []string) (err error) {
-	return instance.SetProperty("BruteForceProtectionExclusions", (value))
-}
-
-// GetBruteForceProtectionExclusions gets the value of BruteForceProtectionExclusions for the instance
-func (instance *MSFT_MpPreference) GetPropertyBruteForceProtectionExclusions() (value []string, err error) {
-	retValue, err := instance.GetProperty("BruteForceProtectionExclusions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
-// SetBruteForceProtectionLocalNetworkBlocking sets the value of BruteForceProtectionLocalNetworkBlocking for the instance
-func (instance *MSFT_MpPreference) SetPropertyBruteForceProtectionLocalNetworkBlocking(value bool) (err error) {
-	return instance.SetProperty("BruteForceProtectionLocalNetworkBlocking", (value))
-}
-
-// GetBruteForceProtectionLocalNetworkBlocking gets the value of BruteForceProtectionLocalNetworkBlocking for the instance
-func (instance *MSFT_MpPreference) GetPropertyBruteForceProtectionLocalNetworkBlocking() (value bool, err error) {
-	retValue, err := instance.GetProperty("BruteForceProtectionLocalNetworkBlocking")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetBruteForceProtectionMaxBlockTime sets the value of BruteForceProtectionMaxBlockTime for the instance
-func (instance *MSFT_MpPreference) SetPropertyBruteForceProtectionMaxBlockTime(value uint32) (err error) {
-	return instance.SetProperty("BruteForceProtectionMaxBlockTime", (value))
-}
-
-// GetBruteForceProtectionMaxBlockTime gets the value of BruteForceProtectionMaxBlockTime for the instance
-func (instance *MSFT_MpPreference) GetPropertyBruteForceProtectionMaxBlockTime() (value uint32, err error) {
-	retValue, err := instance.GetProperty("BruteForceProtectionMaxBlockTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetBruteForceProtectionSkipLearningPeriod sets the value of BruteForceProtectionSkipLearningPeriod for the instance
-func (instance *MSFT_MpPreference) SetPropertyBruteForceProtectionSkipLearningPeriod(value bool) (err error) {
-	return instance.SetProperty("BruteForceProtectionSkipLearningPeriod", (value))
-}
-
-// GetBruteForceProtectionSkipLearningPeriod gets the value of BruteForceProtectionSkipLearningPeriod for the instance
-func (instance *MSFT_MpPreference) GetPropertyBruteForceProtectionSkipLearningPeriod() (value bool, err error) {
-	retValue, err := instance.GetProperty("BruteForceProtectionSkipLearningPeriod")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -1052,33 +550,6 @@ func (instance *MSFT_MpPreference) GetPropertyControlledFolderAccessProtectedFol
 	return
 }
 
-// SetDefinitionUpdatesChannel sets the value of DefinitionUpdatesChannel for the instance
-func (instance *MSFT_MpPreference) SetPropertyDefinitionUpdatesChannel(value uint8) (err error) {
-	return instance.SetProperty("DefinitionUpdatesChannel", (value))
-}
-
-// GetDefinitionUpdatesChannel gets the value of DefinitionUpdatesChannel for the instance
-func (instance *MSFT_MpPreference) GetPropertyDefinitionUpdatesChannel() (value uint8, err error) {
-	retValue, err := instance.GetProperty("DefinitionUpdatesChannel")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
 // SetDisableArchiveScanning sets the value of DisableArchiveScanning for the instance
 func (instance *MSFT_MpPreference) SetPropertyDisableArchiveScanning(value bool) (err error) {
 	return instance.SetProperty("DisableArchiveScanning", (value))
@@ -1187,33 +658,6 @@ func (instance *MSFT_MpPreference) GetPropertyDisableBlockAtFirstSeen() (value b
 	return
 }
 
-// SetDisableCacheMaintenance sets the value of DisableCacheMaintenance for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableCacheMaintenance(value bool) (err error) {
-	return instance.SetProperty("DisableCacheMaintenance", (value))
-}
-
-// GetDisableCacheMaintenance gets the value of DisableCacheMaintenance for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableCacheMaintenance() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableCacheMaintenance")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetDisableCatchupFullScan sets the value of DisableCatchupFullScan for the instance
 func (instance *MSFT_MpPreference) SetPropertyDisableCatchupFullScan(value bool) (err error) {
 	return instance.SetProperty("DisableCatchupFullScan", (value))
@@ -1249,60 +693,6 @@ func (instance *MSFT_MpPreference) SetPropertyDisableCatchupQuickScan(value bool
 // GetDisableCatchupQuickScan gets the value of DisableCatchupQuickScan for the instance
 func (instance *MSFT_MpPreference) GetPropertyDisableCatchupQuickScan() (value bool, err error) {
 	retValue, err := instance.GetProperty("DisableCatchupQuickScan")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableCoreServiceECSIntegration sets the value of DisableCoreServiceECSIntegration for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableCoreServiceECSIntegration(value bool) (err error) {
-	return instance.SetProperty("DisableCoreServiceECSIntegration", (value))
-}
-
-// GetDisableCoreServiceECSIntegration gets the value of DisableCoreServiceECSIntegration for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableCoreServiceECSIntegration() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableCoreServiceECSIntegration")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableCoreServiceTelemetry sets the value of DisableCoreServiceTelemetry for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableCoreServiceTelemetry(value bool) (err error) {
-	return instance.SetProperty("DisableCoreServiceTelemetry", (value))
-}
-
-// GetDisableCoreServiceTelemetry gets the value of DisableCoreServiceTelemetry for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableCoreServiceTelemetry() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableCoreServiceTelemetry")
 	if err != nil {
 		return
 	}
@@ -1376,60 +766,6 @@ func (instance *MSFT_MpPreference) GetPropertyDisableDatagramProcessing() (value
 	return
 }
 
-// SetDisableDnsOverTcpParsing sets the value of DisableDnsOverTcpParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableDnsOverTcpParsing(value bool) (err error) {
-	return instance.SetProperty("DisableDnsOverTcpParsing", (value))
-}
-
-// GetDisableDnsOverTcpParsing gets the value of DisableDnsOverTcpParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableDnsOverTcpParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableDnsOverTcpParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableDnsParsing sets the value of DisableDnsParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableDnsParsing(value bool) (err error) {
-	return instance.SetProperty("DisableDnsParsing", (value))
-}
-
-// GetDisableDnsParsing gets the value of DisableDnsParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableDnsParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableDnsParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetDisableEmailScanning sets the value of DisableEmailScanning for the instance
 func (instance *MSFT_MpPreference) SetPropertyDisableEmailScanning(value bool) (err error) {
 	return instance.SetProperty("DisableEmailScanning", (value))
@@ -1457,95 +793,14 @@ func (instance *MSFT_MpPreference) GetPropertyDisableEmailScanning() (value bool
 	return
 }
 
-// SetDisableFtpParsing sets the value of DisableFtpParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableFtpParsing(value bool) (err error) {
-	return instance.SetProperty("DisableFtpParsing", (value))
+// SetDisableIntrusionPreventionSystem sets the value of DisableIntrusionPreventionSystem for the instance
+func (instance *MSFT_MpPreference) SetPropertyDisableIntrusionPreventionSystem(value bool) (err error) {
+	return instance.SetProperty("DisableIntrusionPreventionSystem", (value))
 }
 
-// GetDisableFtpParsing gets the value of DisableFtpParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableFtpParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableFtpParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableGradualRelease sets the value of DisableGradualRelease for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableGradualRelease(value bool) (err error) {
-	return instance.SetProperty("DisableGradualRelease", (value))
-}
-
-// GetDisableGradualRelease gets the value of DisableGradualRelease for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableGradualRelease() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableGradualRelease")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableHttpParsing sets the value of DisableHttpParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableHttpParsing(value bool) (err error) {
-	return instance.SetProperty("DisableHttpParsing", (value))
-}
-
-// GetDisableHttpParsing gets the value of DisableHttpParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableHttpParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableHttpParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableInboundConnectionFiltering sets the value of DisableInboundConnectionFiltering for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableInboundConnectionFiltering(value bool) (err error) {
-	return instance.SetProperty("DisableInboundConnectionFiltering", (value))
-}
-
-// GetDisableInboundConnectionFiltering gets the value of DisableInboundConnectionFiltering for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableInboundConnectionFiltering() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableInboundConnectionFiltering")
+// GetDisableIntrusionPreventionSystem gets the value of DisableIntrusionPreventionSystem for the instance
+func (instance *MSFT_MpPreference) GetPropertyDisableIntrusionPreventionSystem() (value bool, err error) {
+	retValue, err := instance.GetProperty("DisableIntrusionPreventionSystem")
 	if err != nil {
 		return
 	}
@@ -1592,33 +847,6 @@ func (instance *MSFT_MpPreference) GetPropertyDisableIOAVProtection() (value boo
 	return
 }
 
-// SetDisableNetworkProtectionPerfTelemetry sets the value of DisableNetworkProtectionPerfTelemetry for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableNetworkProtectionPerfTelemetry(value bool) (err error) {
-	return instance.SetProperty("DisableNetworkProtectionPerfTelemetry", (value))
-}
-
-// GetDisableNetworkProtectionPerfTelemetry gets the value of DisableNetworkProtectionPerfTelemetry for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableNetworkProtectionPerfTelemetry() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableNetworkProtectionPerfTelemetry")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetDisablePrivacyMode sets the value of DisablePrivacyMode for the instance
 func (instance *MSFT_MpPreference) SetPropertyDisablePrivacyMode(value bool) (err error) {
 	return instance.SetProperty("DisablePrivacyMode", (value))
@@ -1627,60 +855,6 @@ func (instance *MSFT_MpPreference) SetPropertyDisablePrivacyMode(value bool) (er
 // GetDisablePrivacyMode gets the value of DisablePrivacyMode for the instance
 func (instance *MSFT_MpPreference) GetPropertyDisablePrivacyMode() (value bool, err error) {
 	retValue, err := instance.GetProperty("DisablePrivacyMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableQuicParsing sets the value of DisableQuicParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableQuicParsing(value bool) (err error) {
-	return instance.SetProperty("DisableQuicParsing", (value))
-}
-
-// GetDisableQuicParsing gets the value of DisableQuicParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableQuicParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableQuicParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableRdpParsing sets the value of DisableRdpParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableRdpParsing(value bool) (err error) {
-	return instance.SetProperty("DisableRdpParsing", (value))
-}
-
-// GetDisableRdpParsing gets the value of DisableRdpParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableRdpParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableRdpParsing")
 	if err != nil {
 		return
 	}
@@ -1862,114 +1036,6 @@ func (instance *MSFT_MpPreference) GetPropertyDisableScriptScanning() (value boo
 	return
 }
 
-// SetDisableSmtpParsing sets the value of DisableSmtpParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableSmtpParsing(value bool) (err error) {
-	return instance.SetProperty("DisableSmtpParsing", (value))
-}
-
-// GetDisableSmtpParsing gets the value of DisableSmtpParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableSmtpParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableSmtpParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableSshParsing sets the value of DisableSshParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableSshParsing(value bool) (err error) {
-	return instance.SetProperty("DisableSshParsing", (value))
-}
-
-// GetDisableSshParsing gets the value of DisableSshParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableSshParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableSshParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableTamperProtection sets the value of DisableTamperProtection for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableTamperProtection(value bool) (err error) {
-	return instance.SetProperty("DisableTamperProtection", (value))
-}
-
-// GetDisableTamperProtection gets the value of DisableTamperProtection for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableTamperProtection() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableTamperProtection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableTlsParsing sets the value of DisableTlsParsing for the instance
-func (instance *MSFT_MpPreference) SetPropertyDisableTlsParsing(value bool) (err error) {
-	return instance.SetProperty("DisableTlsParsing", (value))
-}
-
-// GetDisableTlsParsing gets the value of DisableTlsParsing for the instance
-func (instance *MSFT_MpPreference) GetPropertyDisableTlsParsing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableTlsParsing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetEnableControlledFolderAccess sets the value of EnableControlledFolderAccess for the instance
 func (instance *MSFT_MpPreference) SetPropertyEnableControlledFolderAccess(value uint8) (err error) {
 	return instance.SetProperty("EnableControlledFolderAccess", (value))
@@ -1997,87 +1063,6 @@ func (instance *MSFT_MpPreference) GetPropertyEnableControlledFolderAccess() (va
 	return
 }
 
-// SetEnableConvertWarnToBlock sets the value of EnableConvertWarnToBlock for the instance
-func (instance *MSFT_MpPreference) SetPropertyEnableConvertWarnToBlock(value bool) (err error) {
-	return instance.SetProperty("EnableConvertWarnToBlock", (value))
-}
-
-// GetEnableConvertWarnToBlock gets the value of EnableConvertWarnToBlock for the instance
-func (instance *MSFT_MpPreference) GetPropertyEnableConvertWarnToBlock() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableConvertWarnToBlock")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableDnsSinkhole sets the value of EnableDnsSinkhole for the instance
-func (instance *MSFT_MpPreference) SetPropertyEnableDnsSinkhole(value bool) (err error) {
-	return instance.SetProperty("EnableDnsSinkhole", (value))
-}
-
-// GetEnableDnsSinkhole gets the value of EnableDnsSinkhole for the instance
-func (instance *MSFT_MpPreference) GetPropertyEnableDnsSinkhole() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableDnsSinkhole")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableEcsConfiguration sets the value of EnableEcsConfiguration for the instance
-func (instance *MSFT_MpPreference) SetPropertyEnableEcsConfiguration(value bool) (err error) {
-	return instance.SetProperty("EnableEcsConfiguration", (value))
-}
-
-// GetEnableEcsConfiguration gets the value of EnableEcsConfiguration for the instance
-func (instance *MSFT_MpPreference) GetPropertyEnableEcsConfiguration() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableEcsConfiguration")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetEnableFileHashComputation sets the value of EnableFileHashComputation for the instance
 func (instance *MSFT_MpPreference) SetPropertyEnableFileHashComputation(value bool) (err error) {
 	return instance.SetProperty("EnableFileHashComputation", (value))
@@ -2086,33 +1071,6 @@ func (instance *MSFT_MpPreference) SetPropertyEnableFileHashComputation(value bo
 // GetEnableFileHashComputation gets the value of EnableFileHashComputation for the instance
 func (instance *MSFT_MpPreference) GetPropertyEnableFileHashComputation() (value bool, err error) {
 	retValue, err := instance.GetProperty("EnableFileHashComputation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableFullScanOnBatteryPower sets the value of EnableFullScanOnBatteryPower for the instance
-func (instance *MSFT_MpPreference) SetPropertyEnableFullScanOnBatteryPower(value bool) (err error) {
-	return instance.SetProperty("EnableFullScanOnBatteryPower", (value))
-}
-
-// GetEnableFullScanOnBatteryPower gets the value of EnableFullScanOnBatteryPower for the instance
-func (instance *MSFT_MpPreference) GetPropertyEnableFullScanOnBatteryPower() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableFullScanOnBatteryPower")
 	if err != nil {
 		return
 	}
@@ -2167,87 +1125,6 @@ func (instance *MSFT_MpPreference) SetPropertyEnableNetworkProtection(value uint
 // GetEnableNetworkProtection gets the value of EnableNetworkProtection for the instance
 func (instance *MSFT_MpPreference) GetPropertyEnableNetworkProtection() (value uint8, err error) {
 	retValue, err := instance.GetProperty("EnableNetworkProtection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetEnableUdpReceiveOffload sets the value of EnableUdpReceiveOffload for the instance
-func (instance *MSFT_MpPreference) SetPropertyEnableUdpReceiveOffload(value bool) (err error) {
-	return instance.SetProperty("EnableUdpReceiveOffload", (value))
-}
-
-// GetEnableUdpReceiveOffload gets the value of EnableUdpReceiveOffload for the instance
-func (instance *MSFT_MpPreference) GetPropertyEnableUdpReceiveOffload() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableUdpReceiveOffload")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableUdpSegmentationOffload sets the value of EnableUdpSegmentationOffload for the instance
-func (instance *MSFT_MpPreference) SetPropertyEnableUdpSegmentationOffload(value bool) (err error) {
-	return instance.SetProperty("EnableUdpSegmentationOffload", (value))
-}
-
-// GetEnableUdpSegmentationOffload gets the value of EnableUdpSegmentationOffload for the instance
-func (instance *MSFT_MpPreference) GetPropertyEnableUdpSegmentationOffload() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableUdpSegmentationOffload")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEngineUpdatesChannel sets the value of EngineUpdatesChannel for the instance
-func (instance *MSFT_MpPreference) SetPropertyEngineUpdatesChannel(value uint8) (err error) {
-	return instance.SetProperty("EngineUpdatesChannel", (value))
-}
-
-// GetEngineUpdatesChannel gets the value of EngineUpdatesChannel for the instance
-func (instance *MSFT_MpPreference) GetPropertyEngineUpdatesChannel() (value uint8, err error) {
-	retValue, err := instance.GetProperty("EngineUpdatesChannel")
 	if err != nil {
 		return
 	}
@@ -2379,60 +1256,6 @@ func (instance *MSFT_MpPreference) GetPropertyExclusionProcess() (value []string
 	return
 }
 
-// SetForceUseProxyOnly sets the value of ForceUseProxyOnly for the instance
-func (instance *MSFT_MpPreference) SetPropertyForceUseProxyOnly(value bool) (err error) {
-	return instance.SetProperty("ForceUseProxyOnly", (value))
-}
-
-// GetForceUseProxyOnly gets the value of ForceUseProxyOnly for the instance
-func (instance *MSFT_MpPreference) GetPropertyForceUseProxyOnly() (value bool, err error) {
-	retValue, err := instance.GetProperty("ForceUseProxyOnly")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetHideExclusionsFromLocalUsers sets the value of HideExclusionsFromLocalUsers for the instance
-func (instance *MSFT_MpPreference) SetPropertyHideExclusionsFromLocalUsers(value bool) (err error) {
-	return instance.SetProperty("HideExclusionsFromLocalUsers", (value))
-}
-
-// GetHideExclusionsFromLocalUsers gets the value of HideExclusionsFromLocalUsers for the instance
-func (instance *MSFT_MpPreference) GetPropertyHideExclusionsFromLocalUsers() (value bool, err error) {
-	retValue, err := instance.GetProperty("HideExclusionsFromLocalUsers")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetHighThreatDefaultAction sets the value of HighThreatDefaultAction for the instance
 func (instance *MSFT_MpPreference) SetPropertyHighThreatDefaultAction(value uint8) (err error) {
 	return instance.SetProperty("HighThreatDefaultAction", (value))
@@ -2456,33 +1279,6 @@ func (instance *MSFT_MpPreference) GetPropertyHighThreatDefaultAction() (value u
 	}
 
 	value = uint8(valuetmp)
-
-	return
-}
-
-// SetIntelTDTEnabled sets the value of IntelTDTEnabled for the instance
-func (instance *MSFT_MpPreference) SetPropertyIntelTDTEnabled(value bool) (err error) {
-	return instance.SetProperty("IntelTDTEnabled", (value))
-}
-
-// GetIntelTDTEnabled gets the value of IntelTDTEnabled for the instance
-func (instance *MSFT_MpPreference) GetPropertyIntelTDTEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("IntelTDTEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -2595,196 +1391,6 @@ func (instance *MSFT_MpPreference) GetPropertyModerateThreatDefaultAction() (val
 	return
 }
 
-// SetNetworkProtectionReputationMode sets the value of NetworkProtectionReputationMode for the instance
-func (instance *MSFT_MpPreference) SetPropertyNetworkProtectionReputationMode(value uint32) (err error) {
-	return instance.SetProperty("NetworkProtectionReputationMode", (value))
-}
-
-// GetNetworkProtectionReputationMode gets the value of NetworkProtectionReputationMode for the instance
-func (instance *MSFT_MpPreference) GetPropertyNetworkProtectionReputationMode() (value uint32, err error) {
-	retValue, err := instance.GetProperty("NetworkProtectionReputationMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetOobeEnableRtpAndSigUpdate sets the value of OobeEnableRtpAndSigUpdate for the instance
-func (instance *MSFT_MpPreference) SetPropertyOobeEnableRtpAndSigUpdate(value bool) (err error) {
-	return instance.SetProperty("OobeEnableRtpAndSigUpdate", (value))
-}
-
-// GetOobeEnableRtpAndSigUpdate gets the value of OobeEnableRtpAndSigUpdate for the instance
-func (instance *MSFT_MpPreference) GetPropertyOobeEnableRtpAndSigUpdate() (value bool, err error) {
-	retValue, err := instance.GetProperty("OobeEnableRtpAndSigUpdate")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetPerformanceModeStatus sets the value of PerformanceModeStatus for the instance
-func (instance *MSFT_MpPreference) SetPropertyPerformanceModeStatus(value uint8) (err error) {
-	return instance.SetProperty("PerformanceModeStatus", (value))
-}
-
-// GetPerformanceModeStatus gets the value of PerformanceModeStatus for the instance
-func (instance *MSFT_MpPreference) GetPropertyPerformanceModeStatus() (value uint8, err error) {
-	retValue, err := instance.GetProperty("PerformanceModeStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetPlatformUpdatesChannel sets the value of PlatformUpdatesChannel for the instance
-func (instance *MSFT_MpPreference) SetPropertyPlatformUpdatesChannel(value uint8) (err error) {
-	return instance.SetProperty("PlatformUpdatesChannel", (value))
-}
-
-// GetPlatformUpdatesChannel gets the value of PlatformUpdatesChannel for the instance
-func (instance *MSFT_MpPreference) GetPropertyPlatformUpdatesChannel() (value uint8, err error) {
-	retValue, err := instance.GetProperty("PlatformUpdatesChannel")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetProxyBypass sets the value of ProxyBypass for the instance
-func (instance *MSFT_MpPreference) SetPropertyProxyBypass(value []string) (err error) {
-	return instance.SetProperty("ProxyBypass", (value))
-}
-
-// GetProxyBypass gets the value of ProxyBypass for the instance
-func (instance *MSFT_MpPreference) GetPropertyProxyBypass() (value []string, err error) {
-	retValue, err := instance.GetProperty("ProxyBypass")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
-// SetProxyPacUrl sets the value of ProxyPacUrl for the instance
-func (instance *MSFT_MpPreference) SetPropertyProxyPacUrl(value string) (err error) {
-	return instance.SetProperty("ProxyPacUrl", (value))
-}
-
-// GetProxyPacUrl gets the value of ProxyPacUrl for the instance
-func (instance *MSFT_MpPreference) GetPropertyProxyPacUrl() (value string, err error) {
-	retValue, err := instance.GetProperty("ProxyPacUrl")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetProxyServer sets the value of ProxyServer for the instance
-func (instance *MSFT_MpPreference) SetPropertyProxyServer(value string) (err error) {
-	return instance.SetProperty("ProxyServer", (value))
-}
-
-// GetProxyServer gets the value of ProxyServer for the instance
-func (instance *MSFT_MpPreference) GetPropertyProxyServer() (value string, err error) {
-	retValue, err := instance.GetProperty("ProxyServer")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetPUAProtection sets the value of PUAProtection for the instance
 func (instance *MSFT_MpPreference) SetPropertyPUAProtection(value uint8) (err error) {
 	return instance.SetProperty("PUAProtection", (value))
@@ -2835,33 +1441,6 @@ func (instance *MSFT_MpPreference) GetPropertyQuarantinePurgeItemsAfterDelay() (
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetQuickScanIncludeExclusions sets the value of QuickScanIncludeExclusions for the instance
-func (instance *MSFT_MpPreference) SetPropertyQuickScanIncludeExclusions(value uint8) (err error) {
-	return instance.SetProperty("QuickScanIncludeExclusions", (value))
-}
-
-// GetQuickScanIncludeExclusions gets the value of QuickScanIncludeExclusions for the instance
-func (instance *MSFT_MpPreference) GetPropertyQuickScanIncludeExclusions() (value uint8, err error) {
-	retValue, err := instance.GetProperty("QuickScanIncludeExclusions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
 
 	return
 }
@@ -2970,169 +1549,6 @@ func (instance *MSFT_MpPreference) GetPropertyRemediationScheduleTime() (value s
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetRemoteEncryptionProtectionAggressiveness sets the value of RemoteEncryptionProtectionAggressiveness for the instance
-func (instance *MSFT_MpPreference) SetPropertyRemoteEncryptionProtectionAggressiveness(value uint8) (err error) {
-	return instance.SetProperty("RemoteEncryptionProtectionAggressiveness", (value))
-}
-
-// GetRemoteEncryptionProtectionAggressiveness gets the value of RemoteEncryptionProtectionAggressiveness for the instance
-func (instance *MSFT_MpPreference) GetPropertyRemoteEncryptionProtectionAggressiveness() (value uint8, err error) {
-	retValue, err := instance.GetProperty("RemoteEncryptionProtectionAggressiveness")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetRemoteEncryptionProtectionConfiguredState sets the value of RemoteEncryptionProtectionConfiguredState for the instance
-func (instance *MSFT_MpPreference) SetPropertyRemoteEncryptionProtectionConfiguredState(value uint8) (err error) {
-	return instance.SetProperty("RemoteEncryptionProtectionConfiguredState", (value))
-}
-
-// GetRemoteEncryptionProtectionConfiguredState gets the value of RemoteEncryptionProtectionConfiguredState for the instance
-func (instance *MSFT_MpPreference) GetPropertyRemoteEncryptionProtectionConfiguredState() (value uint8, err error) {
-	retValue, err := instance.GetProperty("RemoteEncryptionProtectionConfiguredState")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetRemoteEncryptionProtectionExclusions sets the value of RemoteEncryptionProtectionExclusions for the instance
-func (instance *MSFT_MpPreference) SetPropertyRemoteEncryptionProtectionExclusions(value []string) (err error) {
-	return instance.SetProperty("RemoteEncryptionProtectionExclusions", (value))
-}
-
-// GetRemoteEncryptionProtectionExclusions gets the value of RemoteEncryptionProtectionExclusions for the instance
-func (instance *MSFT_MpPreference) GetPropertyRemoteEncryptionProtectionExclusions() (value []string, err error) {
-	retValue, err := instance.GetProperty("RemoteEncryptionProtectionExclusions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
-// SetRemoteEncryptionProtectionMaxBlockTime sets the value of RemoteEncryptionProtectionMaxBlockTime for the instance
-func (instance *MSFT_MpPreference) SetPropertyRemoteEncryptionProtectionMaxBlockTime(value uint32) (err error) {
-	return instance.SetProperty("RemoteEncryptionProtectionMaxBlockTime", (value))
-}
-
-// GetRemoteEncryptionProtectionMaxBlockTime gets the value of RemoteEncryptionProtectionMaxBlockTime for the instance
-func (instance *MSFT_MpPreference) GetPropertyRemoteEncryptionProtectionMaxBlockTime() (value uint32, err error) {
-	retValue, err := instance.GetProperty("RemoteEncryptionProtectionMaxBlockTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetRemoveScanningThreadPoolCap sets the value of RemoveScanningThreadPoolCap for the instance
-func (instance *MSFT_MpPreference) SetPropertyRemoveScanningThreadPoolCap(value bool) (err error) {
-	return instance.SetProperty("RemoveScanningThreadPoolCap", (value))
-}
-
-// GetRemoveScanningThreadPoolCap gets the value of RemoveScanningThreadPoolCap for the instance
-func (instance *MSFT_MpPreference) GetPropertyRemoveScanningThreadPoolCap() (value bool, err error) {
-	retValue, err := instance.GetProperty("RemoveScanningThreadPoolCap")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetReportDynamicSignatureDroppedEvent sets the value of ReportDynamicSignatureDroppedEvent for the instance
-func (instance *MSFT_MpPreference) SetPropertyReportDynamicSignatureDroppedEvent(value bool) (err error) {
-	return instance.SetProperty("ReportDynamicSignatureDroppedEvent", (value))
-}
-
-// GetReportDynamicSignatureDroppedEvent gets the value of ReportDynamicSignatureDroppedEvent for the instance
-func (instance *MSFT_MpPreference) GetPropertyReportDynamicSignatureDroppedEvent() (value bool, err error) {
-	retValue, err := instance.GetProperty("ReportDynamicSignatureDroppedEvent")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -3353,33 +1769,6 @@ func (instance *MSFT_MpPreference) GetPropertyScanScheduleDay() (value uint8, er
 	return
 }
 
-// SetScanScheduleOffset sets the value of ScanScheduleOffset for the instance
-func (instance *MSFT_MpPreference) SetPropertyScanScheduleOffset(value uint32) (err error) {
-	return instance.SetProperty("ScanScheduleOffset", (value))
-}
-
-// GetScanScheduleOffset gets the value of ScanScheduleOffset for the instance
-func (instance *MSFT_MpPreference) GetPropertyScanScheduleOffset() (value uint32, err error) {
-	retValue, err := instance.GetProperty("ScanScheduleOffset")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetScanScheduleQuickScanTime sets the value of ScanScheduleQuickScanTime for the instance
 func (instance *MSFT_MpPreference) SetPropertyScanScheduleQuickScanTime(value string) (err error) {
 	return instance.SetProperty("ScanScheduleQuickScanTime", (value))
@@ -3434,60 +1823,6 @@ func (instance *MSFT_MpPreference) GetPropertyScanScheduleTime() (value string, 
 	return
 }
 
-// SetSchedulerRandomizationTime sets the value of SchedulerRandomizationTime for the instance
-func (instance *MSFT_MpPreference) SetPropertySchedulerRandomizationTime(value uint32) (err error) {
-	return instance.SetProperty("SchedulerRandomizationTime", (value))
-}
-
-// GetSchedulerRandomizationTime gets the value of SchedulerRandomizationTime for the instance
-func (instance *MSFT_MpPreference) GetPropertySchedulerRandomizationTime() (value uint32, err error) {
-	retValue, err := instance.GetProperty("SchedulerRandomizationTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetServiceHealthReportInterval sets the value of ServiceHealthReportInterval for the instance
-func (instance *MSFT_MpPreference) SetPropertyServiceHealthReportInterval(value uint32) (err error) {
-	return instance.SetProperty("ServiceHealthReportInterval", (value))
-}
-
-// GetServiceHealthReportInterval gets the value of ServiceHealthReportInterval for the instance
-func (instance *MSFT_MpPreference) GetPropertyServiceHealthReportInterval() (value uint32, err error) {
-	retValue, err := instance.GetProperty("ServiceHealthReportInterval")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetSevereThreatDefaultAction sets the value of SevereThreatDefaultAction for the instance
 func (instance *MSFT_MpPreference) SetPropertySevereThreatDefaultAction(value uint8) (err error) {
 	return instance.SetProperty("SevereThreatDefaultAction", (value))
@@ -3538,33 +1873,6 @@ func (instance *MSFT_MpPreference) GetPropertySharedSignaturesPath() (value stri
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetSharedSignaturesPathUpdateAtScheduledTimeOnly sets the value of SharedSignaturesPathUpdateAtScheduledTimeOnly for the instance
-func (instance *MSFT_MpPreference) SetPropertySharedSignaturesPathUpdateAtScheduledTimeOnly(value bool) (err error) {
-	return instance.SetProperty("SharedSignaturesPathUpdateAtScheduledTimeOnly", (value))
-}
-
-// GetSharedSignaturesPathUpdateAtScheduledTimeOnly gets the value of SharedSignaturesPathUpdateAtScheduledTimeOnly for the instance
-func (instance *MSFT_MpPreference) GetPropertySharedSignaturesPathUpdateAtScheduledTimeOnly() (value bool, err error) {
-	retValue, err := instance.GetProperty("SharedSignaturesPathUpdateAtScheduledTimeOnly")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -3949,60 +2257,6 @@ func (instance *MSFT_MpPreference) GetPropertyThreatIDDefaultAction_Ids() (value
 	return
 }
 
-// SetThrottleForScheduledScanOnly sets the value of ThrottleForScheduledScanOnly for the instance
-func (instance *MSFT_MpPreference) SetPropertyThrottleForScheduledScanOnly(value bool) (err error) {
-	return instance.SetProperty("ThrottleForScheduledScanOnly", (value))
-}
-
-// GetThrottleForScheduledScanOnly gets the value of ThrottleForScheduledScanOnly for the instance
-func (instance *MSFT_MpPreference) GetPropertyThrottleForScheduledScanOnly() (value bool, err error) {
-	retValue, err := instance.GetProperty("ThrottleForScheduledScanOnly")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetTrustLabelProtectionStatus sets the value of TrustLabelProtectionStatus for the instance
-func (instance *MSFT_MpPreference) SetPropertyTrustLabelProtectionStatus(value uint32) (err error) {
-	return instance.SetProperty("TrustLabelProtectionStatus", (value))
-}
-
-// GetTrustLabelProtectionStatus gets the value of TrustLabelProtectionStatus for the instance
-func (instance *MSFT_MpPreference) GetPropertyTrustLabelProtectionStatus() (value uint32, err error) {
-	retValue, err := instance.GetProperty("TrustLabelProtectionStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetUILockdown sets the value of UILockdown for the instance
 func (instance *MSFT_MpPreference) SetPropertyUILockdown(value bool) (err error) {
 	return instance.SetProperty("UILockdown", (value))
@@ -4059,106 +2313,53 @@ func (instance *MSFT_MpPreference) GetPropertyUnknownThreatDefaultAction() (valu
 
 //
 
-// <param name="AllowDatagramProcessingOnWinServer" type="bool "></param>
-// <param name="AllowNetworkProtectionDownLevel" type="bool "></param>
 // <param name="AllowNetworkProtectionOnWinServer" type="bool "></param>
-// <param name="AllowSwitchToAsyncInspection" type="bool "></param>
-// <param name="ApplyDisableNetworkScanningToIOAV" type="bool "></param>
 // <param name="AttackSurfaceReductionOnlyExclusions" type="string []"></param>
 // <param name="AttackSurfaceReductionRules_Actions" type="uint8 []"></param>
 // <param name="AttackSurfaceReductionRules_Ids" type="string []"></param>
-// <param name="AttackSurfaceReductionRules_RuleSpecificExclusions" type="string []"></param>
-// <param name="AttackSurfaceReductionRules_RuleSpecificExclusions_Id" type="string []"></param>
-// <param name="BruteForceProtectionAggressiveness" type="uint8 "></param>
-// <param name="BruteForceProtectionConfiguredState" type="uint8 "></param>
-// <param name="BruteForceProtectionExclusions" type="string []"></param>
-// <param name="BruteForceProtectionLocalNetworkBlocking" type="bool "></param>
-// <param name="BruteForceProtectionMaxBlockTime" type="uint32 "></param>
-// <param name="BruteForceProtectionSkipLearningPeriod" type="bool "></param>
 // <param name="CheckForSignaturesBeforeRunningScan" type="bool "></param>
 // <param name="CloudBlockLevel" type="uint8 "></param>
 // <param name="CloudExtendedTimeout" type="uint32 "></param>
 // <param name="ControlledFolderAccessAllowedApplications" type="string []"></param>
 // <param name="ControlledFolderAccessProtectedFolders" type="string []"></param>
-// <param name="DefinitionUpdatesChannel" type="uint8 "></param>
 // <param name="DisableArchiveScanning" type="bool "></param>
 // <param name="DisableAutoExclusions" type="bool "></param>
 // <param name="DisableBehaviorMonitoring" type="bool "></param>
 // <param name="DisableBlockAtFirstSeen" type="bool "></param>
-// <param name="DisableCacheMaintenance" type="bool "></param>
 // <param name="DisableCatchupFullScan" type="bool "></param>
 // <param name="DisableCatchupQuickScan" type="bool "></param>
-// <param name="DisableCoreServiceECSIntegration" type="bool "></param>
-// <param name="DisableCoreServiceTelemetry" type="bool "></param>
 // <param name="DisableCpuThrottleOnIdleScans" type="bool "></param>
 // <param name="DisableDatagramProcessing" type="bool "></param>
-// <param name="DisableDnsOverTcpParsing" type="bool "></param>
-// <param name="DisableDnsParsing" type="bool "></param>
 // <param name="DisableEmailScanning" type="bool "></param>
-// <param name="DisableFtpParsing" type="bool "></param>
-// <param name="DisableGradualRelease" type="bool "></param>
-// <param name="DisableHttpParsing" type="bool "></param>
-// <param name="DisableInboundConnectionFiltering" type="bool "></param>
 // <param name="DisableIntrusionPreventionSystem" type="bool "></param>
 // <param name="DisableIOAVProtection" type="bool "></param>
-// <param name="DisableNetworkProtectionPerfTelemetry" type="bool "></param>
 // <param name="DisablePrivacyMode" type="bool "></param>
-// <param name="DisableQuicParsing" type="bool "></param>
-// <param name="DisableRdpParsing" type="bool "></param>
 // <param name="DisableRealtimeMonitoring" type="bool "></param>
 // <param name="DisableRemovableDriveScanning" type="bool "></param>
 // <param name="DisableRestorePoint" type="bool "></param>
 // <param name="DisableScanningMappedNetworkDrivesForFullScan" type="bool "></param>
 // <param name="DisableScanningNetworkFiles" type="bool "></param>
 // <param name="DisableScriptScanning" type="bool "></param>
-// <param name="DisableSmtpParsing" type="bool "></param>
-// <param name="DisableSshParsing" type="bool "></param>
-// <param name="DisableTamperProtection" type="bool "></param>
-// <param name="DisableTDTFeature" type="bool "></param>
-// <param name="DisableTlsParsing" type="bool "></param>
 // <param name="EnableControlledFolderAccess" type="uint8 "></param>
-// <param name="EnableConvertWarnToBlock" type="bool "></param>
-// <param name="EnableDnsSinkhole" type="bool "></param>
-// <param name="EnableEcsConfiguration" type="bool "></param>
 // <param name="EnableFileHashComputation" type="bool "></param>
-// <param name="EnableFullScanOnBatteryPower" type="bool "></param>
 // <param name="EnableLowCpuPriority" type="bool "></param>
 // <param name="EnableNetworkProtection" type="uint8 "></param>
-// <param name="EnableUdpReceiveOffload" type="bool "></param>
-// <param name="EnableUdpSegmentationOffload" type="bool "></param>
-// <param name="EngineUpdatesChannel" type="uint8 "></param>
 // <param name="ExclusionExtension" type="string []"></param>
 // <param name="ExclusionIpAddress" type="string []"></param>
 // <param name="ExclusionPath" type="string []"></param>
 // <param name="ExclusionProcess" type="string []"></param>
 // <param name="Force" type="bool "></param>
-// <param name="ForceUseProxyOnly" type="bool "></param>
 // <param name="HighThreatDefaultAction" type="uint8 "></param>
-// <param name="IntelTDTEnabled" type="bool "></param>
 // <param name="LowThreatDefaultAction" type="uint8 "></param>
 // <param name="MAPSReporting" type="uint8 "></param>
 // <param name="MeteredConnectionUpdates" type="bool "></param>
 // <param name="ModerateThreatDefaultAction" type="uint8 "></param>
-// <param name="NetworkProtectionReputationMode" type="uint32 "></param>
-// <param name="OobeEnableRtpAndSigUpdate" type="bool "></param>
-// <param name="PerformanceModeStatus" type="uint8 "></param>
-// <param name="PlatformUpdatesChannel" type="uint8 "></param>
-// <param name="ProxyBypass" type="string []"></param>
-// <param name="ProxyPacUrl" type="string "></param>
-// <param name="ProxyServer" type="string "></param>
 // <param name="PUAProtection" type="uint8 "></param>
 // <param name="QuarantinePurgeItemsAfterDelay" type="uint32 "></param>
-// <param name="QuickScanIncludeExclusions" type="uint8 "></param>
 // <param name="RandomizeScheduleTaskTimes" type="bool "></param>
 // <param name="RealTimeScanDirection" type="uint8 "></param>
 // <param name="RemediationScheduleDay" type="uint8 "></param>
 // <param name="RemediationScheduleTime" type="string "></param>
-// <param name="RemoteEncryptionProtectionAggressiveness" type="uint8 "></param>
-// <param name="RemoteEncryptionProtectionConfiguredState" type="uint8 "></param>
-// <param name="RemoteEncryptionProtectionExclusions" type="string []"></param>
-// <param name="RemoteEncryptionProtectionMaxBlockTime" type="uint32 "></param>
-// <param name="RemoveScanningThreadPoolCap" type="bool "></param>
-// <param name="ReportDynamicSignatureDroppedEvent" type="bool "></param>
 // <param name="ReportingAdditionalActionTimeOut" type="uint32 "></param>
 // <param name="ReportingCriticalFailureTimeOut" type="uint32 "></param>
 // <param name="ReportingNonCriticalTimeOut" type="uint32 "></param>
@@ -4167,14 +2368,10 @@ func (instance *MSFT_MpPreference) GetPropertyUnknownThreatDefaultAction() (valu
 // <param name="ScanParameters" type="uint8 "></param>
 // <param name="ScanPurgeItemsAfterDelay" type="uint32 "></param>
 // <param name="ScanScheduleDay" type="uint8 "></param>
-// <param name="ScanScheduleOffset" type="uint32 "></param>
 // <param name="ScanScheduleQuickScanTime" type="string "></param>
 // <param name="ScanScheduleTime" type="string "></param>
-// <param name="SchedulerRandomizationTime" type="uint32 "></param>
-// <param name="ServiceHealthReportInterval" type="uint32 "></param>
 // <param name="SevereThreatDefaultAction" type="uint8 "></param>
 // <param name="SharedSignaturesPath" type="string "></param>
-// <param name="SharedSignaturesPathUpdateAtScheduledTimeOnly" type="bool "></param>
 // <param name="SignatureAuGracePeriod" type="uint32 "></param>
 // <param name="SignatureBlobFileSharesSources" type="string "></param>
 // <param name="SignatureBlobUpdateInterval" type="uint32 "></param>
@@ -4189,8 +2386,6 @@ func (instance *MSFT_MpPreference) GetPropertyUnknownThreatDefaultAction() (valu
 // <param name="SubmitSamplesConsent" type="uint8 "></param>
 // <param name="ThreatIDDefaultAction_Actions" type="uint8 []"></param>
 // <param name="ThreatIDDefaultAction_Ids" type="int64 []"></param>
-// <param name="ThrottleForScheduledScanOnly" type="bool "></param>
-// <param name="TrustLabelProtectionStatus" type="uint32 "></param>
 // <param name="UILockdown" type="bool "></param>
 // <param name="UnknownThreatDefaultAction" type="uint8 "></param>
 
@@ -4204,21 +2399,9 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 	/* IN */ RealTimeScanDirection uint8,
 	/* IN */ RemediationScheduleDay uint8,
 	/* IN */ RemediationScheduleTime string,
-	/* IN */ RemoteEncryptionProtectionConfiguredState uint8,
-	/* IN */ RemoteEncryptionProtectionMaxBlockTime uint32,
-	/* IN */ RemoteEncryptionProtectionAggressiveness uint8,
-	/* IN */ RemoteEncryptionProtectionExclusions []string,
-	/* IN */ BruteForceProtectionConfiguredState uint8,
-	/* IN */ BruteForceProtectionMaxBlockTime uint32,
-	/* IN */ BruteForceProtectionAggressiveness uint8,
-	/* IN */ BruteForceProtectionExclusions []string,
-	/* IN */ BruteForceProtectionLocalNetworkBlocking bool,
-	/* IN */ BruteForceProtectionSkipLearningPeriod bool,
 	/* IN */ ReportingAdditionalActionTimeOut uint32,
 	/* IN */ ReportingCriticalFailureTimeOut uint32,
 	/* IN */ ReportingNonCriticalTimeOut uint32,
-	/* IN */ ServiceHealthReportInterval uint32,
-	/* IN */ ReportDynamicSignatureDroppedEvent bool,
 	/* IN */ ScanAvgCPULoadFactor uint8,
 	/* IN */ CheckForSignaturesBeforeRunningScan bool,
 	/* IN */ ScanPurgeItemsAfterDelay uint32,
@@ -4227,7 +2410,6 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 	/* IN */ ScanScheduleDay uint8,
 	/* IN */ ScanScheduleQuickScanTime string,
 	/* IN */ ScanScheduleTime string,
-	/* IN */ ThrottleForScheduledScanOnly bool,
 	/* IN */ SignatureFirstAuGracePeriod uint32,
 	/* IN */ SignatureAuGracePeriod uint32,
 	/* IN */ SignatureDefinitionUpdateFileSharesSources string,
@@ -4243,7 +2425,6 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 	/* IN */ SubmitSamplesConsent uint8,
 	/* IN */ DisablePrivacyMode bool,
 	/* IN */ RandomizeScheduleTaskTimes bool,
-	/* IN */ SchedulerRandomizationTime uint32,
 	/* IN */ DisableBehaviorMonitoring bool,
 	/* IN */ DisableIntrusionPreventionSystem bool,
 	/* IN */ DisableIOAVProtection bool,
@@ -4257,7 +2438,6 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 	/* IN */ DisableRestorePoint bool,
 	/* IN */ DisableScanningMappedNetworkDrivesForFullScan bool,
 	/* IN */ DisableScanningNetworkFiles bool,
-	/* IN */ ApplyDisableNetworkScanningToIOAV bool,
 	/* IN */ UILockdown bool,
 	/* IN */ ThreatIDDefaultAction_Ids []int64,
 	/* IN */ ThreatIDDefaultAction_Actions []uint8,
@@ -4278,58 +2458,14 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 	/* IN */ ControlledFolderAccessAllowedApplications []string,
 	/* IN */ ControlledFolderAccessProtectedFolders []string,
 	/* IN */ SharedSignaturesPath string,
-	/* IN */ SharedSignaturesPathUpdateAtScheduledTimeOnly bool,
 	/* IN */ EnableLowCpuPriority bool,
 	/* IN */ EnableFileHashComputation bool,
 	/* IN */ MeteredConnectionUpdates bool,
 	/* IN */ AllowNetworkProtectionOnWinServer bool,
 	/* IN */ DisableDatagramProcessing bool,
-	/* IN */ EnableConvertWarnToBlock bool,
 	/* IN */ DisableCpuThrottleOnIdleScans bool,
-	/* IN */ EnableFullScanOnBatteryPower bool,
-	/* IN */ ProxyPacUrl string,
-	/* IN */ ProxyServer string,
-	/* IN */ ProxyBypass []string,
-	/* IN */ ForceUseProxyOnly bool,
-	/* IN */ DisableTlsParsing bool,
-	/* IN */ DisableHttpParsing bool,
-	/* IN */ DisableDnsParsing bool,
-	/* IN */ DisableDnsOverTcpParsing bool,
-	/* IN */ DisableSshParsing bool,
-	/* IN */ PlatformUpdatesChannel uint8,
-	/* IN */ EngineUpdatesChannel uint8,
-	/* IN */ DefinitionUpdatesChannel uint8,
-	/* IN */ DisableGradualRelease bool,
-	/* IN */ AllowNetworkProtectionDownLevel bool,
-	/* IN */ AllowDatagramProcessingOnWinServer bool,
-	/* IN */ EnableDnsSinkhole bool,
-	/* IN */ DisableInboundConnectionFiltering bool,
-	/* IN */ DisableRdpParsing bool,
-	/* IN */ DisableNetworkProtectionPerfTelemetry bool,
-	/* IN */ TrustLabelProtectionStatus uint32,
-	/* IN */ DisableFtpParsing bool,
-	/* IN */ AllowSwitchToAsyncInspection bool,
-	/* IN */ ScanScheduleOffset uint32,
-	/* IN */ DisableTDTFeature bool,
-	/* IN */ DisableTamperProtection bool,
-	/* IN */ DisableSmtpParsing bool,
-	/* IN */ DisableQuicParsing bool,
-	/* IN */ NetworkProtectionReputationMode uint32,
-	/* IN */ IntelTDTEnabled bool,
-	/* IN */ AttackSurfaceReductionRules_RuleSpecificExclusions_Id []string,
-	/* IN */ AttackSurfaceReductionRules_RuleSpecificExclusions []string,
-	/* IN */ OobeEnableRtpAndSigUpdate bool,
-	/* IN */ PerformanceModeStatus uint8,
-	/* IN */ QuickScanIncludeExclusions uint8,
-	/* IN */ RemoveScanningThreadPoolCap bool,
-	/* IN */ DisableCacheMaintenance bool,
-	/* IN */ DisableCoreServiceECSIntegration bool,
-	/* IN */ DisableCoreServiceTelemetry bool,
-	/* IN */ EnableUdpSegmentationOffload bool,
-	/* IN */ EnableUdpReceiveOffload bool,
-	/* IN */ EnableEcsConfiguration bool,
 	/* IN */ Force bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("Set", DisableAutoExclusions, ExclusionPath, ExclusionExtension, ExclusionProcess, ExclusionIpAddress, QuarantinePurgeItemsAfterDelay, RealTimeScanDirection, RemediationScheduleDay, RemediationScheduleTime, RemoteEncryptionProtectionConfiguredState, RemoteEncryptionProtectionMaxBlockTime, RemoteEncryptionProtectionAggressiveness, RemoteEncryptionProtectionExclusions, BruteForceProtectionConfiguredState, BruteForceProtectionMaxBlockTime, BruteForceProtectionAggressiveness, BruteForceProtectionExclusions, BruteForceProtectionLocalNetworkBlocking, BruteForceProtectionSkipLearningPeriod, ReportingAdditionalActionTimeOut, ReportingCriticalFailureTimeOut, ReportingNonCriticalTimeOut, ServiceHealthReportInterval, ReportDynamicSignatureDroppedEvent, ScanAvgCPULoadFactor, CheckForSignaturesBeforeRunningScan, ScanPurgeItemsAfterDelay, ScanOnlyIfIdleEnabled, ScanParameters, ScanScheduleDay, ScanScheduleQuickScanTime, ScanScheduleTime, ThrottleForScheduledScanOnly, SignatureFirstAuGracePeriod, SignatureAuGracePeriod, SignatureDefinitionUpdateFileSharesSources, SignatureDisableUpdateOnStartupWithoutEngine, SignatureFallbackOrder, SignatureScheduleDay, SignatureScheduleTime, SignatureUpdateCatchupInterval, SignatureBlobFileSharesSources, SignatureUpdateInterval, SignatureBlobUpdateInterval, MAPSReporting, SubmitSamplesConsent, DisablePrivacyMode, RandomizeScheduleTaskTimes, SchedulerRandomizationTime, DisableBehaviorMonitoring, DisableIntrusionPreventionSystem, DisableIOAVProtection, DisableRealtimeMonitoring, DisableScriptScanning, DisableArchiveScanning, DisableCatchupFullScan, DisableCatchupQuickScan, DisableEmailScanning, DisableRemovableDriveScanning, DisableRestorePoint, DisableScanningMappedNetworkDrivesForFullScan, DisableScanningNetworkFiles, ApplyDisableNetworkScanningToIOAV, UILockdown, ThreatIDDefaultAction_Ids, ThreatIDDefaultAction_Actions, UnknownThreatDefaultAction, LowThreatDefaultAction, ModerateThreatDefaultAction, HighThreatDefaultAction, SevereThreatDefaultAction, PUAProtection, DisableBlockAtFirstSeen, CloudBlockLevel, CloudExtendedTimeout, EnableNetworkProtection, EnableControlledFolderAccess, AttackSurfaceReductionOnlyExclusions, AttackSurfaceReductionRules_Ids, AttackSurfaceReductionRules_Actions, ControlledFolderAccessAllowedApplications, ControlledFolderAccessProtectedFolders, SharedSignaturesPath, SharedSignaturesPathUpdateAtScheduledTimeOnly, EnableLowCpuPriority, EnableFileHashComputation, MeteredConnectionUpdates, AllowNetworkProtectionOnWinServer, DisableDatagramProcessing, EnableConvertWarnToBlock, DisableCpuThrottleOnIdleScans, EnableFullScanOnBatteryPower, ProxyPacUrl, ProxyServer, ProxyBypass, ForceUseProxyOnly, DisableTlsParsing, DisableHttpParsing, DisableDnsParsing, DisableDnsOverTcpParsing, DisableSshParsing, PlatformUpdatesChannel, EngineUpdatesChannel, DefinitionUpdatesChannel, DisableGradualRelease, AllowNetworkProtectionDownLevel, AllowDatagramProcessingOnWinServer, EnableDnsSinkhole, DisableInboundConnectionFiltering, DisableRdpParsing, DisableNetworkProtectionPerfTelemetry, TrustLabelProtectionStatus, DisableFtpParsing, AllowSwitchToAsyncInspection, ScanScheduleOffset, DisableTDTFeature, DisableTamperProtection, DisableSmtpParsing, DisableQuicParsing, NetworkProtectionReputationMode, IntelTDTEnabled, AttackSurfaceReductionRules_RuleSpecificExclusions_Id, AttackSurfaceReductionRules_RuleSpecificExclusions, OobeEnableRtpAndSigUpdate, PerformanceModeStatus, QuickScanIncludeExclusions, RemoveScanningThreadPoolCap, DisableCacheMaintenance, DisableCoreServiceECSIntegration, DisableCoreServiceTelemetry, EnableUdpSegmentationOffload, EnableUdpReceiveOffload, EnableEcsConfiguration, Force)
+	retVal, err := instance.InvokeMethodWithReturn("Set", DisableAutoExclusions, ExclusionPath, ExclusionExtension, ExclusionProcess, ExclusionIpAddress, QuarantinePurgeItemsAfterDelay, RealTimeScanDirection, RemediationScheduleDay, RemediationScheduleTime, ReportingAdditionalActionTimeOut, ReportingCriticalFailureTimeOut, ReportingNonCriticalTimeOut, ScanAvgCPULoadFactor, CheckForSignaturesBeforeRunningScan, ScanPurgeItemsAfterDelay, ScanOnlyIfIdleEnabled, ScanParameters, ScanScheduleDay, ScanScheduleQuickScanTime, ScanScheduleTime, SignatureFirstAuGracePeriod, SignatureAuGracePeriod, SignatureDefinitionUpdateFileSharesSources, SignatureDisableUpdateOnStartupWithoutEngine, SignatureFallbackOrder, SignatureScheduleDay, SignatureScheduleTime, SignatureUpdateCatchupInterval, SignatureBlobFileSharesSources, SignatureUpdateInterval, SignatureBlobUpdateInterval, MAPSReporting, SubmitSamplesConsent, DisablePrivacyMode, RandomizeScheduleTaskTimes, DisableBehaviorMonitoring, DisableIntrusionPreventionSystem, DisableIOAVProtection, DisableRealtimeMonitoring, DisableScriptScanning, DisableArchiveScanning, DisableCatchupFullScan, DisableCatchupQuickScan, DisableEmailScanning, DisableRemovableDriveScanning, DisableRestorePoint, DisableScanningMappedNetworkDrivesForFullScan, DisableScanningNetworkFiles, UILockdown, ThreatIDDefaultAction_Ids, ThreatIDDefaultAction_Actions, UnknownThreatDefaultAction, LowThreatDefaultAction, ModerateThreatDefaultAction, HighThreatDefaultAction, SevereThreatDefaultAction, PUAProtection, DisableBlockAtFirstSeen, CloudBlockLevel, CloudExtendedTimeout, EnableNetworkProtection, EnableControlledFolderAccess, AttackSurfaceReductionOnlyExclusions, AttackSurfaceReductionRules_Ids, AttackSurfaceReductionRules_Actions, ControlledFolderAccessAllowedApplications, ControlledFolderAccessProtectedFolders, SharedSignaturesPath, EnableLowCpuPriority, EnableFileHashComputation, MeteredConnectionUpdates, AllowNetworkProtectionOnWinServer, DisableDatagramProcessing, DisableCpuThrottleOnIdleScans, Force)
 	if err != nil {
 		return
 	}
@@ -4340,105 +2476,53 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 
 //
 
-// <param name="AllowDatagramProcessingOnWinServer" type="bool "></param>
-// <param name="AllowNetworkProtectionDownLevel" type="bool "></param>
 // <param name="AllowNetworkProtectionOnWinServer" type="bool "></param>
-// <param name="AllowSwitchToAsyncInspection" type="bool "></param>
-// <param name="ApplyDisableNetworkScanningToIOAV" type="bool "></param>
 // <param name="AttackSurfaceReductionOnlyExclusions" type="string []"></param>
 // <param name="AttackSurfaceReductionRules_Actions" type="uint8 []"></param>
 // <param name="AttackSurfaceReductionRules_Ids" type="string []"></param>
-// <param name="AttackSurfaceReductionRules_RuleSpecificExclusions" type="string "></param>
-// <param name="AttackSurfaceReductionRules_RuleSpecificExclusions_Id" type="string "></param>
-// <param name="BruteForceProtectionAggressiveness" type="bool "></param>
-// <param name="BruteForceProtectionConfiguredState" type="bool "></param>
-// <param name="BruteForceProtectionExclusions" type="string []"></param>
-// <param name="BruteForceProtectionLocalNetworkBlocking" type="bool "></param>
-// <param name="BruteForceProtectionMaxBlockTime" type="bool "></param>
-// <param name="BruteForceProtectionSkipLearningPeriod" type="bool "></param>
 // <param name="CheckForSignaturesBeforeRunningScan" type="bool "></param>
 // <param name="CloudBlockLevel" type="bool "></param>
 // <param name="CloudExtendedTimeout" type="bool "></param>
 // <param name="ControlledFolderAccessAllowedApplications" type="string []"></param>
 // <param name="ControlledFolderAccessProtectedFolders" type="string []"></param>
-// <param name="DefinitionUpdatesChannel" type="bool "></param>
 // <param name="DisableArchiveScanning" type="bool "></param>
 // <param name="DisableAutoExclusions" type="bool "></param>
 // <param name="DisableBehaviorMonitoring" type="bool "></param>
 // <param name="DisableBlockAtFirstSeen" type="bool "></param>
-// <param name="DisableCacheMaintenance" type="bool "></param>
 // <param name="DisableCatchupFullScan" type="bool "></param>
 // <param name="DisableCatchupQuickScan" type="bool "></param>
-// <param name="DisableCoreServiceECSIntegration" type="bool "></param>
-// <param name="DisableCoreServiceTelemetry" type="bool "></param>
 // <param name="DisableCpuThrottleOnIdleScans" type="bool "></param>
 // <param name="DisableDatagramProcessing" type="bool "></param>
-// <param name="DisableDnsOverTcpParsing" type="bool "></param>
-// <param name="DisableDnsParsing" type="bool "></param>
 // <param name="DisableEmailScanning" type="bool "></param>
-// <param name="DisableFtpParsing" type="bool "></param>
-// <param name="DisableGradualRelease" type="bool "></param>
-// <param name="DisableHttpParsing" type="bool "></param>
-// <param name="DisableInboundConnectionFiltering" type="bool "></param>
 // <param name="DisableIntrusionPreventionSystem" type="bool "></param>
 // <param name="DisableIOAVProtection" type="bool "></param>
-// <param name="DisableNetworkProtectionPerfTelemetry" type="bool "></param>
 // <param name="DisablePrivacyMode" type="bool "></param>
-// <param name="DisableQuicParsing" type="bool "></param>
-// <param name="DisableRdpParsing" type="bool "></param>
 // <param name="DisableRealtimeMonitoring" type="bool "></param>
 // <param name="DisableRemovableDriveScanning" type="bool "></param>
 // <param name="DisableRestorePoint" type="bool "></param>
 // <param name="DisableScanningMappedNetworkDrivesForFullScan" type="bool "></param>
 // <param name="DisableScanningNetworkFiles" type="bool "></param>
 // <param name="DisableScriptScanning" type="bool "></param>
-// <param name="DisableSmtpParsing" type="bool "></param>
-// <param name="DisableSshParsing" type="bool "></param>
-// <param name="DisableTDTFeature" type="bool "></param>
-// <param name="DisableTlsParsing" type="bool "></param>
 // <param name="EnableControlledFolderAccess" type="bool "></param>
-// <param name="EnableConvertWarnToBlock" type="bool "></param>
-// <param name="EnableDnsSinkhole" type="bool "></param>
-// <param name="EnableEcsConfiguration" type="bool "></param>
 // <param name="EnableFileHashComputation" type="bool "></param>
-// <param name="EnableFullScanOnBatteryPower" type="bool "></param>
 // <param name="EnableLowCpuPriority" type="bool "></param>
 // <param name="EnableNetworkProtection" type="bool "></param>
-// <param name="EnableUdpReceiveOffload" type="bool "></param>
-// <param name="EnableUdpSegmentationOffload" type="bool "></param>
-// <param name="EngineUpdatesChannel" type="bool "></param>
 // <param name="ExclusionExtension" type="string []"></param>
 // <param name="ExclusionIpAddress" type="string []"></param>
 // <param name="ExclusionPath" type="string []"></param>
 // <param name="ExclusionProcess" type="string []"></param>
 // <param name="Force" type="bool "></param>
-// <param name="ForceUseProxyOnly" type="bool "></param>
 // <param name="HighThreatDefaultAction" type="bool "></param>
-// <param name="IntelTDTEnabled" type="bool "></param>
 // <param name="LowThreatDefaultAction" type="bool "></param>
 // <param name="MAPSReporting" type="bool "></param>
 // <param name="MeteredConnectionUpdates" type="bool "></param>
 // <param name="ModerateThreatDefaultAction" type="bool "></param>
-// <param name="NetworkProtectionReputationMode" type="bool "></param>
-// <param name="OobeEnableRtpAndSigUpdate" type="bool "></param>
-// <param name="PerformanceModeStatus" type="bool "></param>
-// <param name="PlatformUpdatesChannel" type="bool "></param>
-// <param name="ProxyBypass" type="bool "></param>
-// <param name="ProxyPacUrl" type="bool "></param>
-// <param name="ProxyServer" type="bool "></param>
 // <param name="PUAProtection" type="bool "></param>
 // <param name="QuarantinePurgeItemsAfterDelay" type="bool "></param>
-// <param name="QuickScanIncludeExclusions" type="bool "></param>
 // <param name="RandomizeScheduleTaskTimes" type="bool "></param>
 // <param name="RealTimeScanDirection" type="bool "></param>
 // <param name="RemediationScheduleDay" type="bool "></param>
 // <param name="RemediationScheduleTime" type="bool "></param>
-// <param name="RemoteEncryptionProtectionAggressiveness" type="bool "></param>
-// <param name="RemoteEncryptionProtectionConfiguredState" type="bool "></param>
-// <param name="RemoteEncryptionProtectionExclusions" type="string []"></param>
-// <param name="RemoteEncryptionProtectionMaxBlockTime" type="bool "></param>
-// <param name="RemoveScanningThreadPoolCap" type="bool "></param>
-// <param name="ReportDynamicSignatureDroppedEvent" type="bool "></param>
 // <param name="ReportingAdditionalActionTimeOut" type="bool "></param>
 // <param name="ReportingCriticalFailureTimeOut" type="bool "></param>
 // <param name="ReportingNonCriticalTimeOut" type="bool "></param>
@@ -4447,14 +2531,10 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 // <param name="ScanParameters" type="bool "></param>
 // <param name="ScanPurgeItemsAfterDelay" type="bool "></param>
 // <param name="ScanScheduleDay" type="bool "></param>
-// <param name="ScanScheduleOffset" type="bool "></param>
 // <param name="ScanScheduleQuickScanTime" type="bool "></param>
 // <param name="ScanScheduleTime" type="bool "></param>
-// <param name="SchedulerRandomizationTime" type="bool "></param>
-// <param name="ServiceHealthReportInterval" type="bool "></param>
 // <param name="SevereThreatDefaultAction" type="bool "></param>
-// <param name="SharedSignaturesPath" type="bool "></param>
-// <param name="SharedSignaturesPathUpdateAtScheduledTimeOnly" type="bool "></param>
+// <param name="SharedSignaturesPath" type="string "></param>
 // <param name="SignatureAuGracePeriod" type="bool "></param>
 // <param name="SignatureBlobFileSharesSources" type="bool "></param>
 // <param name="SignatureBlobUpdateInterval" type="bool "></param>
@@ -4469,8 +2549,6 @@ func (instance *MSFT_MpPreference) Set( /* IN */ DisableAutoExclusions bool,
 // <param name="SubmitSamplesConsent" type="bool "></param>
 // <param name="ThreatIDDefaultAction_Actions" type="uint8 []"></param>
 // <param name="ThreatIDDefaultAction_Ids" type="int64 []"></param>
-// <param name="ThrottleForScheduledScanOnly" type="bool "></param>
-// <param name="TrustLabelProtectionStatus" type="bool "></param>
 // <param name="UILockdown" type="bool "></param>
 // <param name="UnknownThreatDefaultAction" type="bool "></param>
 
@@ -4484,21 +2562,9 @@ func (instance *MSFT_MpPreference) Remove( /* IN */ DisableAutoExclusions bool,
 	/* IN */ RealTimeScanDirection bool,
 	/* IN */ RemediationScheduleDay bool,
 	/* IN */ RemediationScheduleTime bool,
-	/* IN */ RemoteEncryptionProtectionConfiguredState bool,
-	/* IN */ RemoteEncryptionProtectionMaxBlockTime bool,
-	/* IN */ RemoteEncryptionProtectionAggressiveness bool,
-	/* IN */ RemoteEncryptionProtectionExclusions []string,
-	/* IN */ BruteForceProtectionConfiguredState bool,
-	/* IN */ BruteForceProtectionMaxBlockTime bool,
-	/* IN */ BruteForceProtectionAggressiveness bool,
-	/* IN */ BruteForceProtectionExclusions []string,
-	/* IN */ BruteForceProtectionLocalNetworkBlocking bool,
-	/* IN */ BruteForceProtectionSkipLearningPeriod bool,
 	/* IN */ ReportingAdditionalActionTimeOut bool,
 	/* IN */ ReportingCriticalFailureTimeOut bool,
 	/* IN */ ReportingNonCriticalTimeOut bool,
-	/* IN */ ServiceHealthReportInterval bool,
-	/* IN */ ReportDynamicSignatureDroppedEvent bool,
 	/* IN */ ScanAvgCPULoadFactor bool,
 	/* IN */ CheckForSignaturesBeforeRunningScan bool,
 	/* IN */ ScanPurgeItemsAfterDelay bool,
@@ -4507,7 +2573,6 @@ func (instance *MSFT_MpPreference) Remove( /* IN */ DisableAutoExclusions bool,
 	/* IN */ ScanScheduleDay bool,
 	/* IN */ ScanScheduleQuickScanTime bool,
 	/* IN */ ScanScheduleTime bool,
-	/* IN */ ThrottleForScheduledScanOnly bool,
 	/* IN */ SignatureFirstAuGracePeriod bool,
 	/* IN */ SignatureAuGracePeriod bool,
 	/* IN */ SignatureDefinitionUpdateFileSharesSources bool,
@@ -4523,7 +2588,6 @@ func (instance *MSFT_MpPreference) Remove( /* IN */ DisableAutoExclusions bool,
 	/* IN */ SubmitSamplesConsent bool,
 	/* IN */ DisablePrivacyMode bool,
 	/* IN */ RandomizeScheduleTaskTimes bool,
-	/* IN */ SchedulerRandomizationTime bool,
 	/* IN */ DisableBehaviorMonitoring bool,
 	/* IN */ DisableIntrusionPreventionSystem bool,
 	/* IN */ DisableIOAVProtection bool,
@@ -4537,7 +2601,6 @@ func (instance *MSFT_MpPreference) Remove( /* IN */ DisableAutoExclusions bool,
 	/* IN */ DisableRestorePoint bool,
 	/* IN */ DisableScanningMappedNetworkDrivesForFullScan bool,
 	/* IN */ DisableScanningNetworkFiles bool,
-	/* IN */ ApplyDisableNetworkScanningToIOAV bool,
 	/* IN */ UILockdown bool,
 	/* IN */ ThreatIDDefaultAction_Ids []int64,
 	/* IN */ ThreatIDDefaultAction_Actions []uint8,
@@ -4557,58 +2620,15 @@ func (instance *MSFT_MpPreference) Remove( /* IN */ DisableAutoExclusions bool,
 	/* IN */ AttackSurfaceReductionRules_Actions []uint8,
 	/* IN */ ControlledFolderAccessAllowedApplications []string,
 	/* IN */ ControlledFolderAccessProtectedFolders []string,
-	/* IN */ SharedSignaturesPath bool,
-	/* IN */ SharedSignaturesPathUpdateAtScheduledTimeOnly bool,
+	/* IN */ SharedSignaturesPath string,
 	/* IN */ EnableLowCpuPriority bool,
 	/* IN */ EnableFileHashComputation bool,
 	/* IN */ MeteredConnectionUpdates bool,
 	/* IN */ AllowNetworkProtectionOnWinServer bool,
 	/* IN */ DisableDatagramProcessing bool,
-	/* IN */ EnableConvertWarnToBlock bool,
 	/* IN */ DisableCpuThrottleOnIdleScans bool,
-	/* IN */ EnableFullScanOnBatteryPower bool,
-	/* IN */ ProxyPacUrl bool,
-	/* IN */ ProxyServer bool,
-	/* IN */ ProxyBypass bool,
-	/* IN */ ForceUseProxyOnly bool,
-	/* IN */ DisableTlsParsing bool,
-	/* IN */ DisableHttpParsing bool,
-	/* IN */ DisableDnsParsing bool,
-	/* IN */ DisableDnsOverTcpParsing bool,
-	/* IN */ DisableSshParsing bool,
-	/* IN */ PlatformUpdatesChannel bool,
-	/* IN */ EngineUpdatesChannel bool,
-	/* IN */ DefinitionUpdatesChannel bool,
-	/* IN */ DisableGradualRelease bool,
-	/* IN */ AllowNetworkProtectionDownLevel bool,
-	/* IN */ AllowDatagramProcessingOnWinServer bool,
-	/* IN */ EnableDnsSinkhole bool,
-	/* IN */ DisableInboundConnectionFiltering bool,
-	/* IN */ DisableRdpParsing bool,
-	/* IN */ DisableNetworkProtectionPerfTelemetry bool,
-	/* IN */ TrustLabelProtectionStatus bool,
-	/* IN */ DisableFtpParsing bool,
-	/* IN */ AllowSwitchToAsyncInspection bool,
-	/* IN */ ScanScheduleOffset bool,
-	/* IN */ DisableTDTFeature bool,
-	/* IN */ DisableSmtpParsing bool,
-	/* IN */ DisableQuicParsing bool,
-	/* IN */ NetworkProtectionReputationMode bool,
-	/* IN */ IntelTDTEnabled bool,
-	/* IN */ AttackSurfaceReductionRules_RuleSpecificExclusions_Id string,
-	/* IN */ AttackSurfaceReductionRules_RuleSpecificExclusions string,
-	/* IN */ OobeEnableRtpAndSigUpdate bool,
-	/* IN */ PerformanceModeStatus bool,
-	/* IN */ QuickScanIncludeExclusions bool,
-	/* IN */ RemoveScanningThreadPoolCap bool,
-	/* IN */ DisableCacheMaintenance bool,
-	/* IN */ DisableCoreServiceECSIntegration bool,
-	/* IN */ DisableCoreServiceTelemetry bool,
-	/* IN */ EnableUdpSegmentationOffload bool,
-	/* IN */ EnableUdpReceiveOffload bool,
-	/* IN */ EnableEcsConfiguration bool,
 	/* IN */ Force bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("Remove", DisableAutoExclusions, ExclusionPath, ExclusionExtension, ExclusionProcess, ExclusionIpAddress, QuarantinePurgeItemsAfterDelay, RealTimeScanDirection, RemediationScheduleDay, RemediationScheduleTime, RemoteEncryptionProtectionConfiguredState, RemoteEncryptionProtectionMaxBlockTime, RemoteEncryptionProtectionAggressiveness, RemoteEncryptionProtectionExclusions, BruteForceProtectionConfiguredState, BruteForceProtectionMaxBlockTime, BruteForceProtectionAggressiveness, BruteForceProtectionExclusions, BruteForceProtectionLocalNetworkBlocking, BruteForceProtectionSkipLearningPeriod, ReportingAdditionalActionTimeOut, ReportingCriticalFailureTimeOut, ReportingNonCriticalTimeOut, ServiceHealthReportInterval, ReportDynamicSignatureDroppedEvent, ScanAvgCPULoadFactor, CheckForSignaturesBeforeRunningScan, ScanPurgeItemsAfterDelay, ScanOnlyIfIdleEnabled, ScanParameters, ScanScheduleDay, ScanScheduleQuickScanTime, ScanScheduleTime, ThrottleForScheduledScanOnly, SignatureFirstAuGracePeriod, SignatureAuGracePeriod, SignatureDefinitionUpdateFileSharesSources, SignatureDisableUpdateOnStartupWithoutEngine, SignatureFallbackOrder, SignatureScheduleDay, SignatureScheduleTime, SignatureUpdateCatchupInterval, SignatureBlobFileSharesSources, SignatureUpdateInterval, SignatureBlobUpdateInterval, MAPSReporting, SubmitSamplesConsent, DisablePrivacyMode, RandomizeScheduleTaskTimes, SchedulerRandomizationTime, DisableBehaviorMonitoring, DisableIntrusionPreventionSystem, DisableIOAVProtection, DisableRealtimeMonitoring, DisableScriptScanning, DisableArchiveScanning, DisableCatchupFullScan, DisableCatchupQuickScan, DisableEmailScanning, DisableRemovableDriveScanning, DisableRestorePoint, DisableScanningMappedNetworkDrivesForFullScan, DisableScanningNetworkFiles, ApplyDisableNetworkScanningToIOAV, UILockdown, ThreatIDDefaultAction_Ids, ThreatIDDefaultAction_Actions, UnknownThreatDefaultAction, LowThreatDefaultAction, ModerateThreatDefaultAction, HighThreatDefaultAction, SevereThreatDefaultAction, PUAProtection, DisableBlockAtFirstSeen, CloudBlockLevel, CloudExtendedTimeout, EnableNetworkProtection, EnableControlledFolderAccess, AttackSurfaceReductionOnlyExclusions, AttackSurfaceReductionRules_Ids, AttackSurfaceReductionRules_Actions, ControlledFolderAccessAllowedApplications, ControlledFolderAccessProtectedFolders, SharedSignaturesPath, SharedSignaturesPathUpdateAtScheduledTimeOnly, EnableLowCpuPriority, EnableFileHashComputation, MeteredConnectionUpdates, AllowNetworkProtectionOnWinServer, DisableDatagramProcessing, EnableConvertWarnToBlock, DisableCpuThrottleOnIdleScans, EnableFullScanOnBatteryPower, ProxyPacUrl, ProxyServer, ProxyBypass, ForceUseProxyOnly, DisableTlsParsing, DisableHttpParsing, DisableDnsParsing, DisableDnsOverTcpParsing, DisableSshParsing, PlatformUpdatesChannel, EngineUpdatesChannel, DefinitionUpdatesChannel, DisableGradualRelease, AllowNetworkProtectionDownLevel, AllowDatagramProcessingOnWinServer, EnableDnsSinkhole, DisableInboundConnectionFiltering, DisableRdpParsing, DisableNetworkProtectionPerfTelemetry, TrustLabelProtectionStatus, DisableFtpParsing, AllowSwitchToAsyncInspection, ScanScheduleOffset, DisableTDTFeature, DisableSmtpParsing, DisableQuicParsing, NetworkProtectionReputationMode, IntelTDTEnabled, AttackSurfaceReductionRules_RuleSpecificExclusions_Id, AttackSurfaceReductionRules_RuleSpecificExclusions, OobeEnableRtpAndSigUpdate, PerformanceModeStatus, QuickScanIncludeExclusions, RemoveScanningThreadPoolCap, DisableCacheMaintenance, DisableCoreServiceECSIntegration, DisableCoreServiceTelemetry, EnableUdpSegmentationOffload, EnableUdpReceiveOffload, EnableEcsConfiguration, Force)
+	retVal, err := instance.InvokeMethodWithReturn("Remove", DisableAutoExclusions, ExclusionPath, ExclusionExtension, ExclusionProcess, ExclusionIpAddress, QuarantinePurgeItemsAfterDelay, RealTimeScanDirection, RemediationScheduleDay, RemediationScheduleTime, ReportingAdditionalActionTimeOut, ReportingCriticalFailureTimeOut, ReportingNonCriticalTimeOut, ScanAvgCPULoadFactor, CheckForSignaturesBeforeRunningScan, ScanPurgeItemsAfterDelay, ScanOnlyIfIdleEnabled, ScanParameters, ScanScheduleDay, ScanScheduleQuickScanTime, ScanScheduleTime, SignatureFirstAuGracePeriod, SignatureAuGracePeriod, SignatureDefinitionUpdateFileSharesSources, SignatureDisableUpdateOnStartupWithoutEngine, SignatureFallbackOrder, SignatureScheduleDay, SignatureScheduleTime, SignatureUpdateCatchupInterval, SignatureBlobFileSharesSources, SignatureUpdateInterval, SignatureBlobUpdateInterval, MAPSReporting, SubmitSamplesConsent, DisablePrivacyMode, RandomizeScheduleTaskTimes, DisableBehaviorMonitoring, DisableIntrusionPreventionSystem, DisableIOAVProtection, DisableRealtimeMonitoring, DisableScriptScanning, DisableArchiveScanning, DisableCatchupFullScan, DisableCatchupQuickScan, DisableEmailScanning, DisableRemovableDriveScanning, DisableRestorePoint, DisableScanningMappedNetworkDrivesForFullScan, DisableScanningNetworkFiles, UILockdown, ThreatIDDefaultAction_Ids, ThreatIDDefaultAction_Actions, UnknownThreatDefaultAction, LowThreatDefaultAction, ModerateThreatDefaultAction, HighThreatDefaultAction, SevereThreatDefaultAction, PUAProtection, DisableBlockAtFirstSeen, CloudBlockLevel, CloudExtendedTimeout, EnableNetworkProtection, EnableControlledFolderAccess, AttackSurfaceReductionOnlyExclusions, AttackSurfaceReductionRules_Ids, AttackSurfaceReductionRules_Actions, ControlledFolderAccessAllowedApplications, ControlledFolderAccessProtectedFolders, SharedSignaturesPath, EnableLowCpuPriority, EnableFileHashComputation, MeteredConnectionUpdates, AllowNetworkProtectionOnWinServer, DisableDatagramProcessing, DisableCpuThrottleOnIdleScans, Force)
 	if err != nil {
 		return
 	}
@@ -4622,9 +2642,6 @@ func (instance *MSFT_MpPreference) Remove( /* IN */ DisableAutoExclusions bool,
 // <param name="AttackSurfaceReductionOnlyExclusions" type="string []"></param>
 // <param name="AttackSurfaceReductionRules_Actions" type="uint8 []"></param>
 // <param name="AttackSurfaceReductionRules_Ids" type="string []"></param>
-// <param name="AttackSurfaceReductionRules_RuleSpecificExclusions" type="string []"></param>
-// <param name="AttackSurfaceReductionRules_RuleSpecificExclusions_Id" type="string []"></param>
-// <param name="BruteForceProtectionExclusions" type="string []"></param>
 // <param name="ControlledFolderAccessAllowedApplications" type="string []"></param>
 // <param name="ControlledFolderAccessProtectedFolders" type="string []"></param>
 // <param name="ExclusionExtension" type="string []"></param>
@@ -4632,7 +2649,6 @@ func (instance *MSFT_MpPreference) Remove( /* IN */ DisableAutoExclusions bool,
 // <param name="ExclusionPath" type="string []"></param>
 // <param name="ExclusionProcess" type="string []"></param>
 // <param name="Force" type="bool "></param>
-// <param name="RemoteEncryptionProtectionExclusions" type="string []"></param>
 // <param name="SharedSignaturesPath" type="string "></param>
 // <param name="ThreatIDDefaultAction_Actions" type="uint8 []"></param>
 // <param name="ThreatIDDefaultAction_Ids" type="int64 []"></param>
@@ -4650,12 +2666,8 @@ func (instance *MSFT_MpPreference) Add( /* IN */ ExclusionPath []string,
 	/* IN */ ControlledFolderAccessAllowedApplications []string,
 	/* IN */ ControlledFolderAccessProtectedFolders []string,
 	/* IN */ SharedSignaturesPath string,
-	/* IN */ AttackSurfaceReductionRules_RuleSpecificExclusions_Id []string,
-	/* IN */ AttackSurfaceReductionRules_RuleSpecificExclusions []string,
-	/* IN */ RemoteEncryptionProtectionExclusions []string,
-	/* IN */ BruteForceProtectionExclusions []string,
 	/* IN */ Force bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("Add", ExclusionPath, ExclusionExtension, ExclusionProcess, ExclusionIpAddress, ThreatIDDefaultAction_Ids, ThreatIDDefaultAction_Actions, AttackSurfaceReductionOnlyExclusions, AttackSurfaceReductionRules_Ids, AttackSurfaceReductionRules_Actions, ControlledFolderAccessAllowedApplications, ControlledFolderAccessProtectedFolders, SharedSignaturesPath, AttackSurfaceReductionRules_RuleSpecificExclusions_Id, AttackSurfaceReductionRules_RuleSpecificExclusions, RemoteEncryptionProtectionExclusions, BruteForceProtectionExclusions, Force)
+	retVal, err := instance.InvokeMethodWithReturn("Add", ExclusionPath, ExclusionExtension, ExclusionProcess, ExclusionIpAddress, ThreatIDDefaultAction_Ids, ThreatIDDefaultAction_Actions, AttackSurfaceReductionOnlyExclusions, AttackSurfaceReductionRules_Ids, AttackSurfaceReductionRules_Actions, ControlledFolderAccessAllowedApplications, ControlledFolderAccessProtectedFolders, SharedSignaturesPath, Force)
 	if err != nil {
 		return
 	}

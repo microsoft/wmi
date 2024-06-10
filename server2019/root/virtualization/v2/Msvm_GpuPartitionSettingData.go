@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -45,9 +44,6 @@ type Msvm_GpuPartitionSettingData struct {
 	MinPartitionVRAM uint64
 
 	//
-	NumaAwarePlacement bool
-
-	//
 	OptimalPartitionCompute uint64
 
 	//
@@ -58,9 +54,6 @@ type Msvm_GpuPartitionSettingData struct {
 
 	//
 	OptimalPartitionVRAM uint64
-
-	//
-	VirtualSystemIdentifiers []string
 }
 
 func NewMsvm_GpuPartitionSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_GpuPartitionSettingData, err error) {
@@ -308,33 +301,6 @@ func (instance *Msvm_GpuPartitionSettingData) GetPropertyMinPartitionVRAM() (val
 	return
 }
 
-// SetNumaAwarePlacement sets the value of NumaAwarePlacement for the instance
-func (instance *Msvm_GpuPartitionSettingData) SetPropertyNumaAwarePlacement(value bool) (err error) {
-	return instance.SetProperty("NumaAwarePlacement", (value))
-}
-
-// GetNumaAwarePlacement gets the value of NumaAwarePlacement for the instance
-func (instance *Msvm_GpuPartitionSettingData) GetPropertyNumaAwarePlacement() (value bool, err error) {
-	retValue, err := instance.GetProperty("NumaAwarePlacement")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetOptimalPartitionCompute sets the value of OptimalPartitionCompute for the instance
 func (instance *Msvm_GpuPartitionSettingData) SetPropertyOptimalPartitionCompute(value uint64) (err error) {
 	return instance.SetProperty("OptimalPartitionCompute", (value))
@@ -439,34 +405,6 @@ func (instance *Msvm_GpuPartitionSettingData) GetPropertyOptimalPartitionVRAM() 
 	}
 
 	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVirtualSystemIdentifiers sets the value of VirtualSystemIdentifiers for the instance
-func (instance *Msvm_GpuPartitionSettingData) SetPropertyVirtualSystemIdentifiers(value []string) (err error) {
-	return instance.SetProperty("VirtualSystemIdentifiers", (value))
-}
-
-// GetVirtualSystemIdentifiers gets the value of VirtualSystemIdentifiers for the instance
-func (instance *Msvm_GpuPartitionSettingData) GetPropertyVirtualSystemIdentifiers() (value []string, err error) {
-	retValue, err := instance.GetProperty("VirtualSystemIdentifiers")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
 
 	return
 }

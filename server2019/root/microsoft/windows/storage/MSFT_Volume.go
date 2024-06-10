@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage
+//////////////////////////////////////////////
 package storage
 
 import (
@@ -49,9 +48,6 @@ type MSFT_Volume struct {
 
 	//
 	Path string
-
-	//
-	ReFSDedupMode uint32
 
 	//
 	Size uint64
@@ -360,33 +356,6 @@ func (instance *MSFT_Volume) GetPropertyPath() (value string, err error) {
 	return
 }
 
-// SetReFSDedupMode sets the value of ReFSDedupMode for the instance
-func (instance *MSFT_Volume) SetPropertyReFSDedupMode(value uint32) (err error) {
-	return instance.SetProperty("ReFSDedupMode", (value))
-}
-
-// GetReFSDedupMode gets the value of ReFSDedupMode for the instance
-func (instance *MSFT_Volume) GetPropertyReFSDedupMode() (value uint32, err error) {
-	retValue, err := instance.GetProperty("ReFSDedupMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_Volume) SetPropertySize(value uint64) (err error) {
 	return instance.SetProperty("Size", (value))
@@ -465,17 +434,14 @@ func (instance *MSFT_Volume) DeleteObject( /* IN */ RunAsJob bool,
 
 // <param name="AllocationUnitSize" type="uint32 "></param>
 // <param name="Compress" type="bool "></param>
-// <param name="DevDrive" type="bool "></param>
 // <param name="DisableHeatGathering" type="bool "></param>
 // <param name="FileSystem" type="string "></param>
 // <param name="FileSystemLabel" type="string "></param>
 // <param name="Force" type="bool "></param>
 // <param name="Full" type="bool "></param>
 // <param name="IsDAX" type="bool "></param>
-// <param name="NoTrim" type="bool "></param>
 // <param name="RunAsJob" type="bool "></param>
 // <param name="SetIntegrityStreams" type="bool "></param>
-// <param name="SHA256Checksums" type="bool "></param>
 // <param name="ShortFileNameSupport" type="bool "></param>
 // <param name="UseLargeFRS" type="bool "></param>
 
@@ -494,14 +460,11 @@ func (instance *MSFT_Volume) Format( /* IN */ FileSystem string,
 	/* IN */ UseLargeFRS bool,
 	/* IN */ DisableHeatGathering bool,
 	/* IN */ IsDAX bool,
-	/* IN */ NoTrim bool,
-	/* IN */ DevDrive bool,
-	/* IN */ SHA256Checksums bool,
 	/* IN */ RunAsJob bool,
 	/* OUT */ FormattedVolume MSFT_Volume,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Format", FileSystem, FileSystemLabel, AllocationUnitSize, Full, Force, Compress, ShortFileNameSupport, SetIntegrityStreams, UseLargeFRS, DisableHeatGathering, IsDAX, NoTrim, DevDrive, SHA256Checksums, RunAsJob)
+	retVal, err := instance.InvokeMethod("Format", FileSystem, FileSystemLabel, AllocationUnitSize, Full, Force, Compress, ShortFileNameSupport, SetIntegrityStreams, UseLargeFRS, DisableHeatGathering, IsDAX, RunAsJob)
 	if err != nil {
 		return
 	}
@@ -513,19 +476,10 @@ func (instance *MSFT_Volume) Format( /* IN */ FileSystem string,
 
 //
 
-// <param name="DetectLeaks" type="uint32 "></param>
-// <param name="DirectoryIds" type="uint64 []"></param>
 // <param name="OfflineScanAndFix" type="bool "></param>
 // <param name="RunAsJob" type="bool "></param>
-// <param name="Salvage" type="uint32 "></param>
 // <param name="Scan" type="bool "></param>
-// <param name="ScratchDir" type="string "></param>
-// <param name="ScratchFile" type="string "></param>
 // <param name="SpotFix" type="bool "></param>
-// <param name="TargetDir" type="string "></param>
-// <param name="TargetFile" type="string "></param>
-// <param name="Threads" type="uint32 "></param>
-// <param name="Triage" type="bool "></param>
 
 // <param name="CreatedStorageJob" type="MSFT_StorageJob "></param>
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
@@ -534,20 +488,11 @@ func (instance *MSFT_Volume) Format( /* IN */ FileSystem string,
 func (instance *MSFT_Volume) Repair( /* IN */ OfflineScanAndFix bool,
 	/* IN */ Scan bool,
 	/* IN */ SpotFix bool,
-	/* IN */ DetectLeaks uint32,
-	/* IN */ ScratchFile string,
-	/* IN */ Threads uint32,
-	/* IN */ Triage bool,
-	/* IN */ DirectoryIds []uint64,
-	/* IN */ Salvage uint32,
-	/* IN */ ScratchDir string,
-	/* IN */ TargetFile string,
-	/* IN */ TargetDir string,
 	/* OUT */ Output uint32,
 	/* OPTIONAL IN */ RunAsJob bool,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Repair", OfflineScanAndFix, Scan, SpotFix, DetectLeaks, ScratchFile, Threads, Triage, DirectoryIds, Salvage, ScratchDir, TargetFile, TargetDir, RunAsJob)
+	retVal, err := instance.InvokeMethod("Repair", OfflineScanAndFix, Scan, SpotFix, RunAsJob)
 	if err != nil {
 		return
 	}

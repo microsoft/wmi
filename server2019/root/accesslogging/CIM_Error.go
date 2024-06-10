@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.AccessLogging
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.AccessLogging
+//////////////////////////////////////////////
 package accesslogging
 
 import (
@@ -92,7 +91,7 @@ type CIM_Error struct {
 	OtherErrorType string
 
 	// A string that uniquely identifies the entity that owns the definition of the format of the Message described in this instance. OwningEntity MUST include a copyrighted, trademarked or otherwise unique name that is owned by the business entity or standards body defining the format.
-	OwningEntity string
+	OWningEntity string
 
 	// An enumerated value that describes the severity of the Indication from the notifier's point of view:
 	///0 - the Perceived Severity of the indication is unknown or indeterminate.
@@ -416,14 +415,14 @@ func (instance *CIM_Error) GetPropertyOtherErrorType() (value string, err error)
 	return
 }
 
-// SetOwningEntity sets the value of OwningEntity for the instance
-func (instance *CIM_Error) SetPropertyOwningEntity(value string) (err error) {
-	return instance.SetProperty("OwningEntity", (value))
+// SetOWningEntity sets the value of OWningEntity for the instance
+func (instance *CIM_Error) SetPropertyOWningEntity(value string) (err error) {
+	return instance.SetProperty("OWningEntity", (value))
 }
 
-// GetOwningEntity gets the value of OwningEntity for the instance
-func (instance *CIM_Error) GetPropertyOwningEntity() (value string, err error) {
-	retValue, err := instance.GetProperty("OwningEntity")
+// GetOWningEntity gets the value of OWningEntity for the instance
+func (instance *CIM_Error) GetPropertyOWningEntity() (value string, err error) {
+	retValue, err := instance.GetProperty("OWningEntity")
 	if err != nil {
 		return
 	}

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -53,21 +52,6 @@ type MDM_Policy_Result01_TextInput02 struct {
 
 	//
 	AllowLinguisticDataCollection int32
-
-	//
-	AllowTextInputSuggestionUpdate int32
-
-	//
-	ConfigureJapaneseIMEVersion int32
-
-	//
-	ConfigureKoreanIMEVersion int32
-
-	//
-	ConfigureSimplifiedChineseIMEVersion int32
-
-	//
-	ConfigureTraditionalChineseIMEVersion int32
 
 	//
 	EnableTouchKeyboardAutoInvokeInDesktopMode int32
@@ -419,141 +403,6 @@ func (instance *MDM_Policy_Result01_TextInput02) SetPropertyAllowLinguisticDataC
 // GetAllowLinguisticDataCollection gets the value of AllowLinguisticDataCollection for the instance
 func (instance *MDM_Policy_Result01_TextInput02) GetPropertyAllowLinguisticDataCollection() (value int32, err error) {
 	retValue, err := instance.GetProperty("AllowLinguisticDataCollection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetAllowTextInputSuggestionUpdate sets the value of AllowTextInputSuggestionUpdate for the instance
-func (instance *MDM_Policy_Result01_TextInput02) SetPropertyAllowTextInputSuggestionUpdate(value int32) (err error) {
-	return instance.SetProperty("AllowTextInputSuggestionUpdate", (value))
-}
-
-// GetAllowTextInputSuggestionUpdate gets the value of AllowTextInputSuggestionUpdate for the instance
-func (instance *MDM_Policy_Result01_TextInput02) GetPropertyAllowTextInputSuggestionUpdate() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowTextInputSuggestionUpdate")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureJapaneseIMEVersion sets the value of ConfigureJapaneseIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) SetPropertyConfigureJapaneseIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureJapaneseIMEVersion", (value))
-}
-
-// GetConfigureJapaneseIMEVersion gets the value of ConfigureJapaneseIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) GetPropertyConfigureJapaneseIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureJapaneseIMEVersion")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureKoreanIMEVersion sets the value of ConfigureKoreanIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) SetPropertyConfigureKoreanIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureKoreanIMEVersion", (value))
-}
-
-// GetConfigureKoreanIMEVersion gets the value of ConfigureKoreanIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) GetPropertyConfigureKoreanIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureKoreanIMEVersion")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureSimplifiedChineseIMEVersion sets the value of ConfigureSimplifiedChineseIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) SetPropertyConfigureSimplifiedChineseIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureSimplifiedChineseIMEVersion", (value))
-}
-
-// GetConfigureSimplifiedChineseIMEVersion gets the value of ConfigureSimplifiedChineseIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) GetPropertyConfigureSimplifiedChineseIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureSimplifiedChineseIMEVersion")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureTraditionalChineseIMEVersion sets the value of ConfigureTraditionalChineseIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) SetPropertyConfigureTraditionalChineseIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureTraditionalChineseIMEVersion", (value))
-}
-
-// GetConfigureTraditionalChineseIMEVersion gets the value of ConfigureTraditionalChineseIMEVersion for the instance
-func (instance *MDM_Policy_Result01_TextInput02) GetPropertyConfigureTraditionalChineseIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureTraditionalChineseIMEVersion")
 	if err != nil {
 		return
 	}

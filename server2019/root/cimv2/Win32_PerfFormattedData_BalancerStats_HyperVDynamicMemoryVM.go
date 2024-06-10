@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -28,9 +27,6 @@ type Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM struct {
 
 	//
 	CurrentPressure uint32
-
-	//
-	GuestAvailableMemory uint32
 
 	//
 	GuestVisiblePhysicalMemory uint32
@@ -148,33 +144,6 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Set
 // GetCurrentPressure gets the value of CurrentPressure for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) GetPropertyCurrentPressure() (value uint32, err error) {
 	retValue, err := instance.GetProperty("CurrentPressure")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetGuestAvailableMemory sets the value of GuestAvailableMemory for the instance
-func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyGuestAvailableMemory(value uint32) (err error) {
-	return instance.SetProperty("GuestAvailableMemory", (value))
-}
-
-// GetGuestAvailableMemory gets the value of GuestAvailableMemory for the instance
-func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) GetPropertyGuestAvailableMemory() (value uint32, err error) {
-	retValue, err := instance.GetProperty("GuestAvailableMemory")
 	if err != nil {
 		return
 	}

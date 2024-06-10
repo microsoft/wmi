@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -416,11 +415,9 @@ func (instance *MSCluster_Network) GetPropertyState() (value uint32, err error) 
 
 //
 
-// <param name="NewName" type="string "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Network) Rename( /* IN */ NewName string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("Rename", NewName, Reason)
+// <param name="newName" type="string "></param>
+func (instance *MSCluster_Network) Rename( /* IN */ newName string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("Rename", newName)
 	if err != nil {
 		return
 	}
@@ -432,16 +429,14 @@ func (instance *MSCluster_Network) Rename( /* IN */ NewName string,
 
 // <param name="ControlCode" type="int32 "></param>
 // <param name="InputBuffer" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 
 // <param name="OutputBuffer" type="uint8 []"></param>
 // <param name="OutputBufferSize" type="int32 "></param>
 func (instance *MSCluster_Network) ExecuteNetworkControl( /* IN */ ControlCode int32,
 	/* IN */ InputBuffer []uint8,
 	/* OUT */ OutputBuffer []uint8,
-	/* OUT */ OutputBufferSize int32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethod("ExecuteNetworkControl", ControlCode, InputBuffer, Reason)
+	/* OUT */ OutputBufferSize int32) (err error) {
+	_, err = instance.InvokeMethod("ExecuteNetworkControl", ControlCode, InputBuffer)
 	if err != nil {
 		return
 	}

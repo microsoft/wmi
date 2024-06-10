@@ -2,11 +2,9 @@
 // Licensed under the MIT license.
 //
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.power
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.power
+//////////////////////////////////////////////
 package power
 
 import (

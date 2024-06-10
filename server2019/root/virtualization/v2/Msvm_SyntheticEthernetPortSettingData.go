@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -19,9 +18,6 @@ import (
 // Msvm_SyntheticEthernetPortSettingData struct
 type Msvm_SyntheticEthernetPortSettingData struct {
 	*CIM_EthernetPortAllocationSettingData
-
-	//
-	AllowDirectTranslatedP2P bool
 
 	//
 	AllowPacketDirect bool
@@ -74,33 +70,6 @@ func NewMsvm_SyntheticEthernetPortSettingDataEx6(hostName string,
 	newInstance = &Msvm_SyntheticEthernetPortSettingData{
 		CIM_EthernetPortAllocationSettingData: tmp,
 	}
-	return
-}
-
-// SetAllowDirectTranslatedP2P sets the value of AllowDirectTranslatedP2P for the instance
-func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyAllowDirectTranslatedP2P(value bool) (err error) {
-	return instance.SetProperty("AllowDirectTranslatedP2P", (value))
-}
-
-// GetAllowDirectTranslatedP2P gets the value of AllowDirectTranslatedP2P for the instance
-func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyAllowDirectTranslatedP2P() (value bool, err error) {
-	retValue, err := instance.GetProperty("AllowDirectTranslatedP2P")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
 	return
 }
 

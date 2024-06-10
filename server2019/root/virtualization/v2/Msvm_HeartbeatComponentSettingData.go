@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -168,4 +167,11 @@ func (instance *Msvm_HeartbeatComponentSettingData) GetPropertyLatency() (value 
 	value = uint32(valuetmp)
 
 	return
+}
+func (instance *Msvm_HeartbeatComponentSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemSettingData")
+}
+
+func (instance *Msvm_HeartbeatComponentSettingData) GetRelatedHeartbeatComponent() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_HeartbeatComponent")
 }

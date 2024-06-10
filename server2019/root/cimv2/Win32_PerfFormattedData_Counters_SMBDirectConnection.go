@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -52,12 +51,6 @@ type Win32_PerfFormattedData_Counters_SMBDirectConnection struct {
 
 	//
 	SendsPersec uint32
-
-	//
-	SpuriousRCQNotificationEvents uint64
-
-	//
-	SpuriousSCQNotificationEvents uint64
 
 	//
 	StallsRDMAReadPersec uint32
@@ -394,60 +387,6 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetSpuriousRCQNotificationEvents sets the value of SpuriousRCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertySpuriousRCQNotificationEvents(value uint64) (err error) {
-	return instance.SetProperty("SpuriousRCQNotificationEvents", (value))
-}
-
-// GetSpuriousRCQNotificationEvents gets the value of SpuriousRCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropertySpuriousRCQNotificationEvents() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SpuriousRCQNotificationEvents")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetSpuriousSCQNotificationEvents sets the value of SpuriousSCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertySpuriousSCQNotificationEvents(value uint64) (err error) {
-	return instance.SetProperty("SpuriousSCQNotificationEvents", (value))
-}
-
-// GetSpuriousSCQNotificationEvents gets the value of SpuriousSCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropertySpuriousSCQNotificationEvents() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SpuriousSCQNotificationEvents")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
 
 	return
 }

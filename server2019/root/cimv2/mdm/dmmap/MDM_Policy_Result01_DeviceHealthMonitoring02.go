@@ -1,20 +1,17 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MDM_Policy_Result01_DeviceHealthMonitoring02 struct
@@ -26,9 +23,6 @@ type MDM_Policy_Result01_DeviceHealthMonitoring02 struct {
 
 	//
 	ConfigDeviceHealthMonitoringScope string
-
-	//
-	ConfigDeviceHealthMonitoringServiceInstance string
 
 	//
 	ConfigDeviceHealthMonitoringUploadDestination string
@@ -71,7 +65,7 @@ func NewMDM_Policy_Result01_DeviceHealthMonitoring02Ex6(hostName string,
 
 // SetAllowDeviceHealthMonitoring sets the value of AllowDeviceHealthMonitoring for the instance
 func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) SetPropertyAllowDeviceHealthMonitoring(value int32) (err error) {
-	return instance.SetProperty("AllowDeviceHealthMonitoring", (value))
+	return instance.SetProperty("AllowDeviceHealthMonitoring", value)
 }
 
 // GetAllowDeviceHealthMonitoring gets the value of AllowDeviceHealthMonitoring for the instance
@@ -80,25 +74,16 @@ func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) GetPropertyAllowDe
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
+	value, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = int32(valuetmp)
-
 	return
 }
 
 // SetConfigDeviceHealthMonitoringScope sets the value of ConfigDeviceHealthMonitoringScope for the instance
 func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) SetPropertyConfigDeviceHealthMonitoringScope(value string) (err error) {
-	return instance.SetProperty("ConfigDeviceHealthMonitoringScope", (value))
+	return instance.SetProperty("ConfigDeviceHealthMonitoringScope", value)
 }
 
 // GetConfigDeviceHealthMonitoringScope gets the value of ConfigDeviceHealthMonitoringScope for the instance
@@ -107,52 +92,16 @@ func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) GetPropertyConfigD
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetConfigDeviceHealthMonitoringServiceInstance sets the value of ConfigDeviceHealthMonitoringServiceInstance for the instance
-func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) SetPropertyConfigDeviceHealthMonitoringServiceInstance(value string) (err error) {
-	return instance.SetProperty("ConfigDeviceHealthMonitoringServiceInstance", (value))
-}
-
-// GetConfigDeviceHealthMonitoringServiceInstance gets the value of ConfigDeviceHealthMonitoringServiceInstance for the instance
-func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) GetPropertyConfigDeviceHealthMonitoringServiceInstance() (value string, err error) {
-	retValue, err := instance.GetProperty("ConfigDeviceHealthMonitoringServiceInstance")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetConfigDeviceHealthMonitoringUploadDestination sets the value of ConfigDeviceHealthMonitoringUploadDestination for the instance
 func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) SetPropertyConfigDeviceHealthMonitoringUploadDestination(value string) (err error) {
-	return instance.SetProperty("ConfigDeviceHealthMonitoringUploadDestination", (value))
+	return instance.SetProperty("ConfigDeviceHealthMonitoringUploadDestination", value)
 }
 
 // GetConfigDeviceHealthMonitoringUploadDestination gets the value of ConfigDeviceHealthMonitoringUploadDestination for the instance
@@ -161,25 +110,16 @@ func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) GetPropertyConfigD
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", (value))
+	return instance.SetProperty("InstanceID", value)
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -188,25 +128,16 @@ func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) GetPropertyInstanc
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", (value))
+	return instance.SetProperty("ParentID", value)
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -215,18 +146,9 @@ func (instance *MDM_Policy_Result01_DeviceHealthMonitoring02) GetPropertyParentI
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }

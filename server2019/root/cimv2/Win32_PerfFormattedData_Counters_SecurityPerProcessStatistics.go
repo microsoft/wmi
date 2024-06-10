@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_SecurityPerProcessStatistics struct
@@ -58,7 +55,7 @@ func NewWin32_PerfFormattedData_Counters_SecurityPerProcessStatisticsEx6(hostNam
 
 // SetContextHandles sets the value of ContextHandles for the instance
 func (instance *Win32_PerfFormattedData_Counters_SecurityPerProcessStatistics) SetPropertyContextHandles(value uint32) (err error) {
-	return instance.SetProperty("ContextHandles", (value))
+	return instance.SetProperty("ContextHandles", value)
 }
 
 // GetContextHandles gets the value of ContextHandles for the instance
@@ -67,25 +64,16 @@ func (instance *Win32_PerfFormattedData_Counters_SecurityPerProcessStatistics) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetCredentialHandles sets the value of CredentialHandles for the instance
 func (instance *Win32_PerfFormattedData_Counters_SecurityPerProcessStatistics) SetPropertyCredentialHandles(value uint32) (err error) {
-	return instance.SetProperty("CredentialHandles", (value))
+	return instance.SetProperty("CredentialHandles", value)
 }
 
 // GetCredentialHandles gets the value of CredentialHandles for the instance
@@ -94,18 +82,9 @@ func (instance *Win32_PerfFormattedData_Counters_SecurityPerProcessStatistics) G
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }

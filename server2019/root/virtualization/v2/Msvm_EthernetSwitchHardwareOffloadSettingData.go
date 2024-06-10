@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -40,9 +39,6 @@ type Msvm_EthernetSwitchHardwareOffloadSettingData struct {
 
 	//
 	DefaultQueueVrssQueueSchedulingMode uint32
-
-	//
-	RscOffloadEnabled bool
 
 	//
 	SoftwareRscEnabled bool
@@ -266,33 +262,6 @@ func (instance *Msvm_EthernetSwitchHardwareOffloadSettingData) GetPropertyDefaul
 	return
 }
 
-// SetRscOffloadEnabled sets the value of RscOffloadEnabled for the instance
-func (instance *Msvm_EthernetSwitchHardwareOffloadSettingData) SetPropertyRscOffloadEnabled(value bool) (err error) {
-	return instance.SetProperty("RscOffloadEnabled", (value))
-}
-
-// GetRscOffloadEnabled gets the value of RscOffloadEnabled for the instance
-func (instance *Msvm_EthernetSwitchHardwareOffloadSettingData) GetPropertyRscOffloadEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("RscOffloadEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetSoftwareRscEnabled sets the value of SoftwareRscEnabled for the instance
 func (instance *Msvm_EthernetSwitchHardwareOffloadSettingData) SetPropertySoftwareRscEnabled(value bool) (err error) {
 	return instance.SetProperty("SoftwareRscEnabled", (value))
@@ -319,6 +288,6 @@ func (instance *Msvm_EthernetSwitchHardwareOffloadSettingData) GetPropertySoftwa
 
 	return
 }
-func (instance *Msvm_EthernetSwitchHardwareOffloadSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchFeatureCapabilities")
+func (instance *Msvm_EthernetSwitchHardwareOffloadSettingData) GetRelatedVirtualEthernetSwitchSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualEthernetSwitchSettingData")
 }

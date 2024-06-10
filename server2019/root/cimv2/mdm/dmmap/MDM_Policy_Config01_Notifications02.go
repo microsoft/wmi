@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -29,9 +28,6 @@ type MDM_Policy_Config01_Notifications02 struct {
 
 	//
 	ParentID string
-
-	//
-	WnsEndpoint string
 }
 
 func NewMDM_Policy_Config01_Notifications02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Config01_Notifications02, err error) {
@@ -125,33 +121,6 @@ func (instance *MDM_Policy_Config01_Notifications02) SetPropertyParentID(value s
 // GetParentID gets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Notifications02) GetPropertyParentID() (value string, err error) {
 	retValue, err := instance.GetProperty("ParentID")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetWnsEndpoint sets the value of WnsEndpoint for the instance
-func (instance *MDM_Policy_Config01_Notifications02) SetPropertyWnsEndpoint(value string) (err error) {
-	return instance.SetProperty("WnsEndpoint", (value))
-}
-
-// GetWnsEndpoint gets the value of WnsEndpoint for the instance
-func (instance *MDM_Policy_Config01_Notifications02) GetPropertyWnsEndpoint() (value string, err error) {
-	retValue, err := instance.GetProperty("WnsEndpoint")
 	if err != nil {
 		return
 	}

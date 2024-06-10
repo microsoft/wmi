@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -25,9 +24,6 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition struct {
 
 	//
 	AttachedDevices uint64
-
-	//
-	CPPCRequestedPerformanceLevel uint64
 
 	//
 	DepositedPages uint64
@@ -69,10 +65,10 @@ type Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition struct {
 	NestedTLBTrimmedPagesPersec uint64
 
 	//
-	PagesRecombinedPersec uint64
+	pagesrecombinedPersec uint64
 
 	//
-	PagesShatteredPersec uint64
+	pagesshatteredPersec uint64
 
 	//
 	RecommendedNestedTLBSize uint64
@@ -175,33 +171,6 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) SetProp
 // GetAttachedDevices gets the value of AttachedDevices for the instance
 func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetPropertyAttachedDevices() (value uint64, err error) {
 	retValue, err := instance.GetProperty("AttachedDevices")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCPPCRequestedPerformanceLevel sets the value of CPPCRequestedPerformanceLevel for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) SetPropertyCPPCRequestedPerformanceLevel(value uint64) (err error) {
-	return instance.SetProperty("CPPCRequestedPerformanceLevel", (value))
-}
-
-// GetCPPCRequestedPerformanceLevel gets the value of CPPCRequestedPerformanceLevel for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetPropertyCPPCRequestedPerformanceLevel() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CPPCRequestedPerformanceLevel")
 	if err != nil {
 		return
 	}
@@ -572,14 +541,14 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetProp
 	return
 }
 
-// SetPagesRecombinedPersec sets the value of PagesRecombinedPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) SetPropertyPagesRecombinedPersec(value uint64) (err error) {
-	return instance.SetProperty("PagesRecombinedPersec", (value))
+// SetpagesrecombinedPersec sets the value of pagesrecombinedPersec for the instance
+func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) SetPropertypagesrecombinedPersec(value uint64) (err error) {
+	return instance.SetProperty("pagesrecombinedPersec", (value))
 }
 
-// GetPagesRecombinedPersec gets the value of PagesRecombinedPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetPropertyPagesRecombinedPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PagesRecombinedPersec")
+// GetpagesrecombinedPersec gets the value of pagesrecombinedPersec for the instance
+func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetPropertypagesrecombinedPersec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("pagesrecombinedPersec")
 	if err != nil {
 		return
 	}
@@ -599,14 +568,14 @@ func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetProp
 	return
 }
 
-// SetPagesShatteredPersec sets the value of PagesShatteredPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) SetPropertyPagesShatteredPersec(value uint64) (err error) {
-	return instance.SetProperty("PagesShatteredPersec", (value))
+// SetpagesshatteredPersec sets the value of pagesshatteredPersec for the instance
+func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) SetPropertypagesshatteredPersec(value uint64) (err error) {
+	return instance.SetProperty("pagesshatteredPersec", (value))
 }
 
-// GetPagesShatteredPersec gets the value of PagesShatteredPersec for the instance
-func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetPropertyPagesShatteredPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PagesShatteredPersec")
+// GetpagesshatteredPersec gets the value of pagesshatteredPersec for the instance
+func (instance *Win32_PerfRawData_HvStats_HyperVHypervisorRootPartition) GetPropertypagesshatteredPersec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("pagesshatteredPersec")
 	if err != nil {
 		return
 	}

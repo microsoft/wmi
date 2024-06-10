@@ -1,20 +1,17 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MSFT_DeliveryOptimizationFilePeerInfo struct
@@ -77,7 +74,7 @@ func NewMSFT_DeliveryOptimizationFilePeerInfoEx6(hostName string,
 
 // SetBytesReceived sets the value of BytesReceived for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyBytesReceived(value []uint64) (err error) {
-	return instance.SetProperty("BytesReceived", (value))
+	return instance.SetProperty("BytesReceived", value)
 }
 
 // GetBytesReceived gets the value of BytesReceived for the instance
@@ -86,26 +83,16 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyBytesReceived(
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]uint64)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint64)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint64(valuetmp))
-	}
-
 	return
 }
 
 // SetBytesSent sets the value of BytesSent for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyBytesSent(value []uint64) (err error) {
-	return instance.SetProperty("BytesSent", (value))
+	return instance.SetProperty("BytesSent", value)
 }
 
 // GetBytesSent gets the value of BytesSent for the instance
@@ -114,26 +101,16 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyBytesSent() (v
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]uint64)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint64)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint64(valuetmp))
-	}
-
 	return
 }
 
 // SetConnectionEstablished sets the value of ConnectionEstablished for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyConnectionEstablished(value []bool) (err error) {
-	return instance.SetProperty("ConnectionEstablished", (value))
+	return instance.SetProperty("ConnectionEstablished", value)
 }
 
 // GetConnectionEstablished gets the value of ConnectionEstablished for the instance
@@ -142,26 +119,16 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyConnectionEsta
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]bool)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(bool)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, bool(valuetmp))
-	}
-
 	return
 }
 
 // SetDownloadRates sets the value of DownloadRates for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyDownloadRates(value []uint32) (err error) {
-	return instance.SetProperty("DownloadRates", (value))
+	return instance.SetProperty("DownloadRates", value)
 }
 
 // GetDownloadRates gets the value of DownloadRates for the instance
@@ -170,26 +137,16 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyDownloadRates(
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]uint32)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint32(valuetmp))
-	}
-
 	return
 }
 
 // SetFileId sets the value of FileId for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyFileId(value string) (err error) {
-	return instance.SetProperty("FileId", (value))
+	return instance.SetProperty("FileId", value)
 }
 
 // GetFileId gets the value of FileId for the instance
@@ -198,25 +155,16 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyFileId() (valu
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetIPs sets the value of IPs for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyIPs(value []string) (err error) {
-	return instance.SetProperty("IPs", (value))
+	return instance.SetProperty("IPs", value)
 }
 
 // GetIPs gets the value of IPs for the instance
@@ -225,26 +173,16 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyIPs() (value [
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]string)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
 	return
 }
 
 // SetPeerTypes sets the value of PeerTypes for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyPeerTypes(value []uint8) (err error) {
-	return instance.SetProperty("PeerTypes", (value))
+	return instance.SetProperty("PeerTypes", value)
 }
 
 // GetPeerTypes gets the value of PeerTypes for the instance
@@ -253,26 +191,16 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyPeerTypes() (v
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]uint8)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint8)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint8(valuetmp))
-	}
-
 	return
 }
 
 // SetUploadRates sets the value of UploadRates for the instance
 func (instance *MSFT_DeliveryOptimizationFilePeerInfo) SetPropertyUploadRates(value []uint32) (err error) {
-	return instance.SetProperty("UploadRates", (value))
+	return instance.SetProperty("UploadRates", value)
 }
 
 // GetUploadRates gets the value of UploadRates for the instance
@@ -281,19 +209,9 @@ func (instance *MSFT_DeliveryOptimizationFilePeerInfo) GetPropertyUploadRates() 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]uint32)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint32(valuetmp))
-	}
-
 	return
 }

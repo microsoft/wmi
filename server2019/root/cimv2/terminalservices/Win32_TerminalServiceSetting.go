@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.TerminalServices
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.TerminalServices
+//////////////////////////////////////////////
 package terminalservices
 
 import (
@@ -1645,42 +1644,6 @@ func (instance *Win32_TerminalServiceSetting) AddLSToSpecifiedLicenseServerList(
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Win32_TerminalServiceSetting) RemoveLSFromSpecifiedLicenseServerList( /* IN */ LicenseServerName string) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("RemoveLSFromSpecifiedLicenseServerList", LicenseServerName)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="LicensingClientId" type="string "></param>
-// <param name="ReturnValue" type="uint32 "></param>
-// <param name="TenantAadToken" type="string "></param>
-// <param name="TokenLength" type="uint32 "></param>
-func (instance *Win32_TerminalServiceSetting) GetLicensingAadInfo( /* OUT */ LicensingClientId string,
-	/* OUT */ TokenLength uint32,
-	/* OUT */ TenantAadToken string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("GetLicensingAadInfo")
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
-// <param name="LicensingClientId" type="string "></param>
-// <param name="TenantAadToken" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *Win32_TerminalServiceSetting) SetLicensingAadInfo( /* IN */ LicensingClientId string,
-	/* IN */ TenantAadToken string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetLicensingAadInfo", LicensingClientId, TenantAadToken)
 	if err != nil {
 		return
 	}

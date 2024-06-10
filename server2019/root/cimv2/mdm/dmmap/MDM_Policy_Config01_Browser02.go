@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -116,24 +115,6 @@ type MDM_Policy_Config01_Browser02 struct {
 
 	//
 	ConfigureTelemetryForMicrosoft365Analytics int32
-
-	//
-	DefaultFavoriteBarItem1Name string
-
-	//
-	DefaultFavoriteBarItem1Url string
-
-	//
-	DefaultFavoriteBarItem2Name string
-
-	//
-	DefaultFavoriteBarItem2Url string
-
-	//
-	DefaultFavoriteBarItem3Name string
-
-	//
-	DefaultFavoriteBarItem3Url string
 
 	//
 	DisableLockdownOfStartPages int32
@@ -1100,168 +1081,6 @@ func (instance *MDM_Policy_Config01_Browser02) GetPropertyConfigureTelemetryForM
 	}
 
 	value = int32(valuetmp)
-
-	return
-}
-
-// SetDefaultFavoriteBarItem1Name sets the value of DefaultFavoriteBarItem1Name for the instance
-func (instance *MDM_Policy_Config01_Browser02) SetPropertyDefaultFavoriteBarItem1Name(value string) (err error) {
-	return instance.SetProperty("DefaultFavoriteBarItem1Name", (value))
-}
-
-// GetDefaultFavoriteBarItem1Name gets the value of DefaultFavoriteBarItem1Name for the instance
-func (instance *MDM_Policy_Config01_Browser02) GetPropertyDefaultFavoriteBarItem1Name() (value string, err error) {
-	retValue, err := instance.GetProperty("DefaultFavoriteBarItem1Name")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDefaultFavoriteBarItem1Url sets the value of DefaultFavoriteBarItem1Url for the instance
-func (instance *MDM_Policy_Config01_Browser02) SetPropertyDefaultFavoriteBarItem1Url(value string) (err error) {
-	return instance.SetProperty("DefaultFavoriteBarItem1Url", (value))
-}
-
-// GetDefaultFavoriteBarItem1Url gets the value of DefaultFavoriteBarItem1Url for the instance
-func (instance *MDM_Policy_Config01_Browser02) GetPropertyDefaultFavoriteBarItem1Url() (value string, err error) {
-	retValue, err := instance.GetProperty("DefaultFavoriteBarItem1Url")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDefaultFavoriteBarItem2Name sets the value of DefaultFavoriteBarItem2Name for the instance
-func (instance *MDM_Policy_Config01_Browser02) SetPropertyDefaultFavoriteBarItem2Name(value string) (err error) {
-	return instance.SetProperty("DefaultFavoriteBarItem2Name", (value))
-}
-
-// GetDefaultFavoriteBarItem2Name gets the value of DefaultFavoriteBarItem2Name for the instance
-func (instance *MDM_Policy_Config01_Browser02) GetPropertyDefaultFavoriteBarItem2Name() (value string, err error) {
-	retValue, err := instance.GetProperty("DefaultFavoriteBarItem2Name")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDefaultFavoriteBarItem2Url sets the value of DefaultFavoriteBarItem2Url for the instance
-func (instance *MDM_Policy_Config01_Browser02) SetPropertyDefaultFavoriteBarItem2Url(value string) (err error) {
-	return instance.SetProperty("DefaultFavoriteBarItem2Url", (value))
-}
-
-// GetDefaultFavoriteBarItem2Url gets the value of DefaultFavoriteBarItem2Url for the instance
-func (instance *MDM_Policy_Config01_Browser02) GetPropertyDefaultFavoriteBarItem2Url() (value string, err error) {
-	retValue, err := instance.GetProperty("DefaultFavoriteBarItem2Url")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDefaultFavoriteBarItem3Name sets the value of DefaultFavoriteBarItem3Name for the instance
-func (instance *MDM_Policy_Config01_Browser02) SetPropertyDefaultFavoriteBarItem3Name(value string) (err error) {
-	return instance.SetProperty("DefaultFavoriteBarItem3Name", (value))
-}
-
-// GetDefaultFavoriteBarItem3Name gets the value of DefaultFavoriteBarItem3Name for the instance
-func (instance *MDM_Policy_Config01_Browser02) GetPropertyDefaultFavoriteBarItem3Name() (value string, err error) {
-	retValue, err := instance.GetProperty("DefaultFavoriteBarItem3Name")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDefaultFavoriteBarItem3Url sets the value of DefaultFavoriteBarItem3Url for the instance
-func (instance *MDM_Policy_Config01_Browser02) SetPropertyDefaultFavoriteBarItem3Url(value string) (err error) {
-	return instance.SetProperty("DefaultFavoriteBarItem3Url", (value))
-}
-
-// GetDefaultFavoriteBarItem3Url gets the value of DefaultFavoriteBarItem3Url for the instance
-func (instance *MDM_Policy_Config01_Browser02) GetPropertyDefaultFavoriteBarItem3Url() (value string, err error) {
-	retValue, err := instance.GetProperty("DefaultFavoriteBarItem3Url")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }

@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __NamespaceOperationEvent struct
@@ -55,7 +52,7 @@ func New__NamespaceOperationEventEx6(hostName string,
 
 // SetTargetNamespace sets the value of TargetNamespace for the instance
 func (instance *__NamespaceOperationEvent) SetPropertyTargetNamespace(value __Namespace) (err error) {
-	return instance.SetProperty("TargetNamespace", (value))
+	return instance.SetProperty("TargetNamespace", value)
 }
 
 // GetTargetNamespace gets the value of TargetNamespace for the instance
@@ -64,18 +61,9 @@ func (instance *__NamespaceOperationEvent) GetPropertyTargetNamespace() (value _
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(__Namespace)
+	value, ok := retValue.(__Namespace)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " __Namespace is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = __Namespace(valuetmp)
-
 	return
 }

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Cluster.Scaleout
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Cluster.Scaleout
+//////////////////////////////////////////////
 package scaleout
 
 import (
@@ -400,31 +399,6 @@ func (instance *MSFT_ClusterSet) DoOp( /* IN */ operation string,
 func (instance *MSFT_ClusterSet) Set( /* IN */ NamespaceRoot string,
 	/* IN */ VMFailoverMode uint32) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("Set", NamespaceRoot, VMFailoverMode)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="DestinationClusterName" type="string "></param>
-// <param name="DestinationRGName" type="string "></param>
-// <param name="Flags" type="uint32 "></param>
-// <param name="Name" type="string "></param>
-// <param name="SourceClusterName" type="string "></param>
-// <param name="SourceRGName" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_ClusterSet) AddSRPartnership( /* IN */ Name string,
-	/* IN */ SourceClusterName string,
-	/* IN */ SourceRGName string,
-	/* IN */ DestinationClusterName string,
-	/* IN */ DestinationRGName string,
-	/* IN */ Flags uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("AddSRPartnership", Name, SourceClusterName, SourceRGName, DestinationClusterName, DestinationRGName, Flags)
 	if err != nil {
 		return
 	}

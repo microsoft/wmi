@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -29,12 +28,6 @@ type MDM_Policy_Config01_Authentication02 struct {
 
 	//
 	AllowSecondaryAuthenticationDevice int32
-
-	//
-	ConfigureWebcamAccessDomainNames string
-
-	//
-	ConfigureWebSignInAllowedUrls string
 
 	//
 	EnableFastFirstSignIn int32
@@ -158,60 +151,6 @@ func (instance *MDM_Policy_Config01_Authentication02) GetPropertyAllowSecondaryA
 	}
 
 	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureWebcamAccessDomainNames sets the value of ConfigureWebcamAccessDomainNames for the instance
-func (instance *MDM_Policy_Config01_Authentication02) SetPropertyConfigureWebcamAccessDomainNames(value string) (err error) {
-	return instance.SetProperty("ConfigureWebcamAccessDomainNames", (value))
-}
-
-// GetConfigureWebcamAccessDomainNames gets the value of ConfigureWebcamAccessDomainNames for the instance
-func (instance *MDM_Policy_Config01_Authentication02) GetPropertyConfigureWebcamAccessDomainNames() (value string, err error) {
-	retValue, err := instance.GetProperty("ConfigureWebcamAccessDomainNames")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetConfigureWebSignInAllowedUrls sets the value of ConfigureWebSignInAllowedUrls for the instance
-func (instance *MDM_Policy_Config01_Authentication02) SetPropertyConfigureWebSignInAllowedUrls(value string) (err error) {
-	return instance.SetProperty("ConfigureWebSignInAllowedUrls", (value))
-}
-
-// GetConfigureWebSignInAllowedUrls gets the value of ConfigureWebSignInAllowedUrls for the instance
-func (instance *MDM_Policy_Config01_Authentication02) GetPropertyConfigureWebSignInAllowedUrls() (value string, err error) {
-	retValue, err := instance.GetProperty("ConfigureWebSignInAllowedUrls")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }

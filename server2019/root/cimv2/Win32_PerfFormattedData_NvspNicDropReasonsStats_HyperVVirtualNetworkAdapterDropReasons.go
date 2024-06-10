@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -135,6 +134,9 @@ type Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapter
 	IncomingVirtualSubnetId uint64
 
 	//
+	IncomingWnv uint64
+
+	//
 	OutgoingBridgeReserved uint64
 
 	//
@@ -247,6 +249,9 @@ type Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapter
 
 	//
 	OutgoingVirtualSubnetId uint64
+
+	//
+	OutgoingWnv uint64
 }
 
 func NewWin32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasonsEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons, err error) {
@@ -1304,6 +1309,33 @@ func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNet
 	return
 }
 
+// SetIncomingWnv sets the value of IncomingWnv for the instance
+func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingWnv(value uint64) (err error) {
+	return instance.SetProperty("IncomingWnv", (value))
+}
+
+// GetIncomingWnv gets the value of IncomingWnv for the instance
+func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) GetPropertyIncomingWnv() (value uint64, err error) {
+	retValue, err := instance.GetProperty("IncomingWnv")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
 // SetOutgoingBridgeReserved sets the value of OutgoingBridgeReserved for the instance
 func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingBridgeReserved(value uint64) (err error) {
 	return instance.SetProperty("OutgoingBridgeReserved", (value))
@@ -2311,6 +2343,33 @@ func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNet
 // GetOutgoingVirtualSubnetId gets the value of OutgoingVirtualSubnetId for the instance
 func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) GetPropertyOutgoingVirtualSubnetId() (value uint64, err error) {
 	retValue, err := instance.GetProperty("OutgoingVirtualSubnetId")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetOutgoingWnv sets the value of OutgoingWnv for the instance
+func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingWnv(value uint64) (err error) {
+	return instance.SetProperty("OutgoingWnv", (value))
+}
+
+// GetOutgoingWnv gets the value of OutgoingWnv for the instance
+func (instance *Win32_PerfFormattedData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) GetPropertyOutgoingWnv() (value uint64, err error) {
+	retValue, err := instance.GetProperty("OutgoingWnv")
 	if err != nil {
 		return
 	}

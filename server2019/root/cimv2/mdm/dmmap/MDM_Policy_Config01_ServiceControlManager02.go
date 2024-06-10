@@ -1,20 +1,17 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MDM_Policy_Config01_ServiceControlManager02 struct
@@ -62,7 +59,7 @@ func NewMDM_Policy_Config01_ServiceControlManager02Ex6(hostName string,
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_ServiceControlManager02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", (value))
+	return instance.SetProperty("InstanceID", value)
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -71,25 +68,16 @@ func (instance *MDM_Policy_Config01_ServiceControlManager02) GetPropertyInstance
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_ServiceControlManager02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", (value))
+	return instance.SetProperty("ParentID", value)
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -98,25 +86,16 @@ func (instance *MDM_Policy_Config01_ServiceControlManager02) GetPropertyParentID
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetSvchostProcessMitigation sets the value of SvchostProcessMitigation for the instance
 func (instance *MDM_Policy_Config01_ServiceControlManager02) SetPropertySvchostProcessMitigation(value string) (err error) {
-	return instance.SetProperty("SvchostProcessMitigation", (value))
+	return instance.SetProperty("SvchostProcessMitigation", value)
 }
 
 // GetSvchostProcessMitigation gets the value of SvchostProcessMitigation for the instance
@@ -125,18 +104,9 @@ func (instance *MDM_Policy_Config01_ServiceControlManager02) GetPropertySvchostP
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }

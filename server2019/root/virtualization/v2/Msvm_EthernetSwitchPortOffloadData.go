@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -34,9 +33,6 @@ type Msvm_EthernetSwitchPortOffloadData struct {
 
 	//
 	IpsecCurrentOffloadSaCount uint32
-
-	//
-	RscEnabled bool
 
 	//
 	VmmqEnabled bool
@@ -229,33 +225,6 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyIpsecCurrentOfflo
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetRscEnabled sets the value of RscEnabled for the instance
-func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyRscEnabled(value bool) (err error) {
-	return instance.SetProperty("RscEnabled", (value))
-}
-
-// GetRscEnabled gets the value of RscEnabled for the instance
-func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyRscEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("RscEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }

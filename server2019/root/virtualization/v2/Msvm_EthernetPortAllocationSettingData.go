@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -28,9 +27,6 @@ type Msvm_EthernetPortAllocationSettingData struct {
 
 	// The last known friendly name of the switch this port had a hard affinity to, if any.
 	LastKnownSwitchName string
-
-	//
-	PortName string
 
 	//
 	RequiredFeatureHints []string
@@ -136,33 +132,6 @@ func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyLastKnownSwit
 // GetLastKnownSwitchName gets the value of LastKnownSwitchName for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyLastKnownSwitchName() (value string, err error) {
 	retValue, err := instance.GetProperty("LastKnownSwitchName")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetPortName sets the value of PortName for the instance
-func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyPortName(value string) (err error) {
-	return instance.SetProperty("PortName", (value))
-}
-
-// GetPortName gets the value of PortName for the instance
-func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyPortName() (value string, err error) {
-	retValue, err := instance.GetProperty("PortName")
 	if err != nil {
 		return
 	}

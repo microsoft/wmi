@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -25,13 +24,7 @@ type MDM_Policy_Result01_DeviceInstallation02 struct {
 	AllowInstallationOfMatchingDeviceIDs string
 
 	//
-	AllowInstallationOfMatchingDeviceInstanceIDs string
-
-	//
 	AllowInstallationOfMatchingDeviceSetupClasses string
-
-	//
-	EnableInstallationPolicyLayering string
 
 	//
 	InstanceID string
@@ -47,9 +40,6 @@ type MDM_Policy_Result01_DeviceInstallation02 struct {
 
 	//
 	PreventInstallationOfMatchingDeviceIDs string
-
-	//
-	PreventInstallationOfMatchingDeviceInstanceIDs string
 
 	//
 	PreventInstallationOfMatchingDeviceSetupClasses string
@@ -111,33 +101,6 @@ func (instance *MDM_Policy_Result01_DeviceInstallation02) GetPropertyAllowInstal
 	return
 }
 
-// SetAllowInstallationOfMatchingDeviceInstanceIDs sets the value of AllowInstallationOfMatchingDeviceInstanceIDs for the instance
-func (instance *MDM_Policy_Result01_DeviceInstallation02) SetPropertyAllowInstallationOfMatchingDeviceInstanceIDs(value string) (err error) {
-	return instance.SetProperty("AllowInstallationOfMatchingDeviceInstanceIDs", (value))
-}
-
-// GetAllowInstallationOfMatchingDeviceInstanceIDs gets the value of AllowInstallationOfMatchingDeviceInstanceIDs for the instance
-func (instance *MDM_Policy_Result01_DeviceInstallation02) GetPropertyAllowInstallationOfMatchingDeviceInstanceIDs() (value string, err error) {
-	retValue, err := instance.GetProperty("AllowInstallationOfMatchingDeviceInstanceIDs")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetAllowInstallationOfMatchingDeviceSetupClasses sets the value of AllowInstallationOfMatchingDeviceSetupClasses for the instance
 func (instance *MDM_Policy_Result01_DeviceInstallation02) SetPropertyAllowInstallationOfMatchingDeviceSetupClasses(value string) (err error) {
 	return instance.SetProperty("AllowInstallationOfMatchingDeviceSetupClasses", (value))
@@ -146,33 +109,6 @@ func (instance *MDM_Policy_Result01_DeviceInstallation02) SetPropertyAllowInstal
 // GetAllowInstallationOfMatchingDeviceSetupClasses gets the value of AllowInstallationOfMatchingDeviceSetupClasses for the instance
 func (instance *MDM_Policy_Result01_DeviceInstallation02) GetPropertyAllowInstallationOfMatchingDeviceSetupClasses() (value string, err error) {
 	retValue, err := instance.GetProperty("AllowInstallationOfMatchingDeviceSetupClasses")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetEnableInstallationPolicyLayering sets the value of EnableInstallationPolicyLayering for the instance
-func (instance *MDM_Policy_Result01_DeviceInstallation02) SetPropertyEnableInstallationPolicyLayering(value string) (err error) {
-	return instance.SetProperty("EnableInstallationPolicyLayering", (value))
-}
-
-// GetEnableInstallationPolicyLayering gets the value of EnableInstallationPolicyLayering for the instance
-func (instance *MDM_Policy_Result01_DeviceInstallation02) GetPropertyEnableInstallationPolicyLayering() (value string, err error) {
-	retValue, err := instance.GetProperty("EnableInstallationPolicyLayering")
 	if err != nil {
 		return
 	}
@@ -308,33 +244,6 @@ func (instance *MDM_Policy_Result01_DeviceInstallation02) SetPropertyPreventInst
 // GetPreventInstallationOfMatchingDeviceIDs gets the value of PreventInstallationOfMatchingDeviceIDs for the instance
 func (instance *MDM_Policy_Result01_DeviceInstallation02) GetPropertyPreventInstallationOfMatchingDeviceIDs() (value string, err error) {
 	retValue, err := instance.GetProperty("PreventInstallationOfMatchingDeviceIDs")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetPreventInstallationOfMatchingDeviceInstanceIDs sets the value of PreventInstallationOfMatchingDeviceInstanceIDs for the instance
-func (instance *MDM_Policy_Result01_DeviceInstallation02) SetPropertyPreventInstallationOfMatchingDeviceInstanceIDs(value string) (err error) {
-	return instance.SetProperty("PreventInstallationOfMatchingDeviceInstanceIDs", (value))
-}
-
-// GetPreventInstallationOfMatchingDeviceInstanceIDs gets the value of PreventInstallationOfMatchingDeviceInstanceIDs for the instance
-func (instance *MDM_Policy_Result01_DeviceInstallation02) GetPropertyPreventInstallationOfMatchingDeviceInstanceIDs() (value string, err error) {
-	retValue, err := instance.GetProperty("PreventInstallationOfMatchingDeviceInstanceIDs")
 	if err != nil {
 		return
 	}

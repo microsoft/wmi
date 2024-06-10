@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.SMB
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.SMB
+//////////////////////////////////////////////
 package smb
 
 import (
@@ -52,12 +51,6 @@ type MSFT_SmbMultichannelConnection struct {
 	MaxChannels uint32
 
 	//
-	QuicConnectionCount uint16
-
-	//
-	RdmaConnectionCount uint16
-
-	//
 	Selected bool
 
 	//
@@ -80,9 +73,6 @@ type MSFT_SmbMultichannelConnection struct {
 
 	//
 	SmbInstance SmbMultichannelConnection_SmbInstance
-
-	//
-	TcpConnectionCount uint16
 }
 
 func NewMSFT_SmbMultichannelConnectionEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbMultichannelConnection, err error) {
@@ -384,60 +374,6 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyMaxChannels() (value 
 	return
 }
 
-// SetQuicConnectionCount sets the value of QuicConnectionCount for the instance
-func (instance *MSFT_SmbMultichannelConnection) SetPropertyQuicConnectionCount(value uint16) (err error) {
-	return instance.SetProperty("QuicConnectionCount", (value))
-}
-
-// GetQuicConnectionCount gets the value of QuicConnectionCount for the instance
-func (instance *MSFT_SmbMultichannelConnection) GetPropertyQuicConnectionCount() (value uint16, err error) {
-	retValue, err := instance.GetProperty("QuicConnectionCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetRdmaConnectionCount sets the value of RdmaConnectionCount for the instance
-func (instance *MSFT_SmbMultichannelConnection) SetPropertyRdmaConnectionCount(value uint16) (err error) {
-	return instance.SetProperty("RdmaConnectionCount", (value))
-}
-
-// GetRdmaConnectionCount gets the value of RdmaConnectionCount for the instance
-func (instance *MSFT_SmbMultichannelConnection) GetPropertyRdmaConnectionCount() (value uint16, err error) {
-	retValue, err := instance.GetProperty("RdmaConnectionCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
 // SetSelected sets the value of Selected for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertySelected(value bool) (err error) {
 	return instance.SetProperty("Selected", (value))
@@ -650,33 +586,6 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertySmbInstance() (value 
 	}
 
 	value = SmbMultichannelConnection_SmbInstance(valuetmp)
-
-	return
-}
-
-// SetTcpConnectionCount sets the value of TcpConnectionCount for the instance
-func (instance *MSFT_SmbMultichannelConnection) SetPropertyTcpConnectionCount(value uint16) (err error) {
-	return instance.SetProperty("TcpConnectionCount", (value))
-}
-
-// GetTcpConnectionCount gets the value of TcpConnectionCount for the instance
-func (instance *MSFT_SmbMultichannelConnection) GetPropertyTcpConnectionCount() (value uint16, err error) {
-	retValue, err := instance.GetProperty("TcpConnectionCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
 
 	return
 }

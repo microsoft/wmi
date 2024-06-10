@@ -1,54 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2 struct
 type Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2 struct {
 	*Win32_PerfRawData
-
-	//
-	CacheReadPopulateL1Bytes uint64
-
-	//
-	CacheReadPopulateL1BytesPersec uint64
-
-	//
-	CacheReadPopulateL2Bytes uint64
-
-	//
-	CacheReadPopulateL2BytesPersec uint64
-
-	//
-	CacheWritePopulateL0Bytes uint64
-
-	//
-	CacheWritePopulateL0BytesPersec uint64
-
-	//
-	CacheWritePopulateL1Bytes uint64
-
-	//
-	CacheWritePopulateL1BytesPersec uint64
-
-	//
-	CacheWritePopulateL2Bytes uint64
-
-	//
-	CacheWritePopulateL2BytesPersec uint64
 
 	//
 	HeatMapFreeMemory uint64
@@ -116,279 +83,9 @@ func NewWin32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2Ex6(hos
 	return
 }
 
-// SetCacheReadPopulateL1Bytes sets the value of CacheReadPopulateL1Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheReadPopulateL1Bytes(value uint64) (err error) {
-	return instance.SetProperty("CacheReadPopulateL1Bytes", (value))
-}
-
-// GetCacheReadPopulateL1Bytes gets the value of CacheReadPopulateL1Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheReadPopulateL1Bytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheReadPopulateL1Bytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheReadPopulateL1BytesPersec sets the value of CacheReadPopulateL1BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheReadPopulateL1BytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheReadPopulateL1BytesPersec", (value))
-}
-
-// GetCacheReadPopulateL1BytesPersec gets the value of CacheReadPopulateL1BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheReadPopulateL1BytesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheReadPopulateL1BytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheReadPopulateL2Bytes sets the value of CacheReadPopulateL2Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheReadPopulateL2Bytes(value uint64) (err error) {
-	return instance.SetProperty("CacheReadPopulateL2Bytes", (value))
-}
-
-// GetCacheReadPopulateL2Bytes gets the value of CacheReadPopulateL2Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheReadPopulateL2Bytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheReadPopulateL2Bytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheReadPopulateL2BytesPersec sets the value of CacheReadPopulateL2BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheReadPopulateL2BytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheReadPopulateL2BytesPersec", (value))
-}
-
-// GetCacheReadPopulateL2BytesPersec gets the value of CacheReadPopulateL2BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheReadPopulateL2BytesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheReadPopulateL2BytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheWritePopulateL0Bytes sets the value of CacheWritePopulateL0Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheWritePopulateL0Bytes(value uint64) (err error) {
-	return instance.SetProperty("CacheWritePopulateL0Bytes", (value))
-}
-
-// GetCacheWritePopulateL0Bytes gets the value of CacheWritePopulateL0Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheWritePopulateL0Bytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheWritePopulateL0Bytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheWritePopulateL0BytesPersec sets the value of CacheWritePopulateL0BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheWritePopulateL0BytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheWritePopulateL0BytesPersec", (value))
-}
-
-// GetCacheWritePopulateL0BytesPersec gets the value of CacheWritePopulateL0BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheWritePopulateL0BytesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheWritePopulateL0BytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheWritePopulateL1Bytes sets the value of CacheWritePopulateL1Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheWritePopulateL1Bytes(value uint64) (err error) {
-	return instance.SetProperty("CacheWritePopulateL1Bytes", (value))
-}
-
-// GetCacheWritePopulateL1Bytes gets the value of CacheWritePopulateL1Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheWritePopulateL1Bytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheWritePopulateL1Bytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheWritePopulateL1BytesPersec sets the value of CacheWritePopulateL1BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheWritePopulateL1BytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheWritePopulateL1BytesPersec", (value))
-}
-
-// GetCacheWritePopulateL1BytesPersec gets the value of CacheWritePopulateL1BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheWritePopulateL1BytesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheWritePopulateL1BytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheWritePopulateL2Bytes sets the value of CacheWritePopulateL2Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheWritePopulateL2Bytes(value uint64) (err error) {
-	return instance.SetProperty("CacheWritePopulateL2Bytes", (value))
-}
-
-// GetCacheWritePopulateL2Bytes gets the value of CacheWritePopulateL2Bytes for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheWritePopulateL2Bytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheWritePopulateL2Bytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCacheWritePopulateL2BytesPersec sets the value of CacheWritePopulateL2BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyCacheWritePopulateL2BytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheWritePopulateL2BytesPersec", (value))
-}
-
-// GetCacheWritePopulateL2BytesPersec gets the value of CacheWritePopulateL2BytesPersec for the instance
-func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) GetPropertyCacheWritePopulateL2BytesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CacheWritePopulateL2BytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetHeatMapFreeMemory sets the value of HeatMapFreeMemory for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyHeatMapFreeMemory(value uint64) (err error) {
-	return instance.SetProperty("HeatMapFreeMemory", (value))
+	return instance.SetProperty("HeatMapFreeMemory", value)
 }
 
 // GetHeatMapFreeMemory gets the value of HeatMapFreeMemory for the instance
@@ -397,25 +94,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetHeatMapWindow sets the value of HeatMapWindow for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyHeatMapWindow(value uint64) (err error) {
-	return instance.SetProperty("HeatMapWindow", (value))
+	return instance.SetProperty("HeatMapWindow", value)
 }
 
 // GetHeatMapWindow gets the value of HeatMapWindow for the instance
@@ -424,25 +112,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetRateDiskVRCReads sets the value of RateDiskVRCReads for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyRateDiskVRCReads(value uint64) (err error) {
-	return instance.SetProperty("RateDiskVRCReads", (value))
+	return instance.SetProperty("RateDiskVRCReads", value)
 }
 
 // GetRateDiskVRCReads gets the value of RateDiskVRCReads for the instance
@@ -451,25 +130,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetRateDiskVRCReads_Base sets the value of RateDiskVRCReads_Base for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyRateDiskVRCReads_Base(value uint32) (err error) {
-	return instance.SetProperty("RateDiskVRCReads_Base", (value))
+	return instance.SetProperty("RateDiskVRCReads_Base", value)
 }
 
 // GetRateDiskVRCReads_Base gets the value of RateDiskVRCReads_Base for the instance
@@ -478,25 +148,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetVRCHitReadBytes sets the value of VRCHitReadBytes for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCHitReadBytes(value uint64) (err error) {
-	return instance.SetProperty("VRCHitReadBytes", (value))
+	return instance.SetProperty("VRCHitReadBytes", value)
 }
 
 // GetVRCHitReadBytes gets the value of VRCHitReadBytes for the instance
@@ -505,25 +166,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetVRCHitReadBytesPersec sets the value of VRCHitReadBytesPersec for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCHitReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("VRCHitReadBytesPersec", (value))
+	return instance.SetProperty("VRCHitReadBytesPersec", value)
 }
 
 // GetVRCHitReadBytesPersec gets the value of VRCHitReadBytesPersec for the instance
@@ -532,25 +184,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetVRCHitReads sets the value of VRCHitReads for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCHitReads(value uint64) (err error) {
-	return instance.SetProperty("VRCHitReads", (value))
+	return instance.SetProperty("VRCHitReads", value)
 }
 
 // GetVRCHitReads gets the value of VRCHitReads for the instance
@@ -559,25 +202,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetVRCHitReadsPersec sets the value of VRCHitReadsPersec for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCHitReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("VRCHitReadsPersec", (value))
+	return instance.SetProperty("VRCHitReadsPersec", value)
 }
 
 // GetVRCHitReadsPersec gets the value of VRCHitReadsPersec for the instance
@@ -586,25 +220,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetVRCPopulateBytes sets the value of VRCPopulateBytes for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCPopulateBytes(value uint64) (err error) {
-	return instance.SetProperty("VRCPopulateBytes", (value))
+	return instance.SetProperty("VRCPopulateBytes", value)
 }
 
 // GetVRCPopulateBytes gets the value of VRCPopulateBytes for the instance
@@ -613,25 +238,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetVRCPopulateBytesPersec sets the value of VRCPopulateBytesPersec for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCPopulateBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("VRCPopulateBytesPersec", (value))
+	return instance.SetProperty("VRCPopulateBytesPersec", value)
 }
 
 // GetVRCPopulateBytesPersec gets the value of VRCPopulateBytesPersec for the instance
@@ -640,25 +256,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetVRCPopulates sets the value of VRCPopulates for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCPopulates(value uint64) (err error) {
-	return instance.SetProperty("VRCPopulates", (value))
+	return instance.SetProperty("VRCPopulates", value)
 }
 
 // GetVRCPopulates gets the value of VRCPopulates for the instance
@@ -667,25 +274,16 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetVRCPopulatesPersec sets the value of VRCPopulatesPersec for the instance
 func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks2) SetPropertyVRCPopulatesPersec(value uint64) (err error) {
-	return instance.SetProperty("VRCPopulatesPersec", (value))
+	return instance.SetProperty("VRCPopulatesPersec", value)
 }
 
 // GetVRCPopulatesPersec gets the value of VRCPopulatesPersec for the instance
@@ -694,18 +292,9 @@ func (instance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisks
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -22,9 +21,6 @@ type MDM_VPNv2_DomainNameInformationList02_01 struct {
 	*cim.WmiInstance
 
 	//
-	AutoTrigger bool
-
-	//
 	DnsServers string
 
 	//
@@ -38,9 +34,6 @@ type MDM_VPNv2_DomainNameInformationList02_01 struct {
 
 	//
 	ParentID string
-
-	//
-	Persistent bool
 
 	//
 	WebProxyServers string
@@ -72,33 +65,6 @@ func NewMDM_VPNv2_DomainNameInformationList02_01Ex6(hostName string,
 	newInstance = &MDM_VPNv2_DomainNameInformationList02_01{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetAutoTrigger sets the value of AutoTrigger for the instance
-func (instance *MDM_VPNv2_DomainNameInformationList02_01) SetPropertyAutoTrigger(value bool) (err error) {
-	return instance.SetProperty("AutoTrigger", (value))
-}
-
-// GetAutoTrigger gets the value of AutoTrigger for the instance
-func (instance *MDM_VPNv2_DomainNameInformationList02_01) GetPropertyAutoTrigger() (value bool, err error) {
-	retValue, err := instance.GetProperty("AutoTrigger")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
@@ -233,33 +199,6 @@ func (instance *MDM_VPNv2_DomainNameInformationList02_01) GetPropertyParentID() 
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetPersistent sets the value of Persistent for the instance
-func (instance *MDM_VPNv2_DomainNameInformationList02_01) SetPropertyPersistent(value bool) (err error) {
-	return instance.SetProperty("Persistent", (value))
-}
-
-// GetPersistent gets the value of Persistent for the instance
-func (instance *MDM_VPNv2_DomainNameInformationList02_01) GetPropertyPersistent() (value bool, err error) {
-	retValue, err := instance.GetProperty("Persistent")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }

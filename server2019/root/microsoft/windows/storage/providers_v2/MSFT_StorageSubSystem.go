@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage.Providers_v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage.Providers_v2
+//////////////////////////////////////////////
 package providers_v2
 
 import (
@@ -238,12 +237,6 @@ type MSFT_StorageSubSystem struct {
 
 	// Tag is an identifier for the subsystem that is independent from any location-based information. Examples of a tag could be the subsystem's serial number or asset tag.
 	Tag string
-
-	// Denotes whether virtual disk repair is enabled on this subsystem.
-	VirtualDiskRepairEnabled bool
-
-	// Denotes the virtual disk repair queue depth policy in this subsystem.
-	VirtualDiskRepairQueueDepth uint32
 }
 
 func NewMSFT_StorageSubSystemEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageSubSystem, err error) {
@@ -2068,60 +2061,6 @@ func (instance *MSFT_StorageSubSystem) GetPropertyTag() (value string, err error
 	return
 }
 
-// SetVirtualDiskRepairEnabled sets the value of VirtualDiskRepairEnabled for the instance
-func (instance *MSFT_StorageSubSystem) SetPropertyVirtualDiskRepairEnabled(value bool) (err error) {
-	return instance.SetProperty("VirtualDiskRepairEnabled", (value))
-}
-
-// GetVirtualDiskRepairEnabled gets the value of VirtualDiskRepairEnabled for the instance
-func (instance *MSFT_StorageSubSystem) GetPropertyVirtualDiskRepairEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRepairEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskRepairQueueDepth sets the value of VirtualDiskRepairQueueDepth for the instance
-func (instance *MSFT_StorageSubSystem) SetPropertyVirtualDiskRepairQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("VirtualDiskRepairQueueDepth", (value))
-}
-
-// GetVirtualDiskRepairQueueDepth gets the value of VirtualDiskRepairQueueDepth for the instance
-func (instance *MSFT_StorageSubSystem) GetPropertyVirtualDiskRepairQueueDepth() (value uint32, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRepairQueueDepth")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // This method creates a storage pool from available physical disks contained within a common primordial pool. A physical disk is available for storage pool creation if its CanPool property is set to TRUE. Storage pool creation is only available when the SupportsStoragePoolCreation field of the storage subsystem is TRUE.
 
 // <param name="AutoWriteCacheSize" type="bool ">Indicates if provider should pick up the auto write cache size or not</param>
@@ -2169,8 +2108,6 @@ func (instance *MSFT_StorageSubSystem) CreateStoragePool( /* IN */ FriendlyName 
 // <param name="FriendlyName" type="string "></param>
 // <param name="LogicalSectorSizeDefault" type="uint64 "></param>
 // <param name="MediaTypeDefault" type="uint16 "></param>
-// <param name="MetadataLength" type="uint64 "></param>
-// <param name="MinimumAllocationSize" type="uint64 "></param>
 // <param name="OtherUsageDescription" type="string "></param>
 // <param name="PhysicalDisks" type="MSFT_PhysicalDisk []"></param>
 // <param name="ProvisioningTypeDefault" type="uint16 "></param>
@@ -2191,8 +2128,6 @@ func (instance *MSFT_StorageSubSystem) CreateStoragePool2( /* IN */ FriendlyName
 	/* IN */ ProvisioningTypeDefault uint16,
 	/* IN */ MediaTypeDefault uint16,
 	/* IN */ LogicalSectorSizeDefault uint64,
-	/* IN */ MetadataLength uint64,
-	/* IN */ MinimumAllocationSize uint64,
 	/* IN */ FaultDomainAwarenessDefault uint16,
 	/* IN */ WriteCacheSizeDefault uint64,
 	/* IN */ AutoWriteCacheSize bool,
@@ -2200,7 +2135,7 @@ func (instance *MSFT_StorageSubSystem) CreateStoragePool2( /* IN */ FriendlyName
 	/* OUT */ CreatedStoragePool MSFT_StoragePool,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CreateStoragePool2", FriendlyName, Usage, OtherUsageDescription, PhysicalDisks, ResiliencySettingNameDefault, ProvisioningTypeDefault, MediaTypeDefault, LogicalSectorSizeDefault, MetadataLength, MinimumAllocationSize, FaultDomainAwarenessDefault, WriteCacheSizeDefault, AutoWriteCacheSize, Version)
+	retVal, err := instance.InvokeMethod("CreateStoragePool2", FriendlyName, Usage, OtherUsageDescription, PhysicalDisks, ResiliencySettingNameDefault, ProvisioningTypeDefault, MediaTypeDefault, LogicalSectorSizeDefault, FaultDomainAwarenessDefault, WriteCacheSizeDefault, AutoWriteCacheSize, Version)
 	if err != nil {
 		return
 	}
@@ -2412,17 +2347,13 @@ func (instance *MSFT_StorageSubSystem) SetAttributes( /* IN */ AutomaticClusteri
 
 // <param name="AutomaticClusteringEnabled" type="bool "></param>
 // <param name="FaultDomainAwarenessDefault" type="uint16 "></param>
-// <param name="VirtualDiskRepairEnabled" type="bool "></param>
-// <param name="VirtualDiskRepairQueueDepth" type="uint32 "></param>
 
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_StorageSubSystem) SetAttributes2( /* IN */ AutomaticClusteringEnabled bool,
-	/* IN */ VirtualDiskRepairEnabled bool,
-	/* IN */ VirtualDiskRepairQueueDepth uint32,
 	/* IN */ FaultDomainAwarenessDefault uint16,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("SetAttributes2", AutomaticClusteringEnabled, VirtualDiskRepairEnabled, VirtualDiskRepairQueueDepth, FaultDomainAwarenessDefault)
+	retVal, err := instance.InvokeMethod("SetAttributes2", AutomaticClusteringEnabled, FaultDomainAwarenessDefault)
 	if err != nil {
 		return
 	}

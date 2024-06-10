@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -48,13 +47,7 @@ type MSFT_NetFirewallRule struct {
 	Owner string
 
 	//
-	PackageFamilyName string
-
-	//
 	Platforms []string
-
-	//
-	PolicyAppId string
 
 	//
 	PolicyStoreSource string
@@ -67,9 +60,6 @@ type MSFT_NetFirewallRule struct {
 
 	//
 	Profiles uint16
-
-	//
-	RemoteDynamicKeywordAddresses []string
 
 	//
 	RuleGroup string
@@ -354,33 +344,6 @@ func (instance *MSFT_NetFirewallRule) GetPropertyOwner() (value string, err erro
 	return
 }
 
-// SetPackageFamilyName sets the value of PackageFamilyName for the instance
-func (instance *MSFT_NetFirewallRule) SetPropertyPackageFamilyName(value string) (err error) {
-	return instance.SetProperty("PackageFamilyName", (value))
-}
-
-// GetPackageFamilyName gets the value of PackageFamilyName for the instance
-func (instance *MSFT_NetFirewallRule) GetPropertyPackageFamilyName() (value string, err error) {
-	retValue, err := instance.GetProperty("PackageFamilyName")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetPlatforms sets the value of Platforms for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyPlatforms(value []string) (err error) {
 	return instance.SetProperty("Platforms", (value))
@@ -405,33 +368,6 @@ func (instance *MSFT_NetFirewallRule) GetPropertyPlatforms() (value []string, er
 		}
 		value = append(value, string(valuetmp))
 	}
-
-	return
-}
-
-// SetPolicyAppId sets the value of PolicyAppId for the instance
-func (instance *MSFT_NetFirewallRule) SetPropertyPolicyAppId(value string) (err error) {
-	return instance.SetProperty("PolicyAppId", (value))
-}
-
-// GetPolicyAppId gets the value of PolicyAppId for the instance
-func (instance *MSFT_NetFirewallRule) GetPropertyPolicyAppId() (value string, err error) {
-	retValue, err := instance.GetProperty("PolicyAppId")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }
@@ -540,34 +476,6 @@ func (instance *MSFT_NetFirewallRule) GetPropertyProfiles() (value uint16, err e
 	}
 
 	value = uint16(valuetmp)
-
-	return
-}
-
-// SetRemoteDynamicKeywordAddresses sets the value of RemoteDynamicKeywordAddresses for the instance
-func (instance *MSFT_NetFirewallRule) SetPropertyRemoteDynamicKeywordAddresses(value []string) (err error) {
-	return instance.SetProperty("RemoteDynamicKeywordAddresses", (value))
-}
-
-// GetRemoteDynamicKeywordAddresses gets the value of RemoteDynamicKeywordAddresses for the instance
-func (instance *MSFT_NetFirewallRule) GetPropertyRemoteDynamicKeywordAddresses() (value []string, err error) {
-	retValue, err := instance.GetProperty("RemoteDynamicKeywordAddresses")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
 
 	return
 }

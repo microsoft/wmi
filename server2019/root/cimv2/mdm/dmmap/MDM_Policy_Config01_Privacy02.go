@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -53,18 +52,6 @@ type MDM_Policy_Config01_Privacy02 struct {
 
 	//
 	LetAppsAccessAccountInfo_UserInControlOfTheseApps string
-
-	//
-	LetAppsAccessBackgroundSpatialPerception int32
-
-	//
-	LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps string
-
-	//
-	LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps string
-
-	//
-	LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps string
 
 	//
 	LetAppsAccessCalendar int32
@@ -137,30 +124,6 @@ type MDM_Policy_Config01_Privacy02 struct {
 
 	//
 	LetAppsAccessGazeInput_UserInControlOfTheseApps string
-
-	//
-	LetAppsAccessGraphicsCaptureProgrammatic int32
-
-	//
-	LetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps string
-
-	//
-	LetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps string
-
-	//
-	LetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps string
-
-	//
-	LetAppsAccessGraphicsCaptureWithoutBorder int32
-
-	//
-	LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps string
-
-	//
-	LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps string
-
-	//
-	LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps string
 
 	//
 	LetAppsAccessLocation int32
@@ -269,12 +232,6 @@ type MDM_Policy_Config01_Privacy02 struct {
 
 	//
 	LetAppsAccessTrustedDevices_UserInControlOfTheseApps string
-
-	//
-	LetAppsActivateWithVoice int32
-
-	//
-	LetAppsActivateWithVoiceAboveLock int32
 
 	//
 	LetAppsGetDiagnosticInfo int32
@@ -629,114 +586,6 @@ func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessAccountIn
 // GetLetAppsAccessAccountInfo_UserInControlOfTheseApps gets the value of LetAppsAccessAccountInfo_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessAccountInfo_UserInControlOfTheseApps() (value string, err error) {
 	retValue, err := instance.GetProperty("LetAppsAccessAccountInfo_UserInControlOfTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessBackgroundSpatialPerception sets the value of LetAppsAccessBackgroundSpatialPerception for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception", (value))
-}
-
-// GetLetAppsAccessBackgroundSpatialPerception gets the value of LetAppsAccessBackgroundSpatialPerception for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps sets the value of LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps", (value))
-}
-
-// GetLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps gets the value of LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps sets the value of LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps", (value))
-}
-
-// GetLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps gets the value of LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps sets the value of LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps", (value))
-}
-
-// GetLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps gets the value of LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps")
 	if err != nil {
 		return
 	}
@@ -1385,222 +1234,6 @@ func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGazeInput
 // GetLetAppsAccessGazeInput_UserInControlOfTheseApps gets the value of LetAppsAccessGazeInput_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGazeInput_UserInControlOfTheseApps() (value string, err error) {
 	retValue, err := instance.GetProperty("LetAppsAccessGazeInput_UserInControlOfTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureProgrammatic sets the value of LetAppsAccessGraphicsCaptureProgrammatic for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureProgrammatic(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureProgrammatic", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureProgrammatic gets the value of LetAppsAccessGraphicsCaptureProgrammatic for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureProgrammatic() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureProgrammatic")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps sets the value of LetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps gets the value of LetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureProgrammatic_ForceAllowTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps sets the value of LetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps gets the value of LetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureProgrammatic_ForceDenyTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps sets the value of LetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps gets the value of LetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureProgrammatic_UserInControlOfTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureWithoutBorder sets the value of LetAppsAccessGraphicsCaptureWithoutBorder for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureWithoutBorder(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureWithoutBorder", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureWithoutBorder gets the value of LetAppsAccessGraphicsCaptureWithoutBorder for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureWithoutBorder() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureWithoutBorder")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps sets the value of LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps gets the value of LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureWithoutBorder_ForceAllowTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps sets the value of LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps gets the value of LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureWithoutBorder_ForceDenyTheseApps")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps sets the value of LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps", (value))
-}
-
-// GetLetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps gets the value of LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessGraphicsCaptureWithoutBorder_UserInControlOfTheseApps")
 	if err != nil {
 		return
 	}
@@ -2588,60 +2221,6 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTrustedDe
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetLetAppsActivateWithVoice sets the value of LetAppsActivateWithVoice for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsActivateWithVoice(value int32) (err error) {
-	return instance.SetProperty("LetAppsActivateWithVoice", (value))
-}
-
-// GetLetAppsActivateWithVoice gets the value of LetAppsActivateWithVoice for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsActivateWithVoice() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsActivateWithVoice")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetLetAppsActivateWithVoiceAboveLock sets the value of LetAppsActivateWithVoiceAboveLock for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsActivateWithVoiceAboveLock(value int32) (err error) {
-	return instance.SetProperty("LetAppsActivateWithVoiceAboveLock", (value))
-}
-
-// GetLetAppsActivateWithVoiceAboveLock gets the value of LetAppsActivateWithVoiceAboveLock for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsActivateWithVoiceAboveLock() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsActivateWithVoiceAboveLock")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

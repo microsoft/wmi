@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.SDDC.Management
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.SDDC.Management
+//////////////////////////////////////////////
 package management
 
 import (
@@ -25,9 +24,6 @@ type SDDC_VirtualMachine struct {
 	Alerts []SDDC_Alert
 
 	//
-	BootOrder []uint16
-
-	//
 	ComputerName string
 
 	//
@@ -37,19 +33,7 @@ type SDDC_VirtualMachine struct {
 	CreationTime string
 
 	//
-	EncryptStateAndVmMigrationTraffic bool
-
-	//
 	Generation uint16
-
-	//
-	GuestStateDataRoot string
-
-	//
-	GuestStateFile string
-
-	//
-	GuestStateIsolationType uint16
 
 	//
 	HeartBeat uint16
@@ -70,9 +54,6 @@ type SDDC_VirtualMachine struct {
 	IsDynamicMemoryEnabled bool
 
 	//
-	IsGuestStateIsolationEnabled bool
-
-	//
 	LatestSnapshot string
 
 	//
@@ -80,12 +61,6 @@ type SDDC_VirtualMachine struct {
 
 	//
 	MemoryDemand uint64
-
-	//
-	MemoryStartUp uint64
-
-	//
-	MemoryStartUpUnits string
 
 	//
 	Name string
@@ -101,27 +76,6 @@ type SDDC_VirtualMachine struct {
 
 	//
 	ProcessorCount uint16
-
-	//
-	ReplicationHealth uint16
-
-	//
-	ReplicationMode uint16
-
-	//
-	ReplicationState uint16
-
-	//
-	SecureBootEnabled bool
-
-	//
-	ShieldingRequested bool
-
-	//
-	SizeOfSystemFiles uint64
-
-	//
-	SnapshotDataRoot string
 
 	//
 	Snapshots []SDDC_VmSnapshot
@@ -142,25 +96,10 @@ type SDDC_VirtualMachine struct {
 	TotalThroughput float64
 
 	//
-	TpmEnabled bool
-
-	//
 	Uptime string
 
 	//
-	UserSnapshotType uint16
-
-	//
-	Version string
-
-	//
 	Vhds []SDDC_Vhd
-
-	//
-	VirtualSystemType string
-
-	//
-	VmIntegrationServices []SDDC_VmIntegrationService
 
 	//
 	VNics []SDDC_VmNetAdapter
@@ -218,34 +157,6 @@ func (instance *SDDC_VirtualMachine) GetPropertyAlerts() (value []SDDC_Alert, er
 			return
 		}
 		value = append(value, SDDC_Alert(valuetmp))
-	}
-
-	return
-}
-
-// SetBootOrder sets the value of BootOrder for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyBootOrder(value []uint16) (err error) {
-	return instance.SetProperty("BootOrder", (value))
-}
-
-// GetBootOrder gets the value of BootOrder for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyBootOrder() (value []uint16, err error) {
-	retValue, err := instance.GetProperty("BootOrder")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint16)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint16(valuetmp))
 	}
 
 	return
@@ -332,33 +243,6 @@ func (instance *SDDC_VirtualMachine) GetPropertyCreationTime() (value string, er
 	return
 }
 
-// SetEncryptStateAndVmMigrationTraffic sets the value of EncryptStateAndVmMigrationTraffic for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyEncryptStateAndVmMigrationTraffic(value bool) (err error) {
-	return instance.SetProperty("EncryptStateAndVmMigrationTraffic", (value))
-}
-
-// GetEncryptStateAndVmMigrationTraffic gets the value of EncryptStateAndVmMigrationTraffic for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyEncryptStateAndVmMigrationTraffic() (value bool, err error) {
-	retValue, err := instance.GetProperty("EncryptStateAndVmMigrationTraffic")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetGeneration sets the value of Generation for the instance
 func (instance *SDDC_VirtualMachine) SetPropertyGeneration(value uint16) (err error) {
 	return instance.SetProperty("Generation", (value))
@@ -367,87 +251,6 @@ func (instance *SDDC_VirtualMachine) SetPropertyGeneration(value uint16) (err er
 // GetGeneration gets the value of Generation for the instance
 func (instance *SDDC_VirtualMachine) GetPropertyGeneration() (value uint16, err error) {
 	retValue, err := instance.GetProperty("Generation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetGuestStateDataRoot sets the value of GuestStateDataRoot for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyGuestStateDataRoot(value string) (err error) {
-	return instance.SetProperty("GuestStateDataRoot", (value))
-}
-
-// GetGuestStateDataRoot gets the value of GuestStateDataRoot for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyGuestStateDataRoot() (value string, err error) {
-	retValue, err := instance.GetProperty("GuestStateDataRoot")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetGuestStateFile sets the value of GuestStateFile for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyGuestStateFile(value string) (err error) {
-	return instance.SetProperty("GuestStateFile", (value))
-}
-
-// GetGuestStateFile gets the value of GuestStateFile for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyGuestStateFile() (value string, err error) {
-	retValue, err := instance.GetProperty("GuestStateFile")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetGuestStateIsolationType sets the value of GuestStateIsolationType for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyGuestStateIsolationType(value uint16) (err error) {
-	return instance.SetProperty("GuestStateIsolationType", (value))
-}
-
-// GetGuestStateIsolationType gets the value of GuestStateIsolationType for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyGuestStateIsolationType() (value uint16, err error) {
-	retValue, err := instance.GetProperty("GuestStateIsolationType")
 	if err != nil {
 		return
 	}
@@ -629,33 +432,6 @@ func (instance *SDDC_VirtualMachine) GetPropertyIsDynamicMemoryEnabled() (value 
 	return
 }
 
-// SetIsGuestStateIsolationEnabled sets the value of IsGuestStateIsolationEnabled for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyIsGuestStateIsolationEnabled(value bool) (err error) {
-	return instance.SetProperty("IsGuestStateIsolationEnabled", (value))
-}
-
-// GetIsGuestStateIsolationEnabled gets the value of IsGuestStateIsolationEnabled for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyIsGuestStateIsolationEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsGuestStateIsolationEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetLatestSnapshot sets the value of LatestSnapshot for the instance
 func (instance *SDDC_VirtualMachine) SetPropertyLatestSnapshot(value string) (err error) {
 	return instance.SetProperty("LatestSnapshot", (value))
@@ -733,60 +509,6 @@ func (instance *SDDC_VirtualMachine) GetPropertyMemoryDemand() (value uint64, er
 	}
 
 	value = uint64(valuetmp)
-
-	return
-}
-
-// SetMemoryStartUp sets the value of MemoryStartUp for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyMemoryStartUp(value uint64) (err error) {
-	return instance.SetProperty("MemoryStartUp", (value))
-}
-
-// GetMemoryStartUp gets the value of MemoryStartUp for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyMemoryStartUp() (value uint64, err error) {
-	retValue, err := instance.GetProperty("MemoryStartUp")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetMemoryStartUpUnits sets the value of MemoryStartUpUnits for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyMemoryStartUpUnits(value string) (err error) {
-	return instance.SetProperty("MemoryStartUpUnits", (value))
-}
-
-// GetMemoryStartUpUnits gets the value of MemoryStartUpUnits for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyMemoryStartUpUnits() (value string, err error) {
-	retValue, err := instance.GetProperty("MemoryStartUpUnits")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }
@@ -922,195 +644,6 @@ func (instance *SDDC_VirtualMachine) GetPropertyProcessorCount() (value uint16, 
 	}
 
 	value = uint16(valuetmp)
-
-	return
-}
-
-// SetReplicationHealth sets the value of ReplicationHealth for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyReplicationHealth(value uint16) (err error) {
-	return instance.SetProperty("ReplicationHealth", (value))
-}
-
-// GetReplicationHealth gets the value of ReplicationHealth for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyReplicationHealth() (value uint16, err error) {
-	retValue, err := instance.GetProperty("ReplicationHealth")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetReplicationMode sets the value of ReplicationMode for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyReplicationMode(value uint16) (err error) {
-	return instance.SetProperty("ReplicationMode", (value))
-}
-
-// GetReplicationMode gets the value of ReplicationMode for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyReplicationMode() (value uint16, err error) {
-	retValue, err := instance.GetProperty("ReplicationMode")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetReplicationState sets the value of ReplicationState for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyReplicationState(value uint16) (err error) {
-	return instance.SetProperty("ReplicationState", (value))
-}
-
-// GetReplicationState gets the value of ReplicationState for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyReplicationState() (value uint16, err error) {
-	retValue, err := instance.GetProperty("ReplicationState")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetSecureBootEnabled sets the value of SecureBootEnabled for the instance
-func (instance *SDDC_VirtualMachine) SetPropertySecureBootEnabled(value bool) (err error) {
-	return instance.SetProperty("SecureBootEnabled", (value))
-}
-
-// GetSecureBootEnabled gets the value of SecureBootEnabled for the instance
-func (instance *SDDC_VirtualMachine) GetPropertySecureBootEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("SecureBootEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetShieldingRequested sets the value of ShieldingRequested for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyShieldingRequested(value bool) (err error) {
-	return instance.SetProperty("ShieldingRequested", (value))
-}
-
-// GetShieldingRequested gets the value of ShieldingRequested for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyShieldingRequested() (value bool, err error) {
-	retValue, err := instance.GetProperty("ShieldingRequested")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetSizeOfSystemFiles sets the value of SizeOfSystemFiles for the instance
-func (instance *SDDC_VirtualMachine) SetPropertySizeOfSystemFiles(value uint64) (err error) {
-	return instance.SetProperty("SizeOfSystemFiles", (value))
-}
-
-// GetSizeOfSystemFiles gets the value of SizeOfSystemFiles for the instance
-func (instance *SDDC_VirtualMachine) GetPropertySizeOfSystemFiles() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SizeOfSystemFiles")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetSnapshotDataRoot sets the value of SnapshotDataRoot for the instance
-func (instance *SDDC_VirtualMachine) SetPropertySnapshotDataRoot(value string) (err error) {
-	return instance.SetProperty("SnapshotDataRoot", (value))
-}
-
-// GetSnapshotDataRoot gets the value of SnapshotDataRoot for the instance
-func (instance *SDDC_VirtualMachine) GetPropertySnapshotDataRoot() (value string, err error) {
-	retValue, err := instance.GetProperty("SnapshotDataRoot")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }
@@ -1279,33 +812,6 @@ func (instance *SDDC_VirtualMachine) GetPropertyTotalThroughput() (value float64
 	return
 }
 
-// SetTpmEnabled sets the value of TpmEnabled for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyTpmEnabled(value bool) (err error) {
-	return instance.SetProperty("TpmEnabled", (value))
-}
-
-// GetTpmEnabled gets the value of TpmEnabled for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyTpmEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("TpmEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetUptime sets the value of Uptime for the instance
 func (instance *SDDC_VirtualMachine) SetPropertyUptime(value string) (err error) {
 	return instance.SetProperty("Uptime", (value))
@@ -1314,60 +820,6 @@ func (instance *SDDC_VirtualMachine) SetPropertyUptime(value string) (err error)
 // GetUptime gets the value of Uptime for the instance
 func (instance *SDDC_VirtualMachine) GetPropertyUptime() (value string, err error) {
 	retValue, err := instance.GetProperty("Uptime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetUserSnapshotType sets the value of UserSnapshotType for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyUserSnapshotType(value uint16) (err error) {
-	return instance.SetProperty("UserSnapshotType", (value))
-}
-
-// GetUserSnapshotType gets the value of UserSnapshotType for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyUserSnapshotType() (value uint16, err error) {
-	retValue, err := instance.GetProperty("UserSnapshotType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint16(valuetmp)
-
-	return
-}
-
-// SetVersion sets the value of Version for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", (value))
-}
-
-// GetVersion gets the value of Version for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyVersion() (value string, err error) {
-	retValue, err := instance.GetProperty("Version")
 	if err != nil {
 		return
 	}
@@ -1410,61 +862,6 @@ func (instance *SDDC_VirtualMachine) GetPropertyVhds() (value []SDDC_Vhd, err er
 			return
 		}
 		value = append(value, SDDC_Vhd(valuetmp))
-	}
-
-	return
-}
-
-// SetVirtualSystemType sets the value of VirtualSystemType for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyVirtualSystemType(value string) (err error) {
-	return instance.SetProperty("VirtualSystemType", (value))
-}
-
-// GetVirtualSystemType gets the value of VirtualSystemType for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyVirtualSystemType() (value string, err error) {
-	retValue, err := instance.GetProperty("VirtualSystemType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetVmIntegrationServices sets the value of VmIntegrationServices for the instance
-func (instance *SDDC_VirtualMachine) SetPropertyVmIntegrationServices(value []SDDC_VmIntegrationService) (err error) {
-	return instance.SetProperty("VmIntegrationServices", (value))
-}
-
-// GetVmIntegrationServices gets the value of VmIntegrationServices for the instance
-func (instance *SDDC_VirtualMachine) GetPropertyVmIntegrationServices() (value []SDDC_VmIntegrationService, err error) {
-	retValue, err := instance.GetProperty("VmIntegrationServices")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(SDDC_VmIntegrationService)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " SDDC_VmIntegrationService is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, SDDC_VmIntegrationService(valuetmp))
 	}
 
 	return

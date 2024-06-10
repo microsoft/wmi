@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -25,25 +24,7 @@ type MDM_VPNv2_01 struct {
 	AlwaysOn bool
 
 	//
-	AlwaysOnActive bool
-
-	//
 	ByPassForLocal bool
-
-	//
-	DataEncryption string
-
-	//
-	DeviceTunnel bool
-
-	//
-	DisableAdvancedOptionsEditButton bool
-
-	//
-	DisableDisconnectButton bool
-
-	//
-	DisableIKEv2Fragmentation bool
 
 	//
 	DnsSuffix string
@@ -55,34 +36,19 @@ type MDM_VPNv2_01 struct {
 	InstanceID string
 
 	//
-	IPv4InterfaceMetric int32
-
-	//
-	IPv6InterfaceMetric int32
-
-	//
-	NetworkOutageTime int32
+	LockDown bool
 
 	//
 	ParentID string
 
 	//
-	PrivateNetwork bool
-
-	//
 	ProfileXML string
-
-	//
-	RegisterDNS bool
 
 	//
 	RememberCredentials bool
 
 	//
 	TrustedNetworkDetection string
-
-	//
-	UseRasCredentials bool
 }
 
 func NewMDM_VPNv2_01Ex1(instance *cim.WmiInstance) (newInstance *MDM_VPNv2_01, err error) {
@@ -141,33 +107,6 @@ func (instance *MDM_VPNv2_01) GetPropertyAlwaysOn() (value bool, err error) {
 	return
 }
 
-// SetAlwaysOnActive sets the value of AlwaysOnActive for the instance
-func (instance *MDM_VPNv2_01) SetPropertyAlwaysOnActive(value bool) (err error) {
-	return instance.SetProperty("AlwaysOnActive", (value))
-}
-
-// GetAlwaysOnActive gets the value of AlwaysOnActive for the instance
-func (instance *MDM_VPNv2_01) GetPropertyAlwaysOnActive() (value bool, err error) {
-	retValue, err := instance.GetProperty("AlwaysOnActive")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetByPassForLocal sets the value of ByPassForLocal for the instance
 func (instance *MDM_VPNv2_01) SetPropertyByPassForLocal(value bool) (err error) {
 	return instance.SetProperty("ByPassForLocal", (value))
@@ -176,141 +115,6 @@ func (instance *MDM_VPNv2_01) SetPropertyByPassForLocal(value bool) (err error) 
 // GetByPassForLocal gets the value of ByPassForLocal for the instance
 func (instance *MDM_VPNv2_01) GetPropertyByPassForLocal() (value bool, err error) {
 	retValue, err := instance.GetProperty("ByPassForLocal")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDataEncryption sets the value of DataEncryption for the instance
-func (instance *MDM_VPNv2_01) SetPropertyDataEncryption(value string) (err error) {
-	return instance.SetProperty("DataEncryption", (value))
-}
-
-// GetDataEncryption gets the value of DataEncryption for the instance
-func (instance *MDM_VPNv2_01) GetPropertyDataEncryption() (value string, err error) {
-	retValue, err := instance.GetProperty("DataEncryption")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDeviceTunnel sets the value of DeviceTunnel for the instance
-func (instance *MDM_VPNv2_01) SetPropertyDeviceTunnel(value bool) (err error) {
-	return instance.SetProperty("DeviceTunnel", (value))
-}
-
-// GetDeviceTunnel gets the value of DeviceTunnel for the instance
-func (instance *MDM_VPNv2_01) GetPropertyDeviceTunnel() (value bool, err error) {
-	retValue, err := instance.GetProperty("DeviceTunnel")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableAdvancedOptionsEditButton sets the value of DisableAdvancedOptionsEditButton for the instance
-func (instance *MDM_VPNv2_01) SetPropertyDisableAdvancedOptionsEditButton(value bool) (err error) {
-	return instance.SetProperty("DisableAdvancedOptionsEditButton", (value))
-}
-
-// GetDisableAdvancedOptionsEditButton gets the value of DisableAdvancedOptionsEditButton for the instance
-func (instance *MDM_VPNv2_01) GetPropertyDisableAdvancedOptionsEditButton() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableAdvancedOptionsEditButton")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableDisconnectButton sets the value of DisableDisconnectButton for the instance
-func (instance *MDM_VPNv2_01) SetPropertyDisableDisconnectButton(value bool) (err error) {
-	return instance.SetProperty("DisableDisconnectButton", (value))
-}
-
-// GetDisableDisconnectButton gets the value of DisableDisconnectButton for the instance
-func (instance *MDM_VPNv2_01) GetPropertyDisableDisconnectButton() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableDisconnectButton")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableIKEv2Fragmentation sets the value of DisableIKEv2Fragmentation for the instance
-func (instance *MDM_VPNv2_01) SetPropertyDisableIKEv2Fragmentation(value bool) (err error) {
-	return instance.SetProperty("DisableIKEv2Fragmentation", (value))
-}
-
-// GetDisableIKEv2Fragmentation gets the value of DisableIKEv2Fragmentation for the instance
-func (instance *MDM_VPNv2_01) GetPropertyDisableIKEv2Fragmentation() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableIKEv2Fragmentation")
 	if err != nil {
 		return
 	}
@@ -411,14 +215,14 @@ func (instance *MDM_VPNv2_01) GetPropertyInstanceID() (value string, err error) 
 	return
 }
 
-// SetIPv4InterfaceMetric sets the value of IPv4InterfaceMetric for the instance
-func (instance *MDM_VPNv2_01) SetPropertyIPv4InterfaceMetric(value int32) (err error) {
-	return instance.SetProperty("IPv4InterfaceMetric", (value))
+// SetLockDown sets the value of LockDown for the instance
+func (instance *MDM_VPNv2_01) SetPropertyLockDown(value bool) (err error) {
+	return instance.SetProperty("LockDown", (value))
 }
 
-// GetIPv4InterfaceMetric gets the value of IPv4InterfaceMetric for the instance
-func (instance *MDM_VPNv2_01) GetPropertyIPv4InterfaceMetric() (value int32, err error) {
-	retValue, err := instance.GetProperty("IPv4InterfaceMetric")
+// GetLockDown gets the value of LockDown for the instance
+func (instance *MDM_VPNv2_01) GetPropertyLockDown() (value bool, err error) {
+	retValue, err := instance.GetProperty("LockDown")
 	if err != nil {
 		return
 	}
@@ -427,67 +231,13 @@ func (instance *MDM_VPNv2_01) GetPropertyIPv4InterfaceMetric() (value int32, err
 		return
 	}
 
-	valuetmp, ok := retValue.(int32)
+	valuetmp, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetIPv6InterfaceMetric sets the value of IPv6InterfaceMetric for the instance
-func (instance *MDM_VPNv2_01) SetPropertyIPv6InterfaceMetric(value int32) (err error) {
-	return instance.SetProperty("IPv6InterfaceMetric", (value))
-}
-
-// GetIPv6InterfaceMetric gets the value of IPv6InterfaceMetric for the instance
-func (instance *MDM_VPNv2_01) GetPropertyIPv6InterfaceMetric() (value int32, err error) {
-	retValue, err := instance.GetProperty("IPv6InterfaceMetric")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetNetworkOutageTime sets the value of NetworkOutageTime for the instance
-func (instance *MDM_VPNv2_01) SetPropertyNetworkOutageTime(value int32) (err error) {
-	return instance.SetProperty("NetworkOutageTime", (value))
-}
-
-// GetNetworkOutageTime gets the value of NetworkOutageTime for the instance
-func (instance *MDM_VPNv2_01) GetPropertyNetworkOutageTime() (value int32, err error) {
-	retValue, err := instance.GetProperty("NetworkOutageTime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
+	value = bool(valuetmp)
 
 	return
 }
@@ -519,33 +269,6 @@ func (instance *MDM_VPNv2_01) GetPropertyParentID() (value string, err error) {
 	return
 }
 
-// SetPrivateNetwork sets the value of PrivateNetwork for the instance
-func (instance *MDM_VPNv2_01) SetPropertyPrivateNetwork(value bool) (err error) {
-	return instance.SetProperty("PrivateNetwork", (value))
-}
-
-// GetPrivateNetwork gets the value of PrivateNetwork for the instance
-func (instance *MDM_VPNv2_01) GetPropertyPrivateNetwork() (value bool, err error) {
-	retValue, err := instance.GetProperty("PrivateNetwork")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetProfileXML sets the value of ProfileXML for the instance
 func (instance *MDM_VPNv2_01) SetPropertyProfileXML(value string) (err error) {
 	return instance.SetProperty("ProfileXML", (value))
@@ -569,33 +292,6 @@ func (instance *MDM_VPNv2_01) GetPropertyProfileXML() (value string, err error) 
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetRegisterDNS sets the value of RegisterDNS for the instance
-func (instance *MDM_VPNv2_01) SetPropertyRegisterDNS(value bool) (err error) {
-	return instance.SetProperty("RegisterDNS", (value))
-}
-
-// GetRegisterDNS gets the value of RegisterDNS for the instance
-func (instance *MDM_VPNv2_01) GetPropertyRegisterDNS() (value bool, err error) {
-	retValue, err := instance.GetProperty("RegisterDNS")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -650,33 +346,6 @@ func (instance *MDM_VPNv2_01) GetPropertyTrustedNetworkDetection() (value string
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetUseRasCredentials sets the value of UseRasCredentials for the instance
-func (instance *MDM_VPNv2_01) SetPropertyUseRasCredentials(value bool) (err error) {
-	return instance.SetProperty("UseRasCredentials", (value))
-}
-
-// GetUseRasCredentials gets the value of UseRasCredentials for the instance
-func (instance *MDM_VPNv2_01) GetPropertyUseRasCredentials() (value bool, err error) {
-	retValue, err := instance.GetProperty("UseRasCredentials")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }

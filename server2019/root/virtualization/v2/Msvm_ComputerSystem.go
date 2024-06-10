@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -513,27 +512,6 @@ func (instance *Msvm_ComputerSystem) InjectNonMaskableInterrupt( /* OUT */ Job C
 
 //
 
-// <param name="Vtl" type="uint8 "></param>
-
-// <param name="Job" type="CIM_ConcreteJob ">May contain a reference to the ConcreteJob created to track the status of the interrupt injection.</param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *Msvm_ComputerSystem) InjectNonMaskableInterruptEx( /* IN */ Vtl uint8,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("InjectNonMaskableInterruptEx", Action, PercentComplete, Timeout, Vtl)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
 // <param name="ReplicationRelationship" type="string "></param>
 // <param name="RequestedState" type="uint16 "></param>
 // <param name="TimeoutPeriod" type="string "></param>
@@ -548,27 +526,6 @@ func (instance *Msvm_ComputerSystem) RequestReplicationStateChangeEx( /* IN */ R
 	/*Custon IN*/ PercentComplete uint32,
 	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodAsync("RequestReplicationStateChangeEx", Action, PercentComplete, Timeout, ReplicationRelationship, RequestedState, TimeoutPeriod)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
-// <param name="RestoreSettings" type="string ">The restore setting requested for the element. This information will be placed into the RestoreSettings property of the instance if the return code of the RequestCustomRestore method is 0 ('Completed with No Error'), or 4096 (0x1000) ('Job Started'). </param>
-
-// <param name="Job" type="CIM_ConcreteJob ">May contain a reference to the ConcreteJob created to track the state transition initiated by the method invocation.</param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *Msvm_ComputerSystem) RequestCustomRestore( /* IN */ RestoreSettings string,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("RequestCustomRestore", Action, PercentComplete, Timeout, RestoreSettings)
 	if err != nil {
 		return
 	}
@@ -670,10 +627,6 @@ func (instance *Msvm_ComputerSystem) GetRelatedMemory() (value []*cim.WmiInstanc
 	return instance.GetAllRelated("Msvm_Memory")
 }
 
-func (instance *Msvm_ComputerSystem) GetRelatedDiskDrive() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_DiskDrive")
-}
-
 func (instance *Msvm_ComputerSystem) GetRelatedProcessor() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_Processor")
 }
@@ -684,4 +637,8 @@ func (instance *Msvm_ComputerSystem) GetRelatedInternalEthernetPort() (value []*
 
 func (instance *Msvm_ComputerSystem) GetRelatedExternalEthernetPort() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_ExternalEthernetPort")
+}
+
+func (instance *Msvm_ComputerSystem) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ComputerSystem")
 }

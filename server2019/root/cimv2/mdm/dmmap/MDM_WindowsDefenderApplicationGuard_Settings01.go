@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -44,6 +43,18 @@ type MDM_WindowsDefenderApplicationGuard_Settings01 struct {
 
 	//
 	ClipboardSettings int32
+
+	//
+	FileTrustCriteria int32
+
+	//
+	FileTrustOriginMarkOfTheWeb int32
+
+	//
+	FileTrustOriginNetworkShare int32
+
+	//
+	FileTrustOriginRemovableMedia int32
 
 	//
 	InstanceID string
@@ -284,6 +295,114 @@ func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) SetPropertyClipb
 // GetClipboardSettings gets the value of ClipboardSettings for the instance
 func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) GetPropertyClipboardSettings() (value int32, err error) {
 	retValue, err := instance.GetProperty("ClipboardSettings")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
+	return
+}
+
+// SetFileTrustCriteria sets the value of FileTrustCriteria for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) SetPropertyFileTrustCriteria(value int32) (err error) {
+	return instance.SetProperty("FileTrustCriteria", (value))
+}
+
+// GetFileTrustCriteria gets the value of FileTrustCriteria for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) GetPropertyFileTrustCriteria() (value int32, err error) {
+	retValue, err := instance.GetProperty("FileTrustCriteria")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
+	return
+}
+
+// SetFileTrustOriginMarkOfTheWeb sets the value of FileTrustOriginMarkOfTheWeb for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) SetPropertyFileTrustOriginMarkOfTheWeb(value int32) (err error) {
+	return instance.SetProperty("FileTrustOriginMarkOfTheWeb", (value))
+}
+
+// GetFileTrustOriginMarkOfTheWeb gets the value of FileTrustOriginMarkOfTheWeb for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) GetPropertyFileTrustOriginMarkOfTheWeb() (value int32, err error) {
+	retValue, err := instance.GetProperty("FileTrustOriginMarkOfTheWeb")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
+	return
+}
+
+// SetFileTrustOriginNetworkShare sets the value of FileTrustOriginNetworkShare for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) SetPropertyFileTrustOriginNetworkShare(value int32) (err error) {
+	return instance.SetProperty("FileTrustOriginNetworkShare", (value))
+}
+
+// GetFileTrustOriginNetworkShare gets the value of FileTrustOriginNetworkShare for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) GetPropertyFileTrustOriginNetworkShare() (value int32, err error) {
+	retValue, err := instance.GetProperty("FileTrustOriginNetworkShare")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
+	return
+}
+
+// SetFileTrustOriginRemovableMedia sets the value of FileTrustOriginRemovableMedia for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) SetPropertyFileTrustOriginRemovableMedia(value int32) (err error) {
+	return instance.SetProperty("FileTrustOriginRemovableMedia", (value))
+}
+
+// GetFileTrustOriginRemovableMedia gets the value of FileTrustOriginRemovableMedia for the instance
+func (instance *MDM_WindowsDefenderApplicationGuard_Settings01) GetPropertyFileTrustOriginRemovableMedia() (value int32, err error) {
+	retValue, err := instance.GetProperty("FileTrustOriginRemovableMedia")
 	if err != nil {
 		return
 	}

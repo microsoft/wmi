@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -22,9 +21,6 @@ type Msvm_NumaNode struct {
 
 	// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified.
 	CreationClassName string
-
-	//
-	CurrentlyAssignedVirtualProcessors uint32
 
 	//
 	CurrentlyConsumableMemoryBlocks uint64
@@ -97,33 +93,6 @@ func (instance *Msvm_NumaNode) GetPropertyCreationClassName() (value string, err
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetCurrentlyAssignedVirtualProcessors sets the value of CurrentlyAssignedVirtualProcessors for the instance
-func (instance *Msvm_NumaNode) SetPropertyCurrentlyAssignedVirtualProcessors(value uint32) (err error) {
-	return instance.SetProperty("CurrentlyAssignedVirtualProcessors", (value))
-}
-
-// GetCurrentlyAssignedVirtualProcessors gets the value of CurrentlyAssignedVirtualProcessors for the instance
-func (instance *Msvm_NumaNode) GetPropertyCurrentlyAssignedVirtualProcessors() (value uint32, err error) {
-	retValue, err := instance.GetProperty("CurrentlyAssignedVirtualProcessors")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
 
 	return
 }
@@ -293,8 +262,8 @@ func (instance *Msvm_NumaNode) GetRelatedComputerSystem() (value *cim.WmiInstanc
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
-func (instance *Msvm_NumaNode) GetRelatedMemory() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_Memory")
+func (instance *Msvm_NumaNode) GetRelatedMemory() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_Memory")
 }
 
 func (instance *Msvm_NumaNode) GetRelatedProcessor() (value []*cim.WmiInstance, err error) {

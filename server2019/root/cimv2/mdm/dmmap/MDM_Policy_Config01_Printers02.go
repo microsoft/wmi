@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -20,12 +19,6 @@ import (
 // MDM_Policy_Config01_Printers02 struct
 type MDM_Policy_Config01_Printers02 struct {
 	*cim.WmiInstance
-
-	//
-	ApprovedUsbPrintDevices string
-
-	//
-	EnableDeviceControl string
 
 	//
 	InstanceID string
@@ -66,60 +59,6 @@ func NewMDM_Policy_Config01_Printers02Ex6(hostName string,
 	newInstance = &MDM_Policy_Config01_Printers02{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetApprovedUsbPrintDevices sets the value of ApprovedUsbPrintDevices for the instance
-func (instance *MDM_Policy_Config01_Printers02) SetPropertyApprovedUsbPrintDevices(value string) (err error) {
-	return instance.SetProperty("ApprovedUsbPrintDevices", (value))
-}
-
-// GetApprovedUsbPrintDevices gets the value of ApprovedUsbPrintDevices for the instance
-func (instance *MDM_Policy_Config01_Printers02) GetPropertyApprovedUsbPrintDevices() (value string, err error) {
-	retValue, err := instance.GetProperty("ApprovedUsbPrintDevices")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetEnableDeviceControl sets the value of EnableDeviceControl for the instance
-func (instance *MDM_Policy_Config01_Printers02) SetPropertyEnableDeviceControl(value string) (err error) {
-	return instance.SetProperty("EnableDeviceControl", (value))
-}
-
-// GetEnableDeviceControl gets the value of EnableDeviceControl for the instance
-func (instance *MDM_Policy_Config01_Printers02) GetPropertyEnableDeviceControl() (value string, err error) {
-	retValue, err := instance.GetProperty("EnableDeviceControl")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
 	return
 }
 

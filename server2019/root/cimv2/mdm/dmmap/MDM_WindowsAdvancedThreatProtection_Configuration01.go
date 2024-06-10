@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -20,9 +19,6 @@ import (
 // MDM_WindowsAdvancedThreatProtection_Configuration01 struct
 type MDM_WindowsAdvancedThreatProtection_Configuration01 struct {
 	*cim.WmiInstance
-
-	//
-	AadDeviceId string
 
 	//
 	GroupIds string
@@ -66,33 +62,6 @@ func NewMDM_WindowsAdvancedThreatProtection_Configuration01Ex6(hostName string,
 	newInstance = &MDM_WindowsAdvancedThreatProtection_Configuration01{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetAadDeviceId sets the value of AadDeviceId for the instance
-func (instance *MDM_WindowsAdvancedThreatProtection_Configuration01) SetPropertyAadDeviceId(value string) (err error) {
-	return instance.SetProperty("AadDeviceId", (value))
-}
-
-// GetAadDeviceId gets the value of AadDeviceId for the instance
-func (instance *MDM_WindowsAdvancedThreatProtection_Configuration01) GetPropertyAadDeviceId() (value string, err error) {
-	retValue, err := instance.GetProperty("AadDeviceId")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
 	return
 }
 

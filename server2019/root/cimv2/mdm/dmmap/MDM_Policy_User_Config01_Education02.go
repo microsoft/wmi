@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -20,9 +19,6 @@ import (
 // MDM_Policy_User_Config01_Education02 struct
 type MDM_Policy_User_Config01_Education02 struct {
 	*cim.WmiInstance
-
-	//
-	AllowGraphingCalculator int32
 
 	//
 	DefaultPrinterName string
@@ -66,33 +62,6 @@ func NewMDM_Policy_User_Config01_Education02Ex6(hostName string,
 	newInstance = &MDM_Policy_User_Config01_Education02{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetAllowGraphingCalculator sets the value of AllowGraphingCalculator for the instance
-func (instance *MDM_Policy_User_Config01_Education02) SetPropertyAllowGraphingCalculator(value int32) (err error) {
-	return instance.SetProperty("AllowGraphingCalculator", (value))
-}
-
-// GetAllowGraphingCalculator gets the value of AllowGraphingCalculator for the instance
-func (instance *MDM_Policy_User_Config01_Education02) GetPropertyAllowGraphingCalculator() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowGraphingCalculator")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
 	return
 }
 

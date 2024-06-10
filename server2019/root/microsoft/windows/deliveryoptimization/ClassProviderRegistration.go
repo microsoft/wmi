@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __ClassProviderRegistration struct
@@ -73,7 +70,7 @@ func New__ClassProviderRegistrationEx6(hostName string,
 
 // SetCacheRefreshInterval sets the value of CacheRefreshInterval for the instance
 func (instance *__ClassProviderRegistration) SetPropertyCacheRefreshInterval(value string) (err error) {
-	return instance.SetProperty("CacheRefreshInterval", (value))
+	return instance.SetProperty("CacheRefreshInterval", value)
 }
 
 // GetCacheRefreshInterval gets the value of CacheRefreshInterval for the instance
@@ -82,25 +79,16 @@ func (instance *__ClassProviderRegistration) GetPropertyCacheRefreshInterval() (
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetPerUserSchema sets the value of PerUserSchema for the instance
 func (instance *__ClassProviderRegistration) SetPropertyPerUserSchema(value bool) (err error) {
-	return instance.SetProperty("PerUserSchema", (value))
+	return instance.SetProperty("PerUserSchema", value)
 }
 
 // GetPerUserSchema gets the value of PerUserSchema for the instance
@@ -109,25 +97,16 @@ func (instance *__ClassProviderRegistration) GetPropertyPerUserSchema() (value b
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetReferencedSetQueries sets the value of ReferencedSetQueries for the instance
 func (instance *__ClassProviderRegistration) SetPropertyReferencedSetQueries(value []string) (err error) {
-	return instance.SetProperty("ReferencedSetQueries", (value))
+	return instance.SetProperty("ReferencedSetQueries", value)
 }
 
 // GetReferencedSetQueries gets the value of ReferencedSetQueries for the instance
@@ -136,26 +115,16 @@ func (instance *__ClassProviderRegistration) GetPropertyReferencedSetQueries() (
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]string)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
 	return
 }
 
 // SetResultSetQueries sets the value of ResultSetQueries for the instance
 func (instance *__ClassProviderRegistration) SetPropertyResultSetQueries(value []string) (err error) {
-	return instance.SetProperty("ResultSetQueries", (value))
+	return instance.SetProperty("ResultSetQueries", value)
 }
 
 // GetResultSetQueries gets the value of ResultSetQueries for the instance
@@ -164,26 +133,16 @@ func (instance *__ClassProviderRegistration) GetPropertyResultSetQueries() (valu
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]string)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
 	return
 }
 
 // SetReSynchroniseOnNamespaceOpen sets the value of ReSynchroniseOnNamespaceOpen for the instance
 func (instance *__ClassProviderRegistration) SetPropertyReSynchroniseOnNamespaceOpen(value bool) (err error) {
-	return instance.SetProperty("ReSynchroniseOnNamespaceOpen", (value))
+	return instance.SetProperty("ReSynchroniseOnNamespaceOpen", value)
 }
 
 // GetReSynchroniseOnNamespaceOpen gets the value of ReSynchroniseOnNamespaceOpen for the instance
@@ -192,25 +151,16 @@ func (instance *__ClassProviderRegistration) GetPropertyReSynchroniseOnNamespace
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetUnsupportedQueries sets the value of UnsupportedQueries for the instance
 func (instance *__ClassProviderRegistration) SetPropertyUnsupportedQueries(value []string) (err error) {
-	return instance.SetProperty("UnsupportedQueries", (value))
+	return instance.SetProperty("UnsupportedQueries", value)
 }
 
 // GetUnsupportedQueries gets the value of UnsupportedQueries for the instance
@@ -219,26 +169,16 @@ func (instance *__ClassProviderRegistration) GetPropertyUnsupportedQueries() (va
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
+	value, ok := retValue.([]string)
+	if !ok {
+		// TODO: Set an error
 	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *__ClassProviderRegistration) SetPropertyVersion(value uint32) (err error) {
-	return instance.SetProperty("Version", (value))
+	return instance.SetProperty("Version", value)
 }
 
 // GetVersion gets the value of Version for the instance
@@ -247,18 +187,9 @@ func (instance *__ClassProviderRegistration) GetPropertyVersion() (value uint32,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }

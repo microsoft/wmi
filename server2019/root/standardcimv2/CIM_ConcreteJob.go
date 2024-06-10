@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -20,13 +19,13 @@ import (
 type CIM_ConcreteJob struct {
 	*CIM_Job
 
-	//
-	JobState uint16
+	// 314
+	JobState ConcreteJob_JobState
 
-	//
+	// 324
 	TimeBeforeRemoval string
 
-	//
+	// 323
 	TimeOfLastStateChange string
 }
 
@@ -60,12 +59,12 @@ func NewCIM_ConcreteJobEx6(hostName string,
 }
 
 // SetJobState sets the value of JobState for the instance
-func (instance *CIM_ConcreteJob) SetPropertyJobState(value uint16) (err error) {
+func (instance *CIM_ConcreteJob) SetPropertyJobState(value ConcreteJob_JobState) (err error) {
 	return instance.SetProperty("JobState", (value))
 }
 
 // GetJobState gets the value of JobState for the instance
-func (instance *CIM_ConcreteJob) GetPropertyJobState() (value uint16, err error) {
+func (instance *CIM_ConcreteJob) GetPropertyJobState() (value ConcreteJob_JobState, err error) {
 	retValue, err := instance.GetProperty("JobState")
 	if err != nil {
 		return
@@ -75,13 +74,13 @@ func (instance *CIM_ConcreteJob) GetPropertyJobState() (value uint16, err error)
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = ConcreteJob_JobState(valuetmp)
 
 	return
 }
@@ -140,13 +139,13 @@ func (instance *CIM_ConcreteJob) GetPropertyTimeOfLastStateChange() (value strin
 	return
 }
 
-//
+// 325
 
-// <param name="RequestedState" type="uint16 "></param>
-// <param name="TimeoutPeriod" type="string "></param>
+// <param name="RequestedState" type="ConcreteJob_RequestedState ">336</param>
+// <param name="TimeoutPeriod" type="string ">341</param>
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *CIM_ConcreteJob) RequestStateChange( /* IN */ RequestedState uint16,
+func (instance *CIM_ConcreteJob) RequestStateChange( /* IN */ RequestedState ConcreteJob_RequestedState,
 	/* IN */ TimeoutPeriod string) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("RequestStateChange", RequestedState, TimeoutPeriod)
 	if err != nil {
@@ -157,9 +156,9 @@ func (instance *CIM_ConcreteJob) RequestStateChange( /* IN */ RequestedState uin
 
 }
 
-//
+// 342
 
-// <param name="Error" type="CIM_Error "></param>
+// <param name="Error" type="CIM_Error ">344</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_ConcreteJob) GetError( /* OUT */ Error CIM_Error) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("GetError")

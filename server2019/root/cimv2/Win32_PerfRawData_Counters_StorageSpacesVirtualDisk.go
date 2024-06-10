@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -117,18 +116,6 @@ type Win32_PerfRawData_Counters_StorageSpacesVirtualDisk struct {
 	VirtualDiskRegeneratingBytes uint64
 
 	//
-	VirtualDiskRegenerationOutstandingBytes uint64
-
-	//
-	VirtualDiskRegenerationProcessedBytes uint64
-
-	//
-	VirtualDiskRegenerationSkippedBytes uint64
-
-	//
-	VirtualDiskRegenerationTotalBytes uint64
-
-	//
 	VirtualDiskRepairNeedPhase2Count uint64
 
 	//
@@ -183,18 +170,6 @@ type Win32_PerfRawData_Counters_StorageSpacesVirtualDisk struct {
 	VirtualDiskScopeRegenerationCount uint64
 
 	//
-	VirtualDiskScrubBytesPersec uint64
-
-	//
-	VirtualDiskScrubLatencyms uint32
-
-	//
-	VirtualDiskScrubLatencyms_Base uint32
-
-	//
-	VirtualDiskScrubRepairedBytesPersec uint64
-
-	//
 	VirtualDiskStale uint64
 
 	//
@@ -205,12 +180,6 @@ type Win32_PerfRawData_Counters_StorageSpacesVirtualDisk struct {
 
 	//
 	VirtualDiskTotalBytes uint64
-
-	//
-	VirtualDiskUnmappedBytes uint64
-
-	//
-	VirtualDiskUnmappedCount uint64
 }
 
 func NewWin32_PerfRawData_Counters_StorageSpacesVirtualDiskEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk, err error) {
@@ -1106,114 +1075,6 @@ func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetProperty
 	return
 }
 
-// SetVirtualDiskRegenerationOutstandingBytes sets the value of VirtualDiskRegenerationOutstandingBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskRegenerationOutstandingBytes(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskRegenerationOutstandingBytes", (value))
-}
-
-// GetVirtualDiskRegenerationOutstandingBytes gets the value of VirtualDiskRegenerationOutstandingBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskRegenerationOutstandingBytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRegenerationOutstandingBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskRegenerationProcessedBytes sets the value of VirtualDiskRegenerationProcessedBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskRegenerationProcessedBytes(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskRegenerationProcessedBytes", (value))
-}
-
-// GetVirtualDiskRegenerationProcessedBytes gets the value of VirtualDiskRegenerationProcessedBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskRegenerationProcessedBytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRegenerationProcessedBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskRegenerationSkippedBytes sets the value of VirtualDiskRegenerationSkippedBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskRegenerationSkippedBytes(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskRegenerationSkippedBytes", (value))
-}
-
-// GetVirtualDiskRegenerationSkippedBytes gets the value of VirtualDiskRegenerationSkippedBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskRegenerationSkippedBytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRegenerationSkippedBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskRegenerationTotalBytes sets the value of VirtualDiskRegenerationTotalBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskRegenerationTotalBytes(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskRegenerationTotalBytes", (value))
-}
-
-// GetVirtualDiskRegenerationTotalBytes gets the value of VirtualDiskRegenerationTotalBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskRegenerationTotalBytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRegenerationTotalBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetVirtualDiskRepairNeedPhase2Count sets the value of VirtualDiskRepairNeedPhase2Count for the instance
 func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskRepairNeedPhase2Count(value uint64) (err error) {
 	return instance.SetProperty("VirtualDiskRepairNeedPhase2Count", (value))
@@ -1700,114 +1561,6 @@ func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetProperty
 	return
 }
 
-// SetVirtualDiskScrubBytesPersec sets the value of VirtualDiskScrubBytesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskScrubBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskScrubBytesPersec", (value))
-}
-
-// GetVirtualDiskScrubBytesPersec gets the value of VirtualDiskScrubBytesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskScrubBytesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskScrubBytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskScrubLatencyms sets the value of VirtualDiskScrubLatencyms for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskScrubLatencyms(value uint32) (err error) {
-	return instance.SetProperty("VirtualDiskScrubLatencyms", (value))
-}
-
-// GetVirtualDiskScrubLatencyms gets the value of VirtualDiskScrubLatencyms for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskScrubLatencyms() (value uint32, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskScrubLatencyms")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskScrubLatencyms_Base sets the value of VirtualDiskScrubLatencyms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskScrubLatencyms_Base(value uint32) (err error) {
-	return instance.SetProperty("VirtualDiskScrubLatencyms_Base", (value))
-}
-
-// GetVirtualDiskScrubLatencyms_Base gets the value of VirtualDiskScrubLatencyms_Base for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskScrubLatencyms_Base() (value uint32, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskScrubLatencyms_Base")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskScrubRepairedBytesPersec sets the value of VirtualDiskScrubRepairedBytesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskScrubRepairedBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskScrubRepairedBytesPersec", (value))
-}
-
-// GetVirtualDiskScrubRepairedBytesPersec gets the value of VirtualDiskScrubRepairedBytesPersec for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskScrubRepairedBytesPersec() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskScrubRepairedBytesPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
 // SetVirtualDiskStale sets the value of VirtualDiskStale for the instance
 func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskStale(value uint64) (err error) {
 	return instance.SetProperty("VirtualDiskStale", (value))
@@ -1897,60 +1650,6 @@ func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetProperty
 // GetVirtualDiskTotalBytes gets the value of VirtualDiskTotalBytes for the instance
 func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskTotalBytes() (value uint64, err error) {
 	retValue, err := instance.GetProperty("VirtualDiskTotalBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskUnmappedBytes sets the value of VirtualDiskUnmappedBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskUnmappedBytes(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskUnmappedBytes", (value))
-}
-
-// GetVirtualDiskUnmappedBytes gets the value of VirtualDiskUnmappedBytes for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskUnmappedBytes() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskUnmappedBytes")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskUnmappedCount sets the value of VirtualDiskUnmappedCount for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) SetPropertyVirtualDiskUnmappedCount(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskUnmappedCount", (value))
-}
-
-// GetVirtualDiskUnmappedCount gets the value of VirtualDiskUnmappedCount for the instance
-func (instance *Win32_PerfRawData_Counters_StorageSpacesVirtualDisk) GetPropertyVirtualDiskUnmappedCount() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskUnmappedCount")
 	if err != nil {
 		return
 	}

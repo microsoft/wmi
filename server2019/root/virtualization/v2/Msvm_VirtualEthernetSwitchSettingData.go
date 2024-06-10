@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -21,13 +20,7 @@ type Msvm_VirtualEthernetSwitchSettingData struct {
 	*CIM_VirtualEthernetSwitchSettingData
 
 	//
-	AllowNetLbfoTeams bool
-
-	//
 	BandwidthReservationMode uint32
-
-	//
-	BypassExtensionStack bool
 
 	//
 	ExtensionOrder []string
@@ -37,9 +30,6 @@ type Msvm_VirtualEthernetSwitchSettingData struct {
 
 	//
 	PacketDirectEnabled bool
-
-	//
-	RequiredExtensionIds []string
 
 	//
 	TeamingEnabled bool
@@ -74,33 +64,6 @@ func NewMsvm_VirtualEthernetSwitchSettingDataEx6(hostName string,
 	return
 }
 
-// SetAllowNetLbfoTeams sets the value of AllowNetLbfoTeams for the instance
-func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyAllowNetLbfoTeams(value bool) (err error) {
-	return instance.SetProperty("AllowNetLbfoTeams", (value))
-}
-
-// GetAllowNetLbfoTeams gets the value of AllowNetLbfoTeams for the instance
-func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyAllowNetLbfoTeams() (value bool, err error) {
-	retValue, err := instance.GetProperty("AllowNetLbfoTeams")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetBandwidthReservationMode sets the value of BandwidthReservationMode for the instance
 func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyBandwidthReservationMode(value uint32) (err error) {
 	return instance.SetProperty("BandwidthReservationMode", (value))
@@ -124,33 +87,6 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyBandwidthReser
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetBypassExtensionStack sets the value of BypassExtensionStack for the instance
-func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyBypassExtensionStack(value bool) (err error) {
-	return instance.SetProperty("BypassExtensionStack", (value))
-}
-
-// GetBypassExtensionStack gets the value of BypassExtensionStack for the instance
-func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyBypassExtensionStack() (value bool, err error) {
-	retValue, err := instance.GetProperty("BypassExtensionStack")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -237,34 +173,6 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyPacketDirectEn
 	return
 }
 
-// SetRequiredExtensionIds sets the value of RequiredExtensionIds for the instance
-func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyRequiredExtensionIds(value []string) (err error) {
-	return instance.SetProperty("RequiredExtensionIds", (value))
-}
-
-// GetRequiredExtensionIds gets the value of RequiredExtensionIds for the instance
-func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyRequiredExtensionIds() (value []string, err error) {
-	retValue, err := instance.GetProperty("RequiredExtensionIds")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
-}
-
 // SetTeamingEnabled sets the value of TeamingEnabled for the instance
 func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyTeamingEnabled(value bool) (err error) {
 	return instance.SetProperty("TeamingEnabled", (value))
@@ -291,14 +199,10 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyTeamingEnabled
 
 	return
 }
-func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedVirtualEthernetSwitchNicTeamingSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualEthernetSwitchNicTeamingSettingData")
+func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetPortAllocationSettingData")
 }
 
 func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
-}
-
-func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedEthernetPortAllocationSettingData() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_EthernetPortAllocationSettingData")
 }

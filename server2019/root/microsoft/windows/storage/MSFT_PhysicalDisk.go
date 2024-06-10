@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage
+//////////////////////////////////////////////
 package storage
 
 import (
@@ -43,9 +42,6 @@ type MSFT_PhysicalDisk struct {
 
 	//
 	FirmwareVersion string
-
-	//
-	FruId string
 
 	//
 	IsIndicationEnabled bool
@@ -323,33 +319,6 @@ func (instance *MSFT_PhysicalDisk) SetPropertyFirmwareVersion(value string) (err
 // GetFirmwareVersion gets the value of FirmwareVersion for the instance
 func (instance *MSFT_PhysicalDisk) GetPropertyFirmwareVersion() (value string, err error) {
 	retValue, err := instance.GetProperty("FirmwareVersion")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetFruId sets the value of FruId for the instance
-func (instance *MSFT_PhysicalDisk) SetPropertyFruId(value string) (err error) {
-	return instance.SetProperty("FruId", (value))
-}
-
-// GetFruId gets the value of FruId for the instance
-func (instance *MSFT_PhysicalDisk) GetPropertyFruId() (value string, err error) {
-	retValue, err := instance.GetProperty("FruId")
 	if err != nil {
 		return
 	}
@@ -825,17 +794,15 @@ func (instance *MSFT_PhysicalDisk) GetPhysicalExtent( /* OUT */ PhysicalExtents 
 // <param name="EnableMaintenanceMode" type="bool "></param>
 // <param name="IgnoreDetachedVirtualDisks" type="bool "></param>
 // <param name="Timeout" type="uint32 "></param>
-// <param name="ValidateMaintenanceMode" type="bool "></param>
 
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_PhysicalDisk) Maintenance( /* IN */ EnableIndication bool,
-	/* IN */ ValidateMaintenanceMode bool,
 	/* IN */ EnableMaintenanceMode bool,
 	/* IN */ Timeout uint32,
 	/* IN */ IgnoreDetachedVirtualDisks bool,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Maintenance", EnableIndication, ValidateMaintenanceMode, EnableMaintenanceMode, Timeout, IgnoreDetachedVirtualDisks)
+	retVal, err := instance.InvokeMethod("Maintenance", EnableIndication, EnableMaintenanceMode, Timeout, IgnoreDetachedVirtualDisks)
 	if err != nil {
 		return
 	}
@@ -916,7 +883,6 @@ func (instance *MSFT_PhysicalDisk) SetUsage( /* IN */ Usage uint16,
 
 //
 
-// <param name="IsHidden" type="bool "></param>
 // <param name="MediaType" type="uint16 "></param>
 // <param name="StorageEnclosureId" type="string "></param>
 // <param name="StorageScaleUnitId" type="string "></param>
@@ -926,9 +892,8 @@ func (instance *MSFT_PhysicalDisk) SetUsage( /* IN */ Usage uint16,
 func (instance *MSFT_PhysicalDisk) SetAttributes( /* IN */ MediaType uint16,
 	/* IN */ StorageEnclosureId string,
 	/* IN */ StorageScaleUnitId string,
-	/* IN */ IsHidden bool,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("SetAttributes", MediaType, StorageEnclosureId, StorageScaleUnitId, IsHidden)
+	retVal, err := instance.InvokeMethod("SetAttributes", MediaType, StorageEnclosureId, StorageScaleUnitId)
 	if err != nil {
 		return
 	}
@@ -1010,44 +975,6 @@ func (instance *MSFT_PhysicalDisk) UpdateFirmware( /* IN */ ImagePath string,
 	/* IN */ SlotNumber uint16,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("UpdateFirmware", ImagePath, SlotNumber)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
-// <param name="Format" type="uint16 "></param>
-// <param name="RunAsJob" type="bool "></param>
-// <param name="StoragePoolFriendlyName" type="string "></param>
-// <param name="StoragePoolMetadataLength" type="uint64 "></param>
-// <param name="StoragePoolMinimumAllocationSize" type="uint64 "></param>
-// <param name="StoragePoolVersion" type="uint16 "></param>
-// <param name="VirtualDiskAllocationUnitSize" type="uint64 "></param>
-// <param name="VirtualDiskFriendlyName" type="string "></param>
-// <param name="VirtualDiskProvisioningType" type="uint16 "></param>
-
-// <param name="CreatedStorageJob" type="MSFT_StorageJob "></param>
-// <param name="CreatedStorageObject" type="MSFT_StorageObject "></param>
-// <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_PhysicalDisk) Convert( /* IN */ Format uint16,
-	/* IN */ StoragePoolFriendlyName string,
-	/* IN */ StoragePoolVersion uint16,
-	/* IN */ StoragePoolMetadataLength uint64,
-	/* IN */ StoragePoolMinimumAllocationSize uint64,
-	/* IN */ VirtualDiskFriendlyName string,
-	/* IN */ VirtualDiskProvisioningType uint16,
-	/* IN */ VirtualDiskAllocationUnitSize uint64,
-	/* IN */ RunAsJob bool,
-	/* OUT */ CreatedStorageObject MSFT_StorageObject,
-	/* OUT */ CreatedStorageJob MSFT_StorageJob,
-	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Convert", Format, StoragePoolFriendlyName, StoragePoolVersion, StoragePoolMetadataLength, StoragePoolMinimumAllocationSize, VirtualDiskFriendlyName, VirtualDiskProvisioningType, VirtualDiskAllocationUnitSize, RunAsJob)
 	if err != nil {
 		return
 	}

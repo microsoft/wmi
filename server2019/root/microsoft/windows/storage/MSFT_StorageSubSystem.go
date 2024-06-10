@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage
+//////////////////////////////////////////////
 package storage
 
 import (
@@ -220,12 +219,6 @@ type MSFT_StorageSubSystem struct {
 
 	//
 	Tag string
-
-	//
-	VirtualDiskRepairEnabled bool
-
-	//
-	VirtualDiskRepairQueueDepth uint32
 }
 
 func NewMSFT_StorageSubSystemEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageSubSystem, err error) {
@@ -2077,60 +2070,6 @@ func (instance *MSFT_StorageSubSystem) GetPropertyTag() (value string, err error
 	return
 }
 
-// SetVirtualDiskRepairEnabled sets the value of VirtualDiskRepairEnabled for the instance
-func (instance *MSFT_StorageSubSystem) SetPropertyVirtualDiskRepairEnabled(value bool) (err error) {
-	return instance.SetProperty("VirtualDiskRepairEnabled", (value))
-}
-
-// GetVirtualDiskRepairEnabled gets the value of VirtualDiskRepairEnabled for the instance
-func (instance *MSFT_StorageSubSystem) GetPropertyVirtualDiskRepairEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRepairEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetVirtualDiskRepairQueueDepth sets the value of VirtualDiskRepairQueueDepth for the instance
-func (instance *MSFT_StorageSubSystem) SetPropertyVirtualDiskRepairQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("VirtualDiskRepairQueueDepth", (value))
-}
-
-// GetVirtualDiskRepairQueueDepth gets the value of VirtualDiskRepairQueueDepth for the instance
-func (instance *MSFT_StorageSubSystem) GetPropertyVirtualDiskRepairQueueDepth() (value uint32, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRepairQueueDepth")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 //
 
 // <param name="AutoWriteCacheSize" type="bool "></param>
@@ -2139,8 +2078,6 @@ func (instance *MSFT_StorageSubSystem) GetPropertyVirtualDiskRepairQueueDepth() 
 // <param name="FriendlyName" type="string "></param>
 // <param name="LogicalSectorSizeDefault" type="uint64 "></param>
 // <param name="MediaTypeDefault" type="uint16 "></param>
-// <param name="MetadataLength" type="uint64 "></param>
-// <param name="MinimumAllocationSize" type="uint64 "></param>
 // <param name="OtherUsageDescription" type="string "></param>
 // <param name="PhysicalDisks" type="MSFT_PhysicalDisk []"></param>
 // <param name="ProvisioningTypeDefault" type="uint16 "></param>
@@ -2162,8 +2099,6 @@ func (instance *MSFT_StorageSubSystem) CreateStoragePool( /* IN */ FriendlyName 
 	/* IN */ ProvisioningTypeDefault uint16,
 	/* IN */ MediaTypeDefault uint16,
 	/* IN */ LogicalSectorSizeDefault uint64,
-	/* IN */ MetadataLength uint64,
-	/* IN */ MinimumAllocationSize uint64,
 	/* IN */ EnclosureAwareDefault bool,
 	/* IN */ FaultDomainAwarenessDefault uint16,
 	/* IN */ WriteCacheSizeDefault uint64,
@@ -2173,7 +2108,7 @@ func (instance *MSFT_StorageSubSystem) CreateStoragePool( /* IN */ FriendlyName 
 	/* OUT */ CreatedStoragePool MSFT_StoragePool,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CreateStoragePool", FriendlyName, Usage, OtherUsageDescription, PhysicalDisks, ResiliencySettingNameDefault, ProvisioningTypeDefault, MediaTypeDefault, LogicalSectorSizeDefault, MetadataLength, MinimumAllocationSize, EnclosureAwareDefault, FaultDomainAwarenessDefault, WriteCacheSizeDefault, AutoWriteCacheSize, Version, RunAsJob)
+	retVal, err := instance.InvokeMethod("CreateStoragePool", FriendlyName, Usage, OtherUsageDescription, PhysicalDisks, ResiliencySettingNameDefault, ProvisioningTypeDefault, MediaTypeDefault, LogicalSectorSizeDefault, EnclosureAwareDefault, FaultDomainAwarenessDefault, WriteCacheSizeDefault, AutoWriteCacheSize, Version, RunAsJob)
 	if err != nil {
 		return
 	}
@@ -2327,17 +2262,13 @@ func (instance *MSFT_StorageSubSystem) SetDescription( /* IN */ Description stri
 
 // <param name="AutomaticClusteringEnabled" type="bool "></param>
 // <param name="FaultDomainAwarenessDefault" type="uint16 "></param>
-// <param name="VirtualDiskRepairEnabled" type="bool "></param>
-// <param name="VirtualDiskRepairQueueDepth" type="uint32 "></param>
 
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_StorageSubSystem) SetAttributes( /* IN */ AutomaticClusteringEnabled bool,
-	/* IN */ VirtualDiskRepairEnabled bool,
-	/* IN */ VirtualDiskRepairQueueDepth uint32,
 	/* IN */ FaultDomainAwarenessDefault uint16,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("SetAttributes", AutomaticClusteringEnabled, VirtualDiskRepairEnabled, VirtualDiskRepairQueueDepth, FaultDomainAwarenessDefault)
+	retVal, err := instance.InvokeMethod("SetAttributes", AutomaticClusteringEnabled, FaultDomainAwarenessDefault)
 	if err != nil {
 		return
 	}

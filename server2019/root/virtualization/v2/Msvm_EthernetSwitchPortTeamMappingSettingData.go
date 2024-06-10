@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -19,9 +18,6 @@ import (
 // Msvm_EthernetSwitchPortTeamMappingSettingData struct
 type Msvm_EthernetSwitchPortTeamMappingSettingData struct {
 	*Msvm_EthernetSwitchPortFeatureSettingData
-
-	//
-	DisableOnFailover uint32
 
 	//
 	NetAdapterDeviceId string
@@ -56,33 +52,6 @@ func NewMsvm_EthernetSwitchPortTeamMappingSettingDataEx6(hostName string,
 	newInstance = &Msvm_EthernetSwitchPortTeamMappingSettingData{
 		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
 	}
-	return
-}
-
-// SetDisableOnFailover sets the value of DisableOnFailover for the instance
-func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) SetPropertyDisableOnFailover(value uint32) (err error) {
-	return instance.SetProperty("DisableOnFailover", (value))
-}
-
-// GetDisableOnFailover gets the value of DisableOnFailover for the instance
-func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetPropertyDisableOnFailover() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DisableOnFailover")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
@@ -139,6 +108,6 @@ func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetPropertyNetAda
 
 	return
 }
-func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetPortAllocationSettingData")
+func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchFeatureCapabilities")
 }

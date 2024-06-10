@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -142,7 +141,7 @@ func (instance *CIM_VirtualSystemSettingData) GetPropertyAutomaticRecoveryAction
 
 // SetAutomaticShutdownAction sets the value of AutomaticShutdownAction for the instance
 func (instance *CIM_VirtualSystemSettingData) SetPropertyAutomaticShutdownAction(value VirtualSystemSettingData_AutomaticShutdownAction) (err error) {
-	return instance.SetProperty("AutomaticShutdownAction", (value))
+	return instance.SetProperty("AutomaticShutdownAction", int(value))
 }
 
 // GetAutomaticShutdownAction gets the value of AutomaticShutdownAction for the instance

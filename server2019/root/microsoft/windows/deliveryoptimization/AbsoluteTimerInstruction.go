@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __AbsoluteTimerInstruction struct
@@ -55,7 +52,7 @@ func New__AbsoluteTimerInstructionEx6(hostName string,
 
 // SetEventDateTime sets the value of EventDateTime for the instance
 func (instance *__AbsoluteTimerInstruction) SetPropertyEventDateTime(value string) (err error) {
-	return instance.SetProperty("EventDateTime", (value))
+	return instance.SetProperty("EventDateTime", value)
 }
 
 // GetEventDateTime gets the value of EventDateTime for the instance
@@ -64,18 +61,9 @@ func (instance *__AbsoluteTimerInstruction) GetPropertyEventDateTime() (value st
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }

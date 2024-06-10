@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __TimerNextFiring struct
@@ -58,7 +55,7 @@ func New__TimerNextFiringEx6(hostName string,
 
 // SetNextEvent64BitTime sets the value of NextEvent64BitTime for the instance
 func (instance *__TimerNextFiring) SetPropertyNextEvent64BitTime(value int64) (err error) {
-	return instance.SetProperty("NextEvent64BitTime", (value))
+	return instance.SetProperty("NextEvent64BitTime", value)
 }
 
 // GetNextEvent64BitTime gets the value of NextEvent64BitTime for the instance
@@ -67,25 +64,16 @@ func (instance *__TimerNextFiring) GetPropertyNextEvent64BitTime() (value int64,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int64)
+	value, ok := retValue.(int64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = int64(valuetmp)
-
 	return
 }
 
 // SetTimerId sets the value of TimerId for the instance
 func (instance *__TimerNextFiring) SetPropertyTimerId(value string) (err error) {
-	return instance.SetProperty("TimerId", (value))
+	return instance.SetProperty("TimerId", value)
 }
 
 // GetTimerId gets the value of TimerId for the instance
@@ -94,18 +82,9 @@ func (instance *__TimerNextFiring) GetPropertyTimerId() (value string, err error
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }

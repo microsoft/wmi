@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -134,9 +133,6 @@ type MDM_Policy_Result01_Defender02 struct {
 
 	//
 	ScheduleScanTime int32
-
-	//
-	SecurityIntelligenceLocation string
 
 	//
 	SignatureUpdateFallbackOrder string
@@ -1205,33 +1201,6 @@ func (instance *MDM_Policy_Result01_Defender02) GetPropertyScheduleScanTime() (v
 	}
 
 	value = int32(valuetmp)
-
-	return
-}
-
-// SetSecurityIntelligenceLocation sets the value of SecurityIntelligenceLocation for the instance
-func (instance *MDM_Policy_Result01_Defender02) SetPropertySecurityIntelligenceLocation(value string) (err error) {
-	return instance.SetProperty("SecurityIntelligenceLocation", (value))
-}
-
-// GetSecurityIntelligenceLocation gets the value of SecurityIntelligenceLocation for the instance
-func (instance *MDM_Policy_Result01_Defender02) GetPropertySecurityIntelligenceLocation() (value string, err error) {
-	retValue, err := instance.GetProperty("SecurityIntelligenceLocation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }

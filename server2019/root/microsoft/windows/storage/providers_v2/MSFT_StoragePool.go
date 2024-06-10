@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage.Providers_v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage.Providers_v2
+//////////////////////////////////////////////
 package providers_v2
 
 import (
@@ -59,12 +58,6 @@ type MSFT_StoragePool struct {
 
 	//
 	MediaTypeDefault uint16
-
-	// The size of the storage pool metadata in bytes.
-	MetadataLength uint64
-
-	// Indicates the smallest unit of allocation for this storage pool.
-	MinimumAllocationSize uint64
 
 	// Name is a semi-unique (scoped to the owning storage subsystem), human-readable string used to identify a storage pool.
 	Name string
@@ -491,60 +484,6 @@ func (instance *MSFT_StoragePool) GetPropertyMediaTypeDefault() (value uint16, e
 	}
 
 	value = uint16(valuetmp)
-
-	return
-}
-
-// SetMetadataLength sets the value of MetadataLength for the instance
-func (instance *MSFT_StoragePool) SetPropertyMetadataLength(value uint64) (err error) {
-	return instance.SetProperty("MetadataLength", (value))
-}
-
-// GetMetadataLength gets the value of MetadataLength for the instance
-func (instance *MSFT_StoragePool) GetPropertyMetadataLength() (value uint64, err error) {
-	retValue, err := instance.GetProperty("MetadataLength")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetMinimumAllocationSize sets the value of MinimumAllocationSize for the instance
-func (instance *MSFT_StoragePool) SetPropertyMinimumAllocationSize(value uint64) (err error) {
-	return instance.SetProperty("MinimumAllocationSize", (value))
-}
-
-// GetMinimumAllocationSize gets the value of MinimumAllocationSize for the instance
-func (instance *MSFT_StoragePool) GetPropertyMinimumAllocationSize() (value uint64, err error) {
-	retValue, err := instance.GetProperty("MinimumAllocationSize")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
 
 	return
 }
@@ -1198,7 +1137,6 @@ func (instance *MSFT_StoragePool) CreateVirtualDisk2( /* IN */ FriendlyName stri
 
 //
 
-// <param name="AddToCluster" type="bool "></param>
 // <param name="AllocationUnitSize" type="uint64 "></param>
 // <param name="AutoNumberOfColumns" type="bool "></param>
 // <param name="AutoWriteCacheSize" type="bool "></param>
@@ -1206,9 +1144,7 @@ func (instance *MSFT_StoragePool) CreateVirtualDisk2( /* IN */ FriendlyName stri
 // <param name="FaultDomainAwareness" type="uint16 "></param>
 // <param name="FriendlyName" type="string "></param>
 // <param name="Interleave" type="uint64 "></param>
-// <param name="IsManualAttach" type="bool "></param>
 // <param name="MediaType" type="uint16 "></param>
-// <param name="MinimumLogicalDataCopies" type="uint16 "></param>
 // <param name="NumberOfColumns" type="uint16 "></param>
 // <param name="NumberOfDataCopies" type="uint16 "></param>
 // <param name="NumberOfGroups" type="uint16 "></param>
@@ -1221,10 +1157,8 @@ func (instance *MSFT_StoragePool) CreateVirtualDisk2( /* IN */ FriendlyName stri
 // <param name="StorageFaultDomainsToUse" type="MSFT_StorageFaultDomain []"></param>
 // <param name="StorageTiers" type="MSFT_StorageTier []"></param>
 // <param name="StorageTierSizes" type="uint64 []"></param>
-// <param name="TrackValidData" type="bool "></param>
 // <param name="Usage" type="uint16 "></param>
 // <param name="UseMaximumSize" type="bool "></param>
-// <param name="WriteCacheReserveSize" type="uint64 "></param>
 // <param name="WriteCacheSize" type="uint64 "></param>
 
 // <param name="CreatedStorageJob" type="MSFT_StorageJob "></param>
@@ -1248,21 +1182,16 @@ func (instance *MSFT_StoragePool) CreateVirtualDisk3( /* IN */ FriendlyName stri
 	/* IN */ NumberOfGroups uint16,
 	/* IN */ FaultDomainAwareness uint16,
 	/* IN */ ColumnIsolation uint16,
-	/* IN */ MinimumLogicalDataCopies uint16,
 	/* IN */ StorageFaultDomainsToUse []MSFT_StorageFaultDomain,
 	/* IN */ StorageTiers []MSFT_StorageTier,
 	/* IN */ StorageTierSizes []uint64,
 	/* IN */ WriteCacheSize uint64,
 	/* IN */ AutoWriteCacheSize bool,
-	/* IN */ WriteCacheReserveSize uint64,
 	/* IN */ ReadCacheSize uint64,
-	/* IN */ TrackValidData bool,
-	/* IN */ IsManualAttach bool,
-	/* IN */ AddToCluster bool,
 	/* OUT */ CreatedVirtualDisk MSFT_VirtualDisk,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CreateVirtualDisk3", FriendlyName, Size, UseMaximumSize, ProvisioningType, AllocationUnitSize, MediaType, ResiliencySettingName, Usage, OtherUsageDescription, NumberOfDataCopies, PhysicalDiskRedundancy, NumberOfColumns, AutoNumberOfColumns, Interleave, NumberOfGroups, FaultDomainAwareness, ColumnIsolation, MinimumLogicalDataCopies, StorageFaultDomainsToUse, StorageTiers, StorageTierSizes, WriteCacheSize, AutoWriteCacheSize, WriteCacheReserveSize, ReadCacheSize, TrackValidData, IsManualAttach, AddToCluster)
+	retVal, err := instance.InvokeMethod("CreateVirtualDisk3", FriendlyName, Size, UseMaximumSize, ProvisioningType, AllocationUnitSize, MediaType, ResiliencySettingName, Usage, OtherUsageDescription, NumberOfDataCopies, PhysicalDiskRedundancy, NumberOfColumns, AutoNumberOfColumns, Interleave, NumberOfGroups, FaultDomainAwareness, ColumnIsolation, StorageFaultDomainsToUse, StorageTiers, StorageTierSizes, WriteCacheSize, AutoWriteCacheSize, ReadCacheSize)
 	if err != nil {
 		return
 	}

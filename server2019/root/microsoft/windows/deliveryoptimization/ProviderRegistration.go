@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __ProviderRegistration struct
@@ -55,7 +52,7 @@ func New__ProviderRegistrationEx6(hostName string,
 
 // Setprovider sets the value of provider for the instance
 func (instance *__ProviderRegistration) SetPropertyprovider(value __Provider) (err error) {
-	return instance.SetProperty("provider", (value))
+	return instance.SetProperty("provider", value)
 }
 
 // Getprovider gets the value of provider for the instance
@@ -64,18 +61,9 @@ func (instance *__ProviderRegistration) GetPropertyprovider() (value __Provider,
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(__Provider)
+	value, ok := retValue.(__Provider)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " __Provider is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = __Provider(valuetmp)
-
 	return
 }

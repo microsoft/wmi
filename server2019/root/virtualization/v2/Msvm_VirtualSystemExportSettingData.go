@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -49,9 +48,6 @@ type Msvm_VirtualSystemExportSettingData struct {
 
 	//
 	ExportForLiveMigration bool
-
-	//
-	GuestDebugStateFilePath string
 
 	//
 	SnapshotVirtualSystem string
@@ -357,33 +353,6 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyExportForLiveMig
 	return
 }
 
-// SetGuestDebugStateFilePath sets the value of GuestDebugStateFilePath for the instance
-func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyGuestDebugStateFilePath(value string) (err error) {
-	return instance.SetProperty("GuestDebugStateFilePath", (value))
-}
-
-// GetGuestDebugStateFilePath gets the value of GuestDebugStateFilePath for the instance
-func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyGuestDebugStateFilePath() (value string, err error) {
-	retValue, err := instance.GetProperty("GuestDebugStateFilePath")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetSnapshotVirtualSystem sets the value of SnapshotVirtualSystem for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertySnapshotVirtualSystem(value string) (err error) {
 	return instance.SetProperty("SnapshotVirtualSystem", (value))
@@ -409,4 +378,7 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertySnapshotVirtualS
 	value = string(valuetmp)
 
 	return
+}
+func (instance *Msvm_VirtualSystemExportSettingData) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
 }

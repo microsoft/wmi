@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // CIM_InstModification struct
@@ -55,7 +52,7 @@ func NewCIM_InstModificationEx6(hostName string,
 
 // SetPreviousInstance sets the value of PreviousInstance for the instance
 func (instance *CIM_InstModification) SetPropertyPreviousInstance(value interface{}) (err error) {
-	return instance.SetProperty("PreviousInstance", (value))
+	return instance.SetProperty("PreviousInstance", value)
 }
 
 // GetPreviousInstance gets the value of PreviousInstance for the instance
@@ -64,18 +61,9 @@ func (instance *CIM_InstModification) GetPropertyPreviousInstance() (value inter
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(interface{})
+	value, ok := retValue.(interface{})
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = interface{}(valuetmp)
-
 	return
 }

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -61,9 +60,6 @@ type MSCluster_ResourceGroup struct {
 
 	//
 	IsCore bool
-
-	//
-	LockedFromMoving uint32
 
 	//
 	OwnerNode string
@@ -504,33 +500,6 @@ func (instance *MSCluster_ResourceGroup) GetPropertyIsCore() (value bool, err er
 	return
 }
 
-// SetLockedFromMoving sets the value of LockedFromMoving for the instance
-func (instance *MSCluster_ResourceGroup) SetPropertyLockedFromMoving(value uint32) (err error) {
-	return instance.SetProperty("LockedFromMoving", (value))
-}
-
-// GetLockedFromMoving gets the value of LockedFromMoving for the instance
-func (instance *MSCluster_ResourceGroup) GetPropertyLockedFromMoving() (value uint32, err error) {
-	retValue, err := instance.GetProperty("LockedFromMoving")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetOwnerNode sets the value of OwnerNode for the instance
 func (instance *MSCluster_ResourceGroup) SetPropertyOwnerNode(value string) (err error) {
 	return instance.SetProperty("OwnerNode", (value))
@@ -805,12 +774,10 @@ func (instance *MSCluster_ResourceGroup) GetPropertyUpdateDomain() (value uint32
 //
 
 // <param name="Flags" type="uint32 "></param>
-// <param name="Reason" type="string "></param>
 // <param name="TimeOut" type="uint32 "></param>
 func (instance *MSCluster_ResourceGroup) BringOnline( /* IN */ TimeOut uint32,
-	/* IN */ Flags uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("BringOnline", TimeOut, Flags, Reason)
+	/* IN */ Flags uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("BringOnline", TimeOut, Flags)
 	if err != nil {
 		return
 	}
@@ -822,13 +789,11 @@ func (instance *MSCluster_ResourceGroup) BringOnline( /* IN */ TimeOut uint32,
 
 // <param name="Flags" type="uint32 "></param>
 // <param name="Parameters" type="MSCluster_Property "></param>
-// <param name="Reason" type="string "></param>
 // <param name="TimeOut" type="uint32 "></param>
 func (instance *MSCluster_ResourceGroup) TakeOffline( /* IN */ TimeOut uint32,
 	/* IN */ Parameters MSCluster_Property,
-	/* IN */ Flags uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("TakeOffline", TimeOut, Parameters, Flags, Reason)
+	/* IN */ Flags uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("TakeOffline", TimeOut, Parameters, Flags)
 	if err != nil {
 		return
 	}
@@ -840,13 +805,11 @@ func (instance *MSCluster_ResourceGroup) TakeOffline( /* IN */ TimeOut uint32,
 
 // <param name="Flags" type="uint32 "></param>
 // <param name="Parameters" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 // <param name="TimeOut" type="uint32 "></param>
 func (instance *MSCluster_ResourceGroup) TakeOfflineParams( /* IN */ TimeOut uint32,
 	/* IN */ Parameters []uint8,
-	/* IN */ Flags uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("TakeOfflineParams", TimeOut, Parameters, Flags, Reason)
+	/* IN */ Flags uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("TakeOfflineParams", TimeOut, Parameters, Flags)
 	if err != nil {
 		return
 	}
@@ -873,12 +836,10 @@ func (instance *MSCluster_ResourceGroup) MoveToNewNode( /* IN */ NodeName string
 // <param name="Flags" type="uint32 "></param>
 // <param name="NodeName" type="string "></param>
 // <param name="Parameters" type="MSCluster_Property "></param>
-// <param name="Reason" type="string "></param>
 func (instance *MSCluster_ResourceGroup) MoveToNewNodeEx( /* IN */ NodeName string,
 	/* IN */ Parameters MSCluster_Property,
-	/* IN */ Flags uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("MoveToNewNodeEx", NodeName, Parameters, Flags, Reason)
+	/* IN */ Flags uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("MoveToNewNodeEx", NodeName, Parameters, Flags)
 	if err != nil {
 		return
 	}
@@ -891,12 +852,10 @@ func (instance *MSCluster_ResourceGroup) MoveToNewNodeEx( /* IN */ NodeName stri
 // <param name="Flags" type="uint32 "></param>
 // <param name="NodeName" type="string "></param>
 // <param name="Parameters" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 func (instance *MSCluster_ResourceGroup) MoveToNewNodeParams( /* IN */ NodeName string,
 	/* IN */ Parameters []uint8,
-	/* IN */ Flags uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("MoveToNewNodeParams", NodeName, Parameters, Flags, Reason)
+	/* IN */ Flags uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("MoveToNewNodeParams", NodeName, Parameters, Flags)
 	if err != nil {
 		return
 	}
@@ -919,10 +878,8 @@ func (instance *MSCluster_ResourceGroup) CancelOperation( /* IN */ Flags uint32)
 //
 
 // <param name="NewName" type="string "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_ResourceGroup) Rename( /* IN */ NewName string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("Rename", NewName, Reason)
+func (instance *MSCluster_ResourceGroup) Rename( /* IN */ NewName string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("Rename", NewName)
 	if err != nil {
 		return
 	}
@@ -949,10 +906,8 @@ func (instance *MSCluster_ResourceGroup) CreateGroup( /* IN */ GroupName string,
 }
 
 //
-
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_ResourceGroup) DeleteGroup( /* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("DeleteGroup", Reason)
+func (instance *MSCluster_ResourceGroup) DeleteGroup() (err error) {
+	_, err = instance.InvokeMethodWithReturn("DeleteGroup")
 	if err != nil {
 		return
 	}
@@ -963,10 +918,8 @@ func (instance *MSCluster_ResourceGroup) DeleteGroup( /* OPTIONAL IN */ Reason s
 //
 
 // <param name="Options" type="uint32 "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_ResourceGroup) DestroyGroup( /* IN */ Options uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("DestroyGroup", Options, Reason)
+func (instance *MSCluster_ResourceGroup) DestroyGroup( /* IN */ Options uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("DestroyGroup", Options)
 	if err != nil {
 		return
 	}
@@ -977,10 +930,8 @@ func (instance *MSCluster_ResourceGroup) DestroyGroup( /* IN */ Options uint32,
 //
 
 // <param name="NodeNames" type="string []"></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_ResourceGroup) SetPreferredOwners( /* IN */ NodeNames []string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("SetPreferredOwners", NodeNames, Reason)
+func (instance *MSCluster_ResourceGroup) SetPreferredOwners( /* IN */ NodeNames []string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("SetPreferredOwners", NodeNames)
 	if err != nil {
 		return
 	}
@@ -1029,16 +980,14 @@ func (instance *MSCluster_ResourceGroup) SetGroupType( /* IN */ GroupType uint32
 
 // <param name="ControlCode" type="int32 "></param>
 // <param name="InputBuffer" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 
 // <param name="OutputBuffer" type="uint8 []"></param>
 // <param name="OutputBufferSize" type="int32 "></param>
 func (instance *MSCluster_ResourceGroup) ExecuteGroupControl( /* IN */ ControlCode int32,
 	/* IN */ InputBuffer []uint8,
 	/* OUT */ OutputBuffer []uint8,
-	/* OUT */ OutputBufferSize int32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethod("ExecuteGroupControl", ControlCode, InputBuffer, Reason)
+	/* OUT */ OutputBufferSize int32) (err error) {
+	_, err = instance.InvokeMethod("ExecuteGroupControl", ControlCode, InputBuffer)
 	if err != nil {
 		return
 	}

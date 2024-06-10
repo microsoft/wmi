@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -308,26 +307,8 @@ func (instance *Msvm_VirtualSystemMigrationService) GetSystemCompatibilityVector
 
 }
 
-//
-
-// <param name="Options" type="string "></param>
-
-// <param name="CompatibilityVectors" type="Msvm_CompatibilityVector []"></param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *Msvm_VirtualSystemMigrationService) GetProcessorFeatureLimits( /* IN */ Options string,
-	/* OUT */ CompatibilityVectors []Msvm_CompatibilityVector) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("GetProcessorFeatureLimits", Options)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-func (instance *Msvm_VirtualSystemMigrationService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ComputerSystem")
+func (instance *Msvm_VirtualSystemMigrationService) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ComputerSystem")
 }
 
 func (instance *Msvm_VirtualSystemMigrationService) GetRelatedVirtualSystemMigrationServiceSettingData() (value *cim.WmiInstance, err error) {

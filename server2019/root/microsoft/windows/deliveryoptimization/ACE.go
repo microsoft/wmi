@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __ACE struct
@@ -73,7 +70,7 @@ func New__ACEEx6(hostName string,
 
 // SetAccessMask sets the value of AccessMask for the instance
 func (instance *__ACE) SetPropertyAccessMask(value uint32) (err error) {
-	return instance.SetProperty("AccessMask", (value))
+	return instance.SetProperty("AccessMask", value)
 }
 
 // GetAccessMask gets the value of AccessMask for the instance
@@ -82,25 +79,16 @@ func (instance *__ACE) GetPropertyAccessMask() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetAceFlags sets the value of AceFlags for the instance
 func (instance *__ACE) SetPropertyAceFlags(value uint32) (err error) {
-	return instance.SetProperty("AceFlags", (value))
+	return instance.SetProperty("AceFlags", value)
 }
 
 // GetAceFlags gets the value of AceFlags for the instance
@@ -109,25 +97,16 @@ func (instance *__ACE) GetPropertyAceFlags() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetAceType sets the value of AceType for the instance
 func (instance *__ACE) SetPropertyAceType(value uint32) (err error) {
-	return instance.SetProperty("AceType", (value))
+	return instance.SetProperty("AceType", value)
 }
 
 // GetAceType gets the value of AceType for the instance
@@ -136,25 +115,16 @@ func (instance *__ACE) GetPropertyAceType() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetGuidInheritedObjectType sets the value of GuidInheritedObjectType for the instance
 func (instance *__ACE) SetPropertyGuidInheritedObjectType(value string) (err error) {
-	return instance.SetProperty("GuidInheritedObjectType", (value))
+	return instance.SetProperty("GuidInheritedObjectType", value)
 }
 
 // GetGuidInheritedObjectType gets the value of GuidInheritedObjectType for the instance
@@ -163,25 +133,16 @@ func (instance *__ACE) GetPropertyGuidInheritedObjectType() (value string, err e
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetGuidObjectType sets the value of GuidObjectType for the instance
 func (instance *__ACE) SetPropertyGuidObjectType(value string) (err error) {
-	return instance.SetProperty("GuidObjectType", (value))
+	return instance.SetProperty("GuidObjectType", value)
 }
 
 // GetGuidObjectType gets the value of GuidObjectType for the instance
@@ -190,25 +151,16 @@ func (instance *__ACE) GetPropertyGuidObjectType() (value string, err error) {
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetTIME_CREATED sets the value of TIME_CREATED for the instance
 func (instance *__ACE) SetPropertyTIME_CREATED(value uint64) (err error) {
-	return instance.SetProperty("TIME_CREATED", (value))
+	return instance.SetProperty("TIME_CREATED", value)
 }
 
 // GetTIME_CREATED gets the value of TIME_CREATED for the instance
@@ -217,25 +169,16 @@ func (instance *__ACE) GetPropertyTIME_CREATED() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetTrustee sets the value of Trustee for the instance
 func (instance *__ACE) SetPropertyTrustee(value __Trustee) (err error) {
-	return instance.SetProperty("Trustee", (value))
+	return instance.SetProperty("Trustee", value)
 }
 
 // GetTrustee gets the value of Trustee for the instance
@@ -244,18 +187,9 @@ func (instance *__ACE) GetPropertyTrustee() (value __Trustee, err error) {
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(__Trustee)
+	value, ok := retValue.(__Trustee)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " __Trustee is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = __Trustee(valuetmp)
-
 	return
 }

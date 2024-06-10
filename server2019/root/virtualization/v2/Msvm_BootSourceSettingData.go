@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -199,4 +198,11 @@ func (instance *Msvm_BootSourceSettingData) GetPropertyOtherLocation() (value st
 	value = string(valuetmp)
 
 	return
+}
+func (instance *Msvm_BootSourceSettingData) GetRelatedSyntheticEthernetPortSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SyntheticEthernetPortSettingData")
+}
+
+func (instance *Msvm_BootSourceSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemSettingData")
 }

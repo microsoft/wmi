@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.SMB
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.SMB
+//////////////////////////////////////////////
 package smb
 
 import (
@@ -22,12 +21,6 @@ type MSFT_SmbClientConfiguration struct {
 	*cim.WmiInstance
 
 	//
-	CompressibilitySamplingSize uint64
-
-	//
-	CompressibleThreshold uint64
-
-	//
 	ConnectionCountPerRssNetworkInterface uint32
 
 	//
@@ -40,9 +33,6 @@ type MSFT_SmbClientConfiguration struct {
 	DirectoryCacheLifetime uint32
 
 	//
-	DisableCompression bool
-
-	//
 	DormantFileLimit uint32
 
 	//
@@ -50,9 +40,6 @@ type MSFT_SmbClientConfiguration struct {
 
 	//
 	EnableByteRangeLockingOnReadOnlyFiles bool
-
-	//
-	EnableCompressibilitySampling bool
 
 	//
 	EnableInsecureGuestLogons bool
@@ -64,16 +51,10 @@ type MSFT_SmbClientConfiguration struct {
 	EnableLoadBalanceScaleOut bool
 
 	//
-	EnableMailslots bool
-
-	//
 	EnableMultiChannel bool
 
 	//
 	EnableSecuritySignature bool
-
-	//
-	EncryptionCiphers string
 
 	//
 	ExtendedSessionTimeout uint32
@@ -91,12 +72,6 @@ type MSFT_SmbClientConfiguration struct {
 	FileNotFoundCacheLifetime uint32
 
 	//
-	ForceSMBEncryptionOverQuic bool
-
-	//
-	InvalidAuthenticationCacheLifetime uint32
-
-	//
 	KeepConn uint32
 
 	//
@@ -109,16 +84,10 @@ type MSFT_SmbClientConfiguration struct {
 	OplocksDisabled bool
 
 	//
-	RequestCompression bool
-
-	//
 	RequireSecuritySignature bool
 
 	//
 	SessionTimeout uint32
-
-	//
-	SkipCertificateCheck bool
 
 	//
 	UseOpportunisticLocking bool
@@ -153,60 +122,6 @@ func NewMSFT_SmbClientConfigurationEx6(hostName string,
 	newInstance = &MSFT_SmbClientConfiguration{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetCompressibilitySamplingSize sets the value of CompressibilitySamplingSize for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyCompressibilitySamplingSize(value uint64) (err error) {
-	return instance.SetProperty("CompressibilitySamplingSize", (value))
-}
-
-// GetCompressibilitySamplingSize gets the value of CompressibilitySamplingSize for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyCompressibilitySamplingSize() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CompressibilitySamplingSize")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCompressibleThreshold sets the value of CompressibleThreshold for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyCompressibleThreshold(value uint64) (err error) {
-	return instance.SetProperty("CompressibleThreshold", (value))
-}
-
-// GetCompressibleThreshold gets the value of CompressibleThreshold for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyCompressibleThreshold() (value uint64, err error) {
-	retValue, err := instance.GetProperty("CompressibleThreshold")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
@@ -318,33 +233,6 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyDirectoryCacheLifetime()
 	return
 }
 
-// SetDisableCompression sets the value of DisableCompression for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyDisableCompression(value bool) (err error) {
-	return instance.SetProperty("DisableCompression", (value))
-}
-
-// GetDisableCompression gets the value of DisableCompression for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyDisableCompression() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableCompression")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetDormantFileLimit sets the value of DormantFileLimit for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyDormantFileLimit(value uint32) (err error) {
 	return instance.SetProperty("DormantFileLimit", (value))
@@ -407,33 +295,6 @@ func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableByteRangeLockingOn
 // GetEnableByteRangeLockingOnReadOnlyFiles gets the value of EnableByteRangeLockingOnReadOnlyFiles for the instance
 func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableByteRangeLockingOnReadOnlyFiles() (value bool, err error) {
 	retValue, err := instance.GetProperty("EnableByteRangeLockingOnReadOnlyFiles")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableCompressibilitySampling sets the value of EnableCompressibilitySampling for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableCompressibilitySampling(value bool) (err error) {
-	return instance.SetProperty("EnableCompressibilitySampling", (value))
-}
-
-// GetEnableCompressibilitySampling gets the value of EnableCompressibilitySampling for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableCompressibilitySampling() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableCompressibilitySampling")
 	if err != nil {
 		return
 	}
@@ -534,33 +395,6 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableLoadBalanceScaleOu
 	return
 }
 
-// SetEnableMailslots sets the value of EnableMailslots for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableMailslots(value bool) (err error) {
-	return instance.SetProperty("EnableMailslots", (value))
-}
-
-// GetEnableMailslots gets the value of EnableMailslots for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableMailslots() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableMailslots")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetEnableMultiChannel sets the value of EnableMultiChannel for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableMultiChannel(value bool) (err error) {
 	return instance.SetProperty("EnableMultiChannel", (value))
@@ -611,33 +445,6 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableSecuritySignature(
 	}
 
 	value = bool(valuetmp)
-
-	return
-}
-
-// SetEncryptionCiphers sets the value of EncryptionCiphers for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyEncryptionCiphers(value string) (err error) {
-	return instance.SetProperty("EncryptionCiphers", (value))
-}
-
-// GetEncryptionCiphers gets the value of EncryptionCiphers for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyEncryptionCiphers() (value string, err error) {
-	retValue, err := instance.GetProperty("EncryptionCiphers")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }
@@ -777,60 +584,6 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyFileNotFoundCacheLifetim
 	return
 }
 
-// SetForceSMBEncryptionOverQuic sets the value of ForceSMBEncryptionOverQuic for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyForceSMBEncryptionOverQuic(value bool) (err error) {
-	return instance.SetProperty("ForceSMBEncryptionOverQuic", (value))
-}
-
-// GetForceSMBEncryptionOverQuic gets the value of ForceSMBEncryptionOverQuic for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyForceSMBEncryptionOverQuic() (value bool, err error) {
-	retValue, err := instance.GetProperty("ForceSMBEncryptionOverQuic")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetInvalidAuthenticationCacheLifetime sets the value of InvalidAuthenticationCacheLifetime for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyInvalidAuthenticationCacheLifetime(value uint32) (err error) {
-	return instance.SetProperty("InvalidAuthenticationCacheLifetime", (value))
-}
-
-// GetInvalidAuthenticationCacheLifetime gets the value of InvalidAuthenticationCacheLifetime for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyInvalidAuthenticationCacheLifetime() (value uint32, err error) {
-	retValue, err := instance.GetProperty("InvalidAuthenticationCacheLifetime")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetKeepConn sets the value of KeepConn for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyKeepConn(value uint32) (err error) {
 	return instance.SetProperty("KeepConn", (value))
@@ -939,33 +692,6 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyOplocksDisabled() (value
 	return
 }
 
-// SetRequestCompression sets the value of RequestCompression for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertyRequestCompression(value bool) (err error) {
-	return instance.SetProperty("RequestCompression", (value))
-}
-
-// GetRequestCompression gets the value of RequestCompression for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertyRequestCompression() (value bool, err error) {
-	retValue, err := instance.GetProperty("RequestCompression")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetRequireSecuritySignature sets the value of RequireSecuritySignature for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyRequireSecuritySignature(value bool) (err error) {
 	return instance.SetProperty("RequireSecuritySignature", (value))
@@ -1016,33 +742,6 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertySessionTimeout() (value 
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetSkipCertificateCheck sets the value of SkipCertificateCheck for the instance
-func (instance *MSFT_SmbClientConfiguration) SetPropertySkipCertificateCheck(value bool) (err error) {
-	return instance.SetProperty("SkipCertificateCheck", (value))
-}
-
-// GetSkipCertificateCheck gets the value of SkipCertificateCheck for the instance
-func (instance *MSFT_SmbClientConfiguration) GetPropertySkipCertificateCheck() (value bool, err error) {
-	retValue, err := instance.GetProperty("SkipCertificateCheck")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -1118,117 +817,29 @@ func (instance *MSFT_SmbClientConfiguration) GetConfiguration( /* OUT */ Output 
 
 //
 
-// <param name="All" type="bool "></param>
-// <param name="CompressibilitySampling" type="bool "></param>
-// <param name="ConnectionCountPerRssNetworkInterface" type="bool "></param>
-// <param name="DirectoryCacheEntriesMax" type="bool "></param>
-// <param name="DirectoryCacheEntrySizeMax" type="bool "></param>
-// <param name="DirectoryCacheLifetime" type="bool "></param>
-// <param name="DisableCompression" type="bool "></param>
-// <param name="DormantFileLimit" type="bool "></param>
-// <param name="EnableBandwidthThrottling" type="bool "></param>
-// <param name="EnableByteRangeLockingOnReadOnlyFiles" type="bool "></param>
-// <param name="EnableLargeMtu" type="bool "></param>
-// <param name="EnableLoadBalanceScaleOut" type="bool "></param>
-// <param name="EnableMailslots" type="bool "></param>
-// <param name="EnableMultiChannel" type="bool "></param>
-// <param name="EncryptionCiphers" type="bool "></param>
-// <param name="ExtendedSessionTimeout" type="bool "></param>
-// <param name="FileInfoCacheEntriesMax" type="bool "></param>
-// <param name="FileInfoCacheLifetime" type="bool "></param>
-// <param name="FileNotFoundCacheEntriesMax" type="bool "></param>
-// <param name="FileNotFoundCacheLifetime" type="bool "></param>
-// <param name="ForceSMBEncryptionOverQuic" type="bool "></param>
-// <param name="InvalidAuthenticationCacheLifetime" type="bool "></param>
-// <param name="KeepConn" type="bool "></param>
-// <param name="MaxCmds" type="bool "></param>
-// <param name="MaximumConnectionCountPerServer" type="bool "></param>
-// <param name="OplocksDisabled" type="bool "></param>
-// <param name="RequestCompression" type="bool "></param>
-// <param name="SessionTimeout" type="bool "></param>
-// <param name="SkipCertificateCheck" type="bool "></param>
-// <param name="UseOpportunisticLocking" type="bool "></param>
-// <param name="WindowSizeThreshold" type="bool "></param>
-
-// <param name="Output" type="MSFT_SmbClientConfiguration "></param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_SmbClientConfiguration) ResetConfiguration( /* OUT */ Output MSFT_SmbClientConfiguration,
-	/* OPTIONAL IN */ All bool,
-	/* OPTIONAL IN */ ConnectionCountPerRssNetworkInterface bool,
-	/* OPTIONAL IN */ DirectoryCacheEntriesMax bool,
-	/* OPTIONAL IN */ DirectoryCacheEntrySizeMax bool,
-	/* OPTIONAL IN */ DirectoryCacheLifetime bool,
-	/* OPTIONAL IN */ EnableBandwidthThrottling bool,
-	/* OPTIONAL IN */ EnableByteRangeLockingOnReadOnlyFiles bool,
-	/* OPTIONAL IN */ EnableLargeMtu bool,
-	/* OPTIONAL IN */ EnableMailslots bool,
-	/* OPTIONAL IN */ EnableMultiChannel bool,
-	/* OPTIONAL IN */ DormantFileLimit bool,
-	/* OPTIONAL IN */ ExtendedSessionTimeout bool,
-	/* OPTIONAL IN */ FileInfoCacheEntriesMax bool,
-	/* OPTIONAL IN */ FileInfoCacheLifetime bool,
-	/* OPTIONAL IN */ FileNotFoundCacheEntriesMax bool,
-	/* OPTIONAL IN */ FileNotFoundCacheLifetime bool,
-	/* OPTIONAL IN */ KeepConn bool,
-	/* OPTIONAL IN */ MaxCmds bool,
-	/* OPTIONAL IN */ MaximumConnectionCountPerServer bool,
-	/* OPTIONAL IN */ OplocksDisabled bool,
-	/* OPTIONAL IN */ SessionTimeout bool,
-	/* OPTIONAL IN */ UseOpportunisticLocking bool,
-	/* OPTIONAL IN */ WindowSizeThreshold bool,
-	/* OPTIONAL IN */ EnableLoadBalanceScaleOut bool,
-	/* OPTIONAL IN */ ForceSMBEncryptionOverQuic bool,
-	/* OPTIONAL IN */ SkipCertificateCheck bool,
-	/* OPTIONAL IN */ RequestCompression bool,
-	/* OPTIONAL IN */ DisableCompression bool,
-	/* OPTIONAL IN */ CompressibilitySampling bool,
-	/* OPTIONAL IN */ EncryptionCiphers bool,
-	/* OPTIONAL IN */ InvalidAuthenticationCacheLifetime bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("ResetConfiguration", All, ConnectionCountPerRssNetworkInterface, DirectoryCacheEntriesMax, DirectoryCacheEntrySizeMax, DirectoryCacheLifetime, EnableBandwidthThrottling, EnableByteRangeLockingOnReadOnlyFiles, EnableLargeMtu, EnableMailslots, EnableMultiChannel, DormantFileLimit, ExtendedSessionTimeout, FileInfoCacheEntriesMax, FileInfoCacheLifetime, FileNotFoundCacheEntriesMax, FileNotFoundCacheLifetime, KeepConn, MaxCmds, MaximumConnectionCountPerServer, OplocksDisabled, SessionTimeout, UseOpportunisticLocking, WindowSizeThreshold, EnableLoadBalanceScaleOut, ForceSMBEncryptionOverQuic, SkipCertificateCheck, RequestCompression, DisableCompression, CompressibilitySampling, EncryptionCiphers, InvalidAuthenticationCacheLifetime)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
-// <param name="CompressibilitySamplingSize" type="uint64 "></param>
-// <param name="CompressibleThreshold" type="uint64 "></param>
 // <param name="ConnectionCountPerRssNetworkInterface" type="uint32 "></param>
 // <param name="DirectoryCacheEntriesMax" type="uint32 "></param>
 // <param name="DirectoryCacheEntrySizeMax" type="uint32 "></param>
 // <param name="DirectoryCacheLifetime" type="uint32 "></param>
-// <param name="DisableCompression" type="bool "></param>
 // <param name="DormantFileLimit" type="uint32 "></param>
 // <param name="EnableBandwidthThrottling" type="bool "></param>
 // <param name="EnableByteRangeLockingOnReadOnlyFiles" type="bool "></param>
-// <param name="EnableCompressibilitySampling" type="bool "></param>
 // <param name="EnableInsecureGuestLogons" type="bool "></param>
 // <param name="EnableLargeMtu" type="bool "></param>
 // <param name="EnableLoadBalanceScaleOut" type="bool "></param>
-// <param name="EnableMailslots" type="bool "></param>
 // <param name="EnableMultiChannel" type="bool "></param>
 // <param name="EnableSecuritySignature" type="bool "></param>
-// <param name="EncryptionCiphers" type="string "></param>
 // <param name="ExtendedSessionTimeout" type="uint32 "></param>
 // <param name="FileInfoCacheEntriesMax" type="uint32 "></param>
 // <param name="FileInfoCacheLifetime" type="uint32 "></param>
 // <param name="FileNotFoundCacheEntriesMax" type="uint32 "></param>
 // <param name="FileNotFoundCacheLifetime" type="uint32 "></param>
-// <param name="ForceSMBEncryptionOverQuic" type="bool "></param>
-// <param name="InvalidAuthenticationCacheLifetime" type="uint32 "></param>
 // <param name="KeepConn" type="uint32 "></param>
 // <param name="MaxCmds" type="uint32 "></param>
 // <param name="MaximumConnectionCountPerServer" type="uint32 "></param>
 // <param name="OplocksDisabled" type="bool "></param>
-// <param name="RequestCompression" type="bool "></param>
 // <param name="RequireSecuritySignature" type="bool "></param>
 // <param name="SessionTimeout" type="uint32 "></param>
-// <param name="SkipCertificateCheck" type="bool "></param>
 // <param name="UseOpportunisticLocking" type="bool "></param>
 // <param name="WindowSizeThreshold" type="uint32 "></param>
 
@@ -1240,7 +851,6 @@ func (instance *MSFT_SmbClientConfiguration) SetConfiguration( /* IN */ Connecti
 	/* IN */ EnableBandwidthThrottling bool,
 	/* IN */ EnableByteRangeLockingOnReadOnlyFiles bool,
 	/* IN */ EnableLargeMtu bool,
-	/* IN */ EnableMailslots bool,
 	/* IN */ EnableMultiChannel bool,
 	/* IN */ DormantFileLimit uint32,
 	/* IN */ EnableSecuritySignature bool,
@@ -1258,17 +868,8 @@ func (instance *MSFT_SmbClientConfiguration) SetConfiguration( /* IN */ Connecti
 	/* IN */ UseOpportunisticLocking bool,
 	/* IN */ WindowSizeThreshold uint32,
 	/* IN */ EnableLoadBalanceScaleOut bool,
-	/* IN */ EnableInsecureGuestLogons bool,
-	/* IN */ ForceSMBEncryptionOverQuic bool,
-	/* IN */ SkipCertificateCheck bool,
-	/* IN */ RequestCompression bool,
-	/* IN */ DisableCompression bool,
-	/* IN */ EnableCompressibilitySampling bool,
-	/* IN */ CompressibilitySamplingSize uint64,
-	/* IN */ CompressibleThreshold uint64,
-	/* IN */ EncryptionCiphers string,
-	/* IN */ InvalidAuthenticationCacheLifetime uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetConfiguration", ConnectionCountPerRssNetworkInterface, DirectoryCacheEntriesMax, DirectoryCacheEntrySizeMax, DirectoryCacheLifetime, EnableBandwidthThrottling, EnableByteRangeLockingOnReadOnlyFiles, EnableLargeMtu, EnableMailslots, EnableMultiChannel, DormantFileLimit, EnableSecuritySignature, ExtendedSessionTimeout, FileInfoCacheEntriesMax, FileInfoCacheLifetime, FileNotFoundCacheEntriesMax, FileNotFoundCacheLifetime, KeepConn, MaxCmds, MaximumConnectionCountPerServer, OplocksDisabled, RequireSecuritySignature, SessionTimeout, UseOpportunisticLocking, WindowSizeThreshold, EnableLoadBalanceScaleOut, EnableInsecureGuestLogons, ForceSMBEncryptionOverQuic, SkipCertificateCheck, RequestCompression, DisableCompression, EnableCompressibilitySampling, CompressibilitySamplingSize, CompressibleThreshold, EncryptionCiphers, InvalidAuthenticationCacheLifetime)
+	/* IN */ EnableInsecureGuestLogons bool) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetConfiguration", ConnectionCountPerRssNetworkInterface, DirectoryCacheEntriesMax, DirectoryCacheEntrySizeMax, DirectoryCacheLifetime, EnableBandwidthThrottling, EnableByteRangeLockingOnReadOnlyFiles, EnableLargeMtu, EnableMultiChannel, DormantFileLimit, EnableSecuritySignature, ExtendedSessionTimeout, FileInfoCacheEntriesMax, FileInfoCacheLifetime, FileNotFoundCacheEntriesMax, FileNotFoundCacheLifetime, KeepConn, MaxCmds, MaximumConnectionCountPerServer, OplocksDisabled, RequireSecuritySignature, SessionTimeout, UseOpportunisticLocking, WindowSizeThreshold, EnableLoadBalanceScaleOut, EnableInsecureGuestLogons)
 	if err != nil {
 		return
 	}

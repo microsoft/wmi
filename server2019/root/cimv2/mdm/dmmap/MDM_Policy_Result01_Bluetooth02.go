@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -44,9 +43,6 @@ type MDM_Policy_Result01_Bluetooth02 struct {
 
 	//
 	ServicesAllowedList string
-
-	//
-	SetMinimumEncryptionKeySize int32
 }
 
 func NewMDM_Policy_Result01_Bluetooth02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Result01_Bluetooth02, err error) {
@@ -290,33 +286,6 @@ func (instance *MDM_Policy_Result01_Bluetooth02) GetPropertyServicesAllowedList(
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetSetMinimumEncryptionKeySize sets the value of SetMinimumEncryptionKeySize for the instance
-func (instance *MDM_Policy_Result01_Bluetooth02) SetPropertySetMinimumEncryptionKeySize(value int32) (err error) {
-	return instance.SetProperty("SetMinimumEncryptionKeySize", (value))
-}
-
-// GetSetMinimumEncryptionKeySize gets the value of SetMinimumEncryptionKeySize for the instance
-func (instance *MDM_Policy_Result01_Bluetooth02) GetPropertySetMinimumEncryptionKeySize() (value int32, err error) {
-	retValue, err := instance.GetProperty("SetMinimumEncryptionKeySize")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

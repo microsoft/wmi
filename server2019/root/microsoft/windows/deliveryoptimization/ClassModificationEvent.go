@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __ClassModificationEvent struct
@@ -55,7 +52,7 @@ func New__ClassModificationEventEx6(hostName string,
 
 // SetPreviousClass sets the value of PreviousClass for the instance
 func (instance *__ClassModificationEvent) SetPropertyPreviousClass(value interface{}) (err error) {
-	return instance.SetProperty("PreviousClass", (value))
+	return instance.SetProperty("PreviousClass", value)
 }
 
 // GetPreviousClass gets the value of PreviousClass for the instance
@@ -64,18 +61,9 @@ func (instance *__ClassModificationEvent) GetPropertyPreviousClass() (value inte
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(interface{})
+	value, ok := retValue.(interface{})
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = interface{}(valuetmp)
-
 	return
 }

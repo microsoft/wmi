@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.SDDC.Management
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.SDDC.Management
+//////////////////////////////////////////////
 package management
 
 import (
@@ -40,13 +39,7 @@ type SDDC_Server struct {
 	Id string
 
 	//
-	IsBitlockerFeatureInstalled bool
-
-	//
 	IsDataDedupFeatureInstalled bool
-
-	//
-	IsStorageReplicaFeatureInstalled bool
 
 	//
 	Location string
@@ -74,9 +67,6 @@ type SDDC_Server struct {
 
 	//
 	SerialNumber string
-
-	//
-	Site string
 
 	//
 	Status []uint16
@@ -289,33 +279,6 @@ func (instance *SDDC_Server) GetPropertyId() (value string, err error) {
 	return
 }
 
-// SetIsBitlockerFeatureInstalled sets the value of IsBitlockerFeatureInstalled for the instance
-func (instance *SDDC_Server) SetPropertyIsBitlockerFeatureInstalled(value bool) (err error) {
-	return instance.SetProperty("IsBitlockerFeatureInstalled", (value))
-}
-
-// GetIsBitlockerFeatureInstalled gets the value of IsBitlockerFeatureInstalled for the instance
-func (instance *SDDC_Server) GetPropertyIsBitlockerFeatureInstalled() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsBitlockerFeatureInstalled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetIsDataDedupFeatureInstalled sets the value of IsDataDedupFeatureInstalled for the instance
 func (instance *SDDC_Server) SetPropertyIsDataDedupFeatureInstalled(value bool) (err error) {
 	return instance.SetProperty("IsDataDedupFeatureInstalled", (value))
@@ -324,33 +287,6 @@ func (instance *SDDC_Server) SetPropertyIsDataDedupFeatureInstalled(value bool) 
 // GetIsDataDedupFeatureInstalled gets the value of IsDataDedupFeatureInstalled for the instance
 func (instance *SDDC_Server) GetPropertyIsDataDedupFeatureInstalled() (value bool, err error) {
 	retValue, err := instance.GetProperty("IsDataDedupFeatureInstalled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetIsStorageReplicaFeatureInstalled sets the value of IsStorageReplicaFeatureInstalled for the instance
-func (instance *SDDC_Server) SetPropertyIsStorageReplicaFeatureInstalled(value bool) (err error) {
-	return instance.SetProperty("IsStorageReplicaFeatureInstalled", (value))
-}
-
-// GetIsStorageReplicaFeatureInstalled gets the value of IsStorageReplicaFeatureInstalled for the instance
-func (instance *SDDC_Server) GetPropertyIsStorageReplicaFeatureInstalled() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsStorageReplicaFeatureInstalled")
 	if err != nil {
 		return
 	}
@@ -596,33 +532,6 @@ func (instance *SDDC_Server) SetPropertySerialNumber(value string) (err error) {
 // GetSerialNumber gets the value of SerialNumber for the instance
 func (instance *SDDC_Server) GetPropertySerialNumber() (value string, err error) {
 	retValue, err := instance.GetProperty("SerialNumber")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetSite sets the value of Site for the instance
-func (instance *SDDC_Server) SetPropertySite(value string) (err error) {
-	return instance.SetProperty("Site", (value))
-}
-
-// GetSite gets the value of Site for the instance
-func (instance *SDDC_Server) GetPropertySite() (value string, err error) {
-	retValue, err := instance.GetProperty("Site")
 	if err != nil {
 		return
 	}

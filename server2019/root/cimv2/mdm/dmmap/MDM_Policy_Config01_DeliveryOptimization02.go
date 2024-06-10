@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -31,16 +30,7 @@ type MDM_Policy_Config01_DeliveryOptimization02 struct {
 	DOCacheHost string
 
 	//
-	DOCacheHostSource int32
-
-	//
 	DODelayBackgroundDownloadFromHttp int32
-
-	//
-	DODelayCacheServerFallbackBackground int32
-
-	//
-	DODelayCacheServerFallbackForeground int32
 
 	//
 	DODelayForegroundDownloadFromHttp int32
@@ -55,16 +45,16 @@ type MDM_Policy_Config01_DeliveryOptimization02 struct {
 	DOGroupIdSource int32
 
 	//
-	DOMaxBackgroundDownloadBandwidth int32
-
-	//
 	DOMaxCacheAge int32
 
 	//
 	DOMaxCacheSize int32
 
 	//
-	DOMaxForegroundDownloadBandwidth int32
+	DOMaxDownloadBandwidth int32
+
+	//
+	DOMaxUploadBandwidth int32
 
 	//
 	DOMinBackgroundQos int32
@@ -89,6 +79,9 @@ type MDM_Policy_Config01_DeliveryOptimization02 struct {
 
 	//
 	DOPercentageMaxBackgroundBandwidth int32
+
+	//
+	DOPercentageMaxDownloadBandwidth int32
 
 	//
 	DOPercentageMaxForegroundBandwidth int32
@@ -219,33 +212,6 @@ func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOCacheHo
 	return
 }
 
-// SetDOCacheHostSource sets the value of DOCacheHostSource for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOCacheHostSource(value int32) (err error) {
-	return instance.SetProperty("DOCacheHostSource", (value))
-}
-
-// GetDOCacheHostSource gets the value of DOCacheHostSource for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOCacheHostSource() (value int32, err error) {
-	retValue, err := instance.GetProperty("DOCacheHostSource")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetDODelayBackgroundDownloadFromHttp sets the value of DODelayBackgroundDownloadFromHttp for the instance
 func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDODelayBackgroundDownloadFromHttp(value int32) (err error) {
 	return instance.SetProperty("DODelayBackgroundDownloadFromHttp", (value))
@@ -254,60 +220,6 @@ func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDODelayBa
 // GetDODelayBackgroundDownloadFromHttp gets the value of DODelayBackgroundDownloadFromHttp for the instance
 func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDODelayBackgroundDownloadFromHttp() (value int32, err error) {
 	retValue, err := instance.GetProperty("DODelayBackgroundDownloadFromHttp")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetDODelayCacheServerFallbackBackground sets the value of DODelayCacheServerFallbackBackground for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDODelayCacheServerFallbackBackground(value int32) (err error) {
-	return instance.SetProperty("DODelayCacheServerFallbackBackground", (value))
-}
-
-// GetDODelayCacheServerFallbackBackground gets the value of DODelayCacheServerFallbackBackground for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDODelayCacheServerFallbackBackground() (value int32, err error) {
-	retValue, err := instance.GetProperty("DODelayCacheServerFallbackBackground")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetDODelayCacheServerFallbackForeground sets the value of DODelayCacheServerFallbackForeground for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDODelayCacheServerFallbackForeground(value int32) (err error) {
-	return instance.SetProperty("DODelayCacheServerFallbackForeground", (value))
-}
-
-// GetDODelayCacheServerFallbackForeground gets the value of DODelayCacheServerFallbackForeground for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDODelayCacheServerFallbackForeground() (value int32, err error) {
-	retValue, err := instance.GetProperty("DODelayCacheServerFallbackForeground")
 	if err != nil {
 		return
 	}
@@ -435,33 +347,6 @@ func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOGroupId
 	return
 }
 
-// SetDOMaxBackgroundDownloadBandwidth sets the value of DOMaxBackgroundDownloadBandwidth for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOMaxBackgroundDownloadBandwidth(value int32) (err error) {
-	return instance.SetProperty("DOMaxBackgroundDownloadBandwidth", (value))
-}
-
-// GetDOMaxBackgroundDownloadBandwidth gets the value of DOMaxBackgroundDownloadBandwidth for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOMaxBackgroundDownloadBandwidth() (value int32, err error) {
-	retValue, err := instance.GetProperty("DOMaxBackgroundDownloadBandwidth")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetDOMaxCacheAge sets the value of DOMaxCacheAge for the instance
 func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOMaxCacheAge(value int32) (err error) {
 	return instance.SetProperty("DOMaxCacheAge", (value))
@@ -516,14 +401,41 @@ func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOMaxCach
 	return
 }
 
-// SetDOMaxForegroundDownloadBandwidth sets the value of DOMaxForegroundDownloadBandwidth for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOMaxForegroundDownloadBandwidth(value int32) (err error) {
-	return instance.SetProperty("DOMaxForegroundDownloadBandwidth", (value))
+// SetDOMaxDownloadBandwidth sets the value of DOMaxDownloadBandwidth for the instance
+func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOMaxDownloadBandwidth(value int32) (err error) {
+	return instance.SetProperty("DOMaxDownloadBandwidth", (value))
 }
 
-// GetDOMaxForegroundDownloadBandwidth gets the value of DOMaxForegroundDownloadBandwidth for the instance
-func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOMaxForegroundDownloadBandwidth() (value int32, err error) {
-	retValue, err := instance.GetProperty("DOMaxForegroundDownloadBandwidth")
+// GetDOMaxDownloadBandwidth gets the value of DOMaxDownloadBandwidth for the instance
+func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOMaxDownloadBandwidth() (value int32, err error) {
+	retValue, err := instance.GetProperty("DOMaxDownloadBandwidth")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
+	return
+}
+
+// SetDOMaxUploadBandwidth sets the value of DOMaxUploadBandwidth for the instance
+func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOMaxUploadBandwidth(value int32) (err error) {
+	return instance.SetProperty("DOMaxUploadBandwidth", (value))
+}
+
+// GetDOMaxUploadBandwidth gets the value of DOMaxUploadBandwidth for the instance
+func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOMaxUploadBandwidth() (value int32, err error) {
+	retValue, err := instance.GetProperty("DOMaxUploadBandwidth")
 	if err != nil {
 		return
 	}
@@ -740,6 +652,33 @@ func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOPercent
 // GetDOPercentageMaxBackgroundBandwidth gets the value of DOPercentageMaxBackgroundBandwidth for the instance
 func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOPercentageMaxBackgroundBandwidth() (value int32, err error) {
 	retValue, err := instance.GetProperty("DOPercentageMaxBackgroundBandwidth")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
+	return
+}
+
+// SetDOPercentageMaxDownloadBandwidth sets the value of DOPercentageMaxDownloadBandwidth for the instance
+func (instance *MDM_Policy_Config01_DeliveryOptimization02) SetPropertyDOPercentageMaxDownloadBandwidth(value int32) (err error) {
+	return instance.SetProperty("DOPercentageMaxDownloadBandwidth", (value))
+}
+
+// GetDOPercentageMaxDownloadBandwidth gets the value of DOPercentageMaxDownloadBandwidth for the instance
+func (instance *MDM_Policy_Config01_DeliveryOptimization02) GetPropertyDOPercentageMaxDownloadBandwidth() (value int32, err error) {
+	retValue, err := instance.GetProperty("DOPercentageMaxDownloadBandwidth")
 	if err != nil {
 		return
 	}

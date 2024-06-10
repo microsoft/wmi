@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -76,6 +75,18 @@ type Win32_PerfFormattedData_Counters_WFPReauthorization struct {
 
 	//
 	ReasonPolicyChange uint64
+
+	//
+	ReasonPreclassifyLocalAddressDimensionPolicyChanged uint64
+
+	//
+	ReasonPreclassifyLocalPortDimensionPolicyChanged uint64
+
+	//
+	ReasonPreclassifyRemoteAddressDimensionPolicyChanged uint64
+
+	//
+	ReasonPreclassifyRemotePortDimensionPolicyChanged uint64
 
 	//
 	ReasonProfileCrossing uint64
@@ -610,6 +621,114 @@ func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) SetProperty
 // GetReasonPolicyChange gets the value of ReasonPolicyChange for the instance
 func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) GetPropertyReasonPolicyChange() (value uint64, err error) {
 	retValue, err := instance.GetProperty("ReasonPolicyChange")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetReasonPreclassifyLocalAddressDimensionPolicyChanged sets the value of ReasonPreclassifyLocalAddressDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyLocalAddressDimensionPolicyChanged(value uint64) (err error) {
+	return instance.SetProperty("ReasonPreclassifyLocalAddressDimensionPolicyChanged", (value))
+}
+
+// GetReasonPreclassifyLocalAddressDimensionPolicyChanged gets the value of ReasonPreclassifyLocalAddressDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) GetPropertyReasonPreclassifyLocalAddressDimensionPolicyChanged() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ReasonPreclassifyLocalAddressDimensionPolicyChanged")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetReasonPreclassifyLocalPortDimensionPolicyChanged sets the value of ReasonPreclassifyLocalPortDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyLocalPortDimensionPolicyChanged(value uint64) (err error) {
+	return instance.SetProperty("ReasonPreclassifyLocalPortDimensionPolicyChanged", (value))
+}
+
+// GetReasonPreclassifyLocalPortDimensionPolicyChanged gets the value of ReasonPreclassifyLocalPortDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) GetPropertyReasonPreclassifyLocalPortDimensionPolicyChanged() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ReasonPreclassifyLocalPortDimensionPolicyChanged")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetReasonPreclassifyRemoteAddressDimensionPolicyChanged sets the value of ReasonPreclassifyRemoteAddressDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyRemoteAddressDimensionPolicyChanged(value uint64) (err error) {
+	return instance.SetProperty("ReasonPreclassifyRemoteAddressDimensionPolicyChanged", (value))
+}
+
+// GetReasonPreclassifyRemoteAddressDimensionPolicyChanged gets the value of ReasonPreclassifyRemoteAddressDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) GetPropertyReasonPreclassifyRemoteAddressDimensionPolicyChanged() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ReasonPreclassifyRemoteAddressDimensionPolicyChanged")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetReasonPreclassifyRemotePortDimensionPolicyChanged sets the value of ReasonPreclassifyRemotePortDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyRemotePortDimensionPolicyChanged(value uint64) (err error) {
+	return instance.SetProperty("ReasonPreclassifyRemotePortDimensionPolicyChanged", (value))
+}
+
+// GetReasonPreclassifyRemotePortDimensionPolicyChanged gets the value of ReasonPreclassifyRemotePortDimensionPolicyChanged for the instance
+func (instance *Win32_PerfFormattedData_Counters_WFPReauthorization) GetPropertyReasonPreclassifyRemotePortDimensionPolicyChanged() (value uint64, err error) {
+	retValue, err := instance.GetProperty("ReasonPreclassifyRemotePortDimensionPolicyChanged")
 	if err != nil {
 		return
 	}

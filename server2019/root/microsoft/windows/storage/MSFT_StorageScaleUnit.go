@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.Storage
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage
+//////////////////////////////////////////////
 package storage
 
 import (
@@ -55,18 +54,16 @@ func NewMSFT_StorageScaleUnitEx6(hostName string,
 // <param name="Manufacturer" type="string "></param>
 // <param name="Model" type="string "></param>
 // <param name="Timeout" type="uint32 "></param>
-// <param name="ValidateMaintenanceMode" type="bool "></param>
 
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_StorageScaleUnit) Maintenance( /* IN */ ValidateMaintenanceMode bool,
-	/* IN */ EnableMaintenanceMode bool,
+func (instance *MSFT_StorageScaleUnit) Maintenance( /* IN */ EnableMaintenanceMode bool,
 	/* IN */ Timeout uint32,
 	/* IN */ Model string,
 	/* IN */ Manufacturer string,
 	/* IN */ IgnoreDetachedVirtualDisks bool,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Maintenance", ValidateMaintenanceMode, EnableMaintenanceMode, Timeout, Model, Manufacturer, IgnoreDetachedVirtualDisks)
+	retVal, err := instance.InvokeMethod("Maintenance", EnableMaintenanceMode, Timeout, Model, Manufacturer, IgnoreDetachedVirtualDisks)
 	if err != nil {
 		return
 	}

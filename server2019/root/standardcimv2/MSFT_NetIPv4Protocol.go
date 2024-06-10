@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -22,9 +21,6 @@ type MSFT_NetIPv4Protocol struct {
 
 	//
 	MinimumMtu uint32
-
-	//
-	MultipleArpAnnouncements uint8
 }
 
 func NewMSFT_NetIPv4ProtocolEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetIPv4Protocol, err error) {
@@ -79,33 +75,6 @@ func (instance *MSFT_NetIPv4Protocol) GetPropertyMinimumMtu() (value uint32, err
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetMultipleArpAnnouncements sets the value of MultipleArpAnnouncements for the instance
-func (instance *MSFT_NetIPv4Protocol) SetPropertyMultipleArpAnnouncements(value uint8) (err error) {
-	return instance.SetProperty("MultipleArpAnnouncements", (value))
-}
-
-// GetMultipleArpAnnouncements gets the value of MultipleArpAnnouncements for the instance
-func (instance *MSFT_NetIPv4Protocol) GetPropertyMultipleArpAnnouncements() (value uint8, err error) {
-	retValue, err := instance.GetProperty("MultipleArpAnnouncements")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
 
 	return
 }

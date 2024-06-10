@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -23,9 +22,6 @@ type MDM_Policy_Config01_Kerberos02 struct {
 
 	//
 	AllowForestSearchOrder string
-
-	//
-	CloudKerberosTicketRetrievalEnabled int32
 
 	//
 	InstanceID string
@@ -101,33 +97,6 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyAllowForestSearchOrde
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetCloudKerberosTicketRetrievalEnabled sets the value of CloudKerberosTicketRetrievalEnabled for the instance
-func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyCloudKerberosTicketRetrievalEnabled(value int32) (err error) {
-	return instance.SetProperty("CloudKerberosTicketRetrievalEnabled", (value))
-}
-
-// GetCloudKerberosTicketRetrievalEnabled gets the value of CloudKerberosTicketRetrievalEnabled for the instance
-func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyCloudKerberosTicketRetrievalEnabled() (value int32, err error) {
-	retValue, err := instance.GetProperty("CloudKerberosTicketRetrievalEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

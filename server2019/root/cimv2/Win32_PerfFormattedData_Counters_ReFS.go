@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -31,33 +30,6 @@ type Win32_PerfFormattedData_Counters_ReFS struct {
 
 	//
 	AllocationofMetadataClustersonSlowTierPersec uint64
-
-	//
-	AllocatorCacheCollisions uint32
-
-	//
-	AllocatorCacheDeletions uint32
-
-	//
-	AllocatorCacheInsertions uint32
-
-	//
-	AllocatorCachePurges uint32
-
-	//
-	AllocatorCacheSize uint32
-
-	//
-	AllocatorRegionsExaminedAverage uint64
-
-	//
-	AllocatorRegionsExaminedMax uint32
-
-	//
-	Checkpointastreeupdatelatency100ns uint64
-
-	//
-	Checkpointexclusivelockslatency100ns uint64
 
 	//
 	Checkpointlatency100ns uint64
@@ -151,9 +123,6 @@ type Win32_PerfFormattedData_Counters_ReFS struct {
 
 	//
 	TotalAllocationofClustersPersec uint64
-
-	//
-	Treeupdateexclusivelockslatency100ns uint64
 
 	//
 	Treeupdatelatency100ns uint64
@@ -283,249 +252,6 @@ func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocationofMe
 // GetAllocationofMetadataClustersonSlowTierPersec gets the value of AllocationofMetadataClustersonSlowTierPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocationofMetadataClustersonSlowTierPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("AllocationofMetadataClustersonSlowTierPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetAllocatorCacheCollisions sets the value of AllocatorCacheCollisions for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocatorCacheCollisions(value uint32) (err error) {
-	return instance.SetProperty("AllocatorCacheCollisions", (value))
-}
-
-// GetAllocatorCacheCollisions gets the value of AllocatorCacheCollisions for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocatorCacheCollisions() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AllocatorCacheCollisions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetAllocatorCacheDeletions sets the value of AllocatorCacheDeletions for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocatorCacheDeletions(value uint32) (err error) {
-	return instance.SetProperty("AllocatorCacheDeletions", (value))
-}
-
-// GetAllocatorCacheDeletions gets the value of AllocatorCacheDeletions for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocatorCacheDeletions() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AllocatorCacheDeletions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetAllocatorCacheInsertions sets the value of AllocatorCacheInsertions for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocatorCacheInsertions(value uint32) (err error) {
-	return instance.SetProperty("AllocatorCacheInsertions", (value))
-}
-
-// GetAllocatorCacheInsertions gets the value of AllocatorCacheInsertions for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocatorCacheInsertions() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AllocatorCacheInsertions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetAllocatorCachePurges sets the value of AllocatorCachePurges for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocatorCachePurges(value uint32) (err error) {
-	return instance.SetProperty("AllocatorCachePurges", (value))
-}
-
-// GetAllocatorCachePurges gets the value of AllocatorCachePurges for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocatorCachePurges() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AllocatorCachePurges")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetAllocatorCacheSize sets the value of AllocatorCacheSize for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocatorCacheSize(value uint32) (err error) {
-	return instance.SetProperty("AllocatorCacheSize", (value))
-}
-
-// GetAllocatorCacheSize gets the value of AllocatorCacheSize for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocatorCacheSize() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AllocatorCacheSize")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetAllocatorRegionsExaminedAverage sets the value of AllocatorRegionsExaminedAverage for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocatorRegionsExaminedAverage(value uint64) (err error) {
-	return instance.SetProperty("AllocatorRegionsExaminedAverage", (value))
-}
-
-// GetAllocatorRegionsExaminedAverage gets the value of AllocatorRegionsExaminedAverage for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocatorRegionsExaminedAverage() (value uint64, err error) {
-	retValue, err := instance.GetProperty("AllocatorRegionsExaminedAverage")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetAllocatorRegionsExaminedMax sets the value of AllocatorRegionsExaminedMax for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyAllocatorRegionsExaminedMax(value uint32) (err error) {
-	return instance.SetProperty("AllocatorRegionsExaminedMax", (value))
-}
-
-// GetAllocatorRegionsExaminedMax gets the value of AllocatorRegionsExaminedMax for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyAllocatorRegionsExaminedMax() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AllocatorRegionsExaminedMax")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetCheckpointastreeupdatelatency100ns sets the value of Checkpointastreeupdatelatency100ns for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyCheckpointastreeupdatelatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Checkpointastreeupdatelatency100ns", (value))
-}
-
-// GetCheckpointastreeupdatelatency100ns gets the value of Checkpointastreeupdatelatency100ns for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyCheckpointastreeupdatelatency100ns() (value uint64, err error) {
-	retValue, err := instance.GetProperty("Checkpointastreeupdatelatency100ns")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetCheckpointexclusivelockslatency100ns sets the value of Checkpointexclusivelockslatency100ns for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyCheckpointexclusivelockslatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Checkpointexclusivelockslatency100ns", (value))
-}
-
-// GetCheckpointexclusivelockslatency100ns gets the value of Checkpointexclusivelockslatency100ns for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyCheckpointexclusivelockslatency100ns() (value uint64, err error) {
-	retValue, err := instance.GetProperty("Checkpointexclusivelockslatency100ns")
 	if err != nil {
 		return
 	}
@@ -1363,33 +1089,6 @@ func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyTotalAllocatio
 // GetTotalAllocationofClustersPersec gets the value of TotalAllocationofClustersPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyTotalAllocationofClustersPersec() (value uint64, err error) {
 	retValue, err := instance.GetProperty("TotalAllocationofClustersPersec")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetTreeupdateexclusivelockslatency100ns sets the value of Treeupdateexclusivelockslatency100ns for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) SetPropertyTreeupdateexclusivelockslatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Treeupdateexclusivelockslatency100ns", (value))
-}
-
-// GetTreeupdateexclusivelockslatency100ns gets the value of Treeupdateexclusivelockslatency100ns for the instance
-func (instance *Win32_PerfFormattedData_Counters_ReFS) GetPropertyTreeupdateexclusivelockslatency100ns() (value uint64, err error) {
-	retValue, err := instance.GetProperty("Treeupdateexclusivelockslatency100ns")
 	if err != nil {
 		return
 	}

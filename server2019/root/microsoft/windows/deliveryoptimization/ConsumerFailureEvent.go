@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // __ConsumerFailureEvent struct
@@ -61,7 +58,7 @@ func New__ConsumerFailureEventEx6(hostName string,
 
 // SetErrorCode sets the value of ErrorCode for the instance
 func (instance *__ConsumerFailureEvent) SetPropertyErrorCode(value uint32) (err error) {
-	return instance.SetProperty("ErrorCode", (value))
+	return instance.SetProperty("ErrorCode", value)
 }
 
 // GetErrorCode gets the value of ErrorCode for the instance
@@ -70,25 +67,16 @@ func (instance *__ConsumerFailureEvent) GetPropertyErrorCode() (value uint32, er
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetErrorDescription sets the value of ErrorDescription for the instance
 func (instance *__ConsumerFailureEvent) SetPropertyErrorDescription(value string) (err error) {
-	return instance.SetProperty("ErrorDescription", (value))
+	return instance.SetProperty("ErrorDescription", value)
 }
 
 // GetErrorDescription gets the value of ErrorDescription for the instance
@@ -97,25 +85,16 @@ func (instance *__ConsumerFailureEvent) GetPropertyErrorDescription() (value str
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetErrorObject sets the value of ErrorObject for the instance
 func (instance *__ConsumerFailureEvent) SetPropertyErrorObject(value __ExtendedStatus) (err error) {
-	return instance.SetProperty("ErrorObject", (value))
+	return instance.SetProperty("ErrorObject", value)
 }
 
 // GetErrorObject gets the value of ErrorObject for the instance
@@ -124,18 +103,9 @@ func (instance *__ConsumerFailureEvent) GetPropertyErrorObject() (value __Extend
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(__ExtendedStatus)
+	value, ok := retValue.(__ExtendedStatus)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " __ExtendedStatus is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = __ExtendedStatus(valuetmp)
-
 	return
 }

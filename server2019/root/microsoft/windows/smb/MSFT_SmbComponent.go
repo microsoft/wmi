@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.SMB
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.SMB
+//////////////////////////////////////////////
 package smb
 
 import (
@@ -56,58 +55,6 @@ func NewMSFT_SmbComponentEx6(hostName string,
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_SmbComponent) RemoveSmbComponent( /* IN */ Name []string) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("RemoveSmbComponent", Name)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_SmbComponent) ClientUnloadSmbDirect() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("ClientUnloadSmbDirect")
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_SmbComponent) ClientReloadSmbDirect() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("ClientReloadSmbDirect")
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_SmbComponent) ServerUnloadSmbDirect() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("ServerUnloadSmbDirect")
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_SmbComponent) ServerReloadSmbDirect() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("ServerReloadSmbDirect")
 	if err != nil {
 		return
 	}

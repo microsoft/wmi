@@ -1,27 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // Win32_PerfRawData_Counters_EventLog struct
 type Win32_PerfRawData_Counters_EventLog struct {
 	*Win32_PerfRawData
-
-	//
-	ActiveChannels uint32
 
 	//
 	Activesubscriptions uint32
@@ -71,36 +65,9 @@ func NewWin32_PerfRawData_Counters_EventLogEx6(hostName string,
 	return
 }
 
-// SetActiveChannels sets the value of ActiveChannels for the instance
-func (instance *Win32_PerfRawData_Counters_EventLog) SetPropertyActiveChannels(value uint32) (err error) {
-	return instance.SetProperty("ActiveChannels", (value))
-}
-
-// GetActiveChannels gets the value of ActiveChannels for the instance
-func (instance *Win32_PerfRawData_Counters_EventLog) GetPropertyActiveChannels() (value uint32, err error) {
-	retValue, err := instance.GetProperty("ActiveChannels")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetActivesubscriptions sets the value of Activesubscriptions for the instance
 func (instance *Win32_PerfRawData_Counters_EventLog) SetPropertyActivesubscriptions(value uint32) (err error) {
-	return instance.SetProperty("Activesubscriptions", (value))
+	return instance.SetProperty("Activesubscriptions", value)
 }
 
 // GetActivesubscriptions gets the value of Activesubscriptions for the instance
@@ -109,25 +76,16 @@ func (instance *Win32_PerfRawData_Counters_EventLog) GetPropertyActivesubscripti
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetELFRPCcallsPersec sets the value of ELFRPCcallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_EventLog) SetPropertyELFRPCcallsPersec(value uint64) (err error) {
-	return instance.SetProperty("ELFRPCcallsPersec", (value))
+	return instance.SetProperty("ELFRPCcallsPersec", value)
 }
 
 // GetELFRPCcallsPersec gets the value of ELFRPCcallsPersec for the instance
@@ -136,25 +94,16 @@ func (instance *Win32_PerfRawData_Counters_EventLog) GetPropertyELFRPCcallsPerse
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetEnabledChannels sets the value of EnabledChannels for the instance
 func (instance *Win32_PerfRawData_Counters_EventLog) SetPropertyEnabledChannels(value uint32) (err error) {
-	return instance.SetProperty("EnabledChannels", (value))
+	return instance.SetProperty("EnabledChannels", value)
 }
 
 // GetEnabledChannels gets the value of EnabledChannels for the instance
@@ -163,25 +112,16 @@ func (instance *Win32_PerfRawData_Counters_EventLog) GetPropertyEnabledChannels(
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetEventfilteroperationsPersec sets the value of EventfilteroperationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_EventLog) SetPropertyEventfilteroperationsPersec(value uint64) (err error) {
-	return instance.SetProperty("EventfilteroperationsPersec", (value))
+	return instance.SetProperty("EventfilteroperationsPersec", value)
 }
 
 // GetEventfilteroperationsPersec gets the value of EventfilteroperationsPersec for the instance
@@ -190,25 +130,16 @@ func (instance *Win32_PerfRawData_Counters_EventLog) GetPropertyEventfilteropera
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetEventsPersec sets the value of EventsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_EventLog) SetPropertyEventsPersec(value uint64) (err error) {
-	return instance.SetProperty("EventsPersec", (value))
+	return instance.SetProperty("EventsPersec", value)
 }
 
 // GetEventsPersec gets the value of EventsPersec for the instance
@@ -217,25 +148,16 @@ func (instance *Win32_PerfRawData_Counters_EventLog) GetPropertyEventsPersec() (
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetWEVTRPCcallsPersec sets the value of WEVTRPCcallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_EventLog) SetPropertyWEVTRPCcallsPersec(value uint64) (err error) {
-	return instance.SetProperty("WEVTRPCcallsPersec", (value))
+	return instance.SetProperty("WEVTRPCcallsPersec", value)
 }
 
 // GetWEVTRPCcallsPersec gets the value of WEVTRPCcallsPersec for the instance
@@ -244,18 +166,9 @@ func (instance *Win32_PerfRawData_Counters_EventLog) GetPropertyWEVTRPCcallsPers
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }

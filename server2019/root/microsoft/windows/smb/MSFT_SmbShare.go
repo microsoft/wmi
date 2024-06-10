@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.SMB
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.SMB
+//////////////////////////////////////////////
 package smb
 
 import (
@@ -31,9 +30,6 @@ type MSFT_SmbShare struct {
 	CATimeout uint32
 
 	//
-	CompressData bool
-
-	//
 	ConcurrentUserLimit uint32
 
 	//
@@ -44,9 +40,6 @@ type MSFT_SmbShare struct {
 
 	//
 	Description string
-
-	//
-	DirectoryHandleLeasing bool
 
 	//
 	EncryptData bool
@@ -61,9 +54,6 @@ type MSFT_SmbShare struct {
 	Infrastructure bool
 
 	//
-	IsolatedTransport bool
-
-	//
 	LeasingMode SmbShare_LeasingMode
 
 	//
@@ -71,12 +61,6 @@ type MSFT_SmbShare struct {
 
 	//
 	Path string
-
-	//
-	QoSFlowScope SmbShare_QoSFlowScope
-
-	//
-	QoSPolicyId string
 
 	//
 	Scoped bool
@@ -219,33 +203,6 @@ func (instance *MSFT_SmbShare) GetPropertyCATimeout() (value uint32, err error) 
 	return
 }
 
-// SetCompressData sets the value of CompressData for the instance
-func (instance *MSFT_SmbShare) SetPropertyCompressData(value bool) (err error) {
-	return instance.SetProperty("CompressData", (value))
-}
-
-// GetCompressData gets the value of CompressData for the instance
-func (instance *MSFT_SmbShare) GetPropertyCompressData() (value bool, err error) {
-	retValue, err := instance.GetProperty("CompressData")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetConcurrentUserLimit sets the value of ConcurrentUserLimit for the instance
 func (instance *MSFT_SmbShare) SetPropertyConcurrentUserLimit(value uint32) (err error) {
 	return instance.SetProperty("ConcurrentUserLimit", (value))
@@ -350,33 +307,6 @@ func (instance *MSFT_SmbShare) GetPropertyDescription() (value string, err error
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetDirectoryHandleLeasing sets the value of DirectoryHandleLeasing for the instance
-func (instance *MSFT_SmbShare) SetPropertyDirectoryHandleLeasing(value bool) (err error) {
-	return instance.SetProperty("DirectoryHandleLeasing", (value))
-}
-
-// GetDirectoryHandleLeasing gets the value of DirectoryHandleLeasing for the instance
-func (instance *MSFT_SmbShare) GetPropertyDirectoryHandleLeasing() (value bool, err error) {
-	retValue, err := instance.GetProperty("DirectoryHandleLeasing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }
@@ -489,33 +419,6 @@ func (instance *MSFT_SmbShare) GetPropertyInfrastructure() (value bool, err erro
 	return
 }
 
-// SetIsolatedTransport sets the value of IsolatedTransport for the instance
-func (instance *MSFT_SmbShare) SetPropertyIsolatedTransport(value bool) (err error) {
-	return instance.SetProperty("IsolatedTransport", (value))
-}
-
-// GetIsolatedTransport gets the value of IsolatedTransport for the instance
-func (instance *MSFT_SmbShare) GetPropertyIsolatedTransport() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsolatedTransport")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetLeasingMode sets the value of LeasingMode for the instance
 func (instance *MSFT_SmbShare) SetPropertyLeasingMode(value SmbShare_LeasingMode) (err error) {
 	return instance.SetProperty("LeasingMode", (value))
@@ -578,60 +481,6 @@ func (instance *MSFT_SmbShare) SetPropertyPath(value string) (err error) {
 // GetPath gets the value of Path for the instance
 func (instance *MSFT_SmbShare) GetPropertyPath() (value string, err error) {
 	retValue, err := instance.GetProperty("Path")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetQoSFlowScope sets the value of QoSFlowScope for the instance
-func (instance *MSFT_SmbShare) SetPropertyQoSFlowScope(value SmbShare_QoSFlowScope) (err error) {
-	return instance.SetProperty("QoSFlowScope", (value))
-}
-
-// GetQoSFlowScope gets the value of QoSFlowScope for the instance
-func (instance *MSFT_SmbShare) GetPropertyQoSFlowScope() (value SmbShare_QoSFlowScope, err error) {
-	retValue, err := instance.GetProperty("QoSFlowScope")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = SmbShare_QoSFlowScope(valuetmp)
-
-	return
-}
-
-// SetQoSPolicyId sets the value of QoSPolicyId for the instance
-func (instance *MSFT_SmbShare) SetPropertyQoSPolicyId(value string) (err error) {
-	return instance.SetProperty("QoSPolicyId", (value))
-}
-
-// GetQoSPolicyId gets the value of QoSPolicyId for the instance
-func (instance *MSFT_SmbShare) GetPropertyQoSPolicyId() (value string, err error) {
-	retValue, err := instance.GetProperty("QoSPolicyId")
 	if err != nil {
 		return
 	}
@@ -926,21 +775,16 @@ func (instance *MSFT_SmbShare) GetPropertyVolume() (value string, err error) {
 // <param name="CachingMode" type="uint32 "></param>
 // <param name="CATimeout" type="uint32 "></param>
 // <param name="ChangeAccess" type="string []"></param>
-// <param name="CompressData" type="bool "></param>
 // <param name="ConcurrentUserLimit" type="uint32 "></param>
 // <param name="ContinuouslyAvailable" type="bool "></param>
 // <param name="Description" type="string "></param>
-// <param name="DirectoryHandleLeasing" type="bool "></param>
 // <param name="EncryptData" type="bool "></param>
 // <param name="FolderEnumerationMode" type="uint32 "></param>
 // <param name="FullAccess" type="string []"></param>
-// <param name="IsolatedTransport" type="bool "></param>
 // <param name="LeasingMode" type="uint32 "></param>
 // <param name="Name" type="string "></param>
 // <param name="NoAccess" type="string []"></param>
 // <param name="Path" type="string "></param>
-// <param name="QoSFlowScope" type="uint32 "></param>
-// <param name="QoSPolicyId" type="string "></param>
 // <param name="ReadAccess" type="string []"></param>
 // <param name="ScopeName" type="string "></param>
 // <param name="SecurityDescriptor" type="string "></param>
@@ -959,19 +803,14 @@ func (instance *MSFT_SmbShare) CreateShare( /* IN */ Name string,
 	/* IN */ ContinuouslyAvailable bool,
 	/* IN */ CATimeout uint32,
 	/* IN */ EncryptData bool,
-	/* IN */ CompressData bool,
-	/* IN */ IsolatedTransport bool,
 	/* IN */ FullAccess []string,
 	/* IN */ ChangeAccess []string,
 	/* IN */ ReadAccess []string,
 	/* IN */ NoAccess []string,
 	/* IN */ SecurityDescriptor string,
-	/* IN */ LeasingMode uint32,
-	/* IN */ DirectoryHandleLeasing bool,
-	/* IN */ QoSFlowScope uint32,
-	/* IN */ QoSPolicyId string,
-	/* OUT */ CreatedShare MSFT_SmbShare) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CreateShare", Name, ScopeName, Path, Description, ConcurrentUserLimit, FolderEnumerationMode, CachingMode, Temporary, ContinuouslyAvailable, CATimeout, EncryptData, CompressData, IsolatedTransport, FullAccess, ChangeAccess, ReadAccess, NoAccess, SecurityDescriptor, LeasingMode, DirectoryHandleLeasing, QoSFlowScope, QoSPolicyId)
+	/* OUT */ CreatedShare MSFT_SmbShare,
+	/* OPTIONAL IN */ LeasingMode uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("CreateShare", Name, ScopeName, Path, Description, ConcurrentUserLimit, FolderEnumerationMode, CachingMode, Temporary, ContinuouslyAvailable, CATimeout, EncryptData, FullAccess, ChangeAccess, ReadAccess, NoAccess, SecurityDescriptor, LeasingMode)
 	if err != nil {
 		return
 	}
@@ -1119,8 +958,6 @@ func (instance *MSFT_SmbShare) GetShare( /* IN */ ScopeName string,
 // <param name="EventType" type="uint32 "></param>
 // <param name="Flags" type="uint32 "></param>
 // <param name="Path" type="string "></param>
-// <param name="QoSFlowScope" type="uint32 "></param>
-// <param name="QoSPolicyId" type="string "></param>
 // <param name="Remark" type="string "></param>
 // <param name="ScopeName" type="string "></param>
 // <param name="SecurityDescriptor" type="string "></param>
@@ -1139,10 +976,8 @@ func (instance *MSFT_SmbShare) FireShareChangeEvent( /* IN */ EventType uint32,
 	/* IN */ CATimeout uint32,
 	/* IN */ Flags uint32,
 	/* IN */ Type uint32,
-	/* IN */ ConcurrentUserLimit uint32,
-	/* IN */ QoSFlowScope uint32,
-	/* IN */ QoSPolicyId string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("FireShareChangeEvent", EventType, ScopeName, ShareName, Path, Remark, SecurityDescriptor, ShareState, CATimeout, Flags, Type, ConcurrentUserLimit, QoSFlowScope, QoSPolicyId)
+	/* IN */ ConcurrentUserLimit uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("FireShareChangeEvent", EventType, ScopeName, ShareName, Path, Remark, SecurityDescriptor, ShareState, CATimeout, Flags, Type, ConcurrentUserLimit)
 	if err != nil {
 		return
 	}

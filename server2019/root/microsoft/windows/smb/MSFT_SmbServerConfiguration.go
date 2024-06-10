@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.SMB
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.Windows.SMB
+//////////////////////////////////////////////
 package smb
 
 import (
@@ -31,16 +30,10 @@ type MSFT_SmbServerConfiguration struct {
 	AsynchronousCredits uint32
 
 	//
-	AuditClientCertificateAccess bool
-
-	//
 	AuditSmb1Access bool
 
 	//
-	AutoDisconnectTimeoutInMinutesV1 uint32
-
-	//
-	AutoDisconnectTimeoutInSecondsV2 uint32
+	AutoDisconnectTimeout uint32
 
 	//
 	AutoShareServer bool
@@ -52,19 +45,10 @@ type MSFT_SmbServerConfiguration struct {
 	CachedOpenLimit uint32
 
 	//
-	DisableCompression bool
-
-	//
-	DisableSmbEncryptionOnSecureConnection bool
-
-	//
 	DurableHandleV2TimeoutInSeconds uint32
 
 	//
 	EnableAuthenticateUserSharing bool
-
-	//
-	EnableDirectoryHandleLeasing bool
 
 	//
 	EnableDownlevelTimewarp bool
@@ -91,19 +75,10 @@ type MSFT_SmbServerConfiguration struct {
 	EnableSMB2Protocol bool
 
 	//
-	EnableSMBQUIC bool
-
-	//
 	EnableStrictNameChecking bool
 
 	//
 	EncryptData bool
-
-	//
-	EncryptionCiphers string
-
-	//
-	InvalidAuthenticationDelayTimeInMs uint32
 
 	//
 	IrpStackSize uint32
@@ -142,13 +117,7 @@ type MSFT_SmbServerConfiguration struct {
 	RejectUnencryptedAccess bool
 
 	//
-	RequestCompression bool
-
-	//
 	RequireSecuritySignature bool
-
-	//
-	RestrictNamedpipeAccessViaQuic bool
 
 	//
 	ServerHidden bool
@@ -288,33 +257,6 @@ func (instance *MSFT_SmbServerConfiguration) GetPropertyAsynchronousCredits() (v
 	return
 }
 
-// SetAuditClientCertificateAccess sets the value of AuditClientCertificateAccess for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyAuditClientCertificateAccess(value bool) (err error) {
-	return instance.SetProperty("AuditClientCertificateAccess", (value))
-}
-
-// GetAuditClientCertificateAccess gets the value of AuditClientCertificateAccess for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyAuditClientCertificateAccess() (value bool, err error) {
-	retValue, err := instance.GetProperty("AuditClientCertificateAccess")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetAuditSmb1Access sets the value of AuditSmb1Access for the instance
 func (instance *MSFT_SmbServerConfiguration) SetPropertyAuditSmb1Access(value bool) (err error) {
 	return instance.SetProperty("AuditSmb1Access", (value))
@@ -342,41 +284,14 @@ func (instance *MSFT_SmbServerConfiguration) GetPropertyAuditSmb1Access() (value
 	return
 }
 
-// SetAutoDisconnectTimeoutInMinutesV1 sets the value of AutoDisconnectTimeoutInMinutesV1 for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyAutoDisconnectTimeoutInMinutesV1(value uint32) (err error) {
-	return instance.SetProperty("AutoDisconnectTimeoutInMinutesV1", (value))
+// SetAutoDisconnectTimeout sets the value of AutoDisconnectTimeout for the instance
+func (instance *MSFT_SmbServerConfiguration) SetPropertyAutoDisconnectTimeout(value uint32) (err error) {
+	return instance.SetProperty("AutoDisconnectTimeout", (value))
 }
 
-// GetAutoDisconnectTimeoutInMinutesV1 gets the value of AutoDisconnectTimeoutInMinutesV1 for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyAutoDisconnectTimeoutInMinutesV1() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AutoDisconnectTimeoutInMinutesV1")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetAutoDisconnectTimeoutInSecondsV2 sets the value of AutoDisconnectTimeoutInSecondsV2 for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyAutoDisconnectTimeoutInSecondsV2(value uint32) (err error) {
-	return instance.SetProperty("AutoDisconnectTimeoutInSecondsV2", (value))
-}
-
-// GetAutoDisconnectTimeoutInSecondsV2 gets the value of AutoDisconnectTimeoutInSecondsV2 for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyAutoDisconnectTimeoutInSecondsV2() (value uint32, err error) {
-	retValue, err := instance.GetProperty("AutoDisconnectTimeoutInSecondsV2")
+// GetAutoDisconnectTimeout gets the value of AutoDisconnectTimeout for the instance
+func (instance *MSFT_SmbServerConfiguration) GetPropertyAutoDisconnectTimeout() (value uint32, err error) {
+	retValue, err := instance.GetProperty("AutoDisconnectTimeout")
 	if err != nil {
 		return
 	}
@@ -477,60 +392,6 @@ func (instance *MSFT_SmbServerConfiguration) GetPropertyCachedOpenLimit() (value
 	return
 }
 
-// SetDisableCompression sets the value of DisableCompression for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyDisableCompression(value bool) (err error) {
-	return instance.SetProperty("DisableCompression", (value))
-}
-
-// GetDisableCompression gets the value of DisableCompression for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyDisableCompression() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableCompression")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetDisableSmbEncryptionOnSecureConnection sets the value of DisableSmbEncryptionOnSecureConnection for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyDisableSmbEncryptionOnSecureConnection(value bool) (err error) {
-	return instance.SetProperty("DisableSmbEncryptionOnSecureConnection", (value))
-}
-
-// GetDisableSmbEncryptionOnSecureConnection gets the value of DisableSmbEncryptionOnSecureConnection for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyDisableSmbEncryptionOnSecureConnection() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableSmbEncryptionOnSecureConnection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetDurableHandleV2TimeoutInSeconds sets the value of DurableHandleV2TimeoutInSeconds for the instance
 func (instance *MSFT_SmbServerConfiguration) SetPropertyDurableHandleV2TimeoutInSeconds(value uint32) (err error) {
 	return instance.SetProperty("DurableHandleV2TimeoutInSeconds", (value))
@@ -566,33 +427,6 @@ func (instance *MSFT_SmbServerConfiguration) SetPropertyEnableAuthenticateUserSh
 // GetEnableAuthenticateUserSharing gets the value of EnableAuthenticateUserSharing for the instance
 func (instance *MSFT_SmbServerConfiguration) GetPropertyEnableAuthenticateUserSharing() (value bool, err error) {
 	retValue, err := instance.GetProperty("EnableAuthenticateUserSharing")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetEnableDirectoryHandleLeasing sets the value of EnableDirectoryHandleLeasing for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyEnableDirectoryHandleLeasing(value bool) (err error) {
-	return instance.SetProperty("EnableDirectoryHandleLeasing", (value))
-}
-
-// GetEnableDirectoryHandleLeasing gets the value of EnableDirectoryHandleLeasing for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyEnableDirectoryHandleLeasing() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableDirectoryHandleLeasing")
 	if err != nil {
 		return
 	}
@@ -828,33 +662,6 @@ func (instance *MSFT_SmbServerConfiguration) GetPropertyEnableSMB2Protocol() (va
 	return
 }
 
-// SetEnableSMBQUIC sets the value of EnableSMBQUIC for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyEnableSMBQUIC(value bool) (err error) {
-	return instance.SetProperty("EnableSMBQUIC", (value))
-}
-
-// GetEnableSMBQUIC gets the value of EnableSMBQUIC for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyEnableSMBQUIC() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableSMBQUIC")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetEnableStrictNameChecking sets the value of EnableStrictNameChecking for the instance
 func (instance *MSFT_SmbServerConfiguration) SetPropertyEnableStrictNameChecking(value bool) (err error) {
 	return instance.SetProperty("EnableStrictNameChecking", (value))
@@ -905,60 +712,6 @@ func (instance *MSFT_SmbServerConfiguration) GetPropertyEncryptData() (value boo
 	}
 
 	value = bool(valuetmp)
-
-	return
-}
-
-// SetEncryptionCiphers sets the value of EncryptionCiphers for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyEncryptionCiphers(value string) (err error) {
-	return instance.SetProperty("EncryptionCiphers", (value))
-}
-
-// GetEncryptionCiphers gets the value of EncryptionCiphers for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyEncryptionCiphers() (value string, err error) {
-	retValue, err := instance.GetProperty("EncryptionCiphers")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetInvalidAuthenticationDelayTimeInMs sets the value of InvalidAuthenticationDelayTimeInMs for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyInvalidAuthenticationDelayTimeInMs(value uint32) (err error) {
-	return instance.SetProperty("InvalidAuthenticationDelayTimeInMs", (value))
-}
-
-// GetInvalidAuthenticationDelayTimeInMs gets the value of InvalidAuthenticationDelayTimeInMs for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyInvalidAuthenticationDelayTimeInMs() (value uint32, err error) {
-	retValue, err := instance.GetProperty("InvalidAuthenticationDelayTimeInMs")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
 
 	return
 }
@@ -1287,33 +1040,6 @@ func (instance *MSFT_SmbServerConfiguration) GetPropertyRejectUnencryptedAccess(
 	return
 }
 
-// SetRequestCompression sets the value of RequestCompression for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyRequestCompression(value bool) (err error) {
-	return instance.SetProperty("RequestCompression", (value))
-}
-
-// GetRequestCompression gets the value of RequestCompression for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyRequestCompression() (value bool, err error) {
-	retValue, err := instance.GetProperty("RequestCompression")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetRequireSecuritySignature sets the value of RequireSecuritySignature for the instance
 func (instance *MSFT_SmbServerConfiguration) SetPropertyRequireSecuritySignature(value bool) (err error) {
 	return instance.SetProperty("RequireSecuritySignature", (value))
@@ -1322,33 +1048,6 @@ func (instance *MSFT_SmbServerConfiguration) SetPropertyRequireSecuritySignature
 // GetRequireSecuritySignature gets the value of RequireSecuritySignature for the instance
 func (instance *MSFT_SmbServerConfiguration) GetPropertyRequireSecuritySignature() (value bool, err error) {
 	retValue, err := instance.GetProperty("RequireSecuritySignature")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
-// SetRestrictNamedpipeAccessViaQuic sets the value of RestrictNamedpipeAccessViaQuic for the instance
-func (instance *MSFT_SmbServerConfiguration) SetPropertyRestrictNamedpipeAccessViaQuic(value bool) (err error) {
-	return instance.SetProperty("RestrictNamedpipeAccessViaQuic", (value))
-}
-
-// GetRestrictNamedpipeAccessViaQuic gets the value of RestrictNamedpipeAccessViaQuic for the instance
-func (instance *MSFT_SmbServerConfiguration) GetPropertyRestrictNamedpipeAccessViaQuic() (value bool, err error) {
-	retValue, err := instance.GetProperty("RestrictNamedpipeAccessViaQuic")
 	if err != nil {
 		return
 	}
@@ -1628,125 +1327,16 @@ func (instance *MSFT_SmbServerConfiguration) GetConfiguration( /* OUT */ Output 
 
 //
 
-// <param name="All" type="bool "></param>
-// <param name="AnnounceComment" type="bool "></param>
-// <param name="AnnounceServer" type="bool "></param>
-// <param name="AsynchronousCredits" type="bool "></param>
-// <param name="AuditClientCertificateAccess" type="bool "></param>
-// <param name="AuditSmb1Access" type="bool "></param>
-// <param name="AutoShareServer" type="bool "></param>
-// <param name="AutoShareWorkstation" type="bool "></param>
-// <param name="CachedOpenLimit" type="bool "></param>
-// <param name="DisableCompression" type="bool "></param>
-// <param name="DisableSmbEncryptionOnSecureConnection" type="bool "></param>
-// <param name="DurableHandleV2TimeoutInSeconds" type="bool "></param>
-// <param name="EnableDirectoryHandleLeasing" type="bool "></param>
-// <param name="EnableDownlevelTimewarp" type="bool "></param>
-// <param name="EnableLeasing" type="bool "></param>
-// <param name="EnableMultiChannel" type="bool "></param>
-// <param name="EnableOplocks" type="bool "></param>
-// <param name="EnableSMB2Protocol" type="bool "></param>
-// <param name="EnableSMBQUIC" type="bool "></param>
-// <param name="EnableStrictNameChecking" type="bool "></param>
-// <param name="EncryptData" type="bool "></param>
-// <param name="EncryptionCiphers" type="bool "></param>
-// <param name="IrpStackSize" type="bool "></param>
-// <param name="KeepAliveTime" type="bool "></param>
-// <param name="MaxChannelPerSession" type="bool "></param>
-// <param name="MaxMpxCount" type="bool "></param>
-// <param name="MaxSessionPerConnection" type="bool "></param>
-// <param name="MaxThreadsPerQueue" type="bool "></param>
-// <param name="MaxWorkItems" type="bool "></param>
-// <param name="NullSessionShares" type="bool "></param>
-// <param name="OplockBreakWait" type="bool "></param>
-// <param name="PendingClientTimeoutInSeconds" type="bool "></param>
-// <param name="RejectUnencryptedAccess" type="bool "></param>
-// <param name="RequestCompression" type="bool "></param>
-// <param name="RestrictNamedpipeAccessViaQuic" type="bool "></param>
-// <param name="ServerHidden" type="bool "></param>
-// <param name="Smb2CreditsMax" type="bool "></param>
-// <param name="Smb2CreditsMin" type="bool "></param>
-// <param name="SmbServerNameHardeningLevel" type="bool "></param>
-// <param name="TreatHostAsStableStorage" type="bool "></param>
-// <param name="ValidateAliasNotCircular" type="bool "></param>
-// <param name="ValidateShareScope" type="bool "></param>
-// <param name="ValidateShareScopeNotAliased" type="bool "></param>
-// <param name="ValidateTargetName" type="bool "></param>
-
-// <param name="Output" type="MSFT_SmbServerConfiguration "></param>
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_SmbServerConfiguration) ResetConfiguration( /* OUT */ Output MSFT_SmbServerConfiguration,
-	/* OPTIONAL IN */ All bool,
-	/* OPTIONAL IN */ AnnounceServer bool,
-	/* OPTIONAL IN */ AsynchronousCredits bool,
-	/* OPTIONAL IN */ AutoShareServer bool,
-	/* OPTIONAL IN */ AutoShareWorkstation bool,
-	/* OPTIONAL IN */ CachedOpenLimit bool,
-	/* OPTIONAL IN */ AnnounceComment bool,
-	/* OPTIONAL IN */ EnableDownlevelTimewarp bool,
-	/* OPTIONAL IN */ EnableLeasing bool,
-	/* OPTIONAL IN */ EnableMultiChannel bool,
-	/* OPTIONAL IN */ EnableStrictNameChecking bool,
-	/* OPTIONAL IN */ DisableCompression bool,
-	/* OPTIONAL IN */ DurableHandleV2TimeoutInSeconds bool,
-	/* OPTIONAL IN */ EnableOplocks bool,
-	/* OPTIONAL IN */ ServerHidden bool,
-	/* OPTIONAL IN */ IrpStackSize bool,
-	/* OPTIONAL IN */ KeepAliveTime bool,
-	/* OPTIONAL IN */ MaxChannelPerSession bool,
-	/* OPTIONAL IN */ MaxMpxCount bool,
-	/* OPTIONAL IN */ MaxSessionPerConnection bool,
-	/* OPTIONAL IN */ MaxThreadsPerQueue bool,
-	/* OPTIONAL IN */ MaxWorkItems bool,
-	/* OPTIONAL IN */ NullSessionShares bool,
-	/* OPTIONAL IN */ OplockBreakWait bool,
-	/* OPTIONAL IN */ PendingClientTimeoutInSeconds bool,
-	/* OPTIONAL IN */ EnableSMB2Protocol bool,
-	/* OPTIONAL IN */ Smb2CreditsMax bool,
-	/* OPTIONAL IN */ Smb2CreditsMin bool,
-	/* OPTIONAL IN */ SmbServerNameHardeningLevel bool,
-	/* OPTIONAL IN */ TreatHostAsStableStorage bool,
-	/* OPTIONAL IN */ ValidateAliasNotCircular bool,
-	/* OPTIONAL IN */ ValidateShareScope bool,
-	/* OPTIONAL IN */ ValidateShareScopeNotAliased bool,
-	/* OPTIONAL IN */ ValidateTargetName bool,
-	/* OPTIONAL IN */ EncryptData bool,
-	/* OPTIONAL IN */ RejectUnencryptedAccess bool,
-	/* OPTIONAL IN */ AuditSmb1Access bool,
-	/* OPTIONAL IN */ DisableSmbEncryptionOnSecureConnection bool,
-	/* OPTIONAL IN */ RequestCompression bool,
-	/* OPTIONAL IN */ RestrictNamedpipeAccessViaQuic bool,
-	/* OPTIONAL IN */ EnableSMBQUIC bool,
-	/* OPTIONAL IN */ EnableDirectoryHandleLeasing bool,
-	/* OPTIONAL IN */ EncryptionCiphers bool,
-	/* OPTIONAL IN */ AuditClientCertificateAccess bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("ResetConfiguration", All, AnnounceServer, AsynchronousCredits, AutoShareServer, AutoShareWorkstation, CachedOpenLimit, AnnounceComment, EnableDownlevelTimewarp, EnableLeasing, EnableMultiChannel, EnableStrictNameChecking, DisableCompression, DurableHandleV2TimeoutInSeconds, EnableOplocks, ServerHidden, IrpStackSize, KeepAliveTime, MaxChannelPerSession, MaxMpxCount, MaxSessionPerConnection, MaxThreadsPerQueue, MaxWorkItems, NullSessionShares, OplockBreakWait, PendingClientTimeoutInSeconds, EnableSMB2Protocol, Smb2CreditsMax, Smb2CreditsMin, SmbServerNameHardeningLevel, TreatHostAsStableStorage, ValidateAliasNotCircular, ValidateShareScope, ValidateShareScopeNotAliased, ValidateTargetName, EncryptData, RejectUnencryptedAccess, AuditSmb1Access, DisableSmbEncryptionOnSecureConnection, RequestCompression, RestrictNamedpipeAccessViaQuic, EnableSMBQUIC, EnableDirectoryHandleLeasing, EncryptionCiphers, AuditClientCertificateAccess)
-	if err != nil {
-		return
-	}
-	retValue := retVal[0].(int32)
-	result = uint32(retValue)
-	return
-
-}
-
-//
-
 // <param name="AnnounceComment" type="string "></param>
 // <param name="AnnounceServer" type="bool "></param>
 // <param name="AsynchronousCredits" type="uint32 "></param>
-// <param name="AuditClientCertificateAccess" type="bool "></param>
 // <param name="AuditSmb1Access" type="bool "></param>
-// <param name="AutoDisconnectTimeoutInMinutesV1" type="uint32 "></param>
-// <param name="AutoDisconnectTimeoutInSecondsV2" type="uint32 "></param>
+// <param name="AutoDisconnectTimeout" type="uint32 "></param>
 // <param name="AutoShareServer" type="bool "></param>
 // <param name="AutoShareWorkstation" type="bool "></param>
 // <param name="CachedOpenLimit" type="uint32 "></param>
-// <param name="DisableCompression" type="bool "></param>
-// <param name="DisableSmbEncryptionOnSecureConnection" type="bool "></param>
 // <param name="DurableHandleV2TimeoutInSeconds" type="uint32 "></param>
 // <param name="EnableAuthenticateUserSharing" type="bool "></param>
-// <param name="EnableDirectoryHandleLeasing" type="bool "></param>
 // <param name="EnableDownlevelTimewarp" type="bool "></param>
 // <param name="EnableForcedLogoff" type="bool "></param>
 // <param name="EnableLeasing" type="bool "></param>
@@ -1755,11 +1345,8 @@ func (instance *MSFT_SmbServerConfiguration) ResetConfiguration( /* OUT */ Outpu
 // <param name="EnableSecuritySignature" type="bool "></param>
 // <param name="EnableSMB1Protocol" type="bool "></param>
 // <param name="EnableSMB2Protocol" type="bool "></param>
-// <param name="EnableSMBQUIC" type="bool "></param>
 // <param name="EnableStrictNameChecking" type="bool "></param>
 // <param name="EncryptData" type="bool "></param>
-// <param name="EncryptionCiphers" type="string "></param>
-// <param name="InvalidAuthenticationDelayTimeInMs" type="uint32 "></param>
 // <param name="IrpStackSize" type="uint32 "></param>
 // <param name="KeepAliveTime" type="uint32 "></param>
 // <param name="MaxChannelPerSession" type="uint32 "></param>
@@ -1772,9 +1359,7 @@ func (instance *MSFT_SmbServerConfiguration) ResetConfiguration( /* OUT */ Outpu
 // <param name="OplockBreakWait" type="uint32 "></param>
 // <param name="PendingClientTimeoutInSeconds" type="uint32 "></param>
 // <param name="RejectUnencryptedAccess" type="bool "></param>
-// <param name="RequestCompression" type="bool "></param>
 // <param name="RequireSecuritySignature" type="bool "></param>
-// <param name="RestrictNamedpipeAccessViaQuic" type="bool "></param>
 // <param name="ServerHidden" type="bool "></param>
 // <param name="Smb2CreditsMax" type="uint32 "></param>
 // <param name="Smb2CreditsMin" type="uint32 "></param>
@@ -1796,9 +1381,7 @@ func (instance *MSFT_SmbServerConfiguration) SetConfiguration( /* IN */ Announce
 	/* IN */ EnableLeasing bool,
 	/* IN */ EnableMultiChannel bool,
 	/* IN */ EnableStrictNameChecking bool,
-	/* IN */ AutoDisconnectTimeoutInMinutesV1 uint32,
-	/* IN */ AutoDisconnectTimeoutInSecondsV2 uint32,
-	/* IN */ DisableCompression bool,
+	/* IN */ AutoDisconnectTimeout uint32,
 	/* IN */ DurableHandleV2TimeoutInSeconds uint32,
 	/* IN */ EnableAuthenticateUserSharing bool,
 	/* IN */ EnableForcedLogoff bool,
@@ -1816,7 +1399,6 @@ func (instance *MSFT_SmbServerConfiguration) SetConfiguration( /* IN */ Announce
 	/* IN */ NullSessionShares string,
 	/* IN */ OplockBreakWait uint32,
 	/* IN */ PendingClientTimeoutInSeconds uint32,
-	/* IN */ RequestCompression bool,
 	/* IN */ RequireSecuritySignature bool,
 	/* IN */ EnableSMB1Protocol bool,
 	/* IN */ EnableSMB2Protocol bool,
@@ -1830,15 +1412,8 @@ func (instance *MSFT_SmbServerConfiguration) SetConfiguration( /* IN */ Announce
 	/* IN */ ValidateTargetName bool,
 	/* IN */ EncryptData bool,
 	/* IN */ RejectUnencryptedAccess bool,
-	/* IN */ AuditSmb1Access bool,
-	/* IN */ DisableSmbEncryptionOnSecureConnection bool,
-	/* IN */ RestrictNamedpipeAccessViaQuic bool,
-	/* IN */ EnableSMBQUIC bool,
-	/* IN */ EnableDirectoryHandleLeasing bool,
-	/* IN */ EncryptionCiphers string,
-	/* IN */ InvalidAuthenticationDelayTimeInMs uint32,
-	/* IN */ AuditClientCertificateAccess bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetConfiguration", AnnounceServer, AsynchronousCredits, AutoShareServer, AutoShareWorkstation, CachedOpenLimit, AnnounceComment, EnableDownlevelTimewarp, EnableLeasing, EnableMultiChannel, EnableStrictNameChecking, AutoDisconnectTimeoutInMinutesV1, AutoDisconnectTimeoutInSecondsV2, DisableCompression, DurableHandleV2TimeoutInSeconds, EnableAuthenticateUserSharing, EnableForcedLogoff, EnableOplocks, EnableSecuritySignature, ServerHidden, IrpStackSize, KeepAliveTime, MaxChannelPerSession, MaxMpxCount, MaxSessionPerConnection, MaxThreadsPerQueue, MaxWorkItems, NullSessionPipes, NullSessionShares, OplockBreakWait, PendingClientTimeoutInSeconds, RequestCompression, RequireSecuritySignature, EnableSMB1Protocol, EnableSMB2Protocol, Smb2CreditsMax, Smb2CreditsMin, SmbServerNameHardeningLevel, TreatHostAsStableStorage, ValidateAliasNotCircular, ValidateShareScope, ValidateShareScopeNotAliased, ValidateTargetName, EncryptData, RejectUnencryptedAccess, AuditSmb1Access, DisableSmbEncryptionOnSecureConnection, RestrictNamedpipeAccessViaQuic, EnableSMBQUIC, EnableDirectoryHandleLeasing, EncryptionCiphers, InvalidAuthenticationDelayTimeInMs, AuditClientCertificateAccess)
+	/* IN */ AuditSmb1Access bool) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetConfiguration", AnnounceServer, AsynchronousCredits, AutoShareServer, AutoShareWorkstation, CachedOpenLimit, AnnounceComment, EnableDownlevelTimewarp, EnableLeasing, EnableMultiChannel, EnableStrictNameChecking, AutoDisconnectTimeout, DurableHandleV2TimeoutInSeconds, EnableAuthenticateUserSharing, EnableForcedLogoff, EnableOplocks, EnableSecuritySignature, ServerHidden, IrpStackSize, KeepAliveTime, MaxChannelPerSession, MaxMpxCount, MaxSessionPerConnection, MaxThreadsPerQueue, MaxWorkItems, NullSessionPipes, NullSessionShares, OplockBreakWait, PendingClientTimeoutInSeconds, RequireSecuritySignature, EnableSMB1Protocol, EnableSMB2Protocol, Smb2CreditsMax, Smb2CreditsMin, SmbServerNameHardeningLevel, TreatHostAsStableStorage, ValidateAliasNotCircular, ValidateShareScope, ValidateShareScopeNotAliased, ValidateTargetName, EncryptData, RejectUnencryptedAccess, AuditSmb1Access)
 	if err != nil {
 		return
 	}

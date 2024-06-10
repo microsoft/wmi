@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -22,19 +21,10 @@ type MDM_Policy_Config01_WindowsLogon02 struct {
 	*cim.WmiInstance
 
 	//
-	AllowAutomaticRestartSignOn string
-
-	//
-	ConfigAutomaticRestartSignOn string
-
-	//
 	DisableLockScreenAppNotifications string
 
 	//
 	DontDisplayNetworkSelectionUI string
-
-	//
-	EnableFirstLogonAnimation int32
 
 	//
 	EnumerateLocalUsersOnDomainJoinedComputers string
@@ -47,6 +37,9 @@ type MDM_Policy_Config01_WindowsLogon02 struct {
 
 	//
 	ParentID string
+
+	//
+	SignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart string
 }
 
 func NewMDM_Policy_Config01_WindowsLogon02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Config01_WindowsLogon02, err error) {
@@ -75,60 +68,6 @@ func NewMDM_Policy_Config01_WindowsLogon02Ex6(hostName string,
 	newInstance = &MDM_Policy_Config01_WindowsLogon02{
 		WmiInstance: tmp,
 	}
-	return
-}
-
-// SetAllowAutomaticRestartSignOn sets the value of AllowAutomaticRestartSignOn for the instance
-func (instance *MDM_Policy_Config01_WindowsLogon02) SetPropertyAllowAutomaticRestartSignOn(value string) (err error) {
-	return instance.SetProperty("AllowAutomaticRestartSignOn", (value))
-}
-
-// GetAllowAutomaticRestartSignOn gets the value of AllowAutomaticRestartSignOn for the instance
-func (instance *MDM_Policy_Config01_WindowsLogon02) GetPropertyAllowAutomaticRestartSignOn() (value string, err error) {
-	retValue, err := instance.GetProperty("AllowAutomaticRestartSignOn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetConfigAutomaticRestartSignOn sets the value of ConfigAutomaticRestartSignOn for the instance
-func (instance *MDM_Policy_Config01_WindowsLogon02) SetPropertyConfigAutomaticRestartSignOn(value string) (err error) {
-	return instance.SetProperty("ConfigAutomaticRestartSignOn", (value))
-}
-
-// GetConfigAutomaticRestartSignOn gets the value of ConfigAutomaticRestartSignOn for the instance
-func (instance *MDM_Policy_Config01_WindowsLogon02) GetPropertyConfigAutomaticRestartSignOn() (value string, err error) {
-	retValue, err := instance.GetProperty("ConfigAutomaticRestartSignOn")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
 	return
 }
 
@@ -182,33 +121,6 @@ func (instance *MDM_Policy_Config01_WindowsLogon02) GetPropertyDontDisplayNetwor
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetEnableFirstLogonAnimation sets the value of EnableFirstLogonAnimation for the instance
-func (instance *MDM_Policy_Config01_WindowsLogon02) SetPropertyEnableFirstLogonAnimation(value int32) (err error) {
-	return instance.SetProperty("EnableFirstLogonAnimation", (value))
-}
-
-// GetEnableFirstLogonAnimation gets the value of EnableFirstLogonAnimation for the instance
-func (instance *MDM_Policy_Config01_WindowsLogon02) GetPropertyEnableFirstLogonAnimation() (value int32, err error) {
-	retValue, err := instance.GetProperty("EnableFirstLogonAnimation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }
@@ -302,6 +214,33 @@ func (instance *MDM_Policy_Config01_WindowsLogon02) SetPropertyParentID(value st
 // GetParentID gets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_WindowsLogon02) GetPropertyParentID() (value string, err error) {
 	retValue, err := instance.GetProperty("ParentID")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
+	return
+}
+
+// SetSignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart sets the value of SignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart for the instance
+func (instance *MDM_Policy_Config01_WindowsLogon02) SetPropertySignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart(value string) (err error) {
+	return instance.SetProperty("SignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart", (value))
+}
+
+// GetSignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart gets the value of SignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart for the instance
+func (instance *MDM_Policy_Config01_WindowsLogon02) GetPropertySignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart() (value string, err error) {
+	retValue, err := instance.GetProperty("SignInLastInteractiveUserAutomaticallyAfterASystemInitiatedRestart")
 	if err != nil {
 		return
 	}

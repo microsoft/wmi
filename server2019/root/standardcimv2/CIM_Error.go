@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -21,49 +20,49 @@ import (
 type CIM_Error struct {
 	*cim.WmiInstance
 
-	//
-	CIMStatusCode uint32
+	// 279
+	CIMStatusCode Error_CIMStatusCode
 
-	//
+	// 309
 	CIMStatusCodeDescription string
 
-	//
+	// 275
 	ErrorSource string
 
-	//
-	ErrorSourceFormat uint16
+	// 276
+	ErrorSourceFormat Error_ErrorSourceFormat
 
-	//
-	ErrorType uint16
+	// 124
+	ErrorType Error_ErrorType
 
-	//
+	// 137
 	Message string
 
-	//
+	// 138
 	MessageArguments []string
 
-	//
+	// 136
 	MessageID string
 
-	//
+	// 278
 	OtherErrorSourceFormat string
 
-	//
+	// 134
 	OtherErrorType string
 
-	//
+	// 135
 	OwningEntity string
 
-	//
-	PerceivedSeverity uint16
+	// 139
+	PerceivedSeverity Error_PerceivedSeverity
 
-	//
-	ProbableCause uint16
+	// 145
+	ProbableCause Error_ProbableCause
 
-	//
+	// 273
 	ProbableCauseDescription string
 
-	//
+	// 274
 	RecommendedActions []string
 }
 
@@ -97,12 +96,12 @@ func NewCIM_ErrorEx6(hostName string,
 }
 
 // SetCIMStatusCode sets the value of CIMStatusCode for the instance
-func (instance *CIM_Error) SetPropertyCIMStatusCode(value uint32) (err error) {
+func (instance *CIM_Error) SetPropertyCIMStatusCode(value Error_CIMStatusCode) (err error) {
 	return instance.SetProperty("CIMStatusCode", (value))
 }
 
 // GetCIMStatusCode gets the value of CIMStatusCode for the instance
-func (instance *CIM_Error) GetPropertyCIMStatusCode() (value uint32, err error) {
+func (instance *CIM_Error) GetPropertyCIMStatusCode() (value Error_CIMStatusCode, err error) {
 	retValue, err := instance.GetProperty("CIMStatusCode")
 	if err != nil {
 		return
@@ -112,13 +111,13 @@ func (instance *CIM_Error) GetPropertyCIMStatusCode() (value uint32, err error) 
 		return
 	}
 
-	valuetmp, ok := retValue.(uint32)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint32(valuetmp)
+	value = Error_CIMStatusCode(valuetmp)
 
 	return
 }
@@ -178,12 +177,12 @@ func (instance *CIM_Error) GetPropertyErrorSource() (value string, err error) {
 }
 
 // SetErrorSourceFormat sets the value of ErrorSourceFormat for the instance
-func (instance *CIM_Error) SetPropertyErrorSourceFormat(value uint16) (err error) {
+func (instance *CIM_Error) SetPropertyErrorSourceFormat(value Error_ErrorSourceFormat) (err error) {
 	return instance.SetProperty("ErrorSourceFormat", (value))
 }
 
 // GetErrorSourceFormat gets the value of ErrorSourceFormat for the instance
-func (instance *CIM_Error) GetPropertyErrorSourceFormat() (value uint16, err error) {
+func (instance *CIM_Error) GetPropertyErrorSourceFormat() (value Error_ErrorSourceFormat, err error) {
 	retValue, err := instance.GetProperty("ErrorSourceFormat")
 	if err != nil {
 		return
@@ -193,24 +192,24 @@ func (instance *CIM_Error) GetPropertyErrorSourceFormat() (value uint16, err err
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = Error_ErrorSourceFormat(valuetmp)
 
 	return
 }
 
 // SetErrorType sets the value of ErrorType for the instance
-func (instance *CIM_Error) SetPropertyErrorType(value uint16) (err error) {
+func (instance *CIM_Error) SetPropertyErrorType(value Error_ErrorType) (err error) {
 	return instance.SetProperty("ErrorType", (value))
 }
 
 // GetErrorType gets the value of ErrorType for the instance
-func (instance *CIM_Error) GetPropertyErrorType() (value uint16, err error) {
+func (instance *CIM_Error) GetPropertyErrorType() (value Error_ErrorType, err error) {
 	retValue, err := instance.GetProperty("ErrorType")
 	if err != nil {
 		return
@@ -220,13 +219,13 @@ func (instance *CIM_Error) GetPropertyErrorType() (value uint16, err error) {
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = Error_ErrorType(valuetmp)
 
 	return
 }
@@ -395,12 +394,12 @@ func (instance *CIM_Error) GetPropertyOwningEntity() (value string, err error) {
 }
 
 // SetPerceivedSeverity sets the value of PerceivedSeverity for the instance
-func (instance *CIM_Error) SetPropertyPerceivedSeverity(value uint16) (err error) {
+func (instance *CIM_Error) SetPropertyPerceivedSeverity(value Error_PerceivedSeverity) (err error) {
 	return instance.SetProperty("PerceivedSeverity", (value))
 }
 
 // GetPerceivedSeverity gets the value of PerceivedSeverity for the instance
-func (instance *CIM_Error) GetPropertyPerceivedSeverity() (value uint16, err error) {
+func (instance *CIM_Error) GetPropertyPerceivedSeverity() (value Error_PerceivedSeverity, err error) {
 	retValue, err := instance.GetProperty("PerceivedSeverity")
 	if err != nil {
 		return
@@ -410,24 +409,24 @@ func (instance *CIM_Error) GetPropertyPerceivedSeverity() (value uint16, err err
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = Error_PerceivedSeverity(valuetmp)
 
 	return
 }
 
 // SetProbableCause sets the value of ProbableCause for the instance
-func (instance *CIM_Error) SetPropertyProbableCause(value uint16) (err error) {
+func (instance *CIM_Error) SetPropertyProbableCause(value Error_ProbableCause) (err error) {
 	return instance.SetProperty("ProbableCause", (value))
 }
 
 // GetProbableCause gets the value of ProbableCause for the instance
-func (instance *CIM_Error) GetPropertyProbableCause() (value uint16, err error) {
+func (instance *CIM_Error) GetPropertyProbableCause() (value Error_ProbableCause, err error) {
 	retValue, err := instance.GetProperty("ProbableCause")
 	if err != nil {
 		return
@@ -437,13 +436,13 @@ func (instance *CIM_Error) GetPropertyProbableCause() (value uint16, err error) 
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = Error_ProbableCause(valuetmp)
 
 	return
 }

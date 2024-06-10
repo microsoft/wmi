@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -46,4 +45,20 @@ func NewMsvm_SyntheticEthernetPortEx6(hostName string,
 		CIM_EthernetPort: tmp,
 	}
 	return
+}
+
+func (instance *Msvm_SyntheticEthernetPort) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_SyntheticEthernetPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_LANEndpoint")
+}
+
+func (instance *Msvm_SyntheticEthernetPort) GetRelatedSyntheticEthernetPortSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SyntheticEthernetPortSettingData")
+}
+
+func (instance *Msvm_SyntheticEthernetPort) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePool")
 }

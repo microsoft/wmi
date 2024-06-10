@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -50,6 +49,10 @@ func NewMsvm_AggregationMetricDefinitionEx6(hostName string,
 
 func (instance *Msvm_AggregationMetricDefinition) GetRelatedAggregationMetricDefinition() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_AggregationMetricDefinition")
+}
+
+func (instance *Msvm_AggregationMetricDefinition) GetRelatedMemorySettingData() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_MemorySettingData")
 }
 
 func (instance *Msvm_AggregationMetricDefinition) GetRelatedMetricService() (value *cim.WmiInstance, err error) {

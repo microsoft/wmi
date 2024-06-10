@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -23,9 +22,6 @@ type MDM_VPNv2_TrafficFilterList02_01 struct {
 
 	//
 	Claims string
-
-	//
-	Direction string
 
 	//
 	InstanceID string
@@ -89,33 +85,6 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyClaims(value string
 // GetClaims gets the value of Claims for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyClaims() (value string, err error) {
 	retValue, err := instance.GetProperty("Claims")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
-// SetDirection sets the value of Direction for the instance
-func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyDirection(value string) (err error) {
-	return instance.SetProperty("Direction", (value))
-}
-
-// GetDirection gets the value of Direction for the instance
-func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyDirection() (value string, err error) {
-	retValue, err := instance.GetProperty("Direction")
 	if err != nil {
 		return
 	}

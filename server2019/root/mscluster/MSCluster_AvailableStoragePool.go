@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -261,6 +260,7 @@ func (instance *MSCluster_AvailableStoragePool) GetPropertyUsage() (value uint64
 	return
 }
 
+//
 func (instance *MSCluster_AvailableStoragePool) AddToCluster() (err error) {
 	_, err = instance.InvokeMethodWithReturn("AddToCluster")
 	if err != nil {

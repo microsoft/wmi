@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -31,12 +30,6 @@ type Msvm_MemorySettingData struct {
 
 	//
 	MaxMemoryBlocksPerNumaNode uint64
-
-	//
-	MemoryAccessTrackingPolicy uint8
-
-	//
-	MemoryEncryptionPolicy uint8
 
 	//
 	SgxEnabled bool
@@ -190,60 +183,6 @@ func (instance *Msvm_MemorySettingData) GetPropertyMaxMemoryBlocksPerNumaNode() 
 	}
 
 	value = uint64(valuetmp)
-
-	return
-}
-
-// SetMemoryAccessTrackingPolicy sets the value of MemoryAccessTrackingPolicy for the instance
-func (instance *Msvm_MemorySettingData) SetPropertyMemoryAccessTrackingPolicy(value uint8) (err error) {
-	return instance.SetProperty("MemoryAccessTrackingPolicy", (value))
-}
-
-// GetMemoryAccessTrackingPolicy gets the value of MemoryAccessTrackingPolicy for the instance
-func (instance *Msvm_MemorySettingData) GetPropertyMemoryAccessTrackingPolicy() (value uint8, err error) {
-	retValue, err := instance.GetProperty("MemoryAccessTrackingPolicy")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
-
-	return
-}
-
-// SetMemoryEncryptionPolicy sets the value of MemoryEncryptionPolicy for the instance
-func (instance *Msvm_MemorySettingData) SetPropertyMemoryEncryptionPolicy(value uint8) (err error) {
-	return instance.SetProperty("MemoryEncryptionPolicy", (value))
-}
-
-// GetMemoryEncryptionPolicy gets the value of MemoryEncryptionPolicy for the instance
-func (instance *Msvm_MemorySettingData) GetPropertyMemoryEncryptionPolicy() (value uint8, err error) {
-	retValue, err := instance.GetProperty("MemoryEncryptionPolicy")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint8(valuetmp)
 
 	return
 }

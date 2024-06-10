@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.ProtectionManagement
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.Microsoft.protectionManagement
+//////////////////////////////////////////////
 package protectionmanagement
 
 import (
@@ -22,7 +21,7 @@ type MSFT_MpEvent struct {
 	*cim.WmiInstance
 
 	//
-	AdditionalData int64
+	AdditionalData uint32
 
 	//
 	CategoryDiscriminant uint32
@@ -73,12 +72,12 @@ func NewMSFT_MpEventEx6(hostName string,
 }
 
 // SetAdditionalData sets the value of AdditionalData for the instance
-func (instance *MSFT_MpEvent) SetPropertyAdditionalData(value int64) (err error) {
+func (instance *MSFT_MpEvent) SetPropertyAdditionalData(value uint32) (err error) {
 	return instance.SetProperty("AdditionalData", (value))
 }
 
 // GetAdditionalData gets the value of AdditionalData for the instance
-func (instance *MSFT_MpEvent) GetPropertyAdditionalData() (value int64, err error) {
+func (instance *MSFT_MpEvent) GetPropertyAdditionalData() (value uint32, err error) {
 	retValue, err := instance.GetProperty("AdditionalData")
 	if err != nil {
 		return
@@ -88,13 +87,13 @@ func (instance *MSFT_MpEvent) GetPropertyAdditionalData() (value int64, err erro
 		return
 	}
 
-	valuetmp, ok := retValue.(int64)
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = int64(valuetmp)
+	value = uint32(valuetmp)
 
 	return
 }

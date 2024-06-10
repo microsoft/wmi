@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -31,9 +30,6 @@ type MSCluster_Node struct {
 
 	//
 	DetectedCloudPlatform uint32
-
-	//
-	DrainErrorCode uint32
 
 	//
 	DynamicWeight uint32
@@ -66,9 +62,6 @@ type MSCluster_Node struct {
 	NodeDrainTarget string
 
 	//
-	NodeFailbackStatus uint32
-
-	//
 	NodeHighestVersion uint32
 
 	//
@@ -88,9 +81,6 @@ type MSCluster_Node struct {
 
 	//
 	StatusInformation uint32
-
-	//
-	UniqueID string
 }
 
 func NewMSCluster_NodeEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Node, err error) {
@@ -211,33 +201,6 @@ func (instance *MSCluster_Node) SetPropertyDetectedCloudPlatform(value uint32) (
 // GetDetectedCloudPlatform gets the value of DetectedCloudPlatform for the instance
 func (instance *MSCluster_Node) GetPropertyDetectedCloudPlatform() (value uint32, err error) {
 	retValue, err := instance.GetProperty("DetectedCloudPlatform")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetDrainErrorCode sets the value of DrainErrorCode for the instance
-func (instance *MSCluster_Node) SetPropertyDrainErrorCode(value uint32) (err error) {
-	return instance.SetProperty("DrainErrorCode", (value))
-}
-
-// GetDrainErrorCode gets the value of DrainErrorCode for the instance
-func (instance *MSCluster_Node) GetPropertyDrainErrorCode() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DrainErrorCode")
 	if err != nil {
 		return
 	}
@@ -528,33 +491,6 @@ func (instance *MSCluster_Node) GetPropertyNodeDrainTarget() (value string, err 
 	return
 }
 
-// SetNodeFailbackStatus sets the value of NodeFailbackStatus for the instance
-func (instance *MSCluster_Node) SetPropertyNodeFailbackStatus(value uint32) (err error) {
-	return instance.SetProperty("NodeFailbackStatus", (value))
-}
-
-// GetNodeFailbackStatus gets the value of NodeFailbackStatus for the instance
-func (instance *MSCluster_Node) GetPropertyNodeFailbackStatus() (value uint32, err error) {
-	retValue, err := instance.GetProperty("NodeFailbackStatus")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
 // SetNodeHighestVersion sets the value of NodeHighestVersion for the instance
 func (instance *MSCluster_Node) SetPropertyNodeHighestVersion(value uint32) (err error) {
 	return instance.SetProperty("NodeHighestVersion", (value))
@@ -744,42 +680,13 @@ func (instance *MSCluster_Node) GetPropertyStatusInformation() (value uint32, er
 	return
 }
 
-// SetUniqueID sets the value of UniqueID for the instance
-func (instance *MSCluster_Node) SetPropertyUniqueID(value string) (err error) {
-	return instance.SetProperty("UniqueID", (value))
-}
-
-// GetUniqueID gets the value of UniqueID for the instance
-func (instance *MSCluster_Node) GetPropertyUniqueID() (value string, err error) {
-	retValue, err := instance.GetProperty("UniqueID")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 //
 
 // <param name="DrainType" type="uint32 "></param>
-// <param name="Reason" type="string "></param>
 // <param name="TargetNode" type="string "></param>
 func (instance *MSCluster_Node) Pause( /* IN */ DrainType uint32,
-	/* IN */ TargetNode string,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("Pause", DrainType, TargetNode, Reason)
+	/* IN */ TargetNode string) (err error) {
+	_, err = instance.InvokeMethodWithReturn("Pause", DrainType, TargetNode)
 	if err != nil {
 		return
 	}
@@ -790,10 +697,8 @@ func (instance *MSCluster_Node) Pause( /* IN */ DrainType uint32,
 //
 
 // <param name="FailbackType" type="uint32 "></param>
-// <param name="Reason" type="string "></param>
-func (instance *MSCluster_Node) Resume( /* IN */ FailbackType uint32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethodWithReturn("Resume", FailbackType, Reason)
+func (instance *MSCluster_Node) Resume( /* IN */ FailbackType uint32) (err error) {
+	_, err = instance.InvokeMethodWithReturn("Resume", FailbackType)
 	if err != nil {
 		return
 	}
@@ -803,11 +708,9 @@ func (instance *MSCluster_Node) Resume( /* IN */ FailbackType uint32,
 
 //
 
-// <param name="Reason" type="string "></param>
-
 // <param name="ReturnValue" type="bool "></param>
-func (instance *MSCluster_Node) WillEvictLoseQuorum( /* OPTIONAL IN */ Reason string) (result bool, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("WillEvictLoseQuorum", Reason)
+func (instance *MSCluster_Node) WillEvictLoseQuorum() (result bool, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("WillEvictLoseQuorum")
 	if err != nil {
 		return
 	}
@@ -818,11 +721,9 @@ func (instance *MSCluster_Node) WillEvictLoseQuorum( /* OPTIONAL IN */ Reason st
 
 //
 
-// <param name="Reason" type="string "></param>
-
 // <param name="ReturnValue" type="bool "></param>
-func (instance *MSCluster_Node) WillOfflineLoseQuorum( /* OPTIONAL IN */ Reason string) (result bool, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("WillOfflineLoseQuorum", Reason)
+func (instance *MSCluster_Node) WillOfflineLoseQuorum() (result bool, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("WillOfflineLoseQuorum")
 	if err != nil {
 		return
 	}
@@ -835,16 +736,14 @@ func (instance *MSCluster_Node) WillOfflineLoseQuorum( /* OPTIONAL IN */ Reason 
 
 // <param name="ControlCode" type="int32 "></param>
 // <param name="InputBuffer" type="uint8 []"></param>
-// <param name="Reason" type="string "></param>
 
 // <param name="OutputBuffer" type="uint8 []"></param>
 // <param name="OutputBufferSize" type="int32 "></param>
 func (instance *MSCluster_Node) ExecuteNodeControl( /* IN */ ControlCode int32,
 	/* IN */ InputBuffer []uint8,
 	/* OUT */ OutputBuffer []uint8,
-	/* OUT */ OutputBufferSize int32,
-	/* OPTIONAL IN */ Reason string) (err error) {
-	_, err = instance.InvokeMethod("ExecuteNodeControl", ControlCode, InputBuffer, Reason)
+	/* OUT */ OutputBufferSize int32) (err error) {
+	_, err = instance.InvokeMethod("ExecuteNodeControl", ControlCode, InputBuffer)
 	if err != nil {
 		return
 	}

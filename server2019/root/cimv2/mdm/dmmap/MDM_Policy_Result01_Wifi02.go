@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -41,9 +40,6 @@ type MDM_Policy_Result01_Wifi02 struct {
 
 	//
 	ParentID string
-
-	//
-	WiFiToWlan int32
 
 	//
 	WLANScanMode int32
@@ -263,33 +259,6 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyParentID() (value string,
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetWiFiToWlan sets the value of WiFiToWlan for the instance
-func (instance *MDM_Policy_Result01_Wifi02) SetPropertyWiFiToWlan(value int32) (err error) {
-	return instance.SetProperty("WiFiToWlan", (value))
-}
-
-// GetWiFiToWlan gets the value of WiFiToWlan for the instance
-func (instance *MDM_Policy_Result01_Wifi02) GetPropertyWiFiToWlan() (value int32, err error) {
-	retValue, err := instance.GetProperty("WiFiToWlan")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

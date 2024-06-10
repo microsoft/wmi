@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source BindsToLANEndpoint_FrameType
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source BindsToLANEndpoint_FrameType
+//////////////////////////////////////////////
 package v2
 
 // BindsToLANEndpoint_FrameType

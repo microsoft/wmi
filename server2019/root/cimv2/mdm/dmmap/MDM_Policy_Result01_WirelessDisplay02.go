@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -26,15 +25,6 @@ type MDM_Policy_Result01_WirelessDisplay02 struct {
 
 	//
 	AllowMdnsDiscovery int32
-
-	//
-	AllowMovementDetectionOnInfrastructure int32
-
-	//
-	AllowPCReceiverToBeTCPServer int32
-
-	//
-	AllowPCSenderToBeTCPClient int32
 
 	//
 	AllowProjectionFromPC int32
@@ -125,87 +115,6 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowMdnsDisco
 // GetAllowMdnsDiscovery gets the value of AllowMdnsDiscovery for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowMdnsDiscovery() (value int32, err error) {
 	retValue, err := instance.GetProperty("AllowMdnsDiscovery")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetAllowMovementDetectionOnInfrastructure sets the value of AllowMovementDetectionOnInfrastructure for the instance
-func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowMovementDetectionOnInfrastructure(value int32) (err error) {
-	return instance.SetProperty("AllowMovementDetectionOnInfrastructure", (value))
-}
-
-// GetAllowMovementDetectionOnInfrastructure gets the value of AllowMovementDetectionOnInfrastructure for the instance
-func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowMovementDetectionOnInfrastructure() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowMovementDetectionOnInfrastructure")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetAllowPCReceiverToBeTCPServer sets the value of AllowPCReceiverToBeTCPServer for the instance
-func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowPCReceiverToBeTCPServer(value int32) (err error) {
-	return instance.SetProperty("AllowPCReceiverToBeTCPServer", (value))
-}
-
-// GetAllowPCReceiverToBeTCPServer gets the value of AllowPCReceiverToBeTCPServer for the instance
-func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowPCReceiverToBeTCPServer() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowPCReceiverToBeTCPServer")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetAllowPCSenderToBeTCPClient sets the value of AllowPCSenderToBeTCPClient for the instance
-func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowPCSenderToBeTCPClient(value int32) (err error) {
-	return instance.SetProperty("AllowPCSenderToBeTCPClient", (value))
-}
-
-// GetAllowPCSenderToBeTCPClient gets the value of AllowPCSenderToBeTCPClient for the instance
-func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowPCSenderToBeTCPClient() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowPCSenderToBeTCPClient")
 	if err != nil {
 		return
 	}

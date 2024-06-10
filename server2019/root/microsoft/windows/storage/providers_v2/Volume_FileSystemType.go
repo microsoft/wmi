@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source Volume_FileSystemType
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source Volume_FileSystemType
+//////////////////////////////////////////////
 package providers_v2
 
 // Volume_FileSystemType
@@ -45,8 +44,8 @@ const (
 	Volume_FileSystemType_NTFS Volume_FileSystemType = 14
 	// ReFS enum
 	Volume_FileSystemType_ReFS Volume_FileSystemType = 15
-	// exFATCSVFS_NTFS enum
-	Volume_FileSystemType_exFATCSVFS_NTFS Volume_FileSystemType = 16
+	// CSVFS_NTFS enum
+	Volume_FileSystemType_CSVFS_NTFS Volume_FileSystemType = 16
 	// CSVFS_ReFS enum
 	Volume_FileSystemType_CSVFS_ReFS Volume_FileSystemType = 17
 )

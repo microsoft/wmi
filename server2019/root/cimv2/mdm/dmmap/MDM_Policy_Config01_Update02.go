@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -43,13 +42,7 @@ type MDM_Policy_Config01_Update02 struct {
 	AllowNonMicrosoftSignedUpdate int32
 
 	//
-	AllowTemporaryEnterpriseFeatureControl int32
-
-	//
 	AllowUpdateService int32
-
-	//
-	AutomaticMaintenanceWakeUp int32
 
 	//
 	AutoRestartDeadlinePeriodInDays int32
@@ -65,21 +58,6 @@ type MDM_Policy_Config01_Update02 struct {
 
 	//
 	BranchReadinessLevel int32
-
-	//
-	ConfigureDeadlineForFeatureUpdates int32
-
-	//
-	ConfigureDeadlineForQualityUpdates int32
-
-	//
-	ConfigureDeadlineGracePeriod int32
-
-	//
-	ConfigureDeadlineGracePeriodForFeatureUpdates int32
-
-	//
-	ConfigureDeadlineNoAutoReboot int32
 
 	//
 	ConfigureFeatureUpdateUninstallPeriod int32
@@ -101,12 +79,6 @@ type MDM_Policy_Config01_Update02 struct {
 
 	//
 	DisableDualScan int32
-
-	//
-	DisableWUfBSafeguards int32
-
-	//
-	DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection int32
 
 	//
 	EngagedRestartDeadline int32
@@ -166,9 +138,6 @@ type MDM_Policy_Config01_Update02 struct {
 	PhoneUpdateRestrictions int32
 
 	//
-	ProductVersion string
-
-	//
 	RequireDeferUpgrade int32
 
 	//
@@ -212,24 +181,6 @@ type MDM_Policy_Config01_Update02 struct {
 
 	//
 	SetEDURestart int32
-
-	//
-	SetPolicyDrivenUpdateSourceForDriverUpdates int32
-
-	//
-	SetPolicyDrivenUpdateSourceForFeatureUpdates int32
-
-	//
-	SetPolicyDrivenUpdateSourceForOtherUpdates int32
-
-	//
-	SetPolicyDrivenUpdateSourceForQualityUpdates int32
-
-	//
-	SetProxyBehaviorForUpdateDetection int32
-
-	//
-	TargetReleaseVersion string
 
 	//
 	UpdateNotificationLevel int32
@@ -459,33 +410,6 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowNonMicrosoftSigned
 	return
 }
 
-// SetAllowTemporaryEnterpriseFeatureControl sets the value of AllowTemporaryEnterpriseFeatureControl for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowTemporaryEnterpriseFeatureControl(value int32) (err error) {
-	return instance.SetProperty("AllowTemporaryEnterpriseFeatureControl", (value))
-}
-
-// GetAllowTemporaryEnterpriseFeatureControl gets the value of AllowTemporaryEnterpriseFeatureControl for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowTemporaryEnterpriseFeatureControl() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowTemporaryEnterpriseFeatureControl")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetAllowUpdateService sets the value of AllowUpdateService for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowUpdateService(value int32) (err error) {
 	return instance.SetProperty("AllowUpdateService", (value))
@@ -494,33 +418,6 @@ func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowUpdateService(valu
 // GetAllowUpdateService gets the value of AllowUpdateService for the instance
 func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowUpdateService() (value int32, err error) {
 	retValue, err := instance.GetProperty("AllowUpdateService")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetAutomaticMaintenanceWakeUp sets the value of AutomaticMaintenanceWakeUp for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyAutomaticMaintenanceWakeUp(value int32) (err error) {
-	return instance.SetProperty("AutomaticMaintenanceWakeUp", (value))
-}
-
-// GetAutomaticMaintenanceWakeUp gets the value of AutomaticMaintenanceWakeUp for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyAutomaticMaintenanceWakeUp() (value int32, err error) {
-	retValue, err := instance.GetProperty("AutomaticMaintenanceWakeUp")
 	if err != nil {
 		return
 	}
@@ -656,141 +553,6 @@ func (instance *MDM_Policy_Config01_Update02) SetPropertyBranchReadinessLevel(va
 // GetBranchReadinessLevel gets the value of BranchReadinessLevel for the instance
 func (instance *MDM_Policy_Config01_Update02) GetPropertyBranchReadinessLevel() (value int32, err error) {
 	retValue, err := instance.GetProperty("BranchReadinessLevel")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureDeadlineForFeatureUpdates sets the value of ConfigureDeadlineForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineForFeatureUpdates", (value))
-}
-
-// GetConfigureDeadlineForFeatureUpdates gets the value of ConfigureDeadlineForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineForFeatureUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineForFeatureUpdates")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureDeadlineForQualityUpdates sets the value of ConfigureDeadlineForQualityUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineForQualityUpdates(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineForQualityUpdates", (value))
-}
-
-// GetConfigureDeadlineForQualityUpdates gets the value of ConfigureDeadlineForQualityUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineForQualityUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineForQualityUpdates")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureDeadlineGracePeriod sets the value of ConfigureDeadlineGracePeriod for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineGracePeriod(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineGracePeriod", (value))
-}
-
-// GetConfigureDeadlineGracePeriod gets the value of ConfigureDeadlineGracePeriod for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineGracePeriod() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineGracePeriod")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureDeadlineGracePeriodForFeatureUpdates sets the value of ConfigureDeadlineGracePeriodForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineGracePeriodForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineGracePeriodForFeatureUpdates", (value))
-}
-
-// GetConfigureDeadlineGracePeriodForFeatureUpdates gets the value of ConfigureDeadlineGracePeriodForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineGracePeriodForFeatureUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineGracePeriodForFeatureUpdates")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetConfigureDeadlineNoAutoReboot sets the value of ConfigureDeadlineNoAutoReboot for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineNoAutoReboot(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineNoAutoReboot", (value))
-}
-
-// GetConfigureDeadlineNoAutoReboot gets the value of ConfigureDeadlineNoAutoReboot for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineNoAutoReboot() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineNoAutoReboot")
 	if err != nil {
 		return
 	}
@@ -980,60 +742,6 @@ func (instance *MDM_Policy_Config01_Update02) SetPropertyDisableDualScan(value i
 // GetDisableDualScan gets the value of DisableDualScan for the instance
 func (instance *MDM_Policy_Config01_Update02) GetPropertyDisableDualScan() (value int32, err error) {
 	retValue, err := instance.GetProperty("DisableDualScan")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetDisableWUfBSafeguards sets the value of DisableWUfBSafeguards for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyDisableWUfBSafeguards(value int32) (err error) {
-	return instance.SetProperty("DisableWUfBSafeguards", (value))
-}
-
-// GetDisableWUfBSafeguards gets the value of DisableWUfBSafeguards for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyDisableWUfBSafeguards() (value int32, err error) {
-	retValue, err := instance.GetProperty("DisableWUfBSafeguards")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection sets the value of DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection(value int32) (err error) {
-	return instance.SetProperty("DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection", (value))
-}
-
-// GetDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection gets the value of DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyDoNotEnforceEnterpriseTLSCertPinningForUpdateDetection() (value int32, err error) {
-	retValue, err := instance.GetProperty("DoNotEnforceEnterpriseTLSCertPinningForUpdateDetection")
 	if err != nil {
 		return
 	}
@@ -1566,33 +1274,6 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyPhoneUpdateRestrictions
 	return
 }
 
-// SetProductVersion sets the value of ProductVersion for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyProductVersion(value string) (err error) {
-	return instance.SetProperty("ProductVersion", (value))
-}
-
-// GetProductVersion gets the value of ProductVersion for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyProductVersion() (value string, err error) {
-	retValue, err := instance.GetProperty("ProductVersion")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
-
-	return
-}
-
 // SetRequireDeferUpgrade sets the value of RequireDeferUpgrade for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyRequireDeferUpgrade(value int32) (err error) {
 	return instance.SetProperty("RequireDeferUpgrade", (value))
@@ -1994,168 +1675,6 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertySetEDURestart() (value 
 	}
 
 	value = int32(valuetmp)
-
-	return
-}
-
-// SetSetPolicyDrivenUpdateSourceForDriverUpdates sets the value of SetPolicyDrivenUpdateSourceForDriverUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertySetPolicyDrivenUpdateSourceForDriverUpdates(value int32) (err error) {
-	return instance.SetProperty("SetPolicyDrivenUpdateSourceForDriverUpdates", (value))
-}
-
-// GetSetPolicyDrivenUpdateSourceForDriverUpdates gets the value of SetPolicyDrivenUpdateSourceForDriverUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertySetPolicyDrivenUpdateSourceForDriverUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("SetPolicyDrivenUpdateSourceForDriverUpdates")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSetPolicyDrivenUpdateSourceForFeatureUpdates sets the value of SetPolicyDrivenUpdateSourceForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertySetPolicyDrivenUpdateSourceForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("SetPolicyDrivenUpdateSourceForFeatureUpdates", (value))
-}
-
-// GetSetPolicyDrivenUpdateSourceForFeatureUpdates gets the value of SetPolicyDrivenUpdateSourceForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertySetPolicyDrivenUpdateSourceForFeatureUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("SetPolicyDrivenUpdateSourceForFeatureUpdates")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSetPolicyDrivenUpdateSourceForOtherUpdates sets the value of SetPolicyDrivenUpdateSourceForOtherUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertySetPolicyDrivenUpdateSourceForOtherUpdates(value int32) (err error) {
-	return instance.SetProperty("SetPolicyDrivenUpdateSourceForOtherUpdates", (value))
-}
-
-// GetSetPolicyDrivenUpdateSourceForOtherUpdates gets the value of SetPolicyDrivenUpdateSourceForOtherUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertySetPolicyDrivenUpdateSourceForOtherUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("SetPolicyDrivenUpdateSourceForOtherUpdates")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSetPolicyDrivenUpdateSourceForQualityUpdates sets the value of SetPolicyDrivenUpdateSourceForQualityUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertySetPolicyDrivenUpdateSourceForQualityUpdates(value int32) (err error) {
-	return instance.SetProperty("SetPolicyDrivenUpdateSourceForQualityUpdates", (value))
-}
-
-// GetSetPolicyDrivenUpdateSourceForQualityUpdates gets the value of SetPolicyDrivenUpdateSourceForQualityUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertySetPolicyDrivenUpdateSourceForQualityUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("SetPolicyDrivenUpdateSourceForQualityUpdates")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetSetProxyBehaviorForUpdateDetection sets the value of SetProxyBehaviorForUpdateDetection for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertySetProxyBehaviorForUpdateDetection(value int32) (err error) {
-	return instance.SetProperty("SetProxyBehaviorForUpdateDetection", (value))
-}
-
-// GetSetProxyBehaviorForUpdateDetection gets the value of SetProxyBehaviorForUpdateDetection for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertySetProxyBehaviorForUpdateDetection() (value int32, err error) {
-	retValue, err := instance.GetProperty("SetProxyBehaviorForUpdateDetection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetTargetReleaseVersion sets the value of TargetReleaseVersion for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyTargetReleaseVersion(value string) (err error) {
-	return instance.SetProperty("TargetReleaseVersion", (value))
-}
-
-// GetTargetReleaseVersion gets the value of TargetReleaseVersion for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyTargetReleaseVersion() (value string, err error) {
-	retValue, err := instance.GetProperty("TargetReleaseVersion")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = string(valuetmp)
 
 	return
 }

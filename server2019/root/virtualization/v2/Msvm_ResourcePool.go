@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -52,12 +51,20 @@ func (instance *Msvm_ResourcePool) GetRelatedComputerSystem() (value *cim.WmiIns
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
-func (instance *Msvm_ResourcePool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ResourcePoolSettingData")
+func (instance *Msvm_ResourcePool) GetRelatedResourceAllocationSettingData() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ResourceAllocationSettingData")
+}
+
+func (instance *Msvm_ResourcePool) GetRelatedSerialPort() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_SerialPort")
 }
 
 func (instance *Msvm_ResourcePool) GetRelatedResourcePoolConfigurationService() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePoolConfigurationService")
+}
+
+func (instance *Msvm_ResourcePool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePoolSettingData")
 }
 
 func (instance *Msvm_ResourcePool) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

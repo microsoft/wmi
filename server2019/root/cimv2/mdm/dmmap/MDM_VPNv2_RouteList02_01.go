@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -25,13 +24,7 @@ type MDM_VPNv2_RouteList02_01 struct {
 	Address string
 
 	//
-	ExclusionRoute bool
-
-	//
 	InstanceID string
-
-	//
-	Metric int32
 
 	//
 	ParentID string
@@ -96,33 +89,6 @@ func (instance *MDM_VPNv2_RouteList02_01) GetPropertyAddress() (value string, er
 	return
 }
 
-// SetExclusionRoute sets the value of ExclusionRoute for the instance
-func (instance *MDM_VPNv2_RouteList02_01) SetPropertyExclusionRoute(value bool) (err error) {
-	return instance.SetProperty("ExclusionRoute", (value))
-}
-
-// GetExclusionRoute gets the value of ExclusionRoute for the instance
-func (instance *MDM_VPNv2_RouteList02_01) GetPropertyExclusionRoute() (value bool, err error) {
-	retValue, err := instance.GetProperty("ExclusionRoute")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
-
-	return
-}
-
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_VPNv2_RouteList02_01) SetPropertyInstanceID(value string) (err error) {
 	return instance.SetProperty("InstanceID", (value))
@@ -146,33 +112,6 @@ func (instance *MDM_VPNv2_RouteList02_01) GetPropertyInstanceID() (value string,
 	}
 
 	value = string(valuetmp)
-
-	return
-}
-
-// SetMetric sets the value of Metric for the instance
-func (instance *MDM_VPNv2_RouteList02_01) SetPropertyMetric(value int32) (err error) {
-	return instance.SetProperty("Metric", (value))
-}
-
-// GetMetric gets the value of Metric for the instance
-func (instance *MDM_VPNv2_RouteList02_01) GetPropertyMetric() (value int32, err error) {
-	retValue, err := instance.GetProperty("Metric")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
 
 	return
 }

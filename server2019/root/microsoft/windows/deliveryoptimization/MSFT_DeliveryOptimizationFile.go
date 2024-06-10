@@ -1,20 +1,17 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.Microsoft.Windows.DeliveryOptimization
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.Microsoft.Windows.DeliveryOptimization
+//////////////////////////////////////////////
 package deliveryoptimization
 
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // MSFT_DeliveryOptimizationFile struct
@@ -37,9 +34,6 @@ type MSFT_DeliveryOptimizationFile struct {
 	BytesFromLanPeers uint64
 
 	//
-	BytesFromLinkLocalPeers uint64
-
-	//
 	BytesToGroupPeers uint64
 
 	//
@@ -47,9 +41,6 @@ type MSFT_DeliveryOptimizationFile struct {
 
 	//
 	BytesToLanPeers uint64
-
-	//
-	BytesToLinkLocalPeers uint64
 
 	//
 	CacheHost string
@@ -92,9 +83,6 @@ type MSFT_DeliveryOptimizationFile struct {
 
 	//
 	LanConnectionCount uint32
-
-	//
-	LinkLocalConnectionCount uint32
 
 	//
 	PeerCount uint32
@@ -143,7 +131,7 @@ func NewMSFT_DeliveryOptimizationFileEx6(hostName string,
 
 // SetBytesFromCacheServer sets the value of BytesFromCacheServer for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesFromCacheServer(value uint64) (err error) {
-	return instance.SetProperty("BytesFromCacheServer", (value))
+	return instance.SetProperty("BytesFromCacheServer", value)
 }
 
 // GetBytesFromCacheServer gets the value of BytesFromCacheServer for the instance
@@ -152,25 +140,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesFromCacheServer()
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetBytesFromGroupPeers sets the value of BytesFromGroupPeers for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesFromGroupPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesFromGroupPeers", (value))
+	return instance.SetProperty("BytesFromGroupPeers", value)
 }
 
 // GetBytesFromGroupPeers gets the value of BytesFromGroupPeers for the instance
@@ -179,25 +158,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesFromGroupPeers() 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetBytesFromHttp sets the value of BytesFromHttp for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesFromHttp(value uint64) (err error) {
-	return instance.SetProperty("BytesFromHttp", (value))
+	return instance.SetProperty("BytesFromHttp", value)
 }
 
 // GetBytesFromHttp gets the value of BytesFromHttp for the instance
@@ -206,25 +176,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesFromHttp() (value
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetBytesFromInternetPeers sets the value of BytesFromInternetPeers for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesFromInternetPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesFromInternetPeers", (value))
+	return instance.SetProperty("BytesFromInternetPeers", value)
 }
 
 // GetBytesFromInternetPeers gets the value of BytesFromInternetPeers for the instance
@@ -233,25 +194,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesFromInternetPeers
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetBytesFromLanPeers sets the value of BytesFromLanPeers for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesFromLanPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesFromLanPeers", (value))
+	return instance.SetProperty("BytesFromLanPeers", value)
 }
 
 // GetBytesFromLanPeers gets the value of BytesFromLanPeers for the instance
@@ -260,52 +212,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesFromLanPeers() (v
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetBytesFromLinkLocalPeers sets the value of BytesFromLinkLocalPeers for the instance
-func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesFromLinkLocalPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesFromLinkLocalPeers", (value))
-}
-
-// GetBytesFromLinkLocalPeers gets the value of BytesFromLinkLocalPeers for the instance
-func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesFromLinkLocalPeers() (value uint64, err error) {
-	retValue, err := instance.GetProperty("BytesFromLinkLocalPeers")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetBytesToGroupPeers sets the value of BytesToGroupPeers for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesToGroupPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesToGroupPeers", (value))
+	return instance.SetProperty("BytesToGroupPeers", value)
 }
 
 // GetBytesToGroupPeers gets the value of BytesToGroupPeers for the instance
@@ -314,25 +230,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesToGroupPeers() (v
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetBytesToInternetPeers sets the value of BytesToInternetPeers for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesToInternetPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesToInternetPeers", (value))
+	return instance.SetProperty("BytesToInternetPeers", value)
 }
 
 // GetBytesToInternetPeers gets the value of BytesToInternetPeers for the instance
@@ -341,25 +248,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesToInternetPeers()
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetBytesToLanPeers sets the value of BytesToLanPeers for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesToLanPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesToLanPeers", (value))
+	return instance.SetProperty("BytesToLanPeers", value)
 }
 
 // GetBytesToLanPeers gets the value of BytesToLanPeers for the instance
@@ -368,52 +266,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesToLanPeers() (val
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetBytesToLinkLocalPeers sets the value of BytesToLinkLocalPeers for the instance
-func (instance *MSFT_DeliveryOptimizationFile) SetPropertyBytesToLinkLocalPeers(value uint64) (err error) {
-	return instance.SetProperty("BytesToLinkLocalPeers", (value))
-}
-
-// GetBytesToLinkLocalPeers gets the value of BytesToLinkLocalPeers for the instance
-func (instance *MSFT_DeliveryOptimizationFile) GetPropertyBytesToLinkLocalPeers() (value uint64, err error) {
-	retValue, err := instance.GetProperty("BytesToLinkLocalPeers")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetCacheHost sets the value of CacheHost for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyCacheHost(value string) (err error) {
-	return instance.SetProperty("CacheHost", (value))
+	return instance.SetProperty("CacheHost", value)
 }
 
 // GetCacheHost gets the value of CacheHost for the instance
@@ -422,25 +284,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyCacheHost() (value str
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetCacheServerConnectionCount sets the value of CacheServerConnectionCount for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyCacheServerConnectionCount(value uint32) (err error) {
-	return instance.SetProperty("CacheServerConnectionCount", (value))
+	return instance.SetProperty("CacheServerConnectionCount", value)
 }
 
 // GetCacheServerConnectionCount gets the value of CacheServerConnectionCount for the instance
@@ -449,25 +302,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyCacheServerConnectionC
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDownloadDurationMsecs sets the value of DownloadDurationMsecs for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyDownloadDurationMsecs(value uint64) (err error) {
-	return instance.SetProperty("DownloadDurationMsecs", (value))
+	return instance.SetProperty("DownloadDurationMsecs", value)
 }
 
 // GetDownloadDurationMsecs gets the value of DownloadDurationMsecs for the instance
@@ -476,25 +320,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyDownloadDurationMsecs(
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetDownloadMode sets the value of DownloadMode for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyDownloadMode(value DeliveryOptimizationFile_DownloadMode) (err error) {
-	return instance.SetProperty("DownloadMode", (value))
+	return instance.SetProperty("DownloadMode", value)
 }
 
 // GetDownloadMode gets the value of DownloadMode for the instance
@@ -503,25 +338,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyDownloadMode() (value 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
+	value, ok := retValue.(DeliveryOptimizationFile_DownloadMode)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = DeliveryOptimizationFile_DownloadMode(valuetmp)
-
 	return
 }
 
 // SetExpireOn sets the value of ExpireOn for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyExpireOn(value string) (err error) {
-	return instance.SetProperty("ExpireOn", (value))
+	return instance.SetProperty("ExpireOn", value)
 }
 
 // GetExpireOn gets the value of ExpireOn for the instance
@@ -530,25 +356,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyExpireOn() (value stri
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetFileId sets the value of FileId for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyFileId(value string) (err error) {
-	return instance.SetProperty("FileId", (value))
+	return instance.SetProperty("FileId", value)
 }
 
 // GetFileId gets the value of FileId for the instance
@@ -557,25 +374,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyFileId() (value string
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetFileSize sets the value of FileSize for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyFileSize(value uint64) (err error) {
-	return instance.SetProperty("FileSize", (value))
+	return instance.SetProperty("FileSize", value)
 }
 
 // GetFileSize gets the value of FileSize for the instance
@@ -584,25 +392,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyFileSize() (value uint
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetFileSizeInCache sets the value of FileSizeInCache for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyFileSizeInCache(value uint64) (err error) {
-	return instance.SetProperty("FileSizeInCache", (value))
+	return instance.SetProperty("FileSizeInCache", value)
 }
 
 // GetFileSizeInCache gets the value of FileSizeInCache for the instance
@@ -611,25 +410,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyFileSizeInCache() (val
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
 }
 
 // SetGroupConnectionCount sets the value of GroupConnectionCount for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyGroupConnectionCount(value uint32) (err error) {
-	return instance.SetProperty("GroupConnectionCount", (value))
+	return instance.SetProperty("GroupConnectionCount", value)
 }
 
 // GetGroupConnectionCount gets the value of GroupConnectionCount for the instance
@@ -638,25 +428,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyGroupConnectionCount()
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetHttpConnectionCount sets the value of HttpConnectionCount for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyHttpConnectionCount(value uint32) (err error) {
-	return instance.SetProperty("HttpConnectionCount", (value))
+	return instance.SetProperty("HttpConnectionCount", value)
 }
 
 // GetHttpConnectionCount gets the value of HttpConnectionCount for the instance
@@ -665,25 +446,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyHttpConnectionCount() 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetInternetConnectionCount sets the value of InternetConnectionCount for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyInternetConnectionCount(value uint32) (err error) {
-	return instance.SetProperty("InternetConnectionCount", (value))
+	return instance.SetProperty("InternetConnectionCount", value)
 }
 
 // GetInternetConnectionCount gets the value of InternetConnectionCount for the instance
@@ -692,25 +464,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyInternetConnectionCoun
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetIsBackground sets the value of IsBackground for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyIsBackground(value bool) (err error) {
-	return instance.SetProperty("IsBackground", (value))
+	return instance.SetProperty("IsBackground", value)
 }
 
 // GetIsBackground gets the value of IsBackground for the instance
@@ -719,25 +482,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyIsBackground() (value 
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetIsPinned sets the value of IsPinned for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyIsPinned(value bool) (err error) {
-	return instance.SetProperty("IsPinned", (value))
+	return instance.SetProperty("IsPinned", value)
 }
 
 // GetIsPinned gets the value of IsPinned for the instance
@@ -746,25 +500,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyIsPinned() (value bool
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
+	value, ok := retValue.(bool)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = bool(valuetmp)
-
 	return
 }
 
 // SetLanConnectionCount sets the value of LanConnectionCount for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyLanConnectionCount(value uint32) (err error) {
-	return instance.SetProperty("LanConnectionCount", (value))
+	return instance.SetProperty("LanConnectionCount", value)
 }
 
 // GetLanConnectionCount gets the value of LanConnectionCount for the instance
@@ -773,52 +518,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyLanConnectionCount() (
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
-	return
-}
-
-// SetLinkLocalConnectionCount sets the value of LinkLocalConnectionCount for the instance
-func (instance *MSFT_DeliveryOptimizationFile) SetPropertyLinkLocalConnectionCount(value uint32) (err error) {
-	return instance.SetProperty("LinkLocalConnectionCount", (value))
-}
-
-// GetLinkLocalConnectionCount gets the value of LinkLocalConnectionCount for the instance
-func (instance *MSFT_DeliveryOptimizationFile) GetPropertyLinkLocalConnectionCount() (value uint32, err error) {
-	retValue, err := instance.GetProperty("LinkLocalConnectionCount")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetPeerCount sets the value of PeerCount for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyPeerCount(value uint32) (err error) {
-	return instance.SetProperty("PeerCount", (value))
+	return instance.SetProperty("PeerCount", value)
 }
 
 // GetPeerCount gets the value of PeerCount for the instance
@@ -827,25 +536,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyPeerCount() (value uin
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetPredefinedCallerApplication sets the value of PredefinedCallerApplication for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyPredefinedCallerApplication(value string) (err error) {
-	return instance.SetProperty("PredefinedCallerApplication", (value))
+	return instance.SetProperty("PredefinedCallerApplication", value)
 }
 
 // GetPredefinedCallerApplication gets the value of PredefinedCallerApplication for the instance
@@ -854,25 +554,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyPredefinedCallerApplic
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetSourceURL sets the value of SourceURL for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertySourceURL(value string) (err error) {
-	return instance.SetProperty("SourceURL", (value))
+	return instance.SetProperty("SourceURL", value)
 }
 
 // GetSourceURL gets the value of SourceURL for the instance
@@ -881,25 +572,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertySourceURL() (value str
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(string)
+	value, ok := retValue.(string)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = string(valuetmp)
-
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyStatus(value DeliveryOptimizationFile_Status) (err error) {
-	return instance.SetProperty("Status", (value))
+	return instance.SetProperty("Status", value)
 }
 
 // GetStatus gets the value of Status for the instance
@@ -908,25 +590,16 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyStatus() (value Delive
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
+	value, ok := retValue.(DeliveryOptimizationFile_Status)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = DeliveryOptimizationFile_Status(valuetmp)
-
 	return
 }
 
 // SetTotalBytesDownloaded sets the value of TotalBytesDownloaded for the instance
 func (instance *MSFT_DeliveryOptimizationFile) SetPropertyTotalBytesDownloaded(value uint64) (err error) {
-	return instance.SetProperty("TotalBytesDownloaded", (value))
+	return instance.SetProperty("TotalBytesDownloaded", value)
 }
 
 // GetTotalBytesDownloaded gets the value of TotalBytesDownloaded for the instance
@@ -935,69 +608,9 @@ func (instance *MSFT_DeliveryOptimizationFile) GetPropertyTotalBytesDownloaded()
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
+	value, ok := retValue.(uint64)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint64(valuetmp)
-
 	return
-}
-
-// 11
-
-// <param name="deletePinned" type="bool "></param>
-// <param name="fileId" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_DeliveryOptimizationFile) Delete( /* IN */ fileId string,
-	/* IN */ deletePinned bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("Delete", fileId, deletePinned)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-// 12
-
-// <param name="fileId" type="string "></param>
-// <param name="pinned" type="bool "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_DeliveryOptimizationFile) SetPinned( /* IN */ fileId string,
-	/* IN */ pinned bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetPinned", fileId, pinned)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-// 13
-
-// <param name="expiration" type="string "></param>
-// <param name="fileId" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_DeliveryOptimizationFile) SetExpiration( /* IN */ fileId string,
-	/* IN */ expiration string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetExpiration", fileId, expiration)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
 }

@@ -1,19 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 3/19/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // Win32_PerfRawData_Counters_SecuritySystemWideStatistics struct
@@ -112,7 +109,7 @@ func NewWin32_PerfRawData_Counters_SecuritySystemWideStatisticsEx6(hostName stri
 
 // SetActiveSchannelSessionCacheEntries sets the value of ActiveSchannelSessionCacheEntries for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyActiveSchannelSessionCacheEntries(value uint32) (err error) {
-	return instance.SetProperty("ActiveSchannelSessionCacheEntries", (value))
+	return instance.SetProperty("ActiveSchannelSessionCacheEntries", value)
 }
 
 // GetActiveSchannelSessionCacheEntries gets the value of ActiveSchannelSessionCacheEntries for the instance
@@ -121,25 +118,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetDigestAuthentications sets the value of DigestAuthentications for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyDigestAuthentications(value uint32) (err error) {
-	return instance.SetProperty("DigestAuthentications", (value))
+	return instance.SetProperty("DigestAuthentications", value)
 }
 
 // GetDigestAuthentications gets the value of DigestAuthentications for the instance
@@ -148,25 +136,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetForwardedKerberosRequests sets the value of ForwardedKerberosRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyForwardedKerberosRequests(value uint32) (err error) {
-	return instance.SetProperty("ForwardedKerberosRequests", (value))
+	return instance.SetProperty("ForwardedKerberosRequests", value)
 }
 
 // GetForwardedKerberosRequests gets the value of ForwardedKerberosRequests for the instance
@@ -175,25 +154,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCarmoredASRequests sets the value of KDCarmoredASRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCarmoredASRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCarmoredASRequests", (value))
+	return instance.SetProperty("KDCarmoredASRequests", value)
 }
 
 // GetKDCarmoredASRequests gets the value of KDCarmoredASRequests for the instance
@@ -202,25 +172,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCarmoredTGSRequests sets the value of KDCarmoredTGSRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCarmoredTGSRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCarmoredTGSRequests", (value))
+	return instance.SetProperty("KDCarmoredTGSRequests", value)
 }
 
 // GetKDCarmoredTGSRequests gets the value of KDCarmoredTGSRequests for the instance
@@ -229,25 +190,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCASRequests sets the value of KDCASRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCASRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCASRequests", (value))
+	return instance.SetProperty("KDCASRequests", value)
 }
 
 // GetKDCASRequests gets the value of KDCASRequests for the instance
@@ -256,25 +208,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCclaimsawareASRequests sets the value of KDCclaimsawareASRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCclaimsawareASRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCclaimsawareASRequests", (value))
+	return instance.SetProperty("KDCclaimsawareASRequests", value)
 }
 
 // GetKDCclaimsawareASRequests gets the value of KDCclaimsawareASRequests for the instance
@@ -283,25 +226,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCclaimsawareserviceassertedidentityTGSrequests sets the value of KDCclaimsawareserviceassertedidentityTGSrequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCclaimsawareserviceassertedidentityTGSrequests(value uint32) (err error) {
-	return instance.SetProperty("KDCclaimsawareserviceassertedidentityTGSrequests", (value))
+	return instance.SetProperty("KDCclaimsawareserviceassertedidentityTGSrequests", value)
 }
 
 // GetKDCclaimsawareserviceassertedidentityTGSrequests gets the value of KDCclaimsawareserviceassertedidentityTGSrequests for the instance
@@ -310,25 +244,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCclaimsawareTGSRequests sets the value of KDCclaimsawareTGSRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCclaimsawareTGSRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCclaimsawareTGSRequests", (value))
+	return instance.SetProperty("KDCclaimsawareTGSRequests", value)
 }
 
 // GetKDCclaimsawareTGSRequests gets the value of KDCclaimsawareTGSRequests for the instance
@@ -337,25 +262,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCclassictypeconstraineddelegationTGSRequests sets the value of KDCclassictypeconstraineddelegationTGSRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCclassictypeconstraineddelegationTGSRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCclassictypeconstraineddelegationTGSRequests", (value))
+	return instance.SetProperty("KDCclassictypeconstraineddelegationTGSRequests", value)
 }
 
 // GetKDCclassictypeconstraineddelegationTGSRequests gets the value of KDCclassictypeconstraineddelegationTGSRequests for the instance
@@ -364,25 +280,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCkeytrustASRequests sets the value of KDCkeytrustASRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCkeytrustASRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCkeytrustASRequests", (value))
+	return instance.SetProperty("KDCkeytrustASRequests", value)
 }
 
 // GetKDCkeytrustASRequests gets the value of KDCkeytrustASRequests for the instance
@@ -391,25 +298,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCresourcetypeconstraineddelegationTGSRequests sets the value of KDCresourcetypeconstraineddelegationTGSRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCresourcetypeconstraineddelegationTGSRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCresourcetypeconstraineddelegationTGSRequests", (value))
+	return instance.SetProperty("KDCresourcetypeconstraineddelegationTGSRequests", value)
 }
 
 // GetKDCresourcetypeconstraineddelegationTGSRequests gets the value of KDCresourcetypeconstraineddelegationTGSRequests for the instance
@@ -418,25 +316,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKDCTGSRequests sets the value of KDCTGSRequests for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKDCTGSRequests(value uint32) (err error) {
-	return instance.SetProperty("KDCTGSRequests", (value))
+	return instance.SetProperty("KDCTGSRequests", value)
 }
 
 // GetKDCTGSRequests gets the value of KDCTGSRequests for the instance
@@ -445,25 +334,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetKerberosAuthentications sets the value of KerberosAuthentications for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyKerberosAuthentications(value uint32) (err error) {
-	return instance.SetProperty("KerberosAuthentications", (value))
+	return instance.SetProperty("KerberosAuthentications", value)
 }
 
 // GetKerberosAuthentications gets the value of KerberosAuthentications for the instance
@@ -472,25 +352,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetNTLMAuthentications sets the value of NTLMAuthentications for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertyNTLMAuthentications(value uint32) (err error) {
-	return instance.SetProperty("NTLMAuthentications", (value))
+	return instance.SetProperty("NTLMAuthentications", value)
 }
 
 // GetNTLMAuthentications gets the value of NTLMAuthentications for the instance
@@ -499,25 +370,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetSchannelSessionCacheEntries sets the value of SchannelSessionCacheEntries for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertySchannelSessionCacheEntries(value uint32) (err error) {
-	return instance.SetProperty("SchannelSessionCacheEntries", (value))
+	return instance.SetProperty("SchannelSessionCacheEntries", value)
 }
 
 // GetSchannelSessionCacheEntries gets the value of SchannelSessionCacheEntries for the instance
@@ -526,25 +388,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetSSLClientSideFullHandshakes sets the value of SSLClientSideFullHandshakes for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertySSLClientSideFullHandshakes(value uint32) (err error) {
-	return instance.SetProperty("SSLClientSideFullHandshakes", (value))
+	return instance.SetProperty("SSLClientSideFullHandshakes", value)
 }
 
 // GetSSLClientSideFullHandshakes gets the value of SSLClientSideFullHandshakes for the instance
@@ -553,25 +406,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetSSLClientSideReconnectHandshakes sets the value of SSLClientSideReconnectHandshakes for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertySSLClientSideReconnectHandshakes(value uint32) (err error) {
-	return instance.SetProperty("SSLClientSideReconnectHandshakes", (value))
+	return instance.SetProperty("SSLClientSideReconnectHandshakes", value)
 }
 
 // GetSSLClientSideReconnectHandshakes gets the value of SSLClientSideReconnectHandshakes for the instance
@@ -580,25 +424,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetSSLServerSideFullHandshakes sets the value of SSLServerSideFullHandshakes for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertySSLServerSideFullHandshakes(value uint32) (err error) {
-	return instance.SetProperty("SSLServerSideFullHandshakes", (value))
+	return instance.SetProperty("SSLServerSideFullHandshakes", value)
 }
 
 // GetSSLServerSideFullHandshakes gets the value of SSLServerSideFullHandshakes for the instance
@@ -607,25 +442,16 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }
 
 // SetSSLServerSideReconnectHandshakes sets the value of SSLServerSideReconnectHandshakes for the instance
 func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) SetPropertySSLServerSideReconnectHandshakes(value uint32) (err error) {
-	return instance.SetProperty("SSLServerSideReconnectHandshakes", (value))
+	return instance.SetProperty("SSLServerSideReconnectHandshakes", value)
 }
 
 // GetSSLServerSideReconnectHandshakes gets the value of SSLServerSideReconnectHandshakes for the instance
@@ -634,18 +460,9 @@ func (instance *Win32_PerfRawData_Counters_SecuritySystemWideStatistics) GetProp
 	if err != nil {
 		return
 	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint32)
+	value, ok := retValue.(uint32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
+		// TODO: Set an error
 	}
-
-	value = uint32(valuetmp)
-
 	return
 }

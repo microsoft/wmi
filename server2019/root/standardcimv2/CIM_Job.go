@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -20,67 +19,67 @@ import (
 type CIM_Job struct {
 	*CIM_LogicalElement
 
-	//
+	// 104
 	DeleteOnCompletion bool
 
-	//
+	// 62
 	ElapsedTime string
 
-	//
+	// 105
 	ErrorCode uint16
 
-	//
+	// 106
 	ErrorDescription string
 
-	//
+	// 63
 	JobRunTimes uint32
 
-	//
+	// 58
 	JobStatus string
 
-	//
-	LocalOrUtcTime uint16
+	// 95
+	LocalOrUtcTime Job_LocalOrUtcTime
 
-	//
+	// 99
 	Notify string
 
-	//
+	// 112
 	OtherRecoveryAction string
 
-	//
+	// 100
 	Owner string
 
-	//
+	// 102
 	PercentComplete uint16
 
-	//
+	// 101
 	Priority uint32
 
-	//
-	RecoveryAction uint16
+	// 107
+	RecoveryAction Job_RecoveryAction
 
-	//
+	// 77
 	RunDay int8
 
-	//
-	RunDayOfWeek int8
+	// 78
+	RunDayOfWeek Job_RunDayOfWeek
 
-	//
-	RunMonth uint8
+	// 64
+	RunMonth Job_RunMonth
 
-	//
+	// 94
 	RunStartInterval string
 
-	//
+	// 60
 	ScheduledStartTime string
 
-	//
+	// 61
 	StartTime string
 
-	//
+	// 59
 	TimeSubmitted string
 
-	//
+	// 98
 	UntilTime string
 }
 
@@ -276,12 +275,12 @@ func (instance *CIM_Job) GetPropertyJobStatus() (value string, err error) {
 }
 
 // SetLocalOrUtcTime sets the value of LocalOrUtcTime for the instance
-func (instance *CIM_Job) SetPropertyLocalOrUtcTime(value uint16) (err error) {
+func (instance *CIM_Job) SetPropertyLocalOrUtcTime(value Job_LocalOrUtcTime) (err error) {
 	return instance.SetProperty("LocalOrUtcTime", (value))
 }
 
 // GetLocalOrUtcTime gets the value of LocalOrUtcTime for the instance
-func (instance *CIM_Job) GetPropertyLocalOrUtcTime() (value uint16, err error) {
+func (instance *CIM_Job) GetPropertyLocalOrUtcTime() (value Job_LocalOrUtcTime, err error) {
 	retValue, err := instance.GetProperty("LocalOrUtcTime")
 	if err != nil {
 		return
@@ -291,13 +290,13 @@ func (instance *CIM_Job) GetPropertyLocalOrUtcTime() (value uint16, err error) {
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = Job_LocalOrUtcTime(valuetmp)
 
 	return
 }
@@ -438,12 +437,12 @@ func (instance *CIM_Job) GetPropertyPriority() (value uint32, err error) {
 }
 
 // SetRecoveryAction sets the value of RecoveryAction for the instance
-func (instance *CIM_Job) SetPropertyRecoveryAction(value uint16) (err error) {
+func (instance *CIM_Job) SetPropertyRecoveryAction(value Job_RecoveryAction) (err error) {
 	return instance.SetProperty("RecoveryAction", (value))
 }
 
 // GetRecoveryAction gets the value of RecoveryAction for the instance
-func (instance *CIM_Job) GetPropertyRecoveryAction() (value uint16, err error) {
+func (instance *CIM_Job) GetPropertyRecoveryAction() (value Job_RecoveryAction, err error) {
 	retValue, err := instance.GetProperty("RecoveryAction")
 	if err != nil {
 		return
@@ -453,13 +452,13 @@ func (instance *CIM_Job) GetPropertyRecoveryAction() (value uint16, err error) {
 		return
 	}
 
-	valuetmp, ok := retValue.(uint16)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint16(valuetmp)
+	value = Job_RecoveryAction(valuetmp)
 
 	return
 }
@@ -492,12 +491,12 @@ func (instance *CIM_Job) GetPropertyRunDay() (value int8, err error) {
 }
 
 // SetRunDayOfWeek sets the value of RunDayOfWeek for the instance
-func (instance *CIM_Job) SetPropertyRunDayOfWeek(value int8) (err error) {
+func (instance *CIM_Job) SetPropertyRunDayOfWeek(value Job_RunDayOfWeek) (err error) {
 	return instance.SetProperty("RunDayOfWeek", (value))
 }
 
 // GetRunDayOfWeek gets the value of RunDayOfWeek for the instance
-func (instance *CIM_Job) GetPropertyRunDayOfWeek() (value int8, err error) {
+func (instance *CIM_Job) GetPropertyRunDayOfWeek() (value Job_RunDayOfWeek, err error) {
 	retValue, err := instance.GetProperty("RunDayOfWeek")
 	if err != nil {
 		return
@@ -507,24 +506,24 @@ func (instance *CIM_Job) GetPropertyRunDayOfWeek() (value int8, err error) {
 		return
 	}
 
-	valuetmp, ok := retValue.(int8)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = int8(valuetmp)
+	value = Job_RunDayOfWeek(valuetmp)
 
 	return
 }
 
 // SetRunMonth sets the value of RunMonth for the instance
-func (instance *CIM_Job) SetPropertyRunMonth(value uint8) (err error) {
+func (instance *CIM_Job) SetPropertyRunMonth(value Job_RunMonth) (err error) {
 	return instance.SetProperty("RunMonth", (value))
 }
 
 // GetRunMonth gets the value of RunMonth for the instance
-func (instance *CIM_Job) GetPropertyRunMonth() (value uint8, err error) {
+func (instance *CIM_Job) GetPropertyRunMonth() (value Job_RunMonth, err error) {
 	retValue, err := instance.GetProperty("RunMonth")
 	if err != nil {
 		return
@@ -534,13 +533,13 @@ func (instance *CIM_Job) GetPropertyRunMonth() (value uint8, err error) {
 		return
 	}
 
-	valuetmp, ok := retValue.(uint8)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = uint8(valuetmp)
+	value = Job_RunMonth(valuetmp)
 
 	return
 }
@@ -680,9 +679,9 @@ func (instance *CIM_Job) GetPropertyUntilTime() (value string, err error) {
 	return
 }
 
-//
+// 113
 
-// <param name="DeleteOnKill" type="bool "></param>
+// <param name="DeleteOnKill" type="bool ">121</param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_Job) KillJob( /* IN */ DeleteOnKill bool) (result uint32, err error) {

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.StandardCimv2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
 package standardcimv2
 
 import (
@@ -49,9 +48,6 @@ type MSFT_NetAdapterRdmaSettingData struct {
 
 	//
 	MaxSharedReceiveQueueCount uint32
-
-	//
-	OperationalState bool
 
 	//
 	PFC uint32
@@ -358,33 +354,6 @@ func (instance *MSFT_NetAdapterRdmaSettingData) GetPropertyMaxSharedReceiveQueue
 	}
 
 	value = uint32(valuetmp)
-
-	return
-}
-
-// SetOperationalState sets the value of OperationalState for the instance
-func (instance *MSFT_NetAdapterRdmaSettingData) SetPropertyOperationalState(value bool) (err error) {
-	return instance.SetProperty("OperationalState", (value))
-}
-
-// GetOperationalState gets the value of OperationalState for the instance
-func (instance *MSFT_NetAdapterRdmaSettingData) GetPropertyOperationalState() (value bool, err error) {
-	retValue, err := instance.GetProperty("OperationalState")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = bool(valuetmp)
 
 	return
 }

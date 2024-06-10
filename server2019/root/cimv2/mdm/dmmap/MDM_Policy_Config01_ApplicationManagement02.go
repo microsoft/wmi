@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2.mdm.dmmap
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 9/18/2020 using wmigen
+//      Source root.CIMV2.mdm.dmmap
+//////////////////////////////////////////////
 package dmmap
 
 import (
@@ -28,9 +27,6 @@ type MDM_Policy_Config01_ApplicationManagement02 struct {
 	AllowAppStoreAutoUpdate int32
 
 	//
-	AllowAutomaticAppArchiving int32
-
-	//
 	AllowDeveloperUnlock int32
 
 	//
@@ -38,9 +34,6 @@ type MDM_Policy_Config01_ApplicationManagement02 struct {
 
 	//
 	AllowSharedUserAppData int32
-
-	//
-	BlockNonAdminUserInstall int32
 
 	//
 	DisableStoreOriginatedApps int32
@@ -156,33 +149,6 @@ func (instance *MDM_Policy_Config01_ApplicationManagement02) GetPropertyAllowApp
 	return
 }
 
-// SetAllowAutomaticAppArchiving sets the value of AllowAutomaticAppArchiving for the instance
-func (instance *MDM_Policy_Config01_ApplicationManagement02) SetPropertyAllowAutomaticAppArchiving(value int32) (err error) {
-	return instance.SetProperty("AllowAutomaticAppArchiving", (value))
-}
-
-// GetAllowAutomaticAppArchiving gets the value of AllowAutomaticAppArchiving for the instance
-func (instance *MDM_Policy_Config01_ApplicationManagement02) GetPropertyAllowAutomaticAppArchiving() (value int32, err error) {
-	retValue, err := instance.GetProperty("AllowAutomaticAppArchiving")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
 // SetAllowDeveloperUnlock sets the value of AllowDeveloperUnlock for the instance
 func (instance *MDM_Policy_Config01_ApplicationManagement02) SetPropertyAllowDeveloperUnlock(value int32) (err error) {
 	return instance.SetProperty("AllowDeveloperUnlock", (value))
@@ -245,33 +211,6 @@ func (instance *MDM_Policy_Config01_ApplicationManagement02) SetPropertyAllowSha
 // GetAllowSharedUserAppData gets the value of AllowSharedUserAppData for the instance
 func (instance *MDM_Policy_Config01_ApplicationManagement02) GetPropertyAllowSharedUserAppData() (value int32, err error) {
 	retValue, err := instance.GetProperty("AllowSharedUserAppData")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = int32(valuetmp)
-
-	return
-}
-
-// SetBlockNonAdminUserInstall sets the value of BlockNonAdminUserInstall for the instance
-func (instance *MDM_Policy_Config01_ApplicationManagement02) SetPropertyBlockNonAdminUserInstall(value int32) (err error) {
-	return instance.SetProperty("BlockNonAdminUserInstall", (value))
-}
-
-// GetBlockNonAdminUserInstall gets the value of BlockNonAdminUserInstall for the instance
-func (instance *MDM_Policy_Config01_ApplicationManagement02) GetPropertyBlockNonAdminUserInstall() (value int32, err error) {
-	retValue, err := instance.GetProperty("BlockNonAdminUserInstall")
 	if err != nil {
 		return
 	}
