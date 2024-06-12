@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.WMI
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.WMI
+//////////////////////////////////////////////
 package wmi
 
 import (
@@ -267,6 +266,7 @@ func (instance *Microsoft_IPMI) SetClearMsrDumpSettings( /* IN */ ClearMsrDump b
 
 }
 
+//
 func (instance *Microsoft_IPMI) EnableSelCachingSupport() (err error) {
 	_, err = instance.InvokeMethodWithReturn("EnableSelCachingSupport")
 	if err != nil {
@@ -276,6 +276,7 @@ func (instance *Microsoft_IPMI) EnableSelCachingSupport() (err error) {
 
 }
 
+//
 func (instance *Microsoft_IPMI) DisableSelCachingSupport() (err error) {
 	_, err = instance.InvokeMethodWithReturn("DisableSelCachingSupport")
 	if err != nil {
@@ -309,6 +310,7 @@ func (instance *Microsoft_IPMI) SetSelCacheReadRecordLimit( /* IN */ SelCacheRea
 
 }
 
+//
 func (instance *Microsoft_IPMI) EnableMsrDumpCommands() (err error) {
 	_, err = instance.InvokeMethodWithReturn("EnableMsrDumpCommands")
 	if err != nil {
@@ -318,6 +320,7 @@ func (instance *Microsoft_IPMI) EnableMsrDumpCommands() (err error) {
 
 }
 
+//
 func (instance *Microsoft_IPMI) DisableMsrDumpCommands() (err error) {
 	_, err = instance.InvokeMethodWithReturn("DisableMsrDumpCommands")
 	if err != nil {

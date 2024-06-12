@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source StorageEnclosure_VoltageSensorOperationalStatus
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source StorageEnclosure_VoltageSensorOperationalStatus
+//////////////////////////////////////////////
 package providers_v2
 
 // StorageEnclosure_VoltageSensorOperationalStatus

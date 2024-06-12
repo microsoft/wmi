@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source CtlGuid_Level
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source CtlGuid_Level
+//////////////////////////////////////////////
 package wmi
 
 // CtlGuid_Level

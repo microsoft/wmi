@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -34,6 +33,9 @@ type Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2VFDiagnostics struct {
 
 	//
 	InvalidCommands uint64
+
+	//
+	PacketsReceiveddroppedduetolackofreceiveWQEs uint64
 
 	//
 	PacketsReceiveddroppedduetoSteering uint64
@@ -202,6 +204,33 @@ func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2VFDiagnostics
 // GetInvalidCommands gets the value of InvalidCommands for the instance
 func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2VFDiagnostics) GetPropertyInvalidCommands() (value uint64, err error) {
 	retValue, err := instance.GetProperty("InvalidCommands")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetPacketsReceiveddroppedduetolackofreceiveWQEs sets the value of PacketsReceiveddroppedduetolackofreceiveWQEs for the instance
+func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2VFDiagnostics) SetPropertyPacketsReceiveddroppedduetolackofreceiveWQEs(value uint64) (err error) {
+	return instance.SetProperty("PacketsReceiveddroppedduetolackofreceiveWQEs", (value))
+}
+
+// GetPacketsReceiveddroppedduetolackofreceiveWQEs gets the value of PacketsReceiveddroppedduetolackofreceiveWQEs for the instance
+func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2VFDiagnostics) GetPropertyPacketsReceiveddroppedduetolackofreceiveWQEs() (value uint64, err error) {
+	retValue, err := instance.GetProperty("PacketsReceiveddroppedduetolackofreceiveWQEs")
 	if err != nil {
 		return
 	}

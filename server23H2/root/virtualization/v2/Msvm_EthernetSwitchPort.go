@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -109,12 +108,16 @@ func (instance *Msvm_EthernetSwitchPort) GetPropertyVMQOffloadUsage() (value uin
 
 	return
 }
-func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortOffloadData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchPortOffloadData")
+func (instance *Msvm_EthernetSwitchPort) GetRelatedDynamicForwardingEntry() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_DynamicForwardingEntry")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
+}
+
+func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortOffloadData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchPortOffloadData")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
@@ -123,10 +126,6 @@ func (instance *Msvm_EthernetSwitchPort) GetRelatedLANEndpoint() (value *cim.Wmi
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortBandwidthData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchPortBandwidthData")
-}
-
-func (instance *Msvm_EthernetSwitchPort) GetRelatedDynamicForwardingEntry() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_DynamicForwardingEntry")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {

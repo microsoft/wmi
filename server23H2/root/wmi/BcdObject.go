@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.WMI
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.WMI
+//////////////////////////////////////////////
 package wmi
 
 import (
@@ -151,7 +150,7 @@ func (instance *BcdObject) EnumerateElementTypes( /* OUT */ Types []uint32) (res
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -166,7 +165,7 @@ func (instance *BcdObject) EnumerateElements( /* OUT */ Elements []BcdElement) (
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -184,7 +183,7 @@ func (instance *BcdObject) GetElement( /* IN */ Type uint32,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -204,7 +203,7 @@ func (instance *BcdObject) GetElementWithFlags( /* IN */ Type uint32,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }

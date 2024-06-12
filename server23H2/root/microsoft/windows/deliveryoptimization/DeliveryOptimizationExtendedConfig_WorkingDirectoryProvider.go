@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider
+//////////////////////////////////////////////
 package deliveryoptimization
 
 // DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider

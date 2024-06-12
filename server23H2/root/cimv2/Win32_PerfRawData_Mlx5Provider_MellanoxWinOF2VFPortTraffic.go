@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -85,6 +84,30 @@ type Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic struct {
 
 	//
 	PacketsSentUnicastPerSec uint32
+
+	//
+	RdmaBytesReceivedMulticastPerSec uint64
+
+	//
+	RdmaBytesReceivedUnicastPerSec uint64
+
+	//
+	RdmaBytesSentMulticastPerSec uint64
+
+	//
+	RdmaBytesSentUnicastPerSec uint64
+
+	//
+	RdmaPacketsReceivedMulticastPerSec uint32
+
+	//
+	RdmaPacketsReceivedUnicastPerSec uint32
+
+	//
+	RdmaPacketsSentMulticastPerSec uint32
+
+	//
+	RdmaPacketsSentUnicastPerSec uint32
 
 	//
 	VlanAntiSpoofingBytesDiscarded uint64
@@ -697,6 +720,222 @@ func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetP
 // GetPacketsSentUnicastPerSec gets the value of PacketsSentUnicastPerSec for the instance
 func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyPacketsSentUnicastPerSec() (value uint32, err error) {
 	retValue, err := instance.GetProperty("PacketsSentUnicastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
+	return
+}
+
+// SetRdmaBytesReceivedMulticastPerSec sets the value of RdmaBytesReceivedMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaBytesReceivedMulticastPerSec(value uint64) (err error) {
+	return instance.SetProperty("RdmaBytesReceivedMulticastPerSec", (value))
+}
+
+// GetRdmaBytesReceivedMulticastPerSec gets the value of RdmaBytesReceivedMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaBytesReceivedMulticastPerSec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("RdmaBytesReceivedMulticastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetRdmaBytesReceivedUnicastPerSec sets the value of RdmaBytesReceivedUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaBytesReceivedUnicastPerSec(value uint64) (err error) {
+	return instance.SetProperty("RdmaBytesReceivedUnicastPerSec", (value))
+}
+
+// GetRdmaBytesReceivedUnicastPerSec gets the value of RdmaBytesReceivedUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaBytesReceivedUnicastPerSec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("RdmaBytesReceivedUnicastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetRdmaBytesSentMulticastPerSec sets the value of RdmaBytesSentMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaBytesSentMulticastPerSec(value uint64) (err error) {
+	return instance.SetProperty("RdmaBytesSentMulticastPerSec", (value))
+}
+
+// GetRdmaBytesSentMulticastPerSec gets the value of RdmaBytesSentMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaBytesSentMulticastPerSec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("RdmaBytesSentMulticastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetRdmaBytesSentUnicastPerSec sets the value of RdmaBytesSentUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaBytesSentUnicastPerSec(value uint64) (err error) {
+	return instance.SetProperty("RdmaBytesSentUnicastPerSec", (value))
+}
+
+// GetRdmaBytesSentUnicastPerSec gets the value of RdmaBytesSentUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaBytesSentUnicastPerSec() (value uint64, err error) {
+	retValue, err := instance.GetProperty("RdmaBytesSentUnicastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetRdmaPacketsReceivedMulticastPerSec sets the value of RdmaPacketsReceivedMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaPacketsReceivedMulticastPerSec(value uint32) (err error) {
+	return instance.SetProperty("RdmaPacketsReceivedMulticastPerSec", (value))
+}
+
+// GetRdmaPacketsReceivedMulticastPerSec gets the value of RdmaPacketsReceivedMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaPacketsReceivedMulticastPerSec() (value uint32, err error) {
+	retValue, err := instance.GetProperty("RdmaPacketsReceivedMulticastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
+	return
+}
+
+// SetRdmaPacketsReceivedUnicastPerSec sets the value of RdmaPacketsReceivedUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaPacketsReceivedUnicastPerSec(value uint32) (err error) {
+	return instance.SetProperty("RdmaPacketsReceivedUnicastPerSec", (value))
+}
+
+// GetRdmaPacketsReceivedUnicastPerSec gets the value of RdmaPacketsReceivedUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaPacketsReceivedUnicastPerSec() (value uint32, err error) {
+	retValue, err := instance.GetProperty("RdmaPacketsReceivedUnicastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
+	return
+}
+
+// SetRdmaPacketsSentMulticastPerSec sets the value of RdmaPacketsSentMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaPacketsSentMulticastPerSec(value uint32) (err error) {
+	return instance.SetProperty("RdmaPacketsSentMulticastPerSec", (value))
+}
+
+// GetRdmaPacketsSentMulticastPerSec gets the value of RdmaPacketsSentMulticastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaPacketsSentMulticastPerSec() (value uint32, err error) {
+	retValue, err := instance.GetProperty("RdmaPacketsSentMulticastPerSec")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
+	return
+}
+
+// SetRdmaPacketsSentUnicastPerSec sets the value of RdmaPacketsSentUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) SetPropertyRdmaPacketsSentUnicastPerSec(value uint32) (err error) {
+	return instance.SetProperty("RdmaPacketsSentUnicastPerSec", (value))
+}
+
+// GetRdmaPacketsSentUnicastPerSec gets the value of RdmaPacketsSentUnicastPerSec for the instance
+func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFPortTraffic) GetPropertyRdmaPacketsSentUnicastPerSec() (value uint32, err error) {
+	retValue, err := instance.GetProperty("RdmaPacketsSentUnicastPerSec")
 	if err != nil {
 		return
 	}

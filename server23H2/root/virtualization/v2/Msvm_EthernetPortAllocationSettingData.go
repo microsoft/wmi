@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -291,6 +290,10 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyTestReplicaSw
 
 	return
 }
+func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedEthernetSwitchPortOffloadSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchPortOffloadSettingData")
+}
+
 func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedVirtualEthernetSwitchSettingData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_VirtualEthernetSwitchSettingData")
 }

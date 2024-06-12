@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.WMI
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.WMI
+//////////////////////////////////////////////
 package wmi
 
 import (
@@ -94,7 +93,7 @@ func (instance *BcdStore) OpenStore( /* IN */ File string,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -159,7 +158,7 @@ func (instance *BcdStore) CreateStore( /* IN */ File string,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -187,7 +186,7 @@ func (instance *BcdStore) GetSystemDisk( /* OUT */ Disk string) (result bool, er
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -202,7 +201,7 @@ func (instance *BcdStore) GetSystemPartition( /* OUT */ Partition string) (resul
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -235,7 +234,7 @@ func (instance *BcdStore) EnumerateObjects( /* IN */ Type uint32,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -253,7 +252,7 @@ func (instance *BcdStore) OpenObject( /* IN */ Id string,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -273,7 +272,7 @@ func (instance *BcdStore) CreateObject( /* IN */ Id string,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }
@@ -310,7 +309,7 @@ func (instance *BcdStore) CopyObject( /* IN */ SourceStoreFile string,
 		return
 	}
 	retValue := retVal[0].(int32)
-	result = bool(retValue)
+	result = bool(retValue != 0)
 	return
 
 }

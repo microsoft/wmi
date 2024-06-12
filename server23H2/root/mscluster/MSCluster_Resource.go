@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -1329,6 +1328,7 @@ func (instance *MSCluster_Resource) RemoveCryptoCheckpoint( /* IN */ CheckpointN
 
 }
 
+//
 func (instance *MSCluster_Resource) RenewAddress() (err error) {
 	_, err = instance.InvokeMethodWithReturn("RenewAddress")
 	if err != nil {
@@ -1338,6 +1338,7 @@ func (instance *MSCluster_Resource) RenewAddress() (err error) {
 
 }
 
+//
 func (instance *MSCluster_Resource) ReleaseAddress() (err error) {
 	_, err = instance.InvokeMethodWithReturn("ReleaseAddress")
 	if err != nil {
@@ -1383,6 +1384,7 @@ func (instance *MSCluster_Resource) RemovePossibleOwner( /* IN */ NodeName strin
 
 }
 
+//
 func (instance *MSCluster_Resource) UpdateVirtualMachine() (err error) {
 	_, err = instance.InvokeMethodWithReturn("UpdateVirtualMachine")
 	if err != nil {

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source InitiatorInstanceFailureEvent_FailureType
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source InitiatorInstanceFailureEvent_FailureType
+//////////////////////////////////////////////
 package wmi
 
 // InitiatorInstanceFailureEvent_FailureType

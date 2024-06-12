@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -109,12 +108,12 @@ func (instance *Msvm_VirtualEthernetSwitch) GetPropertyMaxVMQOffloads() (value u
 
 	return
 }
-func (instance *Msvm_VirtualEthernetSwitch) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_TransparentBridgingService")
-}
-
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchBandwidthData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchBandwidthData")
+}
+
+func (instance *Msvm_VirtualEthernetSwitch) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_TransparentBridgingService")
 }
 
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchOperationalData() (value *cim.WmiInstance, err error) {

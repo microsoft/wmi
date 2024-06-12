@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source SmbClientCertificateMapping_Flags
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source SmbClientCertificateMapping_Flags
+//////////////////////////////////////////////
 package smb
 
 // SmbClientCertificateMapping_Flags

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -78,4 +77,11 @@ func (instance *Msvm_DynamicForwardingEntry) GetPropertyVlanId() (value uint16, 
 	value = uint16(valuetmp)
 
 	return
+}
+func (instance *Msvm_DynamicForwardingEntry) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_TransparentBridgingService")
+}
+
+func (instance *Msvm_DynamicForwardingEntry) GetRelatedEthernetSwitchPort() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchPort")
 }

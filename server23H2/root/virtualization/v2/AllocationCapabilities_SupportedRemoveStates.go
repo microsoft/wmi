@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source AllocationCapabilities_SupportedRemoveStates
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source AllocationCapabilities_SupportedRemoveStates
+//////////////////////////////////////////////
 package v2
 
 // AllocationCapabilities_SupportedRemoveStates

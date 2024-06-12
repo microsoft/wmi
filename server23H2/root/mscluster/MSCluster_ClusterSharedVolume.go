@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -170,6 +169,7 @@ func (instance *MSCluster_ClusterSharedVolume) GetPropertyVolumeOffset() (value 
 	return
 }
 
+//
 func (instance *MSCluster_ClusterSharedVolume) TurnOnMaintenance() (err error) {
 	_, err = instance.InvokeMethodWithReturn("TurnOnMaintenance")
 	if err != nil {
@@ -179,6 +179,7 @@ func (instance *MSCluster_ClusterSharedVolume) TurnOnMaintenance() (err error) {
 
 }
 
+//
 func (instance *MSCluster_ClusterSharedVolume) TurnOffMaintenance() (err error) {
 	_, err = instance.InvokeMethodWithReturn("TurnOffMaintenance")
 	if err != nil {
@@ -188,6 +189,7 @@ func (instance *MSCluster_ClusterSharedVolume) TurnOffMaintenance() (err error) 
 
 }
 
+//
 func (instance *MSCluster_ClusterSharedVolume) TurnOnRedirectedAccess() (err error) {
 	_, err = instance.InvokeMethodWithReturn("TurnOnRedirectedAccess")
 	if err != nil {
@@ -197,6 +199,7 @@ func (instance *MSCluster_ClusterSharedVolume) TurnOnRedirectedAccess() (err err
 
 }
 
+//
 func (instance *MSCluster_ClusterSharedVolume) TurnOffRedirectedAccess() (err error) {
 	_, err = instance.InvokeMethodWithReturn("TurnOffRedirectedAccess")
 	if err != nil {

@@ -2,11 +2,9 @@
 // Licensed under the MIT license.
 //
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.directory.LDAP
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.directory.LDAP
+//////////////////////////////////////////////
 package ldap
 
 import (

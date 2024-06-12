@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.virtualization.v2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
 package v2
 
 import (
@@ -139,10 +138,10 @@ func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetPropertyVersion() (va
 
 	return
 }
-func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedInstalledEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_InstalledEthernetSwitchExtension")
-}
-
 func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedEthernetSwitchHardwareOffloadSettingData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchHardwareOffloadSettingData")
+}
+
+func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedInstalledEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_InstalledEthernetSwitchExtension")
 }

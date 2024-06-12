@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -22,6 +21,9 @@ type Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2DiagnosticsExt1 struct {
 
 	//
 	ChecksumcalculatedbySWPerPacket uint64
+
+	//
+	CMDREQ uint64
 
 	//
 	CQOverrun uint64
@@ -79,6 +81,33 @@ func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2DiagnosticsEx
 // GetChecksumcalculatedbySWPerPacket gets the value of ChecksumcalculatedbySWPerPacket for the instance
 func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2DiagnosticsExt1) GetPropertyChecksumcalculatedbySWPerPacket() (value uint64, err error) {
 	retValue, err := instance.GetProperty("ChecksumcalculatedbySWPerPacket")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetCMDREQ sets the value of CMDREQ for the instance
+func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2DiagnosticsExt1) SetPropertyCMDREQ(value uint64) (err error) {
+	return instance.SetProperty("CMDREQ", (value))
+}
+
+// GetCMDREQ gets the value of CMDREQ for the instance
+func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2DiagnosticsExt1) GetPropertyCMDREQ() (value uint64, err error) {
+	retValue, err := instance.GetProperty("CMDREQ")
 	if err != nil {
 		return
 	}

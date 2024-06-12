@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.MSCluster
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
 package mscluster
 
 import (
@@ -140,6 +139,7 @@ func (instance *MSCluster_Service) GetPropertyState() (value string, err error) 
 	return
 }
 
+//
 func (instance *MSCluster_Service) Start() (err error) {
 	_, err = instance.InvokeMethodWithReturn("Start")
 	if err != nil {
@@ -149,6 +149,7 @@ func (instance *MSCluster_Service) Start() (err error) {
 
 }
 
+//
 func (instance *MSCluster_Service) Stop() (err error) {
 	_, err = instance.InvokeMethodWithReturn("Stop")
 	if err != nil {

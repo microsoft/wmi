@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.CIMV2
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
 package cimv2
 
 import (
@@ -97,6 +96,9 @@ type Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2Diagnostics struct {
 
 	//
 	PacketsReceivedSteeringDropped uint64
+
+	//
+	PacketsReceivedWQEtoosmall uint64
 
 	//
 	QueuedSendPackets uint64
@@ -922,6 +924,33 @@ func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2Diagnostics) 
 // GetPacketsReceivedSteeringDropped gets the value of PacketsReceivedSteeringDropped for the instance
 func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2Diagnostics) GetPropertyPacketsReceivedSteeringDropped() (value uint64, err error) {
 	retValue, err := instance.GetProperty("PacketsReceivedSteeringDropped")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetPacketsReceivedWQEtoosmall sets the value of PacketsReceivedWQEtoosmall for the instance
+func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2Diagnostics) SetPropertyPacketsReceivedWQEtoosmall(value uint64) (err error) {
+	return instance.SetProperty("PacketsReceivedWQEtoosmall", (value))
+}
+
+// GetPacketsReceivedWQEtoosmall gets the value of PacketsReceivedWQEtoosmall for the instance
+func (instance *Win32_PerfFormattedData_Mlx5Provider_MellanoxWinOF2Diagnostics) GetPropertyPacketsReceivedWQEtoosmall() (value uint64, err error) {
+	retValue, err := instance.GetProperty("PacketsReceivedWQEtoosmall")
 	if err != nil {
 		return
 	}

@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source VirtualSystemSettingData_Vtl2AddressSpaceConfigurationMode
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source VirtualSystemSettingData_Vtl2AddressSpaceConfigurationMode
+//////////////////////////////////////////////
 package v2
 
 // VirtualSystemSettingData_Vtl2AddressSpaceConfigurationMode

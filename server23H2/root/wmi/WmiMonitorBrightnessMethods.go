@@ -1,12 +1,11 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 6/6/2024 using wmigen
-//	Source root.WMI
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/12/2024 using wmigen
+//      Source root.WMI
+//////////////////////////////////////////////
 package wmi
 
 import (
@@ -124,6 +123,7 @@ func (instance *WmiMonitorBrightnessMethods) WmiSetBrightness( /* IN */ Timeout 
 
 }
 
+//
 func (instance *WmiMonitorBrightnessMethods) WmiRevertToPolicyBrightness() (err error) {
 	_, err = instance.InvokeMethodWithReturn("WmiRevertToPolicyBrightness")
 	if err != nil {
