@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/12/2024 using wmigen
+//      Auto Generated on 6/13/2024 using wmigen
 //      Source StorageEnclosure_VoltageSensorOperationalStatus
 //////////////////////////////////////////////
 package providers_v2

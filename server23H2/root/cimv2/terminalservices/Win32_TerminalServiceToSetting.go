@@ -3,16 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 6/12/2024 using wmigen
+//      Auto Generated on 6/13/2024 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
+	cimv2 "/root/cimv2"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	cimv2 "github.com/microsoft/wmi/server2019/root/cimv2"
 	"reflect"
 )
 

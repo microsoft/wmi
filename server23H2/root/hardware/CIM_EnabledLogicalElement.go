@@ -3,16 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 6/12/2024 using wmigen
+//      Auto Generated on 6/13/2024 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
 import (
+	standardcimv2 "/root/standardcimv2"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	standardcimv2 "github.com/microsoft/wmi/server2019/root/standardcimv2"
 	"reflect"
 )
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/12/2024 using wmigen
+//      Auto Generated on 6/13/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -47,10 +47,10 @@ func NewMsvm_VirtualSystemMigrationCapabilitiesEx6(hostName string,
 	return
 }
 
-func (instance *Msvm_VirtualSystemMigrationCapabilities) GetRelatedVirtualSystemMigrationService() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualSystemMigrationService")
-}
-
 func (instance *Msvm_VirtualSystemMigrationCapabilities) GetRelatedVirtualSystemMigrationSettingData() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_VirtualSystemMigrationSettingData")
+}
+
+func (instance *Msvm_VirtualSystemMigrationCapabilities) GetRelatedVirtualSystemMigrationService() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemMigrationService")
 }

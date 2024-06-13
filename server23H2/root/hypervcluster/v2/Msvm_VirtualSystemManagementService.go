@@ -3,15 +3,15 @@
 
 //
 // Author:
-//      Auto Generated on 6/12/2024 using wmigen
+//      Auto Generated on 6/13/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
+	v2 "/root/virtualization/v2"
 	"github.com/microsoft/wmi/pkg/base/query"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 // Msvm_VirtualSystemManagementService struct

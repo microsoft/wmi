@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/12/2024 using wmigen
+//      Auto Generated on 6/13/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -77,11 +77,4 @@ func (instance *Msvm_DynamicForwardingEntry) GetPropertyVlanId() (value uint16, 
 	value = uint16(valuetmp)
 
 	return
-}
-func (instance *Msvm_DynamicForwardingEntry) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_TransparentBridgingService")
-}
-
-func (instance *Msvm_DynamicForwardingEntry) GetRelatedEthernetSwitchPort() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchPort")
 }
