@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.directory.LDAP
 //////////////////////////////////////////////
 package ldap
@@ -12,8 +12,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	root "github.com/microsoft/wmi/server23h2/root"
 	"reflect"
+	root "server23h2/root"
 )
 
 // __ProviderRegistration struct

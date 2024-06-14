@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
@@ -12,8 +12,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	standardcimv2 "github.com/microsoft/wmi/server23h2/root/standardcimv2"
 	"reflect"
+	standardcimv2 "server23h2/root/standardcimv2"
 )
 
 // CIM_EnabledLogicalElement struct

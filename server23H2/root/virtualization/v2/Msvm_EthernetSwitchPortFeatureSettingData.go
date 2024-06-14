@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -47,6 +47,6 @@ func NewMsvm_EthernetSwitchPortFeatureSettingDataEx6(hostName string,
 	return
 }
 
-func (instance *Msvm_EthernetSwitchPortFeatureSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchFeatureCapabilities")
+func (instance *Msvm_EthernetSwitchPortFeatureSettingData) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetPortAllocationSettingData")
 }

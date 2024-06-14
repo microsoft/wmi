@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess
 //////////////////////////////////////////////
 package remoteaccess
@@ -19,16 +19,16 @@ import (
 type MSFT_WmiError struct {
 	*CIM_Error
 
-	//
+	// Error Category.
 	error_Category uint16
 
-	//
+	// Error code.
 	error_Code uint32
 
-	//
+	// Error Type.
 	error_Type string
 
-	//
+	// Windows error message.
 	error_WindowsErrorMessage string
 }
 

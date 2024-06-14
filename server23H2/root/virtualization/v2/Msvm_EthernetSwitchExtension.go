@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -228,10 +228,10 @@ func (instance *Msvm_EthernetSwitchExtension) GetPropertyVersion() (value string
 
 	return
 }
-func (instance *Msvm_EthernetSwitchExtension) GetRelatedInstalledEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_InstalledEthernetSwitchExtension")
-}
-
 func (instance *Msvm_EthernetSwitchExtension) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
+}
+
+func (instance *Msvm_EthernetSwitchExtension) GetRelatedInstalledEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_InstalledEthernetSwitchExtension")
 }

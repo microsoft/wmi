@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
@@ -12,8 +12,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	cimv2 "github.com/microsoft/wmi/server23h2/root/cimv2"
 	"reflect"
+	cimv2 "server23h2/root/cimv2"
 )
 
 // Win32_TSSessionDirectorySetting struct

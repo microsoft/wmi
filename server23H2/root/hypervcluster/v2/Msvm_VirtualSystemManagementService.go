@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,7 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	v2 "github.com/microsoft/wmi/server23h2/root/virtualization/v2"
+	v2 "server23h2/root/virtualization/v2"
 )
 
 // Msvm_VirtualSystemManagementService struct
@@ -852,10 +852,10 @@ func (instance *Msvm_VirtualSystemManagementService) RemoveSystemComponentSettin
 
 }
 
-func (instance *Msvm_VirtualSystemManagementService) GetRelatedVirtualSystemManagementServiceSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualSystemManagementServiceSettingData")
-}
-
 func (instance *Msvm_VirtualSystemManagementService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_VirtualSystemManagementService) GetRelatedVirtualSystemManagementServiceSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemManagementServiceSettingData")
 }

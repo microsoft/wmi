@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -108,6 +108,10 @@ func (instance *Msvm_EthernetSwitchPort) GetPropertyVMQOffloadUsage() (value uin
 
 	return
 }
+func (instance *Msvm_EthernetSwitchPort) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
+}
+
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortOffloadData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchPortOffloadData")
 }
@@ -116,16 +120,8 @@ func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortBandwidthDa
 	return instance.GetRelated("Msvm_EthernetSwitchPortBandwidthData")
 }
 
-func (instance *Msvm_EthernetSwitchPort) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
-}
-
 func (instance *Msvm_EthernetSwitchPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_LANEndpoint")
-}
-
-func (instance *Msvm_EthernetSwitchPort) GetRelatedDynamicForwardingEntry() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_DynamicForwardingEntry")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -108,16 +108,16 @@ func (instance *Msvm_VirtualEthernetSwitch) GetPropertyMaxVMQOffloads() (value u
 
 	return
 }
-func (instance *Msvm_VirtualEthernetSwitch) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_TransparentBridgingService")
-}
-
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchBandwidthData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchBandwidthData")
 }
 
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchOperationalData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchOperationalData")
+}
+
+func (instance *Msvm_VirtualEthernetSwitch) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_TransparentBridgingService")
 }
 
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchHardwareOffloadData() (value *cim.WmiInstance, err error) {

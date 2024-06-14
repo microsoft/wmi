@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 6/13/2024 using wmigen
+//      Auto Generated on 6/14/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
@@ -12,8 +12,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	v2 "github.com/microsoft/wmi/server23h2/root/virtualization/v2"
 	"reflect"
+	v2 "server23h2/root/virtualization/v2"
 )
 
 // Msvm_VirtualSystemMigrationService struct
