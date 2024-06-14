@@ -19,16 +19,16 @@ import (
 type MSFT_WmiError struct {
 	*CIM_Error
 
-	// Error Category.
+	//
 	error_Category uint16
 
-	// Error code.
+	//
 	error_Code uint32
 
-	// Error Type.
+	//
 	error_Type string
 
-	// Windows error message.
+	//
 	error_WindowsErrorMessage string
 }
 

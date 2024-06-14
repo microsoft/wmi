@@ -9,11 +9,11 @@
 package v2
 
 import (
-	interop "/root/interop"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	interop "github.com/microsoft/wmi/server23h2/root/interop"
 	"reflect"
 )
 

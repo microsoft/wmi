@@ -9,10 +9,10 @@
 package terminalservices
 
 import (
-	cimv2 "/root/cimv2"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	cimv2 "github.com/microsoft/wmi/server23h2/root/cimv2"
 	"reflect"
 )
 

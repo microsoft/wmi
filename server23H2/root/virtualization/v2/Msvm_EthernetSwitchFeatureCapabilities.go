@@ -138,10 +138,10 @@ func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetPropertyVersion() (va
 
 	return
 }
-func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedEthernetSwitchHardwareOffloadSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchHardwareOffloadSettingData")
-}
-
 func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedInstalledEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_InstalledEthernetSwitchExtension")
+}
+
+func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedEthernetSwitchHardwareOffloadSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchHardwareOffloadSettingData")
 }

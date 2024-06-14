@@ -9,10 +9,10 @@
 package v2
 
 import (
-	v2 "/root/virtualization/v2"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	v2 "github.com/microsoft/wmi/server23h2/root/virtualization/v2"
 	"reflect"
 )
 

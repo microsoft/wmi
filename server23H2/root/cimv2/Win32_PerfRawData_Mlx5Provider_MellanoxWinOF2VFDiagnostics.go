@@ -35,9 +35,6 @@ type Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFDiagnostics struct {
 	InvalidCommands uint64
 
 	//
-	PacketsReceiveddroppedduetolackofreceiveWQEs uint64
-
-	//
 	PacketsReceiveddroppedduetoSteering uint64
 
 	//
@@ -204,33 +201,6 @@ func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFDiagnostics) SetP
 // GetInvalidCommands gets the value of InvalidCommands for the instance
 func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFDiagnostics) GetPropertyInvalidCommands() (value uint64, err error) {
 	retValue, err := instance.GetProperty("InvalidCommands")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
-
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
-
-	value = uint64(valuetmp)
-
-	return
-}
-
-// SetPacketsReceiveddroppedduetolackofreceiveWQEs sets the value of PacketsReceiveddroppedduetolackofreceiveWQEs for the instance
-func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFDiagnostics) SetPropertyPacketsReceiveddroppedduetolackofreceiveWQEs(value uint64) (err error) {
-	return instance.SetProperty("PacketsReceiveddroppedduetolackofreceiveWQEs", (value))
-}
-
-// GetPacketsReceiveddroppedduetolackofreceiveWQEs gets the value of PacketsReceiveddroppedduetolackofreceiveWQEs for the instance
-func (instance *Win32_PerfRawData_Mlx5Provider_MellanoxWinOF2VFDiagnostics) GetPropertyPacketsReceiveddroppedduetolackofreceiveWQEs() (value uint64, err error) {
-	retValue, err := instance.GetProperty("PacketsReceiveddroppedduetolackofreceiveWQEs")
 	if err != nil {
 		return
 	}

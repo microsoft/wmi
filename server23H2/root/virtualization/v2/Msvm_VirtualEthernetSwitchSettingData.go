@@ -294,10 +294,10 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedVirtualEthernet
 	return instance.GetRelated("Msvm_VirtualEthernetSwitchNicTeamingSettingData")
 }
 
-func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
-}
-
 func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedEthernetPortAllocationSettingData() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_EthernetPortAllocationSettingData")
+}
+
+func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
 }

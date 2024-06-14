@@ -108,12 +108,12 @@ func (instance *Msvm_VirtualEthernetSwitch) GetPropertyMaxVMQOffloads() (value u
 
 	return
 }
-func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchBandwidthData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchBandwidthData")
-}
-
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_TransparentBridgingService")
+}
+
+func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchBandwidthData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchBandwidthData")
 }
 
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchOperationalData() (value *cim.WmiInstance, err error) {

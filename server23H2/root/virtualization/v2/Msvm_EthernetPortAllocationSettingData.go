@@ -290,22 +290,6 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyTestReplicaSw
 
 	return
 }
-func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedEthernetSwitchPortSecuritySettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchPortSecuritySettingData")
-}
-
-func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedEthernetSwitchPortIsolationSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchPortIsolationSettingData")
-}
-
-func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedEthernetSwitchPortTeamMappingSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchPortTeamMappingSettingData")
-}
-
-func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedEthernetSwitchPortOffloadSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchPortOffloadSettingData")
-}
-
 func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedVirtualEthernetSwitchSettingData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_VirtualEthernetSwitchSettingData")
 }

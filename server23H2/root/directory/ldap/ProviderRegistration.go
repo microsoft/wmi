@@ -9,10 +9,10 @@
 package ldap
 
 import (
-	root "/root"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	root "github.com/microsoft/wmi/server23h2/root"
 	"reflect"
 )
 

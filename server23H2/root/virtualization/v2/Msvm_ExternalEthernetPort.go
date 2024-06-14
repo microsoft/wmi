@@ -82,6 +82,10 @@ func (instance *Msvm_ExternalEthernetPort) GetRelatedComputerSystem() (value *ci
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
+func (instance *Msvm_ExternalEthernetPort) GetRelatedExternalEthernetPort() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ExternalEthernetPort")
+}
+
 func (instance *Msvm_ExternalEthernetPort) GetRelatedExternalEthernetPortCapabilities() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ExternalEthernetPortCapabilities")
 }
