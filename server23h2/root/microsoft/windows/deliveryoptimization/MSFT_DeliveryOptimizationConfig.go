@@ -505,10 +505,10 @@ func (instance *MSFT_DeliveryOptimizationConfig) SetDownloadRateLimitPct( /* IN 
 
 //
 
-// <param name="downloadMode" type="DeliveryOptimizationConfig_downloadMode "></param>
+// <param name="downloadMode" type="DeliveryOptimizationConfig_DownloadMode "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_DeliveryOptimizationConfig) SetDownloadMode( /* IN */ downloadMode DeliveryOptimizationConfig_downloadMode) (result uint32, err error) {
+func (instance *MSFT_DeliveryOptimizationConfig) SetDownloadMode( /* IN */ downloadMode DeliveryOptimizationConfig_DownloadMode) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("SetDownloadMode", downloadMode)
 	if err != nil {
 		return
