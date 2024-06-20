@@ -19,7 +19,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type VirtualSystemSettingData struct {

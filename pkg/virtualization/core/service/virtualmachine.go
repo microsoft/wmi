@@ -272,3 +272,31 @@ func (vmms *VirtualSystemManagementService) SetMemoryMB(vm *virtualsystem.Virtua
 	err = vmms.ModifyVirtualSystemResourceEx(mem.WmiInstance, -1)
 	return
 }
+
+// Re-implementation of Disable-VMConsoleSupport Cmdlet
+// Removes the Synthetic Mouse, Synthetic Keyboard, and Synthetic Display devices from a VM
+func (vmms *VirtualSystemManagementService) RemoveHIDDevices(vm *virtualsystem.VirtualMachine) (err error) {
+	// ResourceSubType consts. Note: Cannot query based on ResourceType because Mouse and Keyboard share ResourceType: 13
+	const SYNTHETIC_MOUSE_SUBTYPE = "Microsoft:Hyper-V:Synthetic Mouse"
+	const SYNTHETIC_KEYBOARD_SUBTYPE = "Microsoft:Hyper-V:Synthetic Keyboard"
+	const SYNTHETIC_DISPLAY_SUBTYPE = "Microsoft:Hyper-V:Synthetic Display Controller"
+
+	// Get the RASD objects representing the devices. If there are multiple RASD for a device type, will remove the first occurence
+	syntheticMouse, err1 := vm.GetResourceAllocationSettingDataBySubType(SYNTHETIC_MOUSE_SUBTYPE)
+	if err1 == nil { // Don't error if failing to get the device. Matches behavior of Disable-VMConsoleSupport
+		defer syntheticMouse.Close()
+		vmms.RemoveVirtualSystemResource(syntheticMouse, -1)
+	}
+	syntheticKeyboard, err1 := vm.GetResourceAllocationSettingDataBySubType(SYNTHETIC_KEYBOARD_SUBTYPE)
+	if err1 == nil {
+		defer syntheticKeyboard.Close()
+		vmms.RemoveVirtualSystemResource(syntheticKeyboard, -1)
+	}
+	syntheticDisplay, err1 := vm.GetResourceAllocationSettingDataBySubType(SYNTHETIC_DISPLAY_SUBTYPE)
+	if err1 == nil {
+		defer syntheticDisplay.Close()
+		vmms.RemoveVirtualSystemResource(syntheticDisplay, -1)
+	}
+
+	return
+}
