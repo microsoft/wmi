@@ -883,6 +883,49 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 	return
 }
 
+func (vm *VirtualMachine) GetResourceAllocationSettingDataBySubType(resourceSubType string) (col *v2.CIM_ResourceAllocationSettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	rasdcol, err := settings.GetAllRelated("CIM_ResourceAllocationSettingData")
+	if err != nil {
+		return
+	}
+	defer rasdcol.Close()
+
+	for _, ins := range rasdcol {
+		rasd, err1 := v2.NewCIM_ResourceAllocationSettingDataEx1(ins)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		sourceResourceSubType, err1 := rasd.GetProperty("ResourceSubType")
+		if err1 != nil || sourceResourceSubType == nil {
+			continue
+		}
+
+		if resourceSubType == sourceResourceSubType {
+			instance, err1 := rasd.Clone()
+			if err1 != nil {
+				err = err1
+				return
+			}
+			col, err1 = v2.NewCIM_ResourceAllocationSettingDataEx1(instance)
+			if err1 != nil {
+				err = err1
+				return
+			}
+			return
+		}
+	}
+	err = errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingDataBySubType [%s] ", resourceSubType)
+	return
+}
+
 func (vm *VirtualMachine) GetMemory() (vmmemory *memory.MemorySettingData, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
