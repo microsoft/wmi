@@ -12,6 +12,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
+	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
@@ -59,7 +60,11 @@ func (vm *VirtualSystemSettingData) GetPcieDevices() (col pcie.PcieDeviceCollect
 	if err != nil {
 		return nil, err
 	}
-	defer rasdcollection.Close()
+	defer func() {
+		if err != nil {
+			rasdcollection.Close()
+		}
+	}()
 
 	col, err = pcie.NewPcieDeviceCollection(rasdcollection)
 	return
@@ -83,6 +88,42 @@ func (vm *VirtualSystemSettingData) GetPcieDevice(hostResource string) (*pcie.Pc
 		}
 	}
 	err = errors.Wrapf(errors.NotFound, "Unable to find PCIe device with host resource [%s]", hostResource)
+	return nil, err
+}
+
+func (vm *VirtualSystemSettingData) GetGpuPartitionSettingCollection() (col gpu.GpuPartitionSettingCollection, err error) {
+	rasdcollection, err := vm.GetAllRelated("Msvm_GpuPartitionSettingData")
+	if err != nil {
+		return nil, err
+	}
+	defer func() {
+		if err != nil {
+			rasdcollection.Close()
+		}
+	}()
+
+	col, err = gpu.NewGpuPartitionSettingCollection(rasdcollection)
+	return
+}
+
+func (vm *VirtualSystemSettingData) GetGpuPartitionSettingData(partitionSizeBytes uint64) (*gpu.GpuPartitionSettingData, error) {
+	gpuPartitionSettingCollection, err := vm.GetGpuPartitionSettingCollection()
+	if err != nil {
+		return nil, err
+	}
+	defer gpuPartitionSettingCollection.Close()
+
+	for _, gpuPartitionSetting := range gpuPartitionSettingCollection {
+		minVRAM, err := gpuPartitionSetting.GetMinPartitionVRAM()
+		if err != nil {
+			return nil, err
+		}
+		if minVRAM == partitionSizeBytes {
+			// Found the match
+			return gpuPartitionSetting.CloneEx1()
+		}
+	}
+	err = errors.Wrapf(errors.NotFound, "Unable to find GPU partition with minimum partition VRAM of [%d bytes]", partitionSizeBytes)
 	return nil, err
 }
 
