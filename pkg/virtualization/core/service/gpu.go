@@ -96,6 +96,10 @@ func (vmms *VirtualSystemManagementService) AttachGpuPartitionToVM(vm *virtualsy
 }
 
 func (vmms *VirtualSystemManagementService) DetachGpuP(vm *virtualsystem.VirtualMachine, partitionSizeBytes uint64) (err error) {
+	if partitionSizeBytes == 0 {
+		return errors.Wrapf(errors.InvalidInput, "Detach GpuP with 0 partition size is not supported.")
+	}
+
 	partitionSettingData, err := vm.GetGpuPartitionSettingData(partitionSizeBytes)
 	if err != nil {
 		return errors.Wrapf(err, "Failed to get GPU partition of size [%d bytes] for VM [%+v]", partitionSizeBytes, vm)
