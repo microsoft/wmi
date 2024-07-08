@@ -96,6 +96,14 @@ const (
 	HyperVGeneration_V2 = "Microsoft:Hyper-V:SubType:2"
 )
 
+type GuestStateIsolationMode uint16
+
+const (
+	Default             GuestStateIsolationMode = 0
+	NoPersistentSecrets GuestStateIsolationMode = 1
+	NoManagementVtl     GuestStateIsolationMode = 2
+)
+
 // NewVirtualMachine
 func NewVirtualMachine(instance *wmi.WmiInstance) (*VirtualMachine, error) {
 	wmivm, err := v2.NewMsvm_ComputerSystemEx1(instance)
