@@ -138,6 +138,10 @@ func Test_WmiInstance(t *testing.T) {
 	defer wmiClass.Close()
 
 	className, err := wmiClass.GetSystemProperty("__CLASS")
+	if err != nil {
+		t.Errorf("GetSystemProperty() failed with error: %v", err)
+		return
+	}
 	defer className.Close()
 
 	if className.Value().(string) != "Win32_Process" {

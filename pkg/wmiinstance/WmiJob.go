@@ -60,20 +60,20 @@ func (job *WmiJob) String() string {
 	if err != nil {
 		return ""
 	}
-	return fmt.Sprintf("Type[%s] State[%s]", jtype, job.GetJobState())
+	return fmt.Sprintf("Type[%d] State[%d]", jtype, job.GetJobState())
 }
 
 // GetJobType gets the value of JobType for the instance
-func (job *WmiJob) JobType() (value int32, err error) {
+func (job *WmiJob) JobType() (int32, error) {
 	retValue, err := job.GetProperty("JobType")
 	if err != nil {
-		return
+		return 0, err
 	}
 	value, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		return 0, fmt.Errorf("property JobType is not an int32: %T", retValue)
 	}
-	return
+	return value, nil
 }
 
 // WaitForPercentComplete waits for the percentComplete or timeout
@@ -150,7 +150,7 @@ func (job *WmiJob) GetJobState() (js JobState) {
 func (job *WmiJob) IsComplete() bool {
 	err := job.Refresh()
 	if err != nil {
-
+		return false
 	}
 	state := job.GetJobState()
 	switch state {
@@ -206,7 +206,6 @@ func (job *WmiJob) WaitForJobCompletion(result int32, timeoutSeconds int16) erro
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Result[%d] ", result)
 	}
-
 }
 
 type WmiJobCollection []*WmiJob

@@ -136,7 +136,7 @@ func (c *WmiClass) GetDerivation() []string {
 	defer valueNameProperty.Clear()
 
 	derivations, err := GetVariantValues(valueNameProperty)
-	if len(derivations) < 1 {
+	if err != nil || len(derivations) < 1 {
 		panic("GetDerivation() failed to get the Derivation_ values")
 	}
 
