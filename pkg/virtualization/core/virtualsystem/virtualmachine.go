@@ -337,24 +337,38 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
-func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration() (*na.GuestNetworkAdapterConfiguration, error) {
-	settings, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
+func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration() (guestNetworkAdapterConfiguration *na.GuestNetworkAdapterConfiguration, macAddress string, err error) {
+	allSettings, err := vm.GetRelatedEx("Msvm_SettingsDefineState", "Msvm_VirtualSystemSettingData", "", "")
 	if err != nil {
-		return nil, err
+		return nil, "", err
 	}
-	// defer settings.Close()
 
-	sna, err := settings.GetRelated("Msvm_SyntheticEthernetPortSettingData")
-	if err != nil {
-		return nil, err
-	}
-	// defer sna.Close()
+	for _, settings := range allSettings {
+		wmiSyntheticNetworkAdapter, err := settings.GetRelated("Msvm_SyntheticEthernetPortSettingData")
+		if err != nil {
+			continue
+		}
 
-	wmiGuestConfig, err := sna.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
-	if err != nil {
-		return nil, err
+		syntheticNetworkAdapter, err := na.NewSyntheticNetworkAdapter(wmiSyntheticNetworkAdapter)
+		if err != nil {
+			continue
+		}
+
+		macAddress, err = syntheticNetworkAdapter.GetPropertyAddress()
+		if err != nil {
+			continue
+		}
+
+		wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
+		if err != nil {
+			continue
+		}
+		guestNetworkAdapterConfiguration, _ = na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
+		return guestNetworkAdapterConfiguration, macAddress, nil
+
 	}
-	return na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
+
+	return nil, "", err
 }
 
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
