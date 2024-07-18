@@ -337,40 +337,6 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
-func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration() (guestNetworkAdapterConfiguration *na.GuestNetworkAdapterConfiguration, macAddress string, err error) {
-	allSettings, err := vm.GetRelatedEx("Msvm_SettingsDefineState", "Msvm_VirtualSystemSettingData", "", "")
-	if err != nil {
-		return nil, "", err
-	}
-
-	for _, settings := range allSettings {
-		wmiSyntheticNetworkAdapter, err := settings.GetRelated("Msvm_SyntheticEthernetPortSettingData")
-		if err != nil {
-			continue
-		}
-
-		syntheticNetworkAdapter, err := na.NewSyntheticNetworkAdapter(wmiSyntheticNetworkAdapter)
-		if err != nil {
-			continue
-		}
-
-		macAddress, err = syntheticNetworkAdapter.GetPropertyAddress()
-		if err != nil {
-			continue
-		}
-
-		wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
-		if err != nil {
-			continue
-		}
-		guestNetworkAdapterConfiguration, _ = na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
-		return guestNetworkAdapterConfiguration, macAddress, nil
-
-	}
-
-	return nil, "", err
-}
-
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
 	inst, err := vm.GetRelated("Msvm_Tpm")
 
