@@ -372,7 +372,7 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 		}
 	}
 
-	return nil, err
+	return nil, errors.Wrapf(err, "Unable to get the network adapter configuration for the vnic with mac address [%s] on vm [%s]", inputMacAddress, vm.ElementName)
 }
 
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
