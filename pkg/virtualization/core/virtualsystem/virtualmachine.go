@@ -344,28 +344,31 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 	}
 
 	for _, settings := range allSettings {
-		wmiSyntheticNetworkAdapter, err := settings.GetRelated("Msvm_SyntheticEthernetPortSettingData")
+		wmiSyntheticNetworkAdapters, err := settings.GetAllRelated("Msvm_SyntheticEthernetPortSettingData")
 		if err != nil {
 			continue
 		}
 
-		syntheticNetworkAdapter, err := na.NewSyntheticNetworkAdapter(wmiSyntheticNetworkAdapter)
-		if err != nil {
-			continue
-		}
+		for _, wmiSyntheticNetworkAdapter := range wmiSyntheticNetworkAdapters {
 
-		networkAdapterMacAddress, err := syntheticNetworkAdapter.GetPropertyAddress()
-		if err != nil {
-			continue
-		}
-
-		if strings.EqualFold(inputMacAddress, networkAdapterMacAddress) {
-			wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
+			syntheticNetworkAdapter, err := na.NewSyntheticNetworkAdapter(wmiSyntheticNetworkAdapter)
 			if err != nil {
 				continue
 			}
-			guestNetworkAdapterConfiguration, _ = na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
-			return guestNetworkAdapterConfiguration, nil
+
+			networkAdapterMacAddress, err := syntheticNetworkAdapter.GetPropertyAddress()
+			if err != nil {
+				continue
+			}
+
+			if strings.EqualFold(inputMacAddress, networkAdapterMacAddress) {
+				wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
+				if err != nil {
+					continue
+				}
+				guestNetworkAdapterConfiguration, _ = na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
+				return guestNetworkAdapterConfiguration, nil
+			}
 		}
 	}
 
