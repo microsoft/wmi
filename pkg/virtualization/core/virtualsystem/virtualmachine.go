@@ -16,6 +16,7 @@ import (
 
 	"reflect"
 
+	virtconstant "github.com/microsoft/wmi/pkg/virtualization/constant"
 	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 	job "github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
@@ -891,7 +892,7 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 	return
 }
 
-func (vm *VirtualMachine) GetResourceAllocationSettingDataBySubType(resourceSubType string) (col *v2.CIM_ResourceAllocationSettingData, err error) {
+func (vm *VirtualMachine) GetResourceAllocationSettingDataBySubType(resourceSubType virtconstant.ResourceSubType) (col *v2.CIM_ResourceAllocationSettingData, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
@@ -916,7 +917,7 @@ func (vm *VirtualMachine) GetResourceAllocationSettingDataBySubType(resourceSubT
 			continue
 		}
 
-		if resourceSubType == sourceResourceSubType {
+		if string(resourceSubType) == sourceResourceSubType {
 			instance, err1 := rasd.Clone()
 			if err1 != nil {
 				err = err1
