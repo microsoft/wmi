@@ -98,27 +98,6 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 	pSectorSize uint32,
 	format uint16,
 	err error) {
-	/*vhdTemp, err := GetDefaultVirtualHardDiskSettingData(whost)
-	if err != nil {
-		return nil, err
-	}
-	defer vhdTemp.Close()
-
-	// clone vhdsetting and populated the cloned instance
-	vhdWmi, err := NewVirtualHardDiskSettingData(vhdTemp.WmiInstance)
-	if err != nil {
-		return nil, err
-	}
-
-	vhdWmiClone, err := vhdWmi.Clone()
-	if err != nil {
-		return nil, err
-	}
-
-	vhdsetting, err = NewVirtualHardDiskSettingData(vhdWmiClone)
-	if err != nil {
-		return nil, err
-	}*/
 
 	log.Printf("Decoding WMI response [%s]\n", xmlInstance)
 	var tempvar uint64
