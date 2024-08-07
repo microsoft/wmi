@@ -282,16 +282,22 @@ func (vmms *VirtualSystemManagementService) RemoveHIDDevices(vm *virtualsystem.V
 	if err1 == nil { // Don't error if failing to get the device. Matches behavior of Disable-VMConsoleSupport
 		defer syntheticMouse.Close()
 		vmms.RemoveVirtualSystemResource(syntheticMouse, -1)
+	} else {
+		log.Printf("Removing synthetic mouse failed with [%v]", err1)
 	}
 	syntheticKeyboard, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticKeyboardSubtype)
 	if err1 == nil {
 		defer syntheticKeyboard.Close()
 		vmms.RemoveVirtualSystemResource(syntheticKeyboard, -1)
+	} else {
+		log.Printf("Removing synthetic keyboard failed with [%v]", err1)
 	}
 	syntheticDisplay, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticDisplaySubtype)
 	if err1 == nil {
 		defer syntheticDisplay.Close()
 		vmms.RemoveVirtualSystemResource(syntheticDisplay, -1)
+	} else {
+		log.Printf("Removing synthetic display failed with [%v]", err1)
 	}
 
 	return

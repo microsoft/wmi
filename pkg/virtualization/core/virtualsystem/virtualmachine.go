@@ -925,6 +925,7 @@ func (vm *VirtualMachine) GetResourceAllocationSettingDataBySubType(resourceSubT
 			}
 			col, err1 = v2.NewCIM_ResourceAllocationSettingDataEx1(instance)
 			if err1 != nil {
+				instance.Close()
 				err = err1
 				return
 			}
