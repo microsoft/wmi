@@ -343,6 +343,12 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 		return nil, err
 	}
 
+	/* The input MAC address would be always in standard format (i.e aa:bb:cc:dd:ee:ff)
+	   But the address read from system would be in HyperV format (i.e AABBCCDDEEFF) */
+	inputMacAddressHyperV := strings.ReplaceAll(inputMacAddress, ":", "")
+	inputMacAddressHyperV = strings.ReplaceAll(inputMacAddressHyperV, "-", "")
+	inputMacAddressHyperV = strings.ToUpper(inputMacAddressHyperV)
+
 	for _, settings := range allSettings {
 		wmiSyntheticNetworkAdapters, err := settings.GetAllRelated("Msvm_SyntheticEthernetPortSettingData")
 		if err != nil {
@@ -361,7 +367,7 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 				continue
 			}
 
-			if strings.EqualFold(inputMacAddress, networkAdapterMacAddress) {
+			if strings.EqualFold(inputMacAddressHyperV, networkAdapterMacAddress) {
 				wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
 				if err != nil {
 					continue
