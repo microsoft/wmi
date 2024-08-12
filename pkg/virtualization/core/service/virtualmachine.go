@@ -281,23 +281,32 @@ func (vmms *VirtualSystemManagementService) RemoveHIDDevices(vm *virtualsystem.V
 	syntheticMouse, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticMouseSubtype)
 	if err1 == nil { // Don't error if failing to get the device. Matches behavior of Disable-VMConsoleSupport
 		defer syntheticMouse.Close()
-		vmms.RemoveVirtualSystemResource(syntheticMouse, -1)
+		err1 = vmms.RemoveVirtualSystemResource(syntheticMouse, -1)
+		if err1 != nil {
+			log.Printf("Removing synthetic mouse failed with [%v]", err1)
+		}
 	} else {
-		log.Printf("Removing synthetic mouse failed with [%v]", err1)
+		log.Printf("Getting synthetic mouse failed with [%v]", err1)
 	}
 	syntheticKeyboard, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticKeyboardSubtype)
 	if err1 == nil {
 		defer syntheticKeyboard.Close()
-		vmms.RemoveVirtualSystemResource(syntheticKeyboard, -1)
+		err1 = vmms.RemoveVirtualSystemResource(syntheticKeyboard, -1)
+		if err1 != nil {
+			log.Printf("Removing synthetic keyboard failed with [%v]", err1)
+		}
 	} else {
-		log.Printf("Removing synthetic keyboard failed with [%v]", err1)
+		log.Printf("Getting synthetic keyboard failed with [%v]", err1)
 	}
 	syntheticDisplay, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticDisplaySubtype)
 	if err1 == nil {
 		defer syntheticDisplay.Close()
-		vmms.RemoveVirtualSystemResource(syntheticDisplay, -1)
+		err1 = vmms.RemoveVirtualSystemResource(syntheticDisplay, -1)
+		if err1 != nil {
+			log.Printf("Removing synthetic display failed with [%v]", err1)
+		}
 	} else {
-		log.Printf("Removing synthetic display failed with [%v]", err1)
+		log.Printf("Getting synthetic display failed with [%v]", err1)
 	}
 
 	return
