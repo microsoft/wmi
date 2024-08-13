@@ -1004,8 +1004,8 @@ func (vm *VirtualMachine) GetAttachedVirtualHardDisks() (vhdPaths []string, err 
 		}
 
 		vhdpath, err1 := retVhd.GetPropertyHostResource()
-		if err1 != nil || len(vhdpath) == 0 {
-			err = fmt.Errorf("Unable to read HostResource field from disk WMI %s", err1)
+		if err1 != nil || len(vhdpath) != 1 {
+			err = fmt.Errorf("unable to read HostResource field from disk WMI %s", err1)
 			return
 		}
 		vhdPaths = append(vhdPaths, vhdpath[0])
