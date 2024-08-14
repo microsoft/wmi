@@ -18,6 +18,7 @@ import (
 
 	"reflect"
 
+	virtconstant "github.com/microsoft/wmi/pkg/virtualization/constant"
 	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 	job "github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
@@ -113,6 +114,14 @@ type INSTANCE struct {
 		VALUE string `xml:"VALUE"`
 	} `xml:"PROPERTY"`
 }
+
+type GuestStateIsolationMode uint16
+
+const (
+	Default             GuestStateIsolationMode = 0
+	NoPersistentSecrets GuestStateIsolationMode = 1
+	NoManagementVtl     GuestStateIsolationMode = 2
+)
 
 // NewVirtualMachine
 func NewVirtualMachine(instance *wmi.WmiInstance) (*VirtualMachine, error) {
@@ -1004,8 +1013,8 @@ func (vm *VirtualMachine) GetAttachedVirtualHardDisks() (vhdPaths []string, err 
 		}
 
 		vhdpath, err1 := retVhd.GetPropertyHostResource()
-		if err1 != nil || len(vhdpath) != 1 {
-			err = fmt.Errorf("unable to read HostResource field from disk WMI %s", err1)
+		if err1 != nil || len(vhdpath) == 0 {
+			err = fmt.Errorf("Unable to read HostResource field from disk WMI %s", err1)
 			return
 		}
 		vhdPaths = append(vhdPaths, vhdpath[0])
@@ -1058,6 +1067,50 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 	if len(col) == 0 {
 		err = errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingData [%s] ", resType)
 	}
+	return
+}
+
+func (vm *VirtualMachine) GetResourceAllocationSettingDataBySubType(resourceSubType virtconstant.ResourceSubType) (col *v2.CIM_ResourceAllocationSettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	rasdcol, err := settings.GetAllRelated("CIM_ResourceAllocationSettingData")
+	if err != nil {
+		return
+	}
+	defer rasdcol.Close()
+
+	for _, ins := range rasdcol {
+		rasd, err1 := v2.NewCIM_ResourceAllocationSettingDataEx1(ins)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		sourceResourceSubType, err1 := rasd.GetProperty("ResourceSubType")
+		if err1 != nil || sourceResourceSubType == nil {
+			continue
+		}
+
+		if string(resourceSubType) == sourceResourceSubType {
+			instance, err1 := rasd.Clone()
+			if err1 != nil {
+				err = err1
+				return
+			}
+			col, err1 = v2.NewCIM_ResourceAllocationSettingDataEx1(instance)
+			if err1 != nil {
+				instance.Close()
+				err = err1
+				return
+			}
+			return
+		}
+	}
+	err = errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingDataBySubType [%s] ", resourceSubType)
 	return
 }
 
