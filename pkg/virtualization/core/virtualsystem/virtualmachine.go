@@ -4,7 +4,9 @@
 package virtualsystem
 
 import (
+	"encoding/xml"
 	"fmt"
+	"strings"
 
 	//"log"
 	"time"
@@ -43,6 +45,10 @@ const (
 
 type VirtualMachine struct {
 	*v2.Msvm_ComputerSystem
+}
+
+type MsvmSecuritySettingData struct {
+	*v2.Msvm_SecuritySettingData
 }
 
 type VirtualMachineState int32
@@ -96,6 +102,18 @@ const (
 	HyperVGeneration_V1 = "Microsoft:Hyper-V:SubType:1"
 	HyperVGeneration_V2 = "Microsoft:Hyper-V:SubType:2"
 )
+
+type INSTANCE struct {
+	XMLName   xml.Name `xml:"INSTANCE"`
+	Text      string   `xml:",chardata"`
+	CLASSNAME string   `xml:"CLASSNAME,attr"`
+	PROPERTY  []struct {
+		Text  string `xml:",chardata"`
+		NAME  string `xml:"NAME,attr"`
+		TYPE  string `xml:"TYPE,attr"`
+		VALUE string `xml:"VALUE"`
+	} `xml:"PROPERTY"`
+}
 
 type GuestStateIsolationMode uint16
 
@@ -326,6 +344,129 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 		return nil, err
 	}
 	return NewVirtualSystemSettingData(inst)
+}
+
+func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAddress string) (guestNetworkAdapterConfiguration *na.GuestNetworkAdapterConfiguration, err error) {
+	allSettings, err := vm.GetRelatedEx("Msvm_SettingsDefineState", "Msvm_VirtualSystemSettingData", "", "")
+	if err != nil {
+		return nil, err
+	}
+
+	/* The input MAC address would be always in standard format (i.e aa:bb:cc:dd:ee:ff)
+	   But the address read from system would be in HyperV format (i.e AABBCCDDEEFF) */
+	inputMacAddressHyperV := strings.ReplaceAll(inputMacAddress, ":", "")
+	inputMacAddressHyperV = strings.ReplaceAll(inputMacAddressHyperV, "-", "")
+	inputMacAddressHyperV = strings.ToUpper(inputMacAddressHyperV)
+
+	for _, settings := range allSettings {
+		wmiSyntheticNetworkAdapters, err := settings.GetAllRelated("Msvm_SyntheticEthernetPortSettingData")
+		if err != nil {
+			continue
+		}
+
+		for _, wmiSyntheticNetworkAdapter := range wmiSyntheticNetworkAdapters {
+
+			syntheticNetworkAdapter, err := na.NewSyntheticNetworkAdapter(wmiSyntheticNetworkAdapter)
+			if err != nil {
+				continue
+			}
+
+			networkAdapterMacAddress, err := syntheticNetworkAdapter.GetPropertyAddress()
+			if err != nil {
+				continue
+			}
+
+			if strings.EqualFold(inputMacAddressHyperV, networkAdapterMacAddress) {
+				wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
+				if err != nil {
+					continue
+				}
+				guestNetworkAdapterConfiguration, _ = na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
+				return guestNetworkAdapterConfiguration, nil
+			}
+		}
+	}
+
+	return nil, errors.Wrapf(err, "Unable to get the network adapter configuration for the vnic with mac address [%s] on vm [%s]", inputMacAddress, vm.ElementName)
+}
+
+func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
+	inst, err := vm.GetRelated("Msvm_Tpm")
+
+	// If the TPM is not found, then it is not configured or enabled
+	if inst == nil {
+		return nil, nil
+	}
+
+	if err != nil {
+		return nil, err
+	}
+
+	tpmwmi, err := v2.NewMsvm_TPMEx1(inst)
+	if err != nil {
+		return nil, err
+	}
+
+	cimSettings, err := tpmwmi.GetRelatedSecuritySettingData()
+	if err != nil {
+		return nil, err
+	}
+
+	securitySettings, err := v2.NewMsvm_SecuritySettingDataEx1(cimSettings)
+	if err != nil {
+		return nil, err
+	}
+
+	return &MsvmSecuritySettingData{securitySettings}, nil
+}
+
+func (vm *VirtualMachine) GetOSConfiguration() (computerName string, isWindows bool) {
+	inst, err := vm.GetRelated("Msvm_KvpExchangeComponent")
+	if err != nil {
+		return
+	}
+
+	kvp, err := v2.NewMsvm_KvpExchangeComponentEx1(inst)
+	if err != nil {
+		return
+	}
+
+	guestIntrinsicItems, err := kvp.GetPropertyGuestIntrinsicExchangeItems()
+	if err != nil {
+		return
+	}
+
+	guestKvPairs := make(map[string]string)
+	for _, item := range guestIntrinsicItems {
+		var guestProperty INSTANCE
+		err = xml.Unmarshal([]byte(item), &guestProperty)
+		if err != nil {
+			return
+		}
+
+		var key, value string
+		for _, property := range guestProperty.PROPERTY {
+			if property.NAME == "Name" {
+				key = property.VALUE
+			}
+
+			if property.NAME == "Data" {
+				value = property.VALUE
+			}
+		}
+
+		if key != "" {
+			guestKvPairs[key] = value
+		}
+	}
+
+	computerName = guestKvPairs["FullyQualifiedDomainName"]
+	osName := guestKvPairs["OSName"]
+	if strings.Contains(strings.ToLower(osName), "window") {
+		isWindows = true
+	}
+
+	return
 }
 
 func (vm *VirtualMachine) GetVirtualMachineGeneration() (HyperVGeneration, error) {
@@ -842,6 +983,43 @@ func (vm *VirtualMachine) GetVirtualHardDiskByPath(path string) (vhd *disk.Virtu
 		}
 	}
 	err = errors.Wrapf(errors.NotFound, "Vhd with path [%s] not found in Vm [%s]", path, vm.Name())
+	return
+}
+
+func (vm *VirtualMachine) GetAttachedVirtualHardDisks() (vhdPaths []string, err error) {
+	col, err := vm.GetVirtualHardDisks()
+	if err != nil {
+		return
+	}
+	defer col.Close()
+
+	for _, inst := range col {
+		tmpvhd, err1 := disk.NewVirtualHardDisk(inst.WmiInstance)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		vhdclone, err1 := tmpvhd.Clone()
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		retVhd, err1 := disk.NewVirtualHardDisk(vhdclone)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		vhdpath, err1 := retVhd.GetPropertyHostResource()
+		if err1 != nil || len(vhdpath) == 0 {
+			err = fmt.Errorf("Unable to read HostResource field from disk WMI %s", err1)
+			return
+		}
+		vhdPaths = append(vhdPaths, vhdpath[0])
+	}
+
 	return
 }
 

@@ -173,3 +173,57 @@ func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSett
 	defer job.Close()
 	return job.WaitForJobCompletion(result.ReturnValue, -1)
 }
+
+func (ims *ImageManagementService) GetVirtualHardDiskConfig(path string) (size uint64,
+	blockSize uint32,
+	lSectorSize uint32,
+	pSectorSize uint32,
+	format uint16,
+	err error) {
+	method, err := ims.GetWmiMethod("GetVirtualHardDiskSettingData")
+	if err != nil {
+		return
+	}
+	defer method.Close()
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("Path", path))
+
+	outparams := wmi.WmiMethodParamCollection{}
+	outparams = append(outparams, wmi.NewWmiMethodParam("SettingData", nil))
+	outparams = append(outparams, wmi.NewWmiMethodParam("Job", nil))
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	if !(result.ReturnValue == 4096 || result.ReturnValue == 0) {
+		err = errors.Wrapf(errors.Failed, "GetVirtualHardDiskSettingData method failed with [%d]", result.ReturnValue)
+		return
+	}
+	val, ok := result.OutMethodParams["SettingData"]
+	if ok && val.Value != nil {
+		size, blockSize, lSectorSize, pSectorSize, format, err = disk.GetVirtualHardDiskSettingDataFromXml(ims.GetWmiHost(), val.Value.(string))
+		if err != nil {
+			return
+		}
+	}
+
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	val, ok = result.OutMethodParams["Job"]
+	if !ok || val.Value == nil {
+		err = errors.Wrapf(errors.NotFound, "Job")
+		return
+	}
+	job, err := instance.GetWmiJob(ims.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+	defer job.Close()
+	err = job.WaitForJobCompletion(result.ReturnValue, -1)
+	return
+}
