@@ -5,11 +5,12 @@
     ],
     "codebaseAdmins": [
         "REDMOND\\madhanm",
-        "REDMOND\\dingov"
+        "REDMOND\\natarajr"
     ],
-    "instanceUrl": "https://microsoft.visualstudio.com/",
-    "projectName": "OS",
-    "areaPath": "OS\\Core\\Edge2Cloud\\Kubernetes",
-    "iterationPath": "OS\\Future",
-    "allTools": true
+    "instanceUrl": "https://msazure.visualstudio.com/defaultcollection",
+    "projectName": "One",
+    "areaPath": "One\\AKSArc\\s360",
+    "iterationPath": "One\\Custom",
+    "allTools": true,
+    "template": "TFSMSAzure"
 }

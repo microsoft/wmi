@@ -11,6 +11,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
+	virtconstant "github.com/microsoft/wmi/pkg/virtualization/constant"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourceallocation"
@@ -270,5 +271,43 @@ func (vmms *VirtualSystemManagementService) SetMemoryMB(vm *virtualsystem.Virtua
 	}
 
 	err = vmms.ModifyVirtualSystemResourceEx(mem.WmiInstance, -1)
+	return
+}
+
+// Re-implementation of Disable-VMConsoleSupport Cmdlet
+// Removes the Synthetic Mouse, Synthetic Keyboard, and Synthetic Display devices from a VM
+func (vmms *VirtualSystemManagementService) RemoveHIDDevices(vm *virtualsystem.VirtualMachine) (err error) {
+	// Get the RASD objects representing the devices. If there are multiple RASD for a device type, will remove the first occurence
+	syntheticMouse, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticMouseSubtype)
+	if err1 == nil { // Don't error if failing to get the device. Matches behavior of Disable-VMConsoleSupport
+		defer syntheticMouse.Close()
+		err1 = vmms.RemoveVirtualSystemResource(syntheticMouse, -1)
+		if err1 != nil {
+			log.Printf("Removing synthetic mouse failed with [%v]", err1)
+		}
+	} else {
+		log.Printf("Getting synthetic mouse failed with [%v]", err1)
+	}
+	syntheticKeyboard, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticKeyboardSubtype)
+	if err1 == nil {
+		defer syntheticKeyboard.Close()
+		err1 = vmms.RemoveVirtualSystemResource(syntheticKeyboard, -1)
+		if err1 != nil {
+			log.Printf("Removing synthetic keyboard failed with [%v]", err1)
+		}
+	} else {
+		log.Printf("Getting synthetic keyboard failed with [%v]", err1)
+	}
+	syntheticDisplay, err1 := vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticDisplaySubtype)
+	if err1 == nil {
+		defer syntheticDisplay.Close()
+		err1 = vmms.RemoveVirtualSystemResource(syntheticDisplay, -1)
+		if err1 != nil {
+			log.Printf("Removing synthetic display failed with [%v]", err1)
+		}
+	} else {
+		log.Printf("Getting synthetic display failed with [%v]", err1)
+	}
+
 	return
 }

@@ -13,7 +13,7 @@ jobs:
     steps:
       - task: GoTool@0
         inputs:
-          version: "1.20"
+          version: "1.22.5"
       - task: InstallSSHKey@0
         inputs:
           knownHostsEntry: "$(KNOWN_HOST)"
@@ -25,6 +25,19 @@ jobs:
         displayName: "Set up the Go workspace"
 
       - script: |
+          # Static binary workaround for CodeQL and Go 1.21 and higher
+          # https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/codeql/troubleshooting/onboarding/language-compiled
+          mkdir $AGENT_TEMPDIRECTORY/codeql-go-tracing
+          WORKAROUND_DIR=$AGENT_TEMPDIRECTORY/codeql-go-tracing
+          WHICH_GO=$(which go)
+          cat > "${WORKAROUND_DIR}/go" <<EOF
+          #!/bin/bash
+          exec $WHICH_GO "\$@"
+          EOF
+
+          chmod 755 "${WORKAROUND_DIR}/go"
+          export PATH="${WORKAROUND_DIR}:${PATH}"
+
           mkdir manifest
           make
         workingDirectory: "$(System.DefaultWorkingDirectory)"
