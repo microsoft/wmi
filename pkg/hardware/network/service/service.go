@@ -37,7 +37,7 @@ func GetNetworkAdapterByName(whost *host.WmiHost, name string) (adapter *netadap
 	if err != nil {
 		return
 	}
-	return &netadapter.NetworkAdapter{tmp}, nil
+	return &netadapter.NetworkAdapter{MSFT_NetAdapter: tmp}, nil
 }
 
 // GetNetworkAdapterByName
@@ -48,7 +48,7 @@ func GetNetworkAdapterByInterfaceIndex(whost *host.WmiHost, ifindex int32) (adap
 	if err != nil {
 		return
 	}
-	return &netadapter.NetworkAdapter{tmp}, nil
+	return &netadapter.NetworkAdapter{MSFT_NetAdapter: tmp}, nil
 }
 
 // FindDefaultExternalAdapter - finds the first physical adapter which has a default gateway

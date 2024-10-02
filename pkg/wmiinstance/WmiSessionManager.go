@@ -13,7 +13,7 @@ import (
 
 const S_FALSE = 0x00000001
 
-var IID_ISWbemLocator = &ole.GUID{0x76a6415b, 0xcb41, 0x11d1, [8]byte{0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6}}
+var IID_ISWbemLocator = &ole.GUID{Data1: 0x76a6415b, Data2: 0xcb41, Data3: 0x11d1, Data4: [8]byte{0x8b, 0x02, 0x00, 0x60, 0x08, 0x06, 0xd9, 0xb6}}
 
 // Reference https://github.com/StackExchange/wmi
 // Reference https://docs.microsoft.com/en-us/windows/desktop/WmiSdk/swbemlocator-connectserver
