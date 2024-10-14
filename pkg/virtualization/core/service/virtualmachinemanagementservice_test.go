@@ -11,6 +11,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
+	virtconstant "github.com/microsoft/wmi/pkg/virtualization/constant"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
@@ -1367,4 +1368,53 @@ func TestModifyVirtualMachineSystemSettingsGen1(t *testing.T) {
 		t.Fatalf("Settings did not change after ModifyVirtualMachineSystemSettings(): before:%v after: %v", valBefore, valAfter)
 	}
 	t.Logf("Successfully changes vm setting from %v to %v", valBefore, valAfter)
+}
+
+func TestRemoveHIDDevices(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "testGen1")
+
+	// Check that HID devices are present
+	_, err = vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticDisplaySubtype)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	_, err = vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticKeyboardSubtype)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	_, err = vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticMouseSubtype)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	// Remove the HID devices
+	err = vmms.RemoveHIDDevices(vm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	// Check that devices were removed
+	_, err = vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticDisplaySubtype)
+	if err == nil {
+		t.Fatalf("Synthetic display device stil exists after RemoveHIDDevices")
+	}
+	_, err = vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticKeyboardSubtype)
+	if err == nil {
+		t.Fatalf("Synthetic keyboard device stil exists after RemoveHIDDevices")
+	}
+	_, err = vm.GetResourceAllocationSettingDataBySubType(virtconstant.SyntheticMouseSubtype)
+	if err == nil {
+		t.Fatalf("Synthetic mouse device stil exists after RemoveHIDDevices")
+	}
+
+	t.Logf("Successfully removed HID devices")
 }

@@ -16,6 +16,7 @@ import (
 
 	"reflect"
 
+	virtconstant "github.com/microsoft/wmi/pkg/virtualization/constant"
 	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 	job "github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
@@ -94,6 +95,14 @@ type HyperVGeneration string
 const (
 	HyperVGeneration_V1 = "Microsoft:Hyper-V:SubType:1"
 	HyperVGeneration_V2 = "Microsoft:Hyper-V:SubType:2"
+)
+
+type GuestStateIsolationMode uint16
+
+const (
+	Default             GuestStateIsolationMode = 0
+	NoPersistentSecrets GuestStateIsolationMode = 1
+	NoManagementVtl     GuestStateIsolationMode = 2
 )
 
 // NewVirtualMachine
@@ -640,7 +649,19 @@ func (vm *VirtualMachine) NewGpuPartition(partitionSizeBytes uint64) (newGpuPart
 		return
 	}
 
+	if partitionSizeBytes == 0 {
+		err = errors.Wrapf(errors.InvalidInput, "PartitionSizeBytes should be a positive value")
+		return
+	}
+
 	err = newGpuPartitionSettingData.SetPropertyMinPartitionVRAM(partitionSizeBytes)
+	return
+}
+
+func (vm *VirtualMachine) NewDefaultGpuPartition() (newGpuPartitionSettingData *gpu.GpuPartitionSettingData, err error) {
+	whost := vm.GetWmiHost()
+
+	newGpuPartitionSettingData, err = gpu.GetDefaultGpuPartitionSettingData(whost)
 	return
 }
 
@@ -653,6 +674,27 @@ func (vm *VirtualMachine) GetGpuPartitionSettingData(partitionSizeBytes uint64) 
 
 	partitionSettingData, err = settings.GetGpuPartitionSettingData(partitionSizeBytes)
 	return
+}
+
+func (vm *VirtualMachine) GetDefaultGpuPartitionSettingData() (partitionSettingData *gpu.GpuPartitionSettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	gpuPartitionSettingCollection, err := vm.GetGpuPartitionSettingCollection()
+	if err != nil {
+		return nil, err
+	}
+	defer gpuPartitionSettingCollection.Close()
+
+	if len(gpuPartitionSettingCollection) == 0 {
+		err = errors.Wrapf(errors.NotFound, "Unable to find GPU partition assigned to vm [%+v]", vm)
+		return nil, err
+	}
+
+	return gpuPartitionSettingCollection[0].CloneEx1()
 }
 
 func (vm *VirtualMachine) GetGpuPartitionSettingCollection() (partitionSettingCollection gpu.GpuPartitionSettingCollection, err error) {
@@ -813,6 +855,50 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 	if len(col) == 0 {
 		err = errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingData [%s] ", resType)
 	}
+	return
+}
+
+func (vm *VirtualMachine) GetResourceAllocationSettingDataBySubType(resourceSubType virtconstant.ResourceSubType) (col *v2.CIM_ResourceAllocationSettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	rasdcol, err := settings.GetAllRelated("CIM_ResourceAllocationSettingData")
+	if err != nil {
+		return
+	}
+	defer rasdcol.Close()
+
+	for _, ins := range rasdcol {
+		rasd, err1 := v2.NewCIM_ResourceAllocationSettingDataEx1(ins)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		sourceResourceSubType, err1 := rasd.GetProperty("ResourceSubType")
+		if err1 != nil || sourceResourceSubType == nil {
+			continue
+		}
+
+		if string(resourceSubType) == sourceResourceSubType {
+			instance, err1 := rasd.Clone()
+			if err1 != nil {
+				err = err1
+				return
+			}
+			col, err1 = v2.NewCIM_ResourceAllocationSettingDataEx1(instance)
+			if err1 != nil {
+				instance.Close()
+				err = err1
+				return
+			}
+			return
+		}
+	}
+	err = errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingDataBySubType [%s] ", resourceSubType)
 	return
 }
 
