@@ -762,6 +762,11 @@ func (vm *VirtualMachine) GetVirtualHardDrives() (col resourceallocation.Resourc
 	return
 }
 
+func (vm *VirtualMachine) GetDvdDrives() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
+	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_DVD_drive)
+	return
+}
+
 func (vm *VirtualMachine) GetVirtualHardDiskByLocation(controllerNumber, controllerLocation int) (vhd *disk.VirtualHardDisk, err error) {
 	col, err := vm.GetVirtualHardDisks()
 	if err != nil {
