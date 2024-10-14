@@ -84,6 +84,27 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 
 }
 
+func (vmms *VirtualSystemManagementService) GetISODisk(vm *virtualsystem.VirtualMachine, isoPath string) (ld *disk.LogicalDisk, err error) {
+	// col, err := vm.GetDvdDrives()
+	// if err != nil {
+	// 	return
+	// }
+	// defer col.Close()
+
+	// TODO: probably put this find functionality somewhere else
+	// for _, inst := range col {
+	// 	dvddrive, err := drive.NewDvdDrive(inst)
+	// 	if err != nil {
+	// 		return nil, err
+	// }
+	// Get the logical disk
+	// ld, err := disk.GetLogicalDiskByHostResource(vm, isoPath)
+	// if err != nil {
+	// 	return nil
+	// }
+	return nil, errors.NotImplemented
+}
+
 func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) (err error) {
 	dvddrive, err := ld.GetDrive()
 	if err != nil {
