@@ -173,3 +173,54 @@ func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSett
 	defer job.Close()
 	return job.WaitForJobCompletion(result.ReturnValue, -1)
 }
+
+// Starts compacting a virtual hard disk and returns the job instance for progress.
+// The caller is responsible for calling "Close" on the job instance when finished.
+func (ims *ImageManagementService) CompactDisk(path string, mode constant.VirtualHardDiskCompactMode) (*wmi.WmiJob, error) {
+	method, err := ims.GetWmiMethod("CompactVirtualHardDisk")
+	if err != nil {
+		return nil, err
+	}
+	defer method.Close()
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("Path", path))
+	inparams = append(inparams, wmi.NewWmiMethodParam("Mode", int(mode)))
+
+	outparams := wmi.WmiMethodParamCollection{
+		wmi.NewWmiMethodParam("Job", nil),
+	}
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return nil, err
+	}
+
+	if result.ReturnValue == 0 {
+		return nil, nil
+	}
+
+	if result.ReturnValue != 4096 {
+		return nil, errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+	}
+
+	val, ok := result.OutMethodParams["Job"]
+	if !ok || val.Value == nil {
+		return nil, errors.Wrapf(errors.NotFound, "Job")
+	}
+	job, err := instance.GetWmiJob(ims.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return nil, err
+	}
+	return job, nil
+}
+
+// Compacts a virtual hard disk.
+func (ims *ImageManagementService) CompactDiskAndWait(path string, mode constant.VirtualHardDiskCompactMode) error {
+	job, err := ims.CompactDisk(path, mode)
+	if err != nil {
+		return err
+	}
+	defer job.Close()
+	return job.WaitForAction(wmi.Wait, 100, -1)
+}
