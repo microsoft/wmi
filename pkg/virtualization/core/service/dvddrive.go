@@ -84,48 +84,6 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 
 }
 
-func (vmms *VirtualSystemManagementService) GetISODisk(vm *virtualsystem.VirtualMachine, isoPath string) (ld *disk.LogicalDisk, err error) {
-	// col, err := vm.GetDvdDrives()
-	// if err != nil {
-	// 	return
-	// }
-	// defer col.Close()
-
-	// TODO: probably put this find functionality somewhere else
-	// for _, inst := range col {
-	// 	dvddrive, err := drive.NewDvdDrive(inst)
-	// 	if err != nil {
-	// 		return nil, err
-	// }
-	// Get the logical disk
-	// ld, err := disk.GetLogicalDiskByHostResource(vm, isoPath)
-	// if err != nil {
-	// 	return nil
-	// }
-	return nil, errors.NotImplemented
-}
-
-func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) (err error) {
-	dvddrive, err := ld.GetDrive()
-	if err != nil {
-		return
-	}
-	defer dvddrive.Close()
-
-	// Remove Disk
-	err1 := vmms.RemoveVirtualSystemResource(ld.CIM_ResourceAllocationSettingData, -1)
-	// Remove Drive
-	err = vmms.RemoveVirtualSystemResource(dvddrive.CIM_ResourceAllocationSettingData, -1)
-	if err != nil {
-		return
-	}
-	if err1 != nil {
-		err = err1
-		return
-	}
-	return
-}
-
 func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.VirtualMachine) (dvd *drive.DvdDrive, err error) {
 	// Add the dvd drive
 	tmp, err := vm.NewDvdDrive()
@@ -163,5 +121,10 @@ func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.Virtua
 
 func (vmms *VirtualSystemManagementService) RemoveDvdDrive(dvd *drive.DvdDrive) (err error) {
 	err = vmms.RemoveVirtualSystemResource(dvd.CIM_ResourceAllocationSettingData, -1)
+	return
+}
+
+func (vmms *VirtualSystemManagementService) RemoveDvdDisk(dvddisk *disk.LogicalDisk) (err error) {
+	err = vmms.RemoveVirtualSystemResource(dvddisk.CIM_ResourceAllocationSettingData, -1)
 	return
 }
