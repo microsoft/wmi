@@ -5,6 +5,7 @@ package virtualsystem
 
 import (
 	"fmt"
+	"path/filepath"
 
 	//"log"
 	"time"
@@ -807,7 +808,7 @@ func (vm *VirtualMachine) GetDvdConfigByIsoPath(isoPath string) (dvd *drive.DvdD
 			dvdPath = string(valuetmp)
 		}
 
-		if dvdPath != isoPath {
+		if filepath.Clean(dvdPath) != filepath.Clean(isoPath) {
 			continue
 		}
 
