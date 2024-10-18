@@ -84,6 +84,27 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 
 }
 
+func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) (err error) {
+	dvddrive, err := ld.GetDrive()
+	if err != nil {
+		return
+	}
+	defer dvddrive.Close()
+
+	// Remove Disk
+	err1 := vmms.RemoveVirtualSystemResource(ld.CIM_ResourceAllocationSettingData, -1)
+	// Remove Drive
+	err = vmms.RemoveVirtualSystemResource(dvddrive.CIM_ResourceAllocationSettingData, -1)
+	if err != nil {
+		return
+	}
+	if err1 != nil {
+		err = err1
+		return
+	}
+	return
+}
+
 func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.VirtualMachine) (dvd *drive.DvdDrive, err error) {
 	// Add the dvd drive
 	tmp, err := vm.NewDvdDrive()
