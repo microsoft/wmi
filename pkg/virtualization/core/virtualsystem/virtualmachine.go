@@ -772,14 +772,14 @@ func (vm *VirtualMachine) GetDvdDrives() (col drive.DvdDriveCollection, err erro
 	return settings.GetVirtualDvdDrives()
 }
 
-func (vm *VirtualMachine) GetDvdConfigByIsoPath(isoPath string) (dvd *drive.DvdDrive, diskdvd *disk.LogicalDisk, err error) {
-	col, err := vm.GetDvdDrives()
+func (vm *VirtualMachine) GetDvdDriveAndLogicalDiskByIsoPath(isoPath string) (dvd *drive.DvdDrive, diskdvd *disk.LogicalDisk, err error) {
+	dvdCol, err := vm.GetDvdDrives()
 	if err != nil {
 		return
 	}
-	defer drive.Close(&col)
+	defer dvdCol.Close()
 
-	for _, inst := range col {
+	for _, inst := range dvdCol {
 		dvddisk, err1 := drive.GetRelatedStorageAllocationSettingData(inst.WmiInstance)
 		if err1 != nil {
 			// Missing related storage allocation data is benign
