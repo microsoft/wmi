@@ -41,6 +41,10 @@ func Test_WmiSynchronousEvents(t *testing.T) {
 		return
 	}
 	err = cmd.Wait()
+	if err != nil {
+		t.Errorf("Could not wait for powershell on this computer")
+		return
+	}
 
 	_, err = instances.WaitForNextEvent()
 	if err != nil {
