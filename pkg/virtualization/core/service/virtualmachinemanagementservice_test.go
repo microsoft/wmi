@@ -239,6 +239,67 @@ func TestAddRemoveIsoDiskGen1(t *testing.T) {
 	}
 }
 
+func TestAddRemoveIsoDiskByPath(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", vm.Name())
+
+	// make sure there is a controller
+	err = vmms.AddSCSIController(vm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	path := "c:\\test\\tmp.iso"
+
+	// create an iso file
+	err = generateIso(path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	isodisk, dvddrive, err := vmms.AddISODisk(vm, path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer isodisk.Close()
+	defer dvddrive.Close()
+
+	// remove the iso disk
+	vmdvddrive, vmdvddisk, err := vm.GetDvdDriveAndLogicalDiskByIsoPath(path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Obtained ISO disk [%s] from [%s]", path, "test")
+	defer vmdvddisk.Close()
+	defer vmdvddrive.Close()
+
+	// Remove logical disk
+	err = vmms.RemoveDvdDisk(vmdvddisk)
+	if err != nil {
+		t.Fatalf("Failed to remove DVD disk [%+v]", err)
+	}
+
+	// Remove DVD drive
+	err = vmms.RemoveDvdDrive(vmdvddrive)
+	if err != nil {
+		t.Fatalf("Failed to remove DVD drive [%+v]", err)
+	}
+
+	// Remove the ISO file
+	err = os.Remove(path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+}
+
 func generateIso(path string) error {
 	writer, err := iso9660.NewWriter()
 	if err != nil {

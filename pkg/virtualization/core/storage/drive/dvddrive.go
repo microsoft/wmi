@@ -18,3 +18,7 @@ func NewDvdDrive(instance *wmi.WmiInstance) (*DvdDrive, error) {
 	}
 	return &DvdDrive{wmivm}, nil
 }
+
+func GetRelatedStorageAllocationSettingData(instance *wmi.WmiInstance) (value *wmi.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_StorageAllocationSettingData")
+}

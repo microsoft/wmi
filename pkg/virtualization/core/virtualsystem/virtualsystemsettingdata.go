@@ -17,6 +17,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
@@ -245,6 +246,21 @@ func (vm *VirtualSystemSettingData) GetVirtualHardDisks() (col disk.VirtualHardD
 	}
 
 	col, err = disk.NewVirtualHardDiskCollection(rasdcollection)
+	if err != nil {
+		rasdcollection.Close()
+	}
+	return
+}
+
+func (vm *VirtualSystemSettingData) GetVirtualDvdDrives() (col drive.DvdDriveCollection, err error) {
+	resourceType := fmt.Sprintf("%d", int32(v2.ResourceAllocationSettingData_ResourceType_DVD_drive))
+	query := query.NewWmiQuery("Cim_ResourceAllocationSettingData", "ResourceType", resourceType)
+	rasdcollection, err := instance.GetWmiInstancesFromHost(vm.GetWmiHost(), string(constant.Virtualization), query)
+	if err != nil {
+		return
+	}
+
+	col, err = drive.NewDvdDriveCollection(rasdcollection)
 	if err != nil {
 		rasdcollection.Close()
 	}

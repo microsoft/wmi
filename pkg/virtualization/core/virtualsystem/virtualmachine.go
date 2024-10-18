@@ -5,6 +5,7 @@ package virtualsystem
 
 import (
 	"fmt"
+	"path/filepath"
 
 	//"log"
 	"time"
@@ -759,6 +760,91 @@ func (vm *VirtualMachine) GetVirtualHardDisks() (col resourceallocation.Resource
 
 func (vm *VirtualMachine) GetVirtualHardDrives() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Disk_Drive)
+	return
+}
+
+func (vm *VirtualMachine) GetDvdDrives() (col drive.DvdDriveCollection, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+	return settings.GetVirtualDvdDrives()
+}
+
+func (vm *VirtualMachine) GetDvdDriveAndLogicalDiskByIsoPath(isoPath string) (dvd *drive.DvdDrive, diskdvd *disk.LogicalDisk, err error) {
+	dvdCol, err := vm.GetDvdDrives()
+	if err != nil {
+		return
+	}
+	defer dvdCol.Close()
+
+	for _, inst := range dvdCol {
+		dvddisk, err1 := drive.GetRelatedStorageAllocationSettingData(inst.WmiInstance)
+		if err1 != nil {
+			// Missing related storage allocation data is benign
+			// It just means that DVD disk is not available
+			continue
+		}
+
+		dvdPathInterface, err1 := dvddisk.GetProperty("HostResource")
+		if err1 != nil {
+			err = fmt.Errorf("unable to read HostResource field from disk WMI %s", err1)
+			return
+		}
+		if dvdPathInterface == nil {
+			// Attached ISO path is not available, continue
+			continue
+		}
+
+		dvdPath := ""
+		for _, interfaceValue := range dvdPathInterface.([]interface{}) {
+			valuetmp, ok := interfaceValue.(string)
+			if !ok {
+				err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+				return
+			}
+
+			dvdPath = string(valuetmp)
+		}
+
+		if filepath.Clean(dvdPath) != filepath.Clean(isoPath) {
+			continue
+		}
+
+		// Clone the DVD drive instance for return
+		dvdclone, err1 := inst.Clone()
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		retdvd, err1 := drive.NewDvdDrive(dvdclone)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		// Also clone the logical disk instance for return
+		dvddiskclone, err1 := dvddisk.Clone()
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		retdvddisk, err1 := disk.NewLogicalDisk(dvddiskclone)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		dvd = retdvd
+		diskdvd = retdvddisk
+		return
+	}
+	err = errors.Wrapf(errors.NotFound,
+		"Dvd drive with path [%s] not found in Vm [%s]", isoPath, vm.Name())
+	dvd = nil
 	return
 }
 
