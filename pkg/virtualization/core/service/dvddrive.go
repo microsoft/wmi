@@ -144,3 +144,8 @@ func (vmms *VirtualSystemManagementService) RemoveDvdDrive(dvd *drive.DvdDrive) 
 	err = vmms.RemoveVirtualSystemResource(dvd.CIM_ResourceAllocationSettingData, -1)
 	return
 }
+
+func (vmms *VirtualSystemManagementService) RemoveDvdDisk(dvddisk *disk.LogicalDisk) (err error) {
+	err = vmms.RemoveVirtualSystemResource(dvddisk.CIM_ResourceAllocationSettingData, -1)
+	return
+}
