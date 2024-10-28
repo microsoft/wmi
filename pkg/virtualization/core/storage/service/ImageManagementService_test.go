@@ -35,7 +35,7 @@ func TestCreateDynamicVirtualHardDisk(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 	}
 	path := "c:\\test\\tmp.vhdx"
-	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true)
+	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_2)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -58,7 +58,7 @@ func TestCreateStaticVirtualHardDisk(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 	}
 	path := "c:\\test\\tmp.vhdx"
-	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, false)
+	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, false, disk.VirtualHardDiskFormat_2)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -81,10 +81,10 @@ func TestGetVirtualHardDiskConfig(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 	}
 	path := "c:\\test\\tmp.vhdx"
-	disksize := 1024 * 1024 * 10
-	lsectorSize := 512
-	psectorSize := 512
-	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, lsectorSize, psectorSize, 0, disksize, true)
+	var disksize uint64 = 1024 * 1024 * 10
+	var lsectorSize uint32 = 512
+	var psectorSize uint32 = 512
+	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, lsectorSize, psectorSize, 0, disksize, true, disk.VirtualHardDiskFormat_2)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -100,15 +100,15 @@ func TestGetVirtualHardDiskConfig(t *testing.T) {
 		t.Fatal("Get vhd configuration failed " + err.Error())
 	}
 
-	if readSize != uint64(disksize) {
+	if readSize != disksize {
 		t.Fatal("Get vhd configuration size mismatch")
 	}
 
-	if readLsectorSize != uint32(lsectorSize) {
+	if readLsectorSize != lsectorSize {
 		t.Fatal("Get vhd configuration logical sector mismatch")
 	}
 
-	if readPsectorSize != uint32(psectorSize) {
+	if readPsectorSize != psectorSize {
 		t.Fatal("Get vhd configuration physical sector mismatch")
 	}
 }

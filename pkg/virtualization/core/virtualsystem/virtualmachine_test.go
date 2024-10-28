@@ -162,35 +162,6 @@ func TestGetVirtualMachineSetting(t *testing.T) {
 	defer setting.Close()
 }
 
-func TestGetVirtualMachineNetworkAdapterByMac(t *testing.T) {
-	vm, err := GetVirtualMachineByVMName(whost, "test")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-	defer vm.Close()
-
-	vna, err := vm.NewSyntheticNetworkAdapter("test1-nic1")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-	defer vna.Close()
-
-	macAddress, err := vna.GetPropertyAddress()
-	if err != nil {
-		t.Fatal("Failed to get MAC address " + err.Error())
-	}
-
-	if macAddress == "" {
-		t.Fatal("Empty MAC address for synthetic network adapter")
-	}
-	t.Logf("Added network interface with MAC %s", macAddress)
-
-	_, err = vm.GetVirtualGuestNetworkAdapterConfiguration(macAddress)
-	if err != nil {
-		t.Fatal("Failed to get guest network adapter config" + err.Error())
-	}
-}
-
 func TestGetVirtualMachineOSConfiguration(t *testing.T) {
 	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
@@ -198,8 +169,9 @@ func TestGetVirtualMachineOSConfiguration(t *testing.T) {
 	}
 	defer vm.Close()
 
-	_, _, err = vm.GetOSConfiguration()
+	cName, isWindows, err := vm.GetOSConfiguration()
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
+	t.Logf("Retrieved OS configuration. Computer Name %s IsWindows %t", cName, isWindows)
 }
