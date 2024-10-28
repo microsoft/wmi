@@ -53,6 +53,5 @@ func (sna *SyntheticNetworkAdapter) GetGuestNetworkAdapterConfiguration() (guest
 	if err != nil {
 		return
 	}
-	guestConfiguration, err = NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
-	return guestConfiguration, err
+	return NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
 }

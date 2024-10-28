@@ -665,6 +665,12 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 
+	vhds, err := vm.GetAttachedVirtualHardDisks()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	numVhds := len(vhds)
+
 	ims, err := service.GetImageManagementService(whost)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
@@ -701,6 +707,16 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
+
+		vhds, err := vm.GetAttachedVirtualHardDisks()
+		if err != nil {
+			t.Fatalf("Failed " + err.Error())
+		}
+		if len(vhds) != (numVhds + 1) {
+			t.Fatalf("Incorrect number of VHDs retrieved from VM! Received %d expected %d", len(vhds), (numVhds + 1))
+		} else {
+			numVhds = numVhds + 1
+		}
 	}
 
 	for i := 1; i <= 4; i++ {
@@ -715,6 +731,16 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Detached vhd [%s] from [%s]", path, "test")
+
+		vhds, err := vm.GetAttachedVirtualHardDisks()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		if len(vhds) != (numVhds - 1) {
+			t.Fatalf("Incorrect number of VHDs retrieved from VM! Received %d expected %d", len(vhds), (numVhds + 1))
+		} else {
+			numVhds = numVhds - 1
+		}
 	}
 }
 

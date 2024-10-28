@@ -108,30 +108,31 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 	}
 
 	for _, property := range diskData.PROPERTY {
-		if property.NAME == "MaxInternalSize" {
+		switch property.NAME {
+		case "MaxInternalSize":
 			size, err = strconv.ParseUint(property.VALUE, 10, 64)
 			if err != nil {
 				return
 			}
-		} else if property.NAME == "BlockSize" {
+		case "BlockSize":
 			tempvar, err = strconv.ParseUint(property.VALUE, 10, 32)
 			if err != nil {
 				return
 			}
 			blockSize = uint32(tempvar)
-		} else if property.NAME == "LogicalSectorSize" {
+		case "LogicalSectorSize":
 			tempvar, err = strconv.ParseUint(property.VALUE, 10, 32)
 			if err != nil {
 				return
 			}
 			lSectorSize = uint32(tempvar)
-		} else if property.NAME == "PhysicalSectorSize" {
+		case "PhysicalSectorSize":
 			tempvar, err = strconv.ParseUint(property.VALUE, 10, 32)
 			if err != nil {
 				return
 			}
 			pSectorSize = uint32(tempvar)
-		} else if property.NAME == "Format" {
+		case "Format":
 			tempvar, err = strconv.ParseUint(property.VALUE, 10, 16)
 			if err != nil {
 				return
