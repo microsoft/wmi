@@ -210,8 +210,10 @@ func (c *WmiInstance) Equals(instance *WmiInstance) bool {
 // Clone
 func (c *WmiInstance) Clone() (*WmiInstance, error) {
 	rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
-	winstance, err := CreateWmiInstance(rawResult, c.session)
-	return winstance, err
+	if err != nil {
+		return nil, err
+	}
+	return CreateWmiInstance(rawResult, c.session)
 }
 
 // Refresh
@@ -232,7 +234,6 @@ func (c *WmiInstance) Commit() error {
 	}
 	defer rawResult.Clear()
 	return nil
-
 }
 
 // Modify
@@ -411,7 +412,7 @@ func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, result
 		return nil, err
 	}
 	if enum == nil {
-		return nil, fmt.Errorf("Enum is nil")
+		return nil, fmt.Errorf("enum is nil")
 	}
 
 	defer enum.Release()
@@ -472,7 +473,7 @@ func (c *WmiInstance) EnumerateReferencingInstances(resultClassName, sourceRole 
 		return nil, err
 	}
 	if enum == nil {
-		return nil, fmt.Errorf("Enum is nil")
+		return nil, fmt.Errorf("enum is nil")
 	}
 
 	defer enum.Release()

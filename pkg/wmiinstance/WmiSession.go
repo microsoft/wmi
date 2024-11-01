@@ -265,7 +265,7 @@ func (c *WmiSession) PerformRawQuery(queryExpression string) (*ole.IEnumVARIANT,
 		return nil, err
 	}
 	if enum == nil {
-		return nil, fmt.Errorf("Enum is nil")
+		return nil, fmt.Errorf("enum is nil")
 	}
 
 	return enum, err

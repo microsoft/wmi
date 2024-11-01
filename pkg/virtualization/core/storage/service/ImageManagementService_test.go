@@ -8,9 +8,8 @@ import (
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
-	"testing"
-
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
+	"testing"
 )
 
 var (
@@ -34,7 +33,7 @@ func TestCreateDynamicVirtualHardDisk(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 	}
 	path := "c:\\test\\tmp.vhdx"
-	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true)
+	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_2)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -57,7 +56,7 @@ func TestCreateStaticVirtualHardDisk(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 	}
 	path := "c:\\test\\tmp.vhdx"
-	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, false)
+	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, false, disk.VirtualHardDiskFormat_2)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}

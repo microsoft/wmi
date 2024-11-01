@@ -214,5 +214,4 @@ func (vsms *VirtualEthernetSwitchManagementService) DeleteVirtualSwitch(vswitch 
 		defer job.Close()
 		return job.WaitForJobCompletion(result.ReturnValue, -1)
 	}
-	return
 }

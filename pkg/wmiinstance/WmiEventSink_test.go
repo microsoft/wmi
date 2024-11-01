@@ -83,17 +83,25 @@ func Test_WmiAsyncEvents(t *testing.T) {
 		return
 	}
 	err = cmd.Wait()
+	if err != nil {
+		t.Errorf("Could not wait for powershell on this computer")
+		return
+	}
 
 	completed := false
 	startTime := time.Now()
 	timeout, _ := time.ParseDuration("1s")
+	breakLoop := false
 	for time.Since(startTime) < timeout && !completed {
 		select {
 		case completed = <-context.completed:
-			break
+			breakLoop = true
 		default:
 			// continue waiting
 			time.Sleep(1 * time.Second)
+		}
+		if breakLoop {
+			break
 		}
 		for eventSink.PeekAndDispatchMessages() {
 			// Continue pumping for message while they arrive
