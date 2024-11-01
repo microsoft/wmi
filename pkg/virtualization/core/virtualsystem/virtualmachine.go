@@ -352,6 +352,7 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 	if err != nil {
 		return nil, err
 	}
+	defer allSettings.Close()
 
 	/* The input MAC address would be always in standard format (i.e aa:bb:cc:dd:ee:ff)
 	   But the address read from system would be in HyperV format (i.e AABBCCDDEEFF) */
@@ -380,10 +381,15 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 			if strings.EqualFold(inputMacAddressHyperV, networkAdapterMacAddress) {
 				wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
 				if err != nil {
-					continue
+					return nil, err
 				}
-				guestNetworkAdapterConfiguration, _ = na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
-				return guestNetworkAdapterConfiguration, nil
+
+				wmiGuestConfigClone, err := wmiGuestConfig.Clone()
+				if err != nil {
+					return nil, err
+				}
+
+				return na.NewGuestNetworkAdapterConfiguration(wmiGuestConfigClone)
 			}
 		}
 	}
@@ -393,14 +399,14 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
 	inst, err := vm.GetRelated("Msvm_Tpm")
+	if err != nil {
+		return nil, err
+	}
+	defer inst.Close()
 
 	// If the TPM is not found, then it is not configured or enabled
 	if inst == nil {
 		return nil, nil
-	}
-
-	if err != nil {
-		return nil, err
 	}
 
 	tpmwmi, err := v2.NewMsvm_TPMEx1(inst)
@@ -413,7 +419,12 @@ func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingDa
 		return nil, err
 	}
 
-	securitySettings, err := v2.NewMsvm_SecuritySettingDataEx1(cimSettings)
+	cimSettingsClone, err := cimSettings.Clone()
+	if err != nil {
+		return nil, err
+	}
+
+	securitySettings, err := v2.NewMsvm_SecuritySettingDataEx1(cimSettingsClone)
 	if err != nil {
 		return nil, err
 	}
@@ -421,11 +432,12 @@ func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingDa
 	return &MsvmSecuritySettingData{securitySettings}, nil
 }
 
-func (vm *VirtualMachine) GetOSConfiguration() (computerName string, isWindows bool) {
+func (vm *VirtualMachine) GetOSConfiguration() (computerName string, isWindows bool, err error) {
 	inst, err := vm.GetRelated("Msvm_KvpExchangeComponent")
 	if err != nil {
 		return
 	}
+	defer inst.Close()
 
 	kvp, err := v2.NewMsvm_KvpExchangeComponentEx1(inst)
 	if err != nil {
@@ -447,11 +459,10 @@ func (vm *VirtualMachine) GetOSConfiguration() (computerName string, isWindows b
 
 		var key, value string
 		for _, property := range guestProperty.PROPERTY {
-			if property.NAME == "Name" {
+			switch property.NAME {
+			case "Name":
 				key = property.VALUE
-			}
-
-			if property.NAME == "Data" {
+			case "Data":
 				value = property.VALUE
 			}
 		}
@@ -461,8 +472,17 @@ func (vm *VirtualMachine) GetOSConfiguration() (computerName string, isWindows b
 		}
 	}
 
-	computerName = guestKvPairs["FullyQualifiedDomainName"]
-	osName := guestKvPairs["OSName"]
+	computerName, ok := guestKvPairs["FullyQualifiedDomainName"]
+	if !ok {
+		err = errors.Wrapf(errors.InvalidInput, "Unable to retrieve computer name via WMI")
+		return
+	}
+
+	osName, ok := guestKvPairs["OSName"]
+	if !ok {
+		err = errors.Wrapf(errors.InvalidInput, "Unable to retrieve operating system type via WMI")
+		return
+	}
 	if strings.Contains(strings.ToLower(osName), "window") {
 		isWindows = true
 	}

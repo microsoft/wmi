@@ -161,3 +161,17 @@ func TestGetVirtualMachineSetting(t *testing.T) {
 	}
 	defer setting.Close()
 }
+
+func TestGetVirtualMachineOSConfiguration(t *testing.T) {
+	vm, err := GetVirtualMachineByVMName(whost, "test")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer vm.Close()
+
+	cName, isWindows, err := vm.GetOSConfiguration()
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	t.Logf("Retrieved OS configuration. Computer Name %s IsWindows %t", cName, isWindows)
+}
