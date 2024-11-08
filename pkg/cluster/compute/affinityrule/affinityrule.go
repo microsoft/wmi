@@ -56,4 +56,3 @@ func GetAffinityRule(whost *host.WmiHost, affinityRuleName string) (caffinityRul
 	caffinityRule = &AffinityRule{wmiafRule}
 	return
 }
-

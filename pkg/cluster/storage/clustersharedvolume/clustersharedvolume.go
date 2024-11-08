@@ -8,8 +8,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
-	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/constant"
+	"github.com/microsoft/wmi/pkg/errors"
 	"reflect"
 
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -68,7 +68,7 @@ func (c *ClusterSharedVolume) IsStatusOK() (status bool, err error) {
 		return
 	}
 
-	status =  (len(statusValue) == 0 || (statusValue == fcconstant.STATUS_OK))
+	status = (len(statusValue) == 0 || (statusValue == fcconstant.STATUS_OK))
 	return
 }
 

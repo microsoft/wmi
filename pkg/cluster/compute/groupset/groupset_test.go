@@ -18,14 +18,14 @@ func init() {
 }
 
 /*
-func TestGetGroupSet(t *testing.T) {
-	cn, err := GetGroupSet(whost, "*")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-		return
+	func TestGetGroupSet(t *testing.T) {
+		cn, err := GetGroupSet(whost, "*")
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		defer cn.Close()
 	}
-	defer cn.Close()
-}
 */
 func TestGetGroupSets(t *testing.T) {
 	nc, err := GetGroupSets(whost)

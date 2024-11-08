@@ -14,9 +14,8 @@ import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 
-	"reflect"
 	"github.com/microsoft/wmi/pkg/errors"
-
+	"reflect"
 )
 
 type ClusterNode struct {

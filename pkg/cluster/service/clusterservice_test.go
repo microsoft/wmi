@@ -25,7 +25,6 @@ func TestGetClusterService(t *testing.T) {
 	}
 }
 
-
 func TestGetClusterServices(t *testing.T) {
 	_, err := GetClusterServices(whost)
 	if err != nil {

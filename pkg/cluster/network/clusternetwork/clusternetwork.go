@@ -7,13 +7,13 @@ import (
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
-	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
 
-	"reflect"
 	"github.com/microsoft/wmi/pkg/errors"
+	"reflect"
 )
 
 type ClusterNetwork struct {

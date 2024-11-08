@@ -4,15 +4,15 @@
 package service
 
 import (
-	"sync"
 	"os"
+	"sync"
 
 	"github.com/microsoft/wmi/pkg/base/host"
-	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
-	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
+	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
 
 var (
@@ -36,7 +36,6 @@ func NewClusterService(instance *wmi.WmiInstance) (*ClusterService, error) {
 	}
 	return &ClusterService{wmics}, nil
 }
-
 
 // GetClusterService gets an existing virtual machine
 // Make sure to call Close once done using this instance
