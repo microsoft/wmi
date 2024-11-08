@@ -12,3 +12,4 @@ schedules:
 jobs:
 - template: .pipelines/build.yaml
 - template: .pipelines/static.yaml
+- template: .pipelines/unittest.yaml
