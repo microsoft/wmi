@@ -4,9 +4,8 @@
 package clusternetwork
 
 import (
-
-	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/host"
+	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -36,10 +35,10 @@ func GetClusterNetworks(whost *host.WmiHost) (cnodecollection ClusterNetworkColl
 	}
 
 	defer func() {
- 		if err != nil {
+		if err != nil {
 			instances.Close()
 		}
-	} ()
+	}()
 
 	cnodecollection, err = NewClusterNetworkCollection(instances)
 	return
@@ -57,5 +56,3 @@ func GetClusterNetwork(whost *host.WmiHost, nodeName string) (cnode *ClusterNetw
 	cnode = &ClusterNetwork{wminetwork}
 	return
 }
-
-

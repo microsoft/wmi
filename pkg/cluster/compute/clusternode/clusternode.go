@@ -6,11 +6,11 @@ package clusternode
 import (
 	"os"
 
-	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/host"
+	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/constant"
 	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
+	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
@@ -38,10 +38,10 @@ func GetClusterNodes(whost *host.WmiHost) (cnodecollection ClusterNodeCollection
 	}
 
 	defer func() {
- 		if err != nil {
+		if err != nil {
 			instances.Close()
 		}
-	} ()
+	}()
 
 	cnodecollection, err = NewClusterNodeCollection(instances)
 	return
@@ -70,9 +70,8 @@ func GetLocalClusterNode(whost *host.WmiHost) (cnode *ClusterNode, err error) {
 	return GetClusterNode(whost, hostname)
 }
 
-
 // IsUp get the cluster health status
-func (c *ClusterNode) IsUp()  (status bool) {
+func (c *ClusterNode) IsUp() (status bool) {
 	state, err := c.GetPropertyState()
 	if err != nil {
 		return
@@ -82,7 +81,7 @@ func (c *ClusterNode) IsUp()  (status bool) {
 }
 
 // IsPaused get the cluster health status
-func (c *ClusterNode) IsPaused()  (status bool) {
+func (c *ClusterNode) IsPaused() (status bool) {
 	state, err := c.GetPropertyState()
 	if err != nil {
 		return

@@ -7,8 +7,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/constant"
 	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
+	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
@@ -69,7 +69,7 @@ func (c *ClusterSharedVolume) IsStatusOK() (status bool) {
 }
 
 // IsFaultStateOK get the cluster health status
-func (c *ClusterSharedVolume) IsFaultStateOK()  (status bool) {
+func (c *ClusterSharedVolume) IsFaultStateOK() (status bool) {
 	state, err := c.GetPropertyFaultState()
 	if err != nil {
 		return

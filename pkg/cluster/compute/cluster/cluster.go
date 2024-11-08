@@ -6,10 +6,10 @@ package cluster
 import (
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
+	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
-	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
 )
 
 type Cluster struct {
@@ -38,7 +38,7 @@ func GetCluster(whost *host.WmiHost) (ccluster *Cluster, err error) {
 }
 
 // IsHealthy get the cluster health status
-func (c *Cluster) IsNodeClusterStateRunning()  (status bool) {
+func (c *Cluster) IsNodeClusterStateRunning() (status bool) {
 	state, err := c.InvokeMethodWithReturn("GetNodeClusterState")
 	if err != nil {
 		return false
