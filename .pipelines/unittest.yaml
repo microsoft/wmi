@@ -1,9 +1,9 @@
 jobs:
-  - job: Build
+  - job: Unittest
     timeoutInMinutes: 120
 
     pool:
-      vmImage: "1es-ubuntu-latest"
+      vmImage: "windows-latest"
 
     variables:
       - group: moc-build
