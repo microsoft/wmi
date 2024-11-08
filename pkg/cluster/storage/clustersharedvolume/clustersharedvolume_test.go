@@ -42,5 +42,25 @@ func TestGetClusterSharedVolumes(t *testing.T) {
 			return
 		}
 		t.Logf("Volume Name: %s\n", volumeName)
+
+		status, err := volume.GetPropertyStatus()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Volume Status %v \n", status)
+
+		statusokay, err := volume.IsStatusOK()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Volume StatusOK %v \n", statusokay)
+		statusfault, err := volume.IsFaultStateOK()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Volume FaultStatusOK %v \n", statusfault)
 	}
 }

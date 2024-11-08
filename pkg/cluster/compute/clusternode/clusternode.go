@@ -13,6 +13,10 @@ import (
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
+
+	"reflect"
+	"github.com/microsoft/wmi/pkg/errors"
+
 )
 
 type ClusterNode struct {
@@ -28,7 +32,7 @@ func NewClusterNode(instance *wmi.WmiInstance) (*ClusterNode, error) {
 	return &ClusterNode{wmivm}, nil
 }
 
-// GetClusterNode gets an existing virtual machine
+// GetClusterNodes gets an existing virtual machine
 // Make sure to call Close once done using this instance
 func GetClusterNodes(whost *host.WmiHost) (cnodecollection ClusterNodeCollection, err error) {
 	query := query.NewWmiQuery("MSCluster_Node")
@@ -70,22 +74,44 @@ func GetLocalClusterNode(whost *host.WmiHost) (cnode *ClusterNode, err error) {
 	return GetClusterNode(whost, hostname)
 }
 
+// State gets the value of FaultState for the instance
+func (c *ClusterNode) State() (value int32, err error) {
+	retValue, err := c.GetProperty("State")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	value, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	return
+}
+
 // IsUp get the cluster health status
-func (c *ClusterNode) IsUp() (status bool) {
-	state, err := c.GetPropertyState()
+func (c *ClusterNode) IsUp() (status bool, err error) {
+	state, err := c.State()
 	if err != nil {
 		return
 	}
 
-	return (int32(state) == fcconstant.CLUSTER_NODE_STATE_UP)
+	status = (state == fcconstant.CLUSTER_NODE_STATE_UP)
+	return
 }
 
 // IsPaused get the cluster health status
-func (c *ClusterNode) IsPaused() (status bool) {
-	state, err := c.GetPropertyState()
+func (c *ClusterNode) IsPaused() (status bool, err error) {
+	state, err := c.State()
 	if err != nil {
 		return
 	}
 
-	return (int32(state) == fcconstant.CLUSTER_NODE_STATE_PAUSED)
+	status = (state == fcconstant.CLUSTER_NODE_STATE_PAUSED)
+	return
 }

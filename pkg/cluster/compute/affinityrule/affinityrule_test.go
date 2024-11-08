@@ -18,7 +18,7 @@ func init() {
 }
 
 func TestGetAffinityRule(t *testing.T) {
-	cn, err := GetLocalAffinityRule(whost)
+	cn, err := GetAffinityRule(whost, "Cloud Agent-CNO")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 		return

@@ -4,6 +4,8 @@
 package cluster
 
 import (
+	"fmt"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
@@ -37,7 +39,7 @@ func GetCluster(whost *host.WmiHost) (ccluster *Cluster, err error) {
 	return &Cluster{wmicluster}, nil
 }
 
-// IsHealthy get the cluster health status
+// IsNodeClusterStateRunning get the cluster health status
 func (c *Cluster) IsNodeClusterStateRunning() (status bool) {
 	state, err := c.InvokeMethodWithReturn("GetNodeClusterState")
 	if err != nil {

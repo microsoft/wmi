@@ -304,6 +304,11 @@ func (c *WmiInstance) InvokeMethodWithReturn(methodName string, params ...interf
 		return 0, err
 	}
 
+	// Does not have any results
+	if results == nil || len(results) == 0 || results[0] == nil {
+		return 0, nil
+	}
+
 	return results[0].(int32), nil
 }
 

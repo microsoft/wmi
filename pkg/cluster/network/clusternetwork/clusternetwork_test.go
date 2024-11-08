@@ -42,5 +42,12 @@ func TestGetClusterNetworks(t *testing.T) {
 			return
 		}
 		t.Logf("Network Name : %s\n", networkName)
+
+		state, err := network.State()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Network States %v \n", state)
 	}
 }

@@ -10,6 +10,10 @@ import (
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
+	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
+
+	"reflect"
+	"github.com/microsoft/wmi/pkg/errors"
 )
 
 type ClusterNetwork struct {
@@ -54,5 +58,36 @@ func GetClusterNetwork(whost *host.WmiHost, nodeName string) (cnode *ClusterNetw
 		return
 	}
 	cnode = &ClusterNetwork{wminetwork}
+	return
+}
+
+// State gets the value of FaultState for the instance
+func (c *ClusterNetwork) State() (value int32, err error) {
+	retValue, err := c.GetProperty("State")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	value, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	return
+}
+
+// IsPartitioned get the cluster network health status
+func (c *ClusterNetwork) IsPartitioned() (status bool, err error) {
+	state, err := c.State()
+	if err != nil {
+		return
+	}
+
+	status = (state == fcconstant.CLUSTER_NETWORK_STATE_PARTITIONED)
 	return
 }

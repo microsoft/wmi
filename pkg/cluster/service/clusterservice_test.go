@@ -4,7 +4,6 @@
 package service
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -20,7 +19,15 @@ func init() {
 }
 
 func TestGetClusterService(t *testing.T) {
-	_, err := GetClusterService(whost)
+	_, err := GetLocalClusterService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+}
+
+
+func TestGetClusterServices(t *testing.T) {
+	_, err := GetClusterServices(whost)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}

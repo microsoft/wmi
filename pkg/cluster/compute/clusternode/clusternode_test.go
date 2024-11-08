@@ -42,5 +42,34 @@ func TestGetClusterNodes(t *testing.T) {
 			return
 		}
 		t.Logf("NoodeName : %s\n", nodeName)
+
+		status, err := node.GetPropertyStatus()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Node Status %v \n", status)
+
+		state, err := node.State()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Node States %v \n", state)
+
+		upState, err := node.IsUp()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Node Up State %v \n", upState)
+
+		pausedState, err := node.IsPaused()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Node Paused State %v \n", pausedState)
+
 	}
 }

@@ -34,5 +34,5 @@ func TestGetCluster_IsHealthy(t *testing.T) {
 	}
 	defer cn.Close()
 
-	cn.IsHealthy()
+	cn.IsNodeClusterStateRunning()
 }

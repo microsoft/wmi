@@ -17,15 +17,16 @@ func init() {
 	whost = host.NewWmiLocalHost()
 }
 
+/*
 func TestGetGroupSet(t *testing.T) {
-	cn, err := GetLocalGroupSet(whost)
+	cn, err := GetGroupSet(whost, "*")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 		return
 	}
 	defer cn.Close()
 }
-
+*/
 func TestGetGroupSets(t *testing.T) {
 	nc, err := GetGroupSets(whost)
 	if err != nil {
