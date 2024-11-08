@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package clusternetwork
+package clusternode
 
 import (
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -17,8 +17,8 @@ func init() {
 	whost = host.NewWmiLocalHost()
 }
 
-func TestGetClusterNetwork(t *testing.T) {
-	cn, err := GetClusterNetwork(whost, "Cluster Network 1")
+func TestGetClusterNode(t *testing.T) {
+	cn, err := GetLocalClusterNode(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 		return
@@ -26,8 +26,8 @@ func TestGetClusterNetwork(t *testing.T) {
 	defer cn.Close()
 }
 
-func TestGetClusterNetworks(t *testing.T) {
-	nc, err := GetClusterNetworks(whost)
+func TestGetClusterNodes(t *testing.T) {
+	nc, err := GetClusterNodes(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 		return

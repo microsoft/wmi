@@ -4,11 +4,13 @@
 package clusternode
 
 import (
+	"os"
 
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
+	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
@@ -58,4 +60,33 @@ func GetClusterNode(whost *host.WmiHost, nodeName string) (cnode *ClusterNode, e
 	return
 }
 
+// GetLocalClusterNode gets an existing virtual machine
+// Make sure to call Close once done using this instance
+func GetLocalClusterNode(whost *host.WmiHost) (cnode *ClusterNode, err error) {
+	hostname, err := os.Hostname()
+	if err != nil {
+		return
+	}
+	return GetClusterNode(whost, hostname)
+}
 
+
+// IsUp get the cluster health status
+func (c *ClusterNode) IsUp()  (status bool) {
+	state, err := c.GetPropertyState()
+	if err != nil {
+		return
+	}
+
+	return (int32(state) == fcconstant.CLUSTER_NODE_STATE_UP)
+}
+
+// IsPaused get the cluster health status
+func (c *ClusterNode) IsPaused()  (status bool) {
+	state, err := c.GetPropertyState()
+	if err != nil {
+		return
+	}
+
+	return (int32(state) == fcconstant.CLUSTER_NODE_STATE_PAUSED)
+}

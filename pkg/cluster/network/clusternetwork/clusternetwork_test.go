@@ -1,12 +1,9 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package clusternode
+package clusternetwork
 
 import (
-	"os"
-
-
 	"github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
 	"testing"
@@ -20,9 +17,8 @@ func init() {
 	whost = host.NewWmiLocalHost()
 }
 
-func TestGetClusterNode(t *testing.T) {
-	hostname, err := os.Hostname()
-	cn, err := GetClusterNode(whost, hostname)
+func TestGetClusterNetwork(t *testing.T) {
+	cn, err := GetClusterNetwork(whost, "Cluster Network 1")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 		return
@@ -30,21 +26,21 @@ func TestGetClusterNode(t *testing.T) {
 	defer cn.Close()
 }
 
-func TestGetClusterNodes(t *testing.T) {
-	nc, err := GetClusterNodes(whost)
+func TestGetClusterNetworks(t *testing.T) {
+	nc, err := GetClusterNetworks(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 		return
 	}
 	defer nc.Close()
-	t.Logf("Nodes returned %d\n", len(nc))
+	t.Logf("networks returned %d\n", len(nc))
 
-	for _, node := range nc {
-		nodeName, err := node.GetPropertyName()
+	for _, network := range nc {
+		networkName, err := network.GetPropertyName()
 		if err != nil {
 			t.Fatal("Failed " + err.Error())
 			return
 		}
-		t.Logf("NoodeName : %s\n", nodeName)
+		t.Logf("Network Name : %s\n", networkName)
 	}
 }

@@ -4,11 +4,11 @@
 package clustersharedvolume
 
 import (
-
-	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/host"
+	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
+	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
@@ -36,10 +36,10 @@ func GetClusterSharedVolumes(whost *host.WmiHost) (cvolumecollection ClusterShar
 	}
 
 	defer func() {
- 		if err != nil {
+		if err != nil {
 			instances.Close()
 		}
-	} ()
+	}()
 
 	cvolumecollection, err = NewClusterSharedVolumeCollection(instances)
 	return
@@ -58,4 +58,28 @@ func GetClusterSharedVolume(whost *host.WmiHost, volumeName string) (cvolume *Cl
 	return
 }
 
+// IsStatusOK get the cluster health status
+func (c *ClusterSharedVolume) IsStatusOK() (status bool) {
+	state, err := c.GetPropertyStatus()
+	if err != nil {
+		return
+	}
 
+	return (state == fcconstant.STATUS_OK)
+}
+
+// IsFaultStateOK get the cluster health status
+func (c *ClusterSharedVolume) IsFaultStateOK()  (status bool) {
+	state, err := c.GetPropertyFaultState()
+	if err != nil {
+		return
+	}
+
+	return (int32(state) == (fcconstant.FAULT_STATE_NO_FAULT))
+}
+
+// ContainsPath checks if the input path is part of this cluster shared volume
+func (c *ClusterSharedVolume) ContainsPath(absolutePath string) (status bool) {
+	// TBD
+	return
+}
