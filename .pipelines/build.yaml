@@ -3,7 +3,7 @@ jobs:
     timeoutInMinutes: 120
 
     pool:
-      vmImage: "windows-latest"
+      vmImage: "ubuntu-latest"
 
     variables:
       - group: moc-build

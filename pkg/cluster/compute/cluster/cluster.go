@@ -4,8 +4,6 @@
 package cluster
 
 import (
-	"fmt"
-
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
