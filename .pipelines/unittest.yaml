@@ -25,7 +25,7 @@ jobs:
         displayName: "Set up the Go workspace"
 
       - script: |
-          make
+          make unittest
         workingDirectory: "$(System.DefaultWorkingDirectory)"
         timeoutInMinutes: 120
         displayName: "Build"
