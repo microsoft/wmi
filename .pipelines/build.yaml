@@ -3,7 +3,7 @@ jobs:
     timeoutInMinutes: 120
 
     pool:
-      vmImage: "1es-ubuntu-latest"
+      name: "1es-ubuntu-latest"
 
     variables:
       - group: moc-build
