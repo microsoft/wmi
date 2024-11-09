@@ -86,6 +86,10 @@ func (im *WmiInstanceManager) QueryInstances(queryString string) ([]*wmi.WmiInst
 	return im.session.QueryInstances(queryString)
 }
 
+func (im *WmiInstanceManager) QueryClasses(queryString string) ([]*wmi.WmiClass, error) {
+	return im.session.QueryClasses(queryString)
+}
+
 func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInstance, error) {
 	instances, err := im.QueryInstances(queryString)
 	if err != nil {
@@ -171,4 +175,18 @@ func GetWmiJob(host *host.WmiHost, namespaceName, instancePath string) (*wmi.Wmi
 		return nil, err
 	}
 	return wmi.NewWmiJob(instance)
+}
+
+func GetWmiClasssesFromHostRawQuery(host *host.WmiHost, namespaceName string, query string) (wmi.WmiClassCollection, error) {
+	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
+	if err != nil {
+		return nil, err
+	}
+	classes, err := im.QueryClasses(query)
+	if err != nil {
+		return nil, err
+	}
+	cinstances := wmi.WmiClassCollection{}
+	cinstances = append(cinstances, classes...)
+	return cinstances, nil
 }
