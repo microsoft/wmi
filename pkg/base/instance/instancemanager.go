@@ -133,19 +133,25 @@ func CreateWmiInstance(host *host.WmiHost, namespaceName, class string) (*wmi.Wm
 	}
 	return im.CreateInstance(class)
 }
-func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (wmi.WmiInstanceCollection, error) {
+func GetWmiInstancesFromHostRawQuery(host *host.WmiHost, namespaceName string, query string) (wmi.WmiInstanceCollection, error) {
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
 	if err != nil {
 		return nil, err
 	}
-	instances, err := im.QueryInstances(inquery.String())
+	instances, err := im.QueryInstances(query)
 	if err != nil {
 		return nil, err
 	}
 	winstances := wmi.WmiInstanceCollection{}
 	winstances = append(winstances, instances...)
 	return winstances, nil
+
 }
+
+func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (wmi.WmiInstanceCollection, error) {
+	return GetWmiInstancesFromHostRawQuery(host, namespaceName, inquery.String())
+}
+
 func GetWmiInstanceFromPath(host *host.WmiHost, namespaceName, instancePath string) (*wmi.WmiInstance, error) {
 	log.Printf("[WMI] Get Instance from path [%s]\n", instancePath)
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
