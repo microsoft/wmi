@@ -6,11 +6,11 @@ package affinityrule
 import (
 	"time"
 
-	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
+	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
@@ -28,7 +28,7 @@ func NewAffinityRule(instance *wmi.WmiInstance) (*AffinityRule, error) {
 	return &AffinityRule{wmiafRule}, nil
 }
 
-// NewAffinityRule
+// CreateAffinityRule
 func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int) (affinityRule *AffinityRule, err error) {
 	query := "SELECT * FROM meta_class WHERE __CLASS = 'MSCluster_AffinityRule'"
 	classes, err := instance.GetWmiClasssesFromHostRawQuery(whost, string(constant.FailoverCluster), query)
@@ -65,7 +65,6 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int) (affinit
 
 	return
 }
-
 
 // GetAffinityRule gets an existing virtual machine
 // Make sure to call Close once done using this instance

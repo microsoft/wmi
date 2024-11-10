@@ -17,7 +17,6 @@ type WmiClass struct {
 	classVar *ole.VARIANT
 }
 
-
 // WmiInstanceCollection is a slice of WmiClass
 type WmiClassCollection []*WmiClass
 
@@ -313,4 +312,3 @@ func CloseAllClasses(classes []*WmiClass) {
 func (c *WmiClass) Close() error {
 	return c.classVar.Clear()
 }
-

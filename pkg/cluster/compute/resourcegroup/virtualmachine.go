@@ -5,21 +5,21 @@ package resourcegroup
 
 import (
 	"fmt"
-	"math"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
+	"math"
 
-	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/cluster/compute/internal"
+	"github.com/microsoft/wmi/pkg/errors"
 )
 
 type FailoverClusterVirtualMachine struct {
 	*ResourceGroup
-	VmId 		string
+	VmId string
 }
 
 var (
@@ -76,7 +76,6 @@ func GetVirtualMachineResourceGroupByVmID(whost *host.WmiHost, vmID string) (crg
 	crgSet = &ResourceGroup{wmigpset}
 	return
 }
-
 
 // SetVirtualMachineAutoFailback returns if the resource group is in partial or pending state
 func (c *ResourceGroup) SetVirtualMachineAutoFailback(enable bool) (err error) {
@@ -137,7 +136,7 @@ func GetVirtualMachineResourceGroupViaAssociators(whost *host.WmiHost, virtualMa
 	if err != nil {
 		return nil, errors.Wrapf(errors.NotFound, "Missing VMID for VM '%s' in the cluster", virtualMachineName)
 	}
-	fcVm.VmId = vmID;
+	fcVm.VmId = vmID
 
 	return
 }

@@ -49,4 +49,3 @@ func GetVirtualMachineResourceByVmID(whost *host.WmiHost, vmID string) (crgSet *
 	crgSet = &Resource{wmigpset}
 	return
 }
-

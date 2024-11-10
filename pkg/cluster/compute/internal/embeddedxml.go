@@ -50,7 +50,6 @@ type ValueObject struct {
 	Instance *Instance
 }
 
-
 // GetVMID This function is a hack to obtain VM ID.
 // There could be a better pure WMI way to obtain the ID which requires more investigation
 // We are currently using the XML from the embedded instance to obtain the VM ID
