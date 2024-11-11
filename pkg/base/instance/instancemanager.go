@@ -86,6 +86,10 @@ func (im *WmiInstanceManager) QueryInstances(queryString string) ([]*wmi.WmiInst
 	return im.session.QueryInstances(queryString)
 }
 
+func (im *WmiInstanceManager) QueryClasses(queryString string) ([]*wmi.WmiClass, error) {
+	return im.session.QueryClasses(queryString)
+}
+
 func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInstance, error) {
 	instances, err := im.QueryInstances(queryString)
 	if err != nil {
@@ -133,19 +137,25 @@ func CreateWmiInstance(host *host.WmiHost, namespaceName, class string) (*wmi.Wm
 	}
 	return im.CreateInstance(class)
 }
-func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (wmi.WmiInstanceCollection, error) {
+func GetWmiInstancesFromHostRawQuery(host *host.WmiHost, namespaceName string, query string) (wmi.WmiInstanceCollection, error) {
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
 	if err != nil {
 		return nil, err
 	}
-	instances, err := im.QueryInstances(inquery.String())
+	instances, err := im.QueryInstances(query)
 	if err != nil {
 		return nil, err
 	}
 	winstances := wmi.WmiInstanceCollection{}
 	winstances = append(winstances, instances...)
 	return winstances, nil
+
 }
+
+func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (wmi.WmiInstanceCollection, error) {
+	return GetWmiInstancesFromHostRawQuery(host, namespaceName, inquery.String())
+}
+
 func GetWmiInstanceFromPath(host *host.WmiHost, namespaceName, instancePath string) (*wmi.WmiInstance, error) {
 	log.Printf("[WMI] Get Instance from path [%s]\n", instancePath)
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
@@ -165,4 +175,18 @@ func GetWmiJob(host *host.WmiHost, namespaceName, instancePath string) (*wmi.Wmi
 		return nil, err
 	}
 	return wmi.NewWmiJob(instance)
+}
+
+func GetWmiClasssesFromHostRawQuery(host *host.WmiHost, namespaceName string, query string) (wmi.WmiClassCollection, error) {
+	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
+	if err != nil {
+		return nil, err
+	}
+	classes, err := im.QueryClasses(query)
+	if err != nil {
+		return nil, err
+	}
+	cinstances := wmi.WmiClassCollection{}
+	cinstances = append(cinstances, classes...)
+	return cinstances, nil
 }

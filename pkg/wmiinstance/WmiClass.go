@@ -17,6 +17,16 @@ type WmiClass struct {
 	classVar *ole.VARIANT
 }
 
+// WmiInstanceCollection is a slice of WmiClass
+type WmiClassCollection []*WmiClass
+
+// Close all class in a collection
+func (wmic *WmiClassCollection) Close() {
+	for _, i := range *wmic {
+		i.Close()
+	}
+}
+
 func CreateWmiClass(classVar *ole.VARIANT, session *WmiSession) (*WmiClass, error) {
 	return &WmiClass{
 		classVar: classVar,
