@@ -11,6 +11,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
+	"github.com/go-ole/go-ole"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
@@ -88,5 +89,25 @@ func (c *ResourceGroup) IsPendingState() (pendingState bool, err error) {
 	}
 
 	pendingState = (retState >= CLUSTER_RESOURCE_GROUP_STATE_PARTIAL_ONLINE)
+	return
+}
+
+// GetPreferredOwnersEx1 gets the possible owners of the resource group
+func (c *ResourceGroup) GetPreferredOwnersEx1() (preferredOwners []string, err error) {
+	nodeListVariant := ole.NewVariant(ole.VT_ARRAY|ole.VT_BSTR, 0)
+	_, err = c.InvokeMethod("GetPreferredOwners", &nodeListVariant)
+	if err != nil {
+		return
+	}
+
+	nodeNameValues, err := wmi.GetVariantValues(&nodeListVariant)
+	if err != nil {
+		return
+	}
+
+	for _, ownerNode := range nodeNameValues {
+		preferredOwners = append(preferredOwners, ownerNode.(string))
+	}
+
 	return
 }

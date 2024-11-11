@@ -4,6 +4,8 @@
 package clustersharedvolume
 
 import (
+	"fmt"
+	"strings"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -14,6 +16,7 @@ import (
 
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
+	"github.com/microsoft/wmi/pkg/cluster/compute/resource"
 )
 
 type ClusterSharedVolume struct {
@@ -105,6 +108,56 @@ func (c *ClusterSharedVolume) IsFaultStateOK() (status bool, err error) {
 
 // ContainsPath checks if the input path is part of this cluster shared volume
 func (c *ClusterSharedVolume) ContainsPath(absolutePath string) (status bool, err error) {
-	// TBD
+	volName, err := c.GetPropertyName()
+	if err != nil {
+		return
+	}
+
+	if strings.Contains(strings.ToLower(absolutePath), strings.ToLower(volName)) {
+		status = true
+		return
+	}
+
+	return
+}
+
+func (c *ClusterSharedVolume) GetAssociatedClusterResource() (clusterResource *resource.Resource, err error) {
+	volumeName	, err := c.GetPropertyName()
+	if err != nil {
+		return
+	}
+
+	volumeAssocQuery := fmt.Sprintf("Associators of {MSCluster_ClusterSharedVolume='%s'} where assocclass=MSCluster_ClusterSharedVolumeToResource", volumeName)
+	assocInstances, err := instance.GetWmiInstancesFromHostRawQuery(c.GetWmiHost(), string(constant.FailoverCluster), volumeAssocQuery)
+	if err != nil {
+		return
+	}
+	defer assocInstances.Close()
+	if (len(assocInstances) == 0) {
+		err = errors.Wrapf(errors.NotFound, "No Cluster Resource found for Cluster Shared Volume %s", volumeName)
+		return
+	}
+
+	clonedResource, err := assocInstances[0].Clone()
+	if err != nil {
+		return
+	}
+	clusterResource, err = resource.NewResource(clonedResource)
+	return
+}
+
+
+// OwnerGroup checks if the input path is part of this cluster shared volume
+func (c *ClusterSharedVolume) OwnerGroup() (ownerGroup string, err error) {
+	cr, err := c.GetAssociatedClusterResource()
+	if err != nil {
+		return
+	}
+	defer cr.Close()
+
+	ownerGroup, err = cr.GetPropertyOwnerGroup()
+	if err != nil {
+		return
+	}
 	return
 }
