@@ -98,19 +98,20 @@ func TestGetVirtualMachineResourceGroups(t *testing.T) {
 		t.Logf("Resource Group : %v\n", cn)
 		t.Logf("Resource Group VMId : %s\n", cn.VmId)
 		defer cn.Close()
+
+		
+		pw, err := resourceGroup.GetPreferredOwnersEx1()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Preferred Owners %v \n", pw)
 	}
 }
+
+
 
 /*
-
-func TestGetVirtualMachineResourceGroup(t *testing.T) {
-	cn, err := GetVirtualMachineResourceGroup(whost, "Virtual Machine")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-		return
-	}
-	defer cn.Close()
-}
 
 func TestGetVirtualMachineResourceGroupByVmID(t *testing.T) {
 	cn, err := GetVirtualMachineResourceGroupByVmID(whost, "Virtual Machine")

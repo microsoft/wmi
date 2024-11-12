@@ -60,3 +60,35 @@ func TestGetResources(t *testing.T) {
 		t.Logf("Resource Owners %v \n", owners)
 	}
 }
+
+func TestGetVirtualMachineResouces(t *testing.T) {
+	vmr, err := GetVirtualMachineResources(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+		return
+	}
+	defer vmr.Close()
+
+	for _, resource := range vmr {
+		grpSetName, err := resource.GetPropertyName()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Resource Name : %s\n", grpSetName)
+
+		state, err := resource.State()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Resource States %v \n", state)
+
+		owners, err := resource.GetPossibleOwnersEx1()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+			return
+		}
+		t.Logf("Resource Owners %v \n", owners)
+	}
+}
