@@ -6,6 +6,8 @@ package clustersharedvolume
 import (
 	"fmt"
 	"strings"
+	"path/filepath"
+	
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -61,6 +63,49 @@ func GetClusterSharedVolume(whost *host.WmiHost, volumeName string) (cvolume *Cl
 		return
 	}
 	cvolume = &ClusterSharedVolume{volinstance}
+	return
+}
+
+// GetClusterSharedVolume gets an existing virtual machine
+// Make sure to call Close once done using this instance
+func GetClusterSharedVolumebyVolumeName(whost *host.WmiHost, volumeName string) (cvolume *ClusterSharedVolume, err error) {
+	creds := whost.GetCredential()
+	query := query.NewWmiQuery("MSCluster_ClusterSharedVolume", "VolumeName", volumeName)
+	volinstance, err := fc.NewMSCluster_ClusterSharedVolumeEx6(whost.HostName, string(constant.FailoverCluster), creds.UserName, creds.Password, creds.Domain, query)
+	if err != nil {
+		return
+	}
+	cvolume = &ClusterSharedVolume{volinstance}
+	return
+}
+
+// GetClusterSharedVolumebyName gets an name of the cluster shared volume
+// Make sure to call Close once done using this instance
+// Sometimes the volume name is difficult to compare
+func GetClusterSharedVolumebyName(whost *host.WmiHost, name string) (cvolume *ClusterSharedVolume, err error) {
+	csvInstances, err := GetClusterSharedVolumes(whost)
+	if err != nil {
+		return
+	}
+	defer csvInstances.Close()
+	inPath := strings.ToLower(filepath.Clean(name))
+	for _, instance := range csvInstances {
+		instanceName, err1 := instance.GetPropertyName()
+		if err1 != nil {
+			err = err1;
+			return
+		}
+		matchingPath := strings.ToLower(filepath.Clean(instanceName))
+		if strings.Contains(inPath, matchingPath) {
+			tmpInstance, err1 := instance.Clone()
+			if err1 != nil {
+				err = err1;
+				return
+			}
+			return NewClusterSharedVolume(tmpInstance)
+		}
+	}
+
 	return
 }
 

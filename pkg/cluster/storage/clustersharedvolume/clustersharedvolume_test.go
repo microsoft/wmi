@@ -24,7 +24,31 @@ func TestGetClusterSharedVolume(t *testing.T) {
 		return
 	}
 	defer cn.Close()
+	volumeName, err := cn.GetPropertyName()
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+		return
+	}
+	
+	t.Logf("Volume Name: %s\n", volumeName)
 }
+
+func TestGetClusterSharedVolumeByName(t *testing.T) {
+	cn, err := GetClusterSharedVolumebyName(whost, "C:/ClusterStorage/Volume1")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+		return
+	}
+	defer cn.Close()
+	volumeName, err := cn.GetPropertyName()
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+		return
+	}
+	
+	t.Logf("Volume Name: %s\n", volumeName)
+}
+
 
 func TestGetClusterSharedVolumes(t *testing.T) {
 	nc, err := GetClusterSharedVolumes(whost)
