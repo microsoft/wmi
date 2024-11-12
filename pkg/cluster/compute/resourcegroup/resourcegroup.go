@@ -6,6 +6,7 @@ package resourcegroup
 import (
 	"reflect"
 
+	"github.com/go-ole/go-ole"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -88,5 +89,25 @@ func (c *ResourceGroup) IsPendingState() (pendingState bool, err error) {
 	}
 
 	pendingState = (retState >= CLUSTER_RESOURCE_GROUP_STATE_PARTIAL_ONLINE)
+	return
+}
+
+// GetPreferredOwnersEx1 gets the possible owners of the resource group
+func (c *ResourceGroup) GetPreferredOwnersEx1() (preferredOwners []string, err error) {
+	nodeListVariant := ole.NewVariant(ole.VT_ARRAY|ole.VT_BSTR, 0)
+	_, err = c.InvokeMethod("GetPreferredOwners", &nodeListVariant)
+	if err != nil {
+		return
+	}
+
+	nodeNameValues, err := wmi.GetVariantValues(&nodeListVariant)
+	if err != nil {
+		return
+	}
+
+	for _, ownerNode := range nodeNameValues {
+		preferredOwners = append(preferredOwners, ownerNode.(string))
+	}
+
 	return
 }
