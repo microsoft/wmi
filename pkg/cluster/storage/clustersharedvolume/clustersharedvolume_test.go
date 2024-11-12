@@ -29,7 +29,7 @@ func TestGetClusterSharedVolume(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 		return
 	}
-	
+
 	t.Logf("Volume Name: %s\n", volumeName)
 }
 
@@ -45,10 +45,9 @@ func TestGetClusterSharedVolumeByName(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 		return
 	}
-	
+
 	t.Logf("Volume Name: %s\n", volumeName)
 }
-
 
 func TestGetClusterSharedVolumes(t *testing.T) {
 	nc, err := GetClusterSharedVolumes(whost)

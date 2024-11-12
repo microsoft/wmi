@@ -99,7 +99,6 @@ func TestGetVirtualMachineResourceGroups(t *testing.T) {
 		t.Logf("Resource Group VMId : %s\n", cn.VmId)
 		defer cn.Close()
 
-		
 		pw, err := resourceGroup.GetPreferredOwnersEx1()
 		if err != nil {
 			t.Fatal("Failed " + err.Error())
@@ -108,8 +107,6 @@ func TestGetVirtualMachineResourceGroups(t *testing.T) {
 		t.Logf("Preferred Owners %v \n", pw)
 	}
 }
-
-
 
 /*
 

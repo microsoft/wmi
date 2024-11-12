@@ -5,9 +5,9 @@ package clustersharedvolume
 
 import (
 	"fmt"
-	"strings"
 	"path/filepath"
-	
+	"strings"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -16,9 +16,9 @@ import (
 	"github.com/microsoft/wmi/pkg/errors"
 	"reflect"
 
+	"github.com/microsoft/wmi/pkg/cluster/compute/resource"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
-	"github.com/microsoft/wmi/pkg/cluster/compute/resource"
 )
 
 type ClusterSharedVolume struct {
@@ -92,14 +92,14 @@ func GetClusterSharedVolumebyName(whost *host.WmiHost, name string) (cvolume *Cl
 	for _, instance := range csvInstances {
 		instanceName, err1 := instance.GetPropertyName()
 		if err1 != nil {
-			err = err1;
+			err = err1
 			return
 		}
 		matchingPath := strings.ToLower(filepath.Clean(instanceName))
 		if strings.Contains(inPath, matchingPath) {
 			tmpInstance, err1 := instance.Clone()
 			if err1 != nil {
-				err = err1;
+				err = err1
 				return
 			}
 			return NewClusterSharedVolume(tmpInstance)
@@ -167,7 +167,7 @@ func (c *ClusterSharedVolume) ContainsPath(absolutePath string) (status bool, er
 }
 
 func (c *ClusterSharedVolume) GetAssociatedClusterResource() (clusterResource *resource.Resource, err error) {
-	volumeName	, err := c.GetPropertyName()
+	volumeName, err := c.GetPropertyName()
 	if err != nil {
 		return
 	}
@@ -178,7 +178,7 @@ func (c *ClusterSharedVolume) GetAssociatedClusterResource() (clusterResource *r
 		return
 	}
 	defer assocInstances.Close()
-	if (len(assocInstances) == 0) {
+	if len(assocInstances) == 0 {
 		err = errors.Wrapf(errors.NotFound, "No Cluster Resource found for Cluster Shared Volume %s", volumeName)
 		return
 	}
@@ -190,7 +190,6 @@ func (c *ClusterSharedVolume) GetAssociatedClusterResource() (clusterResource *r
 	clusterResource, err = resource.NewResource(clonedResource)
 	return
 }
-
 
 // OwnerGroup checks if the input path is part of this cluster shared volume
 func (c *ClusterSharedVolume) OwnerGroup() (ownerGroup string, err error) {
