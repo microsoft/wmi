@@ -1,6 +1,5 @@
 jobs:
   - job: Build
-    timeoutInMinutes: 120
 
     pool:
       vmImage: "ubuntu-latest"
@@ -9,6 +8,12 @@ jobs:
       - group: moc-build
       - name: GO111MODULE
         value: "on"
+      - name: GDN_VERSION
+        value: '0.110.0-linux'
+      - name: GDNP_VERSION
+        value: '1.61.0-linux'
+      - name: LGTM.UploadSnapshot
+        value: true
 
     steps:
       - task: GoTool@0
@@ -16,14 +21,42 @@ jobs:
           version: "1.22.5"
       - task: InstallSSHKey@0
         inputs:
-          knownHostsEntry: "$(KNOWN_HOST)"
-          sshPublicKey: "$(SSH_PUBLIC_KEY)"
-          sshKeySecureFile: "azure-pipelines-ssh-key-new"
-      - script: |
-          git config --global url.ssh://git@github.com/.insteadOf https://github.com/
-          git config --global url."msazure@vs-ssh.visualstudio.com:v3".insteadOf https://msazure.visualstudio.com
-        displayName: "Set up the Go workspace"
+          knownHostsEntry: |
+            $(KNOWN_HOST_GITHUB)
+            $(KNOWN_HOST_GITHUB_ECDSA)
+            $(KNOWN_HOST_GITHUB_Ed25519)
+          sshPublicKey: '$(SSH_PUBLIC_KEY)'
+          sshKeySecureFile: 'azure-pipelines-ssh-key-new'
+      - task: AzureCLI@2
+        inputs:
+          azureSubscription: 'kva-azuredevops-gcm'
+          scriptType: 'bash'
+          scriptLocation: 'inlineScript'
+          inlineScript: |
 
+            # Note that the resource is specified to limit the token to Azure DevOps
+            aadToken=$(az account get-access-token --query accessToken --resource 499b84ac-1321-427f-aa17-267ca6975798 -o tsv)
+    
+            # uncomment these for more debugging spew
+            # GIT_TRACE=1
+            # GIT_CURL_VERBOSE=1
+    
+            git config --global http.extraheader "AUTHORIZATION: bearer $aadToken"
+            git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
+            git config --global url."msazure@vs-ssh.visualstudio.com:v3".insteadOf https://msazure.visualstudio.com
+          displayName: 'Set git config'
+
+      - task: CodeQL3000Init@0
+        inputs:
+          ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/pull/')) }}:
+            Enabled: true # Enables CodeQL on the main branch and on PR branches
+          ${{ else }}:
+            Enabled: true
+          ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
+            AnalyzeInPipeline: true # Local analysis is only enabled on PR branches
+          Language: go
+
+        
       - script: |
           # Static binary workaround for CodeQL and Go 1.21 and higher
           # https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/codeql/troubleshooting/onboarding/language-compiled
@@ -41,8 +74,10 @@ jobs:
           mkdir manifest
           make
         workingDirectory: "$(System.DefaultWorkingDirectory)"
-        timeoutInMinutes: 120
         displayName: "Build"
+
+      - task: CodeQL3000Finalize@0
+        condition: always()
 
       - task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
         displayName: "SBOM Generation"
