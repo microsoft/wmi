@@ -111,3 +111,14 @@ func (c *ResourceGroup) GetPreferredOwnersEx1() (preferredOwners []string, err e
 
 	return
 }
+
+// DestroyGroupEx1 destroys the resource group
+func (c *ResourceGroup) DestroyGroupEx1(Options uint32) (err error) {
+	// Typecasting to int32 is a fix to get this method working 
+	// Documentation says uint32 but it is not working
+	_, err = c.InvokeMethod("DestroyGroup", int32(Options))
+	if err != nil {
+		return
+	}
+	return
+}

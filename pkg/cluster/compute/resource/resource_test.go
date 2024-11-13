@@ -17,6 +17,11 @@ func init() {
 	whost = host.NewWmiLocalHost()
 }
 
+// Setup
+// new-vm -name test -NoVHD -Path C:\ClusterStorage\Volume1\test
+// Get-vm -name test | add-vmtoCluster
+
+
 /*
 	func TestGetResource(t *testing.T) {
 		cn, err := GetResource(whost, "*")
@@ -91,4 +96,19 @@ func TestGetVirtualMachineResouces(t *testing.T) {
 		}
 		t.Logf("Resource Owners %v \n", owners)
 	}
+}
+
+func TestGetVirtualMachine(t *testing.T) {
+	resource, err := GetVirtualMachineResource(whost, "test")
+	if err != nil {
+		t.Fatalf("Failed %+v", err)
+		return
+	}
+
+	ownerGroup, err := resource.GetPropertyOwnerGroup()
+	if err != nil {
+		t.Fatalf("Failed %+v", err)
+		return
+	}
+	t.Logf("Resource Name : %s\n", ownerGroup)
 }
