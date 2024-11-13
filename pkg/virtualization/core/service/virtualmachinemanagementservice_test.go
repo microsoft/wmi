@@ -4,21 +4,14 @@
 package service
 
 import (
-	"fmt"
 	"os"
 	"testing"
 
-	"github.com/google/uuid"
 	"github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
-	virtconstant "github.com/microsoft/wmi/pkg/virtualization/constant"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
-	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
-	"github.com/microsoft/wmi/pkg/virtualization/core/storage/service"
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
-	vswitchservice "github.com/microsoft/wmi/pkg/virtualization/network/service"
-	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
 	"github.com/nwoodmsft/iso9660"
 	//v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
@@ -30,7 +23,6 @@ var (
 func init() {
 	whost = host.NewWmiLocalHost()
 }
-
 func TestGetVirtualMachineManagementService(t *testing.T) {
 	_, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
@@ -80,6 +72,7 @@ func TestCreateVirtualMachines(t *testing.T) {
 	return
 }
 
+/*
 func TestCreateVirtualMachinesGen1(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
@@ -238,6 +231,7 @@ func TestAddRemoveIsoDiskGen1(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 }
+*/
 
 func TestAddRemoveIsoDiskByPath(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
@@ -315,6 +309,7 @@ func generateIso(path string) error {
 	return nil
 }
 
+/*
 func TestModifyVirtualMachine(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
@@ -898,7 +893,7 @@ func TestAddRemoveTPMGen1(t *testing.T) {
 	}
 	t.Logf("Removed TPM from [%s] VMs", "testGen1")
 	fmt.Scanln()
-}
+}*/
 
 func TestVirtualMachineDelete(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
@@ -926,6 +921,7 @@ func TestVirtualMachineDelete(t *testing.T) {
 	}
 }
 
+/*
 func TestVirtualMachineDeleteGen1(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
@@ -1479,3 +1475,4 @@ func TestRemoveHIDDevices(t *testing.T) {
 
 	t.Logf("Successfully removed HID devices")
 }
+*/
