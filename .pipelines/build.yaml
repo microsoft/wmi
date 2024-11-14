@@ -51,7 +51,7 @@ jobs:
           ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/pull/')) }}:
             Enabled: true # Enables CodeQL on the main branch and on PR branches
           ${{ else }}:
-            Enabled: true
+            Enabled: false
           ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
             AnalyzeInPipeline: true # Local analysis is only enabled on PR branches
           Language: go
