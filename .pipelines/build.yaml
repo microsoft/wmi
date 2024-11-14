@@ -22,10 +22,12 @@ jobs:
           version: "1.22.5"
       - task: InstallSSHKey@0
         inputs:
-          knownHostsEntry: "$(KNOWN_HOST)"
-          sshPublicKey: "$(SSH_PUBLIC_KEY)"
-          sshKeySecureFile: "azure-pipelines-ssh-key-new"
-
+          knownHostsEntry: |
+            $(KNOWN_HOST_GITHUB)
+            $(KNOWN_HOST_GITHUB_ECDSA)
+            $(KNOWN_HOST_GITHUB_Ed25519)
+          sshPublicKey: '$(SSH_PUBLIC_KEY)'
+          sshKeySecureFile: 'azure-pipelines-ssh-key-new'
       - task: AzureCLI@2
         inputs:
           azureSubscription: 'kva-azuredevops-gcm'
@@ -50,7 +52,7 @@ jobs:
           ${{ if or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), startsWith(variables['Build.SourceBranch'], 'refs/pull/')) }}:
             Enabled: true # Enables CodeQL on the main branch and on PR branches
           ${{ else }}:
-            Enabled: false
+            Enabled: true
           ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
             AnalyzeInPipeline: true # Local analysis is only enabled on PR branches
           Language: go
