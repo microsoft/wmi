@@ -17,9 +17,6 @@ jobs:
         value: true
 
     steps:
-      - checkout: self
-        fetchTags: true
-        fetchDepth: 0
       - task: GoTool@0
         inputs:
           version: "1.22.5"
