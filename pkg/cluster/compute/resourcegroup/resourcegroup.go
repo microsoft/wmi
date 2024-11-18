@@ -63,6 +63,7 @@ func GetResourceGroup(whost *host.WmiHost, grpSetName string) (crgSet *ResourceG
 
 // State gets the value of for the instance
 func (c *ResourceGroup) State() (value int32, err error) {
+	// The documentation says uint32, but it is not working
 	retValue, err := c.GetProperty("State")
 	if err != nil {
 		return
