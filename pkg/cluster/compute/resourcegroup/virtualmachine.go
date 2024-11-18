@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"reflect"
 
-
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -78,7 +77,7 @@ func (c *ResourceGroup) SetVirtualMachineAutoFailback(enable bool) (err error) {
 	return
 }
 
-// DisableVirtualMachineDefaultOwner 
+// DisableVirtualMachineDefaultOwner
 // DefaultOwner is set to node on which cluster group is created.
 // With Autofail back enabled, currently VM will be moved to default owner node when default owner comes online.
 // Disabling default owner will ensure that VM fails back based on preferred owners only.
@@ -124,7 +123,7 @@ func GetVirtualMachineID(whost *host.WmiHost, virtualMachineName string) (vmID s
 }
 
 // SetVirtualMachinePriority sets the priority of the virtual machine
-func (c *ResourceGroup) SetVirtualMachinePriority (value int32) (err error) {
+func (c *ResourceGroup) SetVirtualMachinePriority(value int32) (err error) {
 	err = c.SetProperty("Priority", value)
 	if err != nil {
 		return err
@@ -135,7 +134,7 @@ func (c *ResourceGroup) SetVirtualMachinePriority (value int32) (err error) {
 }
 
 // GetVirtualMachinePriority sets the priority of the virtual machine
-func (c *ResourceGroup) GetVirtualMachinePriority () (value int32, err error) {
+func (c *ResourceGroup) GetVirtualMachinePriority() (value int32, err error) {
 	// The documentation says uint32, but it is not working
 	retValue, err := c.GetProperty("Priority")
 	if err != nil {

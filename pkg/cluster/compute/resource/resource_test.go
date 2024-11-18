@@ -21,7 +21,6 @@ func init() {
 // new-vm -name test -NoVHD -Path C:\ClusterStorage\Volume1\test
 // Get-vm -name test | add-vmtoCluster
 
-
 /*
 	func TestGetResource(t *testing.T) {
 		cn, err := GetResource(whost, "*")
