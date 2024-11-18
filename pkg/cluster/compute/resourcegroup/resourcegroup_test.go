@@ -29,7 +29,7 @@ func TestGetResourceGroup(t *testing.T) {
 func TestGetResourceGroups(t *testing.T) {
 	nc, err := GetResourceGroups(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed %+v\n ", err)
 		return
 	}
 	defer nc.Close()
@@ -38,21 +38,21 @@ func TestGetResourceGroups(t *testing.T) {
 	for _, resourceGroup := range nc {
 		grpSetName, err := resourceGroup.GetPropertyName()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed %+v\n ", err)
 			return
 		}
 		t.Logf("Resource Group : %s\n", grpSetName)
 
 		state, err := resourceGroup.State()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed %+v\n ", err)
 			return
 		}
 		t.Logf("Resource States %v \n", state)
 
 		pendingState, err := resourceGroup.IsPendingState()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed %+v\n ", err)
 			return
 		}
 		t.Logf("IsPending State %v \n", pendingState)
@@ -62,7 +62,7 @@ func TestGetResourceGroups(t *testing.T) {
 func TestGetVirtualMachineResourceGroups(t *testing.T) {
 	resourceGroups, err := GetVirtualMachineResourceGroups(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed %+v\n ", err)
 		return
 	}
 	defer resourceGroups.Close()
@@ -71,40 +71,53 @@ func TestGetVirtualMachineResourceGroups(t *testing.T) {
 	for _, resourceGroup := range resourceGroups {
 		grpSetName, err := resourceGroup.GetPropertyName()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed %+v\n ", err)
 			return
 		}
 		t.Logf("Resource Group : %s\n", grpSetName)
 
+		vmId, err := GetVirtualMachineID(whost, grpSetName)
+		if err != nil {
+			t.Fatalf("Failed %+v\n ", err)
+			return
+		}
+		t.Logf("VMId : %s\n", vmId)
+
 		state, err := resourceGroup.State()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed %+v\n ", err)
 			return
 		}
 		t.Logf("Resource States %v \n", state)
 
 		pendingState, err := resourceGroup.IsPendingState()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed %+v\n ", err)
 			return
 		}
 		t.Logf("IsPending State %v \n", pendingState)
 
-		cn, err := GetVirtualMachineResourceGroupViaAssociators(whost, grpSetName)
-		if err != nil {
-			t.Fatal("Failed " + err.Error())
-			return
-		}
-		t.Logf("Resource Group : %v\n", cn)
-		t.Logf("Resource Group VMId : %s\n", cn.VmId)
-		defer cn.Close()
-
 		pw, err := resourceGroup.GetPreferredOwnersEx1()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed %+v\n ", err)
 			return
 		}
 		t.Logf("Preferred Owners %v \n", pw)
+		err = resourceGroup.SetVirtualMachinePriority(1000)
+		if err != nil {
+			t.Fatalf("Failed %+v\n ", err)
+			return
+		}
+		curPriority, err := resourceGroup.GetVirtualMachinePriority()
+		if err != nil {
+			t.Fatalf("Failed %+v\n ", err)
+			return
+		}
+		t.Logf("Priority Set : %v \n", curPriority)
+		if curPriority != 1000 {
+			t.Fatalf("Failed %+v\n ", "Unable to set priority")
+			return
+		}
 	}
 }
 
@@ -113,7 +126,7 @@ func TestGetVirtualMachineResourceGroups(t *testing.T) {
 func TestGetVirtualMachineResourceGroupByVmID(t *testing.T) {
 	cn, err := GetVirtualMachineResourceGroupByVmID(whost, "Virtual Machine")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed %+v\n ", err)
 		return
 	}
 	defer cn.Close()
@@ -122,14 +135,14 @@ func TestGetVirtualMachineResourceGroupByVmID(t *testing.T) {
 func TestSetVirtualMachineAutoFailback(t *testing.T) {
 	cn, err := GetVirtualMachineResourceGroup(whost, "Virtual Machine")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed %+v\n ", err)
 		return
 	}
 	defer cn.Close()
 
 	err = cn.SetVirtualMachineAutoFailback(true)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed %+v\n ", err)
 		return
 	}
 }
@@ -137,14 +150,14 @@ func TestSetVirtualMachineAutoFailback(t *testing.T) {
 func TestDisableVirtualMachineDefaultOwner(t *testing.T) {
 	cn, err := GetVirtualMachineResourceGroup(whost, "Virtual Machine")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed %+v\n ", err)
 		return
 	}
 	defer cn.Close()
 
 	err = cn.DisableVirtualMachineDefaultOwner()
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed %+v\n ", err)
 		return
 	}
 }

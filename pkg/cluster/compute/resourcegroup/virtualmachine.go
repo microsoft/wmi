@@ -5,11 +5,12 @@ package resourcegroup
 
 import (
 	"fmt"
+	"reflect"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
-	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 	"math"
 
@@ -17,26 +18,9 @@ import (
 	"github.com/microsoft/wmi/pkg/errors"
 )
 
-type FailoverClusterVirtualMachine struct {
-	*ResourceGroup
-	VmId string
-}
-
 var (
 	groupTypeString = fmt.Sprintf("%d", CLUSTER_RESOURCE_GROUP_TYPE_VIRTUAL_MACHINE)
 )
-
-func NewFailoverClusterVirtualMachine(instance *wmi.WmiInstance) (newInstance *FailoverClusterVirtualMachine, err error) {
-	tmp, err := NewResourceGroup(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &FailoverClusterVirtualMachine{
-		ResourceGroup: tmp,
-	}
-	return
-}
 
 // GetVirtualMachineResourceGroups gets list of resource groups that are of type VirtualMachine
 // Make sure to call Close once done using this instance
@@ -77,7 +61,7 @@ func GetVirtualMachineResourceGroupByVmID(whost *host.WmiHost, vmID string) (crg
 	return
 }
 
-// SetVirtualMachineAutoFailback returns if the resource group is in partial or pending state
+// SetVirtualMachineAutoFailback sets the virtual machine auto failback policy
 func (c *ResourceGroup) SetVirtualMachineAutoFailback(enable bool) (err error) {
 	value := 0
 	if enable {
@@ -93,7 +77,7 @@ func (c *ResourceGroup) SetVirtualMachineAutoFailback(enable bool) (err error) {
 	return
 }
 
-// DisableVirtualMachineDefaultOwner returns if the resource group is in partial or pending state
+// DisableVirtualMachineDefaultOwner
 // DefaultOwner is set to node on which cluster group is created.
 // With Autofail back enabled, currently VM will be moved to default owner node when default owner comes online.
 // Disabling default owner will ensure that VM fails back based on preferred owners only.
@@ -110,33 +94,62 @@ func (c *ResourceGroup) DisableVirtualMachineDefaultOwner() (err error) {
 
 // GetVirtualMachineResourceGroupViaAssociators gets list of resource groups that are of type VirtualMachine
 // Make sure to call Close once done using this instance
-func GetVirtualMachineResourceGroupViaAssociators(whost *host.WmiHost, virtualMachineName string) (fcVm *FailoverClusterVirtualMachine, err error) {
+func GetVirtualMachineID(whost *host.WmiHost, virtualMachineName string) (vmID string, err error) {
 	query := fmt.Sprintf("ASSOCIATORS OF {MSCluster_ResourceGroup.Name='%s'} WHERE AssocClass = MSCluster_ResourceGroupToResource", virtualMachineName)
 	instances, err := instance.GetWmiInstancesFromHostRawQuery(whost, string(constant.FailoverCluster), query)
 	if err != nil {
 		return
 	}
+	defer instances.Close()
 
 	if len(instances) == 0 {
 		err = errors.Wrapf(errors.NotFound, "No resource group found for virtual machine %s", virtualMachineName)
 		return
 	}
 
-	fcVm, err = NewFailoverClusterVirtualMachine(instances[0])
+	xmlString, err := instances[0].EmbeddedXMLInstance()
+	if err != nil {
+		return
+	}
+	vmID, err = internal.GetVMID(xmlString)
 	if err != nil {
 		return
 	}
 
-	// Get the VMId
-	xmlString, err := fcVm.EmbeddedXMLInstance()
-	if err != nil {
-		return nil, err
+	if vmID == "" {
+		err = errors.Wrapf(errors.NotFound, "Missing VMID for VM '%s' in the cluster", virtualMachineName)
 	}
-	vmID, err := internal.GetVMID(xmlString)
+	return
+}
+
+// SetVirtualMachinePriority sets the priority of the virtual machine
+func (c *ResourceGroup) SetVirtualMachinePriority(value int32) (err error) {
+	err = c.SetProperty("Priority", value)
 	if err != nil {
-		return nil, errors.Wrapf(errors.NotFound, "Missing VMID for VM '%s' in the cluster", virtualMachineName)
+		return err
 	}
-	fcVm.VmId = vmID
+	err = c.Commit()
+
+	return
+}
+
+// GetVirtualMachinePriority sets the priority of the virtual machine
+func (c *ResourceGroup) GetVirtualMachinePriority() (value int32, err error) {
+	// The documentation says uint32, but it is not working
+	retValue, err := c.GetProperty("Priority")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	value, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
 
 	return
 }
