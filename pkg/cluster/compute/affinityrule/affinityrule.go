@@ -127,7 +127,7 @@ func UpdateAffinityRule(whost *host.WmiHost, name string, ruleType int, softAnti
 		if softAntiAffinity {
 			softAntiAffinityValue = 1
 		}
-		_, err = affinityRule.InvokeMethod("SetAffinityRule", uint32(ruleType), 1 /* Enabled */, softAntiAffinityValue /* SoftAntiAffinity */)
+		_, err = affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, softAntiAffinityValue /* SoftAntiAffinity */)
 		if err != nil {
 			return
 		}
