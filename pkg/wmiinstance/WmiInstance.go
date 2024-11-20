@@ -274,7 +274,6 @@ func (c *WmiInstance) RelativePath() string {
 
 // InvokeMethod
 func (c *WmiInstance) InvokeMethod(methodName string, params ...interface{}) ([]interface{}, error) {
-	log.Printf("[WMI] Invoking method [%s] with params [%+v]\n", methodName, params)
 	rawResult, err := oleutil.CallMethod(c.instance, methodName, params...)
 	if err != nil {
 		return nil, err
