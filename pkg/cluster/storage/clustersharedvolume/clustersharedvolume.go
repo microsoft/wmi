@@ -8,13 +8,14 @@ import (
 	"path/filepath"
 	"strings"
 
+	"reflect"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	fcconstant "github.com/microsoft/wmi/pkg/cluster/constant"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
-	"reflect"
 
 	"github.com/microsoft/wmi/pkg/cluster/compute/resource"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -96,7 +97,9 @@ func GetClusterSharedVolumebyName(whost *host.WmiHost, name string) (cvolume *Cl
 			return
 		}
 		matchingPath := strings.ToLower(filepath.Clean(instanceName))
-		if strings.Contains(inPath, matchingPath) {
+		// Append "\\" to eliminate false positive due to partial match
+		// e.g. "C:\ClusterStorage\Volume10\image" and "C:\ClusterStorage\Volume1"
+		if strings.HasPrefix(inPath+"\\", matchingPath+"\\") {
 			tmpInstance, err1 := instance.Clone()
 			if err1 != nil {
 				err = err1

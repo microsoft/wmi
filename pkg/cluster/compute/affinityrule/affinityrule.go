@@ -4,6 +4,7 @@
 package affinityrule
 
 import (
+	"strings"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -95,5 +96,47 @@ func GetAffinityRule(whost *host.WmiHost, affinityRuleName string) (caffinityRul
 		return
 	}
 	caffinityRule = &AffinityRule{wmiafRule}
+	return
+}
+
+// UpdateAffinityRule updates an existing affinity rule
+func UpdateAffinityRule(whost *host.WmiHost, name string, ruleType int, softAntiAffinity bool) (err error) {
+	affinityRule, err := GetAffinityRule(whost, name)
+	if err != nil {
+		return
+	}
+	defer affinityRule.Close()
+
+	propeties := affinityRule.GetClass().GetPropertiesNames()
+	if len(propeties) == 0 {
+		err = errors.Wrapf(errors.Unknown, "Failed to get the properties of MSCluster_AffinityRule")
+		return
+	}
+
+	softAntiAffinitySupported := false
+	for _, property := range propeties {
+		if strings.EqualFold(property, "SoftAntiAffinity") {
+			softAntiAffinitySupported = true
+			break
+		}
+	}
+
+	// SoftAntiAffinity is supported on platforms 24H2 or higher
+	if softAntiAffinitySupported {
+		softAntiAffinityValue := 0
+		if softAntiAffinity {
+			softAntiAffinityValue = 1
+		}
+		_, err = affinityRule.InvokeMethod("SetAffinityRule", uint32(ruleType), 1 /* Enabled */, softAntiAffinityValue /* SoftAntiAffinity */)
+		if err != nil {
+			return
+		}
+	} else {
+		_, err = affinityRule.SetAffinityRule(uint32(ruleType), 1 /* Enabled */)
+		if err != nil {
+			return
+		}
+	}
+
 	return
 }
