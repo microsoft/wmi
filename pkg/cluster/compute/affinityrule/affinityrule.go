@@ -99,7 +99,7 @@ func GetAffinityRule(whost *host.WmiHost, affinityRuleName string) (caffinityRul
 	return
 }
 
-// UpdateAffinityRule updates an existing affinity rule
+// SetAffinityRule updates an existing affinity rule
 func SetAffinityRule(whost *host.WmiHost, name string, ruleType int, softAntiAffinity bool) (err error) {
 	affinityRule, err := GetAffinityRule(whost, name)
 	if err != nil {
