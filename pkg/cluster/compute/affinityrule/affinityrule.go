@@ -20,6 +20,15 @@ type AffinityRule struct {
 	*fc.MSCluster_AffinityRule
 }
 
+type FailoverClusterAffinityRuleType int
+
+const (
+	SameFaultDomain      FailoverClusterAffinityRuleType = 1
+	SameNode             FailoverClusterAffinityRuleType = 2
+	DifferentFaultDomain FailoverClusterAffinityRuleType = 3
+	DifferentNode        FailoverClusterAffinityRuleType = 4
+)
+
 // NewAffinityRule
 func NewAffinityRule(instance *wmi.WmiInstance) (*AffinityRule, error) {
 	wmiafRule, err := fc.NewMSCluster_AffinityRuleEx1(instance)
@@ -30,7 +39,7 @@ func NewAffinityRule(instance *wmi.WmiInstance) (*AffinityRule, error) {
 }
 
 // CreateAffinityRule
-func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int) (affinityRule *AffinityRule, err error) {
+func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int, strict bool) (affinityRule *AffinityRule, err error) {
 	query := "SELECT * FROM meta_class WHERE __CLASS = 'MSCluster_AffinityRule'"
 	classes, err := instance.GetWmiClasssesFromHostRawQuery(whost, string(constant.FailoverCluster), query)
 	if err != nil {
@@ -52,16 +61,30 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int) (affinit
 	// added layer of protection, GetClusterAffinityRule can return not found immediately after creating the affinity rule
 	// if this happens, we will retry the get operation a few times before returning an error
 	maxAttempts := 5
-	for i := 0; i < maxAttempts; i++ {
-		affinityRule, err := GetAffinityRule(whost, name)
+	for i := 1; i <= maxAttempts; i++ {
+		affinityRule, err = GetAffinityRule(whost, name)
 		if err != nil {
-			if errors.IsNotFound(err) {
+			if errors.IsNotFound(err) && i < maxAttempts {
 				time.Sleep(2 * time.Second)
 				continue
 			}
+			return
+		}
+		break
+	}
+	defer func() {
+		if err != nil {
+			affinityRule.RemoveAffinityRule()
+			affinityRule.Close()
+		}
+	}()
+
+	isAntiAffinityRule := (ruleType == int(DifferentFaultDomain) || ruleType == int(DifferentNode))
+	if !strict && isAntiAffinityRule && isAntiAffinitySupported(affinityRule) {
+		_, err = affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, 1 /* SoftAntiAffinity */)
+		if err != nil {
 			return nil, err
 		}
-		return affinityRule, nil
 	}
 
 	return
@@ -99,44 +122,12 @@ func GetAffinityRule(whost *host.WmiHost, affinityRuleName string) (caffinityRul
 	return
 }
 
-// SetAffinityRule updates an existing affinity rule
-func SetAffinityRule(whost *host.WmiHost, name string, ruleType int, softAntiAffinity bool) (err error) {
-	affinityRule, err := GetAffinityRule(whost, name)
-	if err != nil {
-		return
-	}
-	defer affinityRule.Close()
-
+func isAntiAffinitySupported(affinityRule *AffinityRule) bool {
 	propeties := affinityRule.GetClass().GetPropertiesNames()
-	if len(propeties) == 0 {
-		err = errors.Wrapf(errors.Unknown, "Failed to get the properties of MSCluster_AffinityRule")
-		return
-	}
-
-	softAntiAffinitySupported := false
 	for _, property := range propeties {
 		if strings.EqualFold(property, "SoftAntiAffinity") {
-			softAntiAffinitySupported = true
-			break
+			return true
 		}
 	}
-
-	// SoftAntiAffinity is supported on platforms 24H2 or higher
-	if softAntiAffinitySupported {
-		softAntiAffinityValue := 0
-		if softAntiAffinity {
-			softAntiAffinityValue = 1
-		}
-		_, err = affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, softAntiAffinityValue /* SoftAntiAffinity */)
-		if err != nil {
-			return
-		}
-	} else {
-		_, err = affinityRule.SetAffinityRule(uint32(ruleType), 1 /* Enabled */)
-		if err != nil {
-			return
-		}
-	}
-
-	return
+	return false
 }
