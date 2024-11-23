@@ -80,7 +80,7 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int, strict b
 	}()
 
 	isAntiAffinityRule := (ruleType == int(DifferentFaultDomain) || ruleType == int(DifferentNode))
-	if !strict && isAntiAffinityRule && isAntiAffinitySupported(affinityRule) {
+	if !strict && isAntiAffinityRule && isSoftAntiAffinitySupported(affinityRule) {
 		_, err = affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, 1 /* SoftAntiAffinity */)
 		if err != nil {
 			return nil, err
@@ -122,7 +122,7 @@ func GetAffinityRule(whost *host.WmiHost, affinityRuleName string) (caffinityRul
 	return
 }
 
-func isAntiAffinitySupported(affinityRule *AffinityRule) bool {
+func isSoftAntiAffinitySupported(affinityRule *AffinityRule) bool {
 	propeties := affinityRule.GetClass().GetPropertiesNames()
 	for _, property := range propeties {
 		if strings.EqualFold(property, "SoftAntiAffinity") {
