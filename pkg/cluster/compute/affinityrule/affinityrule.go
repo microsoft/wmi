@@ -38,21 +38,30 @@ func NewAffinityRule(instance *wmi.WmiInstance) (*AffinityRule, error) {
 	return &AffinityRule{wmiafRule}, nil
 }
 
-// CreateAffinityRule
-func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int, strict bool) (affinityRule *AffinityRule, err error) {
+// Caller should call Close() once done using this instance
+func GetAffinityRuleClass(whost *host.WmiHost) (*wmi.WmiClass, error) {
 	query := "SELECT * FROM meta_class WHERE __CLASS = 'MSCluster_AffinityRule'"
 	classes, err := instance.GetWmiClasssesFromHostRawQuery(whost, string(constant.FailoverCluster), query)
 	if err != nil {
-		return
+		return nil, err
 	}
-
-	defer classes.Close()
 
 	if len(classes) > 1 {
-		err = errors.Wrapf(errors.Unknown, "More than one MSCluster_AffinityRule class found, unexpected error")
-		return
+		classes.Close()
+		return nil, errors.Wrapf(errors.Unknown, "More than one MSCluster_AffinityRule class found, unexpected error")
 	}
-	arClass := classes[0]
+
+	return classes[0], nil
+}
+
+// CreateAffinityRule
+func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int, strict bool) (affinityRule *AffinityRule, err error) {
+	arClass, err := GetAffinityRuleClass(whost)
+	if err != nil {
+		return nil, err
+	}
+	defer arClass.Close()
+
 	_, err = arClass.InvokeMethod("CreateAffinityRule", name, int(ruleType), nil)
 	if err != nil {
 		return nil, err
@@ -80,10 +89,15 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int, strict b
 	}()
 
 	isAntiAffinityRule := (ruleType == int(DifferentFaultDomain) || ruleType == int(DifferentNode))
-	if !strict && isAntiAffinityRule && isSoftAntiAffinitySupported(affinityRule) {
-		_, err = affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, 1 /* SoftAntiAffinity */)
+	if isAntiAffinityRule && !strict {
+		setSoftAntiAffinity, err := isSoftAntiAffinitySupported(whost)
 		if err != nil {
 			return nil, err
+		}
+		if setSoftAntiAffinity {
+			if _, err := affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, 1 /* SoftAntiAffinity */); err != nil {
+				return nil, err
+			}
 		}
 	}
 
@@ -122,12 +136,18 @@ func GetAffinityRule(whost *host.WmiHost, affinityRuleName string) (caffinityRul
 	return
 }
 
-func isSoftAntiAffinitySupported(affinityRule *AffinityRule) bool {
-	propeties := affinityRule.GetClass().GetPropertiesNames()
+func isSoftAntiAffinitySupported(whost *host.WmiHost) (bool, error) {
+	arClass, err := GetAffinityRuleClass(whost)
+	if err != nil {
+		return false, err
+	}
+	defer arClass.Close()
+
+	propeties := arClass.GetPropertiesNames()
 	for _, property := range propeties {
 		if strings.EqualFold(property, "SoftAntiAffinity") {
-			return true
+			return true, nil
 		}
 	}
-	return false
+	return false, nil
 }
