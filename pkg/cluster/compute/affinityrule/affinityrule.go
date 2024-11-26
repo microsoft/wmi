@@ -47,8 +47,8 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType FailoverClust
 	defer arClass.Close()
 
 	// validate if soft anti-affinity is supported
-	isAntiAffinityRule := (ruleType == DifferentFaultDomain || ruleType == DifferentNode)
-	if isAntiAffinityRule && !strict {
+	setSoftAntiAffinity := (!strict) && (ruleType == DifferentFaultDomain || ruleType == DifferentNode)
+	if setSoftAntiAffinity {
 		if supported, err := isSoftAntiAffinitySupported(whost); err != nil {
 			return nil, err
 		} else if !supported {
@@ -82,7 +82,7 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType FailoverClust
 		}
 	}()
 
-	if isAntiAffinityRule && !strict {
+	if setSoftAntiAffinity {
 		if _, err := affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, 1 /* SoftAntiAffinity */); err != nil {
 			return nil, err
 		}
