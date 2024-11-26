@@ -38,29 +38,23 @@ func NewAffinityRule(instance *wmi.WmiInstance) (*AffinityRule, error) {
 	return &AffinityRule{wmiafRule}, nil
 }
 
-// Caller should call Close() once done using this instance
-func GetAffinityRuleClass(whost *host.WmiHost) (*wmi.WmiClass, error) {
-	query := "SELECT * FROM meta_class WHERE __CLASS = 'MSCluster_AffinityRule'"
-	classes, err := instance.GetWmiClasssesFromHostRawQuery(whost, string(constant.FailoverCluster), query)
-	if err != nil {
-		return nil, err
-	}
-
-	if len(classes) > 1 {
-		classes.Close()
-		return nil, errors.Wrapf(errors.Unknown, "More than one MSCluster_AffinityRule class found, unexpected error")
-	}
-
-	return classes[0], nil
-}
-
 // CreateAffinityRule
-func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int, strict bool) (affinityRule *AffinityRule, err error) {
-	arClass, err := GetAffinityRuleClass(whost)
+func CreateAffinityRule(whost *host.WmiHost, name string, ruleType FailoverClusterAffinityRuleType, strict bool) (affinityRule *AffinityRule, err error) {
+	arClass, err := getAffinityRuleClass(whost)
 	if err != nil {
 		return nil, err
 	}
 	defer arClass.Close()
+
+	// validate if soft anti-affinity is supported
+	isAntiAffinityRule := (ruleType == DifferentFaultDomain || ruleType == DifferentNode)
+	if isAntiAffinityRule && !strict {
+		if supported, err := isSoftAntiAffinitySupported(whost); err != nil {
+			return nil, err
+		} else if !supported {
+			return nil, errors.Wrapf(errors.NotSupported, "Soft Anti-Affinity is not supported on this version of failover cluster")
+		}
+	}
 
 	_, err = arClass.InvokeMethod("CreateAffinityRule", name, int(ruleType), nil)
 	if err != nil {
@@ -88,16 +82,9 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType int, strict b
 		}
 	}()
 
-	isAntiAffinityRule := (ruleType == int(DifferentFaultDomain) || ruleType == int(DifferentNode))
 	if isAntiAffinityRule && !strict {
-		setSoftAntiAffinity, err := isSoftAntiAffinitySupported(whost)
-		if err != nil {
+		if _, err := affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, 1 /* SoftAntiAffinity */); err != nil {
 			return nil, err
-		}
-		if setSoftAntiAffinity {
-			if _, err := affinityRule.InvokeMethod("SetAffinityRule", int(ruleType), 1 /* Enabled */, 1 /* SoftAntiAffinity */); err != nil {
-				return nil, err
-			}
 		}
 	}
 
@@ -136,8 +123,24 @@ func GetAffinityRule(whost *host.WmiHost, affinityRuleName string) (caffinityRul
 	return
 }
 
+// Caller should call Close() once done using this instance
+func getAffinityRuleClass(whost *host.WmiHost) (*wmi.WmiClass, error) {
+	query := "SELECT * FROM meta_class WHERE __CLASS = 'MSCluster_AffinityRule'"
+	classes, err := instance.GetWmiClasssesFromHostRawQuery(whost, string(constant.FailoverCluster), query)
+	if err != nil {
+		return nil, err
+	}
+
+	if len(classes) > 1 {
+		classes.Close()
+		return nil, errors.Wrapf(errors.Unknown, "More than one MSCluster_AffinityRule class found, unexpected error")
+	}
+
+	return classes[0], nil
+}
+
 func isSoftAntiAffinitySupported(whost *host.WmiHost) (bool, error) {
-	arClass, err := GetAffinityRuleClass(whost)
+	arClass, err := getAffinityRuleClass(whost)
 	if err != nil {
 		return false, err
 	}
