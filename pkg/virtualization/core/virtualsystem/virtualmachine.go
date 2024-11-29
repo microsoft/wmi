@@ -583,11 +583,10 @@ func (vm *VirtualMachine) NewVirtualHardDisk(path string) (vhd *disk.VirtualHard
 
 func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	dvdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_DVD_drive)
-
-	generation, err := vm.GetVirtualMachineGeneration()
 	if err != nil {
 		return
 	}
+
 	defer dvdrp.Close()
 	rasd, err := dvdrp.GetDefaultResourceAllocationSettingData()
 	if err != nil {
@@ -595,7 +594,6 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	}
 
 	dvd, err = drive.NewDvdDrive(rasd.WmiInstance)
-
 	defer func() {
 		if err != nil {
 			dvd.Close()
@@ -603,38 +601,6 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 		}
 	}()
 
-	if generation == HyperVGeneration_V1 {
-		controllers, err := vm.GetIDEControllers()
-		if err != nil {
-			return nil, err
-		}
-		defer controllers.Close()
-		// 1. Find the correct controller to use vased on the controllernumber
-		if len(controllers) == 0 {
-			err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have IDE Controller", vm.Name())
-			return nil, err
-		}
-		// for generation 1 VM's there are 2 IDE controllers and the dvd drive is always attached to the second IDE Controller
-		if len(controllers) == 2 {
-			idecontroller, err := controller.NewIDEControllerSettings(controllers[1].WmiInstance)
-			if err != nil {
-				return nil, err
-			}
-
-			dvd.SetPropertyParent(idecontroller.InstancePath())
-
-			controllerlocation, err := idecontroller.GetFreeLocation()
-			if err != nil {
-				err = errors.Wrapf(errors.NotFound, "Unable to find free location in IDE Controller")
-				return nil, err
-			}
-
-			dvd.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
-		} else {
-			err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have 2 IDE Controllers", vm.Name())
-			return nil, err
-		}
-	}
 	return
 }
 
