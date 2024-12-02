@@ -39,6 +39,7 @@ func NewAffinityRule(instance *wmi.WmiInstance) (*AffinityRule, error) {
 }
 
 // CreateAffinityRule
+// Make sure to call Close once done using this instance
 func CreateAffinityRule(whost *host.WmiHost, name string, ruleType FailoverClusterAffinityRuleType, strict bool) (affinityRule *AffinityRule, err error) {
 	arClass, err := getAffinityRuleClass(whost)
 	if err != nil {
@@ -52,7 +53,7 @@ func CreateAffinityRule(whost *host.WmiHost, name string, ruleType FailoverClust
 		if supported, err := isSoftAntiAffinitySupported(whost); err != nil {
 			return nil, err
 		} else if !supported {
-			return nil, errors.Wrapf(errors.NotSupported, "Soft Anti-Affinity is not supported on this version of failover cluster")
+			return nil, errors.Wrapf(errors.NotSupported, "Soft Anti-Affinity is not supported")
 		}
 	}
 
