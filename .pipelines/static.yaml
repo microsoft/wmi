@@ -26,6 +26,20 @@ jobs:
     inputs:
       versionSpec: '14.x'
 
+  # Make code ql happy to build the code.
+  - task: GoTool@0
+    inputs:
+      version: "1.22.5"
+  - task: CmdLine@2
+    displayName: 'build'
+    env:
+      SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+    inputs:
+      workingDirectory: "$(System.DefaultWorkingDirectory)"
+      script: |
+        go build ./go/wmi
+    condition: succeeded()
+
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-codeinspector.CodeInspector@2
     displayName: 'Run Code Inspector'
     inputs:
