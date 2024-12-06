@@ -69,6 +69,8 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 		}
 	}()
 
+	log.Printf("[WMI] NewVirtualHardDisk [%s]\n", path)
+
 	// Add a disk
 	vhdtmp, err := vm.NewVirtualHardDisk(path)
 	if err != nil {
@@ -113,10 +115,14 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 		return
 	}
 
+	log.Printf("[WMI] NewVirtualHardDisk [%v]\n", vhdInstance)
+
 	vhd, err = disk.NewVirtualHardDisk(vhdInstance)
 	if err != nil {
 		vhdInstance.Close()
 	}
+	log.Printf("[WMI] NewVirtualHardDisk Completed\n")
+
 	return
 }
 
@@ -127,8 +133,13 @@ func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.Virt
 	}
 	defer drive.Close()
 
+	log.Printf("[WMI] DetachVirtualHardDisk [%s]\n", vhd.InstancePath())
+
 	// Remove Disk
 	err1 := vmms.RemoveVirtualSystemResource(vhd.CIM_ResourceAllocationSettingData, -1)
+
+	log.Printf("[WMI] RemoveVirtualSystemResource CIM_ResourceAllocationSettingData\n")
+
 	// Remove Drive
 	err = vmms.RemoveVirtualSystemResource(drive.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
@@ -138,6 +149,8 @@ func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.Virt
 		err = err1
 		return
 	}
+	log.Printf("[WMI] DetachVirtualHardDisk Completed\n")
+
 	return
 }
 
@@ -150,11 +163,16 @@ func (vmms *VirtualSystemManagementService) AddSyntheticDiskDrive(vm *virtualsys
 	}
 	defer vmsetting.Close()
 
+	log.Printf("[WMI] NewSyntheticDiskDrive controllernumber [%d] type [%v]\n", controllernumber, diskType)
+
 	vhddrivetmp, err := vm.NewSyntheticDiskDrive(controllernumber, controllerlocation, diskType)
 	if err != nil {
 		return
 	}
 	defer vhddrivetmp.Close()
+
+	log.Printf("[WMI] AddVirtualSystemResource [%s]\n", vhddrivetmp)
+
 	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhddrivetmp.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
 		return
@@ -170,6 +188,7 @@ func (vmms *VirtualSystemManagementService) AddSyntheticDiskDrive(vm *virtualsys
 	}
 
 	vhddrive, err = drive.NewSyntheticDiskDrive(driveInstance)
+	log.Printf("[WMI] AddSyntheticDiskDrive Completed\n")
 
 	return
 }

@@ -99,6 +99,8 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingSystem", nil))
 
+	log.Printf("[WMI] Execute SystemSettings [%s] resourceSettings [%s] ReferenceConfiguration\n", embeddedInstance, resourceSettings)
+
 	result, err := method.Execute(inparams, outparams)
 	if err != nil {
 		return
@@ -116,6 +118,8 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 		}
 	}
 
+	log.Printf("[WMI] OutMethodParams ResultingSystem [%s]\n", val.Value.(string))
+
 	if result.ReturnValue == 0 {
 		return
 	}
@@ -125,12 +129,18 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 		err = errors.Wrapf(errors.NotFound, "Job")
 		return
 	}
+
+	log.Printf("[WMI] GetWmiJob [%s]\n", val.Value.(string))
+
 	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
 	if err != nil {
 		return
 	}
 	defer job.Close()
 	err = job.WaitForJobCompletion(result.ReturnValue, -1)
+
+	log.Printf("[WMI] CreateVirtualMachine Completed\n")
+
 	return
 }
 
@@ -146,6 +156,7 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 
 	for {
+		log.Printf("[WMI] Execute AffectedSystem [%s]\n", vm.InstancePath())
 		result, err1 := method.Execute(inparams, outparams)
 		if err1 != nil {
 			err = err1
@@ -173,14 +184,20 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 			err = errors.Wrapf(errors.NotFound, "Job")
 			return
 		}
+
+		log.Printf("[WMI] GetWmiJob [%s]\n", val.Value.(string))
 		job, err1 := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
 		if err1 != nil {
 			err = err1
 			return
 		}
 		defer job.Close()
+
+		log.Printf("[WMI] DeleteVirtualMachine Completed\n")
+
 		return job.WaitForJobCompletion(result.ReturnValue, -1)
 	}
+
 	return
 }
 

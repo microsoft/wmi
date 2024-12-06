@@ -17,6 +17,8 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 	dvddrive *drive.DvdDrive,
 	err error) {
 
+	log.Printf("[WMI] AddISODisk [%s]", vm.Name)
+
 	dvddrive, err = vmms.AddDvdDrive(vm)
 	if err != nil {
 		return
@@ -31,6 +33,8 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 			dvddrive = nil
 		}
 	}()
+
+	log.Printf("[WMI] NewLogicalDisk\n")
 
 	// create the logical disk
 	tmpld, err := vm.NewLogicalDisk()
@@ -59,6 +63,8 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 	}
 	defer vmsetting.Close()
 
+	log.Printf("[WMI] AddVirtualSystemResource\n")
+
 	// apply the settings
 	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmpld.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
@@ -76,12 +82,15 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 		return
 	}
 
+	log.Printf("[WMI] NewLogicalDisk\n")
+
 	ld, err = disk.NewLogicalDisk(ldInstance)
 	if err != nil {
 		ldInstance.Close()
 	}
-	return
+	log.Printf("[WMI] AddISODisk Completed\n")
 
+	return
 }
 
 func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) (err error) {
