@@ -1112,27 +1112,15 @@ func (vm *VirtualMachine) GetAttachedVirtualHardDisks() (vhdPaths []string, err 
 	defer col.Close()
 
 	for _, inst := range col {
-		tmpvhd, err1 := disk.NewVirtualHardDisk(inst.WmiInstance)
-		if err1 != nil {
-			err = err1
-			return
-		}
-
-		vhdclone, err1 := tmpvhd.Clone()
-		if err1 != nil {
-			err = err1
-			return
-		}
-
-		retVhd, err1 := disk.NewVirtualHardDisk(vhdclone)
+		retVhd, err1 := disk.NewVirtualHardDisk(inst.WmiInstance)
 		if err1 != nil {
 			err = err1
 			return
 		}
 
 		vhdpath, err1 := retVhd.GetPropertyHostResource()
-		if err1 != nil || len(vhdpath) == 0 {
-			err = fmt.Errorf("Unable to read HostResource field from disk WMI %s", err1)
+		if err1 != nil || len(vhdpath) != 1 {
+			err = fmt.Errorf("unable to read HostResource field from disk WMI %s", err1)
 			return
 		}
 		vhdPaths = append(vhdPaths, vhdpath[0])
