@@ -353,6 +353,7 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 		return nil, err
 	}
 	defer allSettings.Close()
+	guestNetworkAdapterConfiguration = nil
 
 	/* The input MAC address would be always in standard format (i.e aa:bb:cc:dd:ee:ff)
 	   But the address read from system would be in HyperV format (i.e AABBCCDDEEFF) */
@@ -367,7 +368,7 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 		}
 
 		for _, wmiSyntheticNetworkAdapter := range wmiSyntheticNetworkAdapters {
-
+			err = nil
 			syntheticNetworkAdapter, err := na.NewSyntheticNetworkAdapter(wmiSyntheticNetworkAdapter)
 			if err != nil {
 				continue
@@ -381,16 +382,23 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 			if strings.EqualFold(inputMacAddressHyperV, networkAdapterMacAddress) {
 				wmiGuestConfig, err := syntheticNetworkAdapter.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
 				if err != nil {
-					return nil, err
+					break
 				}
 
-				wmiGuestConfigClone, err := wmiGuestConfig.Clone()
+				guestNetworkAdapterConfiguration, err = na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
 				if err != nil {
-					return nil, err
+					break
 				}
-
-				return na.NewGuestNetworkAdapterConfiguration(wmiGuestConfigClone)
 			}
+		}
+
+		wmiSyntheticNetworkAdapters.Close()
+		if err != nil {
+			return nil, err
+		}
+
+		if guestNetworkAdapterConfiguration != nil {
+			return guestNetworkAdapterConfiguration, nil
 		}
 	}
 
@@ -402,12 +410,12 @@ func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingDa
 	if err != nil {
 		return nil, err
 	}
-	defer inst.Close()
 
 	// If the TPM is not found, then it is not configured or enabled
 	if inst == nil {
 		return nil, nil
 	}
+	defer inst.Close()
 
 	tpmwmi, err := v2.NewMsvm_TPMEx1(inst)
 	if err != nil {
@@ -419,12 +427,7 @@ func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingDa
 		return nil, err
 	}
 
-	cimSettingsClone, err := cimSettings.Clone()
-	if err != nil {
-		return nil, err
-	}
-
-	securitySettings, err := v2.NewMsvm_SecuritySettingDataEx1(cimSettingsClone)
+	securitySettings, err := v2.NewMsvm_SecuritySettingDataEx1(cimSettings)
 	if err != nil {
 		return nil, err
 	}
