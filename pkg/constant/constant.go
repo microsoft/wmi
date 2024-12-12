@@ -15,3 +15,13 @@ const (
 const (
 	HostName string = "localhost"
 )
+
+type VirtualHardDiskCompactMode int
+
+const (
+	VirtualHardDiskCompactModeFull       VirtualHardDiskCompactMode = 0
+	VirtualHardDiskCompactModeQuick      VirtualHardDiskCompactMode = 1
+	VirtualHardDiskCompactModeRetrim     VirtualHardDiskCompactMode = 2
+	VirtualHardDiskCompactModePretrimmed VirtualHardDiskCompactMode = 3
+	VirtualHardDiskCompactModePrezeroed  VirtualHardDiskCompactMode = 4
+)
