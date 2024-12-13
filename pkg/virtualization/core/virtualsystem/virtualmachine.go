@@ -406,13 +406,9 @@ func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAdd
 }
 
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
-	inst, err := vm.GetRelated("Msvm_Tpm")
-	if err != nil {
-		return nil, err
-	}
-
 	// If the TPM is not found, then it is not configured or enabled
-	if inst == nil {
+	inst, err := vm.GetRelated("Msvm_Tpm")
+	if err != nil || inst == nil {
 		return nil, nil
 	}
 	defer inst.Close()
