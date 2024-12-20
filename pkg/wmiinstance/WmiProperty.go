@@ -69,7 +69,7 @@ func (c *WmiProperty) Type() wmi.WmiType {
 		panic("Error retrieving the property type")
 	}
 
-	return wmi.WmiType(value.(int))
+	return wmi.WmiType(value.(int32))
 }
 
 func CloseAllProperties(properties []*WmiProperty) {
