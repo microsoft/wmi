@@ -387,12 +387,11 @@ func (vmjob *VirtualSystemJob) GetException() error {
 		errorCode, _ := vmjob.GetPropertyErrorCode()
 		errorDescription, _ := vmjob.GetPropertyErrorDescription()
 		errorSummaryDescription, _ := vmjob.GetPropertyErrorSummaryDescription()
-		if errorCode == 0 {
-			if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorString) {
-				return errors.Wrapf(errors.NewWMIError(errorCode),
-					"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
-					moccodes.OutOfCapacity, errorDescription, errorSummaryDescription)
-			}
+
+		if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorString) {
+			return errors.Wrapf(errors.NewWMIError(errorCode),
+				"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
+				moccodes.OutOfCapacity, errorDescription, errorSummaryDescription)
 		}
 
 		return errors.Wrapf(errors.NewWMIError(errorCode),
