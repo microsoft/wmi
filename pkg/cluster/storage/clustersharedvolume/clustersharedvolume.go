@@ -108,7 +108,7 @@ func GetClusterSharedVolumebyName(whost *host.WmiHost, name string) (cvolume *Cl
 			return NewClusterSharedVolume(tmpInstance)
 		}
 	}
-
+	err = errors.Wrapf(errors.NotFound, "No volume found for container path %s", name)
 	return
 }
 
