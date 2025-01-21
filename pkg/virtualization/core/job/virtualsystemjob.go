@@ -390,7 +390,7 @@ func (vmjob *VirtualSystemJob) GetException() error {
 
 		if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorString) {
 			return errors.Wrapf(errors.NewWMIError(errorCode),
-				"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
+				"ErrorCode[%s] ErrorDescription[%s] ErrorSummaryDescription [%s]",
 				moccodes.OutOfCapacity, errorDescription, errorSummaryDescription)
 		}
 
