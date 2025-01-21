@@ -5,8 +5,10 @@ package job
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
+	moccodes "github.com/microsoft/moc/pkg/errors/codes"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -385,6 +387,14 @@ func (vmjob *VirtualSystemJob) GetException() error {
 		errorCode, _ := vmjob.GetPropertyErrorCode()
 		errorDescription, _ := vmjob.GetPropertyErrorDescription()
 		errorSummaryDescription, _ := vmjob.GetPropertyErrorSummaryDescription()
+		if errorCode == 0 {
+			if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorString) {
+				return errors.Wrapf(errors.NewWMIError(errorCode),
+					"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
+					moccodes.OutOfCapacity, errorDescription, errorSummaryDescription)
+			}
+		}
+
 		return errors.Wrapf(errors.NewWMIError(errorCode),
 			"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
 			errorCode, errorDescription, errorSummaryDescription)
