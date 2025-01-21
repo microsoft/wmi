@@ -8,7 +8,6 @@ import (
 	"strings"
 	"time"
 
-	moccodes "github.com/microsoft/moc/pkg/errors/codes"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -388,10 +387,10 @@ func (vmjob *VirtualSystemJob) GetException() error {
 		errorDescription, _ := vmjob.GetPropertyErrorDescription()
 		errorSummaryDescription, _ := vmjob.GetPropertyErrorSummaryDescription()
 
-		if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorString) {
+		if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorSummaryDescription) {
 			return errors.Wrapf(errors.NewWMIError(errorCode),
 				"ErrorCode[%s] ErrorDescription[%s] ErrorSummaryDescription [%s]",
-				moccodes.OutOfCapacity, errorDescription, errorSummaryDescription)
+				errors.OutOfMemoryErrorCode, errorDescription, errorSummaryDescription)
 		}
 
 		return errors.Wrapf(errors.NewWMIError(errorCode),

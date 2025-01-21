@@ -7,13 +7,13 @@ import (
 	"fmt"
 	"strings"
 
-	mocerror "github.com/microsoft/moc/pkg/errors"
 	perrors "github.com/pkg/errors"
 )
 
 const (
-	wmiError               = "WMI Error 0x"
-	OutOfMemoryErrorString = "Could not initialize memory: Not enough memory resources are available to complete this operation. (0x8007000E)"
+	wmiError                           = "WMI Error 0x"
+	OutOfMemoryErrorSummaryDescription = "Could not initialize memory: Not enough memory resources are available to complete this operation. (0x8007000E)"
+	OutOfMemoryErrorCode               = "OutOfMemory"
 )
 
 var (
@@ -105,7 +105,7 @@ func New(errString string) error {
 func NewWMIError(errorCode uint16) error {
 	switch errorCode {
 	case 0:
-		return fmt.Errorf("WMI Error %s", mocerror.OutOfCapacity)
+		return fmt.Errorf("WMI Error %s", OutOfMemoryErrorCode)
 	default:
 		return fmt.Errorf(wmiError+"%08x", errorCode)
 	}
