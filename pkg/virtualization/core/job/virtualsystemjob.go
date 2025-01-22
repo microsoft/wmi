@@ -387,8 +387,8 @@ func (vmjob *VirtualSystemJob) GetException() error {
 		errorDescription, _ := vmjob.GetPropertyErrorDescription()
 		errorSummaryDescription, _ := vmjob.GetPropertyErrorSummaryDescription()
 
-		if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorSummaryDescription) {
-			return errors.Wrapf(errors.NewWMIError(errorCode),
+		if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorSummaryDescription1) || strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorSummaryDescription2) {
+			return errors.Wrapf(fmt.Errorf("WMI Error %s", errors.OutOfMemoryErrorCode),
 				"ErrorCode[%s] ErrorDescription[%s] ErrorSummaryDescription [%s]",
 				errors.OutOfMemoryErrorCode, errorDescription, errorSummaryDescription)
 		}

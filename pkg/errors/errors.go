@@ -11,9 +11,10 @@ import (
 )
 
 const (
-	wmiError                           = "WMI Error 0x"
-	OutOfMemoryErrorSummaryDescription = "Could not initialize memory: Not enough memory resources are available to complete this operation. (0x8007000E)"
-	OutOfMemoryErrorCode               = "OutOfMemory"
+	wmiError                            = "WMI Error 0x"
+	OutOfMemoryErrorSummaryDescription1 = "Not enough memory in the system to start the virtual machine %s with ram size %d MB."
+	OutOfMemoryErrorSummaryDescription2 = "Could not initialize memory: Not enough memory resources are available to complete this operation. (0x8007000E)"
+	OutOfMemoryErrorCode                = "OutOfMemory"
 )
 
 var (
@@ -103,10 +104,5 @@ func New(errString string) error {
 }
 
 func NewWMIError(errorCode uint16) error {
-	switch errorCode {
-	case 0:
-		return fmt.Errorf("WMI Error %s", OutOfMemoryErrorCode)
-	default:
-		return fmt.Errorf(wmiError+"%08x", errorCode)
-	}
+	return fmt.Errorf(wmiError+"%08x", errorCode)
 }
