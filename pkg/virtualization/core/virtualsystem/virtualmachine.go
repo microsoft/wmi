@@ -340,11 +340,39 @@ func (vm *VirtualMachine) WaitForState(state VirtualMachineState, timeoutSeconds
 }
 
 func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingData, error) {
-	inst, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
+	inst, err := vm.GetAllRelated("Msvm_VirtualSystemSettingData")
 	if err != nil {
 		return nil, err
 	}
-	return NewVirtualSystemSettingData(inst)
+
+	if len(inst) == 0 {
+		return nil, errors.Wrapf(errors.NotFound, "No Related Items were received for VirtualSystemSettingData")
+	}
+
+	if len(inst) == 1 {
+		return NewVirtualSystemSettingData(inst[0])
+	}
+
+	for _, instance := range inst {
+		vssd, err := NewVirtualSystemSettingData(instance)
+		if err != nil {
+			continue
+		}
+
+		systemType, err := vssd.GetProperty("VirtualSystemType")
+		if err != nil {
+			vssd.Close()
+			continue
+		}
+
+		// filter out the snapshot realized system type
+		if systemType != "Microsoft:Hyper-V:Snapshot:Realized" {
+			return vssd, nil
+		}
+		vssd.Close()
+	}
+
+	return nil, errors.Wrapf(errors.NotFound, "Unable to find VirtualSystemSettingData for VM [%s]", vm.Name())
 }
 
 func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAddress string) (guestNetworkAdapterConfiguration *na.GuestNetworkAdapterConfiguration, err error) {

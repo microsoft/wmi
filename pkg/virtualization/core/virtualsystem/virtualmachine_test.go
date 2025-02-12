@@ -148,6 +148,8 @@ func TestVirtualMachineRestore(t *testing.T) {
 	}
 }
 
+// unit test can be used to test scenario where VM checkpoint is created out of band
+// create VM on hyper-v and create checkpoint using powershell
 func TestGetVirtualMachineSetting(t *testing.T) {
 	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
