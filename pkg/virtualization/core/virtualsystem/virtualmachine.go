@@ -382,6 +382,7 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 		systemType, err := vssd.GetProperty("VirtualSystemType")
 		if err != nil {
 			vssd.Close()
+			processedInstances[instance] = true // Mark as processed
 			continue
 		}
 
