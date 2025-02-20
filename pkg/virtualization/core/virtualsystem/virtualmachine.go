@@ -345,15 +345,35 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 		return nil, err
 	}
 
+	// Keep track of instances we've already processed to avoid double closing
+	processedInstances := make(map[interface{}]bool) // Use interface{} for flexibility
+
+	defer func() {
+		for _, instance := range inst {
+			if instance != nil && !processedInstances[instance] {
+				instance.Close()
+			}
+		}
+	}()
+
 	if len(inst) == 0 {
 		return nil, errors.Wrapf(errors.NotFound, "No Related Items were received for VirtualSystemSettingData")
 	}
 
 	if len(inst) == 1 {
-		return NewVirtualSystemSettingData(inst[0])
+		vssd, err := NewVirtualSystemSettingData(inst[0])
+		if err != nil {
+			return nil, err // Handle the error appropriately
+		}
+		processedInstances[inst[0]] = true // Mark as processed
+		return vssd, nil
 	}
 
 	for _, instance := range inst {
+		if instance == nil || processedInstances[instance] { // Check for nil and processed
+			continue
+		}
+
 		vssd, err := NewVirtualSystemSettingData(instance)
 		if err != nil {
 			continue
@@ -367,9 +387,11 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 
 		// filter out the snapshot realized system type
 		if systemType != "Microsoft:Hyper-V:Snapshot:Realized" {
+			processedInstances[instance] = true // Mark as processed
 			return vssd, nil
 		}
 		vssd.Close()
+		processedInstances[instance] = true // Mark as processed
 	}
 
 	return nil, errors.Wrapf(errors.NotFound, "Unable to find VirtualSystemSettingData for VM [%s]", vm.Name())
