@@ -340,11 +340,62 @@ func (vm *VirtualMachine) WaitForState(state VirtualMachineState, timeoutSeconds
 }
 
 func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingData, error) {
-	inst, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
+	inst, err := vm.GetAllRelated("Msvm_VirtualSystemSettingData")
 	if err != nil {
 		return nil, err
 	}
-	return NewVirtualSystemSettingData(inst)
+
+	// Keep track of instances we've already processed to avoid double closing
+	processedInstances := make(map[interface{}]bool) // Use interface{} for flexibility
+
+	defer func() {
+		for _, instance := range inst {
+			if instance != nil && !processedInstances[instance] {
+				instance.Close()
+			}
+		}
+	}()
+
+	if len(inst) == 0 {
+		return nil, errors.Wrapf(errors.NotFound, "No Related Items were received for VirtualSystemSettingData")
+	}
+
+	if len(inst) == 1 {
+		vssd, err := NewVirtualSystemSettingData(inst[0])
+		if err != nil {
+			return nil, err // Handle the error appropriately
+		}
+		processedInstances[inst[0]] = true // Mark as processed
+		return vssd, nil
+	}
+
+	for _, instance := range inst {
+		if instance == nil || processedInstances[instance] { // Check for nil and processed
+			continue
+		}
+
+		vssd, err := NewVirtualSystemSettingData(instance)
+		if err != nil {
+			continue
+		}
+
+		systemType, err := vssd.GetProperty("VirtualSystemType")
+		if err != nil {
+			vssd.Close()
+			processedInstances[instance] = true // Mark as processed
+			continue
+		}
+
+		// filter out the snapshot realized system type
+		if systemType != "Microsoft:Hyper-V:Snapshot:Realized" {
+			processedInstances[instance] = true // Mark as processed
+			return vssd, nil
+		}
+		vssd.Close()
+		processedInstances[instance] = true // Mark as processed
+	}
+
+	return nil, errors.Wrapf(errors.NotFound, "Unable to find VirtualSystemSettingData for VM [%s]", vm.Name())
 }
 
 func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration(inputMacAddress string) (guestNetworkAdapterConfiguration *na.GuestNetworkAdapterConfiguration, err error) {
