@@ -157,6 +157,20 @@ func GetVirtualMachineByVMId(whost *host.WmiHost, vmID string) (vm *VirtualMachi
 	return
 }
 
+func GetVirtualMachineId(vm *VirtualMachine) (hyperVVmId string, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return "", err
+	}
+	defer settings.Close()
+	retValue, err := settings.GetProperty("VirtualSystemIdentifier")
+	if err != nil {
+		return "", err
+	}
+	return retValue, err
+}
+
+
 func (vm *VirtualMachine) Name() (name string) {
 	name, _ = vm.GetPropertyElementName()
 	return
