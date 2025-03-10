@@ -198,6 +198,20 @@ func (vm *VirtualMachine) State() (state VirtualMachineState, err error) {
 	return VirtualMachineState(intstate), nil
 }
 
+func (vm *VirtualMachine) GetHostNodeName() (string, error) {
+	err := vm.Refresh()
+	if err != nil {
+		return nil, err
+	}
+
+	hostNodeName, err := vm.GetProperty("ComputerName")
+	if err != nil {
+		return nil, err
+	}
+
+	return hostNodeName, nil
+}
+
 func (vm *VirtualMachine) StatusDescriptions() ([]string, error) {
 	err := vm.Refresh()
 	if err != nil {
