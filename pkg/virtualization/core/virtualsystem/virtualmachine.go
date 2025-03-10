@@ -170,7 +170,6 @@ func GetVirtualMachineId(vm *VirtualMachine) (hyperVVmId string, err error) {
 	return retValue, err
 }
 
-
 func (vm *VirtualMachine) Name() (name string) {
 	name, _ = vm.GetPropertyElementName()
 	return
