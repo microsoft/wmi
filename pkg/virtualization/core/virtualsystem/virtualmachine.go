@@ -157,7 +157,7 @@ func GetVirtualMachineByVMId(whost *host.WmiHost, vmID string) (vm *VirtualMachi
 	return
 }
 
-func GetVirtualMachineId(vm *VirtualMachine) (hyperVVmId string, err error) {
+func GetVirtualMachineId(vm *VirtualMachine) (string, error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return "", err
@@ -167,7 +167,7 @@ func GetVirtualMachineId(vm *VirtualMachine) (hyperVVmId string, err error) {
 	if err != nil {
 		return "", err
 	}
-	return retValue, err
+	return retValue.(string), nil
 }
 
 func (vm *VirtualMachine) Name() (name string) {
