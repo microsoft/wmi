@@ -201,15 +201,15 @@ func (vm *VirtualMachine) State() (state VirtualMachineState, err error) {
 func (vm *VirtualMachine) GetHostNodeName() (string, error) {
 	err := vm.Refresh()
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
 	hostNodeName, err := vm.GetProperty("ComputerName")
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	return hostNodeName, nil
+	return hostNodeName.(string), nil
 }
 
 func (vm *VirtualMachine) StatusDescriptions() ([]string, error) {
