@@ -12,6 +12,7 @@ package monitor
 
 import (
 	"context"
+	"log"
 	"sync"
 
 	"github.com/microsoft/wmi/pkg/base/session"
@@ -152,6 +153,8 @@ func (n *WmiNotificationMonitor) Start() error {
 func (n *WmiNotificationMonitor) handleNotification(wmiEventMessage WmiEventMessage) {
 	ctx := context.Background()
 
+	log.Printf("Received a WMI Event: %s", wmiEventMessage.ToString())
+
 	n.callbackMapLock.Lock()
 	notifCallbackList, ok := n.callbacks[wmiEventMessage.AsFilter()]
 	n.callbackMapLock.Unlock()
@@ -166,9 +169,10 @@ func (n *WmiNotificationMonitor) handleNotification(wmiEventMessage WmiEventMess
 				notifCallback.lock.Unlock()
 			}()
 
+			log.Printf("Trigger callback for WMI Event: %s", wmiEventMessage.ToString())
 			err := notifCallback.callback(ctx, wmiEventMessage, notifCallback.callbackContext)
 			if err != nil {
-				// TODO: log something here
+				log.Printf("Callback for WMI Event %s threw error: %v", wmiEventMessage.ToString(), err)
 			}
 		}()
 	}
