@@ -12,6 +12,7 @@ package monitor
 
 import (
 	"context"
+	"log"
 	"sync"
 
 	"github.com/microsoft/wmi/pkg/base/session"
@@ -168,7 +169,7 @@ func (n *WmiNotificationMonitor) handleNotification(wmiEventMessage WmiEventMess
 
 			err := notifCallback.callback(ctx, wmiEventMessage, notifCallback.callbackContext)
 			if err != nil {
-				// TODO: log something here
+				log.Printf("Callback for WMI Event %s threw error: %v", wmiEventMessage.ToString(), err)
 			}
 		}()
 	}
