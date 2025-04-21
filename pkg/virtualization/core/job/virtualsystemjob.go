@@ -5,6 +5,7 @@ package job
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -385,6 +386,13 @@ func (vmjob *VirtualSystemJob) GetException() error {
 		errorCode, _ := vmjob.GetPropertyErrorCode()
 		errorDescription, _ := vmjob.GetPropertyErrorDescription()
 		errorSummaryDescription, _ := vmjob.GetPropertyErrorSummaryDescription()
+
+		if strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorSummaryDescription1) || strings.Contains(errorSummaryDescription, errors.OutOfMemoryErrorSummaryDescription2) {
+			return errors.Wrapf(fmt.Errorf("WMI Error %s", errors.OutOfMemoryErrorCode),
+				"ErrorCode[%s] ErrorDescription[%s] ErrorSummaryDescription [%s]",
+				errors.OutOfMemoryErrorCode, errorDescription, errorSummaryDescription)
+		}
+
 		return errors.Wrapf(errors.NewWMIError(errorCode),
 			"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
 			errorCode, errorDescription, errorSummaryDescription)
