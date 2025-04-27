@@ -4,10 +4,10 @@
 package instance
 
 import (
-	"log"
 	"strings"
 	"sync"
 
+	"github.com/golang/glog"
 	"github.com/microsoft/wmi/pkg/base/credential"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -99,7 +99,7 @@ func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInsta
 		return nil, errors.Wrapf(errors.NotFound, "Query [%s] failed with no instance", queryString)
 	}
 
-	log.Printf("[WMI] QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
+	glog.V(6).Infof("[WMI] QueryInstanceEx [%s]=>[%d]instances", queryString, len(instances))
 
 	// LEAK - return a clone and close the collection
 	return instances[0], nil
@@ -157,7 +157,7 @@ func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *
 }
 
 func GetWmiInstanceFromPath(host *host.WmiHost, namespaceName, instancePath string) (*wmi.WmiInstance, error) {
-	log.Printf("[WMI] Get Instance from path [%s]\n", instancePath)
+	glog.V(6).Infof("[WMI] Get Instance from path [%s]", instancePath)
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
 	if err != nil {
 		return nil, err

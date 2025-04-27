@@ -8,12 +8,12 @@ package cim
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 
+	"github.com/golang/glog"
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 )
@@ -131,7 +131,7 @@ func (c *WmiInstance) GetProperty(name string) (interface{}, error) {
 func (c *WmiInstance) SetProperty(name string, value interface{}) error {
 	rawResult, err := oleutil.PutProperty(c.instance, name, value)
 	if err != nil {
-		log.Printf("[WMI] SetProperty Name[%s] Value[%+v] Err[%+v]\n", name, value, err)
+		glog.V(6).Infof("[WMI] SetProperty Name[%s] Value[%+v] Err[%+v]\n", name, value, err)
 		return err
 	}
 

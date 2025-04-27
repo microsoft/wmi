@@ -8,12 +8,12 @@ package cim
 
 import (
 	"fmt"
-	"log"
 	"runtime/debug"
 	"strings"
 
 	ole "github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
+	"github.com/golang/glog"
 	"github.com/microsoft/wmi/go/wmi"
 	"github.com/microsoft/wmi/pkg/base/host"
 )
@@ -229,7 +229,7 @@ func (c *WmiSession) QueryInstances(queryExpression string) ([]*WmiInstance, err
 		wmiInstances = append(wmiInstances, wmiInstance)
 	}
 
-	log.Printf("[WMI] QueryInstances [%s]=> [%d]\n", queryExpression, len(wmiInstances))
+	glog.V(6).Infof("[WMI] QueryInstances [%s]=> [%d]\n", queryExpression, len(wmiInstances))
 	return wmiInstances, nil
 }
 
