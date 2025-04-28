@@ -7,10 +7,10 @@
 package cim
 
 import (
-	"github.com/golang/glog"
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 	"github.com/microsoft/wmi/pkg/errors"
+	"k8s.io/klog/v2"
 )
 
 type WmiMethod struct {
@@ -56,7 +56,7 @@ func (c *WmiMethod) addInParam(inparamVariant *ole.VARIANT, paramName string, pa
 }
 
 func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result *WmiMethodResult, err error) {
-	glog.V(6).Infof("[WMI] - Executing Method [%s]\n", c.Name)
+	klog.V(6).Infof("[WMI] - Executing Method [%s]\n", c.Name)
 
 	iDispatchInstance := c.classInstance.GetIDispatch()
 	if iDispatchInstance == nil {
@@ -87,7 +87,7 @@ func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result 
 	defer inparams.Clear()
 
 	for _, inp := range inParam {
-		// 	glog.V(6).Infof("InParam [%s]=>[%+v]\n", inp.Name, inp.Value)
+		// 	klog.V(6).Infof("InParam [%s]=>[%+v]\n", inp.Name, inp.Value)
 		c.addInParam(inparams, inp.Name, inp.Value)
 	}
 
@@ -105,7 +105,7 @@ func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result 
 	}
 	defer returnRaw.Clear()
 	result.ReturnValue = returnRaw.Value().(int32)
-	glog.V(6).Infof("[WMI] - Return [%d] ", result.ReturnValue)
+	klog.V(6).Infof("[WMI] - Return [%d] ", result.ReturnValue)
 
 	for _, outp := range outParam {
 		returnRawIn, err1 := outparams.ToIDispatch().GetProperty(outp.Name)
@@ -120,7 +120,7 @@ func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result 
 			err = err1
 			return
 		}
-		// glog.V(6).Infof("OutParam [%s]=> [%+v]\n", outp.Name, value)
+		// klog.V(6).Infof("OutParam [%s]=> [%+v]\n", outp.Name, value)
 
 		result.OutMethodParams[outp.Name] = NewWmiMethodParam(outp.Name, value)
 	}

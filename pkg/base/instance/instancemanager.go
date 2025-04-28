@@ -7,13 +7,14 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/golang/glog"
 	"github.com/microsoft/wmi/pkg/base/credential"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	wmisession "github.com/microsoft/wmi/pkg/base/session"
 	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
+
+	"k8s.io/klog/v2"
 )
 
 var (
@@ -99,7 +100,7 @@ func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInsta
 		return nil, errors.Wrapf(errors.NotFound, "Query [%s] failed with no instance", queryString)
 	}
 
-	glog.V(6).Infof("[WMI] QueryInstanceEx [%s]=>[%d]instances", queryString, len(instances))
+	klog.V(6).Infof("[WMI] QueryInstanceEx [%s]=>[%d]instances", queryString, len(instances))
 
 	// LEAK - return a clone and close the collection
 	return instances[0], nil
@@ -157,7 +158,7 @@ func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *
 }
 
 func GetWmiInstanceFromPath(host *host.WmiHost, namespaceName, instancePath string) (*wmi.WmiInstance, error) {
-	glog.V(6).Infof("[WMI] Get Instance from path [%s]", instancePath)
+	klog.V(6).Infof("[WMI] Get Instance from path [%s]", instancePath)
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
 	if err != nil {
 		return nil, err
