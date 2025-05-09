@@ -10,7 +10,10 @@ require (
 	github.com/nwoodmsft/iso9660 v0.0.0-20191211094520-15de0aa41e99
 	github.com/pkg/errors v0.9.1
 	golang.org/x/sys v0.32.0
+	k8s.io/klog/v2 v2.130.1
 )
+
+require github.com/go-logr/logr v1.4.1 // indirect
 
 require (
 	github.com/davecgh/go-spew v1.1.0 // indirect

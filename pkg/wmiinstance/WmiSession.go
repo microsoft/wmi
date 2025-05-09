@@ -8,7 +8,6 @@ package cim
 
 import (
 	"fmt"
-	"log"
 	"runtime/debug"
 	"strings"
 
@@ -16,6 +15,7 @@ import (
 	"github.com/go-ole/go-ole/oleutil"
 	"github.com/microsoft/wmi/go/wmi"
 	"github.com/microsoft/wmi/pkg/base/host"
+	"k8s.io/klog/v2"
 )
 
 // WmiSession struct to hold the current session information
@@ -229,7 +229,7 @@ func (c *WmiSession) QueryInstances(queryExpression string) ([]*WmiInstance, err
 		wmiInstances = append(wmiInstances, wmiInstance)
 	}
 
-	log.Printf("[WMI] QueryInstances [%s]=> [%d]\n", queryExpression, len(wmiInstances))
+	klog.V(6).Infof("[WMI] QueryInstances [%s]=> [%d]\n", queryExpression, len(wmiInstances))
 	return wmiInstances, nil
 }
 
