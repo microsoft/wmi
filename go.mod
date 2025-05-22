@@ -1,13 +1,15 @@
 module github.com/microsoft/wmi
 
-go 1.22
+go 1.23.0
+
+toolchain go1.23.1
 
 require (
 	github.com/go-ole/go-ole v1.2.6
 	github.com/google/uuid v1.1.1
 	github.com/nwoodmsft/iso9660 v0.0.0-20191211094520-15de0aa41e99
 	github.com/pkg/errors v0.9.1
-	golang.org/x/sys v0.1.0
+	golang.org/x/sys v0.32.0
 )
 
 require (
