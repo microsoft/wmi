@@ -3,6 +3,8 @@
 
 package constant
 
+import "time"
+
 type WMINamespace string
 
 const (
@@ -14,4 +16,10 @@ const (
 
 const (
 	HostName string = "localhost"
+)
+
+const (
+	// Timeout for WMI operations
+	WmiVmCreateTimeout = 60 * time.Minute
+	WmiVmDeleteTimeout = 60 * time.Minute
 )

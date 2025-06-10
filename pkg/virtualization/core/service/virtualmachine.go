@@ -4,6 +4,7 @@
 package service
 
 import (
+	"context"
 	"log"
 	"time"
 
@@ -99,7 +100,7 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingSystem", nil))
 
-	result, err := method.Execute(inparams, outparams)
+	result, err := executeVmCrudMethod(method, inparams, outparams, constant.WmiVmCreateTimeout)
 	if err != nil {
 		return
 	}
@@ -146,7 +147,7 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 
 	for {
-		result, err1 := method.Execute(inparams, outparams)
+		result, err1 := executeVmCrudMethod(method, inparams, outparams, constant.WmiVmDeleteTimeout)
 		if err1 != nil {
 			err = err1
 			return
@@ -310,4 +311,26 @@ func (vmms *VirtualSystemManagementService) RemoveHIDDevices(vm *virtualsystem.V
 	}
 
 	return
+}
+
+func executeVmCrudMethod(method *wmi.WmiMethod, inparams wmi.WmiMethodParamCollection, outparams wmi.WmiMethodParamCollection, timeout time.Duration) (result *wmi.WmiMethodResult, err error) {
+	ctx, cancel := context.WithTimeout(context.Background(), timeout)
+	defer cancel()
+	errChan := make(chan error)
+	resultChan := make(chan *wmi.WmiMethodResult)
+	go func() {
+		output, err := method.Execute(inparams, outparams)
+		errChan <- err
+		resultChan <- output
+	}()
+
+	select {
+	case <-ctx.Done():
+		err = errors.Wrapf(errors.Timedout, "WMI method %s timeout after %s", method.Name, timeout)
+	default:
+		err = <-errChan
+		result = <-resultChan
+	}
+
+	return result, err
 }
