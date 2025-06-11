@@ -100,6 +100,7 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingSystem", nil))
 
+	// The timeout for the VM create call is selected based on telemetry data from Azure Local
 	result, err := executeVmCrudMethod(method, inparams, outparams, constant.WmiVmCreateTimeout)
 	if err != nil {
 		return
@@ -147,6 +148,7 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 
 	for {
+		// The timeout for the VM delete call is selected based on telemetry data from Azure Local
 		result, err1 := executeVmCrudMethod(method, inparams, outparams, constant.WmiVmDeleteTimeout)
 		if err1 != nil {
 			err = err1
@@ -316,20 +318,30 @@ func (vmms *VirtualSystemManagementService) RemoveHIDDevices(vm *virtualsystem.V
 func executeVmCrudMethod(method *wmi.WmiMethod, inparams wmi.WmiMethodParamCollection, outparams wmi.WmiMethodParamCollection, timeout time.Duration) (result *wmi.WmiMethodResult, err error) {
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
-	errChan := make(chan error)
-	resultChan := make(chan *wmi.WmiMethodResult)
+	type wmiCallResult struct {
+		Result *wmi.WmiMethodResult
+		Err    error
+	}
+	resultChan := make(chan wmiCallResult)
+
+	// Execute the WMI method in a goroutine with timeout to avoid blocking the main thread
 	go func() {
 		output, err := method.Execute(inparams, outparams)
-		errChan <- err
-		resultChan <- output
+		resultChan <- wmiCallResult{
+			Result: output,
+			Err:    err,
+		}
+		close(resultChan)
 	}()
 
 	select {
 	case <-ctx.Done():
-		err = errors.Wrapf(errors.Timedout, "WMI method %s timeout after %s", method.Name, timeout)
+		log.Printf("WMI Method [%s] timed out after %s", method.Name, timeout)
+		err = errors.Wrapf(errors.Timedout, "WMI method [%s] timeout after %s", method.Name, timeout)
 	default:
-		err = <-errChan
-		result = <-resultChan
+		resultStruct := <-resultChan
+		result = resultStruct.Result
+		err = resultStruct.Err
 	}
 
 	return result, err
