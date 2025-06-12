@@ -103,12 +103,6 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 	// The timeout for the VM create call is selected based on telemetry data from Azure Local
 	result, err := executeVmCrudMethod(method, inparams, outparams, constant.WmiVmCreateTimeout)
 	if err != nil {
-		vmName, err2 := vm.GetPropertyElementName()
-		if err2 != nil {
-			err = errors.Wrapf(err, "VM [unknown] creation failed")
-		} else {
-			err = errors.Wrapf(err, "VM [%s] creation failed", vmName)
-		}
 		return
 	}
 
@@ -157,12 +151,6 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 		// The timeout for the VM delete call is selected based on telemetry data from Azure Local
 		result, err1 := executeVmCrudMethod(method, inparams, outparams, constant.WmiVmDeleteTimeout)
 		if err1 != nil {
-			vmName, err2 := vm.GetPropertyElementName()
-			if err2 != nil {
-				err = errors.Wrapf(err1, "VM [unknown] deletion failed")
-			} else {
-				err = errors.Wrapf(err1, "VM [%s] deletion failed", vmName)
-			}
 			return
 		}
 
