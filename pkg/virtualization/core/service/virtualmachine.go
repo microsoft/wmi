@@ -151,6 +151,7 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 		// The timeout for the VM delete call is selected based on telemetry data from Azure Local
 		result, err1 := executeVmCrudMethod(method, inparams, outparams, constant.WmiVmDeleteTimeout)
 		if err1 != nil {
+			err = err1
 			return
 		}
 
