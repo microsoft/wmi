@@ -1079,7 +1079,7 @@ func (vm *VirtualMachine) GetDvdDriveAndLogicalDiskByIsoPath(isoPath string) (dv
 
 		return
 	}
-	err = errors.Wrapf(errors.NotFound,
+	err = errors.Wrapf(errors.DvdDriveNotFound,
 		"Dvd drive with path [%s] not found in Vm [%s]", isoPath, vm.Name())
 	return
 }
