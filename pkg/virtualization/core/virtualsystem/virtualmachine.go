@@ -167,7 +167,11 @@ func (vm *VirtualMachine) GetVirtualMachineHyperVVmId() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return retValue.(string), nil
+	str, ok := retValue.(string)
+	if !ok {
+		return "", errors.Wrapf(errors.Failed, "Failed to convert VirtualSystemIdentifier to string [%+v]", retValue)
+	}
+	return str, nil
 }
 
 func (vm *VirtualMachine) Name() (name string) {
