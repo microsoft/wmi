@@ -158,7 +158,6 @@ func GetVirtualMachineByVMId(whost *host.WmiHost, vmID string) (vm *VirtualMachi
 }
 
 func (vm *VirtualMachine) GetVirtualMachineHyperVVmId() (string, error) {
-hvedati marked this conversation as resolved.
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return "", err
