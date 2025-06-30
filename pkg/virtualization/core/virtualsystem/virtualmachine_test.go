@@ -177,3 +177,22 @@ func TestGetVirtualMachineOSConfiguration(t *testing.T) {
 	}
 	t.Logf("Retrieved OS configuration. Computer Name %s IsWindows %t", cName, isWindows)
 }
+
+func TestGetVirtualMachineHyperVVmId(t *testing.T) {
+	vm, err := GetVirtualMachineByVMName(whost, "test")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer vm.Close()
+
+	vmId, err := vm.GetVirtualMachineHyperVVmId()
+	if err != nil {
+		t.Fatal("Failed to get VM ID: " + err.Error())
+	}
+
+	if vmId == "" {
+		t.Fatal("VM ID should not be empty")
+	}
+
+	t.Logf("VirtualMachine HyperV VM ID: %s", vmId)
+}
