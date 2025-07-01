@@ -157,6 +157,23 @@ func GetVirtualMachineByVMId(whost *host.WmiHost, vmID string) (vm *VirtualMachi
 	return
 }
 
+func (vm *VirtualMachine) GetVirtualMachineHyperVVmId() (string, error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return "", err
+	}
+	defer settings.Close()
+	retValue, err := settings.GetProperty("VirtualSystemIdentifier")
+	if err != nil {
+		return "", err
+	}
+	str, ok := retValue.(string)
+	if !ok {
+		return "", errors.Wrapf(errors.Failed, "Failed to convert VirtualSystemIdentifier to string [%+v]", retValue)
+	}
+	return str, nil
+}
+
 func (vm *VirtualMachine) Name() (name string) {
 	name, _ = vm.GetPropertyElementName()
 	return
