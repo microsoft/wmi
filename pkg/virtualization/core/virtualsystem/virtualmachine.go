@@ -1306,3 +1306,160 @@ func (vm *VirtualMachine) GetProcessor() (vmprocessor *processor.ProcessorSettin
 	vmprocessor, err = settings.GetProcessorSetting()
 	return
 }
+
+// VMStoragePaths represents the current storage paths for a VM
+type VMStoragePaths struct {
+	VMPath       string   // VM configuration file path
+	VmConfigPath string   // VM configuration path
+	VmDataPath   string   // VM data path
+	VHDPaths     []string // All VHD file paths
+}
+
+// GetCurrentStoragePaths queries WMI to get the current storage paths for a VM
+func GetCurrentStoragePaths(whost *host.WmiHost, vmID string) (*VMStoragePaths, error) {
+	vm, err := GetVirtualMachineByVMId(whost, vmID)
+	if err != nil {
+		return nil, fmt.Errorf("failed to get VM: %v", err)
+	}
+	defer vm.Close()
+
+	paths := &VMStoragePaths{
+		VHDPaths: make([]string, 0),
+	}
+
+	// Get VM configuration paths from VirtualSystemSettingData
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return nil, fmt.Errorf("failed to get VM settings: %v", err)
+	}
+	defer settings.Close()
+
+	// Get ConfigurationDataRoot (VM data path)
+	if configRoot, err := settings.GetProperty("ConfigurationDataRoot"); err == nil {
+		if configPath, ok := configRoot.(string); ok {
+			paths.VmDataPath = configPath
+		}
+	}
+
+	// Get LogDataRoot (typically same as config path)
+	if logRoot, err := settings.GetProperty("LogDataRoot"); err == nil {
+		if logPath, ok := logRoot.(string); ok && paths.VmConfigPath == "" {
+			paths.VmConfigPath = logPath
+		}
+	}
+
+	// Get SnapshotDataRoot (may give us another path reference)
+	if snapshotRoot, err := settings.GetProperty("SnapshotDataRoot"); err == nil {
+		if snapshotPath, ok := snapshotRoot.(string); ok && paths.VMPath == "" {
+			paths.VMPath = snapshotPath
+		}
+	}
+
+	// Get VHD paths from storage allocation setting data using existing function
+	storageAllocations, err := vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Logical_Disk)
+	if err == nil {
+		defer storageAllocations.Close()
+
+		// Iterate through storage allocations to get VHD paths
+		for _, allocation := range storageAllocations {
+			// Get HostResource property which contains VHD paths
+			if hostResource, err := allocation.GetProperty("HostResource"); err == nil {
+				switch hr := hostResource.(type) {
+				case []string:
+					for _, path := range hr {
+						if path != "" && strings.Contains(strings.ToLower(path), ".vhd") {
+							paths.VHDPaths = append(paths.VHDPaths, path)
+						}
+					}
+				case string:
+					if hr != "" && strings.Contains(strings.ToLower(hr), ".vhd") {
+						paths.VHDPaths = append(paths.VHDPaths, hr)
+					}
+				case []interface{}:
+					for _, v := range hr {
+						if s, ok := v.(string); ok && s != "" && strings.Contains(strings.ToLower(s), ".vhd") {
+							paths.VHDPaths = append(paths.VHDPaths, s)
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// If we still don't have VM path, try to derive it from VHD paths
+	if paths.VMPath == "" && len(paths.VHDPaths) > 0 {
+		// Use the directory of the first VHD as a fallback for VM path
+		paths.VMPath = filepath.Dir(paths.VHDPaths[0])
+	}
+
+	return paths, nil
+}
+
+// ParseVMStoragePathsFromCSVEvent extracts storage paths directly from a CSV move event
+// This eliminates the need for a separate WMI query by using event data
+func ParseVMStoragePathsFromCSVEvent(vhdPath string, newHostResource []string, destinationCSVPath string) (vmPath, configPath, dataPath string) {
+	// Extract the base directory from the primary VHD path
+	if vhdPath != "" {
+		vmPath = filepath.Dir(vhdPath)
+		configPath = vmPath // Often same as VM path in Hyper-V
+		dataPath = vmPath   // Often same as VM path in Hyper-V
+		return
+	}
+
+	// Alternative: if VHDPath is empty but we have NewHostResource paths
+	if len(newHostResource) > 0 {
+		firstVHDPath := ""
+		for _, resource := range newHostResource {
+			if resource != "" && strings.Contains(strings.ToLower(resource), ".vhd") {
+				firstVHDPath = resource
+				break
+			}
+		}
+		if firstVHDPath != "" {
+			vmPath = filepath.Dir(firstVHDPath)
+			configPath = vmPath
+			dataPath = vmPath
+			return
+		}
+	}
+
+	// Fallback: use destination CSV path if available
+	if destinationCSVPath != "" {
+		vmPath = destinationCSVPath
+		configPath = vmPath
+		dataPath = vmPath
+		return
+	}
+
+	// Last resort: return empty strings
+	return "", "", ""
+}
+
+// GetAllVHDPathsFromCSVEvent extracts all VHD paths from CSV event data
+func GetAllVHDPathsFromCSVEvent(vhdPath string, newHostResource []string) []string {
+	var vhdPaths []string
+
+	// Add the primary VHD path if available
+	if vhdPath != "" && strings.Contains(strings.ToLower(vhdPath), ".vhd") {
+		vhdPaths = append(vhdPaths, vhdPath)
+	}
+
+	// Add all VHD paths from NewHostResource
+	for _, resource := range newHostResource {
+		if resource != "" && strings.Contains(strings.ToLower(resource), ".vhd") {
+			// Avoid duplicates
+			found := false
+			for _, existing := range vhdPaths {
+				if strings.EqualFold(existing, resource) {
+					found = true
+					break
+				}
+			}
+			if !found {
+				vhdPaths = append(vhdPaths, resource)
+			}
+		}
+	}
+
+	return vhdPaths
+}
