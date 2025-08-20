@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/go-ole/go-ole"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -17,6 +18,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	perrors "github.com/pkg/errors"
 )
 
 var (
@@ -249,22 +251,46 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 
+	const maxRetries = 5
+	retryCount := 0
+
 	for {
 		result, err1 := method.Execute(inparams, outparams)
 		if err1 != nil {
-			err = err1
-			return
+			// Extract HRESULT if possible
+			cause := perrors.Cause(err1)
+			if oleErr, ok := cause.(*ole.OleError); ok {
+				switch oleErr.Code() {
+				case 0x8004100C:
+					log.Printf("WMI Error 0x8004100C (WBEM_E_NOT_FOUND): The resource does not exist. It may have already been removed.")
+					return errors.NotFound
+				default:
+					log.Printf("WMI error HRESULT=0x%x: %v", oleErr.Code(), err1)
+				}
+			} else {
+				log.Printf("Non-OLE error: %+v", err1)
+			}
+			return err1
 		}
 
 		returnVal := result.ReturnValue
 		if returnVal != 0 && returnVal != 4096 {
-			// Virtual System is in Invalid State, try to retry
-			if returnVal == 32775 {
-				log.Printf("[WMI] Method [%s] failed with [%d]. Retrying ...", method.Name, returnVal)
-				time.Sleep(100 * time.Millisecond)
+			// Check if this is a retryable error and we haven't exceeded max retries
+			isRetryable := returnVal == 32775 || returnVal == 32773
+			if isRetryable && retryCount < maxRetries {
+				retryCount++
+				backoffDuration := time.Duration(retryCount*100) * time.Millisecond
+
+				if returnVal == 32775 {
+					log.Printf("[WMI] Method [%s] failed with error [%d](Resource In Use). Retrying (%d/%d) after %v...", method.Name, returnVal, retryCount, maxRetries, backoffDuration)
+				} else if returnVal == 32773 {
+					log.Printf("[WMI] Method [%s] failed with error [%d](Pending). Retrying (%d/%d) after %v...", method.Name, returnVal, retryCount, maxRetries, backoffDuration)
+				}
+
+				time.Sleep(backoffDuration)
 				continue
 			}
-			err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+			err = errors.Wrapf(errors.Failed, "WMI method [%s] failed with [%d]", method.Name, result.ReturnValue)
 			return
 		}
 
@@ -284,7 +310,6 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 		return
 	}
-	return
 }
 
 func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeatureEx(data *wmi.WmiInstance, timeoutSeconds int16) (err error) {

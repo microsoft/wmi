@@ -4,10 +4,13 @@
 package resource
 
 import (
+	"time"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
+	"github.com/microsoft/wmi/pkg/errors"
 	fc "github.com/microsoft/wmi/server2019/root/mscluster"
 )
 
@@ -42,10 +45,25 @@ func GetVirtualMachineResource(whost *host.WmiHost, virtualMachineName string) (
 func GetVirtualMachineResourceByVmID(whost *host.WmiHost, vmID string) (crgSet *Resource, err error) {
 	creds := whost.GetCredential()
 	query := query.NewWmiQuery("MSCluster_Resource", "PrivateProperties.VmID", vmID, "Type", CLUSTER_RESOURCE_TYPE_VIRTUAL_MACHINE)
-	wmigpset, err := fc.NewMSCluster_ResourceEx6(whost.HostName, string(constant.FailoverCluster), creds.UserName, creds.Password, creds.Domain, query)
-	if err != nil {
-		return
+
+	const maxRetries = 3
+
+	var lastErr error
+	for attempt := 0; attempt < maxRetries; attempt++ {
+		wmigpset, currentErr := fc.NewMSCluster_ResourceEx6(whost.HostName, string(constant.FailoverCluster), creds.UserName, creds.Password, creds.Domain, query)
+		if currentErr != nil {
+			lastErr = currentErr
+			// Retry if this is a "Not Found" error
+			if errors.IsNotFound(currentErr) {
+				backoffDuration := time.Duration((attempt+1)*100) * time.Millisecond
+				time.Sleep(backoffDuration)
+				continue
+			}
+			return nil, currentErr
+		}
+		crgSet = &Resource{wmigpset}
+		return crgSet, nil
 	}
-	crgSet = &Resource{wmigpset}
-	return
+
+	return nil, lastErr
 }
