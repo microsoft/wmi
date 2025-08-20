@@ -48,11 +48,9 @@ func GetVirtualMachineResourceByVmID(whost *host.WmiHost, vmID string) (crgSet *
 
 	const maxRetries = 3
 
-	var lastErr error
 	for attempt := 0; attempt < maxRetries; attempt++ {
 		wmigpset, currentErr := fc.NewMSCluster_ResourceEx6(whost.HostName, string(constant.FailoverCluster), creds.UserName, creds.Password, creds.Domain, query)
 		if currentErr != nil {
-			lastErr = currentErr
 			// Retry if this is a "Not Found" error
 			if errors.IsNotFound(currentErr) {
 				backoffDuration := time.Duration((attempt+1)*100) * time.Millisecond
@@ -65,5 +63,6 @@ func GetVirtualMachineResourceByVmID(whost *host.WmiHost, vmID string) (crgSet *
 		return crgSet, nil
 	}
 
-	return nil, lastErr
+	// Return failure if failover cluster VM is not found after all retries
+	return nil, errors.Wrapf(errors.Failed, "failed to get FC VM resource by VmID %s after %d attempts", vmID, maxRetries)
 }
