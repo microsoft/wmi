@@ -4,6 +4,7 @@
 package resource
 
 import (
+	"log"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -46,23 +47,24 @@ func GetVirtualMachineResourceByVmID(whost *host.WmiHost, vmID string) (crgSet *
 	creds := whost.GetCredential()
 	query := query.NewWmiQuery("MSCluster_Resource", "PrivateProperties.VmID", vmID, "Type", CLUSTER_RESOURCE_TYPE_VIRTUAL_MACHINE)
 
-	const maxRetries = 3
-
-	for attempt := 0; attempt < maxRetries; attempt++ {
-		wmigpset, currentErr := fc.NewMSCluster_ResourceEx6(whost.HostName, string(constant.FailoverCluster), creds.UserName, creds.Password, creds.Domain, query)
-		if currentErr != nil {
-			// Retry if this is a "Not Found" error
-			if errors.IsNotFound(currentErr) {
-				backoffDuration := time.Duration((attempt+1)*100) * time.Millisecond
+	for attempt := 0; attempt < constant.WmiMethodMaxRetries; attempt++ {
+		wmigpset, err := fc.NewMSCluster_ResourceEx6(whost.HostName, string(constant.FailoverCluster), creds.UserName, creds.Password, creds.Domain, query)
+		if err != nil {
+			// Retry if this is a "Not Found" error and we have attempts left
+			if errors.IsNotFound(err) && attempt < constant.WmiMethodMaxRetries-1 {
+				backoffDuration := time.Duration(attempt+1) * constant.WmiMethodRetryDelay
+				// Add logging for consistency with other functions
+				log.Printf("[WMI] GetVirtualMachineResourceByVmID failed with NotFound error. Retrying (%d/%d) after %v...", attempt+1, constant.WmiMethodMaxRetries, backoffDuration)
 				time.Sleep(backoffDuration)
 				continue
 			}
-			return nil, currentErr
+			// For non-retryable errors or last attempt, return immediately
+			return nil, err
 		}
 		crgSet = &Resource{wmigpset}
 		return crgSet, nil
 	}
 
 	// Return failure if failover cluster VM is not found after all retries
-	return nil, errors.Wrapf(errors.Failed, "failed to get FC VM resource by VmID %s after %d attempts", vmID, maxRetries)
+	return nil, errors.Wrapf(errors.Failed, "failed to get FC VM resource by VmID %s after %d attempts", vmID, constant.WmiMethodMaxRetries)
 }
