@@ -30,7 +30,8 @@ const (
 
 // Constants for WMI OLE error codes
 const (
-	WBEM_E_NOT_FOUND = 0x8004100C
+	WBEM_E_NOT_FOUND     = 0x80041002
+	WBEM_E_NOT_SUPPORTED = 0x8004100C
 )
 
 // Constants for WMI method retries

@@ -259,8 +259,11 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 			if oleErr, ok := cause.(*ole.OleError); ok {
 				switch oleErr.Code() {
 				case constant.WBEM_E_NOT_FOUND:
-					log.Printf("WMI Error 0x8004100C (WBEM_E_NOT_FOUND): The resource does not exist. It may have already been removed.")
+					log.Printf("WMI Error 0x80041002 (WBEM_E_NOT_FOUND): The resource does not exist. It may have already been removed.")
 					return errors.NotFound
+				case constant.WBEM_E_NOT_SUPPORTED:
+					log.Printf("WMI Error 0x8004100C (WBEM_E_NOT_SUPPORTED): The resource does not support this operation.")
+					return errors.NotSupported
 				default:
 					log.Printf("WMI error HRESULT=0x%x: %v", oleErr.Code(), err1)
 				}
