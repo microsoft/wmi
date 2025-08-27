@@ -1088,6 +1088,85 @@ func (vm *VirtualMachine) GetDvdDriveAndLogicalDiskByIsoPath(isoPath string) (dv
 	return
 }
 
+func (vm *VirtualMachine) GetEmptyDvdDrives() (emptyDvdDrives drive.DvdDriveCollection, err error) {
+	dvdCol, err := vm.GetDvdDrives()
+	if err != nil {
+		return
+	}
+	defer dvdCol.Close()
+
+	for _, dvdDiskInstance := range dvdCol {
+		logicalDiskInstance, err1 := drive.GetRelatedStorageAllocationSettingData(dvdDiskInstance.WmiInstance)
+		if err1 != nil {
+			// Missing related storage allocation data means DVD disk is not available/empty
+			// Clone the DVD drive instance for return
+			dvdclone, err2 := dvdDiskInstance.Clone()
+			if err2 != nil {
+				err = err2
+				return
+			}
+
+			emptyDvdDrive, err2 := drive.NewDvdDrive(dvdclone)
+			if err2 != nil {
+				dvdclone.Close()
+				err = err2
+				return
+			}
+			emptyDvdDrives = append(emptyDvdDrives, emptyDvdDrive)
+			continue
+		}
+		defer logicalDiskInstance.Close()
+
+		dvdPathInterface, err1 := logicalDiskInstance.GetProperty("HostResource")
+		if err1 != nil || dvdPathInterface == nil {
+			// Unable to read HostResource or it's nil means no ISO attached (empty drive)
+			dvdclone, err2 := dvdDiskInstance.Clone()
+			if err2 != nil {
+				err = err2
+				return
+			}
+
+			emptyDvdDrive, err2 := drive.NewDvdDrive(dvdclone)
+			if err2 != nil {
+				dvdclone.Close()
+				err = err2
+				return
+			}
+			emptyDvdDrives = append(emptyDvdDrives, emptyDvdDrive)
+			continue
+		}
+
+		// Check if HostResource array is empty or contains empty values
+		hostResources := dvdPathInterface.([]interface{})
+		isEmpty := true
+		for _, interfaceValue := range hostResources {
+			if valuetmp, ok := interfaceValue.(string); ok && strings.TrimSpace(valuetmp) != "" {
+				isEmpty = false
+				break
+			}
+		}
+
+		if isEmpty {
+			// Clone the DVD drive instance for return
+			dvdclone, err2 := dvdDiskInstance.Clone()
+			if err2 != nil {
+				err = err2
+				return
+			}
+
+			emptyDvdDrive, err2 := drive.NewDvdDrive(dvdclone)
+			if err2 != nil {
+				dvdclone.Close()
+				err = err2
+				return
+			}
+			emptyDvdDrives = append(emptyDvdDrives, emptyDvdDrive)
+		}
+	}
+
+	return emptyDvdDrives, nil
+}
+
 func (vm *VirtualMachine) GetVirtualHardDiskByLocation(controllerNumber, controllerLocation int) (vhd *disk.VirtualHardDisk, err error) {
 	col, err := vm.GetVirtualHardDisks()
 	if err != nil {
