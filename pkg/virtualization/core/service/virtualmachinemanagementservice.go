@@ -294,11 +294,12 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 			return
 		}
 
-		// Try to get the Out Params
+		// Return immediately if result is success
 		if result.ReturnValue == constant.Success {
 			return
 		}
 
+		// If WMI method returns job, return after job completion
 		val := result.OutMethodParams["Job"]
 		job, err1 := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
 		if err1 != nil {
@@ -307,7 +308,7 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 		}
 		defer job.Close()
 
-		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+		return job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 	}
 }
 
