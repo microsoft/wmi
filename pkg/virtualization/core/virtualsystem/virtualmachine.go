@@ -362,35 +362,29 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 		return nil, err
 	}
 
-	// Keep track of instances we've already processed to avoid double closing
-	processedInstances := make(map[interface{}]bool) // Use interface{} for flexibility
-
-	defer func() {
-		for _, instance := range inst {
-			if instance != nil && !processedInstances[instance] {
-				instance.Close()
-			}
-		}
-	}()
-
 	if len(inst) == 0 {
 		return nil, errors.Wrapf(errors.NotFound, "No Related Items were received for VirtualSystemSettingData")
 	}
 
+	// Close all the instances at the end
+	defer inst.Close()
+
 	if len(inst) == 1 {
-		vssd, err := NewVirtualSystemSettingData(inst[0])
+		// Clone the instance to avoid modifying the original instance
+		clonedInstance, err := inst[0].Clone()
 		if err != nil {
-			return nil, err // Handle the error appropriately
+			return nil, errors.Wrapf(err, "Failed to clone the VirtualSystemSettingData instance")
 		}
-		processedInstances[inst[0]] = true // Mark as processed
+
+		vssd, err := NewVirtualSystemSettingData(clonedInstance)
+		if err != nil {
+			return nil, errors.Wrapf(err, "Failed to create VirtualSystemSettingData from cloned instance")
+		}
 		return vssd, nil
 	}
 
+	// If there are multiple instances, we need to find the one that is not a snapshot realized system type
 	for _, instance := range inst {
-		if instance == nil || processedInstances[instance] { // Check for nil and processed
-			continue
-		}
-
 		vssd, err := NewVirtualSystemSettingData(instance)
 		if err != nil {
 			continue
@@ -398,18 +392,21 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 
 		systemType, err := vssd.GetProperty("VirtualSystemType")
 		if err != nil {
-			vssd.Close()
-			processedInstances[instance] = true // Mark as processed
 			continue
 		}
 
 		// filter out the snapshot realized system type
 		if systemType != "Microsoft:Hyper-V:Snapshot:Realized" {
-			processedInstances[instance] = true // Mark as processed
+			clonedInstance, err1 := instance.Clone()
+			if err1 != nil {
+				return nil, errors.Wrapf(err1, "Failed to clone the VirtualSystemSettingData instance")
+			}
+			vssd, err = NewVirtualSystemSettingData(clonedInstance)
+			if err != nil {
+				return nil, errors.Wrapf(err, "Failed to create VirtualSystemSettingData from cloned instance")
+			}
 			return vssd, nil
 		}
-		vssd.Close()
-		processedInstances[instance] = true // Mark as processed
 	}
 
 	return nil, errors.Wrapf(errors.NotFound, "Unable to find VirtualSystemSettingData for VM [%s]", vm.Name())
