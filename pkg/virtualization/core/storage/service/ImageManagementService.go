@@ -179,6 +179,7 @@ func (ims *ImageManagementService) GetVirtualHardDiskConfig(path string) (size u
 	lSectorSize uint32,
 	pSectorSize uint32,
 	format uint16,
+	virtualDiskId string,
 	err error) {
 	method, err := ims.GetWmiMethod("GetVirtualHardDiskSettingData")
 	if err != nil {
@@ -204,7 +205,7 @@ func (ims *ImageManagementService) GetVirtualHardDiskConfig(path string) (size u
 	}
 	val, ok := result.OutMethodParams["SettingData"]
 	if ok && val.Value != nil {
-		size, blockSize, lSectorSize, pSectorSize, format, err = disk.GetVirtualHardDiskSettingDataFromXml(ims.GetWmiHost(), val.Value.(string))
+		size, blockSize, lSectorSize, pSectorSize, format, virtualDiskId, err = disk.GetVirtualHardDiskSettingDataFromXml(ims.GetWmiHost(), val.Value.(string))
 		if err != nil {
 			return
 		}

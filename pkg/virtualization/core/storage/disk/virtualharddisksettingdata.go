@@ -97,6 +97,7 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 	lSectorSize uint32,
 	pSectorSize uint32,
 	format uint16,
+	virtualDiskId string,
 	err error) {
 
 	log.Printf("Decoding WMI response [%s]\n", xmlInstance)
@@ -138,6 +139,8 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 				return
 			}
 			format = uint16(tempvar)
+		case "VirtualDiskId":
+			virtualDiskId = property.VALUE
 		}
 	}
 
