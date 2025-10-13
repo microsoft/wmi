@@ -5,7 +5,7 @@ package service
 
 import (
 	"os"
-
+	"strings"
 	"testing"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -95,7 +95,7 @@ func TestGetVirtualHardDiskConfig(t *testing.T) {
 	}
 	defer os.RemoveAll(path)
 
-	readSize, _, readLsectorSize, readPsectorSize, _, err := ims.GetVirtualHardDiskConfig(path)
+	readSize, _, readLsectorSize, readPsectorSize, _, readVirtualDiskId, err := ims.GetVirtualHardDiskConfig(path)
 	if err != nil {
 		t.Fatal("Get vhd configuration failed " + err.Error())
 	}
@@ -110,5 +110,15 @@ func TestGetVirtualHardDiskConfig(t *testing.T) {
 
 	if readPsectorSize != psectorSize {
 		t.Fatal("Get vhd configuration physical sector mismatch")
+	}
+
+	if readVirtualDiskId == "" {
+		t.Fatal("Get vhd configuration virtual disk id is empty")
+	}
+
+	t.Logf("Virtual Disk Id: %s", readVirtualDiskId)
+	hostId := strings.ReplaceAll(readVirtualDiskId, "-", "")
+	if len(hostId) != 32 {
+		t.Fatal("Get vhd configuration virtual disk id length is not equal to 32")
 	}
 }
