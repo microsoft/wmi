@@ -44,10 +44,10 @@ jobs:
         timeoutInMinutes: 120
         displayName: "Build"
 
-      #- task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
-      #  displayName: "SBOM Generation"
-      #  inputs:
-      #    BuildDropPath: $(System.DefaultWorkingDirectory)/manifest
-#
-#      - publish: $(System.DefaultWorkingDirectory)/manifest
-#        artifact: manifest
+      - task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
+        displayName: "SBOM Generation"
+        inputs:
+          BuildDropPath: $(System.DefaultWorkingDirectory)/manifest
+
+      - publish: $(System.DefaultWorkingDirectory)/manifest
+        artifact: manifest
