@@ -4,8 +4,10 @@
 package service
 
 import (
+	"log"
 	"os"
 	"sync"
+	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
@@ -193,38 +195,74 @@ func (ims *ImageManagementService) GetVirtualHardDiskConfig(path string) (size u
 	outparams := wmi.WmiMethodParamCollection{}
 	outparams = append(outparams, wmi.NewWmiMethodParam("SettingData", nil))
 	outparams = append(outparams, wmi.NewWmiMethodParam("Job", nil))
+	retryCount := 0
 
-	result, err := method.Execute(inparams, outparams)
-	if err != nil {
-		return
-	}
-
-	if !(result.ReturnValue == 4096 || result.ReturnValue == 0) {
-		err = errors.Wrapf(errors.Failed, "GetVirtualHardDiskSettingData method failed with [%d]", result.ReturnValue)
-		return
-	}
-	val, ok := result.OutMethodParams["SettingData"]
-	if ok && val.Value != nil {
-		size, blockSize, lSectorSize, pSectorSize, format, virtualDiskId, err = disk.GetVirtualHardDiskSettingDataFromXml(ims.GetWmiHost(), val.Value.(string))
-		if err != nil {
+	for {
+		result, err1 := method.Execute(inparams, outparams)
+		if err1 != nil {
+			err = err1
 			return
 		}
+
+		if !(result.ReturnValue == 4096 || result.ReturnValue == 0) {
+			err = errors.Wrapf(errors.Failed, "GetVirtualHardDiskSettingData method failed with [%d]", result.ReturnValue)
+			return
+		}
+		val, ok := result.OutMethodParams["SettingData"]
+		if ok && val.Value != nil {
+			size, blockSize, lSectorSize, pSectorSize, format, virtualDiskId, err1 = disk.GetVirtualHardDiskSettingDataFromXml(ims.GetWmiHost(), val.Value.(string))
+			if err1 != nil {
+				err = err1
+				return
+			}
+		}
+
+		if result.ReturnValue == 0 {
+			return
+		}
+
+		val, ok = result.OutMethodParams["Job"]
+		if !ok || val.Value == nil {
+			err = errors.Wrapf(errors.NotFound, "Job")
+			return
+		}
+		job, err1 := instance.GetWmiJob(ims.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+		if err1 != nil {
+			if job != nil {
+				job.Close()
+			}
+			err = err1
+			return
+		}
+
+		err1 = job.WaitForJobCompletion(result.ReturnValue, -1)
+		if err1 == nil || !errors.IsVhdSystemInUse(err1) {
+			if job != nil {
+				job.Close()
+			}
+			err = err1
+			return
+		}
+
+		// Retry for system in use
+		if retryCount < constant.WmiMethodMaxRetries {
+			if job != nil {
+				job.Close()
+			}
+			retryCount++
+			backoffDuration := time.Duration(retryCount) * constant.WmiMethodRetryDelay
+			log.Printf("[WMI] Method [%s] failed with error system is in use. Retrying (%d/%d) after %v...", method.Name, retryCount, constant.WmiMethodMaxRetries, backoffDuration)
+			time.Sleep(backoffDuration)
+			continue
+		}
+
+		// Retries exhausted -> return an error
+		if job != nil {
+			job.Close()
+		}
+		err = errors.Wrapf(errors.Failed, "GetVirtualHardDiskSettingData: retries exhausted (%d) due to system in use", retryCount)
+		return
 	}
 
-	if result.ReturnValue == 0 {
-		return
-	}
-
-	val, ok = result.OutMethodParams["Job"]
-	if !ok || val.Value == nil {
-		err = errors.Wrapf(errors.NotFound, "Job")
-		return
-	}
-	job, err := instance.GetWmiJob(ims.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
-	if err != nil {
-		return
-	}
-	defer job.Close()
-	err = job.WaitForJobCompletion(result.ReturnValue, -1)
 	return
 }

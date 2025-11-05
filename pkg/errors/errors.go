@@ -26,6 +26,7 @@ var (
 	NotImplemented   error = errors.New("Not Implemented")
 	Unknown          error = errors.New("Unknown Reason")
 	DvdDriveNotFound error = errors.New("DVDDriveNotFound")
+	VhdSystemInUse   error = NewWMIError(32774)
 )
 
 func Wrap(cause error, message string) error {
@@ -69,6 +70,9 @@ func IsUnknown(err error) bool {
 func IsDvdDriveNotFound(err error) bool {
 	return checkError(err, DvdDriveNotFound)
 }
+func IsVhdSystemInUse(err error) bool {
+	return checkErrorRecursively(err, VhdSystemInUse)
+}
 
 func IsWMIError(err error) bool {
 	if err == nil {
@@ -95,6 +99,18 @@ func checkError(wrappedError, err error) bool {
 	cerr := perrors.Cause(wrappedError)
 	if cerr != nil && cerr == err {
 		return true
+	}
+
+	return false
+
+}
+
+func checkErrorRecursively(wrappedError, err error) bool {
+	for unwrapped := wrappedError; unwrapped != nil; {
+		if unwrapped.Error() == err.Error() {
+			return true
+		}
+		unwrapped = errors.Unwrap(unwrapped)
 	}
 
 	return false
