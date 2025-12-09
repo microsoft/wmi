@@ -1236,7 +1236,10 @@ func (vm *VirtualMachine) GetVirtualHardDiskByPath(path string) (vhd *disk.Virtu
 			err = err1
 			return
 		}
-		if vhdpath == path {
+
+		// filepath.Clean handles cross-platform path comparison issues like OS platform specific separators
+		// strings.ToLower handles windows server paths which are case-insensitive
+		if filepath.Clean(strings.ToLower(vhdpath)) == filepath.Clean(strings.ToLower(path)) {
 			vhdclone, err1 := tmpvhd.Clone()
 			if err1 != nil {
 				err = err1

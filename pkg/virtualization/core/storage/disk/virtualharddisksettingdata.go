@@ -33,6 +33,15 @@ const (
 	VirtualHardDiskFormat_2    = 3
 )
 
+type VirtualHardDiskTypeSetting uint16
+
+const (
+	VirtualHardDiskType_Unknown      = 0
+	VirtualHardDiskType_Fixed        = 2
+	VirtualHardDiskType_Dynamic      = 3
+	VirtualHardDiskType_Differencing = 4
+)
+
 type INSTANCE struct {
 	XMLName   xml.Name `xml:"INSTANCE"`
 	Text      string   `xml:",chardata"`
@@ -98,6 +107,7 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 	pSectorSize uint32,
 	format uint16,
 	virtualDiskId string,
+	dynamic bool,
 	err error) {
 
 	log.Printf("Decoding WMI response [%s]\n", xmlInstance)
@@ -141,6 +151,12 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 			format = uint16(tempvar)
 		case "VirtualDiskId":
 			virtualDiskId = property.VALUE
+		case "Type":
+			tempvar, err = strconv.ParseUint(property.VALUE, 10, 16)
+			if err != nil {
+				return
+			}
+			dynamic = uint16(tempvar) == uint16(VirtualHardDiskType_Dynamic)
 		}
 	}
 
