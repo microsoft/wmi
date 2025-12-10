@@ -31,6 +31,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/controller"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/service"
 	"github.com/microsoft/wmi/pkg/virtualization/network/switchport"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -1231,8 +1232,9 @@ func (vm *VirtualMachine) GetVirtualHardDiskByPath(path string) (vhd *disk.Virtu
 			err = err1
 			return
 		}
+
 		vhdpath, err1 := tmpvhd.GetPath()
-		if err != nil {
+		if err1 != nil {
 			err = err1
 			return
 		}
@@ -1260,6 +1262,11 @@ func (vm *VirtualMachine) GetAttachedVirtualHardDisks() (vhdPaths []string, err 
 	}
 	defer col.Close()
 
+	ims, err := service.GetImageManagementService(vm.GetWmiHost())
+	if err != nil {
+		return
+	}
+
 	for _, inst := range col {
 		retVhd, err1 := disk.NewVirtualHardDisk(inst.WmiInstance)
 		if err1 != nil {
@@ -1272,7 +1279,14 @@ func (vm *VirtualMachine) GetAttachedVirtualHardDisks() (vhdPaths []string, err 
 			err = fmt.Errorf("unable to read HostResource field from disk WMI %s", err1)
 			return
 		}
-		vhdPaths = append(vhdPaths, vhdpath[0])
+
+		baseVhdPath, _, err1 := ims.GetBaseVirtualHardDiskPath(vhdpath[0])
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		vhdPaths = append(vhdPaths, baseVhdPath)
 	}
 
 	return

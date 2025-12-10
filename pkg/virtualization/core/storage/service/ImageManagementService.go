@@ -229,3 +229,46 @@ func (ims *ImageManagementService) GetVirtualHardDiskConfig(path string) (size u
 	err = job.WaitForJobCompletion(result.ReturnValue, -1)
 	return
 }
+
+// This method recursively calls the checkpoint chain until the parent path is empty which represents the base disk
+func (ims *ImageManagementService) GetBaseVirtualHardDiskPath(vhdpath string) (path string, parentPath string, err error) {
+	method, err := ims.GetWmiMethod("GetVirtualHardDiskSettingData")
+	if err != nil {
+		return
+	}
+	defer method.Close()
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("Path", vhdpath))
+
+	outparams := wmi.WmiMethodParamCollection{}
+	outparams = append(outparams, wmi.NewWmiMethodParam("SettingData", nil))
+	outparams = append(outparams, wmi.NewWmiMethodParam("Job", nil))
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	if result.ReturnValue != 0 {
+		err = errors.Wrapf(errors.Failed, "GetVirtualHardDiskSettingData method failed with [%d]", result.ReturnValue)
+		return
+	}
+
+	val, ok := result.OutMethodParams["SettingData"]
+	if !ok || val.Value == nil {
+		err = errors.Wrapf(errors.Failed, "GetVirtualHardDiskSettingData method returned unexpected result")
+		return
+	}
+
+	path, parentPath, err = disk.GetVirtualHardDiskPathsFromXml(ims.GetWmiHost(), val.Value.(string))
+	if err != nil {
+		return
+	}
+
+	if parentPath == "" {
+		return
+	}
+
+	return ims.GetBaseVirtualHardDiskPath(parentPath)
+}
