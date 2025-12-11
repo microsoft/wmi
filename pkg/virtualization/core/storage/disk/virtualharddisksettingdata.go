@@ -33,7 +33,7 @@ const (
 	VirtualHardDiskFormat_2    = 3
 )
 
-// These contants represent the disk type returned by WMI method ImageManagementService.GetVirtualHardDiskSettingData
+// These constants represent the disk type returned by WMI method ImageManagementService.GetVirtualHardDiskSettingData
 type VirtualHardDiskTypeSetting uint16
 
 const (
