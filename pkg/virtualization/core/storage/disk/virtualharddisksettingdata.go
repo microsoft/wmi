@@ -33,6 +33,16 @@ const (
 	VirtualHardDiskFormat_2    = 3
 )
 
+// These constants represent the disk type returned by WMI method ImageManagementService.GetVirtualHardDiskSettingData
+type VirtualHardDiskTypeSetting uint16
+
+const (
+	VirtualHardDiskTypeSetting_Unknown      = 0
+	VirtualHardDiskTypeSetting_Fixed        = 2
+	VirtualHardDiskTypeSetting_Dynamic      = 3
+	VirtualHardDiskTypeSetting_Differencing = 4
+)
+
 type INSTANCE struct {
 	XMLName   xml.Name `xml:"INSTANCE"`
 	Text      string   `xml:",chardata"`
@@ -98,6 +108,7 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 	pSectorSize uint32,
 	format uint16,
 	virtualDiskId string,
+	dynamic bool,
 	err error) {
 
 	log.Printf("Decoding WMI response [%s]\n", xmlInstance)
@@ -141,6 +152,32 @@ func GetVirtualHardDiskSettingDataFromXml(whost *host.WmiHost, xmlInstance strin
 			format = uint16(tempvar)
 		case "VirtualDiskId":
 			virtualDiskId = property.VALUE
+		case "Type":
+			tempvar, err = strconv.ParseUint(property.VALUE, 10, 16)
+			if err != nil {
+				return
+			}
+			dynamic = uint16(tempvar) == uint16(VirtualHardDiskTypeSetting_Dynamic)
+		}
+	}
+
+	return
+}
+
+func GetVirtualHardDiskPathsFromXml(whost *host.WmiHost, xmlInstance string) (path string, parentPath string, err error) {
+	log.Printf("Decoding WMI response [%s]\n", xmlInstance)
+	var diskData INSTANCE
+	err = xml.Unmarshal([]byte(xmlInstance), &diskData)
+	if err != nil {
+		return
+	}
+
+	for _, property := range diskData.PROPERTY {
+		switch property.NAME {
+		case "Path":
+			path = property.VALUE
+		case "ParentPath":
+			parentPath = property.VALUE
 		}
 	}
 

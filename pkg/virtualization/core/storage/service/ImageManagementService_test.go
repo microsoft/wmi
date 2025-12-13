@@ -95,7 +95,7 @@ func TestGetVirtualHardDiskConfig(t *testing.T) {
 	}
 	defer os.RemoveAll(path)
 
-	readSize, _, readLsectorSize, readPsectorSize, _, readVirtualDiskId, err := ims.GetVirtualHardDiskConfig(path)
+	readSize, _, readLsectorSize, readPsectorSize, _, readVirtualDiskId, dynamic, err := ims.GetVirtualHardDiskConfig(path)
 	if err != nil {
 		t.Fatal("Get vhd configuration failed " + err.Error())
 	}
@@ -114,6 +114,10 @@ func TestGetVirtualHardDiskConfig(t *testing.T) {
 
 	if readVirtualDiskId == "" {
 		t.Fatal("Get vhd configuration virtual disk id is empty")
+	}
+
+	if !dynamic {
+		t.Fatal("Get vhd configuration dynamic flag mismatch")
 	}
 
 	t.Logf("Virtual Disk Id: %s", readVirtualDiskId)
