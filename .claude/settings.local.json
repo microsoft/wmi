@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(prime)",
+      "Bash(find:*)",
+      "Edit(.claude/**)",
+      "Write(.claude/**)",
+      "Read(.claude/**)",
+      "Bash(mkdir -p .claude/**)",
+      "Bash(mkdir .claude/**)"
+    ]
+  }
+}
