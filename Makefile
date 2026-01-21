@@ -10,7 +10,7 @@ BUILD_DATE ?= $(shell date -u +%m/%d/%Y)
 
 PKG := 
 
-all: vendor format library
+all: format library
  
 .PHONY: vendor
 vendor:
