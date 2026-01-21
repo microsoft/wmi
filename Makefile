@@ -10,17 +10,17 @@ BUILD_DATE ?= $(shell date -u +%m/%d/%Y)
 
 PKG := 
 
-all: format library
+all: vendor format library
  
 .PHONY: vendor
 vendor:
 	GO111MODULE=on go mod tidy
 
-library:
+library: vendor
 	GO111MODULE=on GOARCH=amd64 GOOS=windows $(GOBUILD) ./...
 
-format:
+format: vendor
 	gofmt -s -w pkg
 
-test:
+test: vendor
 	GOOS=windows GO111MODULE=on  GOARCH=amd64 go test -v ./go/...
