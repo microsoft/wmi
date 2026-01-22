@@ -29,7 +29,7 @@ jobs:
   # Make code ql happy to build the code.
   - task: GoTool@0
     inputs:
-      version: "1.22.5"
+      version: "1.25"
   - task: CmdLine@2
     displayName: 'build'
     env:
