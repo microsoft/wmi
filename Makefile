@@ -16,11 +16,11 @@ all: format library
 vendor:
 	GO111MODULE=on go mod tidy
 
-library: vendor
+library:
 	GO111MODULE=on GOARCH=amd64 GOOS=windows $(GOBUILD) ./...
 
-format: vendor
+format:
 	gofmt -s -w pkg
 
-test: vendor
+test:
 	GOOS=windows GO111MODULE=on  GOARCH=amd64 go test -v ./go/...
