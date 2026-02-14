@@ -57,13 +57,21 @@ func (rp *ResourcePool) GetResourceAllocationSettingData(crole v2.SettingsDefine
 				err = err2
 				return
 			}
-			valueRange := tmp.(int32)
+			valueRange, ok := tmp.(int32)
+			if !ok {
+				err = fmt.Errorf("failed to get ValueRange property value")
+				return
+			}
 			tmp, err2 = tmpInstance.GetProperty("ValueRole")
-			if err != nil {
+			if err2 != nil {
 				err = err2
 				return
 			}
-			valueRole := tmp.(int32)
+			valueRole, ok := tmp.(int32)
+			if !ok {
+				err = fmt.Errorf("failed to get ValueRole property value")
+				return
+			}
 			if valueRange != int32(crange) || valueRole != int32(crole) {
 				continue
 			}
@@ -73,7 +81,11 @@ func (rp *ResourcePool) GetResourceAllocationSettingData(crole v2.SettingsDefine
 				err = err1
 				return
 			}
-			tmpInstancePath := tmp.(string)
+			tmpInstancePath, ok := tmp.(string)
+			if !ok {
+				err = fmt.Errorf("failed to get PartComponent property value")
+				return
+			}
 			instnew, err1 := instance.GetWmiInstanceFromPath(rp.GetWmiHost(), string(constant.Virtualization), tmpInstancePath)
 			if err1 != nil {
 				err = err1

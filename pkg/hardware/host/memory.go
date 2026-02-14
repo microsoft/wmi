@@ -10,6 +10,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
+	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	"github.com/microsoft/wmi/server2019/root/cimv2"
 )
@@ -54,6 +55,10 @@ func GetTotalPhysicalMemory(whost *host.WmiHost) (mem *Memory, err error) {
 			err = err1
 			return
 		}
+		if memsizeVar == nil {
+			err = errors.Wrapf(errors.NotFound, "Capacity property is nil")
+			return
+		}
 		memsize, err1 := strconv.ParseUint(memsizeVar.(string), 10, 64)
 		if err1 != nil {
 			err = err1
@@ -85,6 +90,10 @@ func GetFreePhysicalMemory(whost *host.WmiHost) (mem *Memory, err error) {
 	memsizeVar, err1 := tmpInstance.GetProperty("FreePhysicalMemory")
 	if err1 != nil {
 		err = err1
+		return
+	}
+	if memsizeVar == nil {
+		err = errors.Wrapf(errors.NotFound, "FreePhysicalMemory property is nil")
 		return
 	}
 	memsize, err1 := strconv.ParseUint(memsizeVar.(string), 10, 64)

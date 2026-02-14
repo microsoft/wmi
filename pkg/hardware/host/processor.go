@@ -4,6 +4,8 @@
 package host
 
 import (
+	"errors"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -60,13 +62,23 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 			err = err1
 			return
 		}
-		totalCores = totalCores + uint32(cores.(int32))
+		coresVal, ok := cores.(int32)
+		if !ok {
+			err = errors.New("failed to get NumberOfCores property value")
+			return
+		}
+		totalCores = totalCores + uint32(coresVal)
 		lp, err1 := procInstance.GetProperty(numLPsStr)
 		if err1 != nil {
 			err = err1
 			return
 		}
-		totalLogicalProcessors = totalLogicalProcessors + uint32(lp.(int32))
+		lpVal, ok := lp.(int32)
+		if !ok {
+			err = errors.New("failed to get NumberOfLogicalProcessors property value")
+			return
+		}
+		totalLogicalProcessors = totalLogicalProcessors + uint32(lpVal)
 	}
 
 	return &TotalProcessor{
