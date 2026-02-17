@@ -33,8 +33,14 @@ func (device *PcieDevice) GetPath() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	for _, hr := range value.([]interface{}) {
-		return hr.(string), nil
+	hostResources, ok := value.([]interface{})
+	if !ok || hostResources == nil {
+		return "", errors.Wrapf(errors.NotFound, "Unable to get host resource for given PCIe device [%s]", device)
+	}
+	for _, hr := range hostResources {
+		if hrStr, ok := hr.(string); ok {
+			return hrStr, nil
+		}
 	}
 	return "", errors.Wrapf(errors.NotFound, "Unable to get host resource for given PCIe device [%s]", device)
 }

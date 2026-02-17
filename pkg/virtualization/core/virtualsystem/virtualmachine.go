@@ -607,12 +607,15 @@ func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.V
 
 func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerlocation int32, diskType VirtualHardDiskType) (synDrive *drive.SyntheticDiskDrive, err error) {
 	driverp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Disk_Drive)
+	if err != nil {
+		return
+	}
+	defer driverp.Close()
 
 	generation, err := vm.GetVirtualMachineGeneration()
 	if err != nil {
 		return
 	}
-	defer driverp.Close()
 
 	rasd, err := driverp.GetDefaultResourceAllocationSettingData()
 	if err != nil {
