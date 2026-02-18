@@ -10,9 +10,13 @@ BUILD_DATE ?= $(shell date -u +%m/%d/%Y)
 
 PKG := 
 
-all: format library
+all: tidy format library
  
 .PHONY: vendor
+.PHONY: tidy
+tidy:
+	-go mod tidy -e
+
 vendor:
 	GO111MODULE=on go mod tidy
 

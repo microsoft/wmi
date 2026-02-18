@@ -1,6 +1,6 @@
 module github.com/microsoft/wmi
 
-go 1.25
+go 1.26
 
 require (
 	github.com/go-ole/go-ole v1.2.6
