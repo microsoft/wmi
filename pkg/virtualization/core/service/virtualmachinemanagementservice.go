@@ -4,6 +4,7 @@
 package service
 
 import (
+	stderrors "errors"
 	"log"
 	"sync"
 	"time"
@@ -18,7 +19,6 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
-	perrors "github.com/pkg/errors"
 )
 
 var (
@@ -255,8 +255,8 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 		result, err1 := method.Execute(inparams, outparams)
 		if err1 != nil {
 			// Extract HRESULT if possible
-			cause := perrors.Cause(err1)
-			if oleErr, ok := cause.(*ole.OleError); ok {
+			var oleErr *ole.OleError
+			if stderrors.As(err1, &oleErr) {
 				switch oleErr.Code() {
 				case constant.WBEM_E_NOT_FOUND:
 					log.Printf("WMI Error 0x80041002 (WBEM_E_NOT_FOUND): The resource does not exist. It may have already been removed.")
