@@ -39,7 +39,9 @@ jobs:
           export PATH="${WORKAROUND_DIR}:${PATH}"
 
           mkdir manifest
-          make
+          # Generated namespace packages have large compiler memory footprints.
+          # Compile them serially without narrowing the library's ./... scope.
+          make GOBUILD='go build -v -p=1'
         workingDirectory: "$(System.DefaultWorkingDirectory)"
         timeoutInMinutes: 120
         displayName: "Build"
