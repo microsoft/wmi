@@ -14,8 +14,38 @@ msbuild .\tools\wmigen\wmicodegen.csproj /p:Configuration=Release
 .\tools\wmigen\bin\Release\wmigen.exe -help
 ```
 
-The existing Windows pipeline builds the generator and checks its help command.
-Building the generator does not require querying WMI or installing Windows roles.
+The dedicated [GitHub Actions build workflow](../../.github/workflows/wmigen.yml)
+builds the generator and checks its help command on Windows. It runs for relevant
+pull requests and pushes to `master`, and can also be started manually. Its
+`wmigen-windows-net48` artifact contains a ZIP and SHA256 sidecar; the ZIP includes
+the executable, configuration, this README and MIT license. Running the executable
+requires Windows and .NET Framework 4.8, but not MSBuild.
+
+Building the generator does not query WMI or install Windows roles. Existing Go
+and security pipelines remain separate.
+
+## Release
+
+The separate [release workflow](../../.github/workflows/wmigen-release.yml) runs
+when a maintainer pushes a tag of the form `wmigen/vX.Y.Z`, for example
+`wmigen/v1.0.0`. The tagged commit must already be merged into `master`.
+
+The workflow reuses the same Windows build, help smoke test and packaging steps.
+Only after those succeed does it verify the ZIP checksum and create a GitHub
+Release with the ZIP and SHA256 sidecar. It requires no external feed, credentials
+or service connection: only the publishing job has repository-content write
+permission through `GITHUB_TOKEN`. Actions are pinned to immutable commit hashes.
+Tool releases do not replace the Go library's "Latest" release.
+
+The workflow does not create or push tags, generate schema bindings, sign binaries
+or install providers. Creating the workflows does not publish a release. If
+publishing fails, inspect the run and any existing draft before retrying; the
+workflow does not overwrite existing releases or assets.
+
+This follows GitHub's guidance on
+[reusing workflows](https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows),
+[release management](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
+and [least-privilege workflow permissions](https://docs.github.com/en/actions/reference/security/secure-use).
 
 ## Generate Go bindings
 

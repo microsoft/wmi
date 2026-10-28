@@ -1,0 +1,78 @@
+name: wmigen build
+
+on:
+  pull_request:
+    paths:
+      - 'tools/wmigen/**'
+      - '.github/workflows/wmigen*.yml'
+      - 'LICENSE'
+  push:
+    branches: [master]
+    paths:
+      - 'tools/wmigen/**'
+      - '.github/workflows/wmigen*.yml'
+      - 'LICENSE'
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and smoke-test wmigen
+    runs-on: windows-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Build Release executable
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $msbuild = & $vswhere -latest -products '*' -requires Microsoft.Component.MSBuild -find 'MSBuild\**\Bin\MSBuild.exe' |
+              Select-Object -First 1
+          if (-not $msbuild) {
+            throw 'Visual Studio MSBuild was not found'
+          }
+          & $msbuild '.\tools\wmigen\wmicodegen.csproj' /p:Configuration=Release /nologo /verbosity:minimal
+          if ($LASTEXITCODE -ne 0) {
+            throw "WMI generator build failed with exit code $LASTEXITCODE"
+          }
+
+      - name: Smoke-test help
+        run: |
+          $ErrorActionPreference = 'Stop'
+          & '.\tools\wmigen\bin\Release\wmigen.exe' -help
+          if ($LASTEXITCODE -ne 0) {
+            throw "WMI generator help failed with exit code $LASTEXITCODE"
+          }
+
+      - name: Package executable and checksum
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $package = Join-Path $env:RUNNER_TEMP 'wmigen-package'
+          New-Item -ItemType Directory -Path $package | Out-Null
+          Copy-Item '.\tools\wmigen\bin\Release\wmigen.exe',
+                    '.\tools\wmigen\bin\Release\wmigen.exe.config',
+                    '.\tools\wmigen\README.md',
+                    '.\LICENSE' -Destination $package
+          $archive = Join-Path $env:RUNNER_TEMP 'wmigen-windows-net48.zip'
+          Compress-Archive -Path "$package\*" -DestinationPath $archive
+          $hash = (Get-FileHash -Algorithm SHA256 $archive).Hash.ToLowerInvariant()
+          Set-Content -Path "$archive.sha256" -Value "$hash  wmigen-windows-net48.zip`n" -Encoding ascii -NoNewline
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: wmigen-windows-net48
+          path: |
+            ${{ runner.temp }}\wmigen-windows-net48.zip
+            ${{ runner.temp }}\wmigen-windows-net48.zip.sha256
+          if-no-files-found: error
