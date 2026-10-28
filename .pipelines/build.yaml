@@ -25,6 +25,8 @@ jobs:
         displayName: "Set up the Go workspace"
 
       - script: |
+          set -euo pipefail
+
           # Static binary workaround for CodeQL and Go 1.21 and higher
           # https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/codeql/troubleshooting/onboarding/language-compiled
           mkdir $AGENT_TEMPDIRECTORY/codeql-go-tracing
@@ -38,6 +40,11 @@ jobs:
           chmod 755 "${WORKAROUND_DIR}/go"
           export PATH="${WORKAROUND_DIR}:${PATH}"
 
+          # Ubuntu 26's /tmp is RAM-backed and quota-limited.
+          mkdir -p "$GOTMPDIR"
+          go env GOTMPDIR
+          df -h /tmp "$GOTMPDIR"
+
           mkdir manifest
           # Generated namespace packages have large compiler memory footprints.
           # Compile them serially without narrowing the library's ./... scope.
@@ -45,6 +52,8 @@ jobs:
         workingDirectory: "$(System.DefaultWorkingDirectory)"
         timeoutInMinutes: 120
         displayName: "Build"
+        env:
+          GOTMPDIR: "$(Agent.TempDirectory)/go-build"
 
       #- task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
       #  displayName: "SBOM Generation"
