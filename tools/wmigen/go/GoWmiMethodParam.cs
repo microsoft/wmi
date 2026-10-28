@@ -35,7 +35,7 @@ namespace Microsoft.wmi.GO
                 //"{/*Comment*/} {4} {1} {2} {4} {3}", 
                 "{0} {1} {2}{3}", 
                 Comment, 
-                WmiMethod.FixName(Name),
+                GOWmiMethod.FixName(Name),
                 IsArray ? "[]" : "",
                 ReferencedType
             );
@@ -57,7 +57,7 @@ namespace Microsoft.wmi.GO
                 Comment,
                 ParamterType == ParamType.Output ? "out" : "", 
                 ReferencedType, 
-                WmiMethod.FixName(Name));
+                GOWmiMethod.FixName(Name));
         }
 
         public string ReferencedType { get; set; }

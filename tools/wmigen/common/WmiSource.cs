@@ -53,9 +53,6 @@ namespace Microsoft.wmi.Common
         {
             // Do not search user WMI Namespace
             if (wNamespace.Equals("root/rsop/user", StringComparison.OrdinalIgnoreCase)) return false;
-            // It takes time to check this. There will not be any dependency in this namespace.so Skip it
-            if (wNamespace.Equals("root/directory/LDAP", StringComparison.OrdinalIgnoreCase)) return false;
-
             Logger.Debug("CheckClass - Class [{0}], NS [{1}]", cName, wNamespace);
             if (!ClassList.ContainsKey(wNamespace))
             {
@@ -260,12 +257,10 @@ namespace Microsoft.wmi.Common
                 //string classPrefix = WmiModule.GetModuleName(wSource.Name);
                 //string enumFile = enumName + ".cs";
 
-                wEnum = this.Parent.Parent.GetEnum(enumName);
-                if (wEnum != null) return wEnum;
+                WmiEnum existingEnum = this.Parent.Parent.GetEnum(enumName);
 
                 // Create new Enum
                 wEnum = GetWmiEnum(enumName, this);
-                this.Parent.Parent.AddEnum(wEnum);
                 //wSource.Parent.Enums[enumName] = wEnum;
 
                 int value = 0;
@@ -288,6 +283,28 @@ namespace Microsoft.wmi.Common
                     Logger.Debug("Enum Name {0} => Value[{1}]", enumValue, value);
                     wEnum.Add(WmiEnum.FixEnumName(enumValue), value);
                 }
+
+                int suffix = 2;
+                while (existingEnum != null)
+                {
+                    bool equivalent = existingEnum.EnumValues.Count == wEnum.EnumValues.Count;
+                    foreach (KeyValuePair<string, int> member in wEnum.EnumValues)
+                    {
+                        int existingValue;
+                        if (!existingEnum.EnumValues.TryGetValue(member.Key, out existingValue)
+                            || existingValue != member.Value)
+                        {
+                            equivalent = false;
+                            break;
+                        }
+                    }
+                    if (equivalent) return existingEnum;
+                    wEnum.Name = enumName + "_" + suffix.ToString(CultureInfo.InvariantCulture);
+                    suffix++;
+                    existingEnum = this.Parent.Parent.GetEnum(wEnum.Name);
+                }
+
+                this.Parent.Parent.AddEnum(wEnum);
 
 #if false
                 // Check if the existing enum and the current enum are exactly the same
