@@ -1,0 +1,75 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 10/28/2026 using wmigen
+//      Source root.MSCluster
+//////////////////////////////////////////////
+package mscluster
+
+import (
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// MSCluster_NativeUpdateManager struct
+type MSCluster_NativeUpdateManager struct {
+	*cim.WmiInstance
+}
+
+func NewMSCluster_NativeUpdateManagerEx1(instance *cim.WmiInstance) (newInstance *MSCluster_NativeUpdateManager, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_NativeUpdateManager{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSCluster_NativeUpdateManagerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_NativeUpdateManager, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_NativeUpdateManager{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+//
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *MSCluster_NativeUpdateManager) EnableClusterNativeUpdate() (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("EnableClusterNativeUpdate")
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}
+
+//
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *MSCluster_NativeUpdateManager) DisableClusterNativeUpdate() (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("DisableClusterNativeUpdate")
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}
