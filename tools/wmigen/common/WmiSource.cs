@@ -258,7 +258,6 @@ namespace Microsoft.wmi.Common
                 //string enumFile = enumName + ".cs";
 
                 WmiEnum existingEnum = this.Parent.Parent.GetEnum(enumName);
-                if (existingEnum != null && existingEnum.Name == enumName) return existingEnum;
 
                 // Create new Enum
                 wEnum = GetWmiEnum(enumName, this);
@@ -285,7 +284,8 @@ namespace Microsoft.wmi.Common
                     wEnum.Add(WmiEnum.FixEnumName(enumValue), value);
                 }
 
-                if (existingEnum != null)
+                int suffix = 2;
+                while (existingEnum != null)
                 {
                     bool equivalent = existingEnum.EnumValues.Count == wEnum.EnumValues.Count;
                     foreach (KeyValuePair<string, int> member in wEnum.EnumValues)
@@ -298,11 +298,10 @@ namespace Microsoft.wmi.Common
                             break;
                         }
                     }
-                    if (!equivalent)
-                        throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                            "Enum names '{0}' and '{1}' in namespace '{2}' differ only by case but have conflicting members.",
-                            existingEnum.Name, enumName, WmiNamespace));
-                    return existingEnum;
+                    if (equivalent) return existingEnum;
+                    wEnum.Name = enumName + "_" + suffix.ToString(CultureInfo.InvariantCulture);
+                    suffix++;
+                    existingEnum = this.Parent.Parent.GetEnum(wEnum.Name);
                 }
 
                 this.Parent.Parent.AddEnum(wEnum);

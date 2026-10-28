@@ -138,8 +138,8 @@ create clusters, or restart the host. It preserves the legacy exclusions for
 `SourceCommit` is supplied by the caller and must identify the source used to
 build the executable. The wrapper records that assertion without requiring a Git
 checkout on the capture host; it independently computes the executable's SHA256.
-Case-only enum names reuse a declaration only when their members and wire values
-match; conflicting definitions stop generation explicitly.
+Enum names reuse a declaration only when their members and wire values match;
+conflicting definitions receive distinct, case-insensitively unique names.
 
 The resulting `server2025` directory must be formatted and compiled against this
 repository before check-in. Provider availability depends on the source host;
