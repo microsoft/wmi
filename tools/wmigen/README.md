@@ -86,10 +86,11 @@ and [least-privilege workflow permissions](https://docs.github.com/en/actions/re
 Run on the Windows release whose schemas you intend to capture:
 
 ```powershell
+$staging = Join-Path $env:TEMP ('wmigen-server2019-' + [guid]::NewGuid().ToString('N'))
 .\tools\wmigen\bin\Release\wmigen.exe `
     -generatesource -format GO -ns root/cimv2 `
     -rootmodulepath github.com/microsoft/wmi/server2019 `
-    -outdir .\server2019
+    -outdir $staging
 ```
 
 `-rootmodulepath` changes generated import paths; it does **not** select an OS or
