@@ -4,6 +4,7 @@
 using System;
 using System.Management;
 using Microsoft.wmi.Common;
+using Microsoft.wmi.CSharp;
 using Microsoft.wmi.GO;
 
 namespace Microsoft.wmi.Tests
@@ -15,6 +16,12 @@ namespace Microsoft.wmi.Tests
             var ns = new InMemoryNamespace(moduleName);
             return new GOWmiSource("Test_Device", ns.AddModule(moduleName),
                 "example.com/wmi/server");
+        }
+
+        internal static CSWmiSource CreateCSharpSource()
+        {
+            var ns = new InMemoryNamespace("cimv2");
+            return new CSWmiSource("Test_Device", ns.AddModule("cimv2"));
         }
 
         // Do not construct GOWmiNamespace: its constructor discovers live WMI
