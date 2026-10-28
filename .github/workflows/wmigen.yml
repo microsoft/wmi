@@ -4,12 +4,14 @@ on:
   pull_request:
     paths:
       - 'tools/wmigen/**'
+      - 'server2025/**'
       - '.github/workflows/wmigen*.yml'
       - 'LICENSE'
   push:
     branches: [master]
     paths:
       - 'tools/wmigen/**'
+      - 'server2025/**'
       - '.github/workflows/wmigen*.yml'
       - 'LICENSE'
   workflow_dispatch:
