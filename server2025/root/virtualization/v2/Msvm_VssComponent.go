@@ -47,12 +47,12 @@ func NewMsvm_VssComponentEx6(hostName string,
 	return
 }
 
-func (instance *Msvm_VssComponent) GetRelatedVssService() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VssService")
-}
-
 func (instance *Msvm_VssComponent) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_VssComponent) GetRelatedVssService() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VssService")
 }
 
 func (instance *Msvm_VssComponent) GetRelatedVssComponentSettingData() (value *cim.WmiInstance, err error) {

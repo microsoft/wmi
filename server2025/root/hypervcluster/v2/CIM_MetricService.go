@@ -84,14 +84,14 @@ func (instance *CIM_MetricService) ShowMetrics( /* IN */ Subject CIM_ManagedElem
 // <param name="Subject" type="CIM_ManagedElement ">The Subject parameter identifies a CIM class for which the method returns references to instances of CIM_BaseMetricDefinition that define metrics that are available to be captured for all instances of the class.</param>
 
 // <param name="DefinitionList" type="CIM_BaseMetricDefinition []">Upon successful completion of the method, the DefinitionList parameter may contain references to instances of CIM_BaseMetricDefinitions that define metrics available for collection for the CIM_ManagedElement identified by the Subject parameter.</param>
-// <param name="MetricCollectionEnabled" type="MetricService_MetricCollectionEnabled []">The MetricCollectionEnabled parameter indicates whether a metric is being collected for all instances of a class of managed elements.</param>
+// <param name="MetricCollectionEnabled" type="MetricService_MetricCollectionEnabled_2 []">The MetricCollectionEnabled parameter indicates whether a metric is being collected for all instances of a class of managed elements.</param>
 // <param name="MetricNames" type="string []">Upon successful completion of the method, each array index of the MetricNames parameter shall contain the value of the Name property for the instance of CIM_BaseMetricDefinition referenced by the corresponding array index of the DefinitionList parameter.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_MetricService) ShowMetricsByClass( /* IN */ Subject CIM_ManagedElement,
 	/* IN */ Definition CIM_BaseMetricDefinition,
 	/* OUT */ DefinitionList []CIM_BaseMetricDefinition,
 	/* OUT */ MetricNames []string,
-	/* OUT */ MetricCollectionEnabled []MetricService_MetricCollectionEnabled) (result uint32, err error) {
+	/* OUT */ MetricCollectionEnabled []MetricService_MetricCollectionEnabled_2) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("ShowMetricsByClass", Subject, Definition)
 	if err != nil {
 		return
@@ -107,13 +107,13 @@ func (instance *CIM_MetricService) ShowMetricsByClass( /* IN */ Subject CIM_Mana
 ///If the Subject parameter and Definition parameter are both non-NULL and the value of the MetricCollectionEnabled parameter is 4 "Reset" upon successful completion of the method, the MetricCollectionEnabled property of the instance of CIM_MetricDefForME that references the instance of CIM_ManagedElement identified by the Subject parameter and references the instance of CIM_BaseMetricDefinition identified by the Definition parameter shall transition to 3 "Disabled" then to 2 "Enabled". If the Subject parameter and Definition parameter are both non-NULL and there is not an instance of CIM_MetricDefForME that associates the two instances, the method shall return 2 "Failed". If the Subject and Definition parameters are both NULL, the method shall return 2 "Failed". If the Definition parameter is a reference to an instance of CIM_BaseMetricDefinition that is not associated to the CIM_MetricService through CIM_ServiceAffectsElement, the method shall return 2 "Failed". If the Subject parameter does not identify a single instance the Method shall return 2 "Failed".
 
 // <param name="Definition" type="CIM_BaseMetricDefinition ">The Definition parameter identifies a CIM_BaseMetricDefinition for which metrics will be controlled.</param>
-// <param name="MetricCollectionEnabled" type="MetricService_MetricCollectionEnabled ">The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics.</param>
+// <param name="MetricCollectionEnabled" type="MetricService_MetricCollectionEnabled_3 ">The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics.</param>
 // <param name="Subject" type="CIM_ManagedElement ">The Subject parameter identifies managed element(s) for which metrics will be controlled.</param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_MetricService) ControlMetrics( /* IN */ Subject CIM_ManagedElement,
 	/* IN */ Definition CIM_BaseMetricDefinition,
-	/* IN */ MetricCollectionEnabled MetricService_MetricCollectionEnabled) (result uint32, err error) {
+	/* IN */ MetricCollectionEnabled MetricService_MetricCollectionEnabled_3) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("ControlMetrics", Subject, Definition, MetricCollectionEnabled)
 	if err != nil {
 		return
@@ -127,13 +127,13 @@ func (instance *CIM_MetricService) ControlMetrics( /* IN */ Subject CIM_ManagedE
 ///If the Definition parameter is NULL, and the MetricCollectionEnabled parameter has the value 2 "Enabled" or 3 "Disabled", upon successful completion of the method, the MetricCollectionEnabled property of each instance of CIM_MetricDefForME that references an instance of the class identified by the Subject parameter and references an instance of CIM_BaseMetricDefinition that is associated to the CIM_BaseMetricService through the CIM_ServiceAffectsElement association shall have the value of the MetricCollectionEnabled parameter. If the Definition parameter is NULL, and the MetricCollectionEnabled parameter has the value 4 "Reset", upon successful completion of the method, the MetricCollectionEnabled property of each instance of CIM_MetricDefForME that references an instance of the class identified by the Subject parameter and references an instance of CIM_BaseMetricDefinition that is associated to the CIM_BaseMetricService through the CIM_ServiceAffectsElement association shall transition to 3 "Disabled" then to 2 "Enabled". If the Definition parameter is non-NULL, and the MetricCollectionEnabled parameter has the value 2 "Enable" or 3 "Disable", upon successful completion of the method the MetricCollectionEnabled property of each instance of CIM_MetricDefForME that references the instance of CIM_BaseMetricDefinition identified by the Definition parameter and references an instance of the class identified by the Subject parameter shall have the value of the MetricCollectionEnabled parameter. If the Definition parameter is non-NULL, and the MetricCollectionEnabled parameter has the value 4 "Reset", upon successful completion of the method the MetricCollectionEnabled property of each instance of CIM_MetricDefForME that references the instance of CIM_BaseMetricDefinition identified by the Definition parameter and references an instance of the class identified by the Subject parameter shall transition to 3 "Disabled" then to 2 "Enabled". For each instance of the class identified by the Subject parameter, if there is not an instance of CIM_MetricDefForME that associates the CIM_BaseMetricDefinition instance identified by the Definition parameter to the instance, the method shall return 2 "Failed". If the Subject and Definition parameters are both NULL, the method shall return 2 "Failed". If the Definition parameter is a reference to an instance of CIM_BaseMetricDefinition that is not associated to the CIM_MetricService through CIM_ServiceAffectsElement, the method shall return 2 "Failed". If the Subject parameter does not identify a single CIM Class the Method shall return 2 "Failed".
 
 // <param name="Definition" type="CIM_BaseMetricDefinition ">The Definition parameter identifies a CIM_BaseMetricDefinition for which metrics will be controlled.</param>
-// <param name="MetricCollectionEnabled" type="MetricService_MetricCollectionEnabled ">The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics.</param>
+// <param name="MetricCollectionEnabled" type="MetricService_MetricCollectionEnabled_3 ">The MetricCollectionEnabled parameter indicates the desired operation to perform on the metrics.</param>
 // <param name="Subject" type="CIM_ManagedElement ">The Subject parameter identifies the CIM class for which metrics will be controlled.</param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_MetricService) ControlMetricsByClass( /* IN */ Subject CIM_ManagedElement,
 	/* IN */ Definition CIM_BaseMetricDefinition,
-	/* IN */ MetricCollectionEnabled MetricService_MetricCollectionEnabled) (result uint32, err error) {
+	/* IN */ MetricCollectionEnabled MetricService_MetricCollectionEnabled_3) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("ControlMetricsByClass", Subject, Definition, MetricCollectionEnabled)
 	if err != nil {
 		return

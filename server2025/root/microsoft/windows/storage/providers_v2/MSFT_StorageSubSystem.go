@@ -2222,7 +2222,7 @@ func (instance *MSFT_StorageSubSystem) CreateStoragePool2( /* IN */ FriendlyName
 // <param name="ProvisioningType" type="StorageSubSystem_ProvisioningType ">Denotes the provisioning type of the virtual disk. A value of 1 - 'Thin' means that the storage for the disk is allocated on-demand. A value of 2 - 'Fixed' means that the storage is allocated up front.</param>
 // <param name="RequestNoSinglePointOfFailure" type="bool "></param>
 // <param name="Size" type="uint64 ">Indicates the desired size for the virtual disk. Note that some storage subsystems will round the size up or down to a multiple of its allocation unit size. If this parameter is specified, UseMaximumSize must be NULL or FALSE.</param>
-// <param name="Usage" type="StorageSubSystem_Usage ">Denotes the intended usage of the virtual disk</param>
+// <param name="Usage" type="StorageSubSystem_Usage_2 ">Denotes the intended usage of the virtual disk</param>
 // <param name="UseMaximumSize" type="bool ">Create a virtual disk using the largest supported size. This parameter cannot be used with the Size parameter.</param>
 
 // <param name="CreatedStorageJob" type="MSFT_StorageJob ">This parameter returns a reference to the storage job used to track the long running operation. When the operation has completed, an association should exist between the storage job and the created objects.</param>
@@ -2231,7 +2231,7 @@ func (instance *MSFT_StorageSubSystem) CreateStoragePool2( /* IN */ FriendlyName
 // <param name="ReturnValue" type="uint32 "></param>
 // <param name="Size" type="uint64 ">Indicates the desired size for the virtual disk. Note that some storage subsystems will round the size up or down to a multiple of its allocation unit size. If this parameter is specified, UseMaximumSize must be NULL or FALSE.</param>
 func (instance *MSFT_StorageSubSystem) CreateVirtualDisk( /* IN */ FriendlyName string,
-	/* IN */ Usage StorageSubSystem_Usage,
+	/* IN */ Usage StorageSubSystem_Usage_2,
 	/* IN */ OtherUsageDescription string,
 	/* IN/OUT */ Size uint64,
 	/* IN */ UseMaximumSize bool,

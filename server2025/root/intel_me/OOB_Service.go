@@ -79,9 +79,9 @@ func (instance *OOB_Service) isRemoteConfigEnabled( /* OUT */ enabled bool) (res
 
 // Indicates whether the device is using TLS-PSK or TLS-PKI activation mode
 
-// <param name="mode" type="Service_mode ">TLS activation mode</param>
+// <param name="mode" type="Service_mode_2 ">TLS activation mode</param>
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *OOB_Service) GetActivationTLSMode( /* OUT */ mode Service_mode) (result uint32, err error) {
+func (instance *OOB_Service) GetActivationTLSMode( /* OUT */ mode Service_mode_2) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("GetActivationTLSMode")
 	if err != nil {
 		return

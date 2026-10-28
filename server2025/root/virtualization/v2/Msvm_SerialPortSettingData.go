@@ -82,12 +82,12 @@ func (instance *Msvm_SerialPortSettingData) GetRelatedVirtualSystemSettingData()
 	return instance.GetRelated("Msvm_VirtualSystemSettingData")
 }
 
-func (instance *Msvm_SerialPortSettingData) GetRelatedSerialPort() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_SerialPort")
-}
-
 func (instance *Msvm_SerialPortSettingData) GetRelatedResourceAllocationSettingData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourceAllocationSettingData")
+}
+
+func (instance *Msvm_SerialPortSettingData) GetRelatedSerialPort() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SerialPort")
 }
 
 func (instance *Msvm_SerialPortSettingData) GetRelatedSerialPortSettingData() (value []*cim.WmiInstance, err error) {

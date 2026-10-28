@@ -112,20 +112,20 @@ func (instance *Msvm_EthernetSwitchPort) GetRelatedDynamicForwardingEntry() (val
 	return instance.GetRelated("Msvm_DynamicForwardingEntry")
 }
 
-func (instance *Msvm_EthernetSwitchPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_LANEndpoint")
-}
-
-func (instance *Msvm_EthernetSwitchPort) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
-}
-
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortOffloadData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchPortOffloadData")
 }
 
+func (instance *Msvm_EthernetSwitchPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_LANEndpoint")
+}
+
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortBandwidthData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchPortBandwidthData")
+}
+
+func (instance *Msvm_EthernetSwitchPort) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {

@@ -20,10 +20,10 @@ type Msvm_ResourcePoolConfigurationCapabilities struct {
 	*CIM_Capabilities
 
 	// This property reflects the methods of the associated service class that are supported that may return a Job.
-	AsynchronousMethodsSupported []ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported
+	AsynchronousMethodsSupported []ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported_2
 
 	// This property reflects the methods of the associated service class that are supported and block until completed (no Job is returned.)
-	SynchronousMethodsSupported []ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported
+	SynchronousMethodsSupported []ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported_2
 }
 
 func NewMsvm_ResourcePoolConfigurationCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *Msvm_ResourcePoolConfigurationCapabilities, err error) {
@@ -56,12 +56,12 @@ func NewMsvm_ResourcePoolConfigurationCapabilitiesEx6(hostName string,
 }
 
 // SetAsynchronousMethodsSupported sets the value of AsynchronousMethodsSupported for the instance
-func (instance *Msvm_ResourcePoolConfigurationCapabilities) SetPropertyAsynchronousMethodsSupported(value []ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported) (err error) {
+func (instance *Msvm_ResourcePoolConfigurationCapabilities) SetPropertyAsynchronousMethodsSupported(value []ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported_2) (err error) {
 	return instance.SetProperty("AsynchronousMethodsSupported", (value))
 }
 
 // GetAsynchronousMethodsSupported gets the value of AsynchronousMethodsSupported for the instance
-func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertyAsynchronousMethodsSupported() (value []ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported, err error) {
+func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertyAsynchronousMethodsSupported() (value []ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported_2, err error) {
 	retValue, err := instance.GetProperty("AsynchronousMethodsSupported")
 	if err != nil {
 		return
@@ -77,19 +77,19 @@ func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertyAsynchron
 			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
 			return
 		}
-		value = append(value, ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported(valuetmp))
+		value = append(value, ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported_2(valuetmp))
 	}
 
 	return
 }
 
 // SetSynchronousMethodsSupported sets the value of SynchronousMethodsSupported for the instance
-func (instance *Msvm_ResourcePoolConfigurationCapabilities) SetPropertySynchronousMethodsSupported(value []ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported) (err error) {
+func (instance *Msvm_ResourcePoolConfigurationCapabilities) SetPropertySynchronousMethodsSupported(value []ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported_2) (err error) {
 	return instance.SetProperty("SynchronousMethodsSupported", (value))
 }
 
 // GetSynchronousMethodsSupported gets the value of SynchronousMethodsSupported for the instance
-func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertySynchronousMethodsSupported() (value []ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported, err error) {
+func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertySynchronousMethodsSupported() (value []ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported_2, err error) {
 	retValue, err := instance.GetProperty("SynchronousMethodsSupported")
 	if err != nil {
 		return
@@ -105,7 +105,7 @@ func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertySynchrono
 			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
 			return
 		}
-		value = append(value, ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported(valuetmp))
+		value = append(value, ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported_2(valuetmp))
 	}
 
 	return

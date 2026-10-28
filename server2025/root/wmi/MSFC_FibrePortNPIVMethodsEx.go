@@ -127,8 +127,8 @@ func (instance *MSFC_FibrePortNPIVMethodsEx) SetChapForPhysicalPort( /* OUT */ S
 
 //
 
-// <param name="Status" type="FibrePortNPIVMethodsEx_Status "></param>
-func (instance *MSFC_FibrePortNPIVMethodsEx) RemoveChapForPhysicalPort( /* OUT */ Status FibrePortNPIVMethodsEx_Status) (err error) {
+// <param name="Status" type="FibrePortNPIVMethodsEx_Status_2 "></param>
+func (instance *MSFC_FibrePortNPIVMethodsEx) RemoveChapForPhysicalPort( /* OUT */ Status FibrePortNPIVMethodsEx_Status_2) (err error) {
 	_, err = instance.InvokeMethod("RemoveChapForPhysicalPort")
 	if err != nil {
 		return
@@ -144,8 +144,8 @@ func (instance *MSFC_FibrePortNPIVMethodsEx) RemoveChapForPhysicalPort( /* OUT *
 // <param name="WWNN" type="uint8 []"></param>
 // <param name="WWPN" type="uint8 []"></param>
 
-// <param name="Status" type="FibrePortNPIVMethodsEx_Status "></param>
-func (instance *MSFC_FibrePortNPIVMethodsEx) CreateVirtualPortEx( /* OUT */ Status FibrePortNPIVMethodsEx_Status,
+// <param name="Status" type="FibrePortNPIVMethodsEx_Status_3 "></param>
+func (instance *MSFC_FibrePortNPIVMethodsEx) CreateVirtualPortEx( /* OUT */ Status FibrePortNPIVMethodsEx_Status_3,
 	/* OPTIONAL IN */ WWPN []uint8,
 	/* OPTIONAL IN */ WWNN []uint8,
 	/* OPTIONAL IN */ Tag []uint8,
@@ -166,8 +166,8 @@ func (instance *MSFC_FibrePortNPIVMethodsEx) CreateVirtualPortEx( /* OUT */ Stat
 // <param name="WWNN" type="uint8 []"></param>
 // <param name="WWPN" type="uint8 []"></param>
 
-// <param name="Status" type="FibrePortNPIVMethodsEx_Status "></param>
-func (instance *MSFC_FibrePortNPIVMethodsEx) CreateVirtualPortExUsingDHCHAP( /* OUT */ Status FibrePortNPIVMethodsEx_Status,
+// <param name="Status" type="FibrePortNPIVMethodsEx_Status_4 "></param>
+func (instance *MSFC_FibrePortNPIVMethodsEx) CreateVirtualPortExUsingDHCHAP( /* OUT */ Status FibrePortNPIVMethodsEx_Status_4,
 	/* OPTIONAL IN */ WWPN []uint8,
 	/* OPTIONAL IN */ WWNN []uint8,
 	/* OPTIONAL IN */ Tag []uint8,
@@ -185,8 +185,8 @@ func (instance *MSFC_FibrePortNPIVMethodsEx) CreateVirtualPortExUsingDHCHAP( /* 
 
 // <param name="WWPN" type="uint8 []"></param>
 
-// <param name="Status" type="FibrePortNPIVMethodsEx_Status "></param>
-func (instance *MSFC_FibrePortNPIVMethodsEx) RemoveVirtualPortEx( /* OUT */ Status FibrePortNPIVMethodsEx_Status,
+// <param name="Status" type="FibrePortNPIVMethodsEx_Status_5 "></param>
+func (instance *MSFC_FibrePortNPIVMethodsEx) RemoveVirtualPortEx( /* OUT */ Status FibrePortNPIVMethodsEx_Status_5,
 	/* OPTIONAL IN */ WWPN []uint8) (err error) {
 	_, err = instance.InvokeMethod("RemoveVirtualPortEx", WWPN)
 	if err != nil {
@@ -200,8 +200,8 @@ func (instance *MSFC_FibrePortNPIVMethodsEx) RemoveVirtualPortEx( /* OUT */ Stat
 
 // <param name="WWPN" type="uint8 []"></param>
 
-// <param name="Status" type="FibrePortNPIVMethodsEx_Status "></param>
-func (instance *MSFC_FibrePortNPIVMethodsEx) RescanVirtualPort( /* OUT */ Status FibrePortNPIVMethodsEx_Status,
+// <param name="Status" type="FibrePortNPIVMethodsEx_Status_6 "></param>
+func (instance *MSFC_FibrePortNPIVMethodsEx) RescanVirtualPort( /* OUT */ Status FibrePortNPIVMethodsEx_Status_6,
 	/* OPTIONAL IN */ WWPN []uint8) (err error) {
 	_, err = instance.InvokeMethod("RescanVirtualPort", WWPN)
 	if err != nil {

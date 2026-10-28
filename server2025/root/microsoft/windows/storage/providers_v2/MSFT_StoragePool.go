@@ -93,7 +93,7 @@ type MSFT_StoragePool struct {
 	///0 - 'Unknown': May mean that this information is unavailable, or the storage pool uses a proprietary method of allocation.
 	///1 - 'Thin': Storage for the virtual disk is allocated on-demand.
 	///2 - 'Fixed': Storage for the virtual disk is allocated at the time of virtual disk creation.
-	ProvisioningTypeDefault StoragePool_ProvisioningTypeDefault
+	ProvisioningTypeDefault StoragePool_ProvisioningTypeDefault_2
 
 	// Denotes the reason why the storage pool is read-only.
 	///1 - 'None': The pool is not read-only.
@@ -126,7 +126,7 @@ type MSFT_StoragePool struct {
 	ThinProvisioningAlertThresholds []uint16
 
 	// Denotes the intended usage of the storage pool.
-	Usage StoragePool_Usage
+	Usage StoragePool_Usage_4
 
 	// Denotes the version of this storage pool.
 	Version StoragePool_Version
@@ -685,12 +685,12 @@ func (instance *MSFT_StoragePool) GetPropertyPhysicalSectorSize() (value uint64,
 }
 
 // SetProvisioningTypeDefault sets the value of ProvisioningTypeDefault for the instance
-func (instance *MSFT_StoragePool) SetPropertyProvisioningTypeDefault(value StoragePool_ProvisioningTypeDefault) (err error) {
+func (instance *MSFT_StoragePool) SetPropertyProvisioningTypeDefault(value StoragePool_ProvisioningTypeDefault_2) (err error) {
 	return instance.SetProperty("ProvisioningTypeDefault", (value))
 }
 
 // GetProvisioningTypeDefault gets the value of ProvisioningTypeDefault for the instance
-func (instance *MSFT_StoragePool) GetPropertyProvisioningTypeDefault() (value StoragePool_ProvisioningTypeDefault, err error) {
+func (instance *MSFT_StoragePool) GetPropertyProvisioningTypeDefault() (value StoragePool_ProvisioningTypeDefault_2, err error) {
 	retValue, err := instance.GetProperty("ProvisioningTypeDefault")
 	if err != nil {
 		return
@@ -706,7 +706,7 @@ func (instance *MSFT_StoragePool) GetPropertyProvisioningTypeDefault() (value St
 		return
 	}
 
-	value = StoragePool_ProvisioningTypeDefault(valuetmp)
+	value = StoragePool_ProvisioningTypeDefault_2(valuetmp)
 
 	return
 }
@@ -930,12 +930,12 @@ func (instance *MSFT_StoragePool) GetPropertyThinProvisioningAlertThresholds() (
 }
 
 // SetUsage sets the value of Usage for the instance
-func (instance *MSFT_StoragePool) SetPropertyUsage(value StoragePool_Usage) (err error) {
+func (instance *MSFT_StoragePool) SetPropertyUsage(value StoragePool_Usage_4) (err error) {
 	return instance.SetProperty("Usage", (value))
 }
 
 // GetUsage gets the value of Usage for the instance
-func (instance *MSFT_StoragePool) GetPropertyUsage() (value StoragePool_Usage, err error) {
+func (instance *MSFT_StoragePool) GetPropertyUsage() (value StoragePool_Usage_4, err error) {
 	retValue, err := instance.GetProperty("Usage")
 	if err != nil {
 		return
@@ -951,7 +951,7 @@ func (instance *MSFT_StoragePool) GetPropertyUsage() (value StoragePool_Usage, e
 		return
 	}
 
-	value = StoragePool_Usage(valuetmp)
+	value = StoragePool_Usage_4(valuetmp)
 
 	return
 }
@@ -1536,13 +1536,13 @@ func (instance *MSFT_StoragePool) Optimize( /* IN */ RunAsJob bool,
 // This method will add one or more physical disks from the primordial storage pool to an existing concrete storage pool.
 
 // <param name="PhysicalDisks" type="MSFT_PhysicalDisk []"></param>
-// <param name="Usage" type="StoragePool_Usage "></param>
+// <param name="Usage" type="StoragePool_Usage_2 "></param>
 
 // <param name="CreatedStorageJob" type="MSFT_StorageJob ">This parameter returns a reference to the storage job used to track the long running operation.</param>
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_StoragePool) AddPhysicalDisk( /* IN */ PhysicalDisks []MSFT_PhysicalDisk,
-	/* IN */ Usage StoragePool_Usage,
+	/* IN */ Usage StoragePool_Usage_2,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("AddPhysicalDisk", PhysicalDisks, Usage)
@@ -1727,11 +1727,11 @@ func (instance *MSFT_StoragePool) SetFriendlyName( /* IN */ FriendlyName string,
 // This method allows the storage pool's intended usage to be updated. Not all storage pools may allow this and will return 1 - 'Not Supported' if this operation cannot be performed.
 
 // <param name="OtherUsageDescription" type="string ">If Usage is set to 1 - 'Other', this parameter takes in the string representation of a vendor defined usage for this storage pool. This parameter must not be set if Usage is a value other than 1 - 'Other'.</param>
-// <param name="Usage" type="StoragePool_Usage ">Denotes the new intended usage of the storage pool.</param>
+// <param name="Usage" type="StoragePool_Usage_3 ">Denotes the new intended usage of the storage pool.</param>
 
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_StoragePool) SetUsage( /* IN */ Usage StoragePool_Usage,
+func (instance *MSFT_StoragePool) SetUsage( /* IN */ Usage StoragePool_Usage_3,
 	/* IN */ OtherUsageDescription string,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("SetUsage", Usage, OtherUsageDescription)

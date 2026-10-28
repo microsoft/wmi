@@ -47,12 +47,12 @@ func NewMsvm_SyntheticEthernetPortEx6(hostName string,
 	return
 }
 
-func (instance *Msvm_SyntheticEthernetPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_LANEndpoint")
-}
-
 func (instance *Msvm_SyntheticEthernetPort) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_SyntheticEthernetPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_LANEndpoint")
 }
 
 func (instance *Msvm_SyntheticEthernetPort) GetRelatedSyntheticEthernetPortSettingData() (value *cim.WmiInstance, err error) {

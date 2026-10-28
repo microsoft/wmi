@@ -74,12 +74,12 @@ func (instance *Msvm_ProcessorPool) GetRelatedProcessor() (value []*cim.WmiInsta
 	return instance.GetAllRelated("Msvm_Processor")
 }
 
-func (instance *Msvm_ProcessorPool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ResourcePoolSettingData")
-}
-
 func (instance *Msvm_ProcessorPool) GetRelatedResourcePoolConfigurationService() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePoolConfigurationService")
+}
+
+func (instance *Msvm_ProcessorPool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePoolSettingData")
 }
 
 func (instance *Msvm_ProcessorPool) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

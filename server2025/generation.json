@@ -6,9 +6,9 @@
     "revision": 32995,
     "architecture": "64-bit"
   },
-  "generatorSourceCommit": "3e6f3b6a3d4b3a875598902055ecce86a9dae710",
-  "generatorSha256": "e4a72451964ca1baa9d349b765154914bde9d86862b9783b9cb42b372d41b6f1",
-  "generatedAtUtc": "2026-10-28T21:16:37.0366947Z",
+  "generatorSourceCommit": "b68cf41e346d49d65f052a338d9bd204a487ae8f",
+  "generatorSha256": "28050fc2c9e3c3ce40c5931ce2d2d748621af6f98cda68bcc5e32a5d60cca35d",
+  "generatedAtUtc": "2026-10-28T21:46:33.0618609Z",
   "rootModulePath": "github.com/microsoft/wmi/server2025",
   "failoverClusteringInstalled": true,
   "traversal": "root, recursive",
@@ -16,7 +16,7 @@
     "root/rsop/user",
     "localized ms_409, ms_509 and ms_501 namespaces"
   ],
-  "generatedFiles": 12225,
+  "generatedFiles": 12252,
   "namespaces": [
     {
       "path": "root",
@@ -80,11 +80,11 @@
     },
     {
       "path": "root/hypervcluster/v2",
-      "files": 433
+      "files": 436
     },
     {
       "path": "root/intel_me",
-      "files": 133
+      "files": 135
     },
     {
       "path": "root/interop",
@@ -152,7 +152,7 @@
     },
     {
       "path": "root/microsoft/windows/deliveryoptimization",
-      "files": 102
+      "files": 103
     },
     {
       "path": "root/microsoft/windows/desiredstateconfiguration",
@@ -228,7 +228,7 @@
     },
     {
       "path": "root/microsoft/windows/storage/providers_v2",
-      "files": 430
+      "files": 441
     },
     {
       "path": "root/microsoft/windows/storage/pt",
@@ -312,11 +312,11 @@
     },
     {
       "path": "root/virtualization/v2",
-      "files": 670
+      "files": 675
     },
     {
       "path": "root/wmi",
-      "files": 1829
+      "files": 1834
     },
     {
       "path": "root/wmidefault",

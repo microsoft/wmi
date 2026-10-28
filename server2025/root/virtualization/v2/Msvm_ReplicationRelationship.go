@@ -258,10 +258,10 @@ func (instance *Msvm_ReplicationRelationship) GetPropertyReplicationState() (val
 
 	return
 }
-func (instance *Msvm_ReplicationRelationship) GetRelatedReplicationSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ReplicationSettingData")
-}
-
 func (instance *Msvm_ReplicationRelationship) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_ReplicationRelationship) GetRelatedReplicationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ReplicationSettingData")
 }

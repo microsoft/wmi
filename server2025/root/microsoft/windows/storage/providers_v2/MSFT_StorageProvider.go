@@ -26,7 +26,7 @@ type MSFT_StorageProvider struct {
 	Name string
 
 	//
-	RemoteSubsystemCacheMode StorageProvider_RemoteSubsystemCacheMode
+	RemoteSubsystemCacheMode StorageProvider_RemoteSubsystemCacheMode_2
 
 	// Denotes the caching modes this provider supports. The modes are 'Disabled' and 'Manual-Discovery'.
 	SupportedRemoteSubsystemCacheModes []StorageProvider_SupportedRemoteSubsystemCacheModes
@@ -125,12 +125,12 @@ func (instance *MSFT_StorageProvider) GetPropertyName() (value string, err error
 }
 
 // SetRemoteSubsystemCacheMode sets the value of RemoteSubsystemCacheMode for the instance
-func (instance *MSFT_StorageProvider) SetPropertyRemoteSubsystemCacheMode(value StorageProvider_RemoteSubsystemCacheMode) (err error) {
+func (instance *MSFT_StorageProvider) SetPropertyRemoteSubsystemCacheMode(value StorageProvider_RemoteSubsystemCacheMode_2) (err error) {
 	return instance.SetProperty("RemoteSubsystemCacheMode", (value))
 }
 
 // GetRemoteSubsystemCacheMode gets the value of RemoteSubsystemCacheMode for the instance
-func (instance *MSFT_StorageProvider) GetPropertyRemoteSubsystemCacheMode() (value StorageProvider_RemoteSubsystemCacheMode, err error) {
+func (instance *MSFT_StorageProvider) GetPropertyRemoteSubsystemCacheMode() (value StorageProvider_RemoteSubsystemCacheMode_2, err error) {
 	retValue, err := instance.GetProperty("RemoteSubsystemCacheMode")
 	if err != nil {
 		return
@@ -146,7 +146,7 @@ func (instance *MSFT_StorageProvider) GetPropertyRemoteSubsystemCacheMode() (val
 		return
 	}
 
-	value = StorageProvider_RemoteSubsystemCacheMode(valuetmp)
+	value = StorageProvider_RemoteSubsystemCacheMode_2(valuetmp)
 
 	return
 }

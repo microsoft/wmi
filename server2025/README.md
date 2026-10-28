@@ -1,7 +1,7 @@
 # Windows Server 2025 WMI bindings
 
 This snapshot was generated on Windows Server 2025 Datacenter, build
-10.0.26100.32995. It contains 12,225 Go files across 76 namespaces, including
+10.0.26100.32995. It contains 12,252 Go files across 76 namespaces, including
 168 files in `root/mscluster`.
 
 [generation.json](generation.json) records the source OS, generator commit and

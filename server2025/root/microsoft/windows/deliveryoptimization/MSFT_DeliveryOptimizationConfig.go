@@ -44,7 +44,7 @@ type MSFT_DeliveryOptimizationConfig struct {
 	DownForeLimitPctProvider DeliveryOptimizationConfig_DownForeLimitPctProvider
 
 	// 16
-	DownloadMode DeliveryOptimizationConfig_downloadMode
+	DownloadMode DeliveryOptimizationConfig_DownloadMode_2
 
 	//
 	DownloadModeProvider DeliveryOptimizationConfig_DownloadModeProvider
@@ -308,12 +308,12 @@ func (instance *MSFT_DeliveryOptimizationConfig) GetPropertyDownForeLimitPctProv
 }
 
 // SetDownloadMode sets the value of DownloadMode for the instance
-func (instance *MSFT_DeliveryOptimizationConfig) SetPropertyDownloadMode(value DeliveryOptimizationConfig_downloadMode) (err error) {
+func (instance *MSFT_DeliveryOptimizationConfig) SetPropertyDownloadMode(value DeliveryOptimizationConfig_DownloadMode_2) (err error) {
 	return instance.SetProperty("DownloadMode", (value))
 }
 
 // GetDownloadMode gets the value of DownloadMode for the instance
-func (instance *MSFT_DeliveryOptimizationConfig) GetPropertyDownloadMode() (value DeliveryOptimizationConfig_downloadMode, err error) {
+func (instance *MSFT_DeliveryOptimizationConfig) GetPropertyDownloadMode() (value DeliveryOptimizationConfig_DownloadMode_2, err error) {
 	retValue, err := instance.GetProperty("DownloadMode")
 	if err != nil {
 		return
@@ -329,7 +329,7 @@ func (instance *MSFT_DeliveryOptimizationConfig) GetPropertyDownloadMode() (valu
 		return
 	}
 
-	value = DeliveryOptimizationConfig_downloadMode(valuetmp)
+	value = DeliveryOptimizationConfig_DownloadMode_2(valuetmp)
 
 	return
 }

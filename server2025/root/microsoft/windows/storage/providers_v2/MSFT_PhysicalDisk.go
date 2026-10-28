@@ -56,7 +56,7 @@ type MSFT_PhysicalDisk struct {
 	LogicalSectorSize uint64
 
 	// Media type of this physical disk
-	MediaType PhysicalDisk_MediaType
+	MediaType PhysicalDisk_MediaType_2
 
 	// If CannotPoolReason contains 1 - 'Other', this field contains the string representing the vendor defined reason why this physical disk cannot be added to a concrete pool. This property must be NULL if CannotPoolReason does not contain 1 - 'Other'.
 	OtherCannotPoolReasonDescription string
@@ -93,7 +93,7 @@ type MSFT_PhysicalDisk struct {
 	///2 - 'Manual-Select': This physical disk should only be used if manually selected by an administrator at the time of virtual disk creation. A manual-select disk is selected using the PhysicalDisksToUse parameter to CreateVirtualDisk.
 	///3 - 'Hot Spare': This physical disk should be used as a hot spare.
 	///4 - 'Retired': This physical disk should be retired from use. At a minimum, no new allocations should go to this disk. If the virtual disks that reside on this disk are repaired, the data should be moved to another active physical disk.
-	Usage PhysicalDisk_Usage
+	Usage PhysicalDisk_Usage_2
 
 	// This field indicates the size in bytes of the user data footprint from virtual disks on this physical disk.
 	VirtualDiskFootprint uint64
@@ -454,12 +454,12 @@ func (instance *MSFT_PhysicalDisk) GetPropertyLogicalSectorSize() (value uint64,
 }
 
 // SetMediaType sets the value of MediaType for the instance
-func (instance *MSFT_PhysicalDisk) SetPropertyMediaType(value PhysicalDisk_MediaType) (err error) {
+func (instance *MSFT_PhysicalDisk) SetPropertyMediaType(value PhysicalDisk_MediaType_2) (err error) {
 	return instance.SetProperty("MediaType", (value))
 }
 
 // GetMediaType gets the value of MediaType for the instance
-func (instance *MSFT_PhysicalDisk) GetPropertyMediaType() (value PhysicalDisk_MediaType, err error) {
+func (instance *MSFT_PhysicalDisk) GetPropertyMediaType() (value PhysicalDisk_MediaType_2, err error) {
 	retValue, err := instance.GetProperty("MediaType")
 	if err != nil {
 		return
@@ -475,7 +475,7 @@ func (instance *MSFT_PhysicalDisk) GetPropertyMediaType() (value PhysicalDisk_Me
 		return
 	}
 
-	value = PhysicalDisk_MediaType(valuetmp)
+	value = PhysicalDisk_MediaType_2(valuetmp)
 
 	return
 }
@@ -752,12 +752,12 @@ func (instance *MSFT_PhysicalDisk) GetPropertyUniqueIdFormat() (value PhysicalDi
 }
 
 // SetUsage sets the value of Usage for the instance
-func (instance *MSFT_PhysicalDisk) SetPropertyUsage(value PhysicalDisk_Usage) (err error) {
+func (instance *MSFT_PhysicalDisk) SetPropertyUsage(value PhysicalDisk_Usage_2) (err error) {
 	return instance.SetProperty("Usage", (value))
 }
 
 // GetUsage gets the value of Usage for the instance
-func (instance *MSFT_PhysicalDisk) GetPropertyUsage() (value PhysicalDisk_Usage, err error) {
+func (instance *MSFT_PhysicalDisk) GetPropertyUsage() (value PhysicalDisk_Usage_2, err error) {
 	retValue, err := instance.GetProperty("Usage")
 	if err != nil {
 		return
@@ -773,7 +773,7 @@ func (instance *MSFT_PhysicalDisk) GetPropertyUsage() (value PhysicalDisk_Usage,
 		return
 	}
 
-	value = PhysicalDisk_Usage(valuetmp)
+	value = PhysicalDisk_Usage_2(valuetmp)
 
 	return
 }

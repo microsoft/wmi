@@ -44,7 +44,7 @@ type MSFT_StorageTier struct {
 	Interleave uint64
 
 	// Media type of this storage tier
-	MediaType StorageTier_MediaType
+	MediaType StorageTier_MediaType_2
 
 	//
 	NumberOfColumns uint16
@@ -323,12 +323,12 @@ func (instance *MSFT_StorageTier) GetPropertyInterleave() (value uint64, err err
 }
 
 // SetMediaType sets the value of MediaType for the instance
-func (instance *MSFT_StorageTier) SetPropertyMediaType(value StorageTier_MediaType) (err error) {
+func (instance *MSFT_StorageTier) SetPropertyMediaType(value StorageTier_MediaType_2) (err error) {
 	return instance.SetProperty("MediaType", (value))
 }
 
 // GetMediaType gets the value of MediaType for the instance
-func (instance *MSFT_StorageTier) GetPropertyMediaType() (value StorageTier_MediaType, err error) {
+func (instance *MSFT_StorageTier) GetPropertyMediaType() (value StorageTier_MediaType_2, err error) {
 	retValue, err := instance.GetProperty("MediaType")
 	if err != nil {
 		return
@@ -344,7 +344,7 @@ func (instance *MSFT_StorageTier) GetPropertyMediaType() (value StorageTier_Medi
 		return
 	}
 
-	value = StorageTier_MediaType(valuetmp)
+	value = StorageTier_MediaType_2(valuetmp)
 
 	return
 }

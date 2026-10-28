@@ -45,7 +45,7 @@ type CIM_EnabledLogicalElement struct {
 	///This property is set as the result of a method invocation (such as Start or StopService on CIM_Service), or can be overridden and defined as WRITEable in a subclass. The method approach is considered superior to a WRITEable property, because it allows an explicit invocation of the operation and the return of a result code.
 	///
 	///If knowledge of the last RequestedState is not supported for the EnabledLogicalElement, the property shall be NULL or have the value 12 "Not Applicable".
-	RequestedState EnabledLogicalElement_RequestedState
+	RequestedState EnabledLogicalElement_RequestedState_2
 
 	// The date or time when the EnabledState of the element last changed. If the state of the element has not changed and this property is populated, then it must be set to a 0 interval value. If a state change was requested, but rejected or not yet processed, the property must not be updated.
 	TimeOfLastStateChange string
@@ -162,12 +162,12 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyOtherEnabledState() (value
 }
 
 // SetRequestedState sets the value of RequestedState for the instance
-func (instance *CIM_EnabledLogicalElement) SetPropertyRequestedState(value EnabledLogicalElement_RequestedState) (err error) {
+func (instance *CIM_EnabledLogicalElement) SetPropertyRequestedState(value EnabledLogicalElement_RequestedState_2) (err error) {
 	return instance.SetProperty("RequestedState", (value))
 }
 
 // GetRequestedState gets the value of RequestedState for the instance
-func (instance *CIM_EnabledLogicalElement) GetPropertyRequestedState() (value EnabledLogicalElement_RequestedState, err error) {
+func (instance *CIM_EnabledLogicalElement) GetPropertyRequestedState() (value EnabledLogicalElement_RequestedState_2, err error) {
 	retValue, err := instance.GetProperty("RequestedState")
 	if err != nil {
 		return
@@ -183,7 +183,7 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyRequestedState() (value En
 		return
 	}
 
-	value = EnabledLogicalElement_RequestedState(valuetmp)
+	value = EnabledLogicalElement_RequestedState_2(valuetmp)
 
 	return
 }

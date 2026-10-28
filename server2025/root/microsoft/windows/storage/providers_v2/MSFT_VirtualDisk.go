@@ -20,7 +20,7 @@ type MSFT_VirtualDisk struct {
 	*MSFT_StorageObject
 
 	// Indicates whether the virtual disk is available for read and/or write access
-	Access VirtualDisk_Access
+	Access VirtualDisk_Access_2
 
 	// The currently allocated size of the virtual disk. If the virtual disk's ProvisioningType is 2 - 'Fixed', this value should equal Size. If the ProvisioningType is 1 - 'Thin', this value is the amount of space actually allocated (i.e. some value less than Size).
 	AllocatedSize uint64
@@ -187,12 +187,12 @@ func NewMSFT_VirtualDiskEx6(hostName string,
 }
 
 // SetAccess sets the value of Access for the instance
-func (instance *MSFT_VirtualDisk) SetPropertyAccess(value VirtualDisk_Access) (err error) {
+func (instance *MSFT_VirtualDisk) SetPropertyAccess(value VirtualDisk_Access_2) (err error) {
 	return instance.SetProperty("Access", (value))
 }
 
 // GetAccess gets the value of Access for the instance
-func (instance *MSFT_VirtualDisk) GetPropertyAccess() (value VirtualDisk_Access, err error) {
+func (instance *MSFT_VirtualDisk) GetPropertyAccess() (value VirtualDisk_Access_2, err error) {
 	retValue, err := instance.GetProperty("Access")
 	if err != nil {
 		return
@@ -208,7 +208,7 @@ func (instance *MSFT_VirtualDisk) GetPropertyAccess() (value VirtualDisk_Access,
 		return
 	}
 
-	value = VirtualDisk_Access(valuetmp)
+	value = VirtualDisk_Access_2(valuetmp)
 
 	return
 }
@@ -1690,13 +1690,13 @@ func (instance *MSFT_VirtualDisk) Detach( /* IN */ StorageNodeName string,
 // This method will add one or more physical disks for manual allocation.
 
 // <param name="PhysicalDisks" type="MSFT_PhysicalDisk []"></param>
-// <param name="Usage" type="VirtualDisk_Usage "></param>
+// <param name="Usage" type="VirtualDisk_Usage_2 "></param>
 
 // <param name="CreatedStorageJob" type="MSFT_StorageJob ">This parameter returns a reference to the storage job used to track the long running operation.</param>
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus ">ExtendedStatus allows the storage provider to return extended (implementation specific) error information.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_VirtualDisk) AddPhysicalDisk( /* IN */ PhysicalDisks []MSFT_PhysicalDisk,
-	/* IN */ Usage VirtualDisk_Usage,
+	/* IN */ Usage VirtualDisk_Usage_2,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
 	retVal, err := instance.InvokeMethod("AddPhysicalDisk", PhysicalDisks, Usage)
