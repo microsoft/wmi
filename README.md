@@ -1,4 +1,10 @@
 
+# WMI bindings
+
+The source for the Windows WMI wrapper generator is in
+[`tools/wmigen`](tools/wmigen/README.md), including Windows build prerequisites
+and generation instructions.
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

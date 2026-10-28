@@ -12,6 +12,20 @@ jobs:
     value: true
 
   steps:
+  - task: VSBuild@1
+    displayName: 'Build WMI generator'
+    inputs:
+      solution: 'tools\wmigen\wmicodegen.csproj'
+      configuration: 'Release'
+
+  - powershell: |
+      $ErrorActionPreference = 'Stop'
+      & '.\tools\wmigen\bin\Release\wmigen.exe' -help
+      if ($LASTEXITCODE -ne 0) {
+        throw "WMI generator help failed with exit code $LASTEXITCODE"
+      }
+    displayName: 'Smoke-test WMI generator'
+
   - task: InstallSSHKey@0
     inputs:
       knownHostsEntry: '$(KNOWN_HOST)' 

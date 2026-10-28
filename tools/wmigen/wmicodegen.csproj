@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A5375C9-42A7-486B-BB9D-32CBA6E748C2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.wmi</RootNamespace>
+    <AssemblyName>wmigen</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="csharp\CSharpFormat.cs" />
+    <Compile Include="csharp\CSWmiClass.cs" />
+    <Compile Include="csharp\CSWmiConstructor.cs" />
+    <Compile Include="csharp\CSWmiEnum.cs" />
+    <Compile Include="csharp\CSWmiMethod.cs" />
+    <Compile Include="csharp\CSWmiMethodParam.cs" />
+    <Compile Include="csharp\CSWmiNamespace.cs" />
+    <Compile Include="csharp\CSWmiProperty.cs" />
+    <Compile Include="csharp\CSWmiReference.cs" />
+    <Compile Include="csharp\CSWmiRelated.cs" />
+    <Compile Include="csharp\CSWmiSource.cs" />
+    <Compile Include="go\GoFormat.cs" />
+    <Compile Include="go\GoWmiClass.cs" />
+    <Compile Include="go\GoWmiConstructor.cs" />
+    <Compile Include="go\GoWmiEnum.cs" />
+    <Compile Include="go\GoWmiMethod.cs" />
+    <Compile Include="go\GoWmiMethodParam.cs" />
+    <Compile Include="go\GoWmiNamespace.cs" />
+    <Compile Include="go\GoWmiProperty.cs" />
+    <Compile Include="go\GoWmiReference.cs" />
+    <Compile Include="go\GoWmiRelated.cs" />
+    <Compile Include="go\GoWmiSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="common\Logger.cs" />
+    <Compile Include="common\IFormat.cs" />
+    <Compile Include="common\WmiClass.cs" />
+    <Compile Include="common\WmiConstructor.cs" />
+    <Compile Include="common\IWmiBase.cs" />
+    <Compile Include="common\WmiEnum.cs" />
+    <Compile Include="common\WmiMethod.cs" />
+    <Compile Include="common\WmiMethodParam.cs" />
+    <Compile Include="common\WmiModule.cs" />
+    <Compile Include="common\WmiNamespace.cs" />
+    <Compile Include="common\WmiProperty.cs" />
+    <Compile Include="common\WmiReference.cs" />
+    <Compile Include="common\WmiRelated.cs" />
+    <Compile Include="common\WmiSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
