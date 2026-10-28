@@ -53,9 +53,6 @@ namespace Microsoft.wmi.Common
         {
             // Do not search user WMI Namespace
             if (wNamespace.Equals("root/rsop/user", StringComparison.OrdinalIgnoreCase)) return false;
-            // It takes time to check this. There will not be any dependency in this namespace.so Skip it
-            if (wNamespace.Equals("root/directory/LDAP", StringComparison.OrdinalIgnoreCase)) return false;
-
             Logger.Debug("CheckClass - Class [{0}], NS [{1}]", cName, wNamespace);
             if (!ClassList.ContainsKey(wNamespace))
             {
