@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   build:
-    name: Build and smoke-test wmigen
+    name: Build and test wmigen
     runs-on: windows-latest
     timeout-minutes: 15
     defaults:
@@ -44,6 +44,18 @@ jobs:
           & $msbuild '.\tools\wmigen\wmicodegen.csproj' /p:Configuration=Release /nologo /verbosity:minimal
           if ($LASTEXITCODE -ne 0) {
             throw "WMI generator build failed with exit code $LASTEXITCODE"
+          }
+
+      - name: Run unit tests
+        run: |
+          $ErrorActionPreference = 'Stop'
+          dotnet restore '.\tools\wmigen\tests\wmigen.Tests.csproj' --source https://api.nuget.org/v3/index.json
+          if ($LASTEXITCODE -ne 0) {
+            throw "WMI generator test restore failed with exit code $LASTEXITCODE"
+          }
+          dotnet test '.\tools\wmigen\tests\wmigen.Tests.csproj' --configuration Release --no-restore --logger 'trx;LogFileName=wmigen.trx'
+          if ($LASTEXITCODE -ne 0) {
+            throw "WMI generator unit tests failed with exit code $LASTEXITCODE"
           }
 
       - name: Smoke-test help
