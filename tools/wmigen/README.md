@@ -135,6 +135,12 @@ generator provenance without recording the host name. It does not install roles,
 create clusters, or restart the host. It preserves the legacy exclusions for
 `root/rsop/user` and localized `ms_409`, `ms_509`, and `ms_501` namespaces.
 
+`SourceCommit` is supplied by the caller and must identify the source used to
+build the executable. The wrapper records that assertion without requiring a Git
+checkout on the capture host; it independently computes the executable's SHA256.
+Case-only enum names reuse a declaration only when their members and wire values
+match; conflicting definitions stop generation explicitly.
+
 The resulting `server2025` directory must be formatted and compiled against this
 repository before check-in. Provider availability depends on the source host;
 the provenance inventory describes that snapshot, not every possible Windows

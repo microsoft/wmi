@@ -65,6 +65,36 @@ namespace Microsoft.wmi.Tests
             }
         }
 
+        [DataTestMethod]
+        [DataRow("HTTP", "2")]
+        [DataRow("HTTPS", "1")]
+        public void ConflictingCaseOnlyEnumDefinitionsFailExplicitly(
+            string firstName, string secondValue)
+        {
+            var source = EmitterFixture.CreateSource();
+            using (var declaration = new ManagementClass())
+            using (var conflicting = new ManagementClass())
+            {
+                declaration.Properties.Add("DownloadMode", CimType.UInt32, false);
+                conflicting.Properties.Add("downloadMode", CimType.UInt32, false);
+                var original = declaration.Properties["DownloadMode"];
+                original.Qualifiers.Add("Values", new[] { "HTTP", "LAN" });
+                original.Qualifiers.Add("ValueMap", new[] { "0", "1" });
+                var duplicate = conflicting.Properties["downloadMode"];
+                duplicate.Qualifiers.Add("Values", new[] { firstName, "LAN" });
+                duplicate.Qualifiers.Add("ValueMap", new[] { "0", secondValue });
+                var canonical = source.GetEnum(original);
+
+                var error = Assert.ThrowsException<InvalidOperationException>(
+                    () => source.GetEnum(duplicate));
+
+                StringAssert.Contains(error.Message, "Device_DownloadMode");
+                StringAssert.Contains(error.Message, "Device_downloadMode");
+                Assert.AreSame(canonical, source.GetEnum(original));
+                Assert.AreEqual(1, source.Parent.Parent.Modules["Common"].Enums.Count);
+            }
+        }
+
         [TestMethod]
         public void SelfReferencesUsePointersInsteadOfRecursiveValueFields()
         {

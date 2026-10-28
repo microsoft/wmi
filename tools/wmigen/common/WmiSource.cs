@@ -257,12 +257,11 @@ namespace Microsoft.wmi.Common
                 //string classPrefix = WmiModule.GetModuleName(wSource.Name);
                 //string enumFile = enumName + ".cs";
 
-                wEnum = this.Parent.Parent.GetEnum(enumName);
-                if (wEnum != null) return wEnum;
+                WmiEnum existingEnum = this.Parent.Parent.GetEnum(enumName);
+                if (existingEnum != null && existingEnum.Name == enumName) return existingEnum;
 
                 // Create new Enum
                 wEnum = GetWmiEnum(enumName, this);
-                this.Parent.Parent.AddEnum(wEnum);
                 //wSource.Parent.Enums[enumName] = wEnum;
 
                 int value = 0;
@@ -285,6 +284,28 @@ namespace Microsoft.wmi.Common
                     Logger.Debug("Enum Name {0} => Value[{1}]", enumValue, value);
                     wEnum.Add(WmiEnum.FixEnumName(enumValue), value);
                 }
+
+                if (existingEnum != null)
+                {
+                    bool equivalent = existingEnum.EnumValues.Count == wEnum.EnumValues.Count;
+                    foreach (KeyValuePair<string, int> member in wEnum.EnumValues)
+                    {
+                        int existingValue;
+                        if (!existingEnum.EnumValues.TryGetValue(member.Key, out existingValue)
+                            || existingValue != member.Value)
+                        {
+                            equivalent = false;
+                            break;
+                        }
+                    }
+                    if (!equivalent)
+                        throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                            "Enum names '{0}' and '{1}' in namespace '{2}' differ only by case but have conflicting members.",
+                            existingEnum.Name, enumName, WmiNamespace));
+                    return existingEnum;
+                }
+
+                this.Parent.Parent.AddEnum(wEnum);
 
 #if false
                 // Check if the existing enum and the current enum are exactly the same
