@@ -42,12 +42,16 @@ the built Release executable rather than rebuilding the legacy project with
 NuGet test-only dependencies; the shipped executable has no new dependencies.
 Results are written under `tools/wmigen/tests/TestResults/`.
 
-The focused suite exercises Go type widths, identifier repairs, enum collisions,
-namespace imports, package naming and property/accessor emission. Property tests
+The focused suite exercises shared qualifier/signature helpers, enum wire values,
+exception propagation, C# constructors, properties, parameters and enum files,
+plus Go type widths, identifier repairs, enum collisions, namespace imports and
+package naming. CLI cases verify that help short-circuits generation even after
+generation options. Property tests
 use an unbound, unsaved in-memory `ManagementClass` schema; they do not query or
 save WMI metadata, enumerate instances or invoke provider methods. Other emitter
 tests use an in-memory namespace instead of the discovery-performing
-`GOWmiNamespace` constructor. No Hyper-V/cluster roles, lab hosts or cloud access
+`GOWmiNamespace` constructor. C# emitter cases do not require its separate generated
+runtime. No Hyper-V/cluster roles, lab hosts or cloud access
 are required. The tests do not assert that every Go keyword is handled: in
 particular, the legacy emitter's `return` identifier defect remains a separate
 follow-up.
