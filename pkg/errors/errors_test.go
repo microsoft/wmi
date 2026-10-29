@@ -4,8 +4,6 @@ import (
 	"math"
 	"math/rand"
 	"testing"
-
-	perrors "github.com/pkg/errors"
 )
 
 func init() {
@@ -42,13 +40,13 @@ func validateWmiError(t *testing.T, err error) {
 		t.Fatal("Failed IsWMIError(" + err.Error() + ") returned false")
 	}
 
-	err = perrors.Wrapf(err, "An error happened. ")
+	err = Wrapf(err, "An error happened. ")
 	result = IsWMIError(err)
 	if result != true {
 		t.Fatal("Failed Wrapf(IsWMIError(" + err.Error() + ")) returned false")
 	}
 
-	err = perrors.Wrapf(err, "An error happened. ")
+	err = Wrapf(err, "An error happened. ")
 	result = IsWMIError(err)
 	if result != true {
 		t.Fatal("Failed Wrapf(Wrapf(IsWMIError(" + err.Error() + "))) returned false")
