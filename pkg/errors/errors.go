@@ -6,8 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"strings"
-
-	perrors "github.com/pkg/errors"
 )
 
 const (
@@ -29,11 +27,17 @@ var (
 )
 
 func Wrap(cause error, message string) error {
-	return perrors.Wrap(cause, message)
+	if cause == nil {
+		return nil
+	}
+	return fmt.Errorf("%s: %w", message, cause)
 }
 
 func Wrapf(err error, format string, args ...interface{}) error {
-	return perrors.Wrapf(err, format, args...)
+	if err == nil {
+		return nil
+	}
+	return fmt.Errorf("%s: %w", fmt.Sprintf(format, args...), err)
 }
 
 func IsNotFound(err error) bool {
@@ -71,17 +75,11 @@ func IsDvdDriveNotFound(err error) bool {
 }
 
 func IsWMIError(err error) bool {
-	if err == nil {
-		return false
+	for e := err; e != nil; e = errors.Unwrap(e) {
+		if strings.HasPrefix(e.Error(), wmiError) {
+			return true
+		}
 	}
-	if strings.HasPrefix(err.Error(), wmiError) {
-		return true
-	}
-	cerr := perrors.Cause(err)
-	if strings.HasPrefix(cerr.Error(), wmiError) {
-		return true
-	}
-
 	return false
 }
 
@@ -89,16 +87,7 @@ func checkError(wrappedError, err error) bool {
 	if wrappedError == nil {
 		return false
 	}
-	if wrappedError == err {
-		return true
-	}
-	cerr := perrors.Cause(wrappedError)
-	if cerr != nil && cerr == err {
-		return true
-	}
-
-	return false
-
+	return errors.Is(wrappedError, err)
 }
 
 func New(errString string) error {

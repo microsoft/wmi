@@ -7,7 +7,7 @@
 package session
 
 import (
-	"github.com/pkg/errors"
+	"fmt"
 	"os"
 	"strings"
 
@@ -82,13 +82,13 @@ func createSession(sessionName string, serverName string, domain string, usernam
 
 	session, err := sessionManager.GetSession(sessionName, serverName, domain, username, password)
 	if err != nil {
-		return nil, errors.Wrapf(err, "Failed getting the WMI session for "+sessionName)
+		return nil, fmt.Errorf("Failed getting the WMI session for %s: %w", sessionName, err)
 	}
 
 	connected, err := session.Connect()
 
 	if !connected || err != nil {
-		return nil, errors.Wrapf(err, "Failed connecting to the WMI session for "+sessionName)
+		return nil, fmt.Errorf("Failed connecting to the WMI session for %s: %w", sessionName, err)
 	}
 
 	return session, nil
