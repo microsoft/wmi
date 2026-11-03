@@ -1,6 +1,7 @@
 ﻿// Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,7 +18,7 @@ namespace Microsoft.wmi.Common
         }
 
         Dictionary<string, WmiSource> m_source = new Dictionary<string, WmiSource>();
-        Dictionary<string, WmiEnum> m_enum = new Dictionary<string, WmiEnum>();
+        Dictionary<string, WmiEnum> m_enum = new Dictionary<string, WmiEnum>(StringComparer.OrdinalIgnoreCase);
 
         public void Add(WmiSource source)
         {

@@ -1,0 +1,327 @@
+{
+  "os": {
+    "caption": "Microsoft Windows Server 2025 Datacenter",
+    "version": "10.0.26100",
+    "build": "26100",
+    "revision": 32995,
+    "architecture": "64-bit"
+  },
+  "generatorSourceCommit": "b68cf41e346d49d65f052a338d9bd204a487ae8f",
+  "generatorSha256": "28050fc2c9e3c3ce40c5931ce2d2d748621af6f98cda68bcc5e32a5d60cca35d",
+  "generatedAtUtc": "2026-10-28T21:46:33.0618609Z",
+  "rootModulePath": "github.com/microsoft/wmi/server2025",
+  "failoverClusteringInstalled": true,
+  "traversal": "root, recursive",
+  "legacyExclusions": [
+    "root/rsop/user",
+    "localized ms_409, ms_509 and ms_501 namespaces"
+  ],
+  "generatedFiles": 12252,
+  "namespaces": [
+    {
+      "path": "root",
+      "files": 84
+    },
+    {
+      "path": "root/accesslogging",
+      "files": 86
+    },
+    {
+      "path": "root/appv",
+      "files": 80
+    },
+    {
+      "path": "root/cimv2",
+      "files": 1440
+    },
+    {
+      "path": "root/cimv2/mdm",
+      "files": 102
+    },
+    {
+      "path": "root/cimv2/mdm/dmmap",
+      "files": 474
+    },
+    {
+      "path": "root/cimv2/power",
+      "files": 108
+    },
+    {
+      "path": "root/cimv2/security",
+      "files": 74
+    },
+    {
+      "path": "root/cimv2/security/microsofttpm",
+      "files": 76
+    },
+    {
+      "path": "root/cimv2/terminalservices",
+      "files": 119
+    },
+    {
+      "path": "root/cli",
+      "files": 84
+    },
+    {
+      "path": "root/directory",
+      "files": 74
+    },
+    {
+      "path": "root/directory/ldap",
+      "files": 83
+    },
+    {
+      "path": "root/hardware",
+      "files": 107
+    },
+    {
+      "path": "root/hypervcluster",
+      "files": 74
+    },
+    {
+      "path": "root/hypervcluster/v2",
+      "files": 436
+    },
+    {
+      "path": "root/intel_me",
+      "files": 135
+    },
+    {
+      "path": "root/interop",
+      "files": 88
+    },
+    {
+      "path": "root/inventorylogging",
+      "files": 88
+    },
+    {
+      "path": "root/microsoft",
+      "files": 74
+    },
+    {
+      "path": "root/microsoft/homenet",
+      "files": 87
+    },
+    {
+      "path": "root/microsoft/protectionmanagement",
+      "files": 87
+    },
+    {
+      "path": "root/microsoft/securityclient",
+      "files": 98
+    },
+    {
+      "path": "root/microsoft/uev",
+      "files": 85
+    },
+    {
+      "path": "root/microsoft/windows",
+      "files": 74
+    },
+    {
+      "path": "root/microsoft/windows/appbackgroundtask",
+      "files": 76
+    },
+    {
+      "path": "root/microsoft/windows/attestation",
+      "files": 77
+    },
+    {
+      "path": "root/microsoft/windows/ci",
+      "files": 75
+    },
+    {
+      "path": "root/microsoft/windows/cluster",
+      "files": 74
+    },
+    {
+      "path": "root/microsoft/windows/cluster/scaleout",
+      "files": 90
+    },
+    {
+      "path": "root/microsoft/windows/cluster/validation",
+      "files": 81
+    },
+    {
+      "path": "root/microsoft/windows/clusterupdate",
+      "files": 89
+    },
+    {
+      "path": "root/microsoft/windows/defender",
+      "files": 87
+    },
+    {
+      "path": "root/microsoft/windows/deliveryoptimization",
+      "files": 103
+    },
+    {
+      "path": "root/microsoft/windows/desiredstateconfiguration",
+      "files": 103
+    },
+    {
+      "path": "root/microsoft/windows/desiredstateconfigurationproxy",
+      "files": 75
+    },
+    {
+      "path": "root/microsoft/windows/deviceguard",
+      "files": 75
+    },
+    {
+      "path": "root/microsoft/windows/dns",
+      "files": 80
+    },
+    {
+      "path": "root/microsoft/windows/eventtracingmanagement",
+      "files": 80
+    },
+    {
+      "path": "root/microsoft/windows/hardwaremanagement",
+      "files": 80
+    },
+    {
+      "path": "root/microsoft/windows/hgs",
+      "files": 78
+    },
+    {
+      "path": "root/microsoft/windows/managementtools",
+      "files": 95
+    },
+    {
+      "path": "root/microsoft/windows/powershellv3",
+      "files": 79
+    },
+    {
+      "path": "root/microsoft/windows/ps_mmagent",
+      "files": 76
+    },
+    {
+      "path": "root/microsoft/windows/remoteaccess",
+      "files": 74
+    },
+    {
+      "path": "root/microsoft/windows/remoteaccess/client",
+      "files": 99
+    },
+    {
+      "path": "root/microsoft/windows/sdndiagnostics",
+      "files": 74
+    },
+    {
+      "path": "root/microsoft/windows/sdndiagnostics/server",
+      "files": 76
+    },
+    {
+      "path": "root/microsoft/windows/servermanager",
+      "files": 354
+    },
+    {
+      "path": "root/microsoft/windows/smb",
+      "files": 126
+    },
+    {
+      "path": "root/microsoft/windows/smbwitness",
+      "files": 76
+    },
+    {
+      "path": "root/microsoft/windows/storage",
+      "files": 216
+    },
+    {
+      "path": "root/microsoft/windows/storage/providers_v2",
+      "files": 441
+    },
+    {
+      "path": "root/microsoft/windows/storage/pt",
+      "files": 74
+    },
+    {
+      "path": "root/microsoft/windows/storage/pt/alt",
+      "files": 74
+    },
+    {
+      "path": "root/microsoft/windows/taskscheduler",
+      "files": 109
+    },
+    {
+      "path": "root/microsoft/windows/wdac",
+      "files": 83
+    },
+    {
+      "path": "root/microsoft/windows/winrm",
+      "files": 75
+    },
+    {
+      "path": "root/mscluster",
+      "files": 168
+    },
+    {
+      "path": "root/msdtc",
+      "files": 89
+    },
+    {
+      "path": "root/peh",
+      "files": 109
+    },
+    {
+      "path": "root/policy",
+      "files": 78
+    },
+    {
+      "path": "root/rsop",
+      "files": 76
+    },
+    {
+      "path": "root/rsop/computer",
+      "files": 202
+    },
+    {
+      "path": "root/sddc",
+      "files": 74
+    },
+    {
+      "path": "root/sddc/management",
+      "files": 92
+    },
+    {
+      "path": "root/security",
+      "files": 77
+    },
+    {
+      "path": "root/securitycenter",
+      "files": 77
+    },
+    {
+      "path": "root/securitycenter2",
+      "files": 78
+    },
+    {
+      "path": "root/servicemodel",
+      "files": 159
+    },
+    {
+      "path": "root/standardcimv2",
+      "files": 382
+    },
+    {
+      "path": "root/subscription",
+      "files": 80
+    },
+    {
+      "path": "root/virtualization",
+      "files": 74
+    },
+    {
+      "path": "root/virtualization/v2",
+      "files": 675
+    },
+    {
+      "path": "root/wmi",
+      "files": 1834
+    },
+    {
+      "path": "root/wmidefault",
+      "files": 87
+    }
+  ],
+  "qualification": "Generated from local class metadata; formatting and Go compilation must still pass"
+}

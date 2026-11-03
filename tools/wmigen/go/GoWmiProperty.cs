@@ -14,6 +14,11 @@ namespace Microsoft.wmi.GO
         public GOWmiProperty(PropertyData pData, GOWmiClass wClass) : base(pData, wClass)
         {
             ReferencedType = (Reference != null ? Reference.Alias + "." : "") + Type;
+            if (!IsArray && Reference == null && Type == wClass.Name &&
+                (pData.Type == CimType.Reference || pData.Type == CimType.Object))
+            {
+                ReferencedType = "*" + ReferencedType;
+            }
             IsEnum = (SType == typeof (Enum));
             HeaderComment = GOWmiSource.GetHeaderCommentText(pData.Qualifiers);
             Setter = GetPropertySetter(pData);
@@ -70,7 +75,8 @@ func (instance *{3}) SetProperty{1}(value {2}{0}) (err error) {{
     }}
 
     value = {1}(valuetmp)
-", IsEnum ? "int32" : ReferencedType, ReferencedType);
+", IsEnum ? "int32" : ReferencedType,
+                ReferencedType.StartsWith("*", StringComparison.Ordinal) ? "(" + ReferencedType + ")" : ReferencedType);
             string arrayConversion = String.Format(CultureInfo.InvariantCulture, 
 @"
     for _, interfaceValue := range retValue.([]interface{{}}) {{

@@ -12,6 +12,41 @@ namespace Microsoft.wmi.GO
 {
     public class GOWmiMethod : WmiMethod
     {
+        public new static string FixName(string name)
+        {
+            switch (name)
+            {
+                case "break":
+                case "default":
+                case "func":
+                case "interface":
+                case "select":
+                case "case":
+                case "defer":
+                case "go":
+                case "map":
+                case "struct":
+                case "chan":
+                case "else":
+                case "goto":
+                case "package":
+                case "switch":
+                case "const":
+                case "fallthrough":
+                case "if":
+                case "range":
+                case "type":
+                case "continue":
+                case "for":
+                case "import":
+                case "return":
+                case "var":
+                    return char.ToUpperInvariant(name[0]) + name.Substring(1);
+                default:
+                    return WmiMethod.FixName(name);
+            }
+        }
+
         private String GoReturnType { get; set; }
         public GOWmiMethod() { }
         /// <summary>
@@ -128,7 +163,7 @@ namespace Microsoft.wmi.GO
                         sbInParams.AppendFormat(CultureInfo.InvariantCulture, "}}\n");
                         */
                     //sbInParams.AppendFormat(",\"{0}\", {0}", WmiMethod.FixName(item.Name));
-                    sbInParams.AppendFormat(", {0}", WmiMethod.FixName(item.Name));
+                    sbInParams.AppendFormat(", {0}", FixName(item.Name));
                 }
 
                 //sb.Append(sbInParams.ToString());

@@ -51,10 +51,9 @@ use an unbound, unsaved in-memory `ManagementClass` schema; they do not query or
 save WMI metadata, enumerate instances or invoke provider methods. Other emitter
 tests use an in-memory namespace instead of the discovery-performing
 `GOWmiNamespace` constructor. C# emitter cases do not require its separate generated
-runtime. No Hyper-V/cluster roles, lab hosts or cloud access
-are required. The tests do not assert that every Go keyword is handled: in
-particular, the legacy emitter's `return` identifier defect remains a separate
-follow-up.
+runtime. No Hyper-V/cluster roles, lab hosts or cloud access are required.
+Regression cases also cover keyword identifiers, local LDAP class resolution,
+case-insensitive enum reuse and self-referencing properties.
 
 The dedicated build job runs these tests before packaging, including when reused
 by the release workflow. The tests do not run the generator's WMI discovery paths.
@@ -115,7 +114,35 @@ Supported generation options:
 | `-outdir <directory>` | Output directory; defaults to the current directory. |
 | `-help` | Display the original command-line help. |
 
-This initial import preserves the existing generator implementation, including its
-legacy command-line behavior. The advertised `-wmiclass` option is not implemented;
+The generator retains its legacy command-line behavior. The advertised
+`-wmiclass` option is not implemented;
 namespace generation processes all classes. The C# emitter is retained for
 compatibility, but its runtime is not supplied by this Go repository.
+
+### Windows Server 2025
+
+Build the generator, then run the following from the repository root on Windows
+Server 2025 (build 26100), with Failover Clustering already installed:
+
+```powershell
+.\tools\wmigen\Generate-Server2025.ps1 `
+    -OutputDirectory C:\wmi-staging\server2025 `
+    -SourceCommit (git rev-parse HEAD)
+```
+
+The output directory must not already exist. The script validates the host and
+clustering provider, generates recursively from `root`, and records OS and
+generator provenance without recording the host name. It does not install roles,
+create clusters, or restart the host. It preserves the legacy exclusions for
+`root/rsop/user` and localized `ms_409`, `ms_509`, and `ms_501` namespaces.
+
+`SourceCommit` is supplied by the caller and must identify the source used to
+build the executable. The wrapper records that assertion without requiring a Git
+checkout on the capture host; it independently computes the executable's SHA256.
+Enum names reuse a declaration only when their members and wire values match;
+conflicting definitions receive distinct, case-insensitively unique names.
+
+The resulting `server2025` directory must be formatted and compiled against this
+repository before check-in. Provider availability depends on the source host;
+the provenance inventory describes that snapshot, not every possible Windows
+Server 2025 installation.

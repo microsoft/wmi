@@ -43,6 +43,7 @@ namespace Microsoft.wmi.Tests
         [DataTestMethod]
         [DataRow("type", "_type")]
         [DataRow("namespace", "Namespace")]
+        [DataRow("return", "Return")]
         [DataRow("DisplayName", "DisplayName")]
         public void PropertyIdentifiersAreEscapedWithoutChangingWmiLookupNames(string name, string field)
         {
@@ -82,6 +83,7 @@ namespace Microsoft.wmi.Tests
 
         [DataTestMethod]
         [DataRow("namespace", ParamType.Output, false, false, "/* OUT */ Namespace string")]
+        [DataRow("return", ParamType.Output, false, false, "/* OUT */ Return string")]
         [DataRow("volatile", ParamType.Input, true, false, "/* OPTIONAL IN */ Volatile string")]
         [DataRow("Values", ParamType.Reference, false, true, "/* IN/OUT */ Values []string")]
         public void MethodParametersEmitEscapedNamesDirectionsAndSlices(

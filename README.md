@@ -5,6 +5,10 @@ The source for the Windows WMI wrapper generator is in
 [`tools/wmigen`](tools/wmigen/README.md), including Windows build prerequisites
 and generation instructions.
 
+Windows Server 2025 bindings are available under
+[`server2025`](server2025/README.md), with an OS-qualified generation recipe and
+a provider/namespace provenance inventory.
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
